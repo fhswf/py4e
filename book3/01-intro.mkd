@@ -1,45 +1,47 @@
 % Python for Everybody 
 % Exploring Data Using Python 3
 % Dr. Charles R. Severance
+% Translation by Heiner Giefers, (...)
 
-Why should you learn to write programs?
+
+Warum Sie Programmieren lernen sollten?
 =======================================
 
-Writing programs (or programming) is a very creative and rewarding
-activity. You can write programs for many reasons, ranging from making
-your living to solving a difficult data analysis problem to having fun
-to helping someone else solve a problem. This book assumes that
-*everyone* needs to know how to program, and that once you know how to
-program you will figure out what you want to do with your newfound
-skills.
+Das Schreiben von Programmen (oder Programmieren) ist eine sehr kreative und lohnende
+Tätigkeit. Sie können Programme aus vielen Gründen schreiben, angefangen vom Verdienst
+Lebensunterhalt zu verdienen, ein schwieriges Datenanalyseproblem zu lösen, Spaß zu haben
+oder um jemand anderem bei der Lösung eines Problems zu helfen. Dieses Buch geht davon aus, dass
+dass *jeder* wissen muss, wie man programmiert, und dass Sie, sobald Sie wissen, wie man
+programmiert, herausfinden werden, was Sie mit Ihren neugewonnenen Fähigkeiten machen können.
 
-We are surrounded in our daily lives with computers ranging from laptops
-to cell phones. We can think of these computers as our "personal
-assistants" who can take care of many things on our behalf. The hardware
-in our current-day computers is essentially built to continuously ask us
-the question, "What would you like me to do next?"
+Wir sind in unserem täglichen Leben von Computern umgeben, von Laptops
+bis hin zu Handys. Wir nehmen diese Computer als unsere "persönlichen
+Assistenten" war, die viele Dinge für uns erledigen können. Die Hardware
+in unseren heutigen Computern ist im Wesentlichen so gebaut, dass sie uns
+ständig die Frage stellt: "Was soll ich als nächstes tun?"
 
-![Personal Digital Assistant](height=1.0in@../images/pda)
 
-Programmers add an operating system and a set of applications to the
-hardware and we end up with a Personal Digital Assistant that is quite
-helpful and capable of helping us do many different things.
+Programmierer fügen der Hardware ein Betriebssystem und eine Reihe von Anwendungen hinzu,
+und schon haben wir einen persönlichen digitalen Assistenten, der uns bei vielen Problemen
+des Alltags nützlich sein kann.
 
-Our computers are fast and have vast amounts of memory and could be very
-helpful to us if we only knew the language to speak to explain to the
-computer what we would like it to "do next". If we knew this language,
-we could tell the computer to do tasks on our behalf that were
-repetitive. Interestingly, the kinds of things computers can do best are
-often the kinds of things that we humans find boring and mind-numbing.
+Unsere Computer sind schnell und haben riesige Mengen an Speicher und könnten uns sehr hilfreich sein
+hilfreich sein, wenn wir nur die Sprache beherrschen würden, um dem Computer zu erklären,
+was er als nächstes tun soll. Wenn wir diese Sprache kennen, könnten wir dem Computer sagen, dass
+er in unserem Namen Aufgaben erledigen soll, die sich wiederholen.
+Interessanterweise sind die Dinge, die Computer am besten können
+oft die Dinge, die wir Menschen langweilig und stumpfsinnig finden.
 
-For example, look at the first three paragraphs of this chapter and tell
-me the most commonly used word and how many times the word is used.
-While you were able to read and understand the words in a few seconds,
-counting them is almost painful because it is not the kind of problem
-that human minds are designed to solve. For a computer, the opposite is
-true, reading and understanding text from a piece of paper is hard for a
-computer to do but counting the words and telling you how many times the
-most used word was used is very easy for the computer:
+Schauen Sie sich zum Beispiel die ersten drei Absätze dieses Kapitels an und sagen Sie mir
+sagen Sie mir, welches Wort am häufigsten verwendet wird und wie oft es vorkommt.
+Während Sie in der Lage waren, die Wörter in wenigen Sekunden zu lesen und zu verstehen,
+ist das Zählen der Wörter fast schmerzhaft, weil es nicht die Art von Problem ist
+die der menschliche Verstand einfach lösen kann. Für einen Computer ist das Gegenteil der Fall:
+Das Lesen und Verstehen von Text auf einem Blatt Papier ist für einen Computer schwer,
+aber die Wörter zu zählen und Ihnen zu sagen, wie oft das
+das am häufigsten verwendete Wort verwendet wurde, ist für den Computer sehr einfach.
+
+
 
 ~~~~ {.python}
 python words.py
