@@ -8,11 +8,11 @@ Warum Sie Programmieren lernen sollten?
 =======================================
 
 Das Schreiben von Programmen (oder Programmieren) ist eine sehr kreative und lohnende
-Tätigkeit. Sie können Programme aus vielen Gründen schreiben, angefangen vom Verdienst
+Tätigkeit. Sie können Programme aus vielen Gründen schreiben, angefangen vom Ziel, Ihren
 Lebensunterhalt zu verdienen, ein schwieriges Datenanalyseproblem zu lösen, Spaß zu haben
 oder um jemand anderem bei der Lösung eines Problems zu helfen. Dieses Buch geht davon aus, dass
-dass *jeder* wissen muss, wie man programmiert, und dass Sie, sobald Sie wissen, wie man
-programmiert, herausfinden werden, was Sie mit Ihren neugewonnenen Fähigkeiten machen können.
+dass *jeder* wissen sollte, wie man programmiert, und dass Sie, sobald Sie die Programmierung
+beherschen, herausfinden werden, was Sie mit Ihren neugewonnenen Fähigkeiten machen können.
 
 Wir sind in unserem täglichen Leben von Computern umgeben, von Laptops
 bis hin zu Handys. Wir nehmen diese Computer als unsere "persönlichen
