@@ -7,194 +7,110 @@
 Warum Sie Programmieren lernen sollten?
 =======================================
 
-Das Schreiben von Programmen (oder Programmieren) ist eine sehr kreative und lohnende
-Tätigkeit. Sie können Programme aus vielen Gründen schreiben, angefangen vom Ziel, Ihren
-Lebensunterhalt zu verdienen, ein schwieriges Datenanalyseproblem zu lösen, Spaß zu haben
-oder um jemand anderem bei der Lösung eines Problems zu helfen. Dieses Buch geht davon aus, dass
-dass *jeder* wissen sollte, wie man programmiert, und dass Sie, sobald Sie die Programmierung
-beherschen, herausfinden werden, was Sie mit Ihren neugewonnenen Fähigkeiten machen können.
+Das Schreiben von Programmen (oder Programmieren) ist eine sehr kreative und lohnende Tätigkeit.
+Sie können Programme aus vielen Gründen schreiben, angefangen vom Ziel, Ihren Lebensunterhalt zu verdienen, ein schwieriges Datenanalyseproblem zu lösen, Spaß zu haben
+oder um jemand anderem bei der Lösung eines Problems zu helfen.
+Dieses Buch geht davon aus, dass dass *jeder* wissen sollte, wie man programmiert, und dass Sie, sobald Sie die Programmierung beherschen, herausfinden werden, was Sie mit Ihren neugewonnenen Fähigkeiten machen können.
 
-Wir sind in unserem täglichen Leben von Computern umgeben, von Laptops
-bis hin zu Handys. Wir nehmen diese Computer als unsere "persönlichen
-Assistenten" war, die viele Dinge für uns erledigen können. Die Hardware
-in unseren heutigen Computern ist im Wesentlichen so gebaut, dass sie uns
-ständig die Frage stellt: "Was soll ich als nächstes tun?"
+Wir sind in unserem täglichen Leben von Computern umgeben, von Laptops bis hin zu Handys.
+Wir nehmen diese Computer als unsere "persönlichen Assistenten" war, die viele Dinge für uns erledigen können.
+Die Hardware in unseren heutigen Computern ist im Wesentlichen so gebaut, dass sie uns ständig die Frage stellt:
+"Was soll ich als nächstes tun?"
 
-
-Programmierer fügen der Hardware ein Betriebssystem und eine Reihe von Anwendungen hinzu,
-und schon haben wir einen persönlichen digitalen Assistenten, der uns bei vielen Problemen
+Programmierer fügen der Hardware ein Betriebssystem und eine Reihe von Anwendungen hinzu, und schon haben wir einen persönlichen digitalen Assistenten, der uns bei vielen Problemen
 des Alltags nützlich sein kann.
 
-Unsere Computer sind schnell und haben riesige Mengen an Speicher und könnten uns sehr hilfreich sein
-hilfreich sein, wenn wir nur die Sprache beherrschen würden, um dem Computer zu erklären,
-was er als nächstes tun soll. Wenn wir diese Sprache kennen, könnten wir dem Computer sagen, dass
-er in unserem Namen Aufgaben erledigen soll, die sich wiederholen.
-Interessanterweise sind die Dinge, die Computer am besten können
-oft die Dinge, die wir Menschen langweilig und stumpfsinnig finden.
+Unsere Computer sind schnell und haben riesige Mengen an Speicher und könnten uns sehr hilfreich sein hilfreich sein, wenn wir nur die Sprache beherrschen würden, um dem Computer zu erklären,
+was er als nächstes tun soll.
+Wenn wir diese Sprache kennen, könnten wir dem Computer sagen, dass er in unserem Namen Aufgaben erledigen soll, die sich wiederholen. Interessanterweise sind die Dinge, die Computer am besten können
+oft die Dinge, die wir Menschen langweilig und stumpfsinnig finden. 
 
-Schauen Sie sich zum Beispiel die ersten drei Absätze dieses Kapitels an und sagen Sie mir
-sagen Sie mir, welches Wort am häufigsten verwendet wird und wie oft es vorkommt.
-Während Sie in der Lage waren, die Wörter in wenigen Sekunden zu lesen und zu verstehen,
-ist das Zählen der Wörter fast schmerzhaft, weil es nicht die Art von Problem ist
-die der menschliche Verstand einfach lösen kann. Für einen Computer ist das Gegenteil der Fall:
-Das Lesen und Verstehen von Text auf einem Blatt Papier ist für einen Computer schwer,
-aber die Wörter zu zählen und Ihnen zu sagen, wie oft das
-das am häufigsten verwendete Wort verwendet wurde, ist für den Computer sehr einfach.
+Schauen Sie sich zum Beispiel die ersten drei Absätze dieses Kapitels an und sagen Sie mir sagen Sie mir, welches Wort am häufigsten verwendet wird und wie oft es vorkommt.
+Während Sie in der Lage waren, die Wörter in wenigen Sekunden zu lesen und zu verstehen, ist das Zählen der Wörter fast schmerzhaft, weil es nicht die Art von Problem ist die der menschliche Verstand einfach lösen kann. Für einen Computer ist das Gegenteil der Fall: Das Lesen und Verstehen von Text auf einem Blatt Papier ist für einen Computer schwer,
+aber die Wörter zu zählen und Ihnen zu sagen, wie oft das das am häufigsten verwendete Wort verwendet wurde, ist für den Computer sehr einfach.
 
 
 
 ~~~~ {.python}
 python words.py
 Enter file:words.txt
-to 16
+zu 12
 ~~~~
 
-Our "personal information analysis assistant" quickly told us that the
-word "to" was used sixteen times in the first three paragraphs of this
-chapter.
 
-This very fact that computers are good at things that humans are not is
-why you need to become skilled at talking "computer language". Once you
-learn this new language, you can delegate mundane tasks to your partner
-(the computer), leaving more time for you to do the things that you are
-uniquely suited for. You bring creativity, intuition, and inventiveness
-to this partnership.
+Unser Programm sagt uns schnell, dass das Wort "zu" 12 Mal im oberen Teil dieses Kapitels verwendet wurde.
+Genau diese Tatsache, dass Computer Dinge gut können, die Menschen eher nicht gut bzw. schnell können, ist ist der Grund, warum Sie die Programmiersprachen beherrschen sollten.
+Sobald Sie eine Programmiersprache gelernt haben, können Sie viele alltägliche Aufgaben durch den Computer erledigen lassen. 
+So bleibt Ihnen mehr Zeit für die diejenigen Aufgaben, für die Sie einzigartig geeignet sind, nämlich Kreativität, Intuition und Ideenreichtum.
 
-Creativity and motivation
+Kreativität und Motivation
 -------------------------
 
-While this book is not intended for professional programmers,
-professional programming can be a very rewarding job both financially
-and personally. Building useful, elegant, and clever programs for others
-to use is a very creative activity. Your computer or Personal Digital
-Assistant (PDA) usually contains many different programs from many
-different groups of programmers, each competing for your attention and
-interest. They try their best to meet your needs and give you a great
-user experience in the process. In some situations, when you choose a
-piece of software, the programmers are directly compensated because of
-your choice.
+Wenn Sie gerade mit den Programmieren beginnen, werden Sie noch einigie Erfahrungen sammeln müssen, um professionelle Programme (auch *Software* genannt) entwickeln zu können. 
+Professionelles Programmieren ist allerding sowohl finanziell als auch persönlich eine sehr lohnende Aufgabe.
+Nützliche, elegante und clevere Programme zu erstellen, ist eine sehr kreative Aktivität, die durchaus Spaß machen kann.
+Lukrativ ist die Programmierung vor allem dann, wenn Ihren Kunden, bzw. den Nutzern das Programm gefällt und Ihnen einen Nutzen bringt.
+Dabei stehen Sie in Konkurrenz zu anderen Enwicklern.
+Sie sollten also versuchen, dass Ihr Programm bessr funktioniert, einen höheren Funktionsumfang hat, sich besser bedienen lässt oder einfach schöner aussieht.
 
-If we think of programs as the creative output of groups of programmers,
-perhaps the following figure is a more sensible version of our PDA:
 
-![Programmers Talking to You](height=1.0in@../images/pda2)
+Im Moment besteht unsere Hauptmotivation nicht darin, Geld zu verdienen oder den Endnutzern zu gefallen.
+Wir möchten unsere eignen Arbeitsablaufe automatisieren und produktiver mit den Daten und Informationen umgehen, die uns in unserem Leben begegnen.
+Bei Ihren Programmieranfängen sind Sie sowohl der Programmierer als auch der Endnutzer Ihrer Programme.
+Je mehr Erfahrung Sie sammeln und je umfangreicher Ihre Programme werden, desto mehr werden Sie befähigt, auch Programme für andere zu entwickeln.
 
-For now, our primary motivation is not to make money or please end
-users, but instead for us to be more productive in handling the data and
-information that we will encounter in our lives. When you first start,
-you will be both the programmer and the end user of your programs. As
-you gain skill as a programmer and programming feels more creative to
-you, your thoughts may turn toward developing programs for others.
-
-Computer hardware architecture
+Der Aufbau eines Computers
 ------------------------------
 
 \index{hardware}
 \index{hardware!architecture}
 
-Before we start learning the language we speak to give instructions to
-computers to develop software, we need to learn a small amount about how
-computers are built. If you were to take apart your computer or cell
-phone and look deep inside, you would find the following parts:
+Bevor wir anfangen, die Sprachen zu lernen, mit der wir Computer *programmieren* können, sollten wir uns ein wenig damit beschäftigen, wie Computer aufgebaut sind.
+Wenn Sie Ihren Computer oder Ihr Handy auseinandernehmen und tief ins Innere schauen würden, würden Sie die folgenden Teile finden:
 
-![Hardware Architecture](height=1.75in@../images/arch)
+![Aufbau eines Computers](height=1.75in@../images/_arch)
 
 The high-level definitions of these parts are as follows:
 
--   The *Central Processing Unit* (or CPU) is the part of
-    the computer that is built to be obsessed with "what is next?" If
-    your computer is rated at 3.0 Gigahertz, it means that the CPU will
-    ask "What next?" three billion times per second. You are going to
-    have to learn how to talk fast to keep up with the CPU.
+-   The *Central Processing Unit* (or CPU) is the part of the computer that is built to be obsessed with "what is next?" If your computer is rated at 3.0 Gigahertz, it means that the CPU will ask "What next?" three billion times per second. You are going to have to learn how to talk fast to keep up with the CPU.
 
--   The *Main Memory* is used to store information that
-    the CPU needs in a hurry. The main memory is nearly as fast as the
-    CPU. But the information stored in the main memory vanishes when the
-    computer is turned off.
+-   The *Main Memory* is used to store information that the CPU needs in a hurry. The main memory is nearly as fast as the CPU. But the information stored in the main memory vanishes when the computer is turned off.
 
--   The *Secondary Memory* is also used to store
-    information, but it is much slower than the main memory. The
-    advantage of the secondary memory is that it can store information
-    even when there is no power to the computer. Examples of secondary
-    memory are disk drives or flash memory (typically found in USB
-    sticks and portable music players).
+-   The *Secondary Memory* is also used to store information, but it is much slower than the main memory. The advantage of the secondary memory is that it can store information even when there is no power to the computer. Examples of secondary memory are disk drives or flash memory (typically found in USB sticks and portable music players).
 
--   The *Input and Output Devices* are simply our screen,
-    keyboard, mouse, microphone, speaker, touchpad, etc. They are all of
-    the ways we interact with the computer.
+-   The *Input and Output Devices* are simply our screen, keyboard, mouse, microphone, speaker, touchpad, etc. They are all of the ways we interact with the computer.
 
--   These days, most computers also have a *Network
-    Connection* to retrieve information over a network. We can
-    think of the network as a very slow place to store and retrieve data
-    that might not always be "up". So in a sense, the network is a
-    slower and at times unreliable form of *Secondary
-    Memory*.
+-   These days, most computers also have a *Network Connection* to retrieve information over a network. We can think of the network as a very slow place to store and retrieve data that might not always be "up". So in a sense, the network is a slower and at times unreliable form of *Secondary Memory*.
 
-While most of the detail of how these components work is best left to
-computer builders, it helps to have some terminology so we can talk
-about these different parts as we write our programs.
+While most of the detail of how these components work is best left to computer builders, it helps to have some terminology so we can talk about these different parts as we write our programs. 
 
-As a programmer, your job is to use and orchestrate each of these
-resources to solve the problem that you need to solve and analyze the
-data you get from the solution. As a programmer you will mostly be
-"talking" to the CPU and telling it what to do next. Sometimes you will
-tell the CPU to use the main memory, secondary memory, network, or the
+As a programmer, your job is to use and orchestrate each of these resources to solve the problem that you need to solve and analyze the data you get from the solution. As a programmer you will mostly be "talking" to the CPU and telling it what to do next. Sometimes you will tell the CPU to use the main memory, secondary memory, network, or the
 input/output devices.
 
 ![Where Are You?](height=1.75in@../images/arch2)
 
-You need to be the person who answers the CPU's "What next?" question.
-But it would be very uncomfortable to shrink you down to 5mm tall and
-insert you into the computer just so you could issue a command three
-billion times per second. So instead, you must write down your
-instructions in advance. We call these stored instructions a
-*program* and the act of writing these instructions down
-and getting the instructions to be correct *programming*.
+You need to be the person who answers the CPU's "What next?" question. But it would be very uncomfortable to shrink you down to 5mm tall and insert you into the computer just so you could issue a command three billion times per second. So instead, you must write down your instructions in advance. We call these stored instructions a *program* and the act of writing these instructions down and getting the instructions to be correct *programming*.
 
 Understanding programming
 -------------------------
 
-In the rest of this book, we will try to turn you into a person who is
-skilled in the art of programming. In the end you will be a
-*programmer* - perhaps not a professional programmer, but
-at least you will have the skills to look at a data/information analysis
-problem and develop a program to solve the problem.
+In the rest of this book, we will try to turn you into a person who is skilled in the art of programming. In the end you will be a *programmer* - perhaps not a professional programmer, but at least you will have the skills to look at a data/information analysis problem and develop a program to solve the problem.
 
 \index{problem solving}
 
 In a sense, you need two skills to be a programmer:
 
--   First, you need to know the programming language (Python) - you need
-    to know the vocabulary and the grammar. You need to be able to spell
-    the words in this new language properly and know how to construct
-    well-formed "sentences" in this new language.
+-   First, you need to know the programming language (Python) - you need to know the vocabulary and the grammar. You need to be able to spell the words in this new language properly and know how to construct well-formed "sentences" in this new language.
 
--   Second, you need to "tell a story". In writing a story, you combine
-    words and sentences to convey an idea to the reader. There is a
-    skill and art in constructing the story, and skill in story writing
-    is improved by doing some writing and getting some feedback. In
-    programming, our program is the "story" and the problem you are
-    trying to solve is the "idea".
+-   Second, you need to "tell a story". In writing a story, you combine words and sentences to convey an idea to the reader. There is a skill and art in constructing the story, and skill in story writing is improved by doing some writing and getting some feedback. In programming, our program is the "story" and the problem you are trying to solve is the "idea".
 
-Once you learn one programming language such as Python, you will find it
-much easier to learn a second programming language such as JavaScript or
-C++. The new programming language has very different vocabulary and
-grammar but the problem-solving skills will be the same across all
+Once you learn one programming language such as Python, you will find it much easier to learn a second programming language such as JavaScript or C++. The new programming language has very different vocabulary and grammar but the problem-solving skills will be the same across all
 programming languages.
 
-You will learn the "vocabulary" and "sentences" of Python pretty
-quickly. It will take longer for you to be able to write a coherent
-program to solve a brand-new problem. We teach programming much like we
-teach writing. We start reading and explaining programs, then we write
-simple programs, and then we write increasingly complex programs over
-time. At some point you "get your muse" and see the patterns on your own
-and can see more naturally how to take a problem and write a program
-that solves that problem. And once you get to that point, programming
-becomes a very pleasant and creative process.
+You will learn the "vocabulary" and "sentences" of Python pretty quickly. It will take longer for you to be able to write a coherent program to solve a brand-new problem. We teach programming much like we teach writing. We start reading and explaining programs, then we write simple programs, and then we write increasingly complex programs over time. At some point you "get your muse" and see the patterns on your own and can see more naturally how to take a problem and write a program
+that solves that problem. And once you get to that point, programming becomes a very pleasant and creative process.
 
-We start with the vocabulary and structure of Python programs. Be
-patient as the simple examples remind you of when you started reading
-for the first time.
+We start with the vocabulary and structure of Python programs. Be patient as the simple examples remind you of when you started reading for the first time.
 
 Words and sentences
 -------------------
@@ -202,26 +118,13 @@ Words and sentences
 \index{programming language}
 \index{language!programming}
 
-Unlike human languages, the Python vocabulary is actually pretty small.
-We call this "vocabulary" the "reserved words". These are words that
-have very special meaning to Python. When Python sees these words in a
-Python program, they have one and only one meaning to Python. Later as
-you write programs you will make up your own words that have meaning to
-you called *variables*. You will have great latitude in
-choosing your names for your variables, but you cannot use any of
-Python's reserved words as a name for a variable.
+Unlike human languages, the Python vocabulary is actually pretty small. We call this "vocabulary" the "reserved words". These are words that have very special meaning to Python. When Python sees these words in a Python program, they have one and only one meaning to Python. Later as
+you write programs you will make up your own words that have meaning to you called *variables*. You will have great latitude in choosing your names for your variables, but you cannot use any of Python's reserved words as a name for a variable.
 
-When we train a dog, we use special words like "sit", "stay", and
-"fetch". When you talk to a dog and don't use any of the reserved words,
-they just look at you with a quizzical look on their face until you say
-a reserved word. For example, if you say, "I wish more people would walk
-to improve their overall health", what most dogs likely hear is, "blah
-blah blah *walk* blah blah blah blah." That is because
-"walk" is a reserved word in dog language. Many might suggest that the
-language between humans and cats has no reserved words^[<http://xkcd.com/231/>].
+When we train a dog, we use special words like "sit", "stay", and "fetch". When you talk to a dog and don't use any of the reserved words, they just look at you with a quizzical look on their face until you say a reserved word. For example, if you say, "I wish more people would walk
+to improve their overall health", what most dogs likely hear is, "blah blah blah *walk* blah blah blah blah." That is because "walk" is a reserved word in dog language. Many might suggest that the language between humans and cats has no reserved words^[<http://xkcd.com/231/>].
 
-The reserved words in the language where humans talk to Python include
-the following:
+The reserved words in the language where humans talk to Python include the following: 
 
     and       del       global      not       with
     as        elif      if          or        yield
@@ -231,42 +134,22 @@ the following:
     continue  for       lambda      try
     def       from      nonlocal    while    
 
-That is it, and unlike a dog, Python is already completely trained. When
-you say "try", Python will try every time you say it without fail.
+That is it, and unlike a dog, Python is already completely trained. When you say "try", Python will try every time you say it without fail.
 
-We will learn these reserved words and how they are used in good time,
-but for now we will focus on the Python equivalent of "speak" (in
-human-to-dog language). The nice thing about telling Python to speak is
-that we can even tell it what to say by giving it a message in quotes:
+We will learn these reserved words and how they are used in good time, but for now we will focus on the Python equivalent of "speak" (in human-to-dog language). The nice thing about telling Python to speak is that we can even tell it what to say by giving it a message in quotes:
 
 ~~~~ {.python}
 print('Hello world!')
 ~~~~
 
-And we have even written our first syntactically correct Python
-sentence. Our sentence starts with the function *print* 
-followed by a string of text of our choosing enclosed in single quotes.
-The strings in the print statements are enclosed in quotes. Single
-quotes and double quotes do the same thing; most people use single
-quotes except in cases like this where a single quote (which is also an
-apostrophe) appears in the string.
+And we have even written our first syntactically correct Python sentence. Our sentence starts with the function *print* followed by a string of text of our choosing enclosed in single quotes. The strings in the print statements are enclosed in quotes. Single quotes and double quotes do the same thing; most people use single quotes except in cases like this where a single quote (which is also an apostrophe) appears in the string.
 
 Conversing with Python
 ----------------------
 
-Now that we have a word and a simple sentence that we know in Python, we
-need to know how to start a conversation with Python to test our new
-language skills.
+Now that we have a word and a simple sentence that we know in Python, we need to know how to start a conversation with Python to test our new language skills.
 
-Before you can converse with Python, you must first install the Python
-software on your computer and learn how to start Python on your
-computer. That is too much detail for this chapter so I suggest that you
-consult [www.py4e.com](http://www.py4e.com) where I have detailed
-instructions and screencasts of setting up and starting Python on
-Macintosh and Windows systems. At some point, you will be in a terminal
-or command window and you will type *python* and the
-Python interpreter will start executing in interactive mode and appear
-somewhat as follows:
+Before you can converse with Python, you must first install the Python software on your computer and learn how to start Python on your computer. That is too much detail for this chapter so I suggest that you consult [www.py4e.com](http://www.py4e.com) where I have detailed instructions and screencasts of setting up and starting Python on Macintosh and Windows systems. At some point, you will be in a terminal or command window and you will type *python* and the Python interpreter will start executing in interactive mode and appear somewhat as follows:
 
 \index{interactive mode}
 
@@ -278,15 +161,9 @@ information.
 >>>
 ~~~~
 
-The `>>>` prompt is the Python interpreter's way of asking
-you, "What do you want me to do next?" Python is ready to have a
-conversation with you. All you have to know is how to speak the Python
-language.
+The `>>>` prompt is the Python interpreter's way of asking you, "What do you want me to do next?" Python is ready to have a conversation with you. All you have to know is how to speak the Python language.
 
-Let's say for example that you did not know even the simplest Python
-language words or sentences. You might want to use the standard line
-that astronauts use when they land on a faraway planet and try to speak
-with the inhabitants of the planet:
+Let's say for example that you did not know even the simplest Python language words or sentences. You might want to use the standard line that astronauts use when they land on a faraway planet and try to speak with the inhabitants of the planet:
 
 ~~~~ {.python}
 >>> I come in peace, please take me to your leader
@@ -297,12 +174,9 @@ SyntaxError: invalid syntax
 >>>
 ~~~~
 
-This is not going so well. Unless you think of something quickly, the
-inhabitants of the planet are likely to stab you with their spears, put
-you on a spit, roast you over a fire, and eat you for dinner.
+This is not going so well. Unless you think of something quickly, the inhabitants of the planet are likely to stab you with their spears, put you on a spit, roast you over a fire, and eat you for dinner.
 
-Luckily you brought a copy of this book on your travels, and you thumb
-to this very page and try again:
+Luckily you brought a copy of this book on your travels, and you thumb to this very page and try again:
 
 ~~~~ {.python}
 >>> print('Hello world!')
@@ -326,26 +200,11 @@ SyntaxError: Missing parentheses in call to 'print'
 >>>
 ~~~~
 
-The conversation was going so well for a while and then you made the
-tiniest mistake using the Python language and Python brought the spears
-back out.
+The conversation was going so well for a while and then you made the tiniest mistake using the Python language and Python brought the spears back out.
 
-At this point, you should also realize that while Python is amazingly
-complex and powerful and very picky about the syntax you use to
-communicate with it, Python is *not* intelligent. You are
-really just having a conversation with yourself, but using proper
-syntax.
+At this point, you should also realize that while Python is amazingly complex and powerful and very picky about the syntax you use to communicate with it, Python is *not* intelligent. You are really just having a conversation with yourself, but using proper syntax.
 
-In a sense, when you use a program written by someone else the
-conversation is between you and those other programmers with Python
-acting as an intermediary. Python is a way for the creators of programs
-to express how the conversation is supposed to proceed. And in just a
-few more chapters, you will be one of those programmers using Python to
-talk to the users of your program.
-
-Before we leave our first conversation with the Python interpreter, you
-should probably know the proper way to say "good-bye" when interacting
-with the inhabitants of Planet Python:
+In a sense, when you use a program written by someone else the conversation is between you and those other programmers with Python acting as an intermediary. Python is a way for the creators of programs to express how the conversation is supposed to proceed. And in just a few more chapters, you will be one of those programmers using Python to talk to the users of your program.  Before we leave our first conversation with the Python interpreter, you should probably know the proper way to say "good-bye" when interacting with the inhabitants of Planet Python:
 
 ~~~~ {.python}
 >>> good-bye
@@ -360,29 +219,17 @@ SyntaxError: invalid syntax
 >>> quit()
 ~~~~
 
-You will notice that the error is different for the first two incorrect
-attempts. The second error is different because *if* is a
-reserved word and Python saw the reserved word and thought we were
-trying to say something but got the syntax of the sentence wrong.
+You will notice that the error is different for the first two incorrect attempts. The second error is different because *if* is a reserved word and Python saw the reserved word and thought we were trying to say something but got the syntax of the sentence wrong.
 
-The proper way to say "good-bye" to Python is to enter
-*quit()* at the interactive chevron `>>>`
-prompt. It would have probably taken you quite a while to guess that
-one, so having a book handy probably will turn out to be helpful.
+The proper way to say "good-bye" to Python is to enter *quit()* at the interactive chevron `>>>` prompt. It would have probably taken you quite a while to guess that one, so having a book handy probably will turn out to be helpful.
 
 Terminology: Interpreter and compiler
 -------------------------------------
 
-Python is a *high-level* language intended to be
-relatively straightforward for humans to read and write and for
-computers to read and process. Other high-level languages include Java,
-C++, PHP, Ruby, Basic, Perl, JavaScript, and many more. The actual
-hardware inside the Central Processing Unit (CPU) does not understand
-any of these high-level languages.
+Python is a *high-level* language intended to be relatively straightforward for humans to read and write and for computers to read and process. Other high-level languages include Java, C++, PHP, Ruby, Basic, Perl, JavaScript, and many more. The actual
+hardware inside the Central Processing Unit (CPU) does not understand any of these high-level languages.
 
-The CPU understands a language we call *machine
-language*. Machine language is very simple and frankly very
-tiresome to write because it is represented all in zeros and ones:
+The CPU understands a language we call *machine language*. Machine language is very simple and frankly very tiresome to write because it is represented all in zeros and ones:
 
 ~~~~
 001010001110100100101010000001111
