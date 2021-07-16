@@ -275,7 +275,7 @@ x + 1
 Reihenfolge der Auswertung
 --------------------------
 
-\index{Reihenfolge der Auswertung}
+\index{Auswertungsreihenfolge}
 \index{Vorrangregeln}
 \index{PEMDAS}
 
@@ -566,112 +566,92 @@ An diesem Punkt ist die wahrscheinlichste Ursache für einen semantischen Fehler
 
 aber die Division geschieht zuerst, also würden Sie $\pi / 2$ erhalten, was nicht dasselbe ist! Es gibt keine Möglichkeit für Python zu wissen, was Sie eigentlich schreiben wollten, also bekommen Sie in diesem Fall keine Fehlermeldung; Sie bekommen einfach die falsche Antwort.
 
-\index{Reihenfolge der Auswertung}
+\index{Auswertungsreihenfolge}
 
-Glossary
---------
+Glossar
+-------
 
-assignment
-:   A statement that assigns a value to a variable.
-\index{assignment}
+Zuweisung
+:   Eine Anweisung, die einer Variablen einen Wert zuweist.
+\index{Zuweisung}
 
-concatenate
-:   To join two operands end to end.
-\index{concatenation}
+konkatenieren
+:   Verkettung zweier Operanden.
+\index{Konkatenation}
 
-comment
-:   Information in a program that is meant for other programmers (or
-    anyone reading the source code) and has no effect on the execution
-    of the program.
-\index{comment}
+Kommentar
+:   Informationen in einem Programm, die für andere Programmierer (oder jeden, der den Quellcode liest) bestimmt sind und keinen Einfluss auf die Ausführung des Programms haben.
+\index{Kommentar}
 
-evaluate
-:   To simplify an expression by performing the operations in order to
-    yield a single value.
+auswerten
+:   Einen Ausdruck vereinfachen, indem die Operationen so ausgeführt werden, dass ein einziger Wert entsteht.
+\index{Auswertung}
 
-expression
-:   A combination of variables, operators, and values that represents a
-    single result value.
-\index{expression}
+Ausdruck
+:   Eine Kombination aus Variablen, Operatoren und Werten, die einen einzelnen Ergebniswert darstellt.
+\index{Ausdruck}
 
-floating point
-:   A type that represents numbers with fractional parts.
-\index{floating-point}
+Gleitkommazahl
+:   Ein Datentyp, der Zahlen mit Nachkommastellen darstellt.
+\index{Gleitkommazahl}
 
-integer
-:   A type that represents whole numbers.
-\index{integer}
+Ganzzahl
+:   Ein Datentyp, der ganze Zahlen darstellt.
+\index{Ganzzahl}
 
-keyword
-:   A reserved word that is used by the compiler to parse a program; you
-    cannot use keywords like `if`, `def`, and
-    `while` as variable names.
-\index{keyword}
+Schlüsselwort
+:   Ein reserviertes Wort, das vom Compiler verwendet wird, um ein Programm zu analysieren; Sie können Schlüsselwörter wie `if`, `def` und `while` nicht als Variablennamen verwenden.
+\index{Schlüsselwort}
 
-mnemonic
-:   A memory aid. We often give variables mnemonic names to help us
-    remember what is stored in the variable.
-\index{mnemonic}
-
-modulus operator
-:   An operator, denoted with a percent sign (`%`), that
-    works on integers and yields the remainder when one number is
-    divided by another.
-\index{modulus operator}
+Modulo-Operator
+:   Ein Operator, der mit einem Prozentzeichen (`%`) gekennzeichnet ist, der mit ganzen Zahlen arbeitet und den Rest ergibt, wenn eine Zahl durch eine andere dividiert wird.
+\index{Modulo-Operator}
 \index{operator!modulus}
 
-operand
-:   One of the values on which an operator operates.
-\index{operand}
+Operand
+:   Einer der Werte, mit dem ein Operator arbeitet.
+\index{Operand}
 
-operator
-:   A special symbol that represents a simple computation like addition,
-    multiplication, or string concatenation.
-\index{operator}
+Operator
+:   Ein spezielles Symbol, das eine einfache Berechnung wie Addition, Multiplikation oder String-Verkettung darstellt.
+\index{Operator}
 
-rules of precedence
-:   The set of rules governing the order in which expressions involving
-    multiple operators and operands are evaluated.
-\index{rules of precedence}
-\index{precedence}
+Vorrangregeln
+:   Die Reihenfolge, in der Ausdrücke mit mehreren Operatoren und Operanden ausgewertet werden.
+\index{Vorrangregeln}
+\index{Vorrang}
 
-statement
-:   A section of code that represents a command or action. So far, the
-    statements we have seen are assignments and print expression statement.
-\index{statement}
+Anweisung
+:   Ein Abschnitt des Codes, der einen Befehl oder eine Aktion darstellt. Die Anweisungen, die wir bisher gesehen haben, sind Zuweisungen und Ausgabe-Anweisungen.
+\index{Anweisung}
 
-string
-:   A type that represents sequences of characters.
-\index{string}
+Zeichenkette
+:   Ein Datentyp, der Zeichenfolgen (englisch *string*) repräsentiert.
+\index{Zeichenkette}
 
-type
-:   A category of values. The types we have seen so far are integers
-    (type `int`), floating-point numbers (type
-    `float`), and strings (type `str`).
-\index{type}
+Datentyp
+:   Eine Kategorie von Werten. Die Typen, die wir bisher gesehen haben, sind Ganzzahlen (Typ `int`), Gleitkommazahlen (Typ `float`) und Zeichenketten (Typ `str`).
+\index{Datentyp}
 
-value
-:   One of the basic units of data, like a number or string, that a
-    program manipulates.
-\index{value}
+Wert
+:   Eine der grundlegenden Dateneinheiten, wie z. B. eine Zahl oder eine Zeichenkette, die von einem Programm manipuliert wird.
+\index{Wert}
 
-variable
-:   A name that refers to a value.
-\index{variable}
+Variable
+:   Ein Bezeichner, der sich auf einen Wert bezieht.
+\index{Variable}
 
-Exercises
----------
+Übungen
+-------
 
-**Exercise 2: Write a program that uses `input` to prompt a user for
-their name and then welcomes them.**
+**Übung 2: Schreiben Sie ein Programm, das mit `input` einen Benutzer zur Eingabe seines Namens auffordert und ihn dann begrüßt.**
 
 ~~~~
 Enter your name: Chuck
 Hello Chuck
 ~~~~
 
-**Exercise 3: Write a program to prompt the user for hours and rate per
-hour to compute gross pay.**
+**Übung 3: Schreiben Sie ein Programm, das den Benutzer nach Arbeitsstunden und Stundensatz fragt, um den Bruttolohn zu berechnen.**
 
 ~~~~
 Enter Hours: 35
@@ -679,20 +659,16 @@ Enter Rate: 2.75
 Pay: 96.25
 ~~~~
 
-We won't worry about making sure our pay has exactly two digits after
-the decimal place for now. If you want, you can play with the built-in
-Python `round` function to properly round the resulting pay
-to two decimal places.
+Wir werden uns erst einmal nicht darum kümmern, dass unsere Auszahlung genau zwei Stellen nach dem Komma hat. Wenn Sie möchten, können Sie mit der eingebauten Python-Funktion `round` experimentieren, um den resultierenden Lohn auf zwei Dezimalstellen zu runden.
 
-**Exercise 4: Assume that we execute the following assignment statements:**
+**Übung 4: Angenommen, wir führen die folgenden Zuweisung aus:**
 
 ~~~~
 width = 17
 height = 12.0
 ~~~~
 
-For each of the following expressions, write the value of the expression
-and the type (of the value of the expression).
+Schreiben Sie für jeden der folgenden Ausdrücke den Wert des Ausdrucks und den Datentyp (des Wertes des Ausdrucks).
 
 1.  `width//2`
 
@@ -702,9 +678,7 @@ and the type (of the value of the expression).
 
 4.  `1 + 2 * 5`
 
-Use the Python interpreter to check your answers.
+Verwenden Sie den Python-Interpreter, um Ihre Antworten zu überprüfen.
 
-**Exercise 5: Write a program which prompts the user for a Celsius
-temperature, convert the temperature to Fahrenheit, and print out the
-converted temperature.**
+**Übung 5: Schreiben Sie ein Programm, das den Benutzer zur Eingabe einer Celsius-Temperatur auffordert, die Temperatur in Fahrenheit konvertiert und die konvertierte Temperatur ausgibt.**
 
