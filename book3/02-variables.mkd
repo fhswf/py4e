@@ -1,3 +1,4 @@
+
 Variablen, Ausdrücke und Anweisungen
 ====================================
 
@@ -35,11 +36,11 @@ Es überrascht nicht, dass Zeichenketten zum Typ `str` und Ganzzahlen zum Typ `i
 
 \index{Datentyp}
 \index{Zeichenkette}
-\index{class!str}
+\index{Klasse!str}
 \index{Ganzzahl}
-\index{class!int}
-\index{float type}
-\index{class!float}
+\index{Klasse!int}
+\index{Gleitkommazahl}
+\index{Klasse!float}
 
 ~~~~ {.python .trinket height="120"}
 >>> type(3.2)
@@ -69,7 +70,7 @@ Wenn Sie eine große Ganzzahl eingeben, könnten Sie versucht sein, Kommata zwis
 Nun, das ist überhaupt nicht das, was wir erwartet haben! Python interpretiert `1,000,000` als eine durch Kommata getrennte Folge von ganzen Zahlen, die es mit Leerzeichen dazwischen ausgibt.
 
 \index{semantischer Fehler}
-\index{error!semantic}
+\index{Fehler!semantischer}
 \index{Fehlermeldung}
 
 Dies ist das erste Beispiel eines *semantischen Fehlers*, den wir gesehen haben: Der Code wird ohne eine Fehlermeldung zu erzeugen ausgeführt, aber er tut nicht das „Richtige“.
@@ -79,7 +80,7 @@ Variablen
 
 \index{Variable}
 \index{Zuweisung}
-\index{statement!assignment}
+\index{Anweisung!Zuweisung}
 
 Eine der mächtigsten Eigenschaften einer Programmiersprache ist die Fähigkeit, *Variablen* zu manipulieren. Eine Variable ist ein Bezeichner, der sich auf einen Wert bezieht.
 
@@ -239,7 +240,7 @@ In Python 3.0 funktioniert die ganzzahlige Division also eher so, wie Sie es erw
 \index{Python 3.0}
 \index{Python 2.0}
 \index{Fließkommadivision}
-\index{division!floating-point}
+\index{Division!Fließkomma}
 
 Ausdrücke
 ---------
@@ -281,7 +282,7 @@ Reihenfolge der Auswertung
 
 Wenn mehr als ein Operator in einem Ausdruck vorkommt, hängt die Reihenfolge der Auswertung von den *Vorrangregeln* ab. Für mathematische Operatoren folgt Python der mathematischen Konvention. Das Akronym *PEMDAS* ist eine nützliche Methode, um sich die Regeln zu merken:
 
-\index{parentheses!overriding precedence}
+\index{Klammern!Vorrangregeln überschreiben}
 
 -   *P*arentheses (Klammern) haben den höchsten Vorrang und können verwendet werden, um die Auswertung eines Ausdrucks in der gewünschten Reihenfolge zu erzwingen. Da Ausdrücke in Klammern zuerst ausgewertet werden, ist `2 * (3-1)` gleich 4 und `(1+1)**(5-2)` gleich 8. Sie können Klammern auch verwenden, um einen Ausdruck leichter lesbar zu machen, wie in `(Minute * 100) / 60`, auch wenn dies das Ergebnis nicht ändert.
 
@@ -297,7 +298,7 @@ Division mit Rest
 -----------------
 
 \index{Modulo-Operator}
-\index{operator!modulus}
+\index{Operator!Modulo}
 
 Der *Modulo-Operator* arbeitet mit ganzen Zahlen und liefert den Rest, wenn der erste Operand durch den zweiten geteilt wird. In Python ist der Modulo-Operator ein Prozentzeichen (`%`). Die Syntax ist die gleiche wie bei den anderen Operatoren:
 
@@ -321,8 +322,8 @@ Sie können auch die äußerste rechte Stelle einer Zahl extrahieren. Zum Beispi
 Operationen mit Zeichenketten
 -----------------------------
 
-\index{string!operation}
-\index{operator!string}
+\index{Zeichenkette!Operation}
+\index{Operator!Zeichenkette}
 
 Der Operator `+` arbeitet mit Zeichenketten, aber es ist keine Addition im mathematischen Sinne. Stattdessen führt er eine *Konkatenation* (Verkettung) durch, d. h. er verbindet die Zeichenketten, indem er sie Ende an Ende verknüpft. Zum Beispiel:
 
@@ -406,7 +407,7 @@ ValueError: invalid literal for int() with base 10:
 Wir werden später sehen, wie diese Art von Fehler zu behandeln ist.
 
 \index{ValueError}
-\index{exception!ValueError}
+\index{Ausnahme!ValueError}
 
 Kommentare
 ----------
@@ -511,15 +512,15 @@ Nach recht kurzer Zeit werden Sie die häufigsten reservierten Wörter kennen, u
 
 Die Teile des Codes, die von Python definiert sind (`for`, `in`, `print` und `:`), sind fett gedruckt, die vom Programmierer gewählten Variablen (`word` und `words`) sind nicht fett gedruckt. Viele Texteditoren sind sich der Python-Syntax bewusst und färben reservierte Wörter anders ein, um Ihnen Hinweise zu geben, Ihre Variablen und reservierten Wörter getrennt zu halten. Nach einer Weile werden Sie anfangen, Python zu lesen und schnell feststellen, was eine Variable und was ein reserviertes Wort ist.
 
-Fehlersuche
------------
+Debugging
+---------
 
-\index{debugging}
+\index{Debugging}
 
 An dieser Stelle ist der Syntaxfehler, den Sie am ehesten machen, ein illegaler Variablenname, wie `class` und `yield`, die Schlüsselwörter sind, oder `odd~job` und `US$`, die unzulässige Zeichen enthalten.
 
 \index{Syntaxfehler}
-\index{error!syntax}
+\index{Fehler!syntax}
 
 Wenn Sie ein Leerzeichen in einen Variablennamen setzen, denkt Python, dass es sich um zwei Operanden ohne einen Operator handelt:
 
@@ -542,7 +543,7 @@ Bei Syntaxfehlern sind die Fehlermeldungen nicht sehr hilfreich. Die häufigsten
 \index{use before def}
 \index{Ausnahme}
 \index{Laufzeitfehler}
-\index{error!runtime}
+\index{Fehler!Laufzeit}
 
 Der Laufzeitfehler, den Sie am ehesten machen, ist ein „use before definition“, d. h. der Versuch, eine Variable zu verwenden, bevor Sie einen Wert zugewiesen haben. Dies kann passieren, wenn Sie einen Variablennamen falsch schreiben:
 
@@ -556,7 +557,7 @@ Bei Variablennamen wird zwischen Groß- und Kleinschreibung unterschieden (engli
 
 \index{case-sensitivity, Variablennamen}
 \index{semantischer Fehler}
-\index{error!semantic}
+\index{Fehler!semantischer}
 
 An diesem Punkt ist die wahrscheinlichste Ursache für einen semantischen Fehler die Reihenfolge der Operationen. Um z. B. $1/2\pi$ auszuwerten, könnten Sie versucht sein, zu schreiben
 
@@ -606,7 +607,7 @@ Schlüsselwort
 Modulo-Operator
 :   Ein Operator, der mit einem Prozentzeichen (`%`) gekennzeichnet ist, der mit ganzen Zahlen arbeitet und den Rest ergibt, wenn eine Zahl durch eine andere dividiert wird.
 \index{Modulo-Operator}
-\index{operator!modulus}
+\index{Operator!Modulo}
 
 Operand
 :   Einer der Werte, mit dem ein Operator arbeitet.
