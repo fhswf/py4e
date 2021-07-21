@@ -60,7 +60,7 @@ Funktionen zur Typumwandlung
 
 Python bietet auch eingebaute Funktionen, die Werte von einem Typ in einen anderen konvertieren. Die Funktion `int` nimmt einen beliebigen Wert und konvertiert ihn in eine Ganzzahl, wenn sie es kann, oder beschwert sich andernfalls:
 
-\index{int Funktion}
+\index{int (Funktion)}
 \index{Funktion!int}
 
 ~~~~ {.python}
@@ -81,7 +81,7 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 
 `float` konvertiert Ganzzahlen und Zeichenketten in Fließkommazahlen:
 
-\index{float Funktion}
+\index{float (Funktion)}
 \index{Funktion!float}
 
 ~~~~ {.python}
@@ -93,7 +93,7 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 
 Schließlich wandelt `str` das Argument in eine Zeichenkette um:
 
-\index{str Funktion}
+\index{str (Funktion)}
 \index{Funktion!str}
 
 ~~~~ {.python}
@@ -106,9 +106,9 @@ Schließlich wandelt `str` das Argument in eine Zeichenkette um:
 Mathematische Funktionen
 ------------------------
 
-\index{math Modul}
+\index{math (Modul)}
 \index{Modul}
-\index{Modul-Objekt}
+\index{Modulobjekt}
 
 Python hat ein `math`-Modul, das die meisten der bekannten mathematischen Funktionen bereitstellt. Bevor wir das Modul verwenden können, müssen wir es importieren:
 
@@ -125,7 +125,7 @@ Diese Anweisung erzeugt ein *Modul-Objekt* namens `math`. Wenn Sie das Modulobje
 
 Das Modulobjekt enthält die im Modul definierten Funktionen und Variablen. Um auf eine der Funktionen zuzugreifen, müssen Sie den Namen des Moduls und den Namen der Funktion angeben, getrennt durch einen Punkt. Dieses Format wird als *Punkt-Notation* (englisch *dot notation*) bezeichnet.
 
-\index{Punkt-Notation}
+\index{Punktnotation}
 
 ~~~~ {.python}
 >>> ratio = signal_power / noise_power
@@ -137,9 +137,9 @@ Das Modulobjekt enthält die im Modul definierten Funktionen und Variablen. Um a
 
 Im ersten Beispiel wird der Logarithmus zur Basis 10 des Signal-Rausch-Verhältnisses berechnet. Das Mathematikmodul bietet auch eine Funktion namens `log`, die Logarithmen zur Basis e berechnet.
 
-\index{log Funktion}
+\index{log (Funktion)}
 \index{Funktion!log}
-\index{sine Funktion}
+\index{sine (Funktion)}
 \index{trigonometrische Funktion}
 
 Das zweite Beispiel ermittelt den Sinus von `radian`. Der Name der Variablen ist ein Hinweis darauf, dass `sin` und die anderen trigonometrischen Funktionen (`cos`, `tan`, etc.) Argumente im Bogenmaß annehmen. Um von Grad in Bogenmaß umzurechnen, dividieren Sie durch 360 und multiplizieren mit $2 \pi$:
@@ -157,7 +157,7 @@ Der Ausdruck `math.pi` holt die Variable `pi` aus dem Mathematikmodul. Der Wert 
 
 Wenn Sie sich in Trigonometrie auskennen, können Sie das vorherige Ergebnis überprüfen, indem Sie es mit der Quadratwurzel aus zwei geteilt durch zwei vergleichen:
 
-\index{sqrt Funktion}
+\index{sqrt (Funktion)}
 \index{Funktion!sqrt}
 
 ~~~~ {.python}
@@ -176,12 +176,12 @@ Bei gleichen Eingaben erzeugen die meisten Computerprogramme jedes Mal die gleic
 
 Ein Programm wirklich nicht-deterministisch zu machen, erweist sich als nicht so einfach, aber es gibt Möglichkeiten, es zumindest nicht-deterministisch erscheinen zu lassen. Eine davon ist, *Algorithmen* zu verwenden, die *Pseudozufallszahlen* erzeugen. Pseudozufallszahlen sind nicht wirklich zufällig, da sie durch eine deterministische Berechnung erzeugt werden, aber allein durch das Betrachten der Zahlen ist es nahezu unmöglich, sie von Zufallszahlen zu unterscheiden.
 
-\index{random Modul}
+\index{random (Modul)}
 \index{Modul!random}
 
 Das Modul `random` stellt Funktionen zur Verfügung, die Pseudozufallszahlen erzeugen (die von hier an einfach als „zufällig“ bezeichnet werde).
 
-\index{random Funktion}
+\index{random (Funktion)}
 \index{Funktion!random}
 
 Die Funktion `random` liefert eine zufällige Fließkommazahl zwischen 0,0 und 1,0 (einschließlich 0,0, aber ausschließlich 1,0). Jedes Mal, wenn Sie `random` aufrufen, erhalten Sie die nächste Zahl langen Zufallszahlenfolge. Um ein Beispiel zu sehen, führen Sie diese Schleife aus:
@@ -213,7 +213,7 @@ Dieses Programm erzeugt die folgende Liste von 10 Zufallszahlen zwischen 0,0 und
 
 Die Funktion `random` ist nur eine von vielen Funktionen, die mit Zufallszahlen umgehen. Die Funktion `randint` nimmt die Parameter `low` und `high` und gibt eine ganze Zahl zwischen `low` und `high` (einschließlich) zurück.
 
-\index{randint Funktion}
+\index{randint (Funktion)}
 \index{Funktion!randint}
 
 ~~~~ {.python}
@@ -225,7 +225,7 @@ Die Funktion `random` ist nur eine von vielen Funktionen, die mit Zufallszahlen 
 
 Um ein Element aus einer Sequenz zufällig auszuwählen, können Sie `choice` verwenden:
 
-\index{choice Funktion}
+\index{choice (Funktion)}
 \index{Funktion!choice}
 
 ~~~~ {.python}
@@ -257,7 +257,7 @@ def print_lyrics():
 
 `def` ist ein Schlüsselwort, das anzeigt, dass es sich um eine Funktionsdefinition handelt. Der Name der Funktion ist `print_lyrics`. Die Regeln für Funktionsnamen sind die gleichen wie für Variablennamen: Buchstaben, Zahlen und einige Satzzeichen sind zulässig, aber das erste Zeichen darf keine Zahl sein. Sie können kein Schlüsselwort als Funktionsnamen verwenden, und Sie sollten vermeiden, dass eine Variable und eine Funktion denselben Namen haben.
 
-\index{def Schlüsselwort}
+\index{def (Schlüsselwort)}
 \index{Schlüsselwort!def}
 \index{Argument}
 
@@ -463,11 +463,11 @@ math.sqrt(5)
 Dieses Skript berechnet die Quadratwurzel aus 5, aber da es das Ergebnis nicht in einer Variablen speichert oder das Ergebnis anzeigt, ist es nicht sehr nützlich.
 
 \index{interaktiver Modus}
-\index{Skript-Modus}
+\index{Skriptmodus}
 
 Void-Funktionen können etwas auf dem Bildschirm anzeigen oder einen anderen Effekt haben, aber sie haben keinen Rückgabewert. Wenn Sie versuchen, das Ergebnis einer Variablen zuzuweisen, erhalten Sie einen speziellen Wert namens `None`.
 
-\index{None, Wert}
+\index{None (Wert)}
 \index{Wert!None}
 
 ~~~~ {.python}
@@ -546,7 +546,7 @@ deterministisch
 
 Punkt-Notation
 :   Die Syntax für den Aufruf einer Funktion in einem anderen Modul durch Angabe des Modulnamens, gefolgt von einem Punkt und dem Funktionsnamen.
-\index{Punkt-Notation}
+\index{Punktnotation}
 
 Programmablauf
 :   Die Reihenfolge, in der Anweisungen während eines Programmlaufs ausgeführt werden.
@@ -579,7 +579,7 @@ Importanweisung
 
 Modul-Objekt
 :   Ein durch eine `import`-Anweisung erzeugter Wert, der den Zugriff auf die in einem Modul definierten Daten und den Code ermöglicht.
-\index{Modul-Objekt}
+\index{Modulobjekt}
 
 Parameter
 :   Ein Name, der innerhalb einer Funktion verwendet wird, um auf den als Argument übergebenen Wert zu verweisen.

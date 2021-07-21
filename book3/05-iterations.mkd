@@ -90,7 +90,7 @@ In the case of `countdown`, we can prove that the loop terminates because we kno
 
 Im Fall von `n` können wir beweisen, dass die Schleife endet, weil wir wissen, dass der Wert von `n` endlich ist, und wir können sehen, dass der Wert von `n` jedes Mal, wenn wir die Schleife durchlaufen, kleiner wird, so dass wir schließlich bei 0 ankommen müssen. In vielen anderen Fällen ist eine Schleife häufig unendlich, zum Beispiel weil sie überhaupt keinem Schleifenzähler hat.
 
-\index{break-Anweisung}
+\index{break (Anweisung)}
 \index{Anweisung!break}
 
 Manchmal möchte man erreichen, dass eine Schleife mitten im Schleifenrumpf abgebrochen wird. In diesem Fall können Sie absichtlich eine Endlosschleife schreiben (zum Beispiel mittels `True` als einziger Schleifenbedingung) und dann die Anweisung `break` verwenden, um *sofort* aus der Schleife herauszuspringen.
@@ -131,7 +131,7 @@ Diese Art, `while`-Schleifen zu schreiben, ist üblich, weil Sie die Bedingung a
 Abbrechen einer Iteration mit `continue`
 ----------------------------------------
 
-\index{continue-Anweisung}
+\index{continue (Anweisung)}
 \index{Anweisung!continue}
 
 Manchmal befinden Sie sich in einer Iteration einer Schleife und möchten die aktuelle Iteration beenden und sofort zur nächsten Iteration springen. In diesem Fall können Sie die Anweisung `continue` verwenden, um zur nächsten Iteration zu springen, ohne den Rest des Schleifenrumpfes in der aktuellen Iteration durchlaufen zu müssen.
@@ -246,7 +246,7 @@ Weder die Zählschleife noch die Summierschleife sind in der Praxis besonders n�
 
 \index{Schleife!Maximum}
 \index{Schleife!Minimum}
-\index{None, Wert}
+\index{None (Wert)}
 \index{Wert!None}
 
 Um den größten Wert in einer Liste oder Folge zu finden, konstruieren wir die folgende Schleife:

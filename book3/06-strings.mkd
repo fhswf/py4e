@@ -6,8 +6,8 @@ Eine Zeichenkette ist eine Folge von Einzelzeichen
 --------------------------------------------------
 
 \index{Folge}
-\index{Einzelzeichen (Character)}
-\index{indexbasierter Zugriffsoperator}\index{Zugriffsoperator, indexbasiert}
+\index{Einzelzeichen}\index{Character}
+\index{Indexoperator}\index{Zugriff, indexbasiert}
 \index{Operator!indexbasierter Zugriff}
 
 Eine Zeichenkette (englisch *String*) ist eine Folge einzelner Zeichen (englisch *Character*). Sie können mit dem indexbasierten Zugriffsoperator (auch Klammeroperator genannt) auf einzelne Zeichen zugreifen:
@@ -62,7 +62,7 @@ TypeError: string indices must be integers
 Länge einer Zeichenkette
 ------------------------
 
-\index{len, Funktion}
+\index{len (Funktion)}
 \index{Funktion!len}
 
 `len` ist eine eingebaute Funktion, die die Anzahl der Zeichen in einer Zeichenkette zurückgibt:
@@ -200,7 +200,7 @@ The "object" in this case is the string and the "item" is the character you trie
 Das „Objekt“ ist in diesem Fall die Zeichenkette und das „Element“ ist das Zeichen, das Sie versucht haben zuzuweisen. Im Moment ist ein *Objekt* dasselbe wie ein Wert, aber wir werden diese Definition später verfeinern. Ein *Element* ist einer der Werte in einer Sequenz.
 
 \index{Objekt}
-\index{Element-Zuweisung}
+\index{Elementzuweisung}
 \index{Zuweisung!Element}
 \index{Unveränderlichkeit}
 
@@ -245,7 +245,7 @@ Dieses Programm demonstriert ein Vorgehen, das man als *Zähler* bezeichnet kön
 Der `in`-Operator
 -----------------
 
-\index{in-Operator}
+\index{in (Operator)}
 \index{Operator!in}
 \index{boolescher Operator}
 \index{Operator!boolescher}
@@ -334,7 +334,7 @@ Zum Beispiel nimmt die Methode `upper` eine Zeichenkette entgegen und gibt eine 
 
 Anstelle der Funktionssyntax `upper(word)` wird die Methodensyntax `word.upper()` verwendet.
 
-\index{Punkt-Notation}
+\index{Punktnotation}
 
 ~~~~ {.python}
 >>> word = 'banana'
@@ -411,7 +411,7 @@ True
 
 Im letzten Beispiel wird die Methode `lower` aufgerufen und dann wird mit `startswith` geprüft, ob die resultierende klein geschriebene Zeichenkette mit dem Buchstaben „h“ beginnt. Solange wir mit der Reihenfolge vorsichtig sind, können wir mehrere Methodenaufrufe in einem einzigen Ausdruck machen.
 
-\index{count-Methode}
+\index{count (Methode)}
 \index{Methode!count}
 
 **Übung 4: Es gibt eine String-Methode namens `count`, die der Funktion in der vorherigen Übung ähnlich ist. Lesen Sie die Dokumentation zu dieser Methode unter:**

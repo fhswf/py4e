@@ -167,7 +167,7 @@ Eine *Anweisung* ist eine Einheit von Code, die der Python-Interpreter ausführe
 
 \index{Anweisung}
 \index{interaktiver Modus}
-\index{Skript-Modus}
+\index{Skriptmodus}
 
 Wenn Sie eine Anweisung im interaktiven Modus eingeben, führt der Interpreter sie aus und zeigt das Ergebnis an, falls es eines gibt.
 
@@ -193,7 +193,7 @@ Die Zuweisung erzeugt keine Ausgabe.
 Operatoren und Operanden
 ------------------------
 
-\index{Operator, arithmetisch}
+\index{Operator!arithmetisch}
 \index{arithmetischer Operator}
 \index{Operand}
 \index{Ausdruck}
@@ -297,7 +297,7 @@ Setzen Sie im Zweifelsfall immer Klammern in Ihre Ausdrücke, um sicherzustellen
 Division mit Rest
 -----------------
 
-\index{Modulo-Operator}
+\index{Modulo (Operator)}
 \index{Operator!Modulo}
 
 Der *Modulo-Operator* arbeitet mit ganzen Zahlen und liefert den Rest, wenn der erste Operand durch den zweiten geteilt wird. In Python ist der Modulo-Operator ein Prozentzeichen (`%`). Die Syntax ist die gleiche wie bei den anderen Operatoren:
@@ -606,7 +606,7 @@ Schlüsselwort
 
 Modulo-Operator
 :   Ein Operator, der mit einem Prozentzeichen (`%`) gekennzeichnet ist, der mit ganzen Zahlen arbeitet und den Rest ergibt, wenn eine Zahl durch eine andere dividiert wird.
-\index{Modulo-Operator}
+\index{Modulo (Operator)}
 \index{Operator!Modulo}
 
 Operand

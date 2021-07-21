@@ -21,8 +21,8 @@ False
 
 `True` und `False` sind spezielle Werte, die zur Klasse `bool` gehören; sie sind keine Zeichenketten:
 
-\index{True Wahrheitswert}
-\index{False Wahrheitswert}
+\index{True (Wahrheitswert)}
+\index{False (Wahrheitswert)}
 \index{Wert!True}
 \index{Wert!False}
 \index{bool Datentyp}
@@ -91,7 +91,7 @@ Bedingte Ausführung
 
 \index{bedingte Anweisung}
 \index{Anweisung!bedingte}
-\index{if-Anweisung}
+\index{if (Anweisung)}
 \index{Anweisung!if}
 \index{bedingte Ausführung}
 
@@ -117,7 +117,7 @@ Wenn die logische Bedingung wahr ist, dann wird die eingerückte Anweisung ausge
 
 Es gibt keine Begrenzung für die Anzahl der Anweisungen, die im Rumpf erscheinen können, aber es muss mindestens eine geben. Gelegentlich ist es nützlich, einen Block ohne Anweisungen zu haben (normalerweise als Platzhalter für Code, den Sie noch nicht geschrieben haben). In diesem Fall können Sie die Anweisung `pass` verwenden, die nichts tut.
 
-\index{pass Statement}
+\index{pass (Anweisung)}
 \index{Anweisung!pass}
 
 ~~~~ {.python}
@@ -155,7 +155,7 @@ Alternative Ausführung
 ----------------------
 
 \index{alternative Ausführung}
-\index{else Schlüsselwort}
+\index{else (Schlüsselwort)}
 \index{Schlüsselwort!else}
 
 Eine zweite Form der `if`-Anweisung ist die *alternative Ausführung*, bei der es zwei Möglichkeiten gibt und die Bedingung bestimmt, welche davon ausgeführt wird. Die Syntax sieht wie folgt aus:
@@ -198,7 +198,7 @@ else:
 
 Es gibt keine Begrenzung für die Anzahl der `elif`-Anweisungen. Wenn es eine `else`-Klausel gibt, muss sie am Ende stehen, aber es muss nicht unbedingt eine geben.
 
-\index{elif Schlüsselwort}
+\index{elif (Schlüsselwort)}
 \index{Schlüsselwort!elif}
 
 ~~~~ {.python}
@@ -322,7 +322,7 @@ Die Behandlung einer Ausnahme mit einer `try`-Anweisung wird als *Fangen* einer 
 Abgekürzte Auswertung logischer Ausdrücke
 -----------------------------------------
 
-\index{abgekürzte Auswertung}
+\index{verkürzte Auswertung}\index{short circuit}
 
 Wenn Python einen logischen Ausdruck wie `x >= 2 and (x/y) > 2` verarbeitet, wertet es den Ausdruck von links nach rechts aus. Aufgrund der Definition von `and` ist, wenn `x` kleiner als 2 ist, der Ausdruck `x >= 2` `False` und somit ist der gesamte Ausdruck `False`, unabhängig davon, ob `(x/y) > 2` als `True` oder `False` ausgewertet wird.
 
@@ -459,7 +459,7 @@ Traceback
 
 abgekürzte Auswertung
 :   Wenn Python die Auswertung eines logischen Ausdrucks teilweise durchläuft und die Auswertung anhält, weil Python den Endwert für den Ausdruck kennt, ohne den Rest des Ausdrucks auswerten zu müssen.
-\index{abgekürzte Auswertung}
+\index{verkürzte Auswertung}\index{short circuit}
 
 Übungen
 -------
