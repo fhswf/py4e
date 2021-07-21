@@ -16,7 +16,7 @@ Inhaltskapitel:
 - [x] 06-strings.mkd
 - [x] 07-files.mkd
 - [x] 08-lists.mkd
-- [ ] 09-dictionaries.mkd
+- [x] 09-dictionaries.mkd
 - [ ] 10-tuples.mkd
 - [ ] 11-regex.mkd
 - [ ] 12-network.mkd
@@ -33,14 +33,14 @@ Appendix:
 ## Allgemeines
 
 - Deutsche Anführungszeichen im Fließtext verwenden: nicht "...", sondern „...“
-- Darauf achten, dass in der Übersetzung Backticks (`` ` ``) erhalten bleiben (zur Auszeichnung von Code mit Markdown).
+- Darauf achten, dass in der Übersetzung Backticks (`````) erhalten bleiben (zur Auszeichnung von Code mit Markdown).
 - Eine `.mkd`-Datei muss zwingend mit **zwei** Leerzeilen schließen, damit beim Kompilieren die nächste Kapitelüberschrift als solche erkannt wird.
 - Die Zeilen eines Absatzes vorzugsweise zusammenführen.
 - Englische Begriffe, für die eine etablierte deutsche Übersetzungen existiert, sollten bei der ersten Einführung des Begriffs in Klammern genannt werden (sofern der englische Begriff auch im Deutschen geläufig ist). Zum Beispiel: `Eine Zeichenkette (englisch *String*) ist eine Folge einzelner Zeichen (englisch *Character*).`
 
 ## Übersetzungstabellen
 
-Übersetzungstabellen zum Zwecke einer einheitlichen Übersetzung. Übersetzungen gelten kapitelübergreifend und werden hier nicht doppelt aufgeführt. Bitte die Suchfunktion verwenden. In erster Linie geht es hier um das Festlegen sinnvoller und einheitlicher Indexeinträge. Bitte  unbedingt diese Übersetzungen hier verwenden; Änderung nur nach Rücksprache vornehmen.
+Übersetzungstabellen zum Zwecke einer einheitlichen Übersetzung. Übersetzungen gelten kapitelübergreifend und werden hier nicht doppelt aufgeführt. Bitte die Suchfunktion verwenden. In erster Linie geht es hier um das Festlegen sinnvoller und einheitlicher Indexeinträge. Bitte unbedingt diese Übersetzungen hier verwenden; Änderung nur nach Rücksprache vornehmen.
 
 ## Änderungen
 
@@ -49,12 +49,14 @@ Skript für Änderungen:
 ```
 #!/bin/bash
 
-for f in *.mkd
+for chapter in *.mkd
 do
-    sed -i 's/xxx/yyy/g' "$f"
-    echo "$f"
+    sed -i 's/xxx/yyy/g' "$chapter"
+    echo "$chapter"
 done
 ```
+
+Mit Bedacht verwenden und **nicht** für alleinstehende Wörter, also nur für mit Markdown/LaTeX ausgezeichnete Sequenzen wie Indexeinträge.
 
 ### Kapitel 2
 
@@ -442,4 +444,44 @@ line slicing : Zeilen-Slicing
 \index{copy!to avoid aliasing} : \index{Kopieren!um Aliase zu vermeiden}
 \index{equivalent} : \index{äquivalent}
 \index{identical} : \index{identisch}
+```
+
+### Kapitel 9
+
+```
+\index{dictionary} : \index{Wörterbuch}
+\index{type!dict} : \index{Datentyp!dict}
+\index{key} : \index{Schlüssel}\index{Key}
+\index{key-value pair} : \index{Key-Value-Paar}\index{Schlüssel-Wert-Paar}
+\index{dict function} : \index{dict (Funktion)}
+\index{function!dict} : \index{Funktion!dict}
+\index{squiggly bracket} : \index{geschweifte Klammern}
+\index{bracket!squiggly} : \index{Klammern!geschweift}
+\index{exception!KeyError} : \index{Ausnahme!KeyError}
+\index{membership!dictionary} : \index{Zugehörigkeit!Wörterbuch}
+\index{values method} : \index{values (Methode)}
+\index{method!values} : \index{Methode!values}
+\index{hash table} : \index{Hashtabelle}
+\index{set membership} : \index{Menge, Zugehörigkeit}\index{Set, Zugehörigkeit}
+\index{membership!set} : \index{Zugehörigkeit!Menge (Set)}
+\index{implementation} : \index{Implementation}\index{Implementierung}
+\index{histogram} : \index{Histogramm}
+\index{frequency} : \index{Häufigkeit}
+\index{get method} : \index{get (Methode)}
+\index{method!get} : \index{Methode!get}
+\index{nested loops} : \index{verschachtelte Schleifen}
+\index{loop!nested} : \index{Schleife!verschachtelt}
+\index{Romeo and Juliet} : \index{Romeo and Juliet}
+\index{dictionary!looping with} : \index{Wörterbuch!Iteration durch}
+\index{looping!with dictionaries} : \index{Schleife!über Wörterbuch}\index{Iteration!durch Wörterbuch}
+\index{keys method} : \index{keys (Methode)}
+\index{method!keys} : \index{Methode!keys}
+\index{sanity check} : \index{Plausibilitätsprüfung}
+\index{consistency check} : \index{Konsistenzprüfung}
+\index{hashtable} : \index{Hashtabelle}
+\index{hash function} : \index{Hashfunktion}
+\index{lookup} : \index{Lookup}
+lookup : Lookup
+\index{comparable} : \index{vergleichbar}
+\index{parentheses!tuples in} : \index{Klammern!Tupeln innerhalb}
 ```
