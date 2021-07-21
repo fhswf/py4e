@@ -1,51 +1,43 @@
 
-Lists
-=====
+Listen
+======
 
-\index{list}
-\index{type!list}
+\index{Liste}
+\index{Datentyp!Liste}
 
-A list is a sequence
---------------------
+Listen sind Folgen von Werten
+-----------------------------
 
-Like a string, a *list* is a sequence of values. In a
-string, the values are characters; in a list, they can be any type. The
-values in list are called *elements* or sometimes
-*items*.
+Wie eine Zeichenkette ist auch eine *Liste* eine Folge von Werten. In einer Zeichenkette sind die Werte Zeichen; in einer Liste können sie von beliebigem Typ sein. Die Werte in einer Liste werden *Elemente* oder manchmal *Token* genannt.
 
-\index{element}
-\index{sequence}
-\index{item}
+\index{Element}
+\index{Folge}
+\index{Element}
 
-There are several ways to create a new list; the simplest is to enclose
-the elements in square brackets ("[" and "]"):
+Es gibt mehrere Möglichkeiten, eine neue Liste zu erstellen; die einfachste ist, die Elemente in eckige Klammern zu setzen (`[` und `]`):
 
 ~~~~ {.python}
 [10, 20, 30, 40]
 ['crunchy frog', 'ram bladder', 'lark vomit']
 ~~~~
 
-The first example is a list of four integers. The second is a list of
-three strings. The elements of a list don't have to be the same type.
-The following list contains a string, a float, an integer, and (lo!)
-another list:
+Das erste Beispiel ist eine Liste mit vier Ganzzahlen. Das zweite ist eine Liste mit drei Zeichenketten. Die Elemente einer Liste müssen nicht vom gleichen Typ sein. Die folgende Liste enthält eine Zeichenkette, eine Gleitkommazahl, eine Ganzzahl und selbst eine weitere (!) Liste:
 
 ~~~~ {.python}
 ['spam', 2.0, 5, [10, 20]]
 ~~~~ 
 
-A list within another list is *nested*.
+Eine Liste innerhalb einer anderen Liste ist *verschachtelt*.
 
-\index{nested list}
-\index{list!nested}
+\index{verschachtelte Liste}
+\index{Liste!verschachtelt}
 
-A list that contains no elements is called an empty list; you can create
-one with empty brackets, `[]`.
+Eine Liste, die keine Elemente enthält, wird als leere Liste bezeichnet; Sie können eine solche mit leeren Klammern `[]` erstellen.
 
-\index{empty list}
-\index{list!empty}
+\index{leere Liste}
+\index{Liste!leer}
 
-As you might expect, you can assign list values to variables:
+Wie Sie vielleicht erwarten, können Sie Variablen Listenwerte zuweisen:
 
 ~~~~ {.python .trinket}
 >>> cheeses = ['Cheddar', 'Edam', 'Gouda']
@@ -55,34 +47,30 @@ As you might expect, you can assign list values to variables:
 ['Cheddar', 'Edam', 'Gouda'] [17, 123] []
 ~~~~
 
-\index{assignment}
+\index{Zuweisung}
 
-Lists are mutable
+Listen sind veränderbar
 -----------------
 
-\index{list!element}
-\index{access}
-\index{index}
+\index{Liste!Element}
+\index{Zugriff}
+\index{Index}
 \index{}
-\index{bracket operator}
-\index{operator!bracket}
+\index{Indexoperator}\index{Zugriff, indexbasiert}
+\index{Operator!indexbasierter Zugriff}
 
-The syntax for accessing the elements of a list is the same as for
-accessing the characters of a string: the bracket operator. The
-expression inside the brackets specifies the index. Remember that the
-indices start at 0:
+Die Syntax für den Zugriff auf die Elemente einer Liste ist die gleiche wie für den Zugriff auf die Zeichen einer Zeichenkette: der indexbasierte Zugriffsoperator oder auch Klammeroperator. Der Ausdruck innerhalb der Klammern gibt den Index an. Denken Sie daran, dass die Indizes bei 0 beginnen:
 
 ~~~~ {.python}
 >>> print(cheeses[0])
 Cheddar
 ~~~~
 
-Unlike strings, lists are mutable because you can change the order of
-items in a list or reassign an item in a list. When the bracket operator
-appears on the left side of an assignment, it identifies the element of
-the list that will be assigned.
+Unlike strings, lists are mutable because you can change the order of items in a list or reassign an item in a list. When the bracket operator appears on the left side of an assignment, it identifies the element of the list that will be assigned.
 
-\index{mutability}
+Im Gegensatz zu Strings sind Listen veränderbar, da Sie die Reihenfolge der Elemente in einer Liste ändern oder einem Element in einer Liste einen neuen Wert zuweisen können. Wenn der Klammeroperator auf der linken Seite einer Zuweisung erscheint, identifiziert er das Element der Liste, dem ein neuer Wert zugewiesen werden soll.
+
+\index{Veränderbarkeit}
 
 ~~~~ {.python .trinket}
 >>> numbers = [17, 123]
@@ -91,39 +79,32 @@ the list that will be assigned.
 [17, 5]
 ~~~~
 
-The one-th element of `numbers`, which used to be 123, is
-now 5.
+Das Element an der Indexposition 1 von `numbers`, welches zuvor `123` war, ist nun `5`.
 
-\index{index!starting at zero}
-\index{zero, index starting at}
+\index{Index!beginnt mit Null}
+\index{Null, Index beginnt mit}
 
-You can think of a list as a relationship between indices and elements.
-This relationship is called a *mapping*; each index "maps
-to" one of the elements.
+Sie können sich eine Liste als eine Beziehung zwischen Indizes und Elementen vorstellen. Diese Beziehung wird als *Mapping* oder *Abbildung* bezeichnet; jeder Index wird auf eines der Elemente „abgebildet“.
 
-\index{item assignment}
-\index{assignment!item}
+\index{Elementzuweisung}
+\index{Zuweisung!Element}
 
-List indices work the same way as string indices:
+Listenindizes funktionieren auf die gleiche Weise wie Zeichenketten-Indizes:
 
--   Any integer expression can be used as an index.
+-   Jeder ganzzahlige Ausdruck kann als Index verwendet werden.
 
--   If you try to read or write an element that does not exist, you get
-    an `IndexError`.
+-   Wenn Sie versuchen, ein Element zu lesen oder zu schreiben, das nicht vorhanden ist, erhalten Sie einen `IndexError`.
 
-\index{exception!IndexError}
+\index{Ausnahme!IndexError}
 \index{IndexError}
 
--   If an index has a negative value, it counts backward from the end of
-    the list.
+-   Wenn ein Index einen negativen Wert hat, zählt er vom Ende der Liste rückwärts.
 
-\index{list!index}
-\index{list!membership}
-\index{membership!list}
-\index{in operator}
-\index{operator!in}
+\index{Liste!Index}
+\index{in (Operator)}
+\index{Operator!in}
 
-The `in` operator also works on lists.
+Der `in`-Operator funktioniert auch bei Listen.
 
 ~~~~ {.python .trinket}
 >>> cheeses = ['Cheddar', 'Edam', 'Gouda']
@@ -133,72 +114,61 @@ True
 False
 ~~~~
 
-Traversing a list
+Traversieren einer Liste
 -----------------
 
-\index{list!traversal}
-\index{traversal!list}
-\index{for loop}
-\index{loop!for}
-\index{statement!for}
+\index{Liste!Traversieren}
+\index{Traversieren!Liste}
+\index{for-Schleife}
+\index{Schleife!for}
 
-The most common way to traverse the elements of a list is with a
-`for` loop. The syntax is the same as for strings:
+Die gebräuchlichste Art, die Elemente einer Liste zu durchlaufen, ist mit einer `for`-Schleife. Die Syntax ist die gleiche wie bei Zeichenketten:
 
 ~~~~ {.python}
 for cheese in cheeses:
     print(cheese)
 ~~~~
 
-This works well if you only need to read the elements of the list. But
-if you want to write or update the elements, you need the indices. A
-common way to do that is to combine the functions `range` and
-`len`:
+Das funktioniert gut, wenn Sie die Elemente der Liste nur lesen müssen. Aber wenn Sie die Elemente schreiben oder aktualisieren wollen, brauchen Sie die Indizes. Ein üblicher Weg, das zu tun, ist die Kombination der Funktionen `range` und `len`:
 
-\index{looping!with indices}
-\index{index!looping with}
+\index{Schleife!mit Indizes}\index{Iteration!mit Indizes}
+\index{Index!mit Schleifen}
 
 ~~~~ {.python}
 for i in range(len(numbers)):
     numbers[i] = numbers[i] * 2
 ~~~~
 
-This loop traverses the list and updates each element. `len`
-returns the number of elements in the list. `range` returns a
-list of indices from 0 to $n-1$, where $n$ is the length of the list.
-Each time through the loop, `i` gets the index of the next
-element. The assignment statement in the body uses `i` to
-read the old value of the element and to assign the new value.
+Diese Schleife durchläuft die Liste und aktualisiert jedes Element. `len` gibt die Anzahl der Elemente in der Liste zurück. `range` gibt eine Liste von Indizes von 0 bis $n-1$ zurück, wobei $n$ die Länge der Liste ist. Jedes Mal, wenn die Schleife durchlaufen wird, erhält `i` den Index des nächsten Elements. Die Zuweisungsanweisung im Rumpf verwendet `i`, um den alten Wert des Elements zu lesen und den neuen Wert zuzuweisen.
 
-\index{item update}
-\index{update!item}
+\index{Elementaktualisierung}
+\index{Aktualisierung!Element}
 
-A `for` loop over an empty list never executes the body:
+Eine `for`-Schleife über eine leere Liste führt den Rumpf nie aus:
 
 ~~~~ {.python}
 for x in empty:
     print('This never happens.')
 ~~~~
 
-Although a list can contain another list, the nested list still counts
-as a single element. The length of this list is four:
+Obwohl eine Liste eine weitere Liste enthalten kann, zählt die verschachtelte Liste immer noch als ein einzelnes Element. Die Länge dieser Liste ist vier:
 
-\index{nested list}
-\index{list!nested}
+\index{verschachtelte Liste}
+\index{Liste!verschachtelt}
 
 ~~~~ {.python}
 ['spam', 1, ['Brie', 'Roquefort', 'Pol le Veq'], [1, 2, 3]]
 ~~~~
 
-List operations
----------------
+Listen-Operationen
+------------------
 
-\index{list!operation}
+\index{Liste!Operation}
 
-The `+` operator concatenates lists:
+Der Operator `+` verkettet Listen:
 
-\index{concatenation!list}
-\index{list!concatenation}
+\index{Konkatenation!Liste}
+\index{Liste!Konkatenation}
 
 ~~~~ {.python .trinket}
 >>> a = [1, 2, 3]
@@ -208,10 +178,10 @@ The `+` operator concatenates lists:
 [1, 2, 3, 4, 5, 6]
 ~~~~
 
-Similarly, the `*` operator repeats a list a given number of times:
+In ähnlicher Weise wiederholt der Operator `*` eine Liste eine bestimmte Anzahl von Malen:
 
-\index{repetition!list}
-\index{list!repetition}
+\index{Wiederholung!Liste}
+\index{Liste!Wiederholung}
 
 ~~~~ {.python .trinket}
 >>> [0] * 4
@@ -220,19 +190,18 @@ Similarly, the `*` operator repeats a list a given number of times:
 [1, 2, 3, 1, 2, 3, 1, 2, 3]
 ~~~~
 
-The first example repeats four times. The second example repeats the
-list three times.
+Das erste Beispiel wiederholt sich viermal. Im zweiten Beispiel wird die Liste dreimal wiederholt.
 
-List slices
------------
+Listen-Slicing
+--------------
 
-\index{slice operator}
-\index{operator!slice}
-\index{index!slice}
-\index{list!slice}
-\index{slice!list}
+\index{slice-Operator}
+\index{Operator!slice}
+\index{Index!slice}
+\index{Liste!slice}
+\index{slice!Liste}
 
-The slice operator also works on lists:
+Der Slice-Operator funktioniert auch bei Listen:
 
 ~~~~ {.python .trinket}
 >>> t = ['a', 'b', 'c', 'd', 'e', 'f']
@@ -244,29 +213,25 @@ The slice operator also works on lists:
 ['d', 'e', 'f']
 ~~~~
 
-If you omit the first index, the slice starts at the beginning. If you
-omit the second, the slice goes to the end. So if you omit both, the
-slice is a copy of the whole list.
+Wenn Sie den ersten Index weglassen, beginnt das Slice am Anfang. Wenn Sie den zweiten weglassen, geht das Slice bis zum Ende. Wenn Sie also beide weglassen, ist das Slice eine Kopie der gesamten Liste.
 
-\index{list!copy}
-\index{slice!copy}
-\index{copy!slice}
+\index{Liste!Kopieren}
+\index{slice!Kopieren}
+\index{Kopieren!slice}
 
 ~~~~ {.python}
 >>> t[:]
 ['a', 'b', 'c', 'd', 'e', 'f']
 ~~~~
 
-Since lists are mutable, it is often useful to make a copy before
-performing operations that fold, spindle, or mutilate lists.
+Da Listen veränderbar sind, ist es oft sinnvoll, eine Kopie zu erstellen, bevor Sie Operationen durchführen mit ihnen durchführen.
 
-\index{mutability}
+\index{Veränderbarkeit}
 
-A slice operator on the left side of an assignment can update multiple
-elements:
+Ein Slice-Operator auf der linken Seite einer Zuweisung kann mehrere Elemente aktualisieren:
 
-\index{slice!update}
-\index{update!slice}
+\index{slice!Aktualisierung}
+\index{Aktualisierung!slice}
 
 ~~~~ {.python .trinket}
 >>> t = ['a', 'b', 'c', 'd', 'e', 'f']
@@ -275,17 +240,16 @@ elements:
 ['a', 'x', 'y', 'd', 'e', 'f']
 ~~~~
 
-List methods
-------------
+Listenmethoden
+--------------
 
-\index{list!method}
-\index{method, list}
+\index{Liste!Methode}
+\index{Methode!Listen}
 
-Python provides methods that operate on lists. For example,
-`append` adds a new element to the end of a list:
+Python bietet Methoden, die auf Listen operieren. Zum Beispiel fügt `append` ein neues Element an das Ende einer Liste an:
 
-\index{append method}
-\index{method!append}
+\index{append (Methode)}
+\index{Methode!append}
 
 ~~~~ {.python .trinket}
 >>> t = ['a', 'b', 'c']
@@ -294,11 +258,10 @@ Python provides methods that operate on lists. For example,
 ['a', 'b', 'c', 'd']
 ~~~~
 
-`extend` takes a list as an argument and appends all of the
-elements:
+`extend` nimmt eine Liste als Argument und fügt alle Elemente an:
 
-\index{extend method}
-\index{method!extend}
+\index{extend (Methode)}
+\index{Methode!extend}
 
 ~~~~ {.python .trinket}
 >>> t1 = ['a', 'b', 'c']
@@ -308,12 +271,12 @@ elements:
 ['a', 'b', 'c', 'd', 'e']
 ~~~~
 
-This example leaves `t2` unmodified.
+In diesem Beispiel wird `t2` nicht verändert.
 
-`sort` arranges the elements of the list from low to high:
+`sort` ordnet die Elemente der Liste aufsteigend an:
 
-\index{sort method}
-\index{method!sort}
+\index{sort (Methode)}
+\index{Methode!sort}
 
 ~~~~ {.python .trinket}
 >>> t = ['d', 'c', 'e', 'b', 'a']
@@ -322,26 +285,23 @@ This example leaves `t2` unmodified.
 ['a', 'b', 'c', 'd', 'e']
 ~~~~
 
-Most list methods are void; they modify the list and return
-`None`. If you accidentally write `t = t.sort()`,
-you will be disappointed with the result.
+Die meisten Listenmethoden sind „void“, haben also *keinen* Rückgabewert; sie verändern die Liste und geben `None` zurück. Wenn Sie versehentlich `t = t.sort()` schreiben, werden Sie von dem Ergebnis enttäuscht sein.
 
-\index{void method}
-\index{method!void}
-\index{None special value}
-\index{special value!None}
+\index{void-Methode}
+\index{Methode!void}
+\index{None (Wert)}
+\index{Wert!None}
 
-Deleting elements
------------------
+Löschen von Elementen
+---------------------
 
-\index{element deletion}
-\index{deletion, element of list}
+\index{Element löschen}
+\index{Löschen, Listenelement}
 
-There are several ways to delete elements from a list. If you know the
-index of the element you want, you can use `pop`:
+Es gibt mehrere Möglichkeiten, Elemente aus einer Liste zu löschen. Wenn Sie den Index des gewünschten Elements kennen, können Sie `pop` verwenden:
 
-\index{pop method}
-\index{method!pop}
+\index{pop (Methode)}
+\index{Methode!pop}
 
 ~~~~ {.python .trinket}
 >>> t = ['a', 'b', 'c']
@@ -352,15 +312,12 @@ index of the element you want, you can use `pop`:
 b
 ~~~~
 
-`pop` modifies the list and returns the element that was
-removed. If you don't provide an index, it deletes and returns the last
-element.
+`pop` ändert die Liste und gibt das Element zurück, das entfernt wurde. Wenn Sie keinen Index angeben, löscht es das letzte Element und gibt es zurück.
 
-If you don't need the removed value, you can use the `del`
-operator:
+Wenn Sie den entfernten Wert nicht benötigen, können Sie den Operator `del` verwenden:
 
-\index{del operator}
-\index{operator!del}
+\index{del (Operator)}
+\index{Operator!del}
 
 ~~~~ {.python .trinket}
 >>> t = ['a', 'b', 'c']
@@ -369,11 +326,10 @@ operator:
 ['a', 'c']
 ~~~~
 
-If you know the element you want to remove (but not the index), you can
-use `remove`:
+Wenn Sie das Element kennen, das Sie entfernen möchten (aber nicht den Index), können Sie `remove` verwenden:
 
-\index{remove method}
-\index{method!remove}
+\index{remove (Methode)}
+\index{Methode!remove}
 
 ~~~~ {.python .trinket}
 >>> t = ['a', 'b', 'c']
@@ -382,13 +338,12 @@ use `remove`:
 ['a', 'c']
 ~~~~
 
-The return value from `remove` is `None`.
+Der Rückgabewert von `remove` ist `None`.
 
-\index{None special value}
-\index{special value!None}
+\index{None (Wert)}
+\index{Wert!None}
 
-To remove more than one element, you can use `del` with a
-slice index:
+Um mehr als ein Element zu entfernen, können Sie `del` mit einem Slice-Index verwenden:
 
 ~~~~ {.python .trinket}
 >>> t = ['a', 'b', 'c', 'd', 'e', 'f']
@@ -397,14 +352,12 @@ slice index:
 ['a', 'f']
 ~~~~
 
-As usual, the slice selects all the elements up to, but not including,
-the second index.
+Wie üblich wählt die Slice-Operation alle Elemente bis zu (aber nicht einschließlich) dem zweiten Index.
 
-Lists and functions
--------------------
+Listen und Funktionen
+---------------------
 
-There are a number of built-in functions that can be used on lists that
-allow you to quickly look through a list without writing your own loops:
+Es gibt eine Reihe von eingebauten Funktionen, die auf Listen angewendet werden können, mit denen Sie schnell eine Liste durchsehen können, ohne eigene Schleifen zu schreiben:
 
 ~~~~ {.python .trinket}
 >>> nums = [3, 41, 12, 9, 74, 15]
@@ -420,44 +373,33 @@ allow you to quickly look through a list without writing your own loops:
 25
 ~~~~
 
-The `sum()` function only works when the list elements are
-numbers. The other functions (`max()`, `len()`,
-etc.) work with lists of strings and other types that can be comparable.
+Die Funktion `sum()` funktioniert nur, wenn die Listenelemente Zahlen sind. Die anderen Funktionen (`max()`, `len()`, usw.) arbeiten mit Listen von Zeichenketten, aber auch anderen Datentypen, deren Werte miteinander verglichen werden können.
 
-We could rewrite an earlier program that computed the average of a list
-of numbers entered by the user using a list.
+Wir könnten ein früheres Programm umschreiben, das den Durchschnitt einer Liste von Zahlen berechnet, die vom Benutzer eingegeben wurden.
 
-First, the program to compute an average without a list:
+Zunächst das Programm zur Berechnung eines Durchschnitts ohne Liste:
 
 \VerbatimInput{../code3/avenum.py}
 
-In this program, we have `count` and `total`
-variables to keep the number and running total of the user's numbers as
-we repeatedly prompt the user for a number.
+In diesem Programm haben wir die Variablen `count` und `total`, um die Anzahl und die laufende Summe der Zahlen des Benutzers festzuhalten, während wir den Benutzer wiederholt nach einer Zahl fragen.
 
-We could simply remember each number as the user entered it and use
-built-in functions to compute the sum and count at the end.
+Wir könnten uns einfach jede Zahl merken, so wie der Benutzer sie eingegeben hat, und eingebaute Funktionen verwenden, um die Summe und die Anzahl am Ende zu berechnen.
 
 \VerbatimInput{../code3/avelist.py}
 
-We make an empty list before the loop starts, and then each time we have
-a number, we append it to the list. At the end of the program, we simply
-compute the sum of the numbers in the list and divide it by the count of
-the numbers in the list to come up with the average.
+Wir erstellen eine leere Liste, bevor die Schleife beginnt, und fügen dann jedes Mal, wenn wir eine neue Zahl bekommen, diese an die Liste an. Am Ende des Programms berechnen wir einfach die Summe der Zahlen in der Liste und teilen sie durch die Anzahl der Zahlen in der Liste, um den Durchschnitt zu ermitteln.
 
-Lists and strings
------------------
+Listen und Zeichenketten
+------------------------
 
-\index{list}
-\index{string}
-\index{sequence}
+\index{Liste}
+\index{Zeichenkette}
+\index{Folge}
 
-A string is a sequence of characters and a list is a sequence of values,
-but a list of characters is not the same as a string. To convert from a
-string to a list of characters, you can use `list`:
+Eine Zeichenkette ist eine Folge von Zeichen und eine Liste ist eine Folge von Werten, aber eine Liste von Zeichen ist nicht dasselbe wie eine Zeichenkette. Um von einer Zeichenkette in eine Liste von Zeichen zu konvertieren, können Sie `list` verwenden:
 
-\index{list!function}
-\index{function!list}
+\index{list!Funktion}
+\index{Funktion!list}
 
 ~~~~ {.python .trinket}
 >>> s = 'spam'
@@ -466,17 +408,12 @@ string to a list of characters, you can use `list`:
 ['s', 'p', 'a', 'm']
 ~~~~
 
-Because `list` is the name of a built-in function, you should
-avoid using it as a variable name. I also avoid the letter
-"l" because it looks too much like the number "1".
-So that's why I use "t".
+Da `list` der Name einer eingebauten Funktion ist, sollten Sie es vermeiden, ihn als Variablennamen zu verwenden. Ich vermeide auch den Buchstaben "l", weil er zu sehr wie die Zahl "1" aussieht. Deshalb verwende ich "t".
 
-The `list` function breaks a string into individual letters.
-If you want to break a string into words, you can use the
-`split` method:
+Die Funktion `list` zerlegt eine Zeichenkette in einzelne Buchstaben. Wenn Sie eine Zeichenkette in Wörter zerlegen wollen, können Sie die Methode `split` verwenden:
 
-\index{split method}
-\index{method!split}
+\index{split (Methode)
+\index{Methode!split}
 
 ~~~~ {.python .trinket}
 >>> s = 'pining for the fjords'
@@ -487,17 +424,13 @@ If you want to break a string into words, you can use the
 the
 ~~~~
 
-Once you have used `split` to break the string into a list of
-words, you can use the index operator (square bracket) to look at a
-particular word in the list.
+Nachdem Sie die Zeichenkette mit `split` in eine Liste von Wörtern zerlegt haben, können Sie den Indexoperator (eckige Klammer) verwenden, um ein bestimmtes Wort in der Liste zu betrachten.
 
-You can call `split` with an optional argument called a
-*delimiter* that specifies which characters to use as
-word boundaries. The following example uses a hyphen as a delimiter:
+Sie können `split` mit einem optionalen Argument (*Delimiter* genannt) aufrufen, das angibt, welche Zeichen als Wortgrenzen verwendet werden sollen. Das folgende Beispiel verwendet einen Bindestrich als Begrenzungszeichen:
 
-\index{optional argument}
-\index{argument!optional}
-\index{delimiter}
+\index{optionales Argument}
+\index{Argument!optional}
+\index{Delimiter}
 
 ~~~~ {.python .trinket}
 >>> s = 'spam-spam-spam'
@@ -506,14 +439,11 @@ word boundaries. The following example uses a hyphen as a delimiter:
 ['spam', 'spam', 'spam']
 ~~~~
 
-`join` is the inverse of `split`. It takes a list
-of strings and concatenates the elements. `join` is a string
-method, so you have to invoke it on the delimiter and pass the list as a
-parameter:
+`join` ist die Umkehrung von `split`. Es nimmt eine Liste von Strings und verkettet die Elemente. Da `join` eine String-Methode ist, müssen Sie sie auf den Delimiter aufrufen und die Liste als Parameter übergeben:
 
-\index{join method}
-\index{method!join}
-\index{concatenation}
+\index{join (Methode)}
+\index{Methode!join}
+\index{Konkatenation}
 
 ~~~~ {.python .trinket}
 >>> t = ['pining', 'for', 'the', 'fjords']
@@ -522,37 +452,28 @@ parameter:
 'pining for the fjords'
 ~~~~
 
-In this case the delimiter is a space character, so `join`
-puts a space between words. To concatenate strings without spaces, you
-can use the empty string, "", as a delimiter.
+In diesem Fall ist das Begrenzungszeichen ein Leerzeichen, also setzt `join` ein Leerzeichen zwischen die Wörter. Um Zeichenketten ohne Leerzeichen zu verketten, können Sie die leere Zeichenkette als Begrenzungszeichen verwenden.
 
-\index{empty string}
-\index{string!empty}
+\index{leere Zeichenkette}
+\index{Zeichenkette!leer}
 
-Parsing lines
--------------
+Parsen von Zeilen
+-----------------
 
-Usually when we are reading a file we want to do something to the lines
-other than just printing the whole line. Often we want to find the
-"interesting lines" and then *parse* the line to find
-some interesting *part* of the line. What if we wanted to print out the
-day of the week from those lines that start with "From "?
+Wenn wir eine Datei lesen, wollen wir normalerweise etwas anderes mit den Zeilen machen, als nur die ganze Zeile auszugeben. Oft wollen wir die „interessanten Zeilen“ finden und dann die Zeile *parsen*, um einen interessanten *Teil* der Zeile zu finden. Was wäre, wenn wir den Wochentag aus den Zeilen ausgeben wollten, die mit „From “ beginnen?
 
 ~~~~
 From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
 ~~~~
 
-The `split` method is very effective when faced with this
-kind of problem. We can write a small program that looks for lines where
-the line starts with "From ", `split` those lines, and then
-print out the third word in the line:
+Die Methode `split` ist bei dieser Art von Problem sehr hilfreich. Wir können ein kleines Programm schreiben, das nach Zeilen sucht, in denen die Zeile mit "From" beginnt, diese Zeilen mit `split` zerlegen, und dann das dritte Wort in der Zeile ausgibt:
 
 \VerbatimInput{../code3/search5.py}
 \begin{trinketfiles}
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-The program produces the following output:
+Das Programm erzeugt die folgende Ausgabe:
 
     Sat
     Fri
@@ -560,40 +481,33 @@ The program produces the following output:
     Fri
     ...
 
-Later, we will learn increasingly sophisticated techniques for picking
-the lines to work on and how we pull those lines apart to find the exact
-bit of information we are looking for.
+Später werden wir immer ausgefeiltere Techniken erlernen, wie wir die zu bearbeitenden Zeilen auswählen und wie wir diese Zeilen zerlegen, um genau die gesuchte Information zu finden.
 
-Objects and values
-------------------
+Objekte und Werte
+-----------------
 
-\index{object}
-\index{value}
+\index{Objekt}
+\index{Wert}
 
-If we execute these assignment statements:
+Wenn wir diese Zuweisungsanweisungen ausführen:
 
 ~~~~ {.python}
 a = 'banana'
 b = 'banana'
 ~~~~
 
-we know that `a` and `b` both refer to a string,
-but we don't know whether they refer to the *same* string. There are two
-possible states:
+wissen wir, dass `a` und `b` sich beide auf eine Zeichenkette beziehen, aber die Frage ist, ob sie sich auf die *selbe* Zeichenkette beziehen. Es gibt zwei denkbare Szenarien:
 
-\index{aliasing}
+\index{Alias}
 
-![Variables and Objects](height=0.5in@../images/list1)
+![Variablen und Objekte](height=0.5in@../images/list1)
 
-In one case, `a` and `b` refer to two different
-objects that have the same value. In the second case, they refer to the
-same object.
+In einem Fall beziehen sich `a` und `b` auf zwei verschiedene Objekte, die den gleichen Wert haben. Im zweiten Fall beziehen sie sich auf das gleiche Objekt.
 
-\index{is operator}
-\index{operator!is}
+\index{is (Operator)}
+\index{Operator!is}
 
-To check whether two variables refer to the same object, you can use the
-`is` operator.
+Um zu prüfen, ob zwei Variablen auf das selbe Objekt verweisen, können Sie den Operator `is` verwenden.
 
 ~~~~ {.python .trinket}
 >>> a = 'banana'
@@ -602,10 +516,9 @@ To check whether two variables refer to the same object, you can use the
 True
 ~~~~
 
-In this example, Python only created one string object, and both
-`a` and `b` refer to it.
+In diesem Beispiel hat Python nur ein String-Objekt erzeugt, und sowohl `a` als auch `b` beziehen sich darauf.
 
-But when you create two lists, you get two objects:
+Aber wenn Sie zwei Listen erstellen, erhalten Sie zwei Objekte:
 
 ~~~~ {.python .trinket}
 >>> a = [1, 2, 3]
@@ -614,32 +527,23 @@ But when you create two lists, you get two objects:
 False
 ~~~~
 
-In this case we would say that the two lists are
-*equivalent*, because they have the same elements, but
-not *identical*, because they are not the same object. If
-two objects are identical, they are also equivalent, but if they are
-equivalent, they are not necessarily identical.
+In diesem Fall würden wir sagen, dass die beiden Listen *äquivalent* sind, weil sie die gleichen Elemente haben, aber nicht *identisch*, weil sie nicht das selbe Objekt sind. Wenn zwei Objekte identisch sind, sind sie auch äquivalent, aber wenn sie äquivalent sind, sind sie nicht unbedingt identisch.
 
-\index{equivalence}
-\index{identity}
+\index{Äquivalenz}
+\index{Identität}
 
-Until now, we have been using "object" and "value" interchangeably, but
-it is more precise to say that an object has a value. If you execute
-`a = [1,2,3]`, `a` refers to a list object whose
-value is a particular sequence of elements. If another list has the same
-elements, we would say it has the same value.
+Bis jetzt haben wir „Objekt“ und „Wert“ austauschbar verwendet, aber es ist präziser zu sagen, dass ein Objekt einen Wert hat. Wenn Sie `a = [1,2,3]` ausführen, bezieht sich `a` auf ein Listenobjekt, dessen Wert eine bestimmte Folge von Elementen ist. Wenn eine andere Liste die gleichen Elemente hat, würden wir sagen, sie hat den gleichen Wert.
 
-\index{object}
-\index{value}
+\index{Objekt}
+\index{Wert}
 
-Aliasing
---------
+Aliase
+------
 
-\index{aliasing}
-\index{reference!aliasing}
+\index{Alias}
+\index{Referenz!Alias}
 
-If `a` refers to an object and you assign `b = a`,
-then both variables refer to the same object:
+Wenn sich `a` auf ein Objekt bezieht und Sie `b = a` zuweisen, dann beziehen sich beide Variablen auf das selbe Objekt:
 
 ~~~~ {.python .trinket}
 >>> a = [1, 2, 3]
@@ -648,19 +552,15 @@ then both variables refer to the same object:
 True
 ~~~~
 
-The association of a variable with an object is called a
-*reference*. In this example, there are two references to
-the same object.
+Die Assoziation einer Variablen mit einem Objekt wird als *Referenz* bezeichnet. In diesem Beispiel gibt es zwei Referenzen auf das selbe Objekt.
 
-\index{reference}
+\index{Referenz}
 
-An object with more than one reference has more than one name, so we say
-that the object is *aliased*.
+Ein Objekt mit mehr als einem Verweis hat mehr als einen Namen. Diese Namen bezeichnen wir als *Aliase* (Plural für *Alias*).
 
-\index{mutability}
+\index{Veränderbarkeit}
 
-If the aliased object is mutable, changes made with one alias affect the
-other:
+Wenn das referenzierte Objekt veränderbar ist, wirken sich Änderungen, die mit einem Alias vorgenommen werden, auch auf die anderen Aliase aus:
 
 ~~~~ {.python}
 >>> b[0] = 17
@@ -668,42 +568,36 @@ other:
 [17, 2, 3]
 ~~~~
 
-Although this behavior can be useful, it is error-prone. In general, it
-is safer to avoid aliasing when you are working with mutable objects.
+Dieses Verhalten kann zwar nützlich sein, ist aber fehleranfällig. Im Allgemeinen ist es sicherer, Aliasing zu vermeiden, wenn Sie mit veränderlichen Objekten arbeiten.
 
-\index{immutability}
+\index{Unveränderlichkeit}
 
-For immutable objects like strings, aliasing is not as much of a
-problem. In this example:
+Bei unveränderlichen Objekten wie Zeichenketten ist das Aliasing nicht so problematisch. In diesem Beispiel
 
 ~~~~ {.python}
 a = 'banana'
 b = 'banana'
 ~~~~
 
-it almost never makes a difference whether `a` and
-`b` refer to the same string or not.
+macht es fast nie einen Unterschied, ob sich `a` und `b` auf die selbe Zeichenkette beziehen oder nicht.
 
-List arguments
---------------
+Listen als Funktionsargumente
+-----------------------------
 
-\index{list!as argument}
-\index{argument}
-\index{argument!list}
-\index{reference}
-\index{parameter}
+\index{Liste!als Argument}
+\index{Argument}
+\index{Argument!Liste}
+\index{Referenz}
+\index{Parameter}
 
-When you pass a list to a function, the function gets a reference to the
-list. If the function modifies a list parameter, the caller sees the
-change. For example, `delete_head` removes the first element from a
-list:
+Wenn Sie eine Liste an eine Funktion übergeben, erhält die Funktion eine Referenz auf die Liste. Wenn die Funktion einen Listenparameter modifiziert, ist diese Änderung auch in der aufrufenden Umgebung sichtbar. Zum Beispiel entfernt `delete_head` das erste Element aus einer Liste:
 
 ~~~~ {.python}
 def delete_head(t):
     del t[0]
 ~~~~
 
-Here's how it is used:
+Die Funktion wird folgendermaßen verwendet:
 
 ~~~~ {.python .trinket}
 >>> letters = ['a', 'b', 'c']
@@ -712,18 +606,14 @@ Here's how it is used:
 ['b', 'c']
 ~~~~
 
-The parameter `t` and the variable `letters` are
-aliases for the same object.
+Der Parameter `t` und die Variable `letters` sind Aliasnamen für das selbe Objekt.
 
-It is important to distinguish between operations that modify lists and
-operations that create new lists. For example, the `append`
-method modifies a list, but the `+` operator creates a new
-list:
+Es ist wichtig, zwischen Operationen zu unterscheiden, die Listen verändern, und Operationen, die neue Listen erzeugen. Zum Beispiel verändert die Methode `append` eine Liste, aber der Operator `+` erzeugt eine neue Liste:
 
-\index{append method}
-\index{method!append}
-\index{list!concatenation}
-\index{concatenation!list}
+\index{append (Methode)}
+\index{Methode!append}
+\index{Liste!Konkatenation}
+\index{Konkatenation!Liste}
 
 ~~~~ {.python .trinket}
 >>> t1 = [1, 2]
@@ -740,33 +630,26 @@ None
 False
 ~~~~
 
-This difference is important when you write functions that are supposed
-to modify lists. For example, this function *does not* delete the head
-of a list:
+Dieser Unterschied ist wichtig, wenn Sie Funktionen schreiben, die Listen verändern sollen. Zum Beispiel löscht diese Funktion *nicht* den Kopf einer Liste:
 
 ~~~~ {.python}
 def bad_delete_head(t):
     t = t[1:]              # WRONG!
 ~~~~
 
-The slice operator creates a new list and the assignment makes
-`t` refer to it, but none of that has any effect on the list
-that was passed as an argument.
+Der Slice-Operator erzeugt eine neue Liste und die Zuweisung macht `t` zu einem Verweis auf diese Liste, aber nichts davon hat irgendeinen Effekt auf die Liste, die als Argument übergeben wurde.
 
-\index{slice operator}
-\index{operator!slice}
+\index{slice-Operator}
+\index{Operator!slice}
 
-An alternative is to write a function that creates and returns a new
-list. For example, `tail` returns all but the first element
-of a list:
+Eine Alternative ist, eine Funktion zu schreiben, die eine neue Liste erzeugt und zurückgibt. Zum Beispiel gibt `tail` alle Elemente einer Liste bis auf das erste zurück:
 
 ~~~~ {.python}
 def tail(t):
     return t[1:]
 ~~~~
 
-This function leaves the original list unmodified. Here's how it is
-used:
+Diese Funktion lässt die ursprüngliche Liste unangetastet. So wird sie verwendet:
 
 ~~~~ {.python .trinket}
 >>> letters = ['a', 'b', 'c']
@@ -775,69 +658,56 @@ used:
 ['b', 'c']
 ~~~~
 
-**Exercise 1: Write a function called `chop` that takes a list and modifies
-it, removing the first and last elements, and returns `None`. Then write a function called `middle` that takes a list and returns a new list that contains all but the first and last elements.**
+**Übung 1: Schreiben Sie eine Funktion namens `chop`, die eine Liste entgegennimmt und sie modifiziert, indem sie das erste und letzte Element entfernt und `None` zurückgibt. Schreiben Sie dann eine Funktion namens `middle`, die eine Liste annimmt und eine neue Liste zurückgibt, die alle Elemente außer dem ersten und letzten enthält.**
 
 Debugging
 ---------
 
-\index{debugging}
+\index{Debugging}
 
-Careless use of lists (and other mutable objects) can lead to long hours
-of debugging. Here are some common pitfalls and ways to avoid them:
+Der unvorsichtige Umgang mit Listen (und anderen veränderbaren Objekten) kann zu stundenlanger Fehlersuche führen. Hier sind einige häufige Fallstricke und Möglichkeiten, sie zu vermeiden:
 
-1.  Don't forget that most list methods modify the argument and return
-    `None`. This is the opposite of the string methods, which
-    return a new string and leave the original alone.
+1.  Vergessen Sie nicht, dass die meisten Listenmethoden das Argument modifizieren und `None` zurückgeben. Dies ist das Gegenteil der String-Methoden, die eine neue Zeichenkette zurückgeben und das Original unberührt lassen.
 
-    If you are used to writing string code like this:
+    Wenn Sie es gewohnt sind, String-Code wie diesen zu schreiben:
 
     ~~~~ {.python}
     word = word.strip()
     ~~~~
 
-    It is tempting to write list code like this:
+    dann ist es vermutlich verlockend, auch Listencode wie diesen zu schreiben:
 
     ~~~~ {.python}
     t = t.sort()           # WRONG!
     ~~~~
 
-    \index{sort method}
-    \index{method!sort}
+    \index{sort (Methode)}
+    \index{Methode!sort}
 
-    Because `sort` returns `None`, the next
-    operation you perform with `t` is likely to fail.
+    Da `sort` `None` zurückgibt, wird die nächste Operation, die Sie mit `t` durchführen, wahrscheinlich fehlschlagen.
 
-    Before using list methods and operators, you should read the
-    documentation carefully and then test them in interactive mode. The
-    methods and operators that lists share with other sequences (like
-    strings) are documented at:
+    Bevor Sie die Methoden und Operatoren von Listen verwenden, sollten Sie die Dokumentation sorgfältig lesen und sie dann im interaktiven Modus testen. Die Methoden und Operatoren, die Listen mit anderen Sequenzen (z. B. Zeichenketten) gemeinsam haben, sind dokumentiert unter:
 
     [docs.python.org/library/stdtypes.html#common-sequence-operations](https://docs.python.org/library/stdtypes.html#common-sequence-operations)
 
-    The methods and operators that only apply to mutable sequences are
-    documented at:
+    Die Methoden und Operatoren, die nur für veränderbare Sequenzen gelten, sind hier dokumentiert:
 
     [docs.python.org/library/stdtypes.html#mutable-sequence-types](https://docs.python.org/library/stdtypes.html#mutable-sequence-types)
 
-2.  Pick an idiom and stick with it.
+2.  Wählen Sie eine Idiom und bleiben Sie dabei.
 
-    \index{idiom}
+    \index{Idiom}
 
-    Part of the problem with lists is that there are too many ways to do
-    things. For example, to remove an element from a list, you can use
-    `pop`, `remove`, `del`, or even a
-    slice assignment.
+    Ein Teil des Problems mit Listen ist, dass es zu viele Möglichkeiten gibt, Dinge zu tun. Um zum Beispiel ein Element aus einer Liste zu entfernen, können Sie `pop`, `remove`, `del` oder sogar eine Slice-Zuweisung verwenden.
 
-    To add an element, you can use the `append` method or the
-    `+` operator. But don't forget that these are right:
+    Um ein Element hinzuzufügen, können Sie die Methode `append` oder den Operator `+` verwenden. Aber vergessen Sie nicht, dass das hier korrekt ist:
 
     ~~~~ {.python}
     t.append(x)
     t = t + [x]
     ~~~~
 
-    And these are wrong:
+    Folgendes dagegen falsch:
 
     ~~~~ {.python}
     t.append([x])          # WRONG!
@@ -846,50 +716,33 @@ of debugging. Here are some common pitfalls and ways to avoid them:
     t = t + x              # WRONG!
     ~~~~
 
-    Try out each of these examples in interactive mode to make sure you
-    understand what they do. Notice that only the last one causes a
-    runtime error; the other three are legal, but they do the wrong
-    thing.
+    Probieren Sie jedes dieser Beispiele im interaktiven Modus aus, um sicherzustellen, dass Sie verstehen, was sie tun. Beachten Sie, dass nur das letzte Beispiel einen Laufzeitfehler verursacht; die anderen drei sind legal, aber sie tun das Falsche.
 
-3.  Make copies to avoid aliasing.
+3.  Erstellen Sie Kopien, um die Nutzung von Aliasen zu vermeiden.
 
-    \index{aliasing!copying to avoid}
-    \index{copy!to avoid aliasing}
+    \index{Alias!Vermeidung durch Kopieren}
+    \index{Kopieren!um Aliase zu vermeiden}
 
-    If you want to use a method like `sort` that modifies the
-    argument, but you need to keep the original list as well, you can
-    make a copy.
+    Wenn Sie eine Methode wie `sort` verwenden wollen, die das Argument verändert, Sie aber die ursprüngliche Liste ebenfalls behalten möchten, müssen Sie eine Kopie erstellen.
 
     ~~~~ {.python}
     orig = t[:]
     t.sort()
     ~~~~
 
-    In this example you could also use the built-in function
-    `sorted`, which returns a new, sorted list and leaves the
-    original alone. But in that case you should avoid using
-    `sorted` as a variable name!
+    In diesem Beispiel könnten Sie auch die eingebaute Funktion `sorted` verwenden, die eine neue, sortierte Liste zurückgibt und das Original in Ruhe lässt. Aber in diesem Fall sollten Sie es vermeiden, `sorted` als Variablennamen zu verwenden!
 
-4.  Lists, `split`, and files
+4.  Listen, `split` und Dateien
 
-    When we read and parse files, there are many opportunities to
-    encounter input that can crash our program so it is a good idea to
-    revisit the *guardian* pattern when it comes writing
-    programs that read through a file and look for a "needle in the
-    haystack".
+    Beim Lesen und Parsen von Dateien gibt es viele Gelegenheiten, auf Eingaben zu stoßen, die unser Programm zum Absturz bringen können. Deshalb ist es eine gute Idee, wie bereits in vorherigen Kapiteln mit „Wächtern“ zu arbeiten, wenn es darum geht, Programme zu schreiben, die eine Datei durchlaufen und nach der „Nadel im Heuhaufen“ suchen.
 
-    Let's revisit our program that is looking for the day of the week on
-    the from lines of our file:
+    Schauen wir uns noch einmal unser Programm an, das in den „From“-Zeilen unserer Datei nach dem Wochentag sucht:
 
     ~~~~
     From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
     ~~~~
 
-    Since we are breaking this line into words, we could dispense with
-    the use of `startswith` and simply look at the first word
-    of the line to determine if we are interested in the line at all. We
-    can use `continue` to skip lines that don't have "From"
-    as the first word as follows:
+    Da wir diese Zeile in Wörter aufteilen, könnten wir auf die Verwendung von `startswith` verzichten und einfach auf das erste Wort der Zeile schauen, um festzustellen, ob wir überhaupt an der Zeile interessiert sind. Wir können `continue` verwenden, um Zeilen, die nicht „From“ als erstes Wort haben, wie folgt zu überspringen:
 
     ~~~~ {.python}
     fhand = open('mbox-short.txt')
@@ -899,9 +752,7 @@ of debugging. Here are some common pitfalls and ways to avoid them:
         print(words[2])
     ~~~~
 
-    This looks much simpler and we don't even need to do the
-    `rstrip` to remove the newline at the end of the file.
-    But is it better?
+    Das sieht viel einfacher aus und wir müssen nicht einmal `rstrip` verwenden, um den Zeilenumbruch am Ende der Datei zu entfernen. Aber ist das wirklich besser?
 
     ~~~~
     python search8.py
@@ -912,22 +763,11 @@ of debugging. Here are some common pitfalls and ways to avoid them:
     IndexError: list index out of range
     ~~~~
 
-    It kind of works and we see the day from the first line (Sat), but
-    then the program fails with a traceback error. What went wrong? What
-    messed-up data caused our elegant, clever, and very Pythonic program
-    to fail?
+    Es funktioniert zwar irgendwie und wir sehen den Tag aus der ersten Zeile (Sat), aber dann schlägt das Programm mit einem Traceback-Fehler fehl. Was ist schief gelaufen? Welche verpfuschten Daten haben dazu geführt, dass unser elegantes und cleveres Programm fehlschlägt?
 
-    You could stare at it for a long time and puzzle through it or ask
-    someone for help, but the quicker and smarter approach is to add a
-    `print` statement. The best place to add the print
-    statement is right before the line where the program failed and
-    print out the data that seems to be causing the failure.
+    Sie könnten lange darauf starren und rätseln oder jemanden um Hilfe bitten, aber der schnellere und klügere Ansatz ist, eine `print`-Anweisung hinzuzufügen. Die beste Stelle, um die `print`-Anweisung hinzuzufügen, ist direkt vor der Zeile, in der das Programm fehlgeschlagen ist, und die Daten auszugeben, die den Fehler zu verursachen scheinen.
 
-    Now this approach may generate a lot of lines of output, but at
-    least you will immediately have some clue as to the problem at hand.
-    So we add a print of the variable `words` right before
-    line five. We even add a prefix "Debug:" to the line so we can keep
-    our regular output separate from our debug output.
+    Nun mag dieser Ansatz eine Menge Zeilen an Ausgabe erzeugen, aber zumindest haben Sie sofort einen Anhaltspunkt für das vorliegende Problem. Wir fügen also einen Ausgabe der Variablen `words` direkt vor Zeile 5 ein. Wir fügen der Zeile sogar ein Präfix „Debug:“ hinzu, damit wir unsere reguläre Ausgabe von der Debug-Ausgabe getrennt halten können.
 
     ~~~~ {.python}
     for line in fhand:
@@ -937,9 +777,7 @@ of debugging. Here are some common pitfalls and ways to avoid them:
         print(words[2])
     ~~~~
 
-    When we run the program, a lot of output scrolls off the screen but
-    at the end, we see our debug output and the traceback so we know
-    what happened just before the traceback.
+    Wenn wir das Programm ausführen, läuft eine Menge Ausgabe über den Bildschirm, aber am Ende sehen wir unsere Debug-Ausgabe und den Traceback, sodass wir wissen, was kurz vor dem Traceback passiert ist.
 
     ~~~~
     Debug: ['X-DSPAM-Confidence:', '0.8475']
@@ -951,10 +789,7 @@ of debugging. Here are some common pitfalls and ways to avoid them:
     IndexError: list index out of range
     ~~~~
 
-    Each debug line is printing the list of words which we get when we
-    `split` the line into words. When the program fails, the
-    list of words is empty `[]`. If we open the file in a text editor
-    and look at the file, at that point it looks as follows:
+    Jede Debug-Zeile gibt die Liste der Wörter aus, die wir erhalten, wenn wir die Zeile mit `split` in Wörter zerlegen. Wenn das Programm fehlschlägt, ist die Liste der Wörter leer `[]`. Wenn wir die Datei in einem Texteditor öffnen und uns die Datei ansehen, sieht sie zu diesem Zeitpunkt wie folgt aus:
 
     ~~~~
     X-DSPAM-Result: Innocent
@@ -965,17 +800,9 @@ of debugging. Here are some common pitfalls and ways to avoid them:
     Details: http://source.sakaiproject.org/viewsvn/?view=rev&rev=39772
     ~~~~
 
-    The error occurs when our program encounters a blank line! Of course
-    there are "zero words" on a blank line. Why didn't we think of that
-    when we were writing the code? When the code looks for the first
-    word (`word[0]`) to check to see if it matches "From", we get an
-    "index out of range" error.
+    Der Fehler tritt auf, wenn unser Programm auf eine Leerzeile stößt! Natürlich stehen in einer Leerzeile 0 Wörter. Warum haben wir nicht daran gedacht, als wir den Code geschrieben haben? Wenn der Code nach dem ersten Wort (`word[0]`) sucht, um zu prüfen, ob es mit „From“ übereinstimmt, erhalten wir einen `index out of range`-Fehler.
 
-    This of course is the perfect place to add some
-    *guardian* code to avoid checking the first word if
-    the first word is not there. There are many ways to protect this
-    code; we will choose to check the number of words we have before we
-    look at the first word:
+    Dies ist natürlich der perfekte Ort, um einen „Wächter“ einzufügen, der verhindert, dass das erste Wort geprüft wird, wenn das erste Wort nicht vorhanden ist. Es gibt viele Möglichkeiten, diesen Code zu schützen; wir werden uns dafür entscheiden, die Anzahl der vorhandenen Wörter zu prüfen, bevor wir uns das erste Wort ansehen:
 
     ~~~~ {.python}
     fhand = open('mbox-short.txt')
@@ -988,103 +815,80 @@ of debugging. Here are some common pitfalls and ways to avoid them:
         print(words[2])
     ~~~~ 
 
-    First we commented out the debug print statement instead of removing
-    it, in case our modification fails and we need to debug again. Then
-    we added a guardian statement that checks to see if we have zero
-    words, and if so, we use `continue` to skip to the next
-    line in the file.
+    Zuerst haben wir die Debug-Print-Anweisung auskommentiert, anstatt sie zu entfernen, für den Fall, dass unsere Änderung fehlschlägt und wir erneut debuggen müssen. Dann haben wir eine Wächter-Anweisung hinzugefügt, die prüft, ob wir 0 Wörter haben, und wenn ja, verwenden wir `continue`, um zur nächsten Zeile in der Datei zu springen.
 
-    We can think of the two `continue` statements as helping
-    us refine the set of lines which are "interesting" to us and which
-    we want to process some more. A line which has no words is
-    "uninteresting" to us so we skip to the next line. A line which does
-    not have "From" as its first word is uninteresting to us so we skip
-    it.
+    Wir können uns die beiden `continue`-Anweisungen so vorstellen, dass sie uns helfen, die Menge der Zeilen zu reduzieren, die für uns potenziell „interessant“ sind und die wir weiter verarbeiten wollen. Eine Zeile, die keine Wörter enthält, ist für uns „uninteressant“, also springen wir zur nächsten Zeile. Eine Zeile, deren erstes Wort nicht „From“ ist, ist für uns uninteressant, also überspringen wir sie.
 
-    The program as modified runs successfully, so perhaps it is correct.
-    Our guardian statement does make sure that the `words[0]`
-    will never fail, but perhaps it is not enough. When we are
-    programming, we must always be thinking, "What might go wrong?"
+    Das Programm in der geänderten Form läuft erfolgreich, also ist es vielleicht richtig. Unsere Wächter-Anweisung stellt zwar sicher, dass die `Worte[0]` niemals fehlschlagen werden, aber vielleicht ist das nicht genug. Wenn wir programmieren, müssen wir immer daran denken: „Was könnte schiefgehen?“.
 
-**Exercise 2: Figure out which line of the above program is still not
-properly guarded. See if you can construct a text file which causes
-the program to fail and then modify the program so that the line is
-properly guarded and test it to make sure it handles your new text
-file.**
+**Übung 2: Finden Sie heraus, welche Zeile des obigen Programms noch nicht richtig geschützt ist. Versuchen Sie, eine Textdatei zu konstruieren, die das Programm zum Scheitern bringt. Ändern Sie dann das Programm so, dass die Zeile richtig geschützt ist, und testen Sie, ob es Ihre neue Textdatei verarbeitet.**
 
-**Exercise 3: Rewrite the guardian code in the above example without
-two `if` statements. Instead, use a compound logical
-expression using the `or` logical operator with a single
-`if` statement.**
+**Übung 3: Schreiben Sie den Wächter-Code im obigen Beispiel ohne zwei `if`-Anweisungen um. Verwenden Sie stattdessen einen zusammengesetzten logischen Ausdruck mit dem logischen Operator `or` und einer einzigen `if`-Anweisung.**
 
-Glossary
---------
+Glossar
+-------
 
-aliasing
-:   A circumstance where two or more variables refer to the same object.
-\index{aliasing}
+Alias
+:   Ein Umstand, bei dem zwei oder mehr Variablen auf das gleiche Objekt verweisen.
+\index{Alias}
 
-delimiter
-:   A character or string used to indicate where a string should be
-    split.
-\index{delimiter}
+Delimiter
+:   Ein Zeichen oder eine Zeichenkette, das bzw. die angibt, wo eine Zeichenkette aufgeteilt werden soll.
+\index{Delimiter}
 
-element
-:   One of the values in a list (or other sequence); also called items.
-\index{element}
+Element
+:   Einer der Werte in einer Liste (oder einer anderen Sequenz); auch Item genannt.
+\index{Element}
 
-equivalent
-:   Having the same value.
-\index{equivalent}
+äquivalent
+:   Den gleichen Wert haben.
+\index{äquivalent}
 
-index
-:   An integer value that indicates an element in a list.
-\index{index}
+Index
+:   Ein ganzzahliger Wert, der ein Element in einer Liste indiziert.
+\index{Index}
 \index{}
 
-identical
-:   Being the same object (which implies equivalence).
-\index{identical}
+identisch
+:   Dasselbe Objekt sein (was Äquivalenz impliziert).
+\index{identisch}
 
-list
-:   A sequence of values.
-\index{list}
+Liste
+:   Eine Folge von Werten.
+\index{Liste}
 
-list traversal
-:   The sequential accessing of each element in a list.
-\index{list!traversal}
+Traversieren einer Liste
+:   Der sequentielle Zugriff auf jedes Element in einer Liste.
+\index{Liste!Traversieren}
 
-nested list
-:   A list that is an element of another list.
-\index{nested list}
+verschachtelte Liste
+:   Eine Liste, die ein Element einer anderen Liste ist.
+\index{verschachtelte Liste}
 
-object
-:   Something a variable can refer to. An object has a type and a value.
-\index{object}
+Objekt
+:   Etwas, auf das sich eine Variable beziehen kann. Ein Objekt hat einen Typ und einen Wert.
+\index{Objekt}
 
-reference
-:   The association between a variable and its value.
-\index{reference}
+Referenz
+:   Der Assoziation zwischen einer Variablen und ihrem Wert.
+\index{Referenz}
 
-Exercises
----------
+Übungen
+-------
 
 \index{Romeo and Juliet}
 
-**Exercise 4: Find all unique words in a file**
+**Übung 4: Alle einzigartigen Wörter in einer Datei finden**
 
-**Shakespeare used over 20,000 words in his works. But how would you determine that? How would you produce the list of all the words that Shakespeare used? Would you download all his work, read it and track all unique words by hand?**
+**Shakespeare verwendete über 20,000 verschiedene Wörter in seinen Werken. Aber wie würden Sie das feststellen? Wie würden Sie die Liste aller Wörter erstellen, die Shakespeare verwendet hat? Würden Sie sein gesamtes Werk herunterladen, es lesen und alle einzigartigen Wörter von Hand nachverfolgen?**
 
-**Let's use Python to achieve that instead. List all unique words, sorted in alphabetical order, that are stored in a file `romeo.txt` containing a subset of Shakespeare's work.**
+**Lassen Sie uns stattdessen Python verwenden, um das zu erreichen. Listen Sie alle eindeutigen Wörter, sortiert in alphabetischer Reihenfolge, auf, die in einer Datei `romeo.txt` gespeichert sind, die eine Teilmenge von Shakespeares Werk enthält.**
 
-**To get started, download a copy of the file**
-[**www.py4e.com/code3/romeo.txt**](http://www.py4e.com/code3/romeo.txt)**.
-Create a list of unique words, which will contain the final result.
-Write a program to open the file `romeo.txt` and read it line
-by line. For each line, split the line into a list of words using the
-`split` function. For each word, check to see if the word is already in the list of unique words. If the word is not in the list of unique words, add it to the list.
-When the program completes, sort and print the list of unique words in
-alphabetical order.**
+**Um loszulegen, laden Sie eine Kopie der Datei herunter:**
+
+[**www.py4e.com/code3/romeo.txt**](http://www.py4e.com/code3/romeo.txt)
+
+**Erstellen Sie eine Liste mit eindeutigen Wörtern, die das Endergebnis enthalten wird. Schreiben Sie ein Programm, um die Datei `romeo.txt` zu öffnen und Zeile für Zeile zu lesen. Teilen jede Zeile mit der Funktion `split` in eine Liste von Wörtern auf. Prüfen Sie für jedes Wort, ob das Wort bereits in der Liste der eindeutigen Wörter enthalten ist. Wenn das Wort nicht in der Liste der eindeutigen Wörter enthalten ist, fügen Sie es der Liste hinzu. Wenn das Programm beendet ist, sortieren Sie die Liste der eindeutigen Wörter in alphabetischer Reihenfolge und geben Sie sie aus.**
 
 ~~~~
 Enter file: romeo.txt
@@ -1095,29 +899,17 @@ Enter file: romeo.txt
 'with', 'yonder']
 ~~~~
 
-**Exercise 5: Minimalist Email Client.**
+**Übung 5: Ein minimalistischer E-Mail-Client.**
 
-**MBOX (mail box) is a popular file format to store and share a collection of
-emails. This was used by early email servers and desktop apps. Without getting
-into too many details, MBOX is a text file, which stores emails consecutively.
-Emails are separated by a special line which starts with `From ` (notice the space).
-Importantly, lines starting with `From:` (notice the colon) describes the email
-itself and does not act as a separator.
-Imagine you wrote a minimalist email app, that lists the email of the senders
-in the user's Inbox and counts the number of emails.**
+**MBOX (Mailbox) ist ein beliebtes Dateiformat zum Speichern und Freigeben einer Sammlung von E-Mails. Dies wurde von frühen E-Mail-Servern und Desktop-Apps verwendet. Ohne zu sehr ins Detail zu gehen, ist MBOX eine Textdatei, die E-Mails fortlaufend speichert. E-Mails werden durch eine spezielle Zeile getrennt, die mit `From ` beginnt (beachten Sie das Leerzeichen). Wichtig ist, dass Zeilen, die mit `From:` beginnen (beachten Sie den Doppelpunkt), die E-Mail selbst beschreiben und nicht als Trennzeichen fungieren. Stellen Sie sich vor, Sie schreiben eine minimalistische E-Mail-App, die die E-Mails der Absender im Posteingang des Benutzers auflistet und die Anzahl der E-Mails zählt.**
 
-**Write a program to read through the mail box data and when
-you find line that starts with "From", you will split the line into
-words using the `split` function. We are interested in who
-sent the message, which is the second word on the From line.**
+**Schreiben Sie ein Programm, das die Daten der Mailbox durchläuft, und wenn Sie eine Zeile finden, die mit „From“ beginnt, teilen Sie die Zeile mit der Funktion `split` in Wörter auf. Wir sind daran interessiert, wer die Nachricht gesendet hat, also was das zweite Wort in der „From“-Zeile ist.**
 
 ~~~~
 From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008
 ~~~~
 
-**You will parse the From line and print out the second word for each From
-line, then you will also count the number of From (not From:) lines and
-print out a count at the end. This is a good sample output with a few lines removed:**
+**Sie parsen die From-Zeile und geben das zweite Wort für jede From-Zeile aus, dann zählen Sie auch die Anzahl der From-Zeilen (nicht `From:`) und geben am Ende die Anzahl aus. Dies ist eine Beispielausgabe, bei der ein paar Zeilen entfernt wurden:**
 
 ~~~~
 python fromcount.py
@@ -1135,12 +927,7 @@ cwen@iupui.edu
 There were 27 lines in the file with From as the first word
 ~~~~
 
-**Exercise 6: Rewrite the program that prompts the user for a list of
-numbers and prints out the maximum and minimum of the numbers at the end
-when the user enters "done". Write the program to store the numbers the
-user enters in a list and use the `max()` and
-`min()` functions to compute the maximum and minimum numbers
-after the loop completes.**
+**Übung 6: Schreiben Sie das Programm um, das den Benutzer zur Eingabe einer Liste von Zahlen auffordert und am Ende das Maximum und Minimum der Zahlen ausgibt, wenn der Benutzer „done“ eingibt. Schreiben Sie das Programm so, dass es die Zahlen, die der Benutzer eingibt, in einer Liste speichert und die Funktionen `max()` und `min()` verwendet, um die größte und kleinste Zahl nach Abschluss der Schleife zu ermitteln.**
 
 ~~~~
 Enter a number: 6
@@ -1152,3 +939,4 @@ Enter a number: done
 Maximum: 9.0
 Minimum: 2.0
 ~~~~
+

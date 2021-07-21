@@ -14,8 +14,8 @@ Inhaltskapitel:
 - [x] 04-functions.mkd
 - [x] 05-iterations.mkd
 - [x] 06-strings.mkd
-- [ ] 07-files.mkd
-- [ ] 08-lists.mkd
+- [x] 07-files.mkd
+- [x] 08-lists.mkd
 - [ ] 09-dictionaries.mkd
 - [ ] 10-tuples.mkd
 - [ ] 11-regex.mkd
@@ -40,7 +40,21 @@ Appendix:
 
 ## Übersetzungstabellen
 
-Übersetzungstabellen zum Zwecke einer einheitlichen Übersetzung. Übersetzungen gelten kapitelübergreifend und werden hier nicht doppelt aufgeführt. Bitte die Suchfunktion verwenden. In erster Linie geht es hier um das Festlegen sinnvoller Indexeinträge.
+Übersetzungstabellen zum Zwecke einer einheitlichen Übersetzung. Übersetzungen gelten kapitelübergreifend und werden hier nicht doppelt aufgeführt. Bitte die Suchfunktion verwenden. In erster Linie geht es hier um das Festlegen sinnvoller und einheitlicher Indexeinträge. Bitte  unbedingt diese Übersetzungen hier verwenden; Änderung nur nach Rücksprache vornehmen.
+
+## Änderungen
+
+Skript für Änderungen:
+
+```
+#!/bin/bash
+
+for f in *.mkd
+do
+    sed -i 's/xxx/yyy/g' "$f"
+    echo "$f"
+done
+```
 
 ### Kapitel 2
 
@@ -66,8 +80,8 @@ name : Bezeichner
 \index{underscore character} : \index{Unterstrich}
 \index{statement} : \index{Anweisung}
 \index{interactive mode} : \index{interaktiver Modus}
-\index{script mode} : \index{Skript-Modus}
-\index{operator, arithmetic} : \index{Operator, arithmetisch}
+\index{script mode} : \index{Skriptmodus}
+\index{operator, arithmetic} : \index{Operator!arithmetisch}
 \index{arithmetic operator} : \index{arithmetischer Operator}
 \index{operand} : \index{Operand}
 \index{operator} : \index{Operator}
@@ -80,7 +94,7 @@ name : Bezeichner
 \index{rules of precedence} : \index{Vorrangregeln}
 \index{precedence} : \index{Vorrang}
 \index{parentheses!overriding precedence} : \index{Klammern!Vorrangregeln überschreiben}
-\index{modulus operator} : \index{Modulo-Operator}
+\index{modulus operator} : \index{Modulo (Operator)}
 \index{operator!modulus} : \index{Operator!Modulo}
 \index{string!operation} : \index{Zeichenkette!Operation}
 \index{operator!string} : \index{Operator!Zeichenkette}
@@ -113,10 +127,10 @@ Conditional execution : Bedingte Ausführung
 \index{expression!boolean} : \index{Ausdruck!boolescher}
 \index{logical operator} : \index{logischer Operator}
 \index{operator!logical} : \index{Operator!logischer}
-\index{True special value} : \index{True Wahrheitswert}
+\index{True special value} : \index{True (Wahrheitswert)}
 \index{special value!True} : \index{Wert!True}
 \index{special value!False} : \index{Wert!False}
-\index{False special value} : \index{False Wahrheitswert}
+\index{False special value} : \index{False (Wahrheitswert)}
 \index{bool type} : \index{bool Datentyp}
 \index{type!bool} : \index{Datentyp!bool}
 \index{comparison operator} : \index{Vergleichsoperator}
@@ -129,28 +143,28 @@ Conditional execution : Bedingte Ausführung
 \index{Operator!not} : \index{Operator!not}
 \index{conditional statement} : \index{bedingte Anweisung}
 \index{statement!conditional} : \index{Anweisung!bedingte}
-\index{if statement} : \index{if-Anweisung}
+\index{if statement} : \index{if (Anweisung)}
 \index{statement!if} : \index{Anweisung!if}
 \index{conditional executions} : \index{bedingte Ausführung}
 \index{condition} : \index{Bedingung}
 \index{compound statement} : \index{zusammengesetzte Anweisung}
 \index{statement!compound} : \index{Anweisung!zusammengesetzte}
-\index{pass statement} : \index{pass Statement}
+\index{pass statement} : \index{pass (Anweisung)}
 \index{statement!pass} : \index{Anweisung!pass}
 Chevrons : Größer-Zeichen
 Alternative execution : Alternative Ausführung
 \index{alternative execution} : \index{alternative Ausführung}
-\index{else keyword} : \index{else Schlüsselwort}
+\index{else keyword} : \index{else (Schlüsselwort)}
 \index{keyword!else} : \index{Schlüsselwort!else}
 \index{branch} : \index{Verzweigung}
 \index{chained conditional} : \index{verkettete Bedingung}
 \index{conditional!chained} : \index{Bedingung!verkettete}
-\index{elif keyword} : \index{elif Schlüsselwort}
+\index{elif keyword} : \index{elif (Schlüsselwort)}
 \index{keyword!elif} : \index{Schlüsselwort!elif}
 \index{nested conditional} : \index{verschachtelte Bedingung}
 \index{conditional!nested} : \index{Bedingung!verschachtelte}
 \index{traceback} : \index{Traceback}
-\index{short circuit} : \index{abgekürzte Auswertung}
+\index{short circuit} : \index{verkürzte Auswertung}\index{short circuit}
 guardian pattern : Wächter-Muster
 \index{guardian pattern} : \index{Wächter-Muster}
 \index{pattern!guardian} : \index{Muster!Wächter}
@@ -168,38 +182,38 @@ body : Block
 \index{return value} : \index{Rückgabewert}
 \index{type conversion} : \index{Typumwandlung}
 \index{conversion!type} : \index{Umwandlung!Datentyp}
-\index{int function} : \index{int Funktion}
+\index{int function} : \index{int (Funktion)}
 \index{function!int} : \index{Funktion!int}
 \index{parentheses!argument in} : \index{Klammern!Argument in}
-\index{float function} : \index{float Funktion}
+\index{float function} : \index{float (Funktion)}
 \index{function!float} : \index{Funktion!float}
-\index{str function} : \index{str Funktion}
+\index{str function} : \index{str (Funktion)}
 \index{function!str} : \index{Funktion!str}
-\index{math function} : \index{math Modul}
+\index{math function} : \index{math (Modul)}
 \index{module} : \index{Modul}
-\index{module object} : \index{Modul-Objekt}
-\index{dot notation} : \index{Punkt-Notation}
-\index{log function} : \index{log Funktion}
+\index{module object} : \index{Modulobjekt}
+\index{dot notation} : \index{Punktnotation}
+\index{log function} : \index{log (Funktion)}
 \index{function!log} : \index{Funktion!log}
-\index{sine function} : \index{sine Funktion}
+\index{sine function} : \index{sine (Funktion)}
 \index{trigonometric function} : \index{trigonometrische Funktion}
-\index{sqrt function} : \index{sqrt Funktion}
+\index{sqrt function} : \index{sqrt (Funktion)}
 \index{function!sqrt} : \index{Funktion!sqrt}
 \index{random number} : \index{Zufallszahl}
 \index{deterministic} : \index{deterministisch}
 \index{pseudorandom} : \index{pseudozufällig}
-\index{random module} : \index{random Modul}
+\index{random module} : \index{random (Modul)}
 \index{module!random} : \index{Modul!random}
-\index{random function} : \index{random Funktion}
+\index{random function} : \index{random (Funktion)}
 \index{function!random} : \index{Funktion!random}
-\index{randint function} : \index{randint Funktion}
+\index{randint function} : \index{randint (Funktion)}
 \index{function!randint} : \index{Funktion!randint}
-\index{choice function} : \index{choice Funktion}
+\index{choice function} : \index{choice (Funktion)}
 \index{function!choice} : \index{Funktion!choice}
 \index{function} : \index{Funktion}
 \index{function definition} : \index{Funktionsdefinition}
 \index{definition!function} : \index{Definition!Funktion}
-\index{def keyword} : \index{def Schlüsselwort}
+\index{def keyword} : \index{def (Schlüsselwort)}
 \index{keyword!def} : \index{Schlüsselwort!def}
 \index{parentheses!empty} : \index{Klammern!leer}
 \index{parentheses!parameters in} : \index{Klammern!Parameter in}
@@ -217,7 +231,7 @@ body : Block
 \index{void function} : \index{void, Funktion ohne Rückgabewert}
 \index{function, fruitful} : \index{Funktion mit Rückgabewert}
 \index{function, void} : \index{Funktion ohne Rückgabewert, void}
-\index{None special value} : \index{None, Wert}
+\index{None special value} : \index{None (Wert)}
 \index{special value!None} : \index{Wert!None}
 \index{function, reasons for} : \index{Funktionen}
 \index{flow of execution} : \index{Programmablauf}
@@ -241,9 +255,9 @@ import statement : Importanweisung
 \index{loop} : \index{Schleife}
 \index{infinite loop} : \index{Endlosschleife}
 \index{loop!infinite} : \index{Schleife!endlos}
-\index{break statement} : \index{break-Anweisung}
+\index{break statement} : \index{break (Anweisung)}
 \index{statement!break} : \index{Anweisung!break}
-\index{continue statement} : \index{continue-Anweisung}
+\index{continue statement} : \index{continue (Anweisung)}
 \index{statement!continue} : \index{Anweisung!continue}
 \index{for statement} : \index{for-Schleife}
 \index{statement!for} : \index{Schleife!for}
@@ -260,8 +274,8 @@ import statement : Importanweisung
 
 ```
 \index{sequence} : \index{Folge}
-\index{character} : \index{Einzelzeichen (Character)}
-\index{bracket operator} : \index{indexbasierter Zugriffsoperator}\index{Zugriffsoperator, indexbasiert}
+\index{character} : \index{Einzelzeichen}\index{Character}
+\index{bracket operator} : \index{Indexoperator}\index{Zugriff, indexbasiert}
 \index{operator!bracket} : \index{Operator!indexbasierter Zugriff}
 \index{index} : \index{Index}
 \index{} : \index{} 
@@ -269,7 +283,7 @@ import statement : Importanweisung
 \index{zero, index starting at} : \index{Null, Index beginnt mit}
 \index{exception!TypeError} : \index{Ausnahme!TypeError}
 \index{TypeError} : \index{TypeError}
-\index{len function} : \index{len, Funktion}
+\index{len function} : \index{len (Funktion)}
 \index{function!len} : \index{Funktion!len}
 \index{exception!IndexError} : \index{Ausnahme!IndexError}
 \index{IndexError} : \index{IndexError}
@@ -290,13 +304,13 @@ import statement : Importanweisung
 \index{immutability} : \index{Unveränderlichkeit}
 \index{string!immutable} : \index{Zeichenkette!unveränderlich}
 \index{object} : \index{Objekt}
-\index{item assignment} : \index{Element-Zuweisung}
+\index{item assignment} : \index{Elementzuweisung}
 \index{assignment!item} : \index{Zuweisung!Element}
 \index{counting and looping} : \index{Zählen mit Schleifen}
 \index{looping and counting} : \index{Schleifen und Zählen}
 \index{looping!with strings} : \index{Schleife!mit Zeichenketten}\index{Iteration!durch Zeichenketten}
 \index{encapsulation} : \index{Auslagern von Code in Funktionen}
-\index{in operator} : \index{in-Operator}
+\index{in operator} : \index{in (Operator)}
 \index{operator!in} : \index{Operator!in}
 \index{boolean operator} : \index{boolescher Operator}
 \index{operator!boolean} : \index{Operator!boolescher}
@@ -307,7 +321,7 @@ import statement : Importanweisung
 \index{invocation} : \index{Aufruf einer Methode}
 \index{optional argument} : \index{optionales Argument}
 \index{argument!optional} : \index{Argument!optional}
-\index{count method} : \index{count-Methode}
+\index{count method} : \index{count (Methode)}
 \index{method!count} : \index{Methode!count}
 \index{format operator} : \index{Formatierungsoperator}
 \index{operator!format} : \index{Operator!Formatierung}
@@ -326,4 +340,106 @@ item : Element
 \index{slice} : \index{Teilzeichenkette}
 \index{string method} : \index{Zeichenkette!Methode}
 \index{method!string} : \index{Methode!Zeichenkette}
+```
+
+### Kapitel 7
+
+```
+\index{file} : \index{Datei}
+\index{type!file} : \index{Datentyp!Datei}
+\index{persistence} : \index{Persistenz}
+\index{secondary memory} : \index{Sekundärspeicher}
+\index{file!open} : \index{Datei!open}
+\index{open function} : \index{open (Funktion)}
+\index{function!open} : \index{Funktion!open}
+\index{file handle} : \index{Dateihandler}
+\index{file!reading} : \index{Datei!lesen}
+file handle : Dateihandler
+\index{filter pattern} : \index{Filtermuster}
+\index{pattern!filter} : \index{Muster!Filter}
+line slicing : Zeilen-Slicing
+\index{Quality Assurance} : \index{Qualitätssicherung}
+\index{QA} : \index{QS}
+\index{try statement} : \index{try (Anweisung)}
+\index{statement!try} : \index{Anweisung!try}
+\index{exception!IOError} : \index{Ausnahme!IOError}
+\index{file!writing} : \index{Datei!schreiben}
+\index{close method} : \index{close (Methode)}
+\index{method!close} : \index{Methode!close}
+\index{repr function} : \index{repr (Funktion)}
+\index{function!repr} : \index{Funktion!repr}
+\index{string representation} : \index{Stringrepräsentation}
+\index{end of line character} : \index{Zeilenendezeichen}
+\index{catch} : \index{Auffangen einer Ausnahme}
+\index{text file} : \index{Textdatei}
+```
+
+### Kapitel 8
+
+```
+\index{list} : \index{Liste}
+\index{type!list} : \index{Datentyp!Liste}
+\index{nested list} : \index{verschachtelte Liste}
+\index{list!nested} : \index{Liste!verschachtelt}
+\index{empty list} : \index{leere Liste}
+\index{list!empty} : \index{Liste!leer}
+\index{list!element} : \index{Liste!Element}
+\index{access} : \index{Zugriff}
+\index{list!index} : \index{Liste!Index}
+\index{list!traversal} : \index{Liste!Traversieren}
+\index{traversal!list} : \index{Traversieren!Liste}
+\index{looping!with indices} : \index{Schleife!mit Indizes}\index{Iteration!mit Indizes}
+\index{index!looping with} : \index{Index!mit Schleifen}
+\index{item update} : \index{Elementaktualisierung}
+\index{update!item} : \index{Aktualisierung!Element}
+\index{list!operation} : \index{Liste!Operation}
+\index{concatenation!list} : \index{Konkatenation!Liste}
+\index{list!concatenation} : \index{Liste!Konkatenation}
+\index{repetition!list} : \index{Wiederholung!Liste}
+\index{list!repetition} : \index{Liste!Wiederholung}
+\index{list!slice} : \index{Liste!slice}
+\index{slice!list} : \index{slice!Liste}
+\index{list!copy} : \index{Liste!Kopieren}
+\index{slice!update} : \index{slice!Aktualisierung}
+\index{update!slice} : \index{Aktualisierung!slice}
+\index{list!method} : \index{Liste!Methode}
+\index{method, list} : \index{Methode!Listen}
+\index{append method} : \index{append (Methode)}
+\index{method!append} : \index{Methode!append}
+\index{extend method} : \index{extend (Methode)}
+\index{method!extend} : \index{Methode!extend}
+\index{sort method} : \index{sort (Methode)}
+\index{method!sort} : \index{Methode!sort}
+\index{void method} : \index{void-Methode}
+\index{method!void} : \index{Methode!void}
+\index{element deletion} : \index{Element löschen}
+\index{deletion, element of list} : \index{Löschen, Listenelement}
+\index{pop method} : \index{pop (Methode)}
+\index{method!pop} : \index{Methode!pop}
+\index{del operator} : \index{del (Operator)}
+\index{operator!del} : \index{Operator!del}
+\index{remove method} : \index{remove (Methode)}
+\index{method!remove} : \index{Methode!remove}
+\index{list!function} : \index{list!Funktion}
+\index{function!list} : \index{Funktion!list}
+\index{split method} : \index{split (Methode)
+\index{method!split} : \index{Methode!split}
+\index{delimiter} : \index{Delimiter}
+\index{join method} : \index{join (Methode)}
+\index{method!join} : \index{Methode!join}
+\index{string!empty} : \index{Zeichenkette!leer}
+\index{aliasing} : \index{Alias}
+\index{is operator} : \index{is (Operator)}
+\index{operator!is} : \index{Operator!is}
+\index{equivalence} : \index{Äquivalenz}
+\index{identity} : \index{Identität}
+\index{reference!aliasing} : \index{Referenz!Alias}
+\index{reference} : \index{Referenz}
+\index{list!as argument} : \index{Liste!als Argument}
+\index{argument!list} : \index{Argument!Liste}
+\index{idiom} : \index{Idiom}
+\index{aliasing!copying to avoid} : \index{Alias!Vermeidung durch Kopieren}
+\index{copy!to avoid aliasing} : \index{Kopieren!um Aliase zu vermeiden}
+\index{equivalent} : \index{äquivalent}
+\index{identical} : \index{identisch}
 ```
