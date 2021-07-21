@@ -33,7 +33,7 @@ Appendix:
 ## Allgemeines
 
 - Deutsche Anführungszeichen im Fließtext verwenden: nicht "...", sondern „...“
-- Darauf achten, dass in der Übersetzung Backticks (`````) erhalten bleiben (zur Auszeichnung von Code mit Markdown).
+- Darauf achten, dass in der Übersetzung Backticks (`` ` ``) erhalten bleiben (zur Auszeichnung von Code mit Markdown).
 - Eine `.mkd`-Datei muss zwingend mit **zwei** Leerzeilen schließen, damit beim Kompilieren die nächste Kapitelüberschrift als solche erkannt wird.
 - Die Zeilen eines Absatzes vorzugsweise zusammenführen.
 - Englische Begriffe, für die eine etablierte deutsche Übersetzungen existiert, sollten bei der ersten Einführung des Begriffs in Klammern genannt werden (sofern der englische Begriff auch im Deutschen geläufig ist). Zum Beispiel: `Eine Zeichenkette (englisch *String*) ist eine Folge einzelner Zeichen (englisch *Character*).`
@@ -51,7 +51,7 @@ Skript für Änderungen:
 
 for chapter in *.mkd
 do
-    sed -i 's/xxx/yyy/g' "$chapter"
+    sed -i 's/xxx/yyy/g' "$chapter" # escape backslashes
     echo "$chapter"
 done
 ```
