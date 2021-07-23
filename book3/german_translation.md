@@ -17,9 +17,9 @@ Inhaltskapitel:
 - [x] 07-files.mkd
 - [x] 08-lists.mkd
 - [x] 09-dictionaries.mkd
-- [ ] 10-tuples.mkd
-- [ ] 11-regex.mkd
-- [ ] 12-network.mkd
+- [x] 10-tuples.mkd
+- [x] 11-regex.mkd
+- [x] 12-network.mkd
 - [ ] 13-web.mkd
 - [ ] 14-objects.mkd
 - [ ] 15-database.mkd
@@ -484,4 +484,85 @@ line slicing : Zeilen-Slicing
 lookup : Lookup
 \index{comparable} : \index{vergleichbar}
 \index{parentheses!tuples in} : \index{Klammern!Tupeln innerhalb}
+```
+
+### Kapitel 10
+
+```
+\index{tuple} : \index{Tupel}
+\index{type!tuple} : \index{Datentyp!Tupel}
+\index{hashable} : \index{hashbar}
+\index{singleton} : \index{Singleton}
+\index{tuple!singleton} : \index{Tupel!Singleton}
+\index{tuple function} : \index{tuple (Funktion)}
+\index{function!tuple} : \index{Funktion!tuple}
+\index{tuple!slice} : \index{Tupel!slice}
+\index{slice!tuple} : \index{slice!Tupel}
+\index{comparison!tuple} : \index{Vergleich!Tupel}
+\index{tuple!comparison} : \index{Tupel!Vergleich}
+\index{DSU pattern} : \index{DSU-Muster}
+\index{pattern!DSU} : \index{Muster!DSU}
+\index{decorate-sort-undecorate pattern} : \index{Decorate-Sort-Undecorate-Muster}
+\index{pattern!decorate-sort-undecorate} : \index{Muster!Decorate-Sort-Undecorate}
+\index{keyword argument} : \index{Schlüsselwortargument}
+\index{argument!keyword} : \index{Argument!Schlüsselwort}
+\index{tuple!assignment} : \index{Tupel!Zuweisung}
+\index{assignment!tuple} : \index{Zuweisung!Tupel}
+\index{swap pattern} : \index{Swap (Muster)}
+\index{pattern!swap} : \index{Muster!Swap}
+\index{email address} : \index{E-Mail-Adresse}
+\index{items method} : \index{items (Methode)}
+\index{method!items} : \index{Methode!items}
+\index{traverse!dictionary} : \index{Traversieren!Wörterbuch}
+\index{dictionary!traversal} : \index{Wörterbuch!Traversieren}
+\index{tuple!as key in dictionary} : \index{Tupel!als Schlüssel in Wörterbüchern}
+\index{tuple!in brackets} : \index{Tupel!geklammert}
+\index{sorted function} : \index{sorted (Funktion)}
+\index{function!sorted} : \index{Funktion!sorted}
+\index{reversed function} : \index{reversed (Funktion)}
+\index{function!reversed} : \index{Funktion!reversed}
+\index{data structure} : \index{Datenstruktur}
+\index{shape error} : WEG
+\index{error!shape} : WEG
+\index{tuple assignment} : \index{Tupelzuweisung}
+\index{letter frequency} : \index{Buchstabenhäufigkeit}
+\index{frequency!letter} : \index{Häufigkeit!Buchstaben}
+```
+
+### Kapitel 11
+
+```
+\index{regular expressions} : \index{regulärer Ausdruck}
+\index{regex} : \index{Regex}
+\index{re module} : \index{re (Modul)}
+\index{regex!search} : \index{Regex!search}
+\index{string!find} : \index{Zeichenkette!find}
+\index{string!startswith} : \index{Zeichenkette!startswith}
+\index{wild card} : \index{Wildcard}
+\index{regex!wild card} : \index{Regex!Wildcard}
+\index{findall} : \index{findall (Methode)}
+\index{regex!findall} : \index{Regex!findall}
+\index{regex!character sets(brackets)} : \index{Regex!Zeichenklassen}
+\index{string!split} : \index{Zeichenkette!split}
+\index{regex!parentheses} : \index{Regex!runde Klammern}
+\index{parentheses!regular expression} : \index{runde Klammern!regulärer Ausdruck}
+\index{grep} : \index{grep}
+\index{greedy} : \index{greedy}
+\index{greedy matching} : \index{greedy Matching}
+```
+
+### Kapitel 12
+
+```
+\index{urllib!image} : \index{urllib!Bild}
+\index{image!jpg} : \index{Bild!jpg}
+\index{time.sleep} : \index{time.sleep (Funktion)}
+\index{flow control} : \index{flow control}\index{Flusskontrolle}
+\index{binary file} : \index{Binärdatei}\index{binary}
+\index{web!scraping} : \index{Web!Scraping}
+\index{parsing HTML} : \index{HTML parsen}
+\index{non-greedy} : \index{non-greedy}
+\index{port} : \index{Port}
+\index{socket} : \index{Socket}
+\index{spider} : \index{Spider}
 ```
