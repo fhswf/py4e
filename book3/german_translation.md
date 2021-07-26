@@ -20,8 +20,8 @@ Inhaltskapitel:
 - [x] 10-tuples.mkd
 - [x] 11-regex.mkd
 - [x] 12-network.mkd
-- [ ] 13-web.mkd
-- [ ] 14-objects.mkd
+- [x] 13-web.mkd
+- [x] 14-objects.mkd
 - [ ] 15-database.mkd
 - [ ] 16-viz.mkd
 
@@ -42,7 +42,7 @@ Appendix:
 
 Übersetzungstabellen zum Zwecke einer einheitlichen Übersetzung. Übersetzungen gelten kapitelübergreifend und werden hier nicht doppelt aufgeführt. Bitte die Suchfunktion verwenden. In erster Linie geht es hier um das Festlegen sinnvoller und einheitlicher Indexeinträge. Bitte unbedingt diese Übersetzungen hier verwenden; Änderung nur nach Rücksprache vornehmen.
 
-## Änderungen
+### Änderungen
 
 Skript für Änderungen:
 
@@ -565,4 +565,34 @@ lookup : Lookup
 \index{port} : \index{Port}
 \index{socket} : \index{Socket}
 \index{spider} : \index{Spider}
+```
+
+### Kapitel 13
+
+```
+\index{ElementTree} : \index{ElementTree XML-Parser}
+\index{API!key} : \index{API!Schlüssel}
+\index{web service} : \index{Webservice}
+\index{rate limiting} : WEG
+```
+
+### Kapitel 14
+
+```
+\index{object-oriented} : \index{objektorientiert}
+\index{list object} : \index{list (Objekt)}
+\index{parsing!HTML} : \index{Parsen!HTML}
+\index{class keyword} : \index{class (Schlüsselwort)}\index{Schlüsselwort!class}
+\index{construct} : \index{konstruieren}
+\index{instance} : \index{Instanz}
+\index{class} : \index{Klasse}
+\index{dir} : \index{dir (Funktion)}
+\index{constructor} : \index{Konstruktor}
+\index{destructor} : \index{Destruktor}
+\index{object lifecycle} : \index{Lebenszyklus von Objekten}\index{Objekt-Lebenszyklus}
+\index{attribute} : \index{Attribut}
+\index{child class} : \index{abgeleitete Klasse}
+\index{inheritance} : \index{Vererbung}
+\index{message} : WEG
+\index{parent class} : \index{Basisklasse}
 ```
