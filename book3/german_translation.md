@@ -22,7 +22,7 @@ Inhaltskapitel:
 - [x] 12-network.mkd
 - [x] 13-web.mkd
 - [x] 14-objects.mkd
-- [ ] 15-database.mkd
+- [x] 15-database.mkd
 - [ ] 16-viz.mkd
 
 Appendix:
@@ -595,4 +595,26 @@ lookup : Lookup
 \index{inheritance} : \index{Vererbung}
 \index{message} : WEG
 \index{parent class} : \index{Basisklasse}
+```
+
+### Kapitel 15
+
+```
+\index{database} : \index{Datenbank}
+\index{database!indexes} : \index{Datenbank!Index}
+\index{sqlite3 module} : \index{sqlite3 (Modul)}
+\index{module!sqlite3} : \index{Modul!sqlite3}
+\index{connect function} : \index{connect (Funktion)}
+\index{function!connect} : \index{Funktion!connect}
+\index{cursor function} : \index{cursor (Funktion)}
+\index{function!cursor} : \index{Funktion!cursor}
+\index{constraint} : \index{Constraint}
+\index{cursor} : \index{Cursor}
+\index{database browser} : \index{Datenbankenbrowser}
+\index{foreign key} : \index{Fremdschlüssel}
+\index{logical key} : \index{Logischer Schlüssel}
+\index{normalization} : \index{Normalisierung}
+\index{database normalization} : \index{Datenbanknormalisierung}
+\index{primary key} : \index{Primärschlüssel}
+\index{relation} : \index{Relation}
 ```

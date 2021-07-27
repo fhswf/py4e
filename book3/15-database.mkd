@@ -1,198 +1,108 @@
-Using Databases and SQL
-=======================
 
-What is a database?
+Datenbanken und SQL
+===================
+
+Was ist eine Datenbank?
 -------------------
 
-\index{database}
+\index{Datenbank}
 
-A *database* is a file that is organized for storing
-data. Most databases are organized like a dictionary in the sense that
-they map from keys to values. The biggest difference is that the
-database is on disk (or other permanent storage), so it persists after
-the program ends. Because a database is stored on permanent storage, it
-can store far more data than a dictionary, which is limited to the size
-of the memory in the computer.
+Eine *Datenbank* ist eine Datei, die zum Speichern von Daten organisiert ist. Die meisten Datenbanken sind wie ein Wörterbuch in dem Sinne organisiert, dass sie von Schlüsseln auf Werte abbilden. Der größte Unterschied besteht darin, dass sich die Datenbank auf der Festplatte (oder einem anderen permanenten Speicher) befindet, so dass sie auch nach Beendigung des Programms bestehen bleibt. Da eine Datenbank auf einem permanenten Speicher gespeichert ist, kann sie viel mehr Daten speichern als ein Wörterbuch, das auf die Größe des Hauptspeichers beschränkt ist.
 
-\index{database!indexes}
+\index{Datenbank!Index}
 
-Like a dictionary, database software is designed to keep the inserting
-and accessing of data very fast, even for large amounts of data.
-Database software maintains its performance by building
-*indexes* as data is added to the database to allow the
-computer to jump quickly to a particular entry.
+Ähnlich wie ein Wörterbuch ist Datenbanksoftware darauf ausgelegt, das Einfügen und den Zugriff auf Daten sehr schnell zu halten, auch bei großen Datenmengen. Datenbanksoftware hält ihre Leistung aufrecht, indem sie *Indizes* aufbaut, wenn Daten in die Datenbank eingefügt werden, damit der Computer schnell zu einem bestimmten Eintrag springen kann.
 
-There are many different database systems which are used for a wide
-variety of purposes including: Oracle, MySQL, Microsoft SQL Server,
-PostgreSQL, and SQLite. We focus on SQLite in this book because it is a
-very common database and is already built into Python. SQLite is
-designed to be *embedded* into other applications to provide database
-support within the application. For example, the Firefox browser also
-uses the SQLite database internally as do many other products.
+Es gibt viele verschiedene Datenbanksysteme, die für die unterschiedlichsten Zwecke eingesetzt werden, darunter: Oracle, MySQL, Microsoft SQL Server, PostgreSQL und SQLite. Wir konzentrieren uns in diesem Buch auf SQLite, weil es eine sehr verbreitete Datenbank ist und bereits in Python integriert ist. SQLite ist dafür ausgelegt, in andere Anwendungen *eingebettet* zu werden, um Datenbankunterstützung innerhalb der Anwendung zu bieten. Zum Beispiel verwendet der Firefox-Browser wie viele andere Produkte auch intern die SQLite-Datenbank.
 
 <http://sqlite.org/>
 
-SQLite is well suited to some of the data manipulation problems that we
-see in Informatics such as the Twitter spidering application that we
-describe in this chapter.
+SQLite eignet sich gut für einige der Datenmanipulationsprobleme, die wir in der Informatik sehen, wie z. B. die Twitter-Spidering-Anwendung, die wir in diesem Kapitel beschreiben.
 
-Database concepts
+Datenbankkonzepte
 -----------------
 
-When you first look at a database it looks like a spreadsheet with
-multiple sheets. The primary data structures in a database are:
-*tables*, *rows*, and
-*columns*.
+Auf den ersten Blick sieht eine Datenbank aus wie eine Tabellenkalkulation mit mehreren Sheets. Die primären Datenstrukturen in einer Datenbank sind: *Tabellen*, *Zeilen* und *Spalten*.
 
-![Relational Databases](height=2.0in@../images/relational)
+![Relationale Datenbanken](height=2.0in@../images/relational)
 
-In technical descriptions of relational databases the concepts of table,
-row, and column are more formally referred to as
-*relation*, *tuple*, and
-*attribute*, respectively. We will use the less formal
-terms in this chapter.
+In technischen Beschreibungen von relationalen Datenbanken werden die Konzepte Tabelle, Zeile und Spalte formaler als *Relation*, *Tupel* bzw. *Attribut* bezeichnet. Wir werden in diesem Kapitel die weniger formalen Begriffe verwenden.
 
-Database Browser for SQLite
----------------------------
+Datenbank-Browser für SQLite
+----------------------------
 
-While this chapter will focus on using Python to work with data in
-SQLite database files, many operations can be done more conveniently
-using software called the *Database Browser for SQLite* which is freely available from:
+Während sich dieses Kapitel auf die Verwendung von Python für die Arbeit mit Daten in SQLite-Datenbankdateien konzentriert, können viele Operationen bequemer mit einer Software namens *Database Browser for SQLite* durchgeführt werden, die frei erhältlich ist:
 
 <http://sqlitebrowser.org/>
 
-Using the browser you can easily create tables, insert data, edit data,
-or run simple SQL queries on the data in the database.
+Mit dem Browser können Sie ganz einfach Tabellen erstellen, Daten einfügen, Daten bearbeiten oder einfache SQL-Abfragen zu den Daten in der Datenbank ausführen.
 
-In a sense, the database browser is similar to a text editor when
-working with text files. When you want to do one or very few operations
-on a text file, you can just open it in a text editor and make the
-changes you want. When you have many changes that you need to do to a
-text file, often you will write a simple Python program. You will find
-the same pattern when working with databases. You will do simple
-operations in the database manager and more complex operations will be
-most conveniently done in Python.
+In gewisser Weise ähnelt der Datenbank-Browser einem Texteditor beim Arbeiten mit Textdateien. Wenn Sie eine oder sehr wenige Operationen an einer Textdatei durchführen möchten, können Sie sie einfach in einem Texteditor öffnen und die gewünschten Änderungen vornehmen. Wenn Sie viele Änderungen an einer Textdatei vornehmen müssen, werden Sie oft ein einfaches Python-Programm schreiben. Das gleiche Vorgehen werden Sie bei der Arbeit mit Datenbanken finden. Sie werden einfache Operationen im Datenbankmanager durchführen und komplexere Operationen werden am bequemsten in Python erledigt.
 
-Creating a database table
--------------------------
+Erstellen einer Datenbanktabelle
+--------------------------------
 
-Databases require more defined structure than Python lists or
-dictionaries^[SQLite actually does allow some flexibility in the type of data
-stored in a column, but we will keep our data types strict in this
-chapter so the concepts apply equally to other database systems such
-as MySQL.].
+Datenbanken erfordern eine definiertere Struktur als Python-Listen oder -Wörterbücher^[SQLite erlaubt tatsächlich eine gewisse Flexibilität bei der Art der in einer Spalte gespeicherten Daten, aber wir werden unsere Datentypen in diesem Kapitel strikt einhalten, damit die Konzepte auch für andere Datenbanksysteme wie MySQL gelten].
 
-When we create a database *table* we must tell the
-database in advance the names of each of the *columns* in
-the table and the type of data which we are planning to store in each
-*column*. When the database software knows the type of
-data in each column, it can choose the most efficient way to store and
-look up the data based on the type of data.
+Wenn wir eine *Datenbanktabelle* erstellen, müssen wir der Datenbank im Voraus die Namen der einzelnen *Spalten* in der Tabelle und die Art der Daten mitteilen, die wir in jeder *Spalte* zu speichern beabsichtigen. Wenn die Datenbanksoftware den Typ der Daten in jeder Spalte kennt, kann sie den effizientesten Weg zum Speichern und Nachschlagen der Daten auf der Grundlage des Datentyps wählen.
 
-You can look at the various data types supported by SQLite at the
-following url:
+Die verschiedenen Datentypen, die von SQLite unterstützt werden, können Sie sich unter der folgenden URL ansehen:
 
 <http://www.sqlite.org/datatypes.html>
 
-Defining structure for your data up front may seem inconvenient at the
-beginning, but the payoff is fast access to your data even when the
-database contains a large amount of data.
+Das Definieren einer Struktur für Ihre Daten im Voraus mag anfangs umständlich erscheinen, aber der Lohn ist ein schneller Zugriff auf Ihre Daten, selbst wenn die Datenbank eine große Menge an Daten enthält.
 
-The code to create a database file and a table named `Tracks`
-with two columns in the database is as follows:
+Der Code zum Erstellen einer Datenbankdatei und einer Tabelle namens `Tracks` mit zwei Spalten in der Datenbank lautet wie folgt:
 
-\index{sqlite3 module}
-\index{module!sqlite3}
+\index{sqlite3 (Modul)}
+\index{Modul!sqlite3}
 
 \VerbatimInput{../code3/db1.py}
 
-\index{connect function}
-\index{function!connect}
-\index{cursor function}
-\index{function!cursor}
+\index{connect (Funktion)}
+\index{Funktion!connect}
+\index{cursor (Funktion)}
+\index{Funktion!cursor}
 
-The `connect` operation makes a "connection" to the database
-stored in the file `music.sqlite` in the current directory.
-If the file does not exist, it will be created. The reason this is
-called a "connection" is that sometimes the database is stored on a
-separate "database server" from the server on which we are running our
-application. In our simple examples the database will just be a local
-file in the same directory as the Python code we are running.
+Die Operation `connect` stellt eine *Verbindung* zu der Datenbank her, die in der Datei `music.sqlite` im aktuellen Verzeichnis gespeichert ist. Wenn die Datei nicht vorhanden ist, wird sie erstellt. Der Grund, warum dies als *Verbindung* bezeichnet wird, ist, dass die Datenbank manchmal auf einem anderen *Datenbankserver* als dem Server gespeichert ist, auf dem wir unsere Anwendung ausführen. In unseren einfachen Beispielen ist die Datenbank nur eine lokale Datei im gleichen Verzeichnis wie der Python-Code, den wir ausführen.
 
-A *cursor* is like a file handle that we can use to
-perform operations on the data stored in the database. Calling
-`cursor()` is very similar conceptually to calling
-`open()` when dealing with text files.
+Ein *Cursor* ist wie ein Dateihandler, mit dem wir Operationen mit den in der Datenbank gespeicherten Daten durchführen können. Der Aufruf von `cursor()` ist konzeptionell sehr ähnlich wie der Aufruf von `open()` beim Umgang mit Textdateien.
 
-![A Database Cursor](height=2.0in@../images/cursor)
+![Ein Datenbank-Cursor](height=2.0in@../images/cursor)
 
-Once we have the cursor, we can begin to execute commands on the
-contents of the database using the `execute()` method.
+Sobald wir den Cursor haben, können wir damit beginnen, Befehle auf dem Inhalt der Datenbank mit der Methode `execute()` auszuführen.
 
-Database commands are expressed in a special language that has been
-standardized across many different database vendors to allow us to learn
-a single database language. The database language is called
-*Structured Query Language* or *SQL* for
-short.
+Datenbankbefehle werden in einer speziellen Sprache ausgedrückt, die über viele verschiedene Datenbankanbieter hinweg standardisiert wurde, damit wir eine einzige Datenbanksprache erlernen können. Die Datenbanksprache wird *Structured Query Language* oder kurz *SQL* genannt.
 
 <http://en.wikipedia.org/wiki/SQL>
 
-In our example, we are executing two SQL commands in our database. As a
-convention, we will show the SQL keywords in uppercase and the parts of
-the command that we are adding (such as the table and column names) will
-be shown in lowercase.
+In unserem Beispiel führen wir zwei SQL-Befehle in unserer Datenbank aus. Als Konvention zeigen wir die SQL-Schlüsselwörter in Großbuchstaben und die Teile des Befehls, die wir hinzufügen (z. B. die Tabellen- und Spaltennamen), werden in Kleinbuchstaben dargestellt.
 
-The first SQL command removes the `Tracks` table from the
-database if it exists. This pattern is simply to allow us to run the
-same program to create the `Tracks` table over and over again
-without causing an error. Note that the `DROP TABLE` command
-deletes the table and all of its contents from the database (i.e., there
-is no "undo").
+Der erste SQL-Befehl entfernt die Tabelle `Tracks` aus der Datenbank, falls sie existiert. Dieses Muster dient lediglich dazu, dass wir das gleiche Programm zum Erstellen der Tabelle `Tracks` immer wieder ausführen können, ohne einen Fehler zu verursachen. Beachten Sie, dass der Befehl `DROP TABLE` die Tabelle und ihren gesamten Inhalt aus der Datenbank löscht (d. h. es gibt kein „Undo“).
 
 ~~~~ {.python}
 cur.execute('DROP TABLE IF EXISTS Tracks ')
 ~~~~
 
-The second command creates a table named `Tracks` with a text
-column named `title` and an integer column named
-`plays`.
+Der zweite Befehl erstellt eine Tabelle namens `Tracks` mit einer Textspalte namens `title` und einer Integer-Spalte namens `plays`.
 
 ~~~~ {.python}
 cur.execute('CREATE TABLE Tracks (title TEXT, plays INTEGER)')
 ~~~~
 
-Now that we have created a table named `Tracks`, we can put
-some data into that table using the SQL `INSERT` operation.
-Again, we begin by making a connection to the database and obtaining the
-`cursor`. We can then execute SQL commands using the cursor.
+Nachdem wir nun eine Tabelle namens `Tracks` erstellt haben, können wir mit der SQL-Operation `INSERT` Daten in diese Tabelle einfügen. Wieder beginnen wir damit, eine Verbindung zur Datenbank herzustellen und einen „Cursor“ zu erhalten. Dann können wir SQL-Befehle mit dem Cursor ausführen.
 
-The SQL `INSERT` command indicates which table we are using
-and then defines a new row by listing the fields we want to include
-`(title, plays)` followed by the `VALUES` we want
-placed in the new row. We specify the values as question marks `(?,
-?)` to indicate that the actual values are passed in as a tuple
-`( 'My Way', 15 ) ` as the second parameter to the
-`execute()` call.
+Der SQL-Befehl `INSERT` gibt an, welche Tabelle wir verwenden und definiert dann eine neue Zeile, indem er die Felder auflistet, die wir einschließen wollen `(title, plays)`, gefolgt von den `VALUES`, die wir in der neuen Zeile platzieren wollen. Wir geben die Werte als Fragezeichen `(?, ?)` an, um anzuzeigen, dass die tatsächlichen Werte als Tupel `( 'My Way', 15 ) ` als zweiter Parameter an den Aufruf von `execute()` übergeben werden.
 
 \VerbatimInput{../code3/db2.py}
 
-First we `INSERT` two rows into our table and use
-`commit()` to force the data to be written to the database
-file.
+Zuerst fügen wir mit `INSERT` zwei Zeilen (Datensätze) in unsere Tabelle ein und benutzen `commit()`, um das Schreiben der Daten in die Datenbankdatei zu erzwingen.
 
-![Rows in a Table](height=1.5in@../images/tracks)
+![Zeilen in einer Tabelle](height=1.5in@../images/tracks)
 
-Then we use the `SELECT` command to retrieve the rows we just
-inserted from the table. On the `SELECT` command, we indicate
-which columns we would like `(title, plays)` and indicate
-which table we want to retrieve the data from. After we execute the
-`SELECT` statement, the cursor is something we can loop
-through in a `for` statement. For efficiency, the cursor does
-not read all of the data from the database when we execute the
-`SELECT` statement. Instead, the data is read on demand as we
-loop through the rows in the `for` statement.
+Dann verwenden wir den Befehl `SELECT`, um die Zeilen, die wir gerade eingefügt haben, aus der Tabelle abzurufen. Beim `SELECT`-Befehl geben wir an, welche Spalten wir haben möchten `(title, plays)` und aus welcher Tabelle wir die Daten abrufen möchten. Nachdem wir die `SELECT`-Anweisung ausgeführt haben, können wir den Cursor in einer `for`-Anweisung in einer Schleife durchlaufen. Um die Effizienz zu erhöhen, liest der Cursor nicht alle Daten aus der Datenbank, wenn wir die Anweisung `SELECT` ausführen. Stattdessen werden die Daten bei Bedarf gelesen, wenn wir in der `for`-Schleife durch die Zeilen iterieren.
 
-The output of the program is as follows:
+Die Ausgabe des Programms ist wie folgt:
 
 ~~~~
 Tracks:
@@ -202,175 +112,91 @@ Tracks:
 
 \index{Unicode}
 
-Our `for` loop finds two rows, and each row is a Python tuple
-with the first value as the `title` and the second value as
-the number of `plays`. 
+Unsere `for`-Schleife findet zwei Zeilen, und jede Zeile ist ein Python-Tupel mit dem ersten Wert als `title` und dem zweiten Wert als die Anzahl der `plays`.
 
-*Note: You may see strings starting with `u'` in other books or on the Internet. 
-This was an indication in Python 2 that the strings are *Unicode* strings that are capable
-of storing non-Latin character sets. In Python 3, all strings are unicode
-strings by default.*
+*Hinweis: In anderen Büchern oder im Internet sehen Sie möglicherweise Zeichenketten, die mit `u'` beginnen. Dies war in Python 2 ein Hinweis darauf, dass es sich bei den Strings um *Unicode*-Strings handelt, die in der Lage sind, nicht-lateinische Zeichensätze zu speichern. In Python 3 sind alle Zeichenketten standardmäßig Unicode-Zeichenketten.*
 
-At the very end of the program, we execute an SQL command to
-`DELETE` the rows we have just created so we can run the
-program over and over. The `DELETE` command shows the use of
-a `WHERE` clause that allows us to express a selection
-criterion so that we can ask the database to apply the command to only
-the rows that match the criterion. In this example the criterion happens
-to apply to all the rows so we empty the table out so we can run the
-program repeatedly. After the `DELETE` is performed, we also
-call `commit()` to force the data to be removed from the
-database.
+Ganz am Ende des Programms führen wir einen SQL-Befehl aus, um die gerade erstellten Zeilen mit `DELETE` zu löschen, damit wir das Programm immer wieder ausführen können. Der `DELETE`-Befehl zeigt die Verwendung einer `WHERE`-Klausel, mit der wir ein Auswahlkriterium ausdrücken können, so dass wir die Datenbank bitten können, den Befehl nur auf die Zeilen anzuwenden, die das Kriterium erfüllen. In diesem Beispiel trifft das Kriterium zufällig auf alle Zeilen zu, also leeren wir die Tabelle, damit wir das Programm wiederholt ausführen können. Nachdem das `DELETE` ausgeführt wurde, rufen wir auch `commit()` auf, um die Entfernung der Daten aus der Datenbank zu erzwingen.
 
-Structured Query Language summary
----------------------------------
+Zusammenfassung von SQL
+-----------------------
 
-So far, we have been using the Structured Query Language in our Python
-examples and have covered many of the basics of the SQL commands. In
-this section, we look at the SQL language in particular and give an
-overview of SQL syntax.
+Bisher haben wir die Structured Query Language in unseren Python-Beispielen verwendet und viele der Grundlagen der SQL-Befehle behandelt. In diesem Abschnitt gehen wir auf die SQL-Sprache im Speziellen ein und geben einen Überblick über die SQL-Syntax.
 
-Since there are so many different database vendors, the Structured Query
-Language (SQL) was standardized so we could communicate in a portable
-manner to database systems from multiple vendors.
+Da es so viele verschiedene Datenbankanbieter gibt, wurde die Structured Query Language (SQL) standardisiert, damit wir in einer portablen Weise mit Datenbanksystemen verschiedener Anbieter kommunizieren können.
 
-A relational database is made up of tables, rows, and columns. The
-columns generally have a type such as text, numeric, or date data. When
-we create a table, we indicate the names and types of the columns:
+Eine relationale Datenbank setzt sich aus Tabellen, Zeilen und Spalten zusammen. Die Spalten haben im Allgemeinen einen Typ, z. B. Text, numerische Daten oder Datumsdaten. Wenn wir eine Tabelle erstellen, geben wir die Namen und Typen der Spalten an:
 
 ~~~~ {.sql}
 CREATE TABLE Tracks (title TEXT, plays INTEGER)
 ~~~~
 
-To insert a row into a table, we use the SQL `INSERT`
-command:
+Um eine Zeile in eine Tabelle einzufügen, verwenden wir den SQL-Befehl `INSERT`:
 
 ~~~~ {.sql}
 INSERT INTO Tracks (title, plays) VALUES ('My Way', 15)
 ~~~~
 
-The `INSERT` statement specifies the table name, then a list
-of the fields/columns that you would like to set in the new row, and
-then the keyword `VALUES` and a list of corresponding values
-for each of the fields.
+Die Anweisung `INSERT` gibt den Tabellennamen an, dann eine Liste der Spalten, in die Sie Werte schreiben möchten, und dann das Schlüsselwort `VALUES` und eine Liste der entsprechenden Werte für jedes der Felder.
 
-The SQL `SELECT` command is used to retrieve rows and columns
-from a database. The `SELECT` statement lets you specify
-which columns you would like to retrieve as well as a `WHERE`
-clause to select which rows you would like to see. It also allows an
-optional `ORDER BY` clause to control the sorting of the
-returned rows.
+Der SQL-Befehl `SELECT` wird zum Abrufen von Zeilen und Spalten aus einer Datenbank verwendet. Mit der `SELECT`-Anweisung können Sie angeben, welche Spalten Sie abrufen möchten, sowie eine `WHERE`-Klausel, um die Zeilen auszuwählen, die Sie sehen möchten. Sie erlaubt auch eine optionale "ORDER BY"-Klausel, um die Sortierung der zurückgegebenen Zeilen zu steuern.
 
 ~~~~ {.sql}
 SELECT * FROM Tracks WHERE title = 'My Way'
 ~~~~
 
-Using `*` indicates that you want the database to return all of the
-columns for each row that matches the `WHERE` clause.
+Die Verwendung von `*` zeigt an, dass die Datenbank alle Spalten für jede Zeile zurückgeben soll, die mit der `WHERE`-Klausel übereinstimmt.
 
-Note, unlike in Python, in a SQL `WHERE` clause we use a
-single equal sign to indicate a test for equality rather than a double
-equal sign. Other logical operations allowed in a `WHERE`
-clause include `<`, `>`, `<=`, `>=`, `!=`, as well as `AND`
-and `OR` and parentheses to build your logical expressions.
+Beachten Sie, dass anders als in Python in einer SQL-`WHERE`-Klausel ein einzelnes Gleichheitszeichen verwendet wird, um einen Test auf Gleichheit anzuzeigen, und nicht ein doppeltes Gleichheitszeichen. Andere logische Operationen, die in einer `WHERE`-Klausel erlaubt sind, sind `<`, `>`, `<=`, `>=`, `!=`, sowie `AND` und `OR` und Klammern, um Ihre logischen Ausdrücke aufzubauen.
 
-You can request that the returned rows be sorted by one of the fields as
-follows:
+Sie können anfordern, dass die zurückgegebenen Zeilen nach einem der Felder wie folgt sortiert werden:
 
 ~~~~ {.sql}
 SELECT title,plays FROM Tracks ORDER BY title
 ~~~~
 
-To remove a row, you need a `WHERE` clause on an SQL
-`DELETE` statement. The `WHERE` clause determines
-which rows are to be deleted:
+Um eine Zeile zu entfernen, benötigen Sie eine `WHERE`-Klausel in einer SQL `DELETE`-Anweisung. Die `WHERE`-Klausel bestimmt, welche Zeilen gelöscht werden sollen:
 
 ~~~~ {.sql}
 DELETE FROM Tracks WHERE title = 'My Way'
 ~~~~
 
-It is possible to `UPDATE` a column or columns within one or
-more rows in a table using the SQL `UPDATE` statement as
-follows:
+Es ist möglich, eine oder mehrere Spalten in einer oder mehreren Zeilen einer Tabelle mit der SQL-Anweisung `UPDATE` wie folgt zu aktualisieren:
 
 ~~~~ {.sql}
 UPDATE Tracks SET plays = 16 WHERE title = 'My Way'
 ~~~~
 
-The `UPDATE` statement specifies a table and then a list of
-fields and values to change after the `SET` keyword and then
-an optional `WHERE` clause to select the rows that are to be
-updated. A single `UPDATE` statement will change all of the
-rows that match the `WHERE` clause. If a `WHERE`
-clause is not specified, it performs the `UPDATE` on all of
-the rows in the table.
+Die `UPDATE`-Anweisung spezifiziert eine Tabelle und dann eine Liste von Feldern und Werten, die nach dem `SET`-Schlüsselwort geändert werden sollen, und dann eine optionale `WHERE`-Klausel, um die Zeilen auszuwählen, die aktualisiert werden sollen. Eine einzelne `UPDATE`-Anweisung ändert alle Zeilen, die mit der `WHERE`-Klausel übereinstimmen. Wenn keine `WHERE`-Klausel angegeben ist, wird die `UPDATE`-Anweisung für alle Zeilen in der Tabelle ausgeführt.
 
-These four basic SQL commands (INSERT, SELECT, UPDATE, and DELETE) allow
-the four basic operations needed to create and maintain data.
+Diese vier grundlegenden SQL-Befehle (`INSERT`, `SELECT`, `UPDATE` und `DELETE`) ermöglichen die vier grundlegenden Operationen, die zum Erstellen und Verwalten von Daten erforderlich sind.
 
-Spidering Twitter using a database
-----------------------------------
+Auslesen von Twitter-Daten mithilfe einer Datenbank 
+---------------------------------------------------
 
-In this section, we will create a simple spidering program that will go
-through Twitter accounts and build a database of them. *Note: Be very
-careful when running this program. You do not want to pull too much data
-or run the program for too long and end up having your Twitter access
-shut off.*
+In diesem Abschnitt werden wir ein einfaches Spidering-Programm erstellen, das Twitter-Konten durchgeht und eine Datenbank von ihnen erstellt. *Hinweis: Seien Sie sehr vorsichtig, wenn Sie dieses Programm ausführen. Sie möchten nicht zu viele Daten abrufen oder das Programm zu lange laufen lassen, damit Ihren Zugang nicht sperrt.*
 
-One of the problems of any kind of spidering program is that it needs to
-be able to be stopped and restarted many times and you do not want to
-lose the data that you have retrieved so far. You don't want to always
-restart your data retrieval at the very beginning so we want to store
-data as we retrieve it so our program can start back up and pick up
-where it left off.
+Eines der Probleme bei jeder Art von Spidering-Programm ist, dass es in der Lage sein muss, viele Male angehalten und neu gestartet zu werden, und Sie wollen nicht die Daten verlieren, die Sie bisher abgerufen haben. Sie wollen Ihre Datenabfrage nicht immer wieder von vorne beginnen, also wollen wir die Daten speichern, während wir sie abrufen, damit unser Programm wieder starten und dort weitermachen kann, wo es aufgehört hat.
 
-We will start by retrieving one person's Twitter friends and their
-statuses, looping through the list of friends, and adding each of the
-friends to a database to be retrieved in the future. After we process
-one person's Twitter friends, we check in our database and retrieve one
-of the friends of the friend. We do this over and over, picking an
-"unvisited" person, retrieving their friend list, and adding friends we
-have not seen to our list for a future visit.
+Wir beginnen damit, dass wir die Twitter-Freunde einer Person und deren Status abrufen, die Liste der Freunde in einer Schleife durchlaufen und jeden der Freunde zu einer Datenbank hinzufügen, um sie in Zukunft abrufen zu können. Nachdem wir die Twitter-Freunde einer Person verarbeitet haben, schauen wir in unserer Datenbank nach und rufen einen der Freunde des Freundes ab. Wir machen das immer wieder, wählen eine „nicht besuchte“ Person aus, rufen ihre Freundesliste ab und fügen die Freunde, die wir nicht gesehen haben, unserer Liste für einen zukünftigen Besuch hinzu.
 
-We also track how many times we have seen a particular friend in the
-database to get some sense of their "popularity".
+Wir verfolgen auch, wie oft wir einen bestimmten Freund in der Datenbank gesehen haben, um ein Gefühl für seine Beliebtheit zu bekommen.
 
-By storing our list of known accounts and whether we have retrieved the
-account or not, and how popular the account is in a database on the disk
-of the computer, we can stop and restart our program as many times as we
-like.
+Indem wir unsere Liste der bekannten Konten und ob wir das Konto bereits abgerufen haben oder nicht, und wie beliebt das Konto ist, in einer Datenbank auf der Festplatte des Computers speichern, können wir unser Programm beliebig oft anhalten und neu starten.
 
-This program is a bit complex. It is based on the code from the exercise
-earlier in the book that uses the Twitter API.
+Dieses Programm ist ein wenig komplex. Es basiert auf dem Code aus der Übung weiter oben im Buch, die die Twitter-API verwendet.
 
-Here is the source code for our Twitter spidering application:
+Hier ist der Quellcode für unsere Twitter Spidering-Anwendung:
 
 \VerbatimInput{../code3/twspider.py}
 
-Our database is stored in the file `spider.sqlite` and it
-has one table named `Twitter`. Each row in the
-`Twitter` table has a column for the account name, whether we
-have retrieved the friends of this account, and how many times this
-account has been "friended".
+Unsere Datenbank ist in der Datei `spider.sqlite` gespeichert und sie hat eine Tabelle namens `Twitter`. Jede Zeile in der `Twitter`-Tabelle hat eine Spalte für den Kontonamen, ob wir die Freunde dieses Kontos abgerufen haben und wie oft dieses Konto „befreundet“ wurde.
 
-In the main loop of the program, we prompt the user for a Twitter
-account name or "quit" to exit the program. If the user enters a Twitter
-account, we retrieve the list of friends and statuses for that user and
-add each friend to the database if not already in the database. If the
-friend is already in the list, we add 1 to the `friends`
-field in the row in the database.
+In der Hauptschleife des Programms wird der Benutzer aufgefordert, den Namen eines Twitter-Kontos einzugeben oder das Programm mit `quit` zu beenden. Wenn der Benutzer einen Twitter-Account eingibt, rufen wir die Liste der Freunde und Status für diesen Benutzer ab und fügen jeden Freund zur Datenbank hinzu, wenn er nicht bereits in der Datenbank vorhanden ist. Wenn der Freund bereits in der Liste ist, fügen wir 1 zum Feld `friends` in der Zeile in der Datenbank hinzu.
 
-If the user presses enter, we look in the database for the next Twitter
-account that we have not yet retrieved, retrieve the friends and
-statuses for that account, add them to the database or update them, and
-increase their `friends` count.
+Wenn der Benutzer die Eingabetaste drückt, suchen wir in der Datenbank nach dem nächsten Twitter-Konto, das wir noch nicht abgerufen haben, rufen die Freunde und den Status dieses Kontos ab, fügen sie der Datenbank hinzu oder aktualisieren sie und erhöhen die Anzahl ihrer `friends`.
 
-Once we retrieve the list of friends and statuses, we loop through all
-of the `user` items in the returned JSON and retrieve the
-`screen_name` for each user. Then we use the `SELECT`
-statement to see if we already have stored this particular `screen_name`
-in the database and retrieve the friend count (`friends`) if
-the record exists.
+Sobald wir die Liste der Freunde und Status abgerufen haben, gehen wir in einer Schleife durch alle `user`-Elemente im zurückgegebenen JSON und rufen den `screen_name` für jeden Benutzer ab. Dann verwenden wir die Anweisung `SELECT`, um zu sehen, ob wir diesen bestimmten `screen_name` bereits in der Datenbank gespeichert haben und rufen die Anzahl der Freunde (`friends`) ab, wenn der Datensatz existiert.
 
 ~~~~ {.python}
 countnew = 0
@@ -393,33 +219,13 @@ print('New accounts=',countnew,' revisited=',countold)
 conn.commit()
 ~~~~
 
-Once the cursor executes the `SELECT` statement, we must
-retrieve the rows. We could do this with a `for` statement,
-but since we are only retrieving one row (`LIMIT 1`), we can
-use the `fetchone()` method to fetch the first (and only) row
-that is the result of the `SELECT` operation. Since
-`fetchone()` returns the row as a *tuple*
-(even though there is only one field), we take the first value from the
-tuple using to get the current friend count into the variable
-`count`.
+Sobald der Cursor die `SELECT`-Anweisung ausführt, müssen wir die Zeilen abrufen. Wir könnten dies mit einer `for`-Schleife tun, aber da wir nur eine Zeile abrufen (`LIMIT 1`), können wir die Methode `fetchone()` verwenden, um die erste (und einzige) Zeile zu laden, die das Ergebnis der `SELECT`-Anweisung ist. Da `fetchone()` die Zeile als *Tupel* zurückgibt (auch wenn es nur ein Feld gibt), nehmen wir den ersten Wert aus dem Tupel, um die aktuelle Anzahl der Freunde in die Variable `count` zu bekommen.
 
-If this retrieval is successful, we use the SQL `UPDATE`
-statement with a `WHERE` clause to add 1 to the
-`friends` column for the row that matches the friend's
-account. Notice that there are two placeholders (i.e., question marks)
-in the SQL, and the second parameter to the `execute()` is a
-two-element tuple that holds the values to be substituted into the SQL
-in place of the question marks.
+Wenn dieser Abruf erfolgreich ist, verwenden wir die SQL-Anweisung `UPDATE` mit einer `WHERE`-Klausel, um der Spalte `friends` für die Zeile, die dem Konto des Freundes entspricht, 1 hinzuzufügen. Beachten Sie, dass es zwei Platzhalter (d. h. Fragezeichen) in der SQL-Anweisung gibt und der zweite Parameter von `execute()` ein Tupel mit zwei Elementen ist, das die Werte enthält, die in der SQL-Anweisung anstelle der Fragezeichen eingesetzt werden sollen.
 
-If the code in the `try` block fails, it is probably because
-no record matched the `WHERE name = ?` clause on the SELECT
-statement. So in the `except` block, we use the SQL
-`INSERT` statement to add the friend's `screen_name` to the
-table with an indication that we have not yet retrieved the
-`screen_name` and set the friend count to one.
+Wenn der Code im `try`-Block fehlschlägt, liegt es wahrscheinlich daran, dass kein Datensatz mit der `WHERE name = ?`-Klausel der `SELECT`-Anweisung übereinstimmt. Im `except`-Block verwenden wir also die SQL-Anweisung `INSERT`, um den `screen_name` des Freundes zur Tabelle hinzuzufügen, mit dem Hinweis, dass wir den `screen_name` noch nicht abgerufen haben, und setzen die Anzahl der Freunde auf eins.
 
-So the first time the program runs and we enter a Twitter account, the
-program runs as follows:
+Wenn das Programm also zum ersten Mal ausgeführt wird und wir ein Twitter-Konto eingeben, läuft das Programm wie folgt:
 
 ~~~~
 Enter a Twitter account, or quit: drchuck
@@ -428,23 +234,15 @@ New accounts= 20  revisited= 0
 Enter a Twitter account, or quit: quit
 ~~~~
 
-Since this is the first time we have run the program, the database is
-empty and we create the database in the file `spider.sqlite`
-and add a table named `Twitter` to the database. Then we
-retrieve some friends and add them all to the database since the
-database is empty.
+Da wir das Programm zum ersten Mal ausführen, ist die Datenbank leer. Wir erstellen die Datenbank in der Datei `spider.sqlite` und fügen eine Tabelle namens `Twitter` zur Datenbank hinzu. Dann rufen wir einige Freunde ab und fügen sie alle zur Datenbank hinzu, da die Datenbank leer ist.
 
-At this point, we might want to write a simple database dumper to take a
-look at what is in our `spider.sqlite` file:
+An dieser Stelle möchten wir vielleicht einen einfachen Datenbank-Dumper schreiben, um zu sehen, was in unserer Datei `spider.sqlite` steht:
 
 \VerbatimInput{../code3/twdump.py}
 
-This program simply opens the database and selects all of the columns of
-all of the rows in the table `Twitter`, then loops through
-the rows and prints out each row.
+Dieses Programm öffnet einfach die Datenbank und wählt alle Spalten aller Zeilen in der Tabelle `Twitter` aus, geht dann in einer Schleife durch die Zeilen und gibt jede Zeile aus.
 
-If we run this program after the first execution of our Twitter spider
-above, its output will be as follows:
+Wenn wir dieses Programm nach der ersten Ausführung unseres obigen Twitter-Spiders ausführen, sieht seine Ausgabe wie folgt aus:
 
 ~~~~
 ('opencontent', 0, 1)
@@ -456,14 +254,9 @@ above, its output will be as follows:
 20 rows.
 ~~~~
 
-We see one row for each `screen_name`, that we have not retrieved the
-data for that `screen_name`, and everyone in the database has one
-friend.
+Wir sehen eine Zeile für jeden `screen_name` und dass wir die Daten für diesen `screen_name` noch nicht abgerufen haben und dass jeder in der Datenbank einen Freund hat.
 
-Now our database reflects the retrieval of the friends of our first
-Twitter account (*drchuck*). We can run the program again
-and tell it to retrieve the friends of the next "unprocessed" account by
-simply pressing enter instead of a Twitter account as follows:
+Jetzt spiegelt unsere Datenbank den Abruf der Freunde unseres ersten Twitter-Accounts wider (*drchuck*). Wir können das Programm erneut starten und ihm sagen, dass es die Freunde des nächsten „unverarbeiteten“ Kontos abrufen soll, indem wir die Eingabetaste anstelle eines Twitter-Kontos drücken. Etwa wie folgt:
 
 ~~~~
 Enter a Twitter account, or quit:
@@ -475,8 +268,7 @@ New accounts= 17  revisited= 3
 Enter a Twitter account, or quit: quit
 ~~~~
 
-Since we pressed enter (i.e., we did not specify a Twitter account), the
-following code is executed:
+Da wir die Eingabetaste gedrückt haben (d. h. wir haben kein Twitter-Konto angegeben), wird der folgende Code ausgeführt:
 
 ~~~~ {.python}
 if ( len(acct) < 1 ) :
@@ -488,14 +280,9 @@ if ( len(acct) < 1 ) :
         continue
 ~~~~
 
-We use the SQL `SELECT` statement to retrieve the name of the
-first (`LIMIT 1`) user who still has their "have we retrieved
-this user" value set to zero. We also use the `fetchone()[0]`
-pattern within a try/except block to either extract a `screen_name` from
-the retrieved data or put out an error message and loop back up.
+Wir verwenden die SQL-Anweisung `SELECT`, um den Namen des ersten (`LIMIT 1`) Benutzers abzurufen, bei dem der Wert für „haben wir diesen Benutzer abgerufen?“ noch auf Null gesetzt ist. Wir verwenden auch `fetchone()[0]` innerhalb eines `try`/`except`-Blocks, um entweder einen `screen_name` aus den abgerufenen Daten zu extrahieren oder eine Fehlermeldung auszugeben und die Schleife erneut zu starten.
 
-If we successfully retrieved an unprocessed `screen_name`, we retrieve
-their data as follows:
+Wenn wir erfolgreich einen unverarbeiteten `screen_name` abgerufen haben, rufen wir dessen Daten wie folgt ab:
 
 ~~~~ {.python}
 url=twurl.augment(TWITTER_URL,{'screen_name': acct,'count': '20'})
@@ -507,15 +294,9 @@ js = json.loads(data)
 cur.execute('UPDATE Twitter SET retrieved=1 WHERE name = ?',(acct, ))
 ~~~~
 
-Once we retrieve the data successfully, we use the `UPDATE`
-statement to set the `retrieved` column to 1 to indicate that
-we have completed the retrieval of the friends of this account. This
-keeps us from retrieving the same data over and over and keeps us
-progressing forward through the network of Twitter friends.
+Sobald wir die Daten erfolgreich abgerufen haben, verwenden wir die Anweisung `UPDATE`, um die Spalte `retrieved` auf 1 zu setzen, um anzuzeigen, dass wir den Abruf der Freunde dieses Kontos abgeschlossen haben. Dies verhindert, dass wir die gleichen Daten immer wieder abrufen, und sorgt dafür, dass wir im Netzwerk der Twitter-Freunde vorankommen.
 
-If we run the friend program and press enter twice to retrieve the next
-unvisited friend's friends, then run the dumping program, it will give
-us the following output:
+Wenn wir das friend-Programm ausführen und zweimal die Eingabetaste drücken, um die Freunde des nächsten nicht besuchten Freundes abzurufen, und dann das dumping-Programm ausführen, erhalten wir die folgende Ausgabe:
 
 ~~~~
 ('opencontent', 1, 1)
@@ -532,161 +313,85 @@ us the following output:
 55 rows.
 ~~~~
 
-We can see that we have properly recorded that we have visited
-`lhawthorn` and `opencontent`. Also the accounts
-`cnxorg` and `kthanos` already have two followers.
-Since we now have retrieved the friends of three people
-(`drchuck`, `opencontent`, and
-`lhawthorn`) our table has 55 rows of friends to retrieve.
+Wir können sehen, dass wir richtig erfasst haben, dass wir `lhawthorn` und `opencontent` besucht haben. Auch die Konten `cnxorg` und `kthanos` haben bereits zwei Follower. Da wir nun die Freunde von drei Personen (`drchuck`, `opencontent` und `lhawthorn`) abgerufen haben, hat unsere Tabelle 55 Zeilen mit Freunden zum Abrufen.
 
-Each time we run the program and press enter it will pick the next
-unvisited account (e.g., the next account will be `steve_coppin`),
-retrieve their friends, mark them as retrieved, and for each of the
-friends of `steve_coppin` either add them to the end of the database or
-update their friend count if they are already in the database.
+Jedes Mal, wenn wir das Programm starten und die Eingabetaste drücken, wählt es das nächste nicht besuchte Konto aus (z. B. wird das nächste Konto `steve_coppin` sein), ruft dessen Freunde ab, markiert sie als abgerufen und fügt sie für jeden der Freunde von `steve_coppin` entweder am Ende der Datenbank hinzu oder aktualisiert ihre Freundesanzahl, wenn sie bereits in der Datenbank sind.
 
-Since the program's data is all stored on disk in a database, the
-spidering activity can be suspended and resumed as many times as you
-like with no loss of data.
+Da die Daten des Programms alle auf der Festplatte in einer Datenbank gespeichert werden, kann die Spidering-Aktivität beliebig oft ohne Datenverlust unterbrochen und wieder aufgenommen werden.
 
-Basic data modeling
--------------------
+Grundlegende Datenmodellierung
+------------------------------
 
-The real power of a relational database is when we create multiple
-tables and make links between those tables. The act of deciding how to
-break up your application data into multiple tables and establishing the
-relationships between the tables is called *data
-modeling*. The design document that shows the tables and their
-relationships is called a *data model*.
+Die eigentliche Leistung einer relationalen Datenbank besteht darin, dass wir mehrere Tabellen erstellen und zwischen diesen Tabellen Verknüpfungen herstellen. Die Entscheidung, wie Sie Ihre Anwendungsdaten in mehrere Tabellen aufteilen und die Beziehungen zwischen den Tabellen herstellen, wird *Datenmodellierung* genannt. Das Entwurfsdokument, das die Tabellen und ihre Beziehungen zeigt, wird als *Datenmodell* bezeichnet.
 
-Data modeling is a relatively sophisticated skill and we will only
-introduce the most basic concepts of relational data modeling in this
-section. For more detail on data modeling you can start with:
+Die Datenmodellierung ist eine relativ anspruchsvolle Aufgabe und wir werden in diesem Abschnitt nur die grundlegendsten Konzepte der relationalen Datenmodellierung vorstellen. Für weitere Details zur Datenmodellierung können Sie hier beginnen:
 
 <http://en.wikipedia.org/wiki/Relational_model>
 
-Let's say for our Twitter spider application, instead of just counting a
-person's friends, we wanted to keep a list of all of the incoming
-relationships so we could find a list of everyone who is following a
-particular account.
+Nehmen wir an, für unsere Twitter-Spider-Anwendung wollten wir nicht nur die Freunde einer Person zählen, sondern eine Liste aller eingehenden Beziehungen führen, damit wir eine Liste aller Personen finden, die einem bestimmten Konto folgen.
 
-Since everyone will potentially have many accounts that follow them, we
-cannot simply add a single column to our `Twitter` table. So
-we create a new table that keeps track of pairs of friends. The
-following is a simple way of making such a table:
+Da jeder potenziell viele Konten hat, die ihm folgen, können wir nicht einfach eine einzelne Spalte zu unserer `Twitter`-Tabelle hinzufügen. Also erstellen wir eine neue Tabelle, die die Freundespaare aufzeichnet. Im Folgenden sehen Sie eine einfache Möglichkeit, eine solche Tabelle zu erstellen:
 
 ~~~~ {.sql}
 CREATE TABLE Pals (from_friend TEXT, to_friend TEXT)
 ~~~~
 
-Each time we encounter a person who `drchuck` is following,
-we would insert a row of the form:
+Jedes Mal, wenn wir auf eine Person stoßen, der `drchuck` folgt, würden wir eine Zeile der Form einfügen:
 
 ~~~~ {.sql}
 INSERT INTO Pals (from_friend,to_friend) VALUES ('drchuck', 'lhawthorn')
 ~~~~
 
-As we are processing the 20 friends from the `drchuck`
-Twitter feed, we will insert 20 records with "drchuck" as the first
-parameter so we will end up duplicating the string many times in the
-database.
+Da wir die 20 Freunde aus dem Twitter-Feed `drchuck` verarbeiten, fügen wir 20 Datensätze mit `drchuck` als erstem Parameter ein, so dass die Zeichenkette am Ende viele Male in der Datenbank dupliziert wird.
 
-This duplication of string data violates one of the best practices for
-*database normalization* which basically states that we
-should never put the same string data in the database more than once. If
-we need the data more than once, we create a numeric
-*key* for the data and reference the actual data using
-this key.
+Diese Duplizierung von Zeichenkettendaten verstößt gegen eine der besten Praktiken für die *Datenbanknormalisierung*, die im Grunde besagt, dass wir dieselben Zeichenkettendaten nie mehr als einmal in die Datenbank aufnehmen sollten. Wenn wir die Daten mehr als einmal benötigen, erstellen wir einen numerischen *Schlüssel* (einen *Primärschlüssel*) für die Daten und referenzieren die eigentlichen Daten über diesen Schlüssel.
 
-In practical terms, a string takes up a lot more space than an integer
-on the disk and in the memory of our computer, and takes more processor
-time to compare and sort. If we only have a few hundred entries, the
-storage and processor time hardly matters. But if we have a million
-people in our database and a possibility of 100 million friend links, it
-is important to be able to scan data as quickly as possible.
+In der Praxis nimmt eine Zeichenkette viel mehr Platz auf der Festplatte und im Speicher unseres Computers ein als eine Ganzzahl und benötigt mehr Prozessorzeit zum Vergleichen und Sortieren. Wenn wir nur ein paar hundert Einträge haben, spielt die Speicher- und Prozessorzeit kaum eine Rolle. Aber wenn wir eine Million Personen in unserer Datenbank haben und eine Möglichkeit von 100 Millionen Freundschaftsverbindungen, ist es wichtig, die Daten so schnell wie möglich durchsuchen zu können.
 
-We will store our Twitter accounts in a table named `People`
-instead of the `Twitter` table used in the previous example.
-The `People` table has an additional column to store the
-numeric key associated with the row for this Twitter user. SQLite has a
-feature that automatically adds the key value for any row we insert into
-a table using a special type of data column (`INTEGER PRIMARY
-KEY`).
+Wir speichern unsere Twitter-Konten in einer Tabelle namens `People` anstelle der im vorherigen Beispiel verwendeten Tabelle `Twitter`. Die Tabelle `People` hat eine zusätzliche Spalte, um den numerischen Schlüssel zu speichern, der mit der Zeile für diesen Twitter-Benutzer verbunden ist. SQLite hat eine Funktion, die automatisch den Schlüsselwert für jede Zeile hinzufügt, die wir in eine Tabelle mit einem speziellen Typ von Datenspalte (`INTEGER PRIMARY KEY`) einfügen.
 
-We can create the `People` table with this additional
-`id` column as follows:
+Wir können die Tabelle `People` mit dieser zusätzlichen Spalte `id` wie folgt erstellen:
 
 ~~~~ {.sql}
 CREATE TABLE People
     (id INTEGER PRIMARY KEY, name TEXT UNIQUE, retrieved INTEGER)
 ~~~~
 
-Notice that we are no longer maintaining a friend count in each row of
-the `People` table. When we select `INTEGER PRIMARY
-KEY` as the type of our `id` column, we are indicating
-that we would like SQLite to manage this column and assign a unique
-numeric key to each row we insert automatically. We also add the keyword
-`UNIQUE` to indicate that we will not allow SQLite to insert
-two rows with the same value for `name`.
+Beachten Sie, dass wir nicht mehr in jeder Zeile der Tabelle `People` eine Freundesanzahl führen. Wenn wir `INTEGER PRIMARY KEY` als Typ unserer `id`-Spalte wählen, geben wir an, dass wir möchten, dass SQLite diese Spalte verwaltet und jeder Zeile, die wir einfügen, automatisch einen eindeutigen numerischen Schlüssel zuweist. Wir fügen auch das Schlüsselwort `UNIQUE` hinzu, um anzugeben, dass wir SQLite nicht erlauben, zwei Zeilen mit demselben Wert für `name` einzufügen.
 
-Now instead of creating the table `Pals` above, we create a
-table called `Follows` with two integer columns `from_id` and
-`to_id` and a constraint on the table that the *combination* of
-`from_id` and `to_id` must be unique in this table (i.e., we cannot
-insert duplicate rows) in our database.
+Statt der obigen Tabelle `Pals` erstellen wir nun eine Tabelle namens `Follows` mit zwei Integer-Spalten `from_id` und `to_id` und einer Einschränkung (englisch Constraint) für die Tabelle, dass die *Kombination* von `from_id` und `to_id` in dieser Tabelle eindeutig sein muss (d. h. wir können keine doppelten Zeilen einfügen) in unserer Datenbank.
 
 ~~~~ {.sql}
 CREATE TABLE Follows
     (from_id INTEGER, to_id INTEGER, UNIQUE(from_id, to_id) )
 ~~~~
 
-When we add `UNIQUE` clauses to our tables, we are
-communicating a set of rules that we are asking the database to enforce
-when we attempt to insert records. We are creating these rules as a
-convenience in our programs, as we will see in a moment. The rules both
-keep us from making mistakes and make it simpler to write some of our
-code.
+Wenn wir `UNIQUE`-Klauseln zu unseren Tabellen hinzufügen, kommunizieren wir eine Reihe von Regeln, die wir von der Datenbank verlangen, wenn wir versuchen, Datensätze einzufügen. Wir erstellen diese Regeln aus Bequemlichkeit in unseren Programmen, wie wir gleich sehen werden. Die Regeln halten uns davon ab, Fehler zu machen, und machen es einfacher, einen Teil unseres Codes zu schreiben.
 
-In essence, in creating this `Follows` table, we are
-modelling a "relationship" where one person "follows" someone else and
-representing it with a pair of numbers indicating that (a) the people
-are connected and (b) the direction of the relationship.
+Im Wesentlichen modellieren wir bei der Erstellung dieser `Follows`-Tabelle eine *Beziehung* (Relation), bei der eine Person einer anderen „folgt“, und stellen sie mit einem Zahlenpaar dar, das anzeigt, dass (a) die Personen miteinander verbunden sind und (b) die Richtung der Beziehung.
 
-![Relationships Between Tables](height=3.5in@figs2/twitter)
+![Beziehungen zwischen Tabellen](height=3.5in@figs2/twitter)
 
-Programming with multiple tables
---------------------------------
+Programmierung mit mehreren Tabellen
+------------------------------------
 
-We will now redo the Twitter spider program using two tables, the
-primary keys, and the key references as described above. Here is the
-code for the new version of the program:
+Wir werden nun das Twitter-Spider-Programm mit zwei Tabellen, den Primärschlüsseln und den Schlüsselreferenzen wie oben beschrieben neu erstellen. Hier ist der Code für die neue Version des Programms:
 
 \VerbatimInput{../code3/twfriends.py}
 
-This program is starting to get a bit complicated, but it illustrates
-the patterns that we need to use when we are using integer keys to link
-tables. The basic patterns are:
+Dieses Programm fängt an, ein bisschen kompliziert zu werden, aber es veranschaulicht die Muster, die wir verwenden müssen, wenn wir Integer-Schlüssel zur Verknüpfung von Tabellen verwenden. Das grundlegende Vorgehen sind:
 
-1.  Create tables with primary keys and constraints.
+1.  Erstellen Sie Tabellen mit Primärschlüsseln und Constraints.
 
-2.  When we have a logical key for a person (i.e., account name) and we
-    need the `id` value for the person, depending on whether
-    or not the person is already in the `People` table we
-    either need to: (1) look up the person in the `People`
-    table and retrieve the `id` value for the person or (2)
-    add the person to the `People` table and get the
-    `id` value for the newly added row.
+2.  Wenn wir einen logischen Schlüssel für eine Person haben (z. B. den Kontonamen) und den `id`-Wert für die Person benötigen, müssen wir je nachdem, ob die Person bereits in der Tabelle `People` enthalten ist oder nicht, entweder (1) die Person in der Tabelle `People` nachschlagen und den Wert `id` für die Person abrufen oder (2) die Person zur Tabelle `People` hinzufügen und den Wert `id` für die neu hinzugefügte Zeile abrufen.
 
-3.  Insert the row that captures the "follows" relationship.
+3.  Fügen Sie die Zeile ein, die die `Follows`-Beziehung erfasst.
 
-We will cover each of these in turn.
+Wir werden jeden dieser Punkte nacheinander behandeln.
 
-### Constraints in database tables
+### Constraints in Datenbanktabellen
 
-As we design our table structures, we can tell the database system that
-we would like it to enforce a few rules on us. These rules help us from
-making mistakes and introducing incorrect data into out tables. When we
-create our tables:
+Wenn wir unsere Tabellenstrukturen entwerfen, können wir dem Datenbanksystem mitteilen, dass wir möchten, dass es uns ein paar Regeln auferlegt. Diese Regeln helfen uns, Fehler zu vermeiden und falsche Daten in unsere Tabellen einzufügen. Wenn wir unsere Tabellen erstellen
 
 ~~~~ {.python}
 cur.execute('''CREATE TABLE IF NOT EXISTS People
@@ -695,63 +400,37 @@ cur.execute('''CREATE TABLE IF NOT EXISTS Follows
     (from_id INTEGER, to_id INTEGER, UNIQUE(from_id, to_id))''')
 ~~~~
 
-We indicate that the `name` column in the `People`
-table must be `UNIQUE`. We also indicate that the combination
-of the two numbers in each row of the `Follows` table must be
-unique. These constraints keep us from making mistakes such as adding
-the same relationship more than once.
+Dann geben wir an, dass die Spalte `name` in der Tabelle `People` `UNIQUE` sein muss. Wir geben auch an, dass die Kombination der beiden Zahlen in jeder Zeile der Tabelle `Follows` eindeutig sein muss. Diese Einschränkungen verhindern, dass wir Fehler machen, z. B. dieselbe Beziehung mehr als einmal hinzufügen.
 
-We can take advantage of these constraints in the following code:
+Wir können diese Einschränkungen im folgenden Code ausnutzen:
 
 ~~~~ {.python}
 cur.execute('''INSERT OR IGNORE INTO People (name, retrieved)
     VALUES ( ?, 0)''', ( friend, ) )
 ~~~~
 
-We add the `OR IGNORE` clause to our `INSERT`
-statement to indicate that if this particular `INSERT` would
-cause a violation of the "`name` must be unique" rule, the
-database system is allowed to ignore the `INSERT`. We are
-using the database constraint as a safety net to make sure we don't
-inadvertently do something incorrect.
+Wir fügen die Klausel `OR IGNORE` zu unserer `INSERT`-Anweisung hinzu, um anzugeben, dass das Datenbanksystem die `INSERT`-Anweisung ignorieren soll, wenn dieser bestimmte `INSERT` eine Verletzung der Regel, dass `name` eindeutig sein muss, verursachen würde. Wir verwenden die Datenbankbeschränkung als Sicherheitsnetz, um sicherzustellen, dass wir nicht versehentlich etwas Falsches tun.
 
-Similarly, the following code ensures that we don't add the exact same
-`Follows` relationship twice.
+In ähnlicher Weise stellt der folgende Code sicher, dass wir nicht genau die gleiche `Follows`-Beziehung zweimal hinzufügen.
 
 ~~~~ {.python}
 cur.execute('''INSERT OR IGNORE INTO Follows
     (from_id, to_id) VALUES (?, ?)''', (id, friend_id) )
 ~~~~
 
-Again, we simply tell the database to ignore our attempted
-`INSERT` if it would violate the uniqueness constraint that
-we specified for the `Follows` rows.
+Auch hier sagen wir der Datenbank einfach, dass sie unser versuchtes `INSERT` ignorieren soll, wenn sie die `UNIQUE`-Constraint verletzen würde, die wir für die `Follows`-Zeilen angegeben haben.
 
-### Retrieve and/or insert a record
+### Abrufen und/oder Einfügen eines Datensatzes
 
-When we prompt the user for a Twitter account, if the account exists, we
-must look up its `id` value. If the account does not yet
-exist in the `People` table, we must insert the record and
-get the `id` value from the inserted row.
+Wenn wir den Benutzer nach einem Twitter-Konto fragen, müssen wir, wenn das Konto existiert, seinen `id`-Wert nachschlagen. Wenn das Konto noch nicht in der Tabelle `People` vorhanden ist, müssen wir den Datensatz einfügen und den Wert `id` aus der eingefügten Zeile holen.
 
-This is a very common pattern and is done twice in the program above.
-This code shows how we look up the `id` for a friend's
-account when we have extracted a `screen_name` from a `user`
-node in the retrieved Twitter JSON.
+Dies ist ein sehr häufiges Schema und wird in dem obigen Programm zweimal ausgeführt. Dieser Code zeigt, wie wir die `id` für das Konto eines Freundes nachschlagen, wenn wir einen `screen_name` aus einem `user` Knoten im abgerufenen Twitter JSON extrahiert haben.
 
-Since over time it will be increasingly likely that the account will
-already be in the database, we first check to see if the
-`People` record exists using a `SELECT` statement.
+Da es im Laufe der Zeit immer wahrscheinlicher wird, dass das Konto bereits in der Datenbank vorhanden ist, prüfen wir zunächst mit einer `SELECT`-Anweisung, ob der Datensatz `People` existiert.
 
-If all goes well^[In general, when a sentence starts with "if all goes well" you
-will find that the code needs to use try/except.] inside 
-the `try` section, we retrieve
-the record using `fetchone()` and then retrieve the first
-(and only) element of the returned tuple and store it in `friend_id`.
+Wenn alles gut geht^[Wenn ein Satz mit „wenn alles gut geht“ beginnt, werden Sie im Allgemeinen feststellen, dass der Code `try`/`except` verwenden sollte.] Innerhalb des `try`-Abschnitts rufen wir den Datensatz mit `fetchone()` ab und rufen dann das erste (und einzige) Element des zurückgegebenen Tupels ab und speichern es in `friend_id`.
 
-If the `SELECT` fails, the `fetchone()[0]` code
-will fail and control will transfer into the `except`
-section.
+Wenn der `SELECT` fehlschlägt, schlägt der `fetchone()[0]` Code fehl und die Kontrolle wird in den `except` Abschnitt übertragen.
 
 ~~~~ {.python}
     friend = u['screen_name']
@@ -771,35 +450,22 @@ section.
         countnew = countnew + 1
 ~~~~
 
-If we end up in the `except` code, it simply means that the
-row was not found, so we must insert the row. We use `INSERT OR
-IGNORE` just to avoid errors and then call `commit()`
-to force the database to really be updated. After the write is done, we
-can check the `cur.rowcount` to see how many rows were
-affected. Since we are attempting to insert a single row, if the number
-of affected rows is something other than 1, it is an error.
+Wenn wir im `except`-Code landen, bedeutet das schlichtweg, dass die Zeile nicht gefunden wurde, also müssen wir die Zeile einfügen. Wir verwenden `INSERT OR IGNORE` nur, um Fehler zu vermeiden und rufen dann `commit()` auf, um die Aktualisierung der Datenbank wirklich zu erzwingen. Nachdem der Schreibvorgang abgeschlossen ist, können wir die `cur.rowcount` überprüfen, um zu sehen, wie viele Zeilen betroffen waren. Da wir versuchen, eine einzelne Zeile einzufügen, ist es ein Fehler, wenn die Anzahl der betroffenen Zeilen etwas anderes als 1 ist.
 
-If the `INSERT` is successful, we can look at
-`cur.lastrowid` to find out what value the database assigned
-to the `id` column in our newly created row.
+Wenn das `INSERT` erfolgreich war, können wir uns `cur.lastrowid` ansehen, um herauszufinden, welchen Wert die Datenbank der Spalte `id` in unserer neu erstellten Zeile zugewiesen hat.
 
-### Storing the friend relationship
+### Speichern der Freundschaftsbeziehung
 
-Once we know the key value for both the Twitter user and the friend in
-the JSON, it is a simple matter to insert the two numbers into the
-`Follows` table with the following code:
+Sobald wir den Schlüsselwert sowohl für den Twitter-Benutzer als auch für den Freund im JSON kennen, ist es eine einfache Angelegenheit, die beiden Zahlen mit dem folgenden Code in die Tabelle `Follows` einzufügen:
 
 ~~~~ {.python}
 cur.execute('INSERT OR IGNORE INTO Follows (from_id, to_id) VALUES (?, ?)',
     (id, friend_id) )
 ~~~~
 
-Notice that we let the database take care of keeping us from
-"double-inserting" a relationship by creating the table with a
-uniqueness constraint and then adding `OR IGNORE` to our
-`INSERT` statement.
+Beachten Sie, dass wir es der Datenbank überlassen, uns vor dem doppelten Einfügen einer Beziehung zu schützen, indem wir die Tabelle mit einer `UNIQUE`-Einschränkung erstellen und dann `OR IGNORE` zu unserer `INSERT`-Anweisung hinzufügen.
 
-Here is a sample execution of this program:
+Hier sehen Sie ein Beispiel für die Ausführung dieses Programms:
 
 ~~~~
 Enter a Twitter account, or quit:
@@ -816,12 +482,9 @@ New accounts= 17  revisited= 3
 Enter a Twitter account, or quit: quit
 ~~~~
 
-We started with the `drchuck` account and then let the
-program automatically pick the next two accounts to retrieve and add to
-our database.
+Wir haben mit dem Konto `drchuck` begonnen und dann das Programm automatisch die nächsten beiden Konten auswählen lassen, um sie abzurufen und zu unserer Datenbank hinzuzufügen.
 
-The following is the first few rows in the `People` and
-`Follows` tables after this run is completed:
+Es folgen die ersten Zeilen in den Tabellen `People` und `Follows`, nachdem dieser Lauf abgeschlossen ist:
 
 ~~~~
 People:
@@ -840,101 +503,48 @@ Follows:
 60 rows.
 ~~~~
 
-You can see the `id`, `name`, and
-`visited` fields in the `People` table and you see
-the numbers of both ends of the relationship in the `Follows`
-table. In the `People` table, we can see that the first three
-people have been visited and their data has been retrieved. The data in
-the `Follows` table indicates that `drchuck` (user
-1) is a friend to all of the people shown in the first five rows. This
-makes sense because the first data we retrieved and stored was the
-Twitter friends of `drchuck`. If you were to print more rows
-from the `Follows` table, you would see the friends of users
-2 and 3 as well.
+Sie können die Felder `id`, `name` und `visited` in der Tabelle `People` sehen und Sie sehen die Nummern der beiden Enden der Beziehung in der Tabelle `Follows`. In der Tabelle `People` können wir sehen, dass die ersten drei Personen besucht wurden und ihre Daten abgerufen wurden. Die Daten in der Tabelle `Follows` zeigen, dass `drchuck` (Benutzer 1) ein Freund aller Personen ist, die in den ersten fünf Zeilen angezeigt werden. Das macht Sinn, denn die ersten Daten, die wir abgerufen und gespeichert haben, waren die Twitter-Freunde von `drchuck`. Wenn Sie weitere Zeilen aus der Tabelle `Follows` ausgeben würden, würden Sie auch die Freunde der Benutzer 2 und 3 sehen.
 
-Three kinds of keys
--------------------
+Drei Arten von Schlüsseln
+-------------------------
 
-Now that we have started building a data model putting our data into
-multiple linked tables and linking the rows in those tables using
-*keys*, we need to look at some terminology around keys.
-There are generally three kinds of keys used in a database model.
+Nachdem wir nun mit dem Aufbau eines Datenmodells begonnen haben, in dem wir unsere Daten in mehreren verknüpften Tabellen ablegen und die Zeilen in diesen Tabellen mit *Schlüsseln* verknüpfen, müssen wir uns mit der Terminologie rund um Schlüssel beschäftigen. Im Allgemeinen gibt es drei Arten von Schlüsseln, die in einem Datenbankmodell verwendet werden.
 
--   A *logical key* is a key that the "real world" might
-    use to look up a row. In our example data model, the
-    `name` field is a logical key. It is the screen name for
-    the user and we indeed look up a user's row several times in the
-    program using the `name` field. You will often find that
-    it makes sense to add a `UNIQUE` constraint to a logical
-    key. Since the logical key is how we look up a row from the outside
-    world, it makes little sense to allow multiple rows with the same
-    value in the table.
+-   Ein *logischer Schlüssel* ist ein Schlüssel, den die „reale Welt“ zum Nachschlagen eines Datensatzes verwenden könnte. In unserem Beispiel-Datenmodell ist das Feld `name` ein logischer Schlüssel. Es ist der Benutzername des Benutzers, und wir schlagen die Zeile eines Benutzers in der Tat mehrmals im Programm über das Feld `name` nach. Sie werden oft feststellen, dass es sinnvoll ist, eine `UNIQUE'-Einschränkung zu einem logischen Schlüssel hinzuzufügen. Da der logische Schlüssel einen Datensatz zu identifizieren, macht es wenig Sinn, mehrere Zeilen mit demselben Wert in der Tabelle zuzulassen.
 
--   A *primary key* is usually a number that is assigned
-    automatically by the database. It generally has no meaning outside
-    the program and is only used to link rows from different tables
-    together. When we want to look up a row in a table, usually
-    searching for the row using the primary key is the fastest way to
-    find the row. Since primary keys are integer numbers, they take up
-    very little storage and can be compared or sorted very quickly. In
-    our data model, the `id` field is an example of a primary
-    key.
+-   Ein *Primärschlüssel* (englisch Primary Key, kurz *PK*) ist normalerweise eine Nummer, die von der Datenbank automatisch vergeben wird. Er hat in der Regel keine Bedeutung außerhalb des Programms und wird nur verwendet, um Zeilen aus verschiedenen Tabellen miteinander zu verknüpfen. Wenn wir eine Zeile in einer Tabelle nachschlagen wollen, ist die Suche nach der Zeile über den Primärschlüssel normalerweise der schnellste Weg, die Zeile zu finden. Da es sich bei den Primärschlüsseln um ganze Zahlen handelt, nehmen sie sehr wenig Speicherplatz ein und können sehr schnell verglichen oder sortiert werden. In unserem Datenmodell ist das Feld `id` ein Beispiel für einen Primärschlüssel.
 
--   A *foreign key* is usually a number that points to
-    the primary key of an associated row in a different table. An
-    example of a foreign key in our data model is the `from_id`.
+-   Ein *Fremdschlüssel* (englich *Foreign Key* , kurz *FK*) ist normalerweise eine Zahl, die auf den Primärschlüssel einer zugehörigen Zeile in einer anderen Tabelle verweist. Ein Beispiel für einen Fremdschlüssel in unserem Datenmodell ist die `from_id`.
 
-We are using a naming convention of always calling the primary key field
-name `id` and appending the suffix `_id` to any field name
-that is a foreign key.
+Wir verwenden die Namenskonvention, den Primärschlüsselfeldnamen immer `id` zu nennen und das Suffix `_id` an jeden Feldnamen anzuhängen, der ein Fremdschlüssel ist.
 
-Using JOIN to retrieve data
----------------------------
+JOIN zum Abrufen von Daten
+--------------------------
 
-Now that we have followed the rules of database normalization and have
-data separated into two tables, linked together using primary and
-foreign keys, we need to be able to build a `SELECT` that
-reassembles the data across the tables.
+Da wir nun die Regeln der Datenbanknormalisierung befolgt haben und die Daten in zwei Tabellen aufgeteilt sind, die über Primär- und Fremdschlüssel miteinander verknüpft sind, müssen wir in der Lage sein, einen `SELECT` zu erstellen, der die Daten in den Tabellen wieder zusammensetzt.
 
-SQL uses the `JOIN` clause to reconnect these tables. In the
-`JOIN` clause you specify the fields that are used to
-reconnect the rows between the tables.
+SQL verwendet die `JOIN`-Klausel, um diese Tabellen wieder zu verbinden. In der `JOIN`-Klausel geben Sie die Felder an, die zum Wiederverbinden der Zeilen zwischen den Tabellen verwendet werden.
 
-The following is an example of a `SELECT` with a
-`JOIN` clause:
+Im Folgenden sehen Sie ein Beispiel für einen `SELECT` mit einer `JOIN`-Klausel:
 
 ~~~~ {.sql}
 SELECT * FROM Follows JOIN People
     ON Follows.from_id = People.id WHERE People.id = 1
 ~~~~
 
-The `JOIN` clause indicates that the fields we are selecting
-cross both the `Follows` and `People` tables. The
-`ON` clause indicates how the two tables are to be joined:
-Take the rows from `Follows` and append the row from
-`People` where the field `from_id` in `Follows` is
-the same the `id` value in the `People` table.
+Die `JOIN`-Klausel gibt an, dass die ausgewählten Felder sowohl die `Follows`- als auch die `People`-Tabelle betreffen. Die `ON`-Klausel gibt an, wie die beiden Tabellen verbunden werden sollen: Nehmen Sie die Zeilen aus `Follows` und fügen Sie die Zeile aus `People` an, bei der das Feld `from_id` in `Follows` gleich dem Wert `id` in der Tabelle `People` ist.
 
-![Connecting Tables Using JOIN](height=3.5in@figs2/join)
+![Verbinden von Tabellen mit JOIN](height=3.5in@figs2/join)
 
-The result of the JOIN is to create extra-long "metarows" which have
-both the fields from `People` and the matching fields from
-`Follows`. Where there is more than one match between the
-`id` field from `People` and the `from_id` from
-`People`, then JOIN creates a metarow for *each* of the
-matching pairs of rows, duplicating data as needed.
+Das Ergebnis des JOIN ist die Erstellung von Tabellenzeilen, die sowohl die Felder aus `People` als auch die passenden Felder aus `Followows` enthalten. Wenn es mehr als eine Übereinstimmung zwischen dem Feld `id` aus `People` und der `from_id` aus `People` gibt, dann erzeugt JOIN eine Zeile für *jedes* der übereinstimmenden Zeilenpaare und dupliziert Daten bei Bedarf.
 
-The following code demonstrates the data that we will have in the
-database after the multi-table Twitter spider program (above) has been
-run several times.
+Der folgende Code demonstriert die Daten, die wir in der Datenbank haben werden, nachdem das Multi-Table-Twitter-Spider-Programm (oben) mehrmals ausgeführt wurde.
 
 \VerbatimInput{../code3/twjoin.py}
 
-In this program, we first dump out the `People` and
-`Follows` and then dump out a subset of the data in the
-tables joined together.
+In diesem Programm werden zuerst die `People`- und `Follows`-Tabellen und dann eine Teilmenge der Daten in den miteinander verbundenen Tabellen ausgegeben.
 
-Here is the output of the program:
+Hier ist die Ausgabe des Programms:
 
 ~~~~
 python twjoin.py
@@ -961,131 +571,74 @@ Connections for id=2:
 20 rows.
 ~~~~
 
-You see the columns from the `People` and
-`Follows` tables and the last set of rows is the result of
-the `SELECT` with the `JOIN` clause.
+Sie sehen die Spalten aus den Tabellen `People` und `Follows`. Der letzte Satz von Zeilen ist das Ergebnis des `SELECT` mit der `JOIN` Klausel.
 
-In the last select, we are looking for accounts that are friends of
-"opencontent" (i.e., `People.id=2`).
+Im letzten Select suchen wir nach Konten, die mit `opencontent` befreundet sind (d. h., `People.id=2`).
 
-In each of the "metarows" in the last select, the first two columns are
-from the `Follows` table followed by columns three through
-five from the `People` table. You can also see that the
-second column (`Follows.to_id`) matches the third column
-(`People.id`) in each of the joined-up "metarows".
+In jeder der Zeilen des letzten Selects stammen die ersten beiden Spalten aus der Tabelle `Follows`, gefolgt von den Spalten drei bis fünf aus der Tabelle `People`. Sie können auch sehen, dass die zweite Spalte (`Follows.to_id`) mit der dritten Spalte (`People.id`) in jeder der verknüpften Zeilen übereinstimmt.
 
-Summary
--------
+Zusammenfassung
+---------------
 
-This chapter has covered a lot of ground to give you an overview of the
-basics of using a database in Python. It is more complicated to write
-the code to use a database to store data than Python dictionaries or
-flat files so there is little reason to use a database unless your
-application truly needs the capabilities of a database. The situations
-where a database can be quite useful are: (1) when your application
-needs to make many small random updates within a large data set, (2)
-when your data is so large it cannot fit in a dictionary and you need to
-look up information repeatedly, or (3) when you have a long-running
-process that you want to be able to stop and restart and retain the data
-from one run to the next.
+In diesem Kapitel wurde viel Stoff behandelt, um Ihnen einen Überblick über die Grundlagen der Verwendung einer Datenbank in Python zu geben. Es ist komplizierter, den Code zu schreiben, um eine Datenbank zum Speichern von Daten zu verwenden als Python-Wörterbücher oder flache Dateien, sodass es wenig Grund gibt, eine Datenbank zu verwenden, es sei denn, Ihre Anwendung benötigt wirklich die Fähigkeiten einer Datenbank. Die Situationen, in denen eine Datenbank sehr nützlich sein kann, sind: (1) wenn Ihre Anwendung viele kleine, zufällige Aktualisierungen innerhalb eines großen Datensatzes vornehmen muss, (2) wenn Ihre Daten so groß sind, dass sie nicht in ein Wörterbuch passen und Sie wiederholt Informationen nachschlagen müssen, oder (3) wenn Sie einen lang laufenden Prozess haben, den Sie stoppen und neu starten können und die Daten von einem Lauf zum nächsten beibehalten wollen.
 
-You can build a simple database with a single table to suit many
-application needs, but most problems will require several tables and
-links/relationships between rows in different tables. When you start
-making links between tables, it is important to do some thoughtful
-design and follow the rules of database normalization to make the best
-use of the database's capabilities. Since the primary motivation for
-using a database is that you have a large amount of data to deal with,
-it is important to model your data efficiently so your programs run as
-fast as possible.
+Sie können eine einfache Datenbank mit einer einzigen Tabelle erstellen, um viele Anwendungsanforderungen zu erfüllen, aber die meisten Probleme werden mehrere Tabellen und Verknüpfungen/Beziehungen zwischen Zeilen in verschiedenen Tabellen erfordern. Wenn Sie damit beginnen, Verknüpfungen zwischen Tabellen herzustellen, ist es wichtig, ein durchdachtes Design zu entwerfen und die Regeln der Datenbanknormalisierung zu befolgen, um die Fähigkeiten der Datenbank optimal nutzen zu können. Da die Hauptmotivation für die Verwendung einer Datenbank darin besteht, dass Sie mit einer großen Menge an Daten umgehen müssen, ist es wichtig, Ihre Daten effizient zu modellieren, damit Ihre Programme so schnell wie möglich ausgeführt werden.
 
 Debugging
 ---------
 
-One common pattern when you are developing a Python program to connect
-to an SQLite database will be to run a Python program and check the
-results using the Database Browser for SQLite. The browser allows you to
-quickly check to see if your program is working properly.
+Ein häufiges Schema, wenn Sie ein Python-Programm zur Verbindung mit einer SQLite-Datenbank entwickeln, wird sein, dass Sie ein Python-Programm ausführen und die Ergebnisse mit dem Datenbank-Browser für SQLite überprüfen. Mit dem Browser können Sie schnell überprüfen, ob Ihr Programm richtig funktioniert.
 
-You must be careful because SQLite takes care to keep two programs from
-changing the same data at the same time. For example, if you open a
-database in the browser and make a change to the database and have not
-yet pressed the "save" button in the browser, the browser "locks" the
-database file and keeps any other program from accessing the file. In
-particular, your Python program will not be able to access the file if
-it is locked.
+Sie müssen vorsichtig sein, weil SQLite darauf achtet, dass nicht zwei Programme gleichzeitig dieselben Daten ändern. Wenn Sie z. B. eine Datenbank im Browser öffnen und eine Änderung an der Datenbank vornehmen und noch nicht die Schaltfläche „Speichern“ im Browser betätigt haben, sperrt der Browser die Datenbankdatei und verhindert, dass ein anderes Programm auf die Datei zugreift. Insbesondere Ihr Python-Programm kann nicht auf die Datei zugreifen, wenn sie gesperrt ist.
 
-So a solution is to make sure to either close the database browser or
-use the *File* menu to close the database in the browser
-before you attempt to access the database from Python to avoid the
-problem of your Python code failing because the database is locked.
+Eine Lösung ist also, sicherzustellen, dass Sie entweder den Datenbank-Browser schließen oder das Menü *Datei* verwenden, um die Datenbank im Browser zu schließen, bevor Sie versuchen, von Python aus auf die Datenbank zuzugreifen, um das Problem zu vermeiden, dass Ihr Python-Code fehlschlägt, weil die Datenbank gesperrt ist.
 
-Glossary
---------
+Glossar
+-------
 
-attribute
-:   One of the values within a tuple. More commonly called a "column" or
-    "field".
-\index{attribute}
+Attribut
+:   Einer der Werte innerhalb eines Tupels. Häufiger als Spalte oder Feld bezeichnet.
+\index{Attribut}
 
-constraint
-:   When we tell the database to enforce a rule on a field or a row in a
-    table. A common constraint is to insist that there can be no
-    duplicate values in a particular field (i.e., all the values must be
-    unique).
-\index{constraint}
+Constraint
+:   Die Anweisung an die Datenbank, eine Regel für ein Feld oder eine Zeile in einer Tabelle zu erzwingen. Eine übliche Einschränkung ist, darauf zu bestehen, dass es in einem bestimmten Feld keine doppelten Werte geben darf (d. h. alle Werte müssen eindeutig sein).
+\index{Constraint}
 
-cursor
-:   A cursor allows you to execute SQL commands in a database and
-    retrieve data from the database. A cursor is similar to a socket or
-    file handle for network connections and files, respectively.
-\index{cursor}
+Cursor
+:   Mit einem Cursor können Sie SQL-Befehle in einer Datenbank ausführen und Daten aus der Datenbank abrufen. Ein Cursor ist vergleichbar mit einem Socket oder einem Dateihandler für Netzwerkverbindungen bzw. Dateien.
+\index{Cursor}
 
-database browser
-:   A piece of software that allows you to directly connect to a
-    database and manipulate the database directly without writing a
-    program.
-\index{database browser}
+Datenbankenbrowser
+:   Eine Software, die es Ihnen ermöglicht, eine direkte Verbindung zu einer Datenbank herzustellen und die Datenbank direkt zu manipulieren, ohne ein Programm zu schreiben.
+\index{Datenbankenbrowser}
 
-foreign key
-:   A numeric key that points to the primary key of a row in another
-    table. Foreign keys establish relationships between rows stored in
-    different tables.
-\index{foreign key}
+Fremdschlüssel
+:   Ein numerischer Schlüssel, der auf den Primärschlüssel einer Zeile in einer anderen Tabelle verweist. Fremdschlüssel stellen Beziehungen zwischen Zeilen her, die in verschiedenen Tabellen gespeichert sind.
+\index{Fremdschlüssel}
 
-index
-:   Additional data that the database software maintains as rows and
-    inserts into a table to make lookups very fast.
-\index{index}
+Index
+:   Zusätzliche Daten, die die Datenbanksoftware verwaltet und in eine Tabelle einfügt, um Nachschlagen sehr schnell zu machen.
+\index{Index}
 \index{}
 
-logical key
-:   A key that the "outside world" uses to look up a particular row. For
-    example in a table of user accounts, a person's email address might
-    be a good candidate as the logical key for the user's data.
-\index{logical key}
+Logischer Schlüssel
+:   Ein Schlüssel, den die „Außenwelt“ verwendet, um eine bestimmte Zeile nachzuschlagen. In einer Tabelle mit Benutzerkonten könnte z. B. die E-Mail-Adresse einer Person ein guter Kandidat als logischer Schlüssel für die Daten des Benutzers sein.
+\index{Logischer Schlüssel}
 
-normalization
-:   Designing a data model so that no data is replicated. We store each
-    item of data at one place in the database and reference it elsewhere
-    using a foreign key.
-\index{normalization}
-\index{database normalization}
+Normalisierung
+:   Entwurf eines Datenmodells mit dem Ziel, dass keine Daten repliziert werden müssen. Wir speichern jedes Datenelement an einer Stelle in der Datenbank und referenzieren es an anderer Stelle über einen Fremdschlüssel.
+\index{Normalisierung}
+\index{Datenbanknormalisierung}
 
-primary key
-:   A numeric key assigned to each row that is used to refer to one row
-    in a table from another table. Often the database is configured to
-    automatically assign primary keys as rows are inserted.
-\index{primary key}
+Primärschlüssel
+:   Ein numerischer Schlüssel, der jeder Zeile zugewiesen wird und dazu dient, von einer anderen Tabelle aus auf eine Zeile in einer Tabelle zu verweisen. Oft ist die Datenbank so konfiguriert, dass Primärschlüssel automatisch zugewiesen werden, wenn Zeilen eingefügt werden.
+\index{Primärschlüssel}
 
-relation
-:   An area within a database that contains tuples and attributes. More
-    typically called a "table".
-\index{relation}
+Relation
+:   Ein Datensatz (eine Zeile) in einer Datenbanktabelle.
+\index{Relation}
 
-tuple
-:   A single entry in a database table that is a set of attributes. More
-    typically called "row".
-
-\index{tuple}
+Tupel
+:   Ein einzelner Eintrag in einer Datenbanktabelle, der eine Menge von Attributen darstellt. Typischerweise als Zeile bezeichnet.
+\index{Tupel}
 
