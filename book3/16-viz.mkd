@@ -1,60 +1,39 @@
-Visualizing data
-================
 
-So far we have been learning the Python language and then learning how
-to use Python, the network, and databases to manipulate data.
+Visualisierung von Daten
+========================
 
-In this chapter, we take a look at three complete applications that
-bring all of these things together to manage and visualize data. You
-might use these applications as sample code to help get you started in
-solving a real-world problem.
+Bisher haben wir die Sprache Python erlernt und dann gelernt, wie man Python, das Netzwerk und Datenbanken verwendet, um Daten zu manipulieren.
 
-Each of the applications is a ZIP file that you can download and extract
-onto your computer and execute.
+In diesem Kapitel werfen wir einen Blick auf drei vollständige Anwendungen, die all diese Dinge zusammenbringen, um Daten zu verwalten und zu visualisieren. Sie können diese Anwendungen als Beispielcode verwenden, um mit dem Lösen eines realen Problems zu beginnen.
 
-Building a OpenStreetMap from geocoded data
+Jede der Anwendungen liegt als ZIP-Datei vor, die Sie herunterladen und auf Ihrem Computer entpacken und ausführen können.
+
+Erstellen einer OpenStreetMap aus geocodierten Daten
 -------------------------------------------
 
-\index{Google!map}
+\index{Google!Map}
 \index{OpenStreetMap}
-\index{Visualization!map}
+\index{Visualisierung!Map}
 
-In this project, we are using the OpenStreetMap geocoding API to clean up some
-user-entered geographic locations of university names and then placing
-the data on an actual OpenStreetMap.
+In diesem Projekt verwenden wir die OpenStreetMap-API, um die Standorte einiger vom Benutzer eingegebenen Universitätsnamen auf einer aktuellen OpenStreetMap zu platzieren.
 
-![An OpenStreetMap](../images/openstreet-map)
+![Eine OpenStreetMap](../images/openstreet-map)
 
-To get started, download the application from:
+Um loszulegen, laden Sie die Anwendung hier herunter:
 
 [www.py4e.com/code3/opengeo.zip](http://www.py4e.com/code3/opengeo.zip)
 
-The first problem to solve is that these geocoding APIs are
-rate-limited to a certain number of requests per day. If you have a lot
-of data, you might need to stop and restart the lookup process several
-times. So we break the problem into two phases.
+Das erste zu lösende Problem ist, dass diese Geokodierungs-APIs auf eine bestimmte Anzahl von Anfragen pro Tag begrenzt sind. Wenn Sie viele Daten haben, müssen Sie den Lookup-Prozess möglicherweise mehrmals anhalten und neu starten. Also teilen wir das Problem in zwei Phasen auf.
 
-\index{cache}
+\index{Cache}
 
-In the first phase we take our input "survey" data in the file
-*where.data* and read it one line at a time, and retrieve
-the geocoded information from Google and store it in a database
-*geodata.sqlite*. Before we use the geocoding API for
-each user-entered location, we simply check to see if we already have
-the data for that particular line of input. The database is functioning
-as a local "cache" of our geocoding data to make sure we never ask
-Google for the same data twice.
+In der ersten Phase nehmen wir die Daten (Universitätsnamen) in der Datei `where.data` und lesen sie zeilenweise ein, rufen die geokodierten Informationen von Google ab und speichern sie in einer Datenbank geodata.sqlite`. Bevor wir die Geokodierungs-API für jeden vom Benutzer eingegebenen Ort verwenden, prüfen wir zunächst, ob wir die Daten für diese bestimmte Eingabezeile bereits haben. Die Datenbank fungiert als lokaler *Zwischenspeicher* (*Cache*) unserer Geokodierungsdaten, um sicherzustellen, dass wir Google nie zweimal nach denselben Daten fragen.
 
-You can restart the process at any time by removing the file
-*geodata.sqlite*.
+Sie können den Prozess jederzeit neu starten, indem Sie die Datei `geodata.sqlite` löschen.
 
-Run the *geoload.py* program. This program will read the
-input lines in *where.data* and for each line check to
-see if it is already in the database. If we don't have the data for the
-location, it will call the geocoding API to retrieve the data and store
-it in the database.
+Führen Sie das Programm `geoload.py` aus. Dieses Programm liest die Eingabezeilen in `where.data` und prüft für jede Zeile, ob sie bereits in der Datenbank vorhanden ist. Wenn wir die Daten für den Ort nicht haben, wird es die Geokodierungs-API aufrufen, um die Daten abzurufen und in der Datenbank zu speichern.
 
-Here is a sample run after there is already some data in the database:
+Hier ist ein Beispiellauf, nachdem bereits einige Daten in der Datenbank vorhanden sind:
 
 ~~~~
 Found in database AGH University of Science and Technology
@@ -81,25 +60,15 @@ Retrieved 866 characters {"type":"FeatureColl
 ...
 ~~~~
 
-The first five locations are already in the database and so they are
-skipped. The program scans to the point where it finds new locations and
-starts retrieving them.
+Die ersten fünf Orte sind bereits in der Datenbank und werden daher übersprungen. Das Programm scannt bis zu dem Punkt, an dem es neue Orte findet und beginnt, diese abzurufen.
 
-The *geoload.py* program can be stopped at any time, and
-there is a counter that you can use to limit the number of calls to the
-geocoding API for each run. Given that the *where.data*
-only has a few hundred data items, you should not run into the daily
-rate limit, but if you had more data it might take several runs over
-several days to get your database to have all of the geocoded data for
-your input.
+Das Programm `geoload.py` kann jederzeit gestoppt werden, und es gibt einen Zähler, mit dem Sie die Anzahl der Aufrufe der Geokodierungs-API für jeden Lauf begrenzen können. In Anbetracht der Tatsache, dass die Datei `where.data` nur ein paar hundert Datenelemente enthält, sollten Sie nicht an das tägliche Google-Zugriffslimit stoßen, aber wenn Sie mehr Daten hätten, könnte es mehrere Durchläufe über mehrere Tage hinweg erfordern, bis Ihre Datenbank alle geokodierten Daten für Ihre Eingabe enthält.
 
-Once you have some data loaded into *geodata.sqlite*, you
-can visualize the data using the *geodump.py* program.
-This program reads the database and writes the file
-*where.js* with the location, latitude, and longitude in
-the form of executable JavaScript code.
+Übersetzt mit www.DeepL.com/Translator (kostenlose Version)
 
-A run of the *geodump.py* program is as follows:
+Sobald Sie einige Daten in `geodata.sqlite` geladen haben, können Sie die Daten mit dem Programm `geodump.py` visualisieren. Dieses Programm liest die Datenbank und schreibt die Datei `where.js` mit dem Standort, dem Breitengrad und dem Längengrad in Form von ausführbarem JavaScript-Code.
+
+Ein Durchlauf des Programms `geodump.py` sieht folgendermaßen aus:
 
 ~~~~
 AGH University of Science and Technology, Czarnowiejska,
@@ -114,10 +83,7 @@ Voivodeship, 00-046, Poland 52.239 21.0155
 Open the where.html file in a web browser to view the data.
 ~~~~
 
-The file *where.html* consists of HTML and JavaScript to
-visualize a Google map. It reads the most recent data in
-*where.js* to get the data to be visualized. Here is the
-format of the *where.js* file:
+Die Datei `where.html` besteht aus HTML und JavaScript zur Visualisierung einer Google-Karte. Sie liest die aktuellsten Daten aus `where.js`, um die zu visualisierenden Daten zu erhalten. Hier ist das Format der `where.js` Datei:
 
 ~~~~ {.js}
 myData = [
@@ -133,43 +99,26 @@ Masovian Voivodeship, 00-046, Poland'],
 ];
 ~~~~
 
-This is a JavaScript variable that contains a list of lists. The syntax
-for JavaScript list constants is very similar to Python, so the syntax
-should be familiar to you.
+Dies ist eine JavaScript-Variable, die eine Liste von Listen enthält. Die Syntax für JavaScript-Listenkonstanten ist der von Python sehr ähnlich, daher sollte Ihnen die Syntax vertraut sein.
 
-Simply open *where.html* in a browser to see the
-locations. You can hover over each map pin to find the location that the
-geocoding API returned for the user-entered input. If you cannot see any
-data when you open the *where.html* file, you might want
-to check the JavaScript or developer console for your browser.
+Öffnen Sie einfach `where.html` in einem Browser, um die Standorte zu sehen. Sie können den Mauszeiger über jede Pin bewegen, um den Standort zu finden, den die Geokodierungs-API für die vom Benutzer eingegebene Eingabe zurückgegeben hat. Wenn Sie beim Öffnen der Datei `where.html` keine Daten sehen, sollten Sie die JavaScript- oder Entwicklerkonsole für Ihren Browser überprüfen.
 
-Visualizing networks and interconnections
------------------------------------------
+Visualisierung von Netzwerken
+-----------------------------
 
-\index{Google!page rank}
-\index{Visualization!networks}
-\index{Visualization!page rank}
+\index{Google!Page-Ranking}
+\index{Visualisierung!Netzwerke}
+\index{Visualisierung!Page-Ranking}
 
-In this application, we will perform some of the functions of a search
-engine. We will first spider a small subset of the web and run a
-simplified version of the Google page rank algorithm to determine which
-pages are most highly connected, and then visualize the page rank and
-connectivity of our small corner of the web. We will use the D3
-JavaScript visualization library <http://d3js.org/> to produce the
-visualization output.
+In dieser Anwendung werden wir einige der Funktionen einer Suchmaschine ausführen. Wir werden zunächst eine kleine Teilmenge des Webs durchforsten und eine vereinfachte Version des Google-Page-Ranking-Algorithmus ausführen, um festzustellen, welche Seiten am stärksten miteinander verbunden sind, und dann den Seitenrang und die Verbindung in unserer kleinen Ecke des Webs visualisieren. Wir werden die D3-JavaScript-Visualisierungsbibliothek <http://d3js.org/> verwenden, um die Visualisierungsausgabe zu erzeugen.
 
-You can download and extract this application from:
+Sie können diese Anwendung hier herunterladen:
 
 [www.py4e.com/code3/pagerank.zip](http://www.py4e.com/code3/pagerank.zip)
 
-![A Page Ranking](height=3.5in@../images/pagerank)
+![Page-Ranking](height=3.5in@../images/pagerank)
 
-The first program (*spider.py*) program crawls a web site
-and pulls a series of pages into the database
-(*spider.sqlite*), recording the links between pages. You
-can restart the process at any time by removing the
-*spider.sqlite* file and rerunning
-*spider.py*.
+Das erste Programm (`spider.py`) durchsucht eine Website und holt eine Reihe von Seiten in die Datenbank (`spider.sqlite`), wobei die Links zwischen den Seiten aufgezeichnet werden. Sie können den Prozess jederzeit neu starten, indem Sie die Datei `spider.sqlite` entfernen und `spider.py` erneut ausführen.
 
 ~~~~
 Enter web url or enter: http://www.dr-chuck.com/
@@ -180,11 +129,7 @@ How many pages:2
 How many pages:
 ~~~~
 
-In this sample run, we told it to crawl a website and retrieve two
-pages. If you restart the program and tell it to crawl more pages, it
-will not re-crawl any pages already in the database. Upon restart it
-goes to a random non-crawled page and starts there. So each successive
-run of *spider.py* is additive.
+In diesem Beispieldurchlauf haben wir das Programm angewiesen, eine Website zu crawlen (zu durchforsten) und zwei Seiten abzurufen. Wenn Sie das Programm neu starten und ihm sagen, dass es weitere Seiten crawlen soll, wird es keine Seiten, die sich bereits in der Datenbank befinden, erneut crawlen. Beim Neustart wechselt es zu einer zufälligen, nicht gecrawlten Seite und beginnt dort. Also ist jeder nachfolgende Lauf von `spider.py` additiv.
 
 ~~~~
 Enter web url or enter: http://www.dr-chuck.com/
@@ -196,12 +141,9 @@ How many pages:3
 How many pages:
 ~~~~
 
-You can have multiple starting points in the same database—within the
-program, these are called "webs". The spider chooses randomly amongst
-all non-visited links across all the webs as the next page to spider.
+Sie können mehrere Startpunkte in derselben Datenbank haben - im Programm werden diese als „Webs“ bezeichnet. Der Spider wählt nach dem Zufallsprinzip aus allen nicht besuchten Links über alle Webs hinweg die nächste zu durchsuchende Seite aus.
 
-If you want to dump the contents of the *spider.sqlite*
-file, you can run *spdump.py* as follows:
+Wenn Sie den Inhalt der Datei `spider.sqlite` ausgeben möchten, können Sie `spdump.py` wie folgt ausführen:
 
 ~~~~
 (5, None, 1.0, 3, 'http://www.dr-chuck.com/csev-blog')
@@ -211,14 +153,9 @@ file, you can run *spdump.py* as follows:
 4 rows.
 ~~~~
 
-This shows the number of incoming links, the old page rank, the new page
-rank, the id of the page, and the url of the page. The
-*spdump.py* program only shows pages that have at least
-one incoming link to them.
+Dies zeigt die Anzahl der eingehenden Links, den alten Page Rank, den neuen Page Rank, die ID der Seite und die URL der Seite. Das Programm `spdump.py` zeigt nur Seiten an, die mindestens einen eingehenden Link auf sie haben.
 
-Once you have a few pages in the database, you can run page rank on the
-pages using the *sprank.py* program. You simply tell it
-how many page rank iterations to run.
+Sobald Sie ein paar Websites in der Datenbank haben, können Sie mit dem Programm `sprank.py` das Page-Ranking in Gang setzen. Sie teilen ihm einfach mit, wie viele Page-Rank-Iterationen es ausführen soll.
 
 ~~~~
 How many iterations:2
@@ -227,7 +164,7 @@ How many iterations:2
 [(1, 0.559), (2, 0.659), (3, 0.985), (4, 2.135), (5, 0.659)]
 ~~~~
 
-You can dump the database again to see that page rank has been updated:
+Sie können die Datenbank erneut ausgeben, um zu sehen, dass der Seitenrang aktualisiert wurde:
 
 ~~~~
 (5, 1.0, 0.985, 3, 'http://www.dr-chuck.com/csev-blog')
@@ -237,16 +174,9 @@ You can dump the database again to see that page rank has been updated:
 4 rows.
 ~~~~
 
-You can run *sprank.py* as many times as you like and it
-will simply refine the page rank each time you run it. You can even run
-*sprank.py* a few times and then go spider a few more
-pages with *spider.py* and then run
-*sprank.py* to reconverge the page rank values. A search
-engine usually runs both the crawling and ranking programs all the time.
+Sie können `sprank.py` so oft ausführen, wie Sie möchten und es wird einfach das Page-Ranking jedes Mal verfeinern, wenn Sie es ausführen. Sie können `sprank.py` sogar ein paar Mal laufen lassen und dann ein paar weitere Seiten mit `spider.py` durchforsten und dann `sprank.py` laufen lassen, um die Page-Ranking-Werte neu zu konvertieren. Eine Suchmaschine lässt normalerweise sowohl das Crawling- als auch das Ranking-Programm ständig laufen.
 
-If you want to restart the page rank calculations without respidering
-the web pages, you can use *spreset.py* and then restart
-*sprank.py*.
+Wenn Sie die Page-Ranking-Berechnungen neu starten wollen, ohne die Webseiten neu zu laden, können Sie `spreset.py` verwenden und dann `sprank.py` neu starten.
 
 ~~~~
 How many iterations:50
@@ -269,17 +199,9 @@ How many iterations:50
 [(512, 0.0296), (1, 12.79), (2, 28.93), (3, 6.808), (4, 13.46)]
 ~~~~
 
-For each iteration of the page rank algorithm it prints the average
-change in page rank per page. The network initially is quite unbalanced
-and so the individual page rank values change wildly between iterations.
-But in a few short iterations, the page rank converges. You should run
-*sprank.py* long enough that the page rank values
-converge.
+Für jede Iteration des Page-Ranking-Algorithmus wird die durchschnittliche Änderung des Page-Ranks pro Seite ausgegeben. Das Netzwerk ist anfangs recht unausgewogen, sodass sich die einzelnen Page-Rank-Werte zwischen den Iterationen stark ändern. Aber in ein paar kurzen Iterationen konvergiert der Page-Rank. Sie sollten `sprank.py` lange genug laufen lassen, damit die Page-Ranking-Werte konvergieren.
 
-If you want to visualize the current top pages in terms of page rank,
-run *spjson.py* to read the database and write the data
-for the most highly linked pages in JSON format to be viewed in a web
-browser.
+Wenn Sie die aktuellen Top-Seiten in Bezug auf den Page-Rank visualisieren möchten, führen Sie `spjson.py` aus, um die Datenbank zu lesen und die Daten für die am stärksten verlinkten Seiten in ein JSON-Format zu schreiben, das in einem Webbrowser angezeigt werden kann.
 
 ~~~~
 Creating JSON output on spider.json...
@@ -287,74 +209,36 @@ How many nodes? 30
 Open force.html in a browser to view the visualization
 ~~~~
 
-You can view this data by opening the file *force.html*
-in your web browser. This shows an automatic layout of the nodes and
-links. You can click and drag any node and you can also double-click on
-a node to find the URL that is represented by the node.
+Sie können diese Daten betrachten, indem Sie die Datei `force.html` in Ihrem Webbrowser öffnen. Dies zeigt ein automatisches Layout der Knoten und Links. Sie können jeden Knoten anklicken und ziehen und Sie können auch auf einen Knoten doppelklicken, um die URL zu sehen, die durch den Knoten dargestellt wird.
 
-If you rerun the other utilities, rerun *spjson.py* and
-press refresh in the browser to get the new data from
-*spider.json*.
+Wenn Sie die anderen Dienstprogramme erneut ausführen, führen Sie `spjson.py` erneut aus und drücken Sie im Browser auf Aktualisieren, um die neuen Daten aus `spider.json` zu erhalten.
 
-Visualizing mail data
----------------------
+Visualisierung von Mail-Daten
+-----------------------------
 
-Up to this point in the book, you have become quite familiar with our
-*mbox-short.txt* and *mbox.txt* data
-files. Now it is time to take our analysis of email data to the next
-level.
+Bis zu diesem Punkt im Buch sind Sie mit unseren Datendateien `mbox-short.txt` und `mbox.txt` ziemlich vertraut geworden. Jetzt ist es an der Zeit, unsere Analyse der E-Mail-Daten auf die nächste Stufe zu bringen.
 
-In the real world, sometimes you have to pull down mail data from
-servers. That might take quite some time and the data might be
-inconsistent, error-filled, and need a lot of cleanup or adjustment. In
-this section, we work with an application that is the most complex so
-far and pull down nearly a gigabyte of data and visualize it.
+In der realen Welt müssen Sie manchmal Mail-Daten von Servern abrufen. Das kann einige Zeit in Anspruch nehmen und die Daten können inkonsistent und fehlerhaft sein und eine Menge Bereinigungen oder Anpassungen erfordern. In diesem Abschnitt arbeiten wir mit einer Anwendung, die bisher die komplexeste ist, und rufen fast ein Gigabyte an Daten ab und visualisieren sie.
 
-![A Word Cloud from the Sakai Developer List](height=3.5in@../images/wordcloud)
+![Eine Wortwolke aus der Sakai-Entwicklerliste](height=3.5in@../images/wordcloud)
 
-You can download this application from:
+Sie können diese Anwendung hier herunterladen:
 
 [https://www.py4e.com/code3/gmane.zip](https://www.py4e.com/code3/gmane.zip)
 
-We will be using data from a free email list archiving service called
-[http://www.gmane.org](http://www.gmane.org). This service is very popular with open
-source projects because it provides a nice searchable archive of their
-email activity. They also have a very liberal policy regarding accessing
-their data through their API. They have no rate limits, but ask that you
-don't overload their service and take only the data you need. You can
-read gmane's terms and conditions at this page:
+Wir werden Daten von einem freien E-Mail-Listen-Archivierungsdienst namens [http://www.gmane.org](http://www.gmane.org) verwenden. Dieser Dienst ist sehr beliebt bei Open-Source-Projekten, weil er ein schönes durchsuchbares Archiv ihrer E-Mail-Aktivitäten bietet. Sie haben auch eine sehr liberale Richtlinie bezüglich des Zugriffs auf ihre Daten durch ihre API. Die API hat keine Zugriffsbeschränkungen, Sie sollten jedoch darauf achten, den Dienst nicht zu überlasten und nur die Daten zu verwenden, die Sie benötigen. Sie können die Allgemeinen Geschäftsbedingungen von *gmane* auf dieser Seite lesen:
 
 [http://www.gmane.org/export.php](http://www.gmane.org/export.php)
 
-*It is very important that you make use of the gmane.org data
-responsibly by adding delays to your access of their services and
-spreading long-running jobs over a longer period of time. Do not abuse
-this free service and ruin it for the rest of us.*
+*Es ist sehr wichtig, dass Sie die Daten von gmane.org verantwortungsvoll nutzen, indem Sie Ihren Zugriff auf deren Dienste verzögern und lang laufende Aufträge über einen längeren Zeitraum verteilen. Missbrauchen Sie diesen kostenlosen Dienst nicht und ruinieren Sie ihn für den Rest von uns.*
 
-When the Sakai email data was spidered using this software, it produced
-nearly a Gigabyte of data and took a number of runs on several days. The
-file *README.txt* in the above ZIP may have instructions
-as to how you can download a pre-spidered copy of the
-*content.sqlite* file for a majority of the Sakai email
-corpus so you don't have to spider for five days just to run the
-programs. If you download the pre-spidered content, you should still run
-the spidering process to catch up with more recent messages.
+Als die Sakai-E-Mail-Daten mit dieser Software gesichtet wurden, produzierte dies fast ein Gigabyte an Daten und erforderte eine Reihe von Durchläufen an mehreren Tagen. Die Datei `README.txt` im obigen ZIP-Archiv enthält möglicherweise Anweisungen, wie Sie eine vorab erstellte Kopie der Datei `content.sqlite` für einen Großteil des Sakai-E-Mail-Korpus herunterladen können, damit Sie nicht fünf Tage lang „spidern“ müssen, nur um die Programme auszuführen. Wenn Sie den vorgespiderten Inhalt herunterladen, sollten Sie trotzdem den Spidering-Prozess ausführen, um neuere Nachrichten einzuholen.
 
-The first step is to spider the gmane repository. The base URL is
-hard-coded in the *gmane.py* and is hard-coded to the
-Sakai developer list. You can spider another repository by changing that
-base url. Make sure to delete the *content.sqlite* file
-if you switch the base url.
+Der erste Schritt besteht darin, das gmane-Repository zu durchforsten. Die Basis-URL ist in der `gmane.py` fest codiert und mit der Sakai-Entwicklerliste verknüpft. Sie können ein anderes Repository spidern, indem Sie diese Basis-URL ändern. Stellen Sie sicher, dass Sie die Datei `content.sqlite` löschen, wenn Sie die Basis-URL ändern.
 
-The *gmane.py* file operates as a responsible caching
-spider in that it runs slowly and retrieves one mail message per second
-so as to avoid getting throttled by gmane. It stores all of its data in
-a database and can be interrupted and restarted as often as needed. It
-may take many hours to pull all the data down. So you may need to
-restart several times.
+Die Datei `gmane.py` arbeitet als verantwortlicher Caching-Spider, indem sie langsam läuft und eine Mail-Nachricht pro Sekunde abruft, um nicht von gmane gedrosselt zu werden. Das Programm speichert alle Daten in einer Datenbank und kann so oft wie nötig unterbrochen und neu gestartet werden. Es kann viele Stunden dauern, bis alle Daten heruntergeladen sind. Sie müssen also möglicherweise mehrmals neu starten.
 
-Here is a run of *gmane.py* retrieving the last five
-messages of the Sakai developer list:
+Hier ist ein Lauf von `gmane.py`, der die letzten fünf Nachrichten der Sakai-Entwicklerliste abruft:
 
 ~~~~
 How many messages:10
@@ -373,46 +257,17 @@ http://download.gmane.org/gmane.comp.cms.sakai.devel/51415/51416 0
 Does not start with From
 ~~~~
 
-The program scans *content.sqlite* from one up to the
-first message number not already spidered and starts spidering at that
-message. It continues spidering until it has spidered the desired number
-of messages or it reaches a page that does not appear to be a properly
-formatted message.
+Das Programm durchsucht die Datei `content.sqlite` von eins bis zur ersten noch nicht gespiderten Nachricht und beginnt das Spidering bei dieser Nachricht. Es fährt mit dem Spidering fort, bis es die gewünschte Anzahl von Nachrichten gespidert hat oder es eine Seite erreicht, die nicht als ordnungsgemäß formatierte Nachricht erscheint.
 
-Sometimes __gmane.org__ is missing a message. Perhaps
-administrators can delete messages or perhaps they get lost. If your
-spider stops, and it seems it has hit a missing message, go into the
-SQLite Manager and add a row with the missing id leaving all the other
-fields blank and restart *gmane.py*. This will unstick
-the spidering process and allow it to continue. These empty messages
-will be ignored in the next phase of the process.
+Manchmal fehlt auf __gmane.org__ eine Nachricht. Vielleicht können Administratoren Nachrichten löschen oder vielleicht gehen sie verloren. Wenn Ihr Spider anhält und es scheint, dass er auf eine fehlende Nachricht gestoßen ist, gehen Sie in den SQLite Manager und fügen Sie eine Zeile mit der fehlenden ID hinzu, wobei Sie alle anderen Felder leer lassen und `gmane.py` neu starten. Dies wird den Spidering-Prozess wieder freigeben und ihm erlauben, fortzufahren. Diese leeren Nachrichten werden in der nächsten Phase des Prozesses ignoriert.
 
-One nice thing is that once you have spidered all of the messages and
-have them in *content.sqlite*, you can run
-*gmane.py* again to get new messages as they are sent to
-the list.
+Eine nette Sache ist, dass Sie, sobald Sie alle Nachrichten gespidert haben und sie in `content.sqlite` vorliegen, `gmane.py` erneut ausführen können, um neue Nachrichten zu erhalten, sobald sie in die Liste übertragen werden.
 
-The *content.sqlite* data is pretty raw, with an
-inefficient data model, and not compressed. This is intentional as it
-allows you to look at *content.sqlite* in the SQLite
-Manager to debug problems with the spidering process. It would be a bad
-idea to run any queries against this database, as they would be quite
-slow.
+Die `content.sqlite`-Daten sind ziemlich unbearbeitet, mit einem ineffizienten Datenmodell, und nicht komprimiert. Dies ist beabsichtigt, da es Ihnen ermöglicht, `content.sqlite` im SQLite-Manager zu betrachten, um Probleme mit dem Spidering-Prozess zu beheben. Es wäre eine schlechte Idee, irgendwelche Abfragen über diese Datenbank laufen zu lassen, da sie ziemlich langsam wären.
 
-The second process is to run the program *gmodel.py*.
-This program reads the raw data from *content.sqlite* and
-produces a cleaned-up and well-modeled version of the data in the file
-*index.sqlite*. This file will be much smaller (often 10X
-smaller) than *content.sqlite* because it also compresses
-the header and body text.
+Der zweite Vorgang ist die Ausführung des Programms `gmodel.py`. Dieses Programm liest die Rohdaten aus `content.sqlite` und erzeugt eine bereinigte und gut modellierte Version der Daten in der Datei `index.sqlite`. Diese Datei wird viel kleiner sein (oft 10-mal kleiner) als `content.sqlite`, weil auch der Header- und Body-Text komprimiert wird.
 
-Each time *gmodel.py* runs it deletes and rebuilds
-*index.sqlite*, allowing you to adjust its parameters and
-edit the mapping tables in *content.sqlite* to tweak the
-data cleaning process. This is a sample run of
-*gmodel.py*. It prints a line out each time 250 mail
-messages are processed so you can see some progress happening, as this
-program may run for a while processing nearly a Gigabyte of mail data.
+Jedes Mal, wenn `gmodel.py` läuft, löscht es die Datei `index.sqlite` und baut sie neu auf, sodass Sie die Parameter anpassen und die Mapping-Tabellen in `content.sqlite` bearbeiten können, um den Datenbereinigungsprozess zu optimieren. Dies ist ein Beispiellauf von `gmodel.py`. Jedes Mal, wenn 250 Mail-Nachrichten verarbeitet werden, wird eine Zeile ausgegeben, damit Sie den Fortschritt sehen können, denn dieses Programm kann eine Weile laufen und fast ein Gigabyte an Mail-Daten verarbeiten.
 
 ~~~~
 Loaded allsenders 1588 and mapping 28 dns mapping 1
@@ -423,26 +278,17 @@ Loaded allsenders 1588 and mapping 28 dns mapping 1
 ...
 ~~~~
 
-The *gmodel.py* program handles a number of data cleaning
-tasks.
+Das Programm `gmodel.py` übernimmt eine Reihe von Datenbereinigungsaufgaben.
 
-Domain names are truncated to two levels for .com, .org, .edu, and .net.
-Other domain names are truncated to three levels. So si.umich.edu
-becomes umich.edu and caret.cam.ac.uk becomes cam.ac.uk. Email addresses
-are also forced to lower case, and some of the @gmane.org address like
-the following
+Domainnamen werden auf zwei Domainlevel für `.com`, `.org`, `.edu` und `.net` gekürzt. Andere Domain-Namen werden auf drei Level gekürzt. So wird `si.umich.edu` zu `umich.edu` und `caret.cam.ac.uk` zu `cam.ac.uk`. E-Mail-Adressen werden ebenfalls in Kleinschreibung überführt, und Adressen wie
 
 ~~~~
 arwhyte-63aXycvo3TyHXe+LvDLADg@public.gmane.org
 ~~~~
-are converted to the real address whenever there is a matching real
-email address elsewhere in the message corpus.
 
-In the *mapping.sqlite* database there are two tables
-that allow you to map both domain names and individual email addresses
-that change over the lifetime of the email list. For example, Steve
-Githens used the following email addresses as he changed jobs over the
-life of the Sakai developer list:
+werden in die echte Adresse umgewandelt, wenn es an anderer Stelle im Nachrichtenkorpus eine passende echte E-Mail-Adresse gibt.
+
+In der Datenbank `mapping.sqlite` gibt es zwei Tabellen, die es Ihnen ermöglichen, sowohl Domänennamen als auch einzelne E-Mail-Adressen zuzuordnen, die sich während der Lebensdauer der E-Mail-Liste ändern. Zum Beispiel hat Steve Githens die folgenden E-Mail-Adressen verwendet, als er während der Lebensdauer der Sakai-Entwicklerliste den Arbeitsplatz wechselte:
 
 ~~~~
 s-githens@northwestern.edu
@@ -450,9 +296,7 @@ sgithens@cam.ac.uk
 swgithen@mtu.edu
 ~~~~
 
-We can add two entries to the Mapping table in
-*mapping.sqlite* so *gmodel.py* will map
-all three to one address:
+Wir können zwei Einträge in die Mapping-Tabelle in `mapping.sqlite` hinzufügen, sodass `gmodel.py` alle drei auf eine Adresse mappt:
 
 ~~~~
 s-githens@northwestern.edu ->  swgithen@mtu.edu
@@ -470,15 +314,9 @@ iupui.edu -> indiana.edu
 so all the accounts from the various Indiana University campuses are
 tracked together.
 
-You can rerun the *gmodel.py* over and over as you look
-at the data, and add mappings to make the data cleaner and cleaner. When
-you are done, you will have a nicely indexed version of the email in
-*index.sqlite*. This is the file to use to do data
-analysis. With this file, data analysis will be really quick.
+Sie können die `gmodel.py` immer wieder ausführen, während Sie sich die Daten ansehen, und Mappings hinzufügen, um die Daten aufgeräumter zu machen. Wenn Sie fertig sind, haben Sie eine ordentlich indizierte Version der E-Mail in `index.sqlite`. Dies ist die Datei, die für die Datenanalyse verwendet wird. Mit dieser Datei wird die Datenanalyse wirklich schnell sein.
 
-The first, simplest data analysis is to determine "who sent the most
-mail?" and "which organization sent the most mail"? This is done using
-*gbasic.py*:
+Die erste und einfachste Datenanalyse besteht darin, festzustellen, wer die meisten Mails verschickt hat und welche Organisation die meisten Mails verschickt hat. Dies wird mit `gbasic.py` durchgeführt:
 
 ~~~~
 How many to dump? 5
@@ -499,28 +337,18 @@ indiana.edu 2258
 unicon.net 2055
 ~~~~
 
-Note how much more quickly *gbasic.py* runs compared to
-*gmane.py* or even *gmodel.py*. They are
-all working on the same data, but *gbasic.py* is using
-the compressed and normalized data in *index.sqlite*. If
-you have a lot of data to manage, a multistep process like the one in
-this application may take a little longer to develop, but will save you
-a lot of time when you really start to explore and visualize your data.
+Beachten Sie, wie viel schneller `gbasic.py` im Vergleich zu `gmane.py` oder sogar `gmodel.py` läuft. Sie arbeiten alle mit den gleichen Daten, aber `gbasic.py` verwendet die komprimierten und normalisierten Daten in `index.sqlite`. Wenn Sie viele Daten zu verwalten haben, kann ein mehrstufiger Prozess wie in dieser Anwendung etwas länger dauern, aber Sie werden viel Zeit sparen, wenn Sie wirklich anfangen, Ihre Daten zu untersuchen und zu visualisieren.
 
-You can produce a simple visualization of the word frequency in the
-subject lines in the file *gword.py*:
+Eine einfache Visualisierung der Worthäufigkeit in den Betreffzeilen können Sie in der Datei `gword.py` erzeugen:
 
 ~~~~
 Range of counts: 33229 129
 Output written to gword.js
 ~~~~
 
-This produces the file *gword.js* which you can visualize
-using *gword.htm* to produce a word cloud similar to the
-one at the beginning of this section.
+Dies erzeugt die Datei `gword.js`, die Sie mit `gword.htm` visualisieren können, um eine Wortwolke ähnlich der am Anfang dieses Abschnitts zu erzeugen.
 
-A second visualization is produced by *gline.py*. It
-computes email participation by organizations over time.
+Eine zweite Visualisierung wird von `gline.py` erzeugt. Sie berechnet die E-Mail-Beteiligung von Organisationen im Laufe der Zeit.
 
 ~~~~
 Loaded messages= 51330 subjects= 25033 senders= 1584
@@ -531,10 +359,9 @@ Top 10 Oranizations
 Output written to gline.js
 ~~~~
 
-Its output is written to *gline.js* which is visualized
-using *gline.htm*.
+Die Ausgabe wird in `gline.js` geschrieben, die mit `gline.htm` visualisiert wird.
 
-![Sakai Mail Activity by Organization](../images/mailorg)
+![Sakai-Mail-Aktivität pro Organisation](../images/mailorg)
 
-This is a relatively complex and sophisticated application and has
-features to do some real data retrieval, cleaning, and visualization.
+Dies ist eine relativ komplexe und ausgefeilte Anwendung und verfügt über Funktionen zum Abrufen, Bereinigen und Visualisieren von Daten.
+

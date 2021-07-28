@@ -23,7 +23,7 @@ Inhaltskapitel:
 - [x] 13-web.mkd
 - [x] 14-objects.mkd
 - [x] 15-database.mkd
-- [ ] 16-viz.mkd
+- [x] 16-viz.mkd
 
 Appendix:
 
@@ -617,4 +617,15 @@ lookup : Lookup
 \index{database normalization} : \index{Datenbanknormalisierung}
 \index{primary key} : \index{Primärschlüssel}
 \index{relation} : \index{Relation}
+```
+
+### Kapitel 16
+
+```
+\index{Google!map} : \index{Google!Map}
+\index{Visualization!map} : \index{Visualisierung!Map}
+\index{cache} : \index{Cache}
+\index{Google!page rank} : \index{Google!Page-Ranking}
+\index{Visualization!networks} : \index{Visualisierung!Netzwerke}
+\index{Visualization!page rank} : \index{Visualisierung!Page-Ranking}
 ```
