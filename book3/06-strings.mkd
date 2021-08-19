@@ -1,4 +1,4 @@
-
+```
 Zeichenketten
 =============
 
@@ -10,7 +10,7 @@ Eine Zeichenkette ist eine Folge von Einzelzeichen
 \index{Indexoperator}\index{Zugriff, indexbasiert}
 \index{Operator!indexbasierter Zugriff}
 
-Eine Zeichenkette (englisch *String*) ist eine Folge einzelner Zeichen (englisch *Character*). Sie können mit dem indexbasierten Zugriffsoperator (auch Klammeroperator genannt) auf einzelne Zeichen zugreifen:
+Eine Zeichenkette (englisch *String*) ist eine Folge einzelner Zeichen (englisch *Character*). Wor können mit dem indexbasierten Zugriffsoperator (auch Klammeroperator genannt) auf einzelne Zeichen zugreifen:
 
 ~~~~ {.python}
 >>> fruit = 'banana'
@@ -24,7 +24,7 @@ Die zweite Anweisung extrahiert das Zeichen an Indexposition 1 aus der Variablen
 
 Der Ausdruck in eckigen Klammern wird als *Index* bezeichnet. Der Index gibt an, auf welches Zeichen in der Sequenz zugegriffen werden soll.
 
-Aber Sie bekommen vielleicht nicht das, was Sie erwarten:
+Aber wir bekommen vielleicht nicht das, was wir erwarten:
 
 ~~~~ {.python}
 >>> print(letter)
@@ -39,7 +39,6 @@ Für die meisten Menschen ist der erste Buchstabe von „Banane“ eigentlich ei
 b
 ~~~~
 
-So "b" is the 0th letter ("zero-th") of "banana", "a" is the 1th letter ("one-th"), and "n" is the 2th ("two-th") letter.
 So ist „b“ der nullte Buchstabe von „Banane“, „a“ der erste und „n“ der zweite Buchstabe.
 
 ![String Indexes](height=0.75in@../images/string)
@@ -47,7 +46,7 @@ So ist „b“ der nullte Buchstabe von „Banane“, „a“ der erste und „n
 \index{Index!beginnt mit Null}
 \index{Null, Index beginnt mit}
 
-Sie können einen beliebigen Ausdruck, einschließlich Variablen und Operatoren, als Index verwenden, aber der Wert des Index muss eine ganze Zahl sein. Sonst erhalten Sie:
+Man kann einen beliebigen Ausdruck, einschließlich Variablen und Operatoren, als Index verwenden, aber der Wert des Index muss eine ganze Zahl sein. Sonst erhält man:
 
 \index{Index}
 \index{}
@@ -73,7 +72,7 @@ Länge einer Zeichenkette
 6
 ~~~~
 
-Um den letzten Buchstaben einer Zeichenkette zu erhalten, könnten Sie versucht sein, etwas wie dieses zu tun:
+Um den letzten Buchstaben einer Zeichenkette zu erhalten, könnte man versucht sein, etwas wie das hier zu tun:
 
 \index{Ausnahme!IndexError}
 \index{IndexError}
@@ -84,7 +83,7 @@ Um den letzten Buchstaben einer Zeichenkette zu erhalten, könnten Sie versucht 
 IndexError: string index out of range
 ~~~~
 
-Der Grund für den `IndexError` ist, dass es keinen Buchstaben in „banana“ mit dem Index 6 gibt. Da wir bei Null angefangen haben zu zählen, sind die sechs Buchstaben von 0 bis 5 nummeriert. Um das letzte Zeichen zu erhalten, müssen Sie 1 von `length` subtrahieren:
+Der Grund für den `IndexError` ist, dass es keinen Buchstaben in „banana“ mit dem Index 6 gibt. Da wir bei Null angefangen haben zu zählen, sind die sechs Buchstaben von 0 bis 5 nummeriert. Um das letzte Zeichen zu erhalten, müssen wir 1 von `length` subtrahieren:
 
 ~~~~ {.python}
 >>> last = fruit[length-1]
@@ -92,7 +91,7 @@ Der Grund für den `IndexError` ist, dass es keinen Buchstaben in „banana“ m
 a
 ~~~~
 
-Alternativ können Sie auch negative Indizes verwenden, die vom Ende der Zeichenkette rückwärts zählen. Der Ausdruck `fruit[-1]` ergibt den letzten Buchstaben, `fruit[-2]` den vorletzten und so weiter.
+Alternativ können wir auch negative Indizes verwenden, die vom Ende der Zeichenkette rückwärts zählen. Der Ausdruck `fruit[-1]` ergibt den letzten Buchstaben, `fruit[-2]` den vorletzten und so weiter.
 
 \index{Index!negativ}
 \index{negativer Index}
@@ -150,7 +149,7 @@ Python
 
 Der Operator gibt den Teil der Zeichenkette vom n-ten Zeichen bis zum m-ten Zeichen zurück, einschließlich des ersten, aber *ausschließlich* des letzten Zeichens.
 
-Wenn Sie den ersten Index (vor dem Doppelpunkt) weglassen, beginnt die Teilzeichenkette am Anfang der Zeichenkette. Wenn Sie den zweiten Index weglassen, geht die Teilzeichenkette bis zum Ende der Zeichenkette:
+Wenn man den ersten Index (vor dem Doppelpunkt) weglässt, beginnt die Teilzeichenkette am Anfang der Zeichenkette. Wenn man den zweiten Index ebenfalls weglässt, geht die Teilzeichenkette bis zum Ende der Zeichenkette:
 
 ~~~~ {.python}
 >>> fruit = 'banana'
@@ -195,16 +194,14 @@ Es ist verlockend, den Operator auf der linken Seite einer Zuweisung zu verwende
 TypeError: 'str' object does not support item assignment
 ~~~~
 
-The "object" in this case is the string and the "item" is the character you tried to assign. For now, an *object* is the same thing as a value, but we will refine that definition later. An *item* is one of the values in a sequence.
-
-Das „Objekt“ ist in diesem Fall die Zeichenkette und das „Element“ ist das Zeichen, das Sie versucht haben zuzuweisen. Im Moment ist ein *Objekt* dasselbe wie ein Wert, aber wir werden diese Definition später verfeinern. Ein *Element* ist einer der Werte in einer Sequenz.
+Das „Objekt“ ist in diesem Fall die Zeichenkette und das „Element“ ist das Zeichen, das wir versucht haben zuzuweisen. Im Moment ist ein *Objekt* dasselbe wie ein Wert, aber wir werden diese Definition später verfeinern. Ein *Element* ist einer der Werte in einer Sequenz.
 
 \index{Objekt}
 \index{Elementzuweisung}
 \index{Zuweisung!Element}
 \index{Unveränderlichkeit}
 
-Der Grund für den Fehler ist, dass Zeichenketten *unveränderlich* sind, was bedeutet, dass Sie eine vorhandene Zeichenkette nicht ändern können. Das Beste, was Sie tun können, ist, eine neue Zeichenfolge zu erstellen, die eine Variation der ursprünglichen Zeichenfolge ist:
+Der Grund für den Fehler ist, dass Zeichenketten *unveränderlich* sind. Dies bedeutet, dass wir eine vorhandene Zeichenkette nicht ändern können. Das Beste, was wir tun können, ist, eine neue Zeichenfolge zu erstellen, die eine Variation der ursprünglichen Zeichenfolge ist:
 
 ~~~~ {.python}
 >>> greeting = 'Hello, world!'
@@ -323,11 +320,11 @@ capitalize(...)
 >>>
 ~~~~
 
-Während die Funktion `dir` die Methoden auflistet und Sie `help` verwenden können, um eine einfache Dokumentation zu einer Methode zu erhalten, wäre eine bessere Quelle für die Dokumentation von String-Methoden <https://docs.python.org/library/stdtypes.html#string-methods>.
+Während die Funktion `dir` die Methoden auflistet und man `help` verwenden kann, um eine einfache Dokumentation zu einer Methode zu erhalten, wäre eine bessere Quelle für die Dokumentation von String-Methoden <https://docs.python.org/library/stdtypes.html#string-methods>.
 
 Der Aufruf einer *Methode* ist ähnlich wie der Aufruf einer Funktion (sie nimmt Argumente entgegen und gibt einen Wert zurück), aber die Syntax ist anders. Wir rufen eine Methode auf, indem wir den Methodennamen an den Variablennamen anhängen und den Punkt als Begrenzer verwenden.
 
-Zum Beispiel nimmt die Methode `upper` eine Zeichenkette entgegen und gibt eine neue Zeichenkette zurücj, die nur aus Großbuchstaben besteht:
+Zum Beispiel nimmt die Methode `upper` eine Zeichenkette entgegen und gibt eine neue Zeichenkette zurück, die nur aus Großbuchstaben besteht:
 
 \index{Methode}
 \index{Zeichenkette!Methode}
@@ -351,7 +348,7 @@ Ein Methodenaufruf wird als *Aufruf* bezeichnet; in diesem Fall würden wir sage
 
 \index{Aufruf einer Methode}
 
-Zum Beispiel gibt es eine Zeichenketten-Methode namens `find`, die nach der Position einer Zeichenkette innerhalb einer anderen sucht:
+Es gibt beispielsweise eine Zeichenketten-Methode namens `find`, die nach der Position einer Zeichenkette innerhalb einer anderen sucht:
 
 ~~~~ {.python}
 >>> word = 'banana'
@@ -397,7 +394,7 @@ True
 False
 ~~~~
 
-Sie werden feststellen, dass `startswith` Groß- und Kleinschreibung unterscheidet, daher nehmen wir manchmal eine Zeile und wandeln mit `lower` alles in Kleinbuchstaben um, bevor wir eine Überprüfung mit der Methode `startswith` durchführen.
+Man kann feststellen, dass `startswith` Groß- und Kleinschreibung unterscheidet, daher nehmen wir manchmal eine Zeile und wandeln mit `lower` alles in Kleinbuchstaben um, bevor wir eine Überprüfung mit der Methode `startswith` durchführen.
 
 ~~~~ {.python}
 >>> line = 'Have a nice day'
@@ -425,7 +422,7 @@ Parsen von Zeichenketten
 
 Oft wollen wir in eine Zeichenkette schauen und eine Teilzeichenkette finden. Wenn wir zum Beispiel eine Liste von Zeilen erhalten, die wie folgt formatiert sind:
 
-`From stephen.marquard@`*` uct.ac.za`*` Sat Jan  5 09:14:16 2008`
+`From stephen.marquard@`*` uct.ac.za`*` Sat Jan  5 09:14:16 2008`
 
 Wollten wir nur die zweite Hälfte der Adresse (d.h. `uct.ac.za`) aus jeder Zeile extrahieren, können wir dies mit der Methode `find` und String-Slicing erreichen.
 
@@ -475,7 +472,7 @@ Zum Beispiel bedeutet das Formatierungszeichen `%d`, dass der zweite Operand als
 
 Das Ergebnis ist die Zeichenkette `'42'`, die nicht zu verwechseln ist mit dem Ganzzahlwert 42.
 
-Ein Formatierungszeichen kann an beliebiger Stelle im Format-String erscheinen, sodass Sie zum Beispiel einen Wert in einen Satz einfügen können:
+Ein Formatierungszeichen kann an beliebiger Stelle im Format-String erscheinen, sodass wir zum Beispiel einen Wert in einen Satz einfügen können:
 
 ~~~~ {.python}
 >>> camels = 42
@@ -504,24 +501,24 @@ TypeError: not enough arguments for format string
 TypeError: %d format: a number is required, not str
 ~~~~
 
-Im ersten Beispiel sind nicht genügend Argumente im Tupel vorhanden, im zweiten ist das Argument vom falschen Typ.
+Im ersten Beispiel sind nicht genügend Argumente im Tupel vorhanden, im zweiten Beispiel ist das Argument vom falschen Typ.
 
-Der Format-Operator ist mächtig, aber er kann schwierig zu bedienen sein. Sie können mehr darüber lesen unter
+Der Format-Operator ist mächtig, aber er kann schwierig zu bedienen sein. Mehr darüber kann man unter
 
-<https://docs.python.org/library/stdtypes.html#printf-style-string-formatting>.
+<https://docs.python.org/library/stdtypes.html#printf-style-string-formatting> lesen.
 
 Debugging
 ---------
 
 \index{Debugging}
 
-Eine Fähigkeit, die Sie beim Programmieren kultivieren sollten, ist, sich immer zu fragen: „Was könnte hier schiefgehen?“ oder alternativ: „Welche verrückte Sache könnte unser Benutzer tun, um unser (scheinbar) perfektes Programm zum Absturz zu bringen?“.
+Eine Fähigkeit, die man beim Programmieren kultivieren sollte, ist, sich immer zu fragen: „Was könnte hier schiefgehen?“ oder alternativ: „Welche verrückte Sache könnte unser Benutzer tun, um unser (scheinbar) perfektes Programm zum Absturz zu bringen?“.
 
-Schauen Sie sich zum Beispiel das Programm an, das wir zur Demonstration der `while`-Schleife im Kapitel über Iteration verwendet haben:
+Schauen wir uns zum Beispiel das Programm an, das wir zur Demonstration der `while`-Schleife im Kapitel über Iteration verwendet haben:
 
 \VerbatimInput{../code3/copytildone2.py}
 
-Beobachten Sie, was passiert, wenn der Benutzer eine leere Eingabezeile eingibt:
+Beobachten wir, was passiert, wenn der Benutzer eine leere Eingabezeile eingibt:
 
 ~~~~ {.python}
 > hello there
@@ -546,8 +543,6 @@ if line.startswith('#'):
 
 \index{Wächter-Muster}
 \index{Muster!Wächter}
-
-Another way is to safely write the `if` statement using the *guardian* pattern and make sure the second logical expression is evaluated only where there is at least one character in the string.:
 
 Eine andere Möglichkeit ist, die `if`-Anweisung mit einem „Wächter“ abzusichern und sicherzustellen, dass der zweite logische Ausdruck nur ausgewertet wird, wenn mindestens ein Zeichen in der Zeichenkette vorhanden ist:
 
@@ -605,7 +600,7 @@ Methode
 \index{Methode}
 
 Objekt
-:   Etwas, auf das sich eine Variable beziehen kann. Im Moment können Sie „Objekt“ und „Wert“ noch austauschbar verwenden.
+:   Etwas, auf das sich eine Variable beziehen kann. Im Moment können wir „Objekt“ und „Wert“ noch austauschbar verwenden.
 \index{Objekt}
 
 Suche
@@ -640,4 +635,4 @@ Traversieren
 **Übung 6: Lesen Sie die Dokumentation der String-Methoden unter <https://docs.python.org/library/stdtypes.html#string-methods>. Vielleicht möchten Sie mit einigen von ihnen experimentieren, um sicherzustellen, dass Sie verstehen, wie sie funktionieren. `strip` und `replace` sind besonders nützlich.**
 
 **Die Dokumentation verwendet eine Syntax, die verwirrend sein kann. Zum Beispiel in `find(sub[, start[, end]])` zeigen die Klammern optionale Argumente an. Also ist `sub` erforderlich, aber `start` ist optional, und wenn Sie `start` verwenden, dann ist `end` wiederum optional.**
-
+```

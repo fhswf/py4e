@@ -1,4 +1,4 @@
-
+```
 Iteration
 =========
 
@@ -18,14 +18,14 @@ x = x + 1
 
 Das bedeutet: „Ermittle den aktuellen Wert von `x`, addiere 1 und aktualisiere dann `x` mit diesem neuen Wert.“
 
-Wenn Sie versuchen, eine Variable zu aktualisieren, die nicht existiert, erhalten Sie einen Fehler, da Python versucht, die rechte Seite des Ausdrucks auszuwerten *bevor* `x` überhaupt einen Wert hat:
+Wenn man versucht, eine Variable zu aktualisieren, die nicht existiert, erhält man einen Fehler, da Python versucht, die rechte Seite des Ausdrucks auszuwerten *bevor* `x` überhaupt einen Wert hat:
 
 ~~~~ {.python}
 >>> x = x + 1
 NameError: name 'x' is not defined
 ~~~~
 
-Bevor Sie eine Variable aktualisieren können, müssen Sie sie *initialisieren*, normalerweise mit einer einfachen Zuweisung:
+Bevor man eine Variable aktualisieren kann, muss man sie *initialisieren*, normalerweise mit einer einfachen Zuweisung:
 
 \index{Initialisierung}
 
@@ -59,7 +59,7 @@ while n > 0:
 print('Blastoff!')
 ~~~~
 
-Sie können die `while`-Schleife fast wörtlich lesen. Sie bedeutet: „Solange `n` größer als 0 ist, zeige den Wert von `n` an und dekrementiere dann den Wert von `n` um 1. Wenn du zu 0 kommst, verlasse die `while`-Schleife und gebe `'Blastoff!'` aus.“
+Wir können die `while`-Schleife fast wörtlich lesen. Sie bedeutet: „Solange `n` größer als 0 ist, zeige den Wert von `n` an und dekrementiere dann den Wert von `n` um 1. Wenn du zu 0 kommst, verlasse die `while`-Schleife und gebe `'Blastoff!'` aus.“
 
 \index{Programmablauf}
 
@@ -86,14 +86,12 @@ Eine Quelle der Belustigung für Programmierer ist die Beobachtung, dass die Anl
 \index{Endlosschleife}
 \index{Schleife!endlos}
 
-In the case of `countdown`, we can prove that the loop terminates because we know that the value of `n` is finite, and we can see that the value of `n` gets smaller each time through the loop, so eventually we have to get to 0. Other times a loop is obviously infinite because it has no iteration variable at all.
-
 Im Fall von `n` können wir beweisen, dass die Schleife endet, weil wir wissen, dass der Wert von `n` endlich ist, und wir können sehen, dass der Wert von `n` jedes Mal, wenn wir die Schleife durchlaufen, kleiner wird, so dass wir schließlich bei 0 ankommen müssen. In vielen anderen Fällen ist eine Schleife häufig unendlich, zum Beispiel weil sie überhaupt keinem Schleifenzähler hat.
 
 \index{break (Anweisung)}
 \index{Anweisung!break}
 
-Manchmal möchte man erreichen, dass eine Schleife mitten im Schleifenrumpf abgebrochen wird. In diesem Fall können Sie absichtlich eine Endlosschleife schreiben (zum Beispiel mittels `True` als einziger Schleifenbedingung) und dann die Anweisung `break` verwenden, um *sofort* aus der Schleife herauszuspringen.
+Manchmal möchte man erreichen, dass eine Schleife mitten im Schleifenrumpf abgebrochen wird. In diesem Fall können wir absichtlich eine Endlosschleife schreiben (zum Beispiel mittels `True` als einziger Schleifenbedingung) und dann die Anweisung `break` verwenden, um *sofort* aus der Schleife herauszuspringen.
 
 Diese Schleife ist offensichtlich eine *Endlosschleife*, weil der logische Ausdruck der `while`-Schleife die Konstante `True` ist:
 
@@ -105,11 +103,11 @@ while True:
 print('Done!')
 ~~~~
 
-Wenn Sie den Fehler machen und diesen Code ausführen, werden Sie schnell lernen, wie Sie einen durchgebrannten Python-Prozess auf Ihrem System stoppen oder herausfinden können, wo der Ausschaltknopf Ihres Computers ist. Dieses Programm wird ewig laufen oder bis Ihre Batterie leer ist, weil der logische Ausdruck am Anfang der Schleife immer wahr ist, weil der Ausdruck der konstante Wert `True` ist.
+Wenn wir den Fehler machen und diesen Code ausführen, werden wir schnell lernen, wie wir einen durchgebrannten Python-Prozess auf unserem System stoppen oder herausfinden können, wo der Ausschaltknopf unseres Computers ist. Dieses Programm wird ewig laufen oder bis die Batterie leer ist, weil der logische Ausdruck am Anfang der Schleife immer wahr ist, weil der Ausdruck der konstante Wert `True` ist.
 
 Obwohl es sich hierbei um eine dysfunktionale Endlosschleife handelt, können wir dieses Muster dennoch verwenden, um nützliche Schleifen zu konstruieren, solange wir sorgfältig Code in den Körper der Schleife einfügen, um die Schleife explizit mit `break` zu verlassen, wenn wir die Abbruchbedingung erreicht haben.
 
-Nehmen Sie zum Beispiel an, dass Sie Eingaben des Benutzers entgegennehmen wollen, bis er `done` eingibt. Sie könnten schreiben:
+Nehmen wir zum Beispiel an, dass wir Eingaben des Benutzers entgegennehmen wollen, bis man `done` eingibt. Wir könnten schreiben:
 
 \VerbatimInput{../code3/copytildone1.py}
 
@@ -126,7 +124,7 @@ finished
 Done!
 ~~~~
 
-Diese Art, `while`-Schleifen zu schreiben, ist üblich, weil Sie die Bedingung an jeder Stelle der Schleife überprüfen können (nicht nur am Anfang) und weil Sie die Abbruchbedingung aktiv („stoppe, wenn dies passiert“) statt passiv („mache weiter, bis jenes passiert.“) ausdrücken können.
+Diese Art, `while`-Schleifen zu schreiben, ist üblich, weil wir die Bedingung an jeder Stelle der Schleife überprüfen können (nicht nur am Anfang) und weil wir die Abbruchbedingung aktiv („stoppe, wenn dies passiert“) statt passiv („mache weiter, bis jenes passiert.“) ausdrücken können.
 
 Abbrechen einer Iteration mit `continue`
 ----------------------------------------
@@ -134,7 +132,7 @@ Abbrechen einer Iteration mit `continue`
 \index{continue (Anweisung)}
 \index{Anweisung!continue}
 
-Manchmal befinden Sie sich in einer Iteration einer Schleife und möchten die aktuelle Iteration beenden und sofort zur nächsten Iteration springen. In diesem Fall können Sie die Anweisung `continue` verwenden, um zur nächsten Iteration zu springen, ohne den Rest des Schleifenrumpfes in der aktuellen Iteration durchlaufen zu müssen.
+Manchmal befinden wir uns in einer Iteration einer Schleife und möchten die aktuelle Iteration beenden und sofort zur nächsten Iteration springen. In diesem Fall können wir die Anweisung `continue` verwenden, um zur nächsten Iteration zu springen, ohne den Rest des Schleifenrumpfes in der aktuellen Iteration durchlaufen zu müssen.
 
 Hier ist ein Beispiel für eine Schleife, die eine Benutzereingabe sofort wieder ausgibt, bis der Benutzer `done` eingibt. Zeilen, die mit einer Raute beginnen, werden jedoch ignoriert.
 
@@ -180,9 +178,7 @@ Happy New Year: Sally
 Done!
 ~~~~
 
-Translating this `for` loop to English is not as direct as the `while`, but if you think of friends as a *set*, it goes like this: "Run the statements in the body of the for loop once for each friend *in* the set named friends."
-
-Die Übersetzung dieser `for`-Schleife in unsere Sprache ist nicht so direkt wie die der `while`-Schleife, aber wenn Sie sich `friends` als eine *Menge* vorstellen, könnte es etwa so lauten: „Führe die Anweisungen im Rumpf der Schleife einmal für jeden Freund aus der Menge aller Freunde aus."
+Die Übersetzung dieser `for`-Schleife in unsere Sprache ist nicht so direkt wie die der `while`-Schleife, aber wenn man sich `friends` als eine *Menge* vorstellt, könnte es etwa so lauten: „Führe die Anweisungen im Rumpf der Schleife einmal für jeden Freund aus der Menge aller Freunde aus."
 
 Wenn man sich die `for`-Schleife ansieht, sind *for* und *in* reservierte Python-Schlüsselwörter, und `friend` und `friends` sind Variablen.
 
@@ -234,7 +230,7 @@ for itervar in [3, 41, 12, 9, 74, 15]:
 print('Total: ', total)
 ~~~~
 
-In dieser Schleife benutzen wir die *Iterationsvariable* tatsächlich. Anstatt wie in der vorherigen Schleife einfach eine 1 zu `count` zu addieren, fügen wir bei jeder Schleifeniteration die aktuelle Zahl (3, 41, 12, usw.) zur laufenden Summe hinzu. Wenn Sie sich die Variable `total` vorstellen, enthält sie die laufende Summe der bisherigen Werte. Bevor die Schleife beginnt, ist `total` also 0, weil wir noch keine Werte gesehen haben, während der Schleife ist `total` die laufende Summe, und am Ende der Schleife ist `total` die Gesamtsumme aller Werte in der Liste.
+In dieser Schleife benutzen wir die *Iterationsvariable* tatsächlich. Anstatt wie in der vorherigen Schleife einfach eine 1 zu `count` zu addieren, fügen wir bei jeder Schleifeniteration die aktuelle Zahl (3, 41, 12, usw.) zur laufenden Summe hinzu. Wenn wir uns die Variable `total` vorstellen, enthält sie die laufende Summe der bisherigen Werte. Bevor die Schleife beginnt, ist `total` also 0, weil wir noch keine Werte gesehen haben, während der Schleife ist `total` die laufende Summe, und am Ende der Schleife ist `total` die Gesamtsumme aller Werte in der Liste.
 
 Während die Schleife ausgeführt wird, akkumuliert `total` die Summe der Elemente; eine Variable, die auf diese Weise verwendet wird, nennt man manchmal einen *Akkumulator*.
 
@@ -276,9 +272,9 @@ Largest: 74
 
 Die Variable `largest` kann man sich am besten als den „größten Wert, den wir bisher gesehen haben“ vorstellen. Vor der Schleife setzen wir `largest` auf die Konstante `None`. Die Konstante `None` ist ein spezieller konstanter Wert, den wir in einer Variablen speichern können, um die Variable als „leer“ zu markieren.
 
-Bevor die Schleife beginnt, ist der größte Wert, den wir bisher gesehen haben, `None`, da wir noch keine Werte gesehen haben. Wenn während der Ausführung der Schleife `largest` `None` ist, nehmen wir den ersten Wert, den wir sehen, als den bisher größten. Sie können sehen, dass in der ersten Iteration, wenn der Wert von `itervar` 3 ist, wir sofort `largest` auf 3 setzen (weil `largest` `None` ist).
+Bevor die Schleife beginnt, ist der größte Wert, den wir bisher gesehen haben, `None`, da wir noch keine Werte gesehen haben. Wenn während der Ausführung der Schleife `largest` `None` ist, nehmen wir den ersten Wert, den wir sehen, als den bisher größten. Man kann sehen, dass in der ersten Iteration, wenn der Wert von `itervar` 3 ist, wir sofort `largest` auf 3 setzen (weil `largest` `None` ist).
 
-Nach der ersten Iteration ist `largest` nicht mehr `None`, sodass der zweite Teil des zusammengesetzten logischen Ausdrucks, der `itervar > largest` prüft, nur ausgelöst wird, wenn wir einen Wert sehen, der größer als der „bisher größte“ ist. Wenn wir einen neuen „noch größeren“ Wert sehen, weisen wir diesen neuen Wert `largest` zu. Sie können in der Programmausgabe sehen, dass `largest` von 3 über 41 bis 74 fortschreitet.
+Nach der ersten Iteration ist `largest` nicht mehr `None`, sodass der zweite Teil des zusammengesetzten logischen Ausdrucks, der `itervar > largest` prüft, nur ausgelöst wird, wenn wir einen Wert sehen, der größer als der „bisher größte“ ist. Wenn wir einen neuen „noch größeren“ Wert sehen, weisen wir diesen neuen Wert `largest` zu. Man kann in der Programmausgabe sehen, dass `largest` von 3 über 41 bis 74 fortschreitet.
 
 Am Ende der Schleife haben wir alle Werte überprüft und die Variable `largest` enthält nun den größten Wert in der Liste.
 
@@ -314,20 +310,20 @@ In dieser Funktion haben wir alle `print`-Anweisungen entfernt, damit sie äquiv
 Debugging
 ---------
 
-Wenn Sie anfangen, größere Programme zu schreiben, werden Sie möglicherweise mehr Zeit mit der Fehlersuche verbringen. Mehr Code bedeutet mehr Möglichkeiten, einen Fehler zu machen und mehr Stellen, an denen sich Bugs verstecken können.
+Wenn wir anfangen, größere Programme zu schreiben, werden wir möglicherweise mehr Zeit mit der Fehlersuche verbringen. Mehr Code bedeutet mehr Möglichkeiten, einen Fehler zu machen und mehr Stellen, an denen sich Bugs verstecken können.
 
 \index{Debugging!mittels Bisektion}
 \index{Bisektion, Debugging mittels}
 
-Eine Möglichkeit, Ihre Debugging-Zeit zu verkürzen, ist das „Debugging durch Bisektion“ (*Halbierung*). Wenn Ihr Programm z. B. 100 Zeilen enthält und Sie diese nacheinander überprüfen, würde dies 100 Schritte erfordern.
+Eine Möglichkeit, die Debugging-Zeit zu verkürzen, ist das „Debugging durch Bisektion“ (*Halbierung*). Wenn das Programm z. B. 100 Zeilen enthält und man diese nacheinander überprüft, würde dies 100 Schritte erfordern.
 
-Versuchen Sie stattdessen, das Problem in zwei Hälften zu teilen. Suchen Sie in der Mitte des Programms oder in dessen Nähe nach einem Zwischenwert, den Sie überprüfen können. Fügen Sie eine `print`-Anweisung (oder etwas anderes, das eine überprüfbare Wirkung hat) hinzu und führen Sie das Programm aus.
+Versuchen wir stattdessen, das Problem in zwei Hälften zu teilen. Suchen wir in der Mitte des Programms oder in dessen Nähe nach einem Zwischenwert, den Sie überprüfen können. Wir fügen eine `print`-Anweisung (oder etwas anderes, das eine überprüfbare Wirkung hat) hinzu und führen das Programm aus.
 
 Wenn die Überprüfung an dieser Stelle falsch ist, muss das Problem in der ersten Hälfte des Programms liegen. Wenn sie korrekt ist, liegt das Problem in der zweiten Hälfte.
 
-Jedes Mal, wenn Sie eine solche Prüfung durchführen, halbieren Sie die Anzahl der Zeilen, die Sie durchsuchen müssen. Nach sechs Schritten (was viel weniger als 100 ist), wären Sie auf eine oder zwei Codezeilen runter, zumindest theoretisch.
+Jedes Mal, wenn wir eine solche Prüfung durchführen, halbieren wir die Anzahl der Zeilen, die wir durchsuchen müssen. Nach sechs Schritten (was viel weniger als 100 ist), wären wir auf eine oder zwei Codezeilen runter, zumindest theoretisch.
 
-In der Praxis ist es nicht immer klar, was die „Mitte des Programms“ ist und nicht immer möglich, dies zu überprüfen. Es macht keinen Sinn, Zeilen zu zählen und die genaue Mitte zu finden. Überlegen Sie stattdessen, an welchen Stellen im Programm es Fehler geben könnte und an welchen Stellen es einfach ist, eine Prüfung durchzuführen. Wählen Sie dann eine Stelle, bei der Sie denken, dass die Chancen etwa gleich groß sind, dass der Fehler vor oder nach der Prüfung liegt.
+In der Praxis ist es nicht immer klar, was die „Mitte des Programms“ ist und nicht immer möglich, dies zu überprüfen. Es macht keinen Sinn, Zeilen zu zählen und die genaue Mitte zu finden. Überlegen wir stattdessen, an welchen Stellen im Programm es Fehler geben könnte und an welchen Stellen es einfach ist, eine Prüfung durchzuführen. Wir wählen dann eine Stelle, bei der wir denken, dass die Chancen etwa gleich groß sind, dass der Fehler vor oder nach der Prüfung liegt.
 
 Glossar
 -------
@@ -362,7 +358,7 @@ Iteration
 Übungen
 -------
 
-**Übung 1: Schreiben Sie ein Programm, das wiederholt Zahlen einliest, bis der Benutzer `done` eingibt. Sobald `done` eingegeben wurde, geben Sie die Summe, die Anzahl und den Durchschnitt der Zahlen aus. Wenn der Benutzer etwas anderes als eine Zahl eingibt, erkennen Sie seinen Fehler mit `try` und `except` und geben eine Fehlermeldung aus und springen zur nächsten Zahl.**
+**Übung 1: Schreiben Sie ein Programm, das wiederholt Zahlen einliest, bis der Benutzer den Befehl `done` eingibt. Sobald `done` eingegeben wurde, geben Sie die Summe, die Anzahl und den Durchschnitt der Zahlen aus. Wenn der Benutzer etwas anderes als eine Zahl eingibt, erkennen Sie seinen Fehler mit `try` und `except` und geben eine Fehlermeldung aus und springen zur nächsten Zahl.**
 
 ~~~~
 Enter a number: 4
@@ -375,4 +371,4 @@ Enter a number: done
 ~~~~
 
 **Übung 2: Schreiben Sie ein weiteres Programm, das eine Liste von Zahlen wie oben abfragt und am Ende sowohl das Maximum als auch das Minimum der Zahlen anstelle des Durchschnitts ausgibt.**
-
+```

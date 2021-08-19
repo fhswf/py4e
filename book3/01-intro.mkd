@@ -1,35 +1,30 @@
+```
 % Python for Everybody 
 % Exploring Data Using Python 3
 % Dr. Charles R. Severance
 % Translation by Heiner Giefers, (...)
 
 
-Warum Sie Programmieren lernen sollten?
+Warum sollte man Programmieren lernen?
 =======================================
 
 Das Schreiben von Programmen (oder Programmieren) ist eine sehr kreative und lohnende Tätigkeit.
-Sie können Programme aus vielen Gründen schreiben, angefangen vom Ziel, Ihren Lebensunterhalt zu verdienen, ein schwieriges Datenanalyseproblem zu lösen, Spaß zu haben
+Wir können Programme aus vielen Gründen schreiben, angefangen vom Ziel, damit den Lebensunterhalt zu verdienen, ein schwieriges Datenanalyseproblem zu lösen, Spaß zu haben
 oder um jemand anderem bei der Lösung eines Problems zu helfen.
-Dieses Buch geht davon aus, dass dass *jeder* wissen sollte, wie man programmiert, und dass Sie, sobald Sie die Programmierung beherschen, herausfinden werden, was Sie mit Ihren neugewonnenen Fähigkeiten machen können.
+Dieses Buch geht davon aus, dass *jeder* wissen sollte, wie man programmiert, und dass wir, sobald wir die Programmierung beherrschen, herausfinden werden, was wir mit unseren neugewonnenen Fähigkeiten machen können.
 
 Wir sind in unserem täglichen Leben von Computern umgeben, von Laptops bis hin zu Handys.
 Wir nehmen diese Computer als unsere "persönlichen Assistenten" war, die viele Dinge für uns erledigen können.
 Die Hardware in unseren heutigen Computern ist im Wesentlichen so gebaut, dass sie uns ständig die Frage stellt:
 "Was soll ich als nächstes tun?"
 
-Programmierer fügen der Hardware ein Betriebssystem und eine Reihe von Anwendungen hinzu, und schon haben wir einen persönlichen digitalen Assistenten, der uns bei vielen Problemen
-des Alltags nützlich sein kann.
+Programmierer fügen der Hardware ein Betriebssystem und eine Reihe von Anwendungen hinzu, und schon haben wir einen persönlichen digitalen Assistenten, der uns bei vielen Problemen des Alltags nützlich sein kann.
 
-Unsere Computer sind schnell und haben riesige Mengen an Speicher und könnten uns sehr hilfreich sein hilfreich sein, wenn wir nur die Sprache beherrschen würden, um dem Computer zu erklären,
-was er als nächstes tun soll.
+Unsere Computer sind schnell und haben riesige Mengen an Speicher und könnten uns sehr hilfreich sein hilfreich sein, wenn wir nur die Sprache beherrschen würden, um dem Computer zu erklären, was er als nächstes tun soll.
 Wenn wir diese Sprache kennen, könnten wir dem Computer sagen, dass er in unserem Namen Aufgaben erledigen soll, die sich wiederholen. Interessanterweise sind die Dinge, die Computer am besten können
 oft die Dinge, die wir Menschen langweilig und stumpfsinnig finden. 
 
-Schauen Sie sich zum Beispiel die ersten drei Absätze dieses Kapitels an und sagen Sie mir sagen Sie mir, welches Wort am häufigsten verwendet wird und wie oft es vorkommt.
-Während Sie in der Lage waren, die Wörter in wenigen Sekunden zu lesen und zu verstehen, ist das Zählen der Wörter fast schmerzhaft, weil es nicht die Art von Problem ist die der menschliche Verstand einfach lösen kann. Für einen Computer ist das Gegenteil der Fall: Das Lesen und Verstehen von Text auf einem Blatt Papier ist für einen Computer schwer,
-aber die Wörter zu zählen und Ihnen zu sagen, wie oft das das am häufigsten verwendete Wort verwendet wurde, ist für den Computer sehr einfach.
-
-
+Schauen wir uns zum Beispiel die ersten drei Absätze dieses Kapitels an und finden heraus, welches Wort am häufigsten verwendet wird und wie oft es vorkommt. Während wir in der Lage waren, die Wörter in wenigen Sekunden zu lesen und zu verstehen, ist das Zählen der Wörter fast schmerzhaft, weil es nicht die Art von Problem ist die der menschliche Verstand einfach lösen kann. Für einen Computer ist das Gegenteil der Fall: Das Lesen und Verstehen von Text auf einem Blatt Papier ist für einen Computer schwer, aber die Wörter zu zählen und Ihnen zu sagen, wie oft das am häufigsten verwendete Wort verwendet wurde, ist für den Computer sehr einfach.
 
 ~~~~ {.python}
 python words.py
@@ -37,27 +32,25 @@ Enter file:words.txt
 zu 12
 ~~~~
 
-
 Unser Programm sagt uns schnell, dass das Wort "zu" 12 Mal im oberen Teil dieses Kapitels verwendet wurde.
-Genau diese Tatsache, dass Computer Dinge gut können, die Menschen eher nicht gut bzw. schnell können, ist ist der Grund, warum Sie die Programmiersprachen beherrschen sollten.
-Sobald Sie eine Programmiersprache gelernt haben, können Sie viele alltägliche Aufgaben durch den Computer erledigen lassen. 
-So bleibt Ihnen mehr Zeit für die diejenigen Aufgaben, für die Sie einzigartig geeignet sind, nämlich Kreativität, Intuition und Ideenreichtum.
+Genau diese Tatsache, dass Computer Dinge gut können, die Menschen eher nicht gut bzw. schnell können, ist ist der Grund, warum man die Programmiersprachen beherrschen sollten.
+Sobald man eine Programmiersprache gelernt hat, kann man viele alltägliche Aufgaben durch den Computer erledigen lassen. 
+So bleibt einem mehr Zeit für die diejenigen Aufgaben, für die wir Menschen einzigartig geeignet sind, nämlich Kreativität, Intuition und Ideenreichtum.
 
 Kreativität und Motivation
 -------------------------
 
-Wenn Sie gerade mit den Programmieren beginnen, werden Sie noch einigie Erfahrungen sammeln müssen, um professionelle Programme (auch *Software* genannt) entwickeln zu können. 
-Professionelles Programmieren ist allerding sowohl finanziell als auch persönlich eine sehr lohnende Aufgabe.
+Wenn wir gerade mit dem Programmieren beginnen, werden wir noch einige Erfahrungen sammeln müssen, um professionelle Programme (auch *Software* genannt) entwickeln zu können. 
+Professionelles Programmieren ist allerdings sowohl finanziell als auch persönlich eine sehr lohnende Aufgabe.
 Nützliche, elegante und clevere Programme zu erstellen, ist eine sehr kreative Aktivität, die durchaus Spaß machen kann.
-Lukrativ ist die Programmierung vor allem dann, wenn Ihren Kunden, bzw. den Nutzern das Programm gefällt und Ihnen einen Nutzen bringt.
-Dabei stehen Sie in Konkurrenz zu anderen Enwicklern.
-Sie sollten also versuchen, dass Ihr Programm bessr funktioniert, einen höheren Funktionsumfang hat, sich besser bedienen lässt oder einfach schöner aussieht.
-
+Lukrativ ist die Programmierung vor allem dann, wenn unseren Kunden, bzw. den Nutzern das Programm gefällt und uns einen Nutzen bringt.
+Dabei stehen wir in Konkurrenz zu anderen Enwicklern.
+Man sollte also versuchen, dass das eigene Programm besser funktioniert, einen höheren Funktionsumfang hat, sich besser bedienen lässt oder einfach schöner aussieht.
 
 Im Moment besteht unsere Hauptmotivation nicht darin, Geld zu verdienen oder den Endnutzern zu gefallen.
-Wir möchten unsere eignen Arbeitsablaufe automatisieren und produktiver mit den Daten und Informationen umgehen, die uns in unserem Leben begegnen.
-Bei Ihren Programmieranfängen sind Sie sowohl der Programmierer als auch der Endnutzer Ihrer Programme.
-Je mehr Erfahrung Sie sammeln und je umfangreicher Ihre Programme werden, desto mehr werden Sie befähigt, auch Programme für andere zu entwickeln.
+Wir möchten unsere eigenen Arbeitsablaufe automatisieren und produktiver mit den Daten und Informationen umgehen, die uns in unserem Leben begegnen.
+Bei unseren Programmieranfängen sind wir sowohl der Programmierer als auch der Endnutzer unserer Programme.
+Je mehr Erfahrung wir sammeln und je umfangreicher unsere Programme werden, desto mehr werden wir befähigt, auch Programme für andere zu entwickeln.
 
 Der Aufbau eines Computers
 ------------------------------
@@ -66,65 +59,63 @@ Der Aufbau eines Computers
 \index{hardware!architecture}
 
 Bevor wir anfangen, die Sprachen zu lernen, mit der wir Computer *programmieren* können, sollten wir uns ein wenig damit beschäftigen, wie Computer aufgebaut sind.
-Wenn Sie Ihren Computer oder Ihr Handy auseinandernehmen und tief ins Innere schauen würden, würden Sie die folgenden Teile finden:
+Wenn wir unseren Computer oder unser Handy auseinandernehmen und tief ins Innere schauen würden, würden wir die folgenden Teile finden:
 
 ![Aufbau eines Computers](height=1.75in@../images/_arch)
 
-The high-level definitions of these parts are as follows:
+Die wichtigsten Definitionen dieser Teile lauten wie folgt:
 
--   The *Central Processing Unit* (or CPU) is the part of the computer that is built to be obsessed with "what is next?" If your computer is rated at 3.0 Gigahertz, it means that the CPU will ask "What next?" three billion times per second. You are going to have to learn how to talk fast to keep up with the CPU.
+- Die *Central Processing Unit* (oder CPU) ist der Teil des Computers, der so gebaut ist, dass er von der Frage "Was kommt als nächstes?" besessen ist. Wenn der Computer auf 3,0 Gigahertz eingestellt ist, bedeutet das, dass die CPU drei Milliarden Mal pro Sekunde fragt: "Was kommt als Nächstes?". Wir werden lernen müssen, schnell zu sprechen, um mit der CPU Schritt zu halten.
 
--   The *Main Memory* is used to store information that the CPU needs in a hurry. The main memory is nearly as fast as the CPU. But the information stored in the main memory vanishes when the computer is turned off.
+- Der *Hauptspeicher* wird zum Speichern von Informationen verwendet, die die CPU schnell benötigt. Der Hauptspeicher ist fast so schnell wie die CPU. Aber die im Hauptspeicher gespeicherten Informationen verschwinden, wenn der Computer ausgeschaltet wird.
 
--   The *Secondary Memory* is also used to store information, but it is much slower than the main memory. The advantage of the secondary memory is that it can store information even when there is no power to the computer. Examples of secondary memory are disk drives or flash memory (typically found in USB sticks and portable music players).
+- Der *Sekundärspeicher* wird ebenfalls zum Speichern von Informationen verwendet, ist aber viel langsamer als der Hauptspeicher. Der Vorteil des Sekundärspeichers ist, dass er Informationen auch dann speichern kann, wenn der Computer nicht mit Strom versorgt wird. Beispiele für Sekundärspeicher sind Festplattenlaufwerke oder Flash-Speicher (typischerweise in USB-Sticks und tragbaren Musikplayern zu finden).
 
--   The *Input and Output Devices* are simply our screen, keyboard, mouse, microphone, speaker, touchpad, etc. They are all of the ways we interact with the computer.
+- Die *Eingabe- und Ausgabegeräte* sind einfach unser Bildschirm, unsere Tastatur, Maus, Mikrofon, Lautsprecher, Touchpad usw. und sind alle Möglichkeiten, wie wir mit dem Computer interagieren können.
 
--   These days, most computers also have a *Network Connection* to retrieve information over a network. We can think of the network as a very slow place to store and retrieve data that might not always be "up". So in a sense, the network is a slower and at times unreliable form of *Secondary Memory*.
+- Heutzutage haben die meisten Computer auch eine *Netzwerkverbindung*, um Informationen über ein Netzwerk abzurufen. Wir können uns das Netzwerk als einen sehr langsamen Ort vorstellen, an dem Daten gespeichert und abgerufen werden, die nicht immer "verfügbar" sind. In gewissem Sinne ist das Netzwerk also eine langsamere und manchmal unzuverlässige Form des *Sekundärspeichers*.
 
-While most of the detail of how these components work is best left to computer builders, it helps to have some terminology so we can talk about these different parts as we write our programs. 
+Die meisten Details über die Funktionsweise dieser Komponenten überlässt man am besten den Computerbauern, aber es ist hilfreich, eine Terminologie zu haben, damit wir beim Schreiben unserer Programme über diese verschiedenen Teile sprechen können. 
 
-As a programmer, your job is to use and orchestrate each of these resources to solve the problem that you need to solve and analyze the data you get from the solution. As a programmer you will mostly be "talking" to the CPU and telling it what to do next. Sometimes you will tell the CPU to use the main memory, secondary memory, network, or the
-input/output devices.
+Als Programmierer ist es unsere Aufgabe, jede dieser Ressourcen zu nutzen und zu koordinieren, um das Problem zu lösen, das wir lösen müssen, und die Daten zu analysieren, die wir aus der Lösung erhalten. Als Programmierer werden wir hauptsächlich mit der CPU "reden" und ihr sagen, was sie als nächstes tun soll. Manchmal werden wir der CPU sagen, dass sie den Hauptspeicher, den sekundären Speicher, das Netzwerk oder die Eingabe-/Ausgabegeräte verwenden soll.
 
-![Where Are You?](height=1.75in@../images/arch2)
+![Wo bist du?](height=1.75in@../images/arch2)
 
-You need to be the person who answers the CPU's "What next?" question. But it would be very uncomfortable to shrink you down to 5mm tall and insert you into the computer just so you could issue a command three billion times per second. So instead, you must write down your instructions in advance. We call these stored instructions a *program* and the act of writing these instructions down and getting the instructions to be correct *programming*.
+Wir müssen jeweils die Person sein, die der CPU die Frage "Was nun?" beantwortet. Aber es wäre sehr unangenehm, wenn man auf 5 mm schrumpfen müsste um uns in den Computer zu stecken, nur damit wir drei Milliarden Mal pro Sekunde einen Befehl geben können. Stattdessen müssen wir unsere Anweisungen im Voraus aufschreiben. Wir nennen diese gespeicherten Anweisungen ein *Programm* und den Akt des Aufschreibens dieser Anweisungen und die korrekte Ausführung der Anweisungen *Programmierung*.
 
 Understanding programming
 -------------------------
 
-In the rest of this book, we will try to turn you into a person who is skilled in the art of programming. In the end you will be a *programmer* - perhaps not a professional programmer, but at least you will have the skills to look at a data/information analysis problem and develop a program to solve the problem.
+Im weiteren Verlauf dieses Buches werden wir versuchen, aus uns Personen zu machen, die die Kunst des Programmierens beherrschen. Am Ende werden wir echte *Programmierer* sein - vielleicht keine professionellen Programmierer, aber zumindest werden wir die Fähigkeit besitzen, ein Daten-/Informationsanalyseproblem zu betrachten und ein Programm zur Lösung des Problems zu entwickeln.
 
 \index{problem solving}
 
-In a sense, you need two skills to be a programmer:
+In gewissem Sinne braucht man zwei Fähigkeiten, um ein Programmierer zu sein:
 
--   First, you need to know the programming language (Python) - you need to know the vocabulary and the grammar. You need to be able to spell the words in this new language properly and know how to construct well-formed "sentences" in this new language.
+-   Erstens müssen wir die Programmiersprache (Python) kennen - Wir müssen das Vokabular und die Grammatik kennen. Wir müssen in der Lage sein, die Wörter in dieser neuen Sprache richtig zu schreiben und wissen, wie man wohlgeformte "Sätze" in dieser neuen Sprache konstruiert.
 
--   Second, you need to "tell a story". In writing a story, you combine words and sentences to convey an idea to the reader. There is a skill and art in constructing the story, and skill in story writing is improved by doing some writing and getting some feedback. In programming, our program is the "story" and the problem you are trying to solve is the "idea".
+-   Zweitens müssen wir "eine Geschichte erzählen" können. Beim Schreiben einer Geschichte kombinieren wir Wörter und Sätze, um dem Leser eine Idee zu vermitteln. Es ist eine Kunst, eine Geschichte zu konstruieren, und die Fähigkeit, eine Geschichte zu schreiben, wird verbessert, indem man etwas schreibt und Feedback erhält. Beim Programmieren ist unser Programm die "Geschichte" und das Problem, das wir zu lösen versuchen, ist die "Idee".
 
-Once you learn one programming language such as Python, you will find it much easier to learn a second programming language such as JavaScript or C++. The new programming language has very different vocabulary and grammar but the problem-solving skills will be the same across all
-programming languages.
+Wenn man einmal eine Programmiersprache wie Python gelernt hat, wird es einem viel leichter fallen, eine zweite Programmiersprache wie JavaScript oder C++ zu lernen. Die neue Programmiersprache hat einen ganz anderen Wortschatz und eine andere Grammatik, aber die Problemlösungsfähigkeiten sind in allen
+Programmiersprachen gleich.
 
-You will learn the "vocabulary" and "sentences" of Python pretty quickly. It will take longer for you to be able to write a coherent program to solve a brand-new problem. We teach programming much like we teach writing. We start reading and explaining programs, then we write simple programs, and then we write increasingly complex programs over time. At some point you "get your muse" and see the patterns on your own and can see more naturally how to take a problem and write a program
-that solves that problem. And once you get to that point, programming becomes a very pleasant and creative process.
+Wir werden das "Vokabular" und die "Sätze" von Python ziemlich schnell lernen. Es wird länger dauern, bis man in der Lage ist, ein zusammenhängendes Programm zu schreiben, um ein brandneues Problem zu lösen. Wir lehren das Programmieren ähnlich wie das Schreiben. Wir beginnen damit, Programme zu lesen und zu erklären. Folgend schreiben wir einfache Programme und mit der Zeit immer komplexere Programme. Irgendwann hat man "die Muse" und erkennt die Muster von selbst und kann ganz natürlich erkennen, wie man ein Problem aufgreift und ein Programm schreibt, dass dieses Problem löst. Und wenn man diesen Punkt erreicht hat, wird das Programmieren zu einem sehr angenehmen und kreativen Prozess.
 
-We start with the vocabulary and structure of Python programs. Be patient as the simple examples remind you of when you started reading for the first time.
+Wir beginnen mit dem Vokabular und der Struktur von Python-Programmen. Seid geduldig, denn die einfachen Beispiele erinnern uns daran, wie wir zum ersten Mal gelesen haben.
 
-Words and sentences
+Wörter und Sätze
 -------------------
 
 \index{programming language}
 \index{language!programming}
 
-Unlike human languages, the Python vocabulary is actually pretty small. We call this "vocabulary" the "reserved words". These are words that have very special meaning to Python. When Python sees these words in a Python program, they have one and only one meaning to Python. Later as
-you write programs you will make up your own words that have meaning to you called *variables*. You will have great latitude in choosing your names for your variables, but you cannot use any of Python's reserved words as a name for a variable.
+Im Gegensatz zu menschlichen Sprachen ist der Wortschatz von Python ziemlich klein. Wir nennen diesen "Wortschatz" die "reservierten Wörter". Das sind Wörter, die für Python eine ganz besondere Bedeutung haben. Wenn Python diese Wörter in einem Python-Programm sieht, haben sie eine und nur eine Bedeutung für Python. Später, wenn
+wir Programme schreiben, werden wir unsere eigenen Wörter erfinden, die für uns eine Bedeutung haben und *Variablen* genannt werden. Bei der Wahl der Namen für unsere Variablen haben wir einen großen Spielraum, aber wir können keines der reservierten Wörter von Python als Namen für eine Variable verwenden.
 
-When we train a dog, we use special words like "sit", "stay", and "fetch". When you talk to a dog and don't use any of the reserved words, they just look at you with a quizzical look on their face until you say a reserved word. For example, if you say, "I wish more people would walk
-to improve their overall health", what most dogs likely hear is, "blah blah blah *walk* blah blah blah blah." That is because "walk" is a reserved word in dog language. Many might suggest that the language between humans and cats has no reserved words^[<http://xkcd.com/231/>].
+Wenn wir einen Hund trainieren, verwenden wir spezielle Wörter wie "Sitz", "Bleib" und "Apportieren". Wenn man mit einem Hund spricht und keines der reservierten Wörter verwendet, schaut er einen nur mit einem fragenden Gesichtsausdruck an, bis man ein reserviertes Wort sagt. Wenn man z. B. sagt: "Ich wünschte, mehr Menschen würden spazieren gehen
+um ihre allgemeine Gesundheit zu verbessern", hören die meisten Hunde wahrscheinlich: "blah blah blah *spazieren gehen* blah blah blah blah." Das liegt daran, dass "spazieren gehen" in der Hundesprache ein reserviertes Wort ist. Man könnte meinen, dass es in der Sprache zwischen Menschen und Katzen keine reservierten Wörter gibt^[<http://xkcd.com/231/>].
 
-The reserved words in the language where humans talk to Python include the following: 
+Zu den reservierten Wörtern in der Sprache, in der Menschen mit Python sprechen, gehören die folgenden: 
 
     and       del       global      not       with
     as        elif      if          or        yield
@@ -134,22 +125,22 @@ The reserved words in the language where humans talk to Python include the follo
     continue  for       lambda      try
     def       from      nonlocal    while    
 
-That is it, and unlike a dog, Python is already completely trained. When you say "try", Python will try every time you say it without fail.
+Das war's, und im Gegensatz zu einem Hund ist Python bereits vollständig trainiert. Wenn wir "try" sagen, wird Python es jedes Mal versuchen, wenn wir es sagen, ohne Widerworte.
 
-We will learn these reserved words and how they are used in good time, but for now we will focus on the Python equivalent of "speak" (in human-to-dog language). The nice thing about telling Python to speak is that we can even tell it what to say by giving it a message in quotes:
+Wir werden diese reservierten Wörter und ihre Verwendung zu gegebener Zeit lernen, aber jetzt konzentrieren wir uns erst einmal auf das Python-Äquivalent von "sprechen" (in der Mensch-Hund-Sprache). Das Schöne daran, Python zu sagen, dass es sprechen soll, ist, dass wir ihm sogar sagen können, was es sagen soll, indem wir ihm eine Nachricht in Anführungszeichen geben:
 
 ~~~~ {.python}
 print('Hello world!')
 ~~~~
 
-And we have even written our first syntactically correct Python sentence. Our sentence starts with the function *print* followed by a string of text of our choosing enclosed in single quotes. The strings in the print statements are enclosed in quotes. Single quotes and double quotes do the same thing; most people use single quotes except in cases like this where a single quote (which is also an apostrophe) appears in the string.
+Und wir haben sogar unseren ersten syntaktisch korrekten Python-Satz geschrieben. Unser Satz beginnt mit der Funktion *print*, gefolgt von einer Zeichenfolge unserer Wahl, die in einfachen Anführungszeichen steht. Die Zeichenketten in den Druckanweisungen sind in Anführungszeichen eingeschlossen. Einfache Anführungszeichen und doppelte Anführungszeichen haben die gleiche Funktion; die meisten Leute verwenden einfache Anführungszeichen, außer in Fällen wie diesem, wo ein einfaches Anführungszeichen (das auch ein Apostroph ist) in der Zeichenkette erscheint.
 
-Conversing with Python
+Konversation mit Python
 ----------------------
 
-Now that we have a word and a simple sentence that we know in Python, we need to know how to start a conversation with Python to test our new language skills.
+Nachdem wir nun ein Wort und einen einfachen Satz in Python kennen, müssen wir wissen, wie wir eine Unterhaltung mit Python beginnen können, um unsere neuen Sprachkenntnisse zu testen.
 
-Before you can converse with Python, you must first install the Python software on your computer and learn how to start Python on your computer. That is too much detail for this chapter so I suggest that you consult [www.py4e.com](http://www.py4e.com) where I have detailed instructions and screencasts of setting up and starting Python on Macintosh and Windows systems. At some point, you will be in a terminal or command window and you will type *python* and the Python interpreter will start executing in interactive mode and appear somewhat as follows:
+Bevor wir uns mit Python unterhalten können, müssen wir zunächst die Python-Software auf unserem Computer installieren und lernen, wie man Python auf diesem startet. Das ist zu ausführlich für dieses Kapitel, daher schlagen wir vor [www.py4e.com](http://www.py4e.com) zu konsultieren, wo detaillierte Anweisungen und Screencasts zur Einrichtung und zum Start von Python auf Macintosh- und Windows-Systemen bereitgestellt wurden. Irgendwann befinden wir uns in einem Terminal- oder Befehlsfenster und geben *python* ein, woraufhin der Python-Interpreter im interaktiven Modus ausgeführt wird und in etwa wie folgt aussieht:
 
 \index{interactive mode}
 
@@ -161,9 +152,9 @@ information.
 >>>
 ~~~~
 
-The `>>>` prompt is the Python interpreter's way of asking you, "What do you want me to do next?" Python is ready to have a conversation with you. All you have to know is how to speak the Python language.
+Die Eingabeaufforderung `>>>` ist die Art und Weise, wie der Python-Interpreter uns fragt: "Was soll ich als nächstes tun?" Python ist bereit, ein Gespräch mit uns zu führen. Alles, was wir wissen müssen, ist, wie man die Sprache Python spricht.
 
-Let's say for example that you did not know even the simplest Python language words or sentences. You might want to use the standard line that astronauts use when they land on a faraway planet and try to speak with the inhabitants of the planet:
+Nehmen wir an, wir kennen nicht einmal die einfachsten Wörter oder Sätze in Python. Wir könnten den Standardsatz verwenden, den Astronauten verwenden, wenn sie auf einem fernen Planeten landen und versuchen, mit den Bewohnern des Planeten zu sprechen:
 
 ~~~~ {.python}
 >>> I come in peace, please take me to your leader
@@ -174,16 +165,16 @@ SyntaxError: invalid syntax
 >>>
 ~~~~
 
-This is not going so well. Unless you think of something quickly, the inhabitants of the planet are likely to stab you with their spears, put you on a spit, roast you over a fire, and eat you for dinner.
+Das läuft nicht so gut. Wenn uns nicht schnell etwas einfällt, werden die Bewohner des Planeten uns wahrscheinlich mit ihren Speeren erstechen, auf einen Spieß stecken, über einem Feuer rösten und zum Abendessen verspeisen.
 
-Luckily you brought a copy of this book on your travels, and you thumb to this very page and try again:
+Zum Glück haben wir ein Exemplar dieses Buches mit auf unsere Reise genommen, wir blättern genau zu dieser Seite und versuchen es noch einmal:
 
 ~~~~ {.python}
 >>> print('Hello world!')
 Hello world!
 ~~~~
 
-This is looking much better, so you try to communicate some more:
+Das sieht schon viel besser aus, also versuchen wir, noch etwas mehr zu kommunizieren:
 
 ~~~~ {.python}
 >>> print('You must be the legendary god that comes from the sky')
@@ -200,11 +191,11 @@ SyntaxError: Missing parentheses in call to 'print'
 >>>
 ~~~~
 
-The conversation was going so well for a while and then you made the tiniest mistake using the Python language and Python brought the spears back out.
+Das Gespräch lief eine Zeit lang sehr gut, und dann haben wir den kleinsten Fehler bei der Verwendung der Sprache Python gemacht, und Python hat die Speere wieder hervorgeholt.
 
-At this point, you should also realize that while Python is amazingly complex and powerful and very picky about the syntax you use to communicate with it, Python is *not* intelligent. You are really just having a conversation with yourself, but using proper syntax.
+An diesem Punkt sollte man erkennen, dass Python zwar erstaunlich komplex und mächtig ist und sehr wählerisch ist, was die Syntax angeht, die wir zur Kommunikation mit ihm verwenden. Python selbst ist *nicht* intelligent. Wir führen eigentlich nur ein Gespräch mit uns selbst, aber mit der richtigen Syntax.
 
-In a sense, when you use a program written by someone else the conversation is between you and those other programmers with Python acting as an intermediary. Python is a way for the creators of programs to express how the conversation is supposed to proceed. And in just a few more chapters, you will be one of those programmers using Python to talk to the users of your program.  Before we leave our first conversation with the Python interpreter, you should probably know the proper way to say "good-bye" when interacting with the inhabitants of Planet Python:
+Wenn wir ein Programm verwenden, dass von jemand anderem geschrieben wurde, findet die Konversation gewissermaßen zwischen uns und diesem anderen Programmierer statt, wobei Python als Vermittler fungiert. Python ist eine Möglichkeit für die Programmierer, auszudrücken, wie die Konversation ablaufen soll. Und in ein paar weiteren Kapiteln werden wir einer dieser Programmierer sein, die Python benutzen, um mit den Benutzern unseres Programms zu sprechen. Bevor wir unser erstes Gespräch mit dem Python-Interpreter beenden, sollten wir wissen, wie man sich von den Bewohnern des Planeten Python verabschiedet:
 
 ~~~~ {.python}
 >>> good-bye
@@ -219,17 +210,17 @@ SyntaxError: invalid syntax
 >>> quit()
 ~~~~
 
-You will notice that the error is different for the first two incorrect attempts. The second error is different because *if* is a reserved word and Python saw the reserved word and thought we were trying to say something but got the syntax of the sentence wrong.
+Man kann feststellen, dass der Fehler bei den ersten beiden Fehlversuchen anders ist. Der zweite Fehler ist anders, weil *if* ein reserviertes Wort ist und Python das reservierte Wort sah und dachte, wir wollten etwas sagen, aber die Syntax des Satzes war falsch.
 
-The proper way to say "good-bye" to Python is to enter *quit()* at the interactive chevron `>>>` prompt. It would have probably taken you quite a while to guess that one, so having a book handy probably will turn out to be helpful.
+Der richtige Weg, sich von Python zu verabschieden, ist die Eingabe von *quit()* am interaktiven Chevron `>>>`-Prompt. Wir hätten wahrscheinlich eine ganze Weile gebraucht, um das zu erraten, also wird es sich als hilfreich erweisen, ein Buch zur Hand zu haben.
 
-Terminology: Interpreter and compiler
+Terminologie: Interpreter und Compiler
 -------------------------------------
 
-Python is a *high-level* language intended to be relatively straightforward for humans to read and write and for computers to read and process. Other high-level languages include Java, C++, PHP, Ruby, Basic, Perl, JavaScript, and many more. The actual
-hardware inside the Central Processing Unit (CPU) does not understand any of these high-level languages.
+Python ist eine *Hochsprache*, die für Menschen relativ einfach zu lesen und zu schreiben und für Computer zu lesen und zu verarbeiten ist. Andere Hochsprachen sind Java, C++, PHP, Ruby, Basic, Perl, JavaScript und viele mehr. Die eigentliche
+Hardware in der Central Processing Unit (CPU) versteht keine dieser Hochsprachen.
 
-The CPU understands a language we call *machine language*. Machine language is very simple and frankly very tiresome to write because it is represented all in zeros and ones:
+Die CPU versteht eine Sprache, die wir *Maschinensprache* nennen. Maschinensprache ist sehr einfach und ehrlich gesagt sehr mühsam zu schreiben, weil sie nur aus Nullen und Einsen besteht:
 
 ~~~~
 001010001110100100101010000001111
@@ -237,36 +228,36 @@ The CPU understands a language we call *machine language*. Machine language is v
 ...
 ~~~~
 
-Machine language seems quite simple on the surface, given that there are
-only zeros and ones, but its syntax is even more complex and far more
-intricate than Python. So very few programmers ever write machine
-language. Instead we build various translators to allow programmers to
-write in high-level languages like Python or JavaScript and these
-translators convert the programs to machine language for actual
-execution by the CPU.
+Die Maschinensprache scheint auf den ersten Blick recht einfach zu sein, da es nur Nullen und Einsen gibt.
+nur Nullen und Einsen gibt, aber ihre Syntax ist noch komplexer und weitaus
+komplizierter als Python. Daher schreiben nur sehr wenige Programmierer jemals Maschinensprache
+Sprache. Stattdessen entwickeln wir verschiedene Übersetzer, die es Programmierern ermöglichen
+Hochsprachen wie Python oder JavaScript zu schreiben, und diese
+Übersetzer wandeln die Programme in Maschinensprache um, die dann von der
+Ausführung durch die CPU.
 
-Since machine language is tied to the computer hardware, machine
-language is not *portable* across different types of
-hardware. Programs written in high-level languages can be moved between
-different computers by using a different interpreter on the new machine
-or recompiling the code to create a machine language version of the
-program for the new machine.
+Da die Maschinensprache an die Computerhardware gebunden ist, ist die Maschinensprache
+ist Maschinensprache nicht *portabel* über verschiedene Arten von
+Hardware. In Hochsprachen geschriebene Programme können zwischen
+verschiedenen Computern übertragen werden, indem ein anderer Interpreter auf dem neuen Computer verwendet wird
+oder den Code neu kompilieren, um eine Maschinensprachversion des Programms
+Programms für die neue Maschine.
 
-These programming language translators fall into two general categories:
-(1) interpreters and (2) compilers.
+Diese Programmiersprachenübersetzer lassen sich in zwei allgemeine Kategorien einteilen:
+(1) Interpreter und (2) Compiler.
 
-An *interpreter* reads the source code of the program as
-written by the programmer, parses the source code, and interprets the
-instructions on the fly. Python is an interpreter and when we are
-running Python interactively, we can type a line of Python (a sentence)
-and Python processes it immediately and is ready for us to type another
-line of Python.
+Ein *Interpreter* liest den Quellcode des Programms, wie er
+vom Programmierer geschrieben wurde, analysiert den Quellcode und interpretiert die
+Befehle im laufenden Betrieb. Python ist ein Interpreter, und wenn wir
+Wenn wir Python interaktiv ausführen, können wir eine Zeile (einen Satz) in Python eingeben
+und Python verarbeitet sie sofort und ist bereit für die Eingabe einer weiteren
+Python-Zeile einzugeben.
 
-Some of the lines of Python tell Python that you want it to remember
-some value for later. We need to pick a name for that value to be
-remembered and we can use that symbolic name to retrieve the value
-later. We use the term *variable* to refer to the labels
-we use to refer to this stored data.
+Einige der Python-Zeilen sagen Python, dass es sich einen Wert für später merken soll.
+einen Wert für später merken soll. Wir müssen einen Namen für diesen zu speichernden Wert wählen
+Wir müssen einen Namen für den zu speichernden Wert wählen, und wir können diesen symbolischen Namen verwenden, um den Wert
+später abrufen. Wir verwenden den Begriff *Variable* für die Bezeichnungen, die wir
+die wir verwenden, um auf diese gespeicherten Daten zu verweisen.
 
 ~~~~ {.python}
 >>> x = 6
@@ -278,34 +269,32 @@ we use to refer to this stored data.
 >>>
 ~~~~
 
-In this example, we ask Python to remember the value six and use the
-label *x* so we can retrieve the value later. We verify
-that Python has actually remembered the value using
-*print*. Then we ask Python to retrieve
-*x* and multiply it by seven and put the newly computed
-value in *y*. Then we ask Python to print out the value
-currently in *y*.
+In diesem Beispiel bitten wir Python, sich den Wert *6* zu merken und die
+Label *x* zu verwenden, damit wir den Wert später abrufen können. Wir überprüfen
+ob Python sich den Wert tatsächlich gemerkt hat, indem wir
+*print*. Dann bitten wir Python, den Wert
+*x* abzurufen, mit sieben zu multiplizieren und den neu berechneten
+Wert in *y*. Dann möchten wir uns den Wert anzeigen lassen, der sich gerade in *y* befindet.
 
-Even though we are typing these commands into Python one line at a time,
-Python is treating them as an ordered sequence of statements with later
-statements able to retrieve data created in earlier statements. We are
-writing our first simple paragraph with four sentences in a logical and
-meaningful order.
+Auch wenn wir diese Befehle Zeile für Zeile in Python eingeben,
+behandelt Python sie als eine geordnete Folge von Anweisungen, wobei spätere
+Anweisungen Daten abrufen können, die in früheren Anweisungen erstellt wurden. Wir
+schreiben unseren ersten einfachen Absatz mit vier Sätzen in einer logischen und
+sinnvollen Reihenfolge.
 
-It is the nature of an *interpreter* to be able to have
-an interactive conversation as shown above. A *compiler*
-needs to be handed the entire program in a file, and then it runs a
-process to translate the high-level source code into machine language
-and then the compiler puts the resulting machine language into a file
-for later execution.
+Es liegt in der Natur eines *Interpreters*, dass er in der Lage ist
+ein interaktives Gespräch zu führen, wie oben gezeigt. Ein *Compiler*
+muss das gesamte Programm in einer Datei erhalten. Dann führt er einen
+Prozess aus, um den High-Level-Quellcode in Maschinensprache zu übersetzen. 
+Danach stellt der Compiler die resultierende Maschinensprache in einer Datei zur späteren Ausführung zur Verfügung.
 
-If you have a Windows system, often these executable machine language
-programs have a suffix of ".exe" or ".dll" which stand for "executable"
-and "dynamic link library" respectively. In Linux and Macintosh, there
-is no suffix that uniquely marks a file as executable.
+Wenn wir ein Windows-System haben, haben diese ausführbaren Maschinensprache
+Programme die Endungen ".exe" oder ".dll", welche für "ausführbar" bzw.
+bzw. "dynamische Link-Bibliothek" stehen. Unter Linux und Macintosh
+gibt es kein Suffix, das eine Datei eindeutig als ausführbar kennzeichnet.
 
-If you were to open an executable file in a text editor, it would look
-completely crazy and be unreadable:
+Wenn wir eine ausführbare Datei in einem Texteditor öffnen würden, sähe sie
+völlig verrückt aus und wäre unlesbar:
 
 ~~~~
 ^?ELF^A^A^A^@^@^@^@^@^@^@^@^@^B^@^C^@^A^@^@^@\xa0\x82
@@ -316,49 +305,38 @@ completely crazy and be unreadable:
 ....
 ~~~~
 
-It is not easy to read or write machine language, so it is nice that we
-have *interpreters* and *compilers* that
-allow us to write in high-level languages like Python or C.
+Es ist nicht einfach, Maschinensprache zu lesen oder zu schreiben, daher ist es gut, dass wir
+*Interpreter* und *Compiler* haben, die es uns ermöglichen, in Hochsprachen wie Python oder C zu schreiben.
 
-Now at this point in our discussion of compilers and interpreters, you
-should be wondering a bit about the Python interpreter itself. What
-language is it written in? Is it written in a compiled language? When we
-type "python", what exactly is happening?
+An diesem Punkt in unserer Diskussion über Compiler und Interpreter, sollten man sich ein wenig über den Python-Interpreter selbst gedanken machen. In welcher Sprache ist er geschrieben? Ist er in einer kompilierten Sprache geschrieben? Wenn wir
+"python" eintippen, was genau passiert dann?
 
-The Python interpreter is written in a high-level language called "C".
-You can look at the actual source code for the Python interpreter by
-going to [www.python.org](http://www.python.org) and working your way to their
-source code. So Python is a program itself and it is compiled into
-machine code. When you installed Python on your computer (or the vendor
-installed it), you copied a machine-code copy of the translated Python
-program onto your system. In Windows, the executable machine code for
-Python itself is likely in a file with a name like:
+Der Python-Interpreter ist in einer Hochsprache namens "C" geschrieben.
+Wir können uns den eigentlichen Quellcode des Python-Interpreters ansehen, indem wir
+ [www.python.org](http://www.python.org) aufrufen und uns zum
+Quellcode durcharbeiten. Python ist also selbst ein Programm und wird in Maschinencode kompiliert.
+Als wir Python auf unserem Computer installiert haben, haben wir eine Maschinencode-Kopie des übersetzten Python-Programms auf unser System geladen. Unter Windows befindet sich der ausführbare Maschinencode für
+Python wahrscheinlich in einer Datei mit einem Namen wie:
 
 ~~~~
 C:\Python35\python.exe
 ~~~~
 
-That is more than you really need to know to be a Python programmer, but
-sometimes it pays to answer those little nagging questions right at the
-beginning.
+Das ist mehr, als man wissen muss, um ein Python-Programmierer zu werden, aber manchmal lohnt es sich, diese kleinen, nervigen Fragen gleich zu Beginn zu beantworten.
 
-Writing a program
+Ein Programm schreiben
 -----------------
 
-Typing commands into the Python interpreter is a great way to experiment
-with Python's features, but it is not recommended for solving more
-complex problems.
+Das Eingeben von Befehlen in den Python-Interpreter ist ein guter Weg, um
+mit den Funktionen von Python zu experimentieren, jedoch ist es nicht empfehlenswert für die Lösung
+komplexer Probleme.
 
-When we want to write a program, we use a text editor to write the
-Python instructions into a file, which is called a
-*script*. By convention, Python scripts have names that
-end with `.py`.
+Wenn wir ein Programm schreiben wollen, verwenden wir einen Texteditor, um die Python-Anweisungen in eine Datei zu schreiben, die *Skript* genannt wird. Konventionell haben Python-Skripte die Endung `.py`.
 
 \index{script}
 
-To execute the script, you have to tell the Python interpreter the name
-of the file. In a command window, you would type
-`python hello.py` as follows:
+Um das Skript auszuführen, müssen wir dem Python-Interpreter den Namen
+der Datei mitteilen. In einem Befehlsfenster würden wir "python hallo.py" wie folgt eingeben:
 
 ~~~~ {.bash}
 $ cat hello.py
@@ -367,142 +345,106 @@ $ python hello.py
 Hello world!
 ~~~~
 
-The "\$" is the operating system prompt, and the "cat hello.py" is
-showing us that the file "hello.py" has a one-line Python program to
-print a string.
+Das "\$" ist die Eingabeaufforderung des Betriebssystems, und das "cat hello.py" zeigt
+zeigt uns, dass die Datei "hello.py" ein einzeiliges Python-Programm enthält, das
+eine Zeichenkette druckt.
 
-We call the Python interpreter and tell it to read its source code from
-the file "hello.py" instead of prompting us for lines of Python code
-interactively.
+Wir rufen den Python-Interpreter auf und sagen ihm, dass er den Quellcode aus der Datei "hello.py" lesen soll, anstatt uns interaktiv nach Python-Codezeilen zu fragen.
 
-You will notice that there was no need to have *quit()*
-at the end of the Python program in the file. When Python is reading
-your source code from a file, it knows to stop when it reaches the end
-of the file.
+Man kann feststellen, dass es am Ende des Python-Programms keine Notwendigkeit für *quit()* gibt. Wenn Python den
+Quellcode aus einer Datei liest, weiß es, dass es aufhören muss, wenn das Ende der Datei erreicht wurde.
 
-What is a program?
+Was ist ein Programm?
 ------------------
 
-The definition of a *program* at its most basic is a
-sequence of Python statements that have been crafted to do something.
-Even our simple *hello.py* script is a program. It is a
-one-line program and is not particularly useful, but in the strictest
-definition, it is a Python program.
+Die Definition eines *Programms* ist im Grunde genommen eine
+Abfolge von Python-Anweisungen, die so gestaltet sind, dass sie etwas tun.
+Selbst unser einfaches Skript *hello.py* ist ein Programm. Es ist ein
+einzeiliges Programm, das nicht besonders nützlich ist, aber nach der strengsten
+Definition ist es ein Python-Programm.
 
-It might be easiest to understand what a program is by thinking about a
-problem that a program might be built to solve, and then looking at a
-program that would solve that problem.
+Es ist vielleicht am einfachsten zu verstehen, was ein Programm ist, wenn man an ein Problem denkt, für dessen Lösung ein Programm erstellt werden könnte, und dann ein Programm betrachtet, dass dieses Problem lösen würde.
 
-Lets say you are doing Social Computing research on Facebook posts and
-you are interested in the most frequently used word in a series of
-posts. You could print out the stream of Facebook posts and pore over
-the text looking for the most common word, but that would take a long
-time and be very mistake prone. You would be smart to write a Python
-program to handle the task quickly and accurately so you can spend the
-weekend doing something fun.
+Nehmen wir an, wir forschen im Bereich Social Computing über Facebook-Posts und
+Wir interessieren uns für das am häufigsten verwendete Wort in einer Reihe von
+Beiträgen. Wir könnten den Datenstrom der Facebook-Posts ausgeben und den Text nach dem häufigsten Wort durchsuchen, aber das würde sehr viel Zeit in Anspruch nehmen und wäre sehr fehleranfällig. Es wäre klug, ein Python-Programm zu schreiben, dass diese Aufgabe schnell und genau erledigt, damit wir das Wochenende mit etwas schönerem verbringen können.
 
-For example, look at the following text about a clown and a car. Look at
-the text and figure out the most common word and how many times it
-occurs.
+Betrachten wir zum Beispiel den folgenden Text über einen Clown und ein Auto. Sehen wir uns
+den Text an und finden heraus, welches Wort am häufigsten vorkommt und wie oft es
+vorkommt.
 
 ~~~~
 the clown ran after the car and the car ran into the tent
 and the tent fell down on the clown and the car
 ~~~~
 
-Then imagine that you are doing this task looking at millions of lines
-of text. Frankly it would be quicker for you to learn Python and write a
-Python program to count the words than it would be to manually scan the
-words.
+Dann stellen wir uns vor, dass wir diese Aufgabe erledigen, indem wir uns Millionen von Zeilen
+von Text anschauen. Offen gesagt wäre es schneller, Python zu lernen und ein
+Python-Programm zu schreiben, um die Wörter zu zählen, als sie manuell durch zu sehen.
 
-The even better news is that I already came up with a simple program to
-find the most common word in a text file. I wrote it, tested it, and now
-I am giving it to you to use so you can save some time.
+Die gute Nachricht ist, dass bereits ein einfaches Programm entwickelt wurde, um das häufigste Wort in einer Textdatei zu finden. Es wurde schon geschrieben und getestet, damit wir etwas Zeit sparen können.
 
 \VerbatimInput{../code3/words.py}
 \begin{trinketfiles}
 ../code3/words.txt
 \end{trinketfiles}
 
-You don't even need to know Python to use this program. You will need to
-get through Chapter 10 of this book to fully understand the awesome
-Python techniques that were used to make the program. You are the end
-user, you simply use the program and marvel at its cleverness and how it
-saved you so much manual effort. You simply type the code into a file
-called *words.py* and run it or you download the source
-code from <http://www.py4e.com/code3/> and run it.
+Wir müssen nicht einmal Python beherrschen können, um dieses Programm zu nutzen. Wir müssen einfach
+Kapitel 10 dieses Buches lesen, um die genialen Python-Techniken zu verstehen, die zur Erstellung des Programms verwendet wurden. Wir als Endanwender benutzen das Programm einfach und staunen über seine Cleverness und darüber
+wieviel manuelle Arbeit wir gespart haben. Einfach den Code in eine Datei
+mit dem Namen *words.py* eingeben und ausführen oder den Quellcode von <http://www.py4e.com/code3/> herunterladen und ausführen.
 
 \index{program}
 
-This is a good example of how Python and the Python language are acting
-as an intermediary between you (the end user) and me (the programmer).
-Python is a way for us to exchange useful instruction sequences (i.e.,
-programs) in a common language that can be used by anyone who installs
-Python on their computer. So neither of us are talking *to
-Python*, instead we are communicating with each other
-*through* Python.
+Dies ist ein gutes Beispiel dafür, wie Python und die Python-Sprache
+als Vermittler zwischen uns (dem Endbenutzer) und den Programmierern fungieren.
+Python bietet uns die Möglichkeit, nützliche Befehlssequenzen bzw. Programme in einer gemeinsamen Sprache auszutauschen, die von jedem verwendet werden kann, der Python auf seinem Computer installiert. Keiner von uns spricht also *mit
+Python*, sondern wir kommunizieren miteinander *durch* Python.
 
-The building blocks of programs
+Die Bausteine von Programmen
 -------------------------------
 
-In the next few chapters, we will learn more about the vocabulary,
-sentence structure, paragraph structure, and story structure of Python.
-We will learn about the powerful capabilities of Python and how to
-compose those capabilities together to create useful programs.
+In den nächsten Kapiteln, werden wir mehr über das Vokabular, die Satzstruktur, Absatzstruktur und Erzählstruktur von Python lernen. Uns werden die mächtigen Fähigkeiten von Python näher gebracht werden und wir werden uns aneignen wie man diese Fähigkeiten zusammensetzen kann, um nützliche Programme zu erstellen.
 
-There are some low-level conceptual patterns that we use to construct
-programs. These constructs are not just for Python programs, they are
-part of every programming language from machine language up to the
-high-level languages.
+Es gibt einige konzeptionelle Muster auf niedriger Ebene, die wir zum Erstellen von
+Programmen benutzen. Diese Konstrukte sind nicht nur für Python-Programme geeignet, sie sind
+Teil jeder Programmiersprache, von der Maschinensprache bis hin zu den
+Hochsprachen.
 
-input
-:   Get data from the "outside world". This might be reading data from a
-    file, or even some kind of sensor like a microphone or GPS. In our
-    initial programs, our input will come from the user typing data on
-    the keyboard.
+Eingabe
+:   Abrufen von Daten aus der "Außenwelt". Dies kann das Lesen von Daten aus einer
+    Datei sein, oder sogar aus Sensoren wie einem Mikrofon oder GPS. In unseren
+    ersten Programmen wird die Eingabe durch den Benutzer erfolgen, der Daten auf der
+    der Tastatur eingibt.
 
-output
-:   Display the results of the program on a screen or store them in a
-    file or perhaps write them to a device like a speaker to play music
-    or speak text.
+Ausgabe
+:   Zeige die Ergebnisse des Programms auf einem Bildschirm an oder speichere sie in einer Datei oder vielleicht in Geräten wie einem Lautsprecher, um Musik abzuspielen oder Text zu sprechen.
 
-sequential execution
-:   Perform statements one after another in the order they are
-    encountered in the script.
+Sequentielle Ausführung
+:   Die Ausführung von Anweisungen nacheinander in der Reihenfolge wie sie im Skript vorkommen.
 
-conditional execution
-:   Check for certain conditions and then execute or skip a sequence of
-    statements.
+Bedingte Ausführung
+:   Prüfung auf bestimmte Bedingungen und anschließende Ausführung oder Überspringen einer Folge von Anweisungen.
 
-repeated execution
-:   Perform some set of statements repeatedly, usually with some
-    variation.
+Wiederholte Ausführung
+:   Wiederholtes Ausführen einer Reihe von Anweisungen, normalerweise mit einer gewissen Variation.
 
-reuse
-:   Write a set of instructions once and give them a name and then reuse
-    those instructions as needed throughout your program.
+wiederverwenden
+:   Reihe von Anweisungen einmal schreiben und ihnen einen Namen geben. Danach verwenden wir dann
+    diese Anweisungen je nach Bedarf in unserem Programm wieder.
 
-It sounds almost too simple to be true, and of course it is never so
-simple. It is like saying that walking is simply "putting one foot in
-front of the other". The "art" of writing a program is composing and
-weaving these basic elements together many times over to produce
-something that is useful to its users.
+Es klingt fast zu einfach, um wahr zu sein, und natürlich ist es nie so einfach. 
+Es ist so, als würde man sagen, dass Gehen einfach "einen Fuß vor den anderen setzen" bedeutet.
+Die "Kunst" ein Programm zu schreiben besteht darin diese Grundelemente immer wieder neu zusammenzusetzen und zu verweben, um etwas Nützliches für seine Benutzer zu schaffen.
 
-The word counting program above directly uses all of these patterns
-except for one.
+Das obige Wortzählungsprogramm verwendet all diese Muster direkt bis auf eines.
 
-What could possibly go wrong?
+Was kann schon schief gehen?
 -----------------------------
 
-As we saw in our earliest conversations with Python, we must communicate
-very precisely when we write Python code. The smallest deviation or
-mistake will cause Python to give up looking at your program.
+Wie wir in unseren ersten Gesprächen mit Python gesehen haben, müssen wir sehr genau kommunizieren, wenn wir Python-Code schreiben. Die kleinste Abweichung oder der kleinste Fehler führen dazu, dass Python aufhört unser Programm zu betrachten.
 
-Beginning programmers often take the fact that Python leaves no room for
-errors as evidence that Python is mean, hateful, and cruel. While Python
-seems to like everyone else, Python knows them personally and holds a
-grudge against them. Because of this grudge, Python takes our perfectly
-written programs and rejects them as "unfit" just to torment us.
+Die Tatsache, dass Python keinen Platz für Fehler lässt, wird von Programmieranfängern oft, als Beweis dafür angesehen, dass Python gemein, hasserfüllt und grausam ist. Während Python alle anderen zu mögen scheint, kennt Python sie persönlich und hegt einen Groll gegen sie. Aufgrund dieses Grolls nimmt es unsere perfekt geschriebenen Programme und lehnt sie als "untauglich" ab, nur um uns zu quälen.
 
 ~~~~ {.python}
 >>> primt 'Hello world!'
@@ -528,291 +470,261 @@ SyntaxError: invalid syntax
 >>>
 ~~~~
 
-There is little to be gained by arguing with Python. It is just a tool.
-It has no emotions and it is happy and ready to serve you whenever you
-need it. Its error messages sound harsh, but they are just Python's call
-for help. It has looked at what you typed, and it simply cannot
-understand what you have entered.
+Es hat wenig Sinn, mit Python zu argumentieren. Es ist nur ein Werkzeug.
+Es hat keine Emotionen und es ist glücklich und bereit uns zu helfen, wann immer wir
+es brauchen. Seine Fehlermeldungen klingen hart, aber sie sind nur ein Hilferuf. 
+Es hat sich angesehen was wir eingegeben haben und kann einfach nicht
+verstehen was genau wir damit sagen wollen.
 
-Python is much more like a dog, loving you unconditionally, having a few
-key words that it understands, looking you with a sweet look on its face
-(`>>>`), and waiting for you to say something it
-understands. When Python says "SyntaxError: invalid syntax", it is
-simply wagging its tail and saying, "You seemed to say something but I
-just don't understand what you meant, but please keep talking to me
-(`>>>`)."
+Python ist viel mehr wie ein Hund, der einen bedingungslos liebt, ein paar
+Schlüsselwörter, die er versteht und einem, mit einem süßen Gesichtsausdruck anschaut
+(`>>>`) und darauf wartet, dass wir etwas sagen, das er
+versteht. Wenn Python "SyntaxError: ungültige Syntax" sagt, wedelt es
+einfach mit dem Schwanz sagt: "Du schienst etwas zu sagen, ich verstehe einfach nicht was du gemeint hast, 
+aber bitte rede weiter mit mir(`>>>`)."
 
-As your programs become increasingly sophisticated, you will encounter
-three general types of errors:
+Wenn die Programme immer anspruchsvoller werden, wird man auf drei allgemeine Arten von Fehlern stoßen:
 
-Syntax errors
-:   These are the first errors you will make and the easiest to fix. A
-    syntax error means that you have violated the "grammar" rules of
-    Python. Python does its best to point right at the line and
-    character where it noticed it was confused. The only tricky bit of
-    syntax errors is that sometimes the mistake that needs fixing is
-    actually earlier in the program than where Python
-    *noticed* it was confused. So the line and character
-    that Python indicates in a syntax error may just be a starting point
-    for your investigation.
+Syntaxfehler
+:   Dies sind die ersten Fehler, die man machen wird und die am einfachsten zu beheben sind. Ein
+    Syntaxfehler bedeutet, dass wir die "Grammatik-Regeln" von
+    Python verletzt haben. Python tut sein Bestes, um genau auf die Zeile und das Zeichen zu zeigen
+    wo es bemerkt hat, dass es verwirrt war. Das einzig tückische an
+    Syntaxfehlern ist, dass der Fehler, der behoben werden muss, manchmal
+    eigentlich früher im Programm liegt als an der Stelle, an der Python
+    *verwirrt* war. Also die Zeile und das Zeichen
+    die Python bei einem Syntaxfehler anzeigt, sind zunächst nur ein Ausgangspunkt
+    für unsere Untersuchungen.
 
-Logic errors
-:   A logic error is when your program has good syntax but there is a
-    mistake in the order of the statements or perhaps a mistake in how
-    the statements relate to one another. A good example of a logic
-    error might be, "take a drink from your water bottle, put it in your
-    backpack, walk to the library, and then put the top back on the
-    bottle."
 
-Semantic errors
-:   A semantic error is when your description of the steps to take is
-    syntactically perfect and in the right order, but there is simply a
-    mistake in the program. The program is perfectly correct but it does
-    not do what you *intended* for it to do. A simple
-    example would be if you were giving a person directions to a
-    restaurant and said, "...when you reach the intersection with the
-    gas station, turn left and go one mile and the restaurant is a red
-    building on your left." Your friend is very late and calls you to
-    tell you that they are on a farm and walking around behind a barn,
-    with no sign of a restaurant. Then you say "did you turn left or
-    right at the gas station?" and they say, "I followed your directions
-    perfectly, I have them written down, it says turn left and go one
-    mile at the gas station." Then you say, "I am very sorry, because
-    while my instructions were syntactically correct, they sadly
-    contained a small but undetected semantic error.".
+Logikfehler
+:   Ein Logikfehler liegt vor, wenn unser Programm eine gute Syntax hat, aber ein
+    Fehler in der Reihenfolge der Anweisungen oder dem Verhältnis der Anweisungen zueinander existiert. 
+    Ein gutes Beispiel für ein Logikfehler könnte sein: "Nimm einen Schluck aus deiner Wasserflasche, stecke sie in deinen
+    Rucksack, laufe zur Bibliothek und schließe dann den Deckel der Flasche wieder."
 
-Again in all three types of errors, Python is merely trying its hardest
-to do exactly what you have asked.
+Semantische Fehler
+:   Ein semantischer Fehler liegt vor, wenn die Beschreibung der zu unternehmenden Schritte
+    syntaktisch perfekt und in der richtigen Reihenfolge ist, aber es gibt einfach einen
+    Fehler im Programm gibt. Das Programm ist vollkommen korrekt, aber es tut
+    nicht was wir *beabsichtigt* haben. Ein einfaches Beispiel wäre, wenn wir einer Person den Weg zu einem Restaurant
+    beschreiben und sagen: "...wenn du die Kreuzung mit der Tankstelle erreichst, 
+    biege links ab und gehe einen Kilomenter weiter. Das Restaurant ist ein rotes
+    Gebäude auf der linken Seite." Der Freund ist sehr spät dran und ruft uns an, um
+    um zu sagen, dass er auf einem Bauernhof ist, er hinter einer Scheune herumläuft,
+    und kein Zeichen eines Restaurants zu sehen ist. Dann fragen Sie: "Bist du an der Tankstelle links oder
+    rechts abgebogen?", und er sagt: "Ich habe mich genau an deine Anweisungen gehalten.
+    Ich habe sie aufgeschrieben, sie besagt, dass man an der Tankstelle links abbiegen und einen Kilometer gehen soll." 
+    Die Antwort: "Es tut mir sehr leid, denn meine Anweisungen waren zwar syntaktisch korrekt, aber sie enthielten leider
+    einen kleinen, aber unentdeckten semantischen Fehler.".
+
+Bei allen drei Arten von Fehlern versucht Python lediglich genau das zu tun, was wir verlangt haben.
 
 Debugging
 ---------
 
 \index{debugging}
 
-When Python spits out an error or even when it gives you a result that is different from what you had intended, then begins the hunt for the cause of the error. Debugging is the process of finding the cause of the error in your code. When you are debugging a program, and especially if you are working on a hard bug, there are four things to try:
+Wenn Python einen Fehler ausspuckt oder sogar ein Ergebnis liefert, dass sich von dem unterscheidet, was wir beabsichtigt hatten, dann beginnt die Suche nach der Fehlerursache. Beim Debugging geht es darum, die Ursache des Fehlers in unserem Code zu finden. Bei der Fehlersuche in einem Programm, insbesondere wenn wir an einem schwerwiegenden Fehler arbeiten, gibt es vier Dinge, die wir versuchen sollten:
 
-reading
-:   Examine your code, read it back to yourself, and check that it says
-    what you meant to say.
+Lesen
+:   Nochmal den Code durch erneutes Lesen prüfen. Haben wir alles so gesagt wie wir es sagen wollten?
 
-running
-:   Experiment by making changes and running different versions. Often
-    if you display the right thing at the right place in the program,
-    the problem becomes obvious, but sometimes you have to spend some
-    time to build scaffolding.
+Ausführen
+:   Man sollte einfach nochmal experimentieren, indem man nachverfolgbare Änderungen vornimmt und verschiedene Versionen
+	ausführt. Häufig wir das Problem offensichtlich, wenn wir es an der richtigen Stelle im Programm anzeigen lassen.
+    Manchmal muss man etwas Zeit aufwenden, um ein gutes Gerüst zu bauen.
 
-ruminating
-:   Take some time to think! What kind of error is it: syntax, runtime,
-    semantic? What information can you get from the error messages, or
-    from the output of the program? What kind of error could cause the
-    problem you're seeing? What did you change last, before the problem
-    appeared?
-
-retreating
-:   At some point, the best thing to do is back off, undoing recent
-    changes, until you get back to a program that works and that you
-    understand. Then you can start rebuilding.
-
-Beginning programmers sometimes get stuck on one of these activities and
-forget the others.  Finding a hard bug requires reading, running, ruminating, and sometimes retreating. If you get stuck on one of these activities, try the others. Each activity comes with its own failure mode.
+Nachdenken
+:   Man sollte sich Zeit zum Nachdenken nehmen. Was für ein Fehler ist es? Handelt es sich um einen Syntaxfehler, 
+	einen Laufzeitfehler oder einen semantischen Fehler? Welche Informationen können wir aus den Fehlermeldungen bzw.
+    der Ausgabe des Programms entnehmen? Welche Art von Fehler könnte die Ursache sein für das
+    Problem, dass man sehen kann? Was haben wir zuletzt geändert, bevor das Problem auftrat?
+    
+Rückzug
+:   Irgendwann ist es am besten sich zurückzuziehen und die letzten Änderungen rückgängig zu machen, 
+	bis man wieder ein Programm hat, das funktioniert und das man verstehen kann. Dann kann man mit dem Neuaufbau beginnen.
+    
+Programmieranfänger bleiben manchmal bei einer dieser Aktivitäten stecken und und vergessen die anderen. 
+Um einen Fehler zu finden, muss man lesen, experimentieren, grübeln und sich manchmal zurückziehen. Wenn man bei einer dieser Aktivitäten nicht weiter kommt, versuchen man die anderen. Jede Aktivität hat ihren eigenen Fehlermodus.
 
 \index{typographical error}
 
-For example, reading your code might help if the problem is a
-typographical error, but not if the problem is a conceptual
-misunderstanding. If you don't understand what your program does, you
-can read it 100 times and never see the error, because the error is in
-your head.
+Das Lesen des Codes kann zum Beispiel helfen, wenn das Problem ein
+Tippfehler ist, aber nicht, wenn es sich um ein konzeptionelles Missverständnis handelt. 
+Wenn man nicht versteht, was das Programm tut, kann man es 100 Mal lesen, ohne den Fehler zu sehen.
 
 \index{experimental debugging}
 
-Running experiments can help, especially if you run small, simple tests.
-But if you run experiments without thinking or reading your code, you
-might fall into a pattern I call "random walk programming", which is the
-process of making random changes until the program does the right thing.
-Needless to say, random walk programming can take a long time.
+Experimentieren kann hilfreich sein vor allem wenn man kleine, einfache Tests durchführt.
+Wenn man jedoch Experimente durchführt, ohne nachzudenken oder den Code genau zu lesen, könnte man in ein Muster verfallen, 
+dass man "Random-Walk-Programmierung" nennt.
+Dabei handelt es sich um einen Prozess, bei dem zufällige Änderungen vorgenommen werden, bis das Programm das Richtige tut.
+Unnötig zu erwähnen, dass die Random-Walk-Programmierung sehr lange dauern kann.
 
 \index{random walk programming}
 \index{development plan!random walk programming}
 
-You have to take time to think. Debugging is like an experimental
-science. You should have at least one hypothesis about what the problem
-is. If there are two or more possibilities, try to think of a test that
-would eliminate one of them.
+Man muss sich Zeit zum Nachdenken nehmen. Fehlersuche ist wie eine experimentelle
+Wissenschaft. Man sollte mindestens eine Hypothese darüber haben, was das Problem
+ist. Wenn es zwei oder mehr Möglichkeiten gibt, versucht man, einen Test zu finden,
+der eine von ihnen ausschließt.
 
-Taking a break helps with the thinking. So does talking. If you explain
-the problem to someone else (or even to yourself), you will sometimes
-find the answer before you finish asking the question.
+Eine Pause hilft beim Nachdenken. Das gilt auch für das Reden. Wenn man das Problem einer anderen Person (oder sogar sich selbst) erklärt, findet man manchmal die Antwort, bevor man die Frage zu Ende gestellt hat.
 
-But even the best debugging techniques will fail if there are too many
-errors, or if the code you are trying to fix is too big and complicated.
-Sometimes the best option is to retreat, simplifying the program until
-you get to something that works and that you understand.
+Aber selbst die besten Debugging-Techniken versagen, wenn es zu viele Fehler gibt, oder wenn der Code, 
+den wir zu beheben versuchen, zu groß und kompliziert ist.
+Manchmal ist es am besten, sich zurückzuziehen und das Programm zu vereinfachen, bis
+man zu einem Ergebnis gelangt, welches funktioniert und man versteht.
 
-Beginning programmers are often reluctant to retreat because they can't
-stand to delete a line of code (even if it's wrong). If it makes you
-feel better, copy your program into another file before you start
-stripping it down. Then you can paste the pieces back in a little bit at
-a time.
+Programmieranfänger zögern oft, sich zurückzuziehen, weil sie es nicht ertragen können eine Codezeile zu löschen (selbst wenn sie falsch ist). Wenn man sich dadurch besser fühlen sollte, einfach das Programm in eine andere Datei speichern, bevor man es
+zerlegt. Dann kann man die Teile nach und nach wieder Stück für Stück einfügen.
 
-The learning journey
+Der Lernprozess
 --------------------
 
-As you progress through the rest of the book, don't be afraid if the
-concepts don't seem to fit together well the first time. When you were
-learning to speak, it was not a problem for your first few years that
-you just made cute gurgling noises. And it was OK if it took six months
-for you to move from simple vocabulary to simple sentences and took 5-6
-more years to move from sentences to paragraphs, and a few more years to
-be able to write an interesting complete short story on your own.
+Im weiteren Verlauf des Buches sollte man keine Angst haben, wenn die
+Konzepte beim ersten Mal nicht gut zusammenzupassen scheinen. Als wir
+sprechen gelernt haben, war es in den ersten Jahren kein Problem, dass man
+nur niedliche Gluckgeräusche gemacht hat. Es war in Ordnung, wenn es sechs Monate dauerte,
+um von einfachen Vokabeln zu einfachen Sätzen zu kommen, und 5-6 Jahre brauchten, um von Sätzen zu Absätzen zu kommen, 
+und noch ein paar Jahre, um in der Lage zu sein selbständig eine interessante, vollständige Kurzgeschichte zu schreiben.
 
-We want you to learn Python much more rapidly, so we teach it all at the
-same time over the next few chapters. But it is like learning a new
-language that takes time to absorb and understand before it feels
-natural. That leads to some confusion as we visit and revisit topics to
-try to get you to see the big picture while we are defining the tiny
-fragments that make up that big picture. While the book is written
-linearly, and if you are taking a course it will progress in a linear
-fashion, don't hesitate to be very nonlinear in how you approach the
-material. Look forwards and backwards and read with a light touch. By
-skimming more advanced material without fully understanding the details,
-you can get a better understanding of the "why?" of programming. By
-reviewing previous material and even redoing earlier exercises, you will
-realize that you actually learned a lot of material even if the material
-you are currently staring at seems a bit impenetrable.
+Wir wollen, dass wir Python viel schneller lernen, deshalb lernen wir
+in den nächsten Kapiteln alles gleichzeitig. Aber es ist wie beim Erlernen einer neuen
+Sprache, die man sich erst aneignen und verstehen muss, bevor sie sich
+natürlich anfühlt. Das führt zu einiger Verwirrung, wenn wir Themen lernen und wieder aufgreifen, um
+das große Ganze zu sehen, während wir die winzigen Fragmente definieren, die dieses große Bild ausmachen. 
+Das Buch ist zwar linear geschrieben und wenn man einen Kurs belegt, wird er auch linear verlaufen.
+Man sollte jedoch nicht zögern, sich dem Stoff sehr unlinear zu nähern.
+Egal ob vorwärts und rückwärts oder quer gelesen. Durch
+überfliegen von fortgeschrittenem Material, ohne die Details vollständig zu verstehen,
+erhält man ein besseres Verständnis für das "Warum?" der Programmierung. Durch
+Wiederholung früherer Inhalte und sogar Wiederholung früherer Übungen werden wir
+feststellen, dass wir tatsächlich viel gelernt haben, auch wenn das Material
+welches wir gerade anstarren, ein wenig undurchdringlich erscheint.
 
-Usually when you are learning your first programming language, there are
-a few wonderful "Ah Hah!" moments where you can look up from pounding
-away at some rock with a hammer and chisel and step away and see that
-you are indeed building a beautiful sculpture.
+Wenn wir unsere erste Programmiersprache lernen, gibt es normalerweise
+ein paar wunderbare "Aha!"-Momente, in denen man vom Hämmern mit dem Hammer und Meißel aufschaut
+den Blick abwendet und sieht, dass man gerade tatsächlich eine schöne Skulptur baut.
 
-If something seems particularly hard, there is usually no value in
-staying up all night and staring at it. Take a break, take a nap, have a
-snack, explain what you are having a problem with to someone (or perhaps
-your dog), and then come back to it with fresh eyes. I assure you that
-once you learn the programming concepts in the book you will look back
-and see that it was all really easy and elegant and it simply took you a
-bit of time to absorb it.
+Wenn etwas besonders schwierig erscheint, lohnt es sich in der Regel nicht
+die ganze Nacht aufzubleiben und es anzustarren. Eine Pause machen, ein Nickerchen halten, einen
+Snack zu sich nehmen, das Problem einem anderen erklären (oder vielleicht dem Hund) und dann mit neuen Augen wieder 
+darauf blicken. Auf jeden Fall werden wir zurückblicken und feststellen, dass alles ganz einfach und elegant war und man nur ein bisschen Zeit gebraucht hat, um es zu verinnerlichen.
 
 Glossary
 --------
 
-bug
-:   An error in a program.
+Bug
+:   Ein Fehler im Programmcode.
 \index{bug}
 
-central processing unit
-:   The heart of any computer. It is what runs the software that we
-    write; also called "CPU" or "the processor".
+Central processing unit
+:   Das Herz eines jeden Computers. Auf ihm läuft die Software, die wir schreiben;
+    Es wird auch "CPU" oder "der Prozessor" genannt.
 \index{central processing unit}
 \index{CPU}
 
-compile
-:   To translate a program written in a high-level language into a
-    low-level language all at once, in preparation for later execution.
+kompilieren
+:   Übersetzung eines in einer Hochsprache geschriebenen Programms in eine
+    niedrigere Sprache, um es später ausführen zu können.
 \index{compile}
 
-high-level language
-:   A programming language like Python that is designed to be easy for
-    humans to read and write.
+Hochsprache
+:   Eine Programmiersprache wie Python, die so konzipiert wurde, dass sie für Menschen leicht
+    zu lesen und zu schreiben ist.
 \index{high-level language}
 
-interactive mode
-:   A way of using the Python interpreter by typing commands and
-    expressions at the prompt.
+Interaktiver Modus
+:   Eine Methode zur Verwendung des Python-Interpreters durch Eingabe von Befehlen und
+    Ausdrücken in der Eingabeaufforderung.
 \index{interactive mode}
 
-interpret
-:   To execute a program in a high-level language by translating it one
-    line at a time.
+interpretieren
+:   Ausführen eines Programms in einer Hochsprache durch zeilenweises Übersetzen.
 \index{interpret}
 
-low-level language
-:   A programming language that is designed to be easy for a computer to
-    execute; also called "machine code" or "assembly language".
+niedrige Sprache
+:   Eine Programmiersprache, die so konzipiert ist, dass sie von einem Computer leicht ausgeführt werden kann.
+    Auch "Maschinencode" oder "Assemblersprache" genannt.
 \index{low-level language}
 
-machine code
-:   The lowest-level language for software, which is the language that
-    is directly executed by the central processing unit (CPU).
+Maschinencode
+:   Die niedrigste Sprache für Software, also die Sprache, die
+    direkt von der zentralen Verarbeitungseinheit (CPU) ausgeführt wird.
 \index{machine code}
 
-main memory
-:   Stores programs and data. Main memory loses its information when the
-    power is turned off.
+Hauptspeicher
+:   Speichert Programme und Daten. Der Hauptspeicher verliert seine Informationen, wenn der
+    Strom ausgeschaltet wird.
 \index{main memory}
 
-parse
-:   To examine a program and analyze the syntactic structure.
+parsen
+:   Ein Programm untersuchen und die syntaktische Struktur analysieren.
 \index{parse}
 
-portability
-:   A property of a program that can run on more than one kind of
-    computer.
+Portabilität
+:   Eine Eigenschaft eines Programms, dass auf mehr als einer Art von Endgerät laufen kann.
 \index{portability}
 
-print function
-:   An instruction that causes the Python interpreter to display a value
-    on the screen.
+Print-Funktion
+:   Eine Anweisung, die den Python-Interpreter veranlasst, einen Wert auf dem Bildschirm anzuzeigen.
 \index{print function}
 \index{function!print}
 
-problem solving
-:   The process of formulating a problem, finding a solution, and
-    expressing the solution.
+Problemlösungsprozess
+:   Der Prozess ein Problem zu formulieren, eine Lösung zu finden und die Lösung umzusetzen.
 \index{problem solving}
 
-program
-:   A set of instructions that specifies a computation.
+Programm
+:   Ein Satz von Anweisungen, der eine Berechnung spezifiziert.
 \index{program}
 
-prompt
-:   When a program displays a message and pauses for the user to type
-    some input to the program.
+Eingabeaufforderung
+:   Wenn ein Programm eine Meldung anzeigt und eine Pause macht, damit der Benutzer eine Eingabe im Programm machen kann.
 \index{prompt}
 
-secondary memory
-:   Stores programs and data and retains its information even when the
-    power is turned off. Generally slower than main memory. Examples of
-    secondary memory include disk drives and flash memory in USB sticks.
+Sekundärspeicher
+:   Speichert Programme und Daten und behält die Informationen auch dann bei, wenn der
+	Strom abgeschaltet wird. Im Allgemeinen langsamer als der Hauptspeicher. Beispiele für
+	Sekundärspeicher sind z. B. Festplattenlaufwerke und Flash-Speicher in USB-Sticks.
 \index{secondary memory}
 
-semantics
-:   The meaning of a program.
+Semantik
+:   Die Bedeutung eines Programms.
 \index{semantics}
 
-semantic error
-:   An error in a program that makes it do something other than what the
-    programmer intended.
+Semantischer Fehler
+:   Ein Fehler in einem Programm, der dazu führt, dass es etwas anderes tut, als der Programmierer beabsichtigt hat.
 \index{semantic error}
 
-source code
-:   A program in a high-level language.
+Programmcode
+:   Ein Programm in Hochsprache
 \index{source code}
 
-Exercises
+Übungen
 ---------
 
-**Exercise 1: What is the function of the secondary memory in a computer?**
+**Übung 1: Welche Funktion hat der Sekundärspeicher in einem Computer?**
 
-a\) Execute all of the computation and logic of the program\
-b) Retrieve web pages over the Internet\
-c) Store information for the long term, even beyond a power cycle\
-d) Take input from the user
+a\) Alle Berechnungen und die Logik des Programms ausführen\
+b) Abruf von Webseiten über das Internet\
+c) Informationen langfristig zu speichern, auch über einen Stromausfall hinaus\
+d) Eingaben des Benutzers entgegennehmen
 
-**Exercise 2: What is a program?**
+**Übung 2: Was ist ein Programm?**
 
-**Exercise 3: What is the difference between a compiler and an
-interpreter?**
+**Übung 3: Was ist der Unterschied zwischen einem Compiler und einem Interpreter?**
 
-**Exercise 4: Which of the following contains "machine code"?**
+**Aufgabe 4: Welcher der folgenden Texte enthält "Maschinencode"?**
 
-a\) The Python interpreter\
-b) The keyboard\
-c) Python source file\
-d) A word processing document
+a\) Der Python-Interpreter\
+b) Die Tastatur\
+c) Die Python-Quelldatei\
+d) Ein Textverarbeitungsdokument
 
-**Exercise 5: What is wrong with the following code:**
+**Aufgabe 5: Was ist falsch an folgendem Code?**
 
 ~~~~ {.python}
 >>> primt 'Hello world!'
@@ -823,20 +735,20 @@ SyntaxError: invalid syntax
 >>>
 ~~~~
 
-**Exercise 6: Where in the computer is a variable such as "x" stored after
-the following Python line finishes?**
+**Übung 6: Wo im Computer wird eine Variable wie "x" gespeichert, nachdem
+die folgende Python-Zeile beendet ist?**
 
 ~~~~ {.python}
 x = 123
 ~~~~
 
-a\) Central processing unit\
-b) Main Memory\
-c) Secondary Memory\
-d) Input Devices\
-e) Output Devices
+a\) Zentrale Recheneinheit\
+b) Hauptspeicher\
+c) Sekundärspeicher\
+d) Eingabegeräte\
+e) Ausgabegeräte
 
-**Exercise 7: What will the following program print out:**
+**Übung 7: Was wird das folgende Programm ausgeben:**
 
 ~~~~ {.python}
 x = 43
@@ -847,12 +759,12 @@ print(x)
 a\) 43\
 b) 44\
 c) x + 1\
-d) Error because x = x + 1 is not possible mathematically
+d) Fehler, denn x = x + 1 ist mathematisch nicht möglich
 
-**Exercise 8: Explain each of the following using an example of a human
-capability: (1) Central processing unit, (2) Main Memory, (3) Secondary
-Memory, (4) Input Device, and (5) Output Device. For example, "What is
-the human equivalent to a Central Processing Unit"?**
+**Übung 8: Erläutern Sie die folgenden Punkte anhand eines Beispiels für eine menschliche
+Fähigkeit: (1) Zentrale Recheneinheit, (2) Hauptspeicher, (3) Sekundärspeicher
+Speicher, (4) Eingabegerät, und (5) Ausgabegerät. 
+Zum Beispiel: "Was ist das menschliche Äquivalent zu einer Zentraleinheit"?**
 
-**Exercise 9: How do you fix a "Syntax Error"?**
-
+**Übung 9: Wie behebt man einen "Syntaxfehler"?**
+```

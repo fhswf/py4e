@@ -1,3 +1,4 @@
+```
 
 Listen
 ======
@@ -32,12 +33,12 @@ Eine Liste innerhalb einer anderen Liste ist *verschachtelt*.
 \index{verschachtelte Liste}
 \index{Liste!verschachtelt}
 
-Eine Liste, die keine Elemente enthält, wird als leere Liste bezeichnet; Sie können eine solche mit leeren Klammern `[]` erstellen.
+Eine Liste, die keine Elemente enthält, wird als leere Liste bezeichnet; Wir können eine solche mit leeren Klammern `[]` erstellen.
 
 \index{leere Liste}
 \index{Liste!leer}
 
-Wie Sie vielleicht erwarten, können Sie Variablen Listenwerte zuweisen:
+Man kann auch Variablen Listenwerte zuweisen:
 
 ~~~~ {.python .trinket}
 >>> cheeses = ['Cheddar', 'Edam', 'Gouda']
@@ -59,16 +60,14 @@ Listen sind veränderbar
 \index{Indexoperator}\index{Zugriff, indexbasiert}
 \index{Operator!indexbasierter Zugriff}
 
-Die Syntax für den Zugriff auf die Elemente einer Liste ist die gleiche wie für den Zugriff auf die Zeichen einer Zeichenkette: der indexbasierte Zugriffsoperator oder auch Klammeroperator. Der Ausdruck innerhalb der Klammern gibt den Index an. Denken Sie daran, dass die Indizes bei 0 beginnen:
+Die Syntax für den Zugriff auf die Elemente einer Liste ist die gleiche wie für den Zugriff auf die Zeichen einer Zeichenkette: der indexbasierte Zugriffsoperator oder auch Klammeroperator. Der Ausdruck innerhalb der Klammern gibt den Index an. Wir müssen daran denken, dass die Indizes bei 0 beginnen:
 
 ~~~~ {.python}
 >>> print(cheeses[0])
 Cheddar
 ~~~~
 
-Unlike strings, lists are mutable because you can change the order of items in a list or reassign an item in a list. When the bracket operator appears on the left side of an assignment, it identifies the element of the list that will be assigned.
-
-Im Gegensatz zu Strings sind Listen veränderbar, da Sie die Reihenfolge der Elemente in einer Liste ändern oder einem Element in einer Liste einen neuen Wert zuweisen können. Wenn der Klammeroperator auf der linken Seite einer Zuweisung erscheint, identifiziert er das Element der Liste, dem ein neuer Wert zugewiesen werden soll.
+Im Gegensatz zu Strings sind Listen veränderbar, da wir die Reihenfolge der Elemente in einer Liste ändern oder einem Element in einer Liste einen neuen Wert zuweisen können. Wenn der Klammeroperator auf der linken Seite einer Zuweisung erscheint, identifiziert er das Element der Liste, dem ein neuer Wert zugewiesen werden soll.
 
 \index{Veränderbarkeit}
 
@@ -84,7 +83,7 @@ Das Element an der Indexposition 1 von `numbers`, welches zuvor `123` war, ist n
 \index{Index!beginnt mit Null}
 \index{Null, Index beginnt mit}
 
-Sie können sich eine Liste als eine Beziehung zwischen Indizes und Elementen vorstellen. Diese Beziehung wird als *Mapping* oder *Abbildung* bezeichnet; jeder Index wird auf eines der Elemente „abgebildet“.
+Man kann sich eine Liste als eine Beziehung zwischen Indizes und Elementen vorstellen. Diese Beziehung wird als *Mapping* oder *Abbildung* bezeichnet; jeder Index wird auf eines der Elemente „abgebildet“.
 
 \index{Elementzuweisung}
 \index{Zuweisung!Element}
@@ -93,7 +92,7 @@ Listenindizes funktionieren auf die gleiche Weise wie Zeichenketten-Indizes:
 
 -   Jeder ganzzahlige Ausdruck kann als Index verwendet werden.
 
--   Wenn Sie versuchen, ein Element zu lesen oder zu schreiben, das nicht vorhanden ist, erhalten Sie einen `IndexError`.
+-   Wenn wir versuchen, ein Element zu lesen oder zu schreiben, das nicht vorhanden ist, erhalten wir einen `IndexError`.
 
 \index{Ausnahme!IndexError}
 \index{IndexError}
@@ -129,7 +128,7 @@ for cheese in cheeses:
     print(cheese)
 ~~~~
 
-Das funktioniert gut, wenn Sie die Elemente der Liste nur lesen müssen. Aber wenn Sie die Elemente schreiben oder aktualisieren wollen, brauchen Sie die Indizes. Ein üblicher Weg, das zu tun, ist die Kombination der Funktionen `range` und `len`:
+Das funktioniert gut, wenn wir die Elemente der Liste nur lesen müssen. Aber wenn wir die Elemente schreiben oder aktualisieren wollen, brauchen wir die Indizes. Ein üblicher Weg, das zu tun, ist die Kombination der Funktionen `range` und `len`:
 
 \index{Schleife!mit Indizes}\index{Iteration!mit Indizes}
 \index{Index!mit Schleifen}
@@ -213,7 +212,7 @@ Der Slice-Operator funktioniert auch bei Listen:
 ['d', 'e', 'f']
 ~~~~
 
-Wenn Sie den ersten Index weglassen, beginnt das Slice am Anfang. Wenn Sie den zweiten weglassen, geht das Slice bis zum Ende. Wenn Sie also beide weglassen, ist das Slice eine Kopie der gesamten Liste.
+Wenn wir den ersten Index weglassen, beginnt das Slice am Anfang. Wenn Sie den zweiten weglassen, geht das Slice bis zum Ende. Wenn wir also beide weglassen, ist das Slice eine Kopie der gesamten Liste.
 
 \index{Liste!Kopieren}
 \index{slice!Kopieren}
@@ -224,7 +223,7 @@ Wenn Sie den ersten Index weglassen, beginnt das Slice am Anfang. Wenn Sie den z
 ['a', 'b', 'c', 'd', 'e', 'f']
 ~~~~
 
-Da Listen veränderbar sind, ist es oft sinnvoll, eine Kopie zu erstellen, bevor Sie Operationen durchführen mit ihnen durchführen.
+Da Listen veränderbar sind, ist es oft sinnvoll, eine Kopie zu erstellen, bevor wir Operationen durchführen mit ihnen durchführen.
 
 \index{Veränderbarkeit}
 
@@ -285,7 +284,7 @@ In diesem Beispiel wird `t2` nicht verändert.
 ['a', 'b', 'c', 'd', 'e']
 ~~~~
 
-Die meisten Listenmethoden sind „void“, haben also *keinen* Rückgabewert; sie verändern die Liste und geben `None` zurück. Wenn Sie versehentlich `t = t.sort()` schreiben, werden Sie von dem Ergebnis enttäuscht sein.
+Die meisten Listenmethoden sind „void“, haben also *keinen* Rückgabewert; sie verändern die Liste und geben `None` zurück. Wenn wir versehentlich `t = t.sort()` schreiben, werden wir von dem Ergebnis enttäuscht sein.
 
 \index{void-Methode}
 \index{Methode!void}
@@ -298,7 +297,7 @@ Löschen von Elementen
 \index{Element löschen}
 \index{Löschen, Listenelement}
 
-Es gibt mehrere Möglichkeiten, Elemente aus einer Liste zu löschen. Wenn Sie den Index des gewünschten Elements kennen, können Sie `pop` verwenden:
+Es gibt mehrere Möglichkeiten, Elemente aus einer Liste zu löschen. Wenn wir den Index des gewünschten Elements kennen, können wir `pop` verwenden:
 
 \index{pop (Methode)}
 \index{Methode!pop}
@@ -312,9 +311,9 @@ Es gibt mehrere Möglichkeiten, Elemente aus einer Liste zu löschen. Wenn Sie d
 b
 ~~~~
 
-`pop` ändert die Liste und gibt das Element zurück, das entfernt wurde. Wenn Sie keinen Index angeben, löscht es das letzte Element und gibt es zurück.
+`pop` ändert die Liste und gibt das Element zurück, das entfernt wurde. Wenn wir keinen Index angeben, löscht es das letzte Element und gibt es zurück.
 
-Wenn Sie den entfernten Wert nicht benötigen, können Sie den Operator `del` verwenden:
+Wenn wir den entfernten Wert nicht benötigen, können wir den Operator `del` verwenden:
 
 \index{del (Operator)}
 \index{Operator!del}
@@ -326,7 +325,7 @@ Wenn Sie den entfernten Wert nicht benötigen, können Sie den Operator `del` ve
 ['a', 'c']
 ~~~~
 
-Wenn Sie das Element kennen, das Sie entfernen möchten (aber nicht den Index), können Sie `remove` verwenden:
+Wenn man das Element kennt, das man entfernen möchten (aber nicht den Index), kann man `remove` verwenden:
 
 \index{remove (Methode)}
 \index{Methode!remove}
@@ -343,7 +342,7 @@ Der Rückgabewert von `remove` ist `None`.
 \index{None (Wert)}
 \index{Wert!None}
 
-Um mehr als ein Element zu entfernen, können Sie `del` mit einem Slice-Index verwenden:
+Um mehr als ein Element zu entfernen, können wir `del` mit einem Slice-Index verwenden:
 
 ~~~~ {.python .trinket}
 >>> t = ['a', 'b', 'c', 'd', 'e', 'f']
@@ -357,7 +356,7 @@ Wie üblich wählt die Slice-Operation alle Elemente bis zu (aber nicht einschli
 Listen und Funktionen
 ---------------------
 
-Es gibt eine Reihe von eingebauten Funktionen, die auf Listen angewendet werden können, mit denen Sie schnell eine Liste durchsehen können, ohne eigene Schleifen zu schreiben:
+Es gibt eine Reihe von eingebauten Funktionen, die auf Listen angewendet werden können, mit denen wir schnell eine Liste durchsehen können, ohne eigene Schleifen zu schreiben:
 
 ~~~~ {.python .trinket}
 >>> nums = [3, 41, 12, 9, 74, 15]
@@ -396,7 +395,7 @@ Listen und Zeichenketten
 \index{Zeichenkette}
 \index{Folge}
 
-Eine Zeichenkette ist eine Folge von Zeichen und eine Liste ist eine Folge von Werten, aber eine Liste von Zeichen ist nicht dasselbe wie eine Zeichenkette. Um von einer Zeichenkette in eine Liste von Zeichen zu konvertieren, können Sie `list` verwenden:
+Eine Zeichenkette ist eine Folge von Zeichen und eine Liste ist eine Folge von Werten, aber eine Liste von Zeichen ist nicht dasselbe wie eine Zeichenkette. Um von einer Zeichenkette in eine Liste von Zeichen zu konvertieren, können wir `list` verwenden:
 
 \index{list!Funktion}
 \index{Funktion!list}
@@ -408,9 +407,9 @@ Eine Zeichenkette ist eine Folge von Zeichen und eine Liste ist eine Folge von W
 ['s', 'p', 'a', 'm']
 ~~~~
 
-Da `list` der Name einer eingebauten Funktion ist, sollten Sie es vermeiden, ihn als Variablennamen zu verwenden. Ich vermeide auch den Buchstaben "l", weil er zu sehr wie die Zahl "1" aussieht. Deshalb verwende ich "t".
+Da `list` der Name einer eingebauten Funktion ist, sollte man es vermeiden, ihn als Variablennamen zu verwenden. Auch der  Buchstabe "l" sollte vermieden werden, weil er zu sehr wie die Zahl "1" aussieht. Deshalb kann man beispielsweise "t" verwenden.
 
-Die Funktion `list` zerlegt eine Zeichenkette in einzelne Buchstaben. Wenn Sie eine Zeichenkette in Wörter zerlegen wollen, können Sie die Methode `split` verwenden:
+Die Funktion `list` zerlegt eine Zeichenkette in einzelne Buchstaben. Wenn wir eine Zeichenkette in Wörter zerlegen wollen, können wir die Methode `split` verwenden:
 
 \index{split (Methode)
 \index{Methode!split}
@@ -424,9 +423,9 @@ Die Funktion `list` zerlegt eine Zeichenkette in einzelne Buchstaben. Wenn Sie e
 the
 ~~~~
 
-Nachdem Sie die Zeichenkette mit `split` in eine Liste von Wörtern zerlegt haben, können Sie den Indexoperator (eckige Klammer) verwenden, um ein bestimmtes Wort in der Liste zu betrachten.
+Nachdem wir die Zeichenkette mit `split` in eine Liste von Wörtern zerlegt haben, können wir den Indexoperator (eckige Klammer) verwenden, um ein bestimmtes Wort in der Liste zu betrachten.
 
-Sie können `split` mit einem optionalen Argument (*Delimiter* genannt) aufrufen, das angibt, welche Zeichen als Wortgrenzen verwendet werden sollen. Das folgende Beispiel verwendet einen Bindestrich als Begrenzungszeichen:
+Man kann `split` mit einem optionalen Argument (*Delimiter* genannt) aufrufen, das angibt, welche Zeichen als Wortgrenzen verwendet werden sollen. Das folgende Beispiel verwendet einen Bindestrich als Begrenzungszeichen:
 
 \index{optionales Argument}
 \index{Argument!optional}
@@ -439,7 +438,7 @@ Sie können `split` mit einem optionalen Argument (*Delimiter* genannt) aufrufen
 ['spam', 'spam', 'spam']
 ~~~~
 
-`join` ist die Umkehrung von `split`. Es nimmt eine Liste von Strings und verkettet die Elemente. Da `join` eine String-Methode ist, müssen Sie sie auf den Delimiter aufrufen und die Liste als Parameter übergeben:
+`join` ist die Umkehrung von `split`. Es nimmt eine Liste von Strings und verkettet die Elemente. Da `join` eine String-Methode ist, müssen wir sie auf den Delimiter aufrufen und die Liste als Parameter übergeben:
 
 \index{join (Methode)}
 \index{Methode!join}
@@ -452,7 +451,7 @@ Sie können `split` mit einem optionalen Argument (*Delimiter* genannt) aufrufen
 'pining for the fjords'
 ~~~~
 
-In diesem Fall ist das Begrenzungszeichen ein Leerzeichen, also setzt `join` ein Leerzeichen zwischen die Wörter. Um Zeichenketten ohne Leerzeichen zu verketten, können Sie die leere Zeichenkette als Begrenzungszeichen verwenden.
+In diesem Fall ist das Begrenzungszeichen ein Leerzeichen, also setzt `join` ein Leerzeichen zwischen die Wörter. Um Zeichenketten ohne Leerzeichen zu verketten, können wir die leere Zeichenkette als Begrenzungszeichen verwenden.
 
 \index{leere Zeichenkette}
 \index{Zeichenkette!leer}
@@ -507,7 +506,7 @@ In einem Fall beziehen sich `a` und `b` auf zwei verschiedene Objekte, die den g
 \index{is (Operator)}
 \index{Operator!is}
 
-Um zu prüfen, ob zwei Variablen auf das selbe Objekt verweisen, können Sie den Operator `is` verwenden.
+Um zu prüfen, ob zwei Variablen auf das selbe Objekt verweisen, können wir den Operator `is` verwenden.
 
 ~~~~ {.python .trinket}
 >>> a = 'banana'
@@ -518,7 +517,7 @@ True
 
 In diesem Beispiel hat Python nur ein String-Objekt erzeugt, und sowohl `a` als auch `b` beziehen sich darauf.
 
-Aber wenn Sie zwei Listen erstellen, erhalten Sie zwei Objekte:
+Aber wenn wir zwei Listen erstellen, erhalten wir zwei Objekte:
 
 ~~~~ {.python .trinket}
 >>> a = [1, 2, 3]
@@ -532,7 +531,7 @@ In diesem Fall würden wir sagen, dass die beiden Listen *äquivalent* sind, wei
 \index{Äquivalenz}
 \index{Identität}
 
-Bis jetzt haben wir „Objekt“ und „Wert“ austauschbar verwendet, aber es ist präziser zu sagen, dass ein Objekt einen Wert hat. Wenn Sie `a = [1,2,3]` ausführen, bezieht sich `a` auf ein Listenobjekt, dessen Wert eine bestimmte Folge von Elementen ist. Wenn eine andere Liste die gleichen Elemente hat, würden wir sagen, sie hat den gleichen Wert.
+Bis jetzt haben wir „Objekt“ und „Wert“ austauschbar verwendet, aber es ist präziser zu sagen, dass ein Objekt einen Wert hat. Wenn wir `a = [1,2,3]` ausführen, bezieht sich `a` auf ein Listenobjekt, dessen Wert eine bestimmte Folge von Elementen ist. Wenn eine andere Liste die gleichen Elemente hat, würden wir sagen, sie hat den gleichen Wert.
 
 \index{Objekt}
 \index{Wert}
@@ -543,7 +542,7 @@ Aliase
 \index{Alias}
 \index{Referenz!Alias}
 
-Wenn sich `a` auf ein Objekt bezieht und Sie `b = a` zuweisen, dann beziehen sich beide Variablen auf das selbe Objekt:
+Wenn sich `a` auf ein Objekt bezieht und wir `b = a` zuweisen, dann beziehen sich beide Variablen auf das selbe Objekt:
 
 ~~~~ {.python .trinket}
 >>> a = [1, 2, 3]
@@ -568,18 +567,17 @@ Wenn das referenzierte Objekt veränderbar ist, wirken sich Änderungen, die mit
 [17, 2, 3]
 ~~~~
 
-Dieses Verhalten kann zwar nützlich sein, ist aber fehleranfällig. Im Allgemeinen ist es sicherer, Aliasing zu vermeiden, wenn Sie mit veränderlichen Objekten arbeiten.
+Dieses Verhalten kann zwar nützlich sein, ist aber fehleranfällig. Im Allgemeinen ist es sicherer, Aliasing zu vermeiden, wenn wir mit veränderlichen Objekten arbeiten.
 
 \index{Unveränderlichkeit}
 
-Bei unveränderlichen Objekten wie Zeichenketten ist das Aliasing nicht so problematisch. In diesem Beispiel
+Bei unveränderlichen Objekten wie Zeichenketten ist das Aliasing nicht so problematisch. In dem folgenden Beispiel macht es fast nie einen Unterschied, ob sich `a` und `b` auf die selbe Zeichenkette beziehen oder nicht.
 
 ~~~~ {.python}
 a = 'banana'
 b = 'banana'
 ~~~~
 
-macht es fast nie einen Unterschied, ob sich `a` und `b` auf die selbe Zeichenkette beziehen oder nicht.
 
 Listen als Funktionsargumente
 -----------------------------
@@ -590,7 +588,7 @@ Listen als Funktionsargumente
 \index{Referenz}
 \index{Parameter}
 
-Wenn Sie eine Liste an eine Funktion übergeben, erhält die Funktion eine Referenz auf die Liste. Wenn die Funktion einen Listenparameter modifiziert, ist diese Änderung auch in der aufrufenden Umgebung sichtbar. Zum Beispiel entfernt `delete_head` das erste Element aus einer Liste:
+Wenn wir eine Liste an eine Funktion übergeben, erhält die Funktion eine Referenz auf die Liste. Wenn die Funktion einen Listenparameter modifiziert, ist diese Änderung auch in der aufrufenden Umgebung sichtbar. Zum Beispiel entfernt `delete_head` das erste Element aus einer Liste:
 
 ~~~~ {.python}
 def delete_head(t):
@@ -630,7 +628,7 @@ None
 False
 ~~~~
 
-Dieser Unterschied ist wichtig, wenn Sie Funktionen schreiben, die Listen verändern sollen. Zum Beispiel löscht diese Funktion *nicht* den Kopf einer Liste:
+Dieser Unterschied ist wichtig, wenn wir Funktionen schreiben, die Listen verändern sollen. Zum Beispiel löscht diese Funktion *nicht* den Kopf einer Liste:
 
 ~~~~ {.python}
 def bad_delete_head(t):
@@ -667,9 +665,9 @@ Debugging
 
 Der unvorsichtige Umgang mit Listen (und anderen veränderbaren Objekten) kann zu stundenlanger Fehlersuche führen. Hier sind einige häufige Fallstricke und Möglichkeiten, sie zu vermeiden:
 
-1.  Vergessen Sie nicht, dass die meisten Listenmethoden das Argument modifizieren und `None` zurückgeben. Dies ist das Gegenteil der String-Methoden, die eine neue Zeichenkette zurückgeben und das Original unberührt lassen.
+1.  Vergessen wir nicht, dass die meisten Listenmethoden das Argument modifizieren und `None` zurückgeben. Dies ist das Gegenteil der String-Methoden, die eine neue Zeichenkette zurückgeben und das Original unberührt lassen.
 
-    Wenn Sie es gewohnt sind, String-Code wie diesen zu schreiben:
+    Wenn man es gewohnt ist, String-Code wie diesen zu schreiben:
 
     ~~~~ {.python}
     word = word.strip()
@@ -684,9 +682,9 @@ Der unvorsichtige Umgang mit Listen (und anderen veränderbaren Objekten) kann z
     \index{sort (Methode)}
     \index{Methode!sort}
 
-    Da `sort` `None` zurückgibt, wird die nächste Operation, die Sie mit `t` durchführen, wahrscheinlich fehlschlagen.
+    Da `sort` `None` zurückgibt, wird die nächste Operation, die wir mit `t` durchführen, wahrscheinlich fehlschlagen.
 
-    Bevor Sie die Methoden und Operatoren von Listen verwenden, sollten Sie die Dokumentation sorgfältig lesen und sie dann im interaktiven Modus testen. Die Methoden und Operatoren, die Listen mit anderen Sequenzen (z. B. Zeichenketten) gemeinsam haben, sind dokumentiert unter:
+    Bevor man die Methoden und Operatoren von Listen verwendet, sollten man die Dokumentation sorgfältig lesen und sie dann im interaktiven Modus testen. Die Methoden und Operatoren, die Listen mit anderen Sequenzen (z. B. Zeichenketten) gemeinsam haben, sind dokumentiert unter:
 
     [docs.python.org/library/stdtypes.html#common-sequence-operations](https://docs.python.org/library/stdtypes.html#common-sequence-operations)
 
@@ -694,13 +692,13 @@ Der unvorsichtige Umgang mit Listen (und anderen veränderbaren Objekten) kann z
 
     [docs.python.org/library/stdtypes.html#mutable-sequence-types](https://docs.python.org/library/stdtypes.html#mutable-sequence-types)
 
-2.  Wählen Sie eine Idiom und bleiben Sie dabei.
+2.  Man sollte ein Idiom wählen und auch dabei bleiben.
 
     \index{Idiom}
 
     Ein Teil des Problems mit Listen ist, dass es zu viele Möglichkeiten gibt, Dinge zu tun. Um zum Beispiel ein Element aus einer Liste zu entfernen, können Sie `pop`, `remove`, `del` oder sogar eine Slice-Zuweisung verwenden.
 
-    Um ein Element hinzuzufügen, können Sie die Methode `append` oder den Operator `+` verwenden. Aber vergessen Sie nicht, dass das hier korrekt ist:
+    Um ein Element hinzuzufügen, kann man die Methode `append` oder den Operator `+` verwenden. Aber nicht vergessen, dass das hier korrekt ist:
 
     ~~~~ {.python}
     t.append(x)
@@ -716,21 +714,21 @@ Der unvorsichtige Umgang mit Listen (und anderen veränderbaren Objekten) kann z
     t = t + x              # WRONG!
     ~~~~
 
-    Probieren Sie jedes dieser Beispiele im interaktiven Modus aus, um sicherzustellen, dass Sie verstehen, was sie tun. Beachten Sie, dass nur das letzte Beispiel einen Laufzeitfehler verursacht; die anderen drei sind legal, aber sie tun das Falsche.
+    Probieren wir einmal jedes dieser Beispiele im interaktiven Modus aus, um sicherzustellen, dass Sie verstehen, was wir tun. Man sollte beachten , dass nur das letzte Beispiel einen Laufzeitfehler verursacht; die anderen drei sind legal, aber sie tun das Falsche.
 
-3.  Erstellen Sie Kopien, um die Nutzung von Aliasen zu vermeiden.
+3.  Kopien erstellen, um die Nutzung von Aliasen zu vermeiden.
 
     \index{Alias!Vermeidung durch Kopieren}
     \index{Kopieren!um Aliase zu vermeiden}
 
-    Wenn Sie eine Methode wie `sort` verwenden wollen, die das Argument verändert, Sie aber die ursprüngliche Liste ebenfalls behalten möchten, müssen Sie eine Kopie erstellen.
+    Wenn wir eine Methode wie `sort` verwenden wollen, die das Argument verändert, wir aber die ursprüngliche Liste ebenfalls behalten möchten, müssen wir eine Kopie erstellen.
 
     ~~~~ {.python}
     orig = t[:]
     t.sort()
     ~~~~
 
-    In diesem Beispiel könnten Sie auch die eingebaute Funktion `sorted` verwenden, die eine neue, sortierte Liste zurückgibt und das Original in Ruhe lässt. Aber in diesem Fall sollten Sie es vermeiden, `sorted` als Variablennamen zu verwenden!
+    In diesem Beispiel könnten wir auch die eingebaute Funktion `sorted` verwenden, die eine neue, sortierte Liste zurückgibt und das Original in Ruhe lässt. Aber in diesem Fall sollte man es vermeiden, `sorted` als Variablennamen zu verwenden!
 
 4.  Listen, `split` und Dateien
 
@@ -765,9 +763,9 @@ Der unvorsichtige Umgang mit Listen (und anderen veränderbaren Objekten) kann z
 
     Es funktioniert zwar irgendwie und wir sehen den Tag aus der ersten Zeile (Sat), aber dann schlägt das Programm mit einem Traceback-Fehler fehl. Was ist schief gelaufen? Welche verpfuschten Daten haben dazu geführt, dass unser elegantes und cleveres Programm fehlschlägt?
 
-    Sie könnten lange darauf starren und rätseln oder jemanden um Hilfe bitten, aber der schnellere und klügere Ansatz ist, eine `print`-Anweisung hinzuzufügen. Die beste Stelle, um die `print`-Anweisung hinzuzufügen, ist direkt vor der Zeile, in der das Programm fehlgeschlagen ist, und die Daten auszugeben, die den Fehler zu verursachen scheinen.
+    Man könnte lange darauf starren und rätseln oder jemanden um Hilfe bitten, aber der schnellere und klügere Ansatz ist, eine `print`-Anweisung hinzuzufügen. Die beste Stelle, um die `print`-Anweisung hinzuzufügen, ist direkt vor der Zeile, in der das Programm fehlgeschlagen ist, und die Daten auszugeben, die den Fehler zu verursachen scheinen.
 
-    Nun mag dieser Ansatz eine Menge Zeilen an Ausgabe erzeugen, aber zumindest haben Sie sofort einen Anhaltspunkt für das vorliegende Problem. Wir fügen also einen Ausgabe der Variablen `words` direkt vor Zeile 5 ein. Wir fügen der Zeile sogar ein Präfix „Debug:“ hinzu, damit wir unsere reguläre Ausgabe von der Debug-Ausgabe getrennt halten können.
+    Nun mag dieser Ansatz eine Menge Zeilen an Ausgabe erzeugen, aber zumindest haben wir sofort einen Anhaltspunkt für das vorliegende Problem. Wir fügen also einen Ausgabe der Variablen `words` direkt vor Zeile 5 ein. Wir fügen der Zeile sogar ein Präfix „Debug:“ hinzu, damit wir unsere reguläre Ausgabe von der Debug-Ausgabe getrennt halten können.
 
     ~~~~ {.python}
     for line in fhand:
@@ -940,3 +938,5 @@ Maximum: 9.0
 Minimum: 2.0
 ~~~~
 
+
+```

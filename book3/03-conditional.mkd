@@ -1,4 +1,4 @@
-
+```
 Bedingte Ausführung
 ===================
 
@@ -47,7 +47,7 @@ x is y               # x is the same as y
 x is not y           # x is not the same as y
 ~~~~
 
-Obwohl Ihnen diese Operationen wahrscheinlich bekannt sind, unterscheiden sich die Python-Symbole von den mathematischen Symbolen für dieselben Operationen. Ein häufiger Fehler ist die Verwendung eines einfachen Gleichheitszeichens (`=`) anstelle eines doppelten Gleichheitszeichens (`==`). Denken Sie daran, dass `=` ein Zuweisungsoperator und `==` ein Vergleichsoperator ist. So etwas wie `=<` oder `=>` gibt es nicht.
+Obwohl Ihnen diese Operationen wahrscheinlich bekannt sind, unterscheiden sich die Python-Symbole von den mathematischen Symbolen für dieselben Operationen. Ein häufiger Fehler ist die Verwendung eines einfachen Gleichheitszeichens (`=`) anstelle eines doppelten Gleichheitszeichens (`==`). Wir müssen daran denken, dass `=` ein Zuweisungsoperator und `==` ein Vergleichsoperator ist. So etwas wie `=<` oder `=>` gibt es nicht.
 
 Übersetzt mit www.DeepL.com/Translator (kostenlose Version)
 
@@ -84,7 +84,7 @@ Streng genommen sollten die Operanden der logischen Operatoren boolesche Ausdrü
 True
 ~~~~
 
-Diese Flexibilität kann nützlich sein, aber es gibt einige Feinheiten, die verwirrend sein können. Sie sollten sie vielleicht vermeiden, bis Sie sicher sind, dass Sie wissen, was Sie tun.
+Diese Flexibilität kann nützlich sein, aber es gibt einige Feinheiten, die verwirrend sein können. Wir sollten sie vielleicht vermeiden, bis wir sicher sind, dass wir wissen, was wir tun.
 
 Bedingte Ausführung
 -------------------
@@ -115,7 +115,7 @@ Wenn die logische Bedingung wahr ist, dann wird die eingerückte Anweisung ausge
 
 `if`-Anweisungen haben den gleichen Aufbau wie Funktionsdefinitionen oder `for`-Schleifen^[Funktionen werden wir in Kapitel 4 und Schleifen in Kapitel 5 kennenlernen.] Die Anweisung besteht aus einer Kopfzeile, die mit einem Doppelpunkt (`:`) endet, gefolgt von einem eingerückten Block. Anweisungen wie diese werden *zusammengesetzte Anweisungen* genannt, weil sie sich über mehr als eine Zeile erstrecken.
 
-Es gibt keine Begrenzung für die Anzahl der Anweisungen, die im Rumpf erscheinen können, aber es muss mindestens eine geben. Gelegentlich ist es nützlich, einen Block ohne Anweisungen zu haben (normalerweise als Platzhalter für Code, den Sie noch nicht geschrieben haben). In diesem Fall können Sie die Anweisung `pass` verwenden, die nichts tut.
+Es gibt keine Begrenzung für die Anzahl der Anweisungen, die im Rumpf erscheinen können, aber es muss mindestens eine geben. Gelegentlich ist es nützlich, einen Block ohne Anweisungen zu haben (normalerweise als Platzhalter für Code, den wir noch nicht geschrieben haben). In diesem Fall können wir die Anweisung `pass` verwenden, die nichts tut.
 
 \index{pass (Anweisung)}
 \index{Anweisung!pass}
@@ -125,7 +125,7 @@ if x < 0 :
     pass          # need to handle negative values!
 ~~~~
 
-Wenn Sie im Python-Interpreter eine `if`-Anweisung eingeben, ändert sich die Eingabeaufforderung von drei Chevrons zu drei Punkten, um anzuzeigen, dass Sie sich in der Mitte eines Anweisungsblocks befinden, wie unten gezeigt:
+Wenn wir im Python-Interpreter eine `if`-Anweisung eingeben, ändert sich die Eingabeaufforderung von drei Chevrons zu drei Punkten, um anzuzeigen, dass wir uns in der Mitte eines Anweisungsblocks befinden, wie unten gezeigt:
 
 ~~~~ {.python}
 >>> x = 3
@@ -136,7 +136,7 @@ Small
 >>>
 ~~~~
 
-Wenn Sie den Python-Interpreter verwenden, müssen Sie am Ende eines Blocks eine Leerzeile stehen lassen, sonst gibt Python einen Fehler zurück:
+Wenn wir den Python-Interpreter verwenden, müssen wir am Ende eines Blocks eine Leerzeile stehen lassen, sonst gibt Python einen Fehler zurück:
 
 ~~~~ {.python}
 >>> x = 3
@@ -149,7 +149,7 @@ Wenn Sie den Python-Interpreter verwenden, müssen Sie am Ende eines Blocks eine
 SyntaxError: invalid syntax
 ~~~~
 
-Eine Leerzeile am Ende eines Anweisungsblocks ist beim Schreiben und Ausführen eines Scripts nicht notwendig, kann aber die Lesbarkeit Ihres Codes verbessern.
+Eine Leerzeile am Ende eines Anweisungsblocks ist beim Schreiben und Ausführen eines Scripts nicht notwendig, kann aber die Lesbarkeit unseres Codes verbessern.
 
 Alternative Ausführung
 ----------------------
@@ -268,7 +268,7 @@ ValueError: invalid literal for int() with base 10:
 
 Wenn wir diese Anweisungen im Python-Interpreter ausführen, erhalten wir eine neue Eingabeaufforderung vom Interpreter, denken „ups“ und machen mit der nächsten Anweisung weiter.
 
-Wenn Sie diesen Code jedoch in ein Python-Skript einfügen und dieser Fehler auftritt, bleibt Ihr Skript sofort mit einem Traceback stehen. Es führt die folgende Anweisung nicht aus.
+Wenn wir diesen Code jedoch in ein Python-Skript einfügen und dieser Fehler auftritt, bleibt unser Skript sofort mit einem Traceback stehen. Es führt die folgende Anweisung nicht aus.
 
 \index{Traceback}
 
@@ -293,9 +293,9 @@ Traceback (most recent call last):
 ValueError: could not convert string to float: 'fred'
 ~~~~
 
-Es gibt eine in Python eingebaute Struktur für die bedingte Ausführung, um diese Arten von erwarteten und unerwarteten Fehlern zu behandeln, die „try/except“ genannt wird. Die Idee von `try` und `except` ist, dass Sie wissen, dass eine Folge von Anweisungen ein Problem haben könnte und Sie einige Anweisungen hinzufügen möchten, die ausgeführt werden, wenn ein Fehler auftritt. Diese zusätzlichen Anweisungen (der except-Block) werden ignoriert, wenn kein Fehler auftritt.
+Es gibt eine in Python eingebaute Struktur für die bedingte Ausführung, um diese Arten von erwarteten und unerwarteten Fehlern zu behandeln, die „try/except“ genannt wird. Die Idee von `try` und `except` ist, dass wir wissen, dass eine Folge von Anweisungen ein Problem haben könnte und wir einige Anweisungen hinzufügen möchten, die ausgeführt werden, wenn ein Fehler auftritt. Diese zusätzlichen Anweisungen (der except-Block) werden ignoriert, wenn kein Fehler auftritt.
 
-Sie können sich die `try`- und `except`-Funktion in Python als eine „Versicherungspolice“ für eine Folge von Anweisungen vorstellen.
+Man kann sich die `try`- und `except`-Funktion in Python als eine „Versicherungspolice“ für eine Folge von Anweisungen vorstellen.
 
 Wir können unseren Temperaturwandler wie folgt umschreiben:
 
@@ -326,14 +326,12 @@ Abgekürzte Auswertung logischer Ausdrücke
 
 Wenn Python einen logischen Ausdruck wie `x >= 2 and (x/y) > 2` verarbeitet, wertet es den Ausdruck von links nach rechts aus. Aufgrund der Definition von `and` ist, wenn `x` kleiner als 2 ist, der Ausdruck `x >= 2` `False` und somit ist der gesamte Ausdruck `False`, unabhängig davon, ob `(x/y) > 2` als `True` oder `False` ausgewertet wird.
 
-When Python detects that there is nothing to be gained by evaluating the rest of a logical expression, it stops its evaluation and does not do the computations in the rest of the logical expression. When the evaluation of a logical expression stops because the overall value is already known, it is called *short-circuiting* the evaluation.
-
 Wenn Python feststellt, dass durch die Auswertung des restlichen Teils eines logischen Ausdrucks nichts mehr zu gewinnen ist, bricht es die Auswertung ab und führt die Berechnungen im restlichen Teil des logischen Ausdrucks nicht aus. Wenn die Auswertung eines logischen Ausdrucks stoppt, weil der Gesamtwert bereits bekannt ist, bezeichnet man dies als *abgekürzte Auswertung* (englisch *short-circuit evaluation* oder *short-circuiting*).
 
 \index{Wächter-Muster}
 \index{Muster!Wächter}
 
-Auch wenn dies wie eine Kleinigkeit erscheinen mag, führt die abgekürzte Auswertung zu einer cleveren Technik, die als *Wächter-Muster* (englisch *guardian pattern*) bezeichnet wird. Betrachten Sie die folgende Codesequenz im Python-Interpreter:
+Auch wenn dies wie eine Kleinigkeit erscheinen mag, führt die abgekürzte Auswertung zu einer cleveren Technik, die als *Wächter-Muster* (englisch *guardian pattern*) bezeichnet wird. Betrachten wir die folgende Codesequenz im Python-Interpreter:
 
 ~~~~ {.python}
 >>> x = 6
@@ -522,4 +520,4 @@ F
 ~~~~
 
 Führen Sie das Programm wiederholt wie oben gezeigt aus, um die verschiedenen Werte für die Eingabe zu testen.
-
+```

@@ -1,4 +1,4 @@
-
+```
 Dateien
 =======
 
@@ -13,7 +13,7 @@ Persistenz
 
 Bisher haben wir gelernt, wie man Programme schreibt und der *CPU* unsere Absichten mit Hilfe von bedingter Ausführung, Funktionen und Iterationen mitteilt. Wir haben gelernt, wie wir Datenstrukturen im *Hauptspeicher* erstellen und verwenden. Die CPU und der Speicher sind der Ort, an dem unsere Software arbeitet und läuft. Hier findet das gesamte „Denken“ statt.
 
-Aber wenn Sie sich an unsere Diskussionen über die Hardware-Architektur erinnern, wird alles, was entweder in der CPU oder im Hauptspeicher gespeichert ist, gelöscht, sobald der Strom abgeschaltet wird. Bis jetzt waren unsere Programme also nur flüchtige Spaßübungen, um Python zu lernen.
+Aber wenn man sich an unsere Diskussionen über die Hardware-Architektur erinnert stellt man fest, alles wird, was entweder in der CPU oder im Hauptspeicher gespeichert ist, gelöscht, sobald der Strom abgeschaltet wird. Bis jetzt waren unsere Programme also nur flüchtige Spaßübungen, um Python zu lernen.
 
 ![Sekundärspeicher](height=2.5in@../images/arch)
 
@@ -28,7 +28,7 @@ Wir werden uns in erster Linie auf das Lesen und Schreiben von Textdateien konze
 \index{open (Funktion)}
 \index{Funktion!open}
 
-Wenn wir eine Datei (z. B. auf Ihrer Festplatte) lesen oder schreiben wollen, müssen wir die Datei zuerst *öffnen*. Die `open`-Funktion kommuniziert mit Ihrem Betriebssystem, das weiß, wo die Daten für jede Datei gespeichert sind. Wenn Sie eine Datei öffnen, bitten Sie das Betriebssystem, die Datei anhand ihres Namens zu suchen und sicherzustellen, dass sie existiert. In diesem Beispiel öffnen wir die Datei `mbox.txt`, die in demselben Verzeichnis gespeichert sein sollte, in dem Sie sich befinden, wenn Sie Python starten. Sie können diese Datei von [www.py4e.com/code3/mbox.txt](http://www.py4e.com/code3/mbox.txt) herunterladen.
+Wenn wir eine Datei (z. B. auf unserer Festplatte) lesen oder schreiben wollen, müssen wir die Datei zuerst *öffnen*. Die `open`-Funktion kommuniziert mit unserem Betriebssystem, das weiß, wo die Daten für jede Datei gespeichert sind. Wenn wir eine Datei öffnen, bitten wir das Betriebssystem, die Datei anhand ihres Namens zu suchen und sicherzustellen, dass sie existiert. In diesem Beispiel öffnen wir die Datei `mbox.txt`, die in demselben Verzeichnis gespeichert sein sollte, in dem wir uns befinden, wenn wir Python starten. Man kann diese Datei von [www.py4e.com/code3/mbox.txt](http://www.py4e.com/code3/mbox.txt) herunterladen.
 
 ~~~~ {.python}
 >>> fhand = open('mbox.txt')
@@ -38,11 +38,11 @@ Wenn wir eine Datei (z. B. auf Ihrer Festplatte) lesen oder schreiben wollen, m�
 
 \index{Dateihandler}
 
-Wenn das `open` erfolgreich ist, gibt uns das Betriebssystem ein *Dateihandler* zurück. Der Dateihandler beinhaltet nicht die eigentlichen Daten in der Datei, sondern ist ein *Handler*, mit dem wir die Daten lesen können. Sie erhalten ein Handler, wenn die angeforderte Datei existiert und Sie die richtigen Berechtigungen zum Lesen der Datei haben.
+Wenn das `open` erfolgreich ist, gibt uns das Betriebssystem ein *Dateihandler* zurück. Der Dateihandler beinhaltet nicht die eigentlichen Daten in der Datei, sondern ist ein *Handler*, mit dem wir die Daten lesen können. Wir erhalten einen Handler, wenn die angeforderte Datei existiert und wir die richtigen Berechtigungen zum Lesen der Datei haben.
 
 ![Ein Dateihandler](height=2.0in@../images/handle)
 
-Wenn die Datei nicht existiert, schlägt `open` mit einem Traceback fehl und Sie erhalten kein Handler, um auf den Inhalt der Datei zuzugreifen:
+Wenn die Datei nicht existiert, schlägt `open` mit einem Traceback fehl und wir erhalten keinen Handler, um auf den Inhalt der Datei zuzugreifen:
 
 ~~~~ {.python}
 >>> fhand = open('stuff.txt')
@@ -69,21 +69,19 @@ Details: http://source.sakaiproject.org/viewsvn/?view=rev&rev=39772
 ...
 ~~~~
 
-Die gesamte Datei der Mail-Interaktionen ist verfügbar unter
+Die gesamte Datei der Mail-Interaktionen ist verfügbar unter:
 
 [www.py4e.com/code3/mbox.txt](http://www.py4e.com/code3/mbox.txt)
 
-und eine gekürzte Version der Datei ist verfügbar unter
+Eine gekürzte Version der Datei ist verfügbar unter:
 
 [www.py4e.com/code3/mbox-short.txt](http://www.py4e.com/code3/mbox-short.txt)
 
-Diese Dateien haben ein Standardformat für eine Datei, die mehrere E-Mail-Nachrichten enthält. Die Zeilen, die mit „From“ beginnen, trennen die einzelnen Nachrichten voneinander. Die Zeilen, die mit "From:" beginnen, sind dagegen Teil der Nachrichten. Weitere Informationen über das mbox-Format finden Sie unter <https://en.wikipedia.org/wiki/Mbox>.
+Diese Dateien haben ein Standardformat für eine Datei, die mehrere E-Mail-Nachrichten enthält. Die Zeilen, die mit „From“ beginnen, trennen die einzelnen Nachrichten voneinander. Die Zeilen, die mit "From:" beginnen, sind dagegen Teil der Nachrichten. Weitere Informationen über das mbox-Format findet man unter <https://en.wikipedia.org/wiki/Mbox>.
 
 Um die Datei in Zeilen zu unterteilen, gibt es ein spezielles Zeichen, das das Zeilenende darstellt, das *Newline*-Zeichen.
 
 \index{Newline}
-
-In Python, we represent the *newline* character as a backslash-n in string constants. Even though this looks like two characters, it is actually a single character. When we look at the variable by entering "stuff" in the interpreter, it shows us the `\n` in the string, but when we use `print` to show the string, we see the string broken into two lines by the newline character.
 
 In Python stellen wir das Zeichen *Newline* (`\n`) als Rückstrich gefolgt von einem „n“ in Zeichenketten dar. Auch wenn dies wie zwei Zeichen aussieht, ist es tatsächlich ein einzelnes Zeichen. Wenn wir uns die Variable ansehen, indem wir `stuff` in den Interpreter eingeben, zeigt er uns das `\n` in der Zeichenkette, aber wenn wir `print` verwenden, um die Zeichenkette anzuzeigen, sehen wir die Zeichenkette durch das Newline-Zeichen in zwei Zeilen unterbrochen.
 
@@ -102,7 +100,7 @@ Y
 3
 ~~~~
 
-Sie können auch sehen, dass die Länge der Zeichenkette `X\nY` *drei* Zeichen beträgt, da das Zeilenumbruchzeichen ein einzelnes Zeichen ist.
+Man kann zusätzlich sehen, dass die Länge der Zeichenkette `X\nY` *drei* Zeichen beträgt, da das Zeilenumbruchzeichen ein einzelnes Zeichen ist.
 
 Wenn wir also die Zeilen in einer Datei betrachten, müssen wir uns *vorstellen*, dass es ein spezielles unsichtbares Zeichen namens Newline am Ende jeder Zeile gibt, das das Ende der Zeile markiert.
 
@@ -114,16 +112,12 @@ Lesen von Dateien
 \index{Datei!lesen}
 \index{Schleifenzähler}
 
-While the *file handle* does not contain the data for the file, it is quite easy to construct a `for` loop to read through and count each of the lines in a file:
-
 Auch wenn der Dateihandler nicht die Daten für die Datei enthält, ist es recht einfach, eine `for'-Schleife zu konstruieren, um jede der Zeilen in einer Datei durchzuarbeiten und zu zählen:
 
 \VerbatimInput{../code3/open.py}
 \begin{trinketfiles}
 ../code3/mbox-short.txt
 \end{trinketfiles}
-
-We can use the file handle as the sequence in our `for` loop. Our `for` loop simply counts the number of lines in the file and prints them out. The rough translation of the `for` loop into English is, "for each line in the file represented by the file handle, add one to the `count` variable."
 
 Wir können den Dateihandler als Teil unserer Schleifenkonstruktion verwenden. Unsere `for`-Schleife zählt einfach die Anzahl der Zeilen in der Datei und gibt sie aus. Die grobe Übersetzung der `for`-Schleife ins Deutsche lautet: „Für jede Zeile in der Datei, die durch den Dateihandler repräsentiert wird, füge der Variablen `count` 1 hinzu.“.
 
@@ -133,7 +127,7 @@ Wenn die Datei mit einer `for`-Schleife auf diese Weise gelesen wird, kümmert s
 
 Da die Schleife die Daten zeilenweise liest, kann sie effizient die Zeilen in sehr großen Dateien lesen und zählen, ohne dass der Hauptspeicher zum Speichern der Daten aufgebraucht wird. Das obige Programm kann die Zeilen in Dateien beliebiger Größe mit sehr wenig Speicherplatz zählen, da jede Zeile gelesen, gezählt und dann verworfen wird.
 
-Wenn Sie wissen, dass die Datei im Vergleich zur Größe des Hauptspeichers relativ klein ist, können Sie die gesamte Datei mit der Methode `read` des Dateihandlers in einen String einlesen.
+Wenn man weiß, dass die Datei im Vergleich zur Größe des Hauptspeichers relativ klein ist, kann man die gesamte Datei mit der Methode `read` des Dateihandlers in einen String einlesen.
 
 ~~~~ {.python}
 >>> fhand = open('mbox-short.txt')
@@ -146,8 +140,6 @@ From stephen.marquar
 
 In diesem Beispiel wird der gesamte Inhalt (alle 94,626 Zeichen) der Datei `mbox-short.txt` direkt in die Variable `inp` gelesen. Wir verwenden String-Slicing, um die ersten 20 Zeichen der in `inp` gespeicherten Zeichen auszugeben.
 
-When the file is read in this manner, all the characters including all of the lines and newline characters are one big string in the variable `inp`. It is a good idea to store the output of `read` as a variable because each call to `read` exhausts the resource:
-
 Wenn die Datei auf diese Weise gelesen wird, sind alle Zeichen einschließlich aller Zeilen und Zeilenumbruchzeichen eine große Zeichenkette in der Variablen `inp`. Es ist eine gute Idee, die Ausgabe von `read` als Variable zu speichern, da jeder Aufruf von `read` mit einem gewissen Aufwand verbunden ist:
 
 ~~~~ {.python}
@@ -158,7 +150,7 @@ Wenn die Datei auf diese Weise gelesen wird, sind alle Zeichen einschließlich a
 0
 ~~~~
 
-Denken Sie daran, dass diese Form der `open`-Funktion nur verwendet werden sollte, wenn die Dateidaten bequem in den Hauptspeicher Ihres Computers passen. Wenn die Datei zu groß ist, um in den Hauptspeicher zu passen, sollten Sie Ihr Programm so schreiben, dass es die Datei mit Hilfe einer `for`- oder `while`-Schleife in Stücken liest.
+Wir müssen daran denken, dass diese Form der `open`-Funktion nur verwendet werden sollte, wenn die Dateidaten bequem in den Hauptspeicher unseres Computers passen. Wenn die Datei zu groß ist, um in den Hauptspeicher zu passen, sollten wir unser Programm so schreiben, dass es die Datei mit Hilfe einer `for`- oder `while`-Schleife in Stücken liest.
 
 Suchen in Dateien
 -----------------
@@ -210,7 +202,7 @@ From: cwen@iupui.edu
 ...
 ~~~~
 
-Wenn Ihre Dateiverarbeitungsprogramme komplizierter werden, möchten Sie vielleicht Ihre Suchschleifen mit `continue` strukturieren. Die Grundidee der Suchschleife ist, dass man nach „interessanten“ Zeilen sucht und „uninteressante“ Zeilen effektiv überspringt. Und wenn wir dann eine interessante Zeile finden, machen wir etwas mit dieser Zeile.
+Wenn die Dateiverarbeitungsprogramme komplizierter werden, möchte man vielleicht die Suchschleifen mit `continue` strukturieren. Die Grundidee der Suchschleife ist, dass man nach „interessanten“ Zeilen sucht und „uninteressante“ Zeilen effektiv überspringt. Und wenn wir dann eine interessante Zeile finden, machen wir etwas mit dieser Zeile.
 
 Wir können die Schleife wie folgt strukturieren, um uninteressante Zeilen zu überspringen:
 
@@ -219,13 +211,9 @@ Wir können die Schleife wie folgt strukturieren, um uninteressante Zeilen zu ü
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-The output of the program is the same. In English, the uninteresting lines are those which do not start with "From:", which we skip using `continue`. For the "interesting" lines (i.e., those that start with "From:") we perform the processing on those lines.
-
 Die Ausgabe des Programms ist die gleiche. Die uninteressanten Zeilen sind diejenigen, die nicht mit „From:“ beginnen, die wir also mit `continue` überspringen. Für die „interessanten“ Zeilen (d. h. diejenigen, die mit „From:“ beginnen) führen wir die Verarbeitung auf diesen Zeilen durch.
 
-We can use the `find` string method to simulate a text editor search that finds lines where the search string is anywhere in the line. Since `find` looks for an occurrence of a string within another string and either returns the position of the string or -1 if the string was not found, we can write the following loop to show lines which contain the string "@uct.ac.za" (i.e., they come from the University of Cape Town in South Africa):
-
-Wir können die String-Methode `find` verwenden, um eine Texteditor-Suche zu simulieren, die Zeilen findet, in denen die gesuchte Zeichenkette irgendwo in der Zeile steht. Da `find` nach einem Vorkommen einer Zeichenkette innerhalb einer anderen Zeichenkette sucht und entweder die Position der Zeichenkette oder -1 zurückgibt, wenn die Zeichenkette nicht gefunden wurde, können wir die folgende Schleife schreiben, um Zeilen anzuzeigen, die die Zeichenkette `@uct.ac.za` enthalten:
+Wir können die String-Methode `find` verwenden, um eine Texteditor-Suche zu simulieren, die Zeilen findet, in denen die gesuchte Zeichenkette irgendwo in der Zeile steht. Da `find` nach einem Vorkommen einer Zeichenkette innerhalb einer anderen Zeichenkette sucht und entweder die Position der Zeichenkette oder -1 zurückgibt, wenn die Zeichenkette nicht gefunden wurde, können wir die folgende Schleife schreiben, um Zeilen anzuzeigen, die die Zeichenkette `@uct.ac.za` (University of Cape Town in South Africa) enthalten:
 
 \VerbatimInput{../code3/search4.py}
 \begin{trinketfiles}
@@ -272,7 +260,7 @@ Enter the file name: mbox-short.txt
 There were 27 subject lines in mbox-short.txt
 ~~~~
 
-Bevor Sie sich den nächsten Abschnitt ansehen, werfen Sie einen Blick auf das obige Programm und fragen Sie sich: „Was könnte hier möglicherweise schiefgehen?“ oder „Was könnte unser freundlicher Benutzer tun, das dazu führen würde, dass unser nettes kleines Programm unschön mit einem Traceback beendet wird und uns in den Augen unserer Benutzer nicht so cool aussehen lässt?“.
+Bevor wir uns den nächsten Abschnitt ansehen, werfen wir einen Blick auf das obige Programm und fragen uns: „Was könnte hier möglicherweise schiefgehen?“ oder „Was könnte unser freundlicher Benutzer tun, das dazu führen würde, dass unser nettes kleines Programm unschön mit einem Traceback beendet wird und uns in den Augen unserer Benutzer nicht so cool aussehen lässt?“.
 
 Verwendung von `try`, `except` und `open`
 -----------------------------------------
@@ -295,9 +283,7 @@ Traceback (most recent call last):
 FileNotFoundError: [Errno 2] No such file or directory: 'na na boo boo'
 ~~~~
 
-Do not laugh. Users will eventually do every possible thing they can do to break your programs, either on purpose or with malicious intent. As a matter of fact, an important part of any software development team is a person or group called *Quality Assurance* (or QA for short) whose very job it is to do the craziest things possible in an attempt to break the software that the programmer has created.
-
-Benutzer werden letztendlich alles Mögliche tun, um Ihre Programme zum Absturz zu bringen, entweder aus Spaß oder sogar mit dem Ziel, Sicherheitslücken auszunutzen. Tatsächlich ist ein wichtiger Teil jedes Software-Entwicklungsteams eine Person oder Gruppe, die *Qualitätssicherung* (kurz QS) genannt wird, deren einzige Aufgabe es ist, die „verrücktesten“ Dinge zu tun, um Fehler in einer Software aufzudecken
+Benutzer werden letztendlich alles Mögliche tun, um unsere Programme zum Absturz zu bringen, entweder aus Spaß oder sogar mit dem Ziel, Sicherheitslücken auszunutzen. Tatsächlich ist ein wichtiger Teil jedes Software-Entwicklungsteams eine Person oder Gruppe, die *Qualitätssicherung* (kurz QS) genannt wird, deren einzige Aufgabe es ist, die „verrücktesten“ Dinge zu tun, um Fehler in einer Software aufzudecken
 
 \index{Qualitätssicherung}
 \index{QS}
@@ -332,14 +318,14 @@ File cannot be opened: na na boo boo
 
 Der Schutz des `open`-Aufrufs ist ein gutes Beispiel für die richtige Verwendung von `try` und `except` in einem Python-Programm.
 
-Sobald Sie mehr Erfahrung mit Python haben, können Sie sich mit anderen Python-Programmierern darüber streiten, welche von zwei gleichwertigen Lösungen für ein Problem eleganter ist. Das Ziel, elegante Lösungen zu implementieren, spiegelt den Gedanken wider, dass Programmieren zum Teil Technik und zum Teil Kunst ist. Wir sind nicht immer nur daran interessiert, etwas zum Laufen zu bringen, wir wollen auch, dass unsere Lösung elegant ist und von unseren Kollegen als elegant geschätzt wird.
+Sobald man mehr Erfahrung mit Python hat, kann man sich mit anderen Python-Programmierern darüber streiten, welche von zwei gleichwertigen Lösungen für ein Problem eleganter ist. Das Ziel, elegante Lösungen zu implementieren, spiegelt den Gedanken wider, dass Programmieren zum Teil Technik und zum Teil Kunst ist. Wir sind nicht immer nur daran interessiert, etwas zum Laufen zu bringen, wir wollen auch, dass unsere Lösung elegant ist und von unseren Kollegen als elegant geschätzt wird.
 
 Schreiben von Dateien
 ---------------------
 
 \index{Datei!schreiben}
 
-Um eine Datei zu schreiben, müssen Sie sie im Modus `w` als zweitem Parameter öffnen:
+Um eine Datei zu schreiben, müssen wir sie im Modus `w` als zweitem Parameter öffnen:
 
 ~~~~ {.python}
 >>> fout = open('output.txt', 'w')
@@ -369,7 +355,7 @@ Wir müssen sicherstellen, dass wir die Zeilenenden beim Schreiben in die Datei 
 24
 ~~~~
 
-Wenn Sie mit dem Schreiben fertig sind, müssen Sie die Datei schließen, um sicherzustellen, dass das letzte Bit der Daten physisch auf die Festplatte geschrieben wird, damit es nicht verloren geht, wenn der Strom ausfällt.
+Wenn wir mit dem Schreiben fertig sind, müssen wir die Datei schließen, um sicherzustellen, dass das letzte Bit der Daten physisch auf die Festplatte geschrieben wird, damit es nicht verloren geht, wenn der Strom ausfällt.
 
 ~~~~ {.python}
 >>> fout.close()
@@ -386,7 +372,7 @@ Debugging
 \index{Debugging}
 \index{Whitespace}
 
-Beim Lesen und Schreiben von Dateien können Sie auf Probleme mit Leerzeichen stoßen. Diese Fehler können schwer zu beheben sein, da Leerzeichen, Tabulatoren und Zeilenumbrüche normalerweise unsichtbar sind:
+Beim Lesen und Schreiben von Dateien kann man auf Probleme mit Leerzeichen stoßen. Diese Fehler können schwer zu beheben sein, da Leerzeichen, Tabulatoren und Zeilenumbrüche normalerweise unsichtbar sind:
 
 ~~~~ {.python}
 >>> s = '1 2\t 3\n 4'
@@ -408,13 +394,11 @@ Die eingebaute Funktion `repr` kann helfen. Sie nimmt ein beliebiges Objekt als 
 
 Dies kann bei der Fehlersuche hilfreich sein.
 
-One other problem you might run into is that different systems use different characters to indicate the end of a line. Some systems use a newline, represented `\n`. Others use a return character, represented `\r`. Some use both. If you move files between different systems, these inconsistencies might cause problems.
-
-Ein weiteres Problem, auf das Sie stoßen könnten, ist, dass verschiedene Systeme unterschiedliche Zeichen verwenden, um das Ende einer Zeile anzuzeigen. Einige Systeme verwenden einen Zeilenumbruch, dargestellt als `\n`. Andere verwenden ein Return-Zeichen, dargestellt als `\r`. Einige verwenden beides. Wenn Sie Dateien zwischen verschiedenen Systemen verschieben, können diese Inkonsistenzen Probleme verursachen.
+Ein weiteres Problem, auf das wir stoßen könnten, ist, dass verschiedene Systeme unterschiedliche Zeichen verwenden, um das Ende einer Zeile anzuzeigen. Einige Systeme verwenden einen Zeilenumbruch, dargestellt als `\n`. Andere verwenden ein Return-Zeichen, dargestellt als `\r`. Einige verwenden beides. Wenn wir Dateien zwischen verschiedenen Systemen verschieben, können diese Inkonsistenzen Probleme verursachen.
 
 \index{Zeilenendezeichen}
 
-Für die meisten Systeme gibt es Anwendungen, um von einem Format in ein anderes zu konvertieren. Sie finden sie (und lesen mehr über dieses Thema) unter [https://www.wikipedia.org/wiki/Newline](https://wikipedia.org/wiki/Newline). Oder Sie können natürlich auch selbst eines schreiben.
+Für die meisten Systeme gibt es Anwendungen, um von einem Format in ein anderes zu konvertieren. Man findet sie (und lesen mehr über dieses Thema) unter [https://www.wikipedia.org/wiki/Newline](https://wikipedia.org/wiki/Newline). Oder man kann natürlich auch selbst eines schreiben.
 
 Glossar
 -------
@@ -489,4 +473,4 @@ NA NA BOO BOO TO YOU - You have been punk'd!
 ~~~~
 
 **Wir möchten Sie natürlich nicht dazu verführen, ständig Easter-Eggs in Ihre Programme einzubauen; dies ist nur eine Übung!**
-
+```

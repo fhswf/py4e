@@ -7,7 +7,7 @@ Funktionsaufrufe
 
 \index{Funktionsaufruf}
 
-Im Zusammenhang mit der Programmierung ist eine *Funktion* eine benannte Folge von Anweisungen, die eine Berechnung durchführt. Wenn Sie eine Funktion definieren, geben Sie den Namen und die Abfolge der Anweisungen an. Später können Sie die Funktion mit dem Namen „aufrufen“. Wir haben bereits ein Beispiel für einen *Funktionsaufruf* gesehen:
+Im Zusammenhang mit der Programmierung ist eine *Funktion* eine benannte Folge von Anweisungen, die eine Berechnung durchführt. Wenn wir eine Funktion definieren, geben wir den Namen und die Abfolge der Anweisungen an. Später können wir die Funktion mit dem Namen „aufrufen“. Wir haben bereits ein Beispiel für einen *Funktionsaufruf* gesehen:
 
 ~~~~ {.python}
 >>> type(32)
@@ -40,7 +40,7 @@ Die Funktionen `max` und `min` geben uns den größten bzw. kleinsten Wert in ei
 
 Die Funktion `max` sagt uns das "größte Zeichen" in der Zeichenkette (was sich als der Buchstabe `'w'` herausstellt) und die Funktion `min` zeigt uns das kleinste Zeichen (was sich als ein Leerzeichen herausstellt).
 
-Eine weitere sehr gebräuchliche eingebaute Funktion ist die Funktion `len`, die uns sagt, wie viele Elemente in ihrem Argument enthalten sind. Wenn das Argument von `len` eine Zeichenkette ist, gibt sie die Anzahl der Zeichen in der Zeichenkette zurück.
+Eine weitere sehr gebräuchliche eingebaute Funktion ist die Funktion `len`, die uns sagt, wie viele Elemente in unserem Argument enthalten sind. Wenn das Argument von `len` eine Zeichenkette ist, gibt sie die Anzahl der Zeichen in der Zeichenkette zurück.
 
 ~~~~ {.python}
 >>> len('Hello world')
@@ -48,9 +48,9 @@ Eine weitere sehr gebräuchliche eingebaute Funktion ist die Funktion `len`, die
 >>>
 ~~~~
 
-Diese Funktionen sind nicht auf die Verarbeitung von Zeichenketten beschränkt. Sie können mit jeder Menge von Werten arbeiten, wie wir in späteren Kapiteln sehen werden.
+Diese Funktionen sind nicht auf die Verarbeitung von Zeichenketten beschränkt. Wir können mit jeder Menge von Werten arbeiten, wie wir in späteren Kapiteln sehen werden.
 
-Sie sollten die Namen der eingebauten Funktionen wie reservierte Wörter behandeln (d. h. vermeiden Sie die Verwendung von „max“ als Variablenname).
+Man sollte die Namen der eingebauten Funktionen wie reservierte Wörter behandeln (d. h. man sollte die Verwendung von „max“ als Variablenname vermeiden).
 
 Funktionen zur Typumwandlung
 ----------------------------
@@ -116,14 +116,14 @@ Python hat ein `math`-Modul, das die meisten der bekannten mathematischen Funkti
 >>> import math
 ~~~~
 
-Diese Anweisung erzeugt ein *Modul-Objekt* namens `math`. Wenn Sie das Modulobjekt ausgeben, erhalten Sie einige Informationen über das Objekt:
+Diese Anweisung erzeugt ein *Modul-Objekt* namens `math`. Wenn wir das Modulobjekt ausgeben, erhalten wir einige Informationen über das Objekt:
 
 ~~~~ {.python}
 >>> print(math)
 <module 'math' (built-in)>
 ~~~~
 
-Das Modulobjekt enthält die im Modul definierten Funktionen und Variablen. Um auf eine der Funktionen zuzugreifen, müssen Sie den Namen des Moduls und den Namen der Funktion angeben, getrennt durch einen Punkt. Dieses Format wird als *Punkt-Notation* (englisch *dot notation*) bezeichnet.
+Das Modulobjekt enthält die im Modul definierten Funktionen und Variablen. Um auf eine der Funktionen zuzugreifen, müssen wir den Namen des Moduls und den Namen der Funktion angeben, getrennt durch einen Punkt. Dieses Format wird als *Punkt-Notation* (englisch *dot notation*) bezeichnet.
 
 \index{Punktnotation}
 
@@ -142,7 +142,7 @@ Im ersten Beispiel wird der Logarithmus zur Basis 10 des Signal-Rausch-Verhältn
 \index{sine (Funktion)}
 \index{trigonometrische Funktion}
 
-Das zweite Beispiel ermittelt den Sinus von `radian`. Der Name der Variablen ist ein Hinweis darauf, dass `sin` und die anderen trigonometrischen Funktionen (`cos`, `tan`, etc.) Argumente im Bogenmaß annehmen. Um von Grad in Bogenmaß umzurechnen, dividieren Sie durch 360 und multiplizieren mit $2 \pi$:
+Das zweite Beispiel ermittelt den Sinus von `radian`. Der Name der Variablen ist ein Hinweis darauf, dass `sin` und die anderen trigonometrischen Funktionen (`cos`, `tan`, etc.) Argumente im Bogenmaß annehmen. Um von Grad in Bogenmaß umzurechnen, dividieren wir durch 360 und multiplizieren mit $2 \pi$:
 
 ~~~~ {.python}
 >>> degrees = 45
@@ -155,7 +155,7 @@ Der Ausdruck `math.pi` holt die Variable `pi` aus dem Mathematikmodul. Der Wert 
 
 \index{pi}
 
-Wenn Sie sich in Trigonometrie auskennen, können Sie das vorherige Ergebnis überprüfen, indem Sie es mit der Quadratwurzel aus zwei geteilt durch zwei vergleichen:
+Wenn man sich in Trigonometrie auskennt, kann man das vorherige Ergebnis überprüfen, indem man es mit der Quadratwurzel aus zwei geteilt durch zwei vergleicht:
 
 \index{sqrt (Funktion)}
 \index{Funktion!sqrt}
@@ -184,7 +184,7 @@ Das Modul `random` stellt Funktionen zur Verfügung, die Pseudozufallszahlen erz
 \index{random (Funktion)}
 \index{Funktion!random}
 
-Die Funktion `random` liefert eine zufällige Fließkommazahl zwischen 0,0 und 1,0 (einschließlich 0,0, aber ausschließlich 1,0). Jedes Mal, wenn Sie `random` aufrufen, erhalten Sie die nächste Zahl langen Zufallszahlenfolge. Um ein Beispiel zu sehen, führen Sie diese Schleife aus:
+Die Funktion `random` liefert eine zufällige Fließkommazahl zwischen 0,0 und 1,0 (einschließlich 0,0, aber ausschließlich 1,0). Jedes Mal, wenn wir `random` aufrufen, erhalten wir die nächste Zahl langen Zufallszahlenfolge. Um ein Beispiel zu sehen, führen wir diese Schleife aus:
 
 ~~~~ {.python}
 import random
@@ -255,7 +255,7 @@ def print_lyrics():
     print('I sleep all night and I work all day.')
 ~~~~
 
-`def` ist ein Schlüsselwort, das anzeigt, dass es sich um eine Funktionsdefinition handelt. Der Name der Funktion ist `print_lyrics`. Die Regeln für Funktionsnamen sind die gleichen wie für Variablennamen: Buchstaben, Zahlen und einige Satzzeichen sind zulässig, aber das erste Zeichen darf keine Zahl sein. Sie können kein Schlüsselwort als Funktionsnamen verwenden, und Sie sollten vermeiden, dass eine Variable und eine Funktion denselben Namen haben.
+`def` ist ein Schlüsselwort, das anzeigt, dass es sich um eine Funktionsdefinition handelt. Der Name der Funktion ist `print_lyrics`. Die Regeln für Funktionsnamen sind die gleichen wie für Variablennamen: Buchstaben, Zahlen und einige Satzzeichen sind zulässig, aber das erste Zeichen darf keine Zahl sein. Wir können kein Schlüsselwort als Funktionsnamen verwenden, und wir sollten vermeiden, dass eine Variable und eine Funktion denselben Namen haben.
 
 \index{def (Schlüsselwort)}
 \index{Schlüsselwort!def}
@@ -269,14 +269,12 @@ Die leeren Klammern hinter dem Namen zeigen an, dass diese Funktion keine Argume
 \index{Einrückung}
 \index{Doppelpunkt}
 
-The first line of the function definition is called the *header*; the rest is called the *body*. The header has to end with a colon and the body has to be indented. By convention, the indentation is always four spaces. The body can contain any number of statements.
-
 Die erste Zeile der Funktionsdefinition wird *Funktionskopf* (englisch *Header*) genannt; der Rest wird *Funktionsrumpf* (englisch *Body*) genannt. Der Funktionskopf muss mit einem Doppelpunkt enden und der Funktionsrumpf muss eingerückt sein. Die Konvention besagt, dass die Einrückung immer vier Leerzeichen beträgt. Der Funktionsrumpf kann eine beliebige Anzahl von Anweisungen enthalten.
 
 \index{Ellipse (Auslassungspunkte)}
 \index{Auslassungspunkte (Ellipse)}
 
-Wenn Sie eine Funktionsdefinition im interaktiven Modus eingeben, gibt der Interpreter eine Ellipse `...` (Auslassungspunkte) aus, um Sie darauf hinzuweisen, dass die Definition nicht vollständig ist:
+Wenn wir eine Funktionsdefinition im interaktiven Modus eingeben, gibt der Interpreter eine Ellipse `...` (Auslassungspunkte) aus, um uns darauf hinzuweisen, dass die Definition nicht vollständig ist:
 
 ~~~~ {.python}
 >>> def print_lyrics():
@@ -285,7 +283,7 @@ Wenn Sie eine Funktionsdefinition im interaktiven Modus eingeben, gibt der Inter
 ...
 ~~~~
 
-Um die Funktion zu beenden, müssen Sie eine Leerzeile eingeben (dies ist in einem Skript nicht notwendig).
+Um die Funktion zu beenden, müssen wir eine Leerzeile eingeben (dies ist in einem Skript nicht notwendig).
 
 Das Definieren einer Funktion erzeugt eine Variable mit dem gleichen Namen.
 
@@ -309,7 +307,7 @@ I'm a lumberjack, and I'm okay.
 I sleep all night and I work all day.
 ~~~~
 
-Sobald Sie eine Funktion definiert haben, können Sie sie innerhalb einer anderen Funktion verwenden. Um zum Beispiel den vorherigen Refrain zu wiederholen, könnten wir eine Funktion namens `repeat_lyrics` schreiben:
+Sobald wir eine Funktion definiert haben, können wir sie innerhalb einer anderen Funktion verwenden. Um zum Beispiel den vorherigen Refrain zu wiederholen, könnten wir eine Funktion namens `repeat_lyrics` schreiben:
 
 ~~~~ {.python}
 def repeat_lyrics():
@@ -334,7 +332,7 @@ Definitionen und deren Verwendung
 
 \index{Funktionsdefinition}
 
-Wenn Sie die Codefragmente aus dem vorherigen Abschnitt zusammenfassen, sieht das gesamte Programm wie folgt aus:
+Wenn wir die Codefragmente aus dem vorherigen Abschnitt zusammenfassen, sieht das gesamte Programm wie folgt aus:
 
 \VerbatimInput{../code3/lyrics.py}
 
@@ -342,7 +340,7 @@ Dieses Programm enthält zwei Funktionsdefinitionen: `print_lyrics` und `repeat_
 
 \index{use before def}
 
-Wie Sie vielleicht erwarten, müssen Sie eine Funktion erstellen, bevor Sie sie ausführen können. Mit anderen Worten: Die Funktionsdefinition muss vor dem ersten Aufruf ausgeführt werden.
+Wie man vielleicht erwartet, muss man eine Funktion erstellen, bevor man sie ausführen kann. Mit anderen Worten: Die Funktionsdefinition muss vor dem ersten Aufruf ausgeführt werden.
 
 **Übung 2: Versetzen Sie die letzte Zeile dieses Programms an den Anfang, sodass der Funktionsaufruf vor den Definitionen erscheint. Führen Sie das Programm aus und beobachten Sie, welche Fehlermeldung Sie erhalten.**
 
@@ -353,19 +351,19 @@ Programmablauf
 
 \index{Programmablauf}
 
-Um sicherzustellen, dass eine Funktion vor ihrer ersten Verwendung definiert ist, müssen Sie die Reihenfolge kennen, in der Anweisungen ausgeführt werden, was als *Programmablauf* bezeichnet wird.
+Um sicherzustellen, dass eine Funktion vor ihrer ersten Verwendung definiert ist, müssen wir die Reihenfolge kennen, in der Anweisungen ausgeführt werden, was als *Programmablauf* bezeichnet wird.
 
 Die Ausführung beginnt immer mit der ersten Anweisung des Programms. Die Anweisungen werden nacheinander in der Reihenfolge von oben nach unten ausgeführt.
 
-Funktionsdefinitionen verändern den Ablauf des Programms nicht, aber denken Sie daran, dass Anweisungen innerhalb der Funktion erst ausgeführt werden, wenn die Funktion aufgerufen wird.
+Funktionsdefinitionen verändern den Ablauf des Programms nicht, aber behalten wir im Kopf, dass Anweisungen innerhalb der Funktion erst ausgeführt werden, wenn die Funktion aufgerufen wird.
 
 Ein Funktionsaufruf ist wie ein Umweg im Programmablauf. Anstatt zur nächsten Anweisung zu gehen, springt die Ausführung zum Rumpf der Funktion, führt alle Anweisungen dort aus und kommt dann zurück, um dort weiterzumachen, wo sie aufgehört hat.
 
-Das erscheint solange simpel, bis Sie sich daran erinnern, dass eine Funktion eine andere aufrufen kann. Während sich das Programm mitten in einer Funktion befindet, muss es möglicherweise die Anweisungen einer anderen Funktion ausführen. Aber während diese neue Funktion ausgeführt wird, muss das Programm möglicherweise noch eine andere Funktion ausführen!
+Das erscheint solange simpel, bis man sich daran erinnert, dass eine Funktion eine andere aufrufen kann. Während sich das Programm mitten in einer Funktion befindet, muss es möglicherweise die Anweisungen einer anderen Funktion ausführen. Aber während diese neue Funktion ausgeführt wird, muss das Programm möglicherweise noch eine andere Funktion ausführen!
 
 Glücklicherweise ist Python gut darin, den Überblick zu behalten, wo es sich befindet. Jedes Mal, wenn eine Funktion abgeschlossen ist, macht das Programm dort weiter, wo es in der Funktion, die es aufgerufen hat, aufgehört hat. Wenn es am Ende des Programms ankommt, *terminiert* es.
 
-Was ist die Moral der Geschichte? Wenn Sie ein Programm lesen, sollten Sie nicht immer von oben nach unten lesen. Manchmal macht es mehr Sinn, wenn Sie dem Programmablauf folgen.
+Was ist die Moral der Geschichte? Wenn wir ein Programm lesen, sollten wir nicht immer von oben nach unten lesen. Manchmal macht es mehr Sinn, wenn man dem Programmablauf folgt.
 
 Parameter und Argumente
 -----------------------
@@ -375,7 +373,7 @@ Parameter und Argumente
 \index{Argument}
 \index{Funktionsargument}
 
-Einige der eingebauten Funktionen, die wir gesehen haben, benötigen Argumente. Wenn Sie zum Beispiel `math.sin` aufrufen, übergeben Sie eine Zahl als Argument. Einige Funktionen benötigen mehr als ein Argument: `math.pow` benötigt zwei, die Basis und den Exponenten.
+Einige der eingebauten Funktionen, die wir gesehen haben, benötigen Argumente. Wenn wir zum Beispiel `math.sin` aufrufen, übergeben wir eine Zahl als Argument. Einige Funktionen benötigen mehr als ein Argument: `math.pow` benötigt zwei, die Basis und den Exponenten.
 
 Innerhalb der Funktion werden die Argumente Variablen zugewiesen, die *Parameter* genannt werden. Hier ist ein Beispiel für eine benutzerdefinierte Funktion, die ein Argument annimmt:
 
@@ -419,7 +417,7 @@ Das Argument wird ausgewertet, bevor die Funktion aufgerufen wird, sodass in den
 
 \index{Argument}
 
-Sie können auch eine Variable als Argument verwenden:
+Wir können auch eine Variable als Argument verwenden:
 
 ~~~~ {.python}
 >>> michael = 'Eric, the half a bee.'
@@ -440,21 +438,21 @@ Funktionen mit und ohne Rückgabewert
 
 Einige der Funktionen, die wir verwenden, wie z. B. die mathematischen Funktionen, liefern Ergebnisse; in Ermangelung eines besseren Namens nennen wir sie *Funktionen mit Rückgabewert*. Andere Funktionen, wie `print_twice`, führen eine Aktion aus, geben aber keinen Wert zurück. Sie werden *void-Funktionen* genannt.
 
-Wenn Sie eine Funktion mit Rückgabewert aufrufen, wollen Sie fast immer etwas mit dem Ergebnis machen; zum Beispiel können Sie es einer Variablen zuweisen oder als Teil eines Ausdrucks verwenden:
+Wenn wir eine Funktion mit Rückgabewert aufrufen, wollen wir fast immer etwas mit dem Ergebnis machen; zum Beispiel können wir es einer Variablen zuweisen oder als Teil eines Ausdrucks verwenden:
 
 ~~~~ {.python}
 x = math.cos(radians)
 golden = (math.sqrt(5) + 1) / 2
 ~~~~
 
-Wenn Sie eine Funktion im interaktiven Modus aufrufen, zeigt Python das Ergebnis an:
+Wenn wir eine Funktion im interaktiven Modus aufrufen, zeigt Python das Ergebnis an:
 
 ~~~~ {.python}
 >>> math.sqrt(5)
 2.23606797749979
 ~~~~
 
-Aber wenn Sie in einem Skript eine Funktion mit Rückgabewert aufrufen und das Ergebnis der Funktion nicht in einer Variablen speichern, ist der Rückgabewert verloren!
+Aber wenn wir in einem Skript eine Funktion mit Rückgabewert aufrufen und das Ergebnis der Funktion nicht in einer Variablen speichern, ist der Rückgabewert verloren!
 
 ~~~~ {.python}
 math.sqrt(5)
@@ -465,7 +463,7 @@ Dieses Skript berechnet die Quadratwurzel aus 5, aber da es das Ergebnis nicht i
 \index{interaktiver Modus}
 \index{Skriptmodus}
 
-Void-Funktionen können etwas auf dem Bildschirm anzeigen oder einen anderen Effekt haben, aber sie haben keinen Rückgabewert. Wenn Sie versuchen, das Ergebnis einer Variablen zuzuweisen, erhalten Sie einen speziellen Wert namens `None`.
+Void-Funktionen können etwas auf dem Bildschirm anzeigen oder einen anderen Effekt haben, aber sie haben keinen Rückgabewert. Wenn wir versuchen, das Ergebnis einer Variablen zuzuweisen, erhalten wir einen speziellen Wert namens `None`.
 
 \index{None (Wert)}
 \index{Wert!None}
@@ -489,8 +487,6 @@ Um ein Ergebnis aus einer Funktion zurückzugeben, verwenden wir die Anweisung `
 
 \VerbatimInput{../code3/addtwo.py}
 
-When this script executes, the `print` statement will print out "8" because the `addtwo` function was called with 3 and 5 as arguments. Within the function, the parameters `a` and `b` were 3 and 5 respectively. The function computed the sum of the two numbers and placed it in the local function variable named `added`. Then it used the `return` statement to send the computed value back to the calling code as the function result, which was assigned to the variable `x` and printed out.
-
 Wenn dieses Skript ausgeführt wird, wird `print` `'8'` ausgeben, weil die Funktion `addtwo` mit 3 und 5 als Argumente aufgerufen wurde. Innerhalb der Funktion waren die Parameter `a` und `b` jeweils 3 und 5. Die Funktion berechnete die Summe der beiden Zahlen und legte sie in der lokalen Funktionsvariablen namens `added` ab. Dann gab sie den berechneten Wert mit der Anweisung `return` als Funktionsergebnis an die aufrufende Umgebung zurück, die der Variablen `x` zugewiesen und ausgegeben wurde.
 
 Wozu Funktionen?
@@ -500,15 +496,13 @@ Wozu Funktionen?
 
 Es ist vielleicht nicht sofort klar, warum es die Mühe wert ist, ein Programm in Funktionen zu unterteilen. Aber dafür gibt es mehrere Gründe:
 
--   Das Erstellen einer neuen Funktion gibt Ihnen die Möglichkeit, eine Gruppe von Anweisungen zu benennen, wodurch Ihr Programm leichter zu lesen, zu verstehen und zu debuggen ist.
+-   Das Erstellen einer neuen Funktion gibt einem die Möglichkeit, eine Gruppe von Anweisungen zu benennen, wodurch ein Programm leichter zu lesen, zu verstehen und zu debuggen ist.
 
--   Funktionen können ein Programm kleiner machen, indem sie sich wiederholenden Code eliminieren. Wenn Sie später eine Änderung vornehmen, müssen Sie diese nur an einer Stelle vornehmen.
+-   Funktionen können ein Programm kleiner machen, indem sie sich wiederholenden Code eliminieren. Wenn wir später eine Änderung vornehmen, müssen wir diese nur an einer Stelle vornehmen.
 
--   Wenn Sie ein langes Programm in Funktionen aufteilen, können Sie die Teile einzeln debuggen und sie dann zu einem funktionierenden Ganzen zusammensetzen.
+-   Wenn wir ein langes Programm in Funktionen aufteilen, können wir die Teile einzeln debuggen und sie dann zu einem funktionierenden Ganzen zusammensetzen.
 
--   Gut durchdachte Funktionen sind oft für viele Programme nützlich. Wenn Sie einmal eine geschrieben und debuggt haben, können Sie sie wiederverwenden.
-
-Throughout the rest of the book, often we will use a function definition to explain a concept. Part of the skill of creating and using functions is to have a function properly capture an idea such as "find the smallest value in a list of values". Later we will show you code that finds the smallest in a list of values and we will present it to you as a function named `min` which takes a list of values as its argument and returns the smallest value in the list.
+-   Gut durchdachte Funktionen sind oft für viele Programme nützlich. Wenn wir einmal eine geschrieben und debuggt haben, können wir sie wiederverwenden.
 
 Im weiteren Verlauf des Buchs werden wir oft eine Funktionsdefinition verwenden, um ein Konzept zu erklären. Ein Teil der Fertigkeit beim Erstellen und Verwenden von Funktionen besteht darin, dass eine Funktion eine Idee wie „finde den kleinsten Wert in einer Liste von Werten“ richtig erfasst. Später werden wir Ihnen Code zeigen, der den kleinsten Wert in einer Liste findet, und wir werden Ihnen diesen Code als eine Funktion namens `min` vorstellen, die eine Liste von Werten als Argument entgegennimmt und den kleinsten Wert dieser Liste zurückgibt.
 
@@ -517,13 +511,13 @@ Debugging
 
 \index{Debugging}
 
-Wenn Sie einen Texteditor zum Schreiben Ihrer Skripte verwenden, kann es zu Problemen mit Leerzeichen und Tabulatoren kommen. Der beste Weg, diese Probleme zu vermeiden, ist, ausschließlich Leerzeichen zu verwenden (keine Tabulatoren). Die meisten Texteditoren, die sich mit Python auskennen, tun dies standardmäßig, manche aber auch nicht.
+Wenn wir einen Texteditor zum Schreiben unserer Skripte verwenden, kann es zu Problemen mit Leerzeichen und Tabulatoren kommen. Der beste Weg, diese Probleme zu vermeiden, ist, ausschließlich Leerzeichen zu verwenden (keine Tabulatoren). Die meisten Texteditoren, die sich mit Python auskennen, tun dies standardmäßig, manche aber auch nicht.
 
 \index{Whitespace}
 
-Tabulatoren und Leerzeichen sind normalerweise unsichtbar, was die Fehlersuche erschwert. Versuchen Sie daher, einen Editor zu finden, der die Einrückung für Sie automatisch vornimmt.
+Tabulatoren und Leerzeichen sind normalerweise unsichtbar, was die Fehlersuche erschwert. Man sollte daher versuchen, einen Editor zu finden, der die Einrückung für einen automatisch vornimmt.
 
-Vergessen Sie auch nicht, Ihr Programm zu speichern, bevor Sie es ausführen. Manche Entwicklungsumgebungen tun dies automatisch, manche aber auch nicht. In diesem Fall ist das Programm, das Sie sich im Texteditor ansehen, nicht dasselbe wie das Programm, das Sie ausführen. Die Fehlersuche kann sehr lange dauern, wenn Sie das gleiche fehlerhafte Programm immer und immer wieder ausführen! Vergewissern Sie sich, dass der Code, den Sie sich ansehen, auch der Code ist, den Sie ausführen. Wenn Sie sich nicht sicher sind, fügen Sie etwas wie `print("hello")` an den Anfang des Programms und führen Sie es erneut aus. Wenn Sie kein `hello` sehen, führen Sie nicht das richtige Programm aus!
+Man sollte auch nicht vergessen, das Programm zu speichern, bevor man es ausführt. Manche Entwicklungsumgebungen tun dies automatisch, manche aber auch nicht. In diesem Fall ist das Programm, das man sich im Texteditor ansieht, nicht dasselbe wie das Programm, dass man ausführt. Die Fehlersuche kann sehr lange dauern, wenn man das gleiche fehlerhafte Programm immer und immer wieder ausführt! Man sollte sich vergewissern, dass der Code, den man sich ansieht, auch der Code ist, den man ausführt. Wenn man sich nicht sicher sind, fügt man etwas wie `print("hello")` an den Anfang des Programms und führt es erneut aus. Wenn man kein `hello` sehen kann, führt man nicht das richtige Programm aus!
 
 Glossar
 -------

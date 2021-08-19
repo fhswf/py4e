@@ -1,4 +1,4 @@
-
+```
 Wörterbücher
 ============
 
@@ -12,11 +12,11 @@ Wörterbücher
 
 Ein *Wörterbuch* (englisch *Dictionary*) ist wie eine Liste, aber allgemeiner. In einer Liste müssen die Indexpositionen ganze Zahlen sein; in einem Wörterbuch können die Indizes (fast) jeden Typs sein.
 
-Sie können sich ein Wörterbuch als eine Abbildung zwischen einem Satz von Indizes, die *Schlüssel* (englisch *Key*) genannt werden, und einem Satz von Werten (englisch *Value*) vorstellen. Jeder Schlüssel wird auf einen Wert abgebildet. Die Verbindung zwischen einem Schlüssel und einem Wert wird als *Schlüssel-Wert-Paar* (englisch *Key-Value-Paar*) bezeichnet.
+Man kann sich ein Wörterbuch als eine Abbildung zwischen einem Satz von Indizes, die *Schlüssel* (englisch *Key*) genannt werden, und einem Satz von Werten (englisch *Value*) vorstellen. Jeder Schlüssel wird auf einen Wert abgebildet. Die Verbindung zwischen einem Schlüssel und einem Wert wird als *Schlüssel-Wert-Paar* (englisch *Key-Value-Paar*) bezeichnet.
 
 Als Beispiel erstellen wir ein Wörterbuch, das englische und spanische Wörter abbildet, so dass die Schlüssel und die Werte allesamt Zeichenketten sind.
 
-Die Funktion `dict` erzeugt ein neues Wörterbuch ohne Elemente. Da `dict` der Name einer eingebauten Funktion ist, sollten Sie es vermeiden, ihn als Variablennamen zu verwenden.
+Die Funktion `dict` erzeugt ein neues Wörterbuch ohne Elemente. Da `dict` der Name einer eingebauten Funktion ist, sollte man es vermeiden, ihn als Variablennamen zu verwenden.
 
 \index{dict (Funktion)}
 \index{Funktion!dict}
@@ -27,7 +27,7 @@ Die Funktion `dict` erzeugt ein neues Wörterbuch ohne Elemente. Da `dict` der N
 {}
 ~~~~
 
-Die geschweiften Klammern `{}` stehen für ein leeres Wörterbuch. Um Elemente zum Wörterbuch hinzuzufügen, können Sie eckige Klammern verwenden:
+Die geschweiften Klammern `{}` stehen für ein leeres Wörterbuch. Um Elemente zum Wörterbuch hinzuzufügen, können wir eckige Klammern verwenden:
 
 \index{geschweifte Klammern}
 \index{Klammern!geschweift}
@@ -43,7 +43,7 @@ Diese Zeile erzeugt ein Element, das vom Schlüssel `'one'` auf den Wert `'uno'`
 {'one': 'uno'}
 ~~~~
 
-Dieses Ausgabeformat ist auch ein Eingabeformat. Sie können zum Beispiel ein neues Wörterbuch mit drei Einträgen erstellen.  Aber wenn Sie `eng2sp` ausgeben, werden Sie vielleicht überrascht sein:
+Dieses Ausgabeformat ist auch ein Eingabeformat. Wir können zum Beispiel ein neues Wörterbuch mit drei Einträgen erstellen.  Aber wenn man `eng2sp` ausgeben möchte, wird man vielleicht überrascht sein:
 
 ~~~~ {.python}
 >>> eng2sp = {'one': 'uno', 'two': 'dos', 'three': 'tres'}
@@ -51,9 +51,9 @@ Dieses Ausgabeformat ist auch ein Eingabeformat. Sie können zum Beispiel ein ne
 {'one': 'uno', 'three': 'tres', 'two': 'dos'}
 ~~~~
 
-Die Reihenfolge der Schlüssel-Wert-Paare ist nicht die gleiche. Wenn Sie das gleiche Beispiel auf Ihrem Computer eingeben, erhalten Sie möglicherweise ein anderes Ergebnis. Im Allgemeinen ist die Reihenfolge der Elemente in einem Wörterbuch unvorhersehbar.
+Die Reihenfolge der Schlüsselwert-Paare ist nicht die gleiche. Wenn wir das gleiche Beispiel auf unserem Computer eingeben, erhalten wir möglicherweise ein anderes Ergebnis. Im Allgemeinen ist die Reihenfolge der Elemente in einem Wörterbuch unvorhersehbar.
 
-Das ist aber kein Problem, weil die Elemente eines Wörterbuchs nie mit ganzzahligen Indizes indiziert sind. Stattdessen verwenden Sie die Schlüssel, um die entsprechenden Werte nachzuschlagen:
+Das ist aber kein Problem, weil die Elemente eines Wörterbuchs nie mit ganzzahligen Indizes indiziert sind. Stattdessen verwenden wir die Schlüssel, um die entsprechenden Werte nachzuschlagen:
 
 ~~~~ {.python}
 >>> print(eng2sp['two'])
@@ -62,7 +62,7 @@ Das ist aber kein Problem, weil die Elemente eines Wörterbuchs nie mit ganzzahl
 
 Der Schlüssel `'two'` bildet immer auf den Wert `'dos'` ab, sodass die Reihenfolge der Elemente keine Rolle spielt.
 
-Wenn der Schlüssel nicht im Wörterbuch enthalten ist, erhalten Sie eine Ausnahme:
+Wenn der Schlüssel nicht im Wörterbuch enthalten ist, erhalten wir eine Ausnahme:
 
 \index{Ausnahme!KeyError}
 \index{KeyError}
@@ -95,7 +95,7 @@ True
 False
 ~~~~
 
-Um zu sehen, ob etwas als Wert in einem Wörterbuch vorkommt, können Sie die Methode `values` verwenden, die die Werte als einen Typ zurückgibt, der in eine Liste konvertiert werden kann. Dann verwenden Sie den Operator `in`:
+Um zu sehen, ob etwas als Wert in einem Wörterbuch vorkommt, können wir die Methode `values` verwenden, die die Werte als einen Typ zurückgibt, der in eine Liste konvertiert werden kann. Dann verwenden wir den Operator `in`:
 
 \index{values (Methode)}
 \index{Methode!values}
@@ -106,7 +106,7 @@ Um zu sehen, ob etwas als Wert in einem Wörterbuch vorkommt, können Sie die Me
 True
 ~~~~
 
-Der Operator `in` verwendet unterschiedliche Algorithmen für Listen und Wörterbücher. Für Listen verwendet er einen linearen Suchalgorithmus. Je länger die Liste wird, desto länger wird die Suchzeit im direkten Verhältnis zur Länge der Liste. Für Wörterbücher verwendet Python einen Algorithmus, der eine *Hashtabelle* verwendet und eine bemerkenswerte Eigenschaft hat: Der `in`-Operator benötigt jedes Mal ungefähr die gleiche konstante Zeit, egal wie viele Elemente in einem Wörterbuch vorhanden sind. Ich werde nicht erklären, warum Hash-Funktionen so schnell sind, aber Sie können mehr darüber unter [wikipedia.org/wiki/Hash\_table](https://wikipedia.org/wiki/Hash_table) lesen.
+Der Operator `in` verwendet unterschiedliche Algorithmen für Listen und Wörterbücher. Für Listen verwendet er einen linearen Suchalgorithmus. Je länger die Liste wird, desto länger wird die Suchzeit im direkten Verhältnis zur Länge der Liste. Für Wörterbücher verwendet Python einen Algorithmus, der eine *Hashtabelle* verwendet und eine bemerkenswerte Eigenschaft hat: Der `in`-Operator benötigt jedes Mal ungefähr die gleiche konstante Zeit, egal wie viele Elemente in einem Wörterbuch vorhanden sind. Ich werde nicht erklären, warum Hash-Funktionen so schnell sind, aber man kann mehr darüber unter [wikipedia.org/wiki/Hash\_table](https://wikipedia.org/wiki/Hash_table) lesen.
 
 \index{Hashtabelle}
 \index{Menge, Zugehörigkeit}\index{Set, Zugehörigkeit}
@@ -120,13 +120,13 @@ Der Operator `in` verwendet unterschiedliche Algorithmen für Listen und Wörter
 Ein Wörterbuch zum Zählen verwenden
 -----------------------------------
 
-Angenommen, Sie verfügen über eine Zeichenkette und möchten zählen, wie oft jeder Buchstabe vorkommt. Es gibt mehrere Möglichkeiten, wie Sie das tun können:
+Angenommen, wir verfügen über eine Zeichenkette und möchten zählen, wie oft jeder Buchstabe vorkommt. Es gibt mehrere Möglichkeiten, wie wir das tun können:
 
-1.  Sie könnten 26 Variablen erstellen, eine für jeden Buchstaben des Alphabets. Dann könnten Sie die Zeichenfolge durchlaufen und für jedes Zeichen den entsprechenden Zähler inkrementieren, wahrscheinlich unter Verwendung einer verketteten Bedingung.
+1.  Wir könnten 26 Variablen erstellen, eine für jeden Buchstaben des Alphabets. Dann könnten wir die Zeichenfolge durchlaufen und für jedes Zeichen den entsprechenden Zähler inkrementieren, wahrscheinlich unter Verwendung einer verketteten Bedingung.
 
-2.  Sie könnten eine Liste mit 26 Elementen erstellen. Dann könnten Sie jedes Zeichen in eine Zahl umwandeln (mit der eingebauten Funktion `ord`), die Zahl als Index in der Liste verwenden und den entsprechenden Zähler inkrementieren.
+2.  Wir könnten eine Liste mit 26 Elementen erstellen. Dann könnten wir jedes Zeichen in eine Zahl umwandeln (mit der eingebauten Funktion `ord`), die Zahl als Index in der Liste verwenden und den entsprechenden Zähler inkrementieren.
 
-3.  Sie könnten ein Wörterbuch mit Zeichen als Schlüssel und Zählern als den entsprechenden Werten erstellen. Das erste Mal, wenn Sie ein Zeichen sehen, würden Sie dem Wörterbuch ein Element hinzufügen. Danach würden Sie den Wert eines vorhandenen Elements inkrementieren.
+3.  Wir könnten ein Wörterbuch mit Zeichen als Schlüssel und Zählern als den entsprechenden Werten erstellen. Das erste Mal, wenn wir ein Zeichen sehen, würden wir dem Wörterbuch ein Element hinzufügen. Danach würden wir den Wert eines vorhandenen Elements inkrementieren.
 
 Jede dieser Optionen führt dieselbe Berechnung durch, aber jede von ihnen implementiert diese Berechnung auf eine andere Weise.
 
@@ -188,7 +188,7 @@ for c in word:
 print(d)
 ~~~~
 
-Die Verwendung der `get`-Methode zur Vereinfachung dieser Zählschleife ist schließlich ein sehr häufig verwendetes Idiom in Python und wir werden es im weiteren Verlauf des Buches noch oft verwenden. Sie sollten sich also einen Moment Zeit nehmen und die Schleife mit der `if`-Anweisung und dem `in`-Operator mit der Schleife mit der `get`-Methode vergleichen. Sie tun genau das Selbe, aber die eine ist wesentlich übersichtlicher.
+Die Verwendung der `get`-Methode zur Vereinfachung dieser Zählschleife ist schließlich ein sehr häufig verwendetes Idiom in Python und wir werden es im weiteren Verlauf des Buches noch oft verwenden. Wir sollten uns also einen Moment Zeit nehmen und die Schleife mit der `if`-Anweisung und dem `in`-Operator mit der Schleife mit der `get`-Methode vergleichen. Wir tun genau das Gleiche, aber die eine ist wesentlich übersichtlicher.
 
 \index{Idiom}
 
@@ -209,7 +209,7 @@ Wir werden ein Python-Programm schreiben, das die Zeilen der Datei liest, jede Z
 \index{verschachtelte Schleifen}
 \index{Schleife!verschachtelt}
 
-Sie werden sehen, dass wir zwei `for`-Schleifen haben. Die äußere Schleife liest die Zeilen der Datei und die innere Schleife iteriert durch jedes der Wörter in dieser bestimmten Zeile. Dies ist ein Beispiel für ein Muster, das *geschachtelte Schleifen* genannt wird, weil eine der Schleifen die *äußere* Schleife und die andere Schleife die *innere* Schleife ist.
+Wir werden erkennen, dass wir zwei `for`-Schleifen haben. Die äußere Schleife liest die Zeilen der Datei und die innere Schleife iteriert durch jedes der Wörter in dieser bestimmten Zeile. Dies ist ein Beispiel für ein Muster, das *geschachtelte Schleifen* genannt wird, weil eine der Schleifen die *äußere* Schleife und die andere Schleife die *innere* Schleife ist.
 
 Da die innere Schleife alle ihre Iterationen jedes Mal ausführt, wenn die äußere Schleife eine einzelne Iteration macht, können wir uns die innere Schleife als „schneller“ und die äußere Schleife als „langsamer“ iterierend vorstellen.
 
@@ -247,7 +247,7 @@ Schleifen und Wörterbücher
 \index{Schleife!über Wörterbuch}\index{Iteration!durch Wörterbuch}
 \index{Traversieren}
 
-Wenn Sie ein Wörterbuch als Sequenz in einer `for`-Anweisung verwenden, durchläuft diese die Schlüssel des Wörterbuchs. Diese Schleife gibt jeden Schlüssel und den entsprechenden Wert aus:
+Wenn man ein Wörterbuch als Sequenz in einer `for`-Anweisung verwendet, durchläuft diese die Schlüssel des Wörterbuchs. Diese Schleife gibt jeden Schlüssel und den entsprechenden Wert aus:
 
 ~~~~ {.python}
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
@@ -288,7 +288,7 @@ Wir sehen nur die Einträge mit einem Wert über 10.
 \index{keys (Methode)}
 \index{Methode!keys}
 
-Wenn Sie die Schlüssel in alphabetischer Reihenfolge ausgeben möchten, erstellen Sie zunächst eine Liste der Schlüssel des Wörterbuchs mit der in Wörterbuchobjekten verfügbaren Methode `keys`. Dann sortieren diese Liste und iterieren anschließend durch sie, wobei Sie jeden Schlüssel nachschlagen und die Schlüssel-Wert-Paare wie folgt ausgeben:
+Wenn wir die Schlüssel in alphabetischer Reihenfolge ausgeben möchten, erstellen wir zunächst eine Liste der Schlüssel des Wörterbuchs mit der in Wörterbuchobjekten verfügbaren Methode `keys`. Dann sortieren diese Liste und iterieren anschließend durch sie, wobei wir jeden Schlüssel nachschlagen und die Schlüsselwert-Paare wie folgt ausgeben:
 
 ~~~~ {.python}
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
@@ -308,7 +308,7 @@ chuck 1
 jan 100
 ~~~~
 
-Zuerst sehen Sie die Liste der Schlüssel in unsortierter Reihenfolge, die wir von der Methode `keys` erhalten. Dann sehen wir die Schlüssel-Wert-Paare in der Reihenfolge aus der `for`-Schleife.
+Zuerst sehen wir die Liste der Schlüssel in unsortierter Reihenfolge, die wir von der Methode `keys` erhalten. Dann sehen wir die Schlüsselwert-Paare in der Reihenfolge aus der `for`-Schleife.
 
 Fortgeschrittene Textanalyse
 ----------------------------
@@ -351,9 +351,9 @@ Wir nehmen die folgenden Änderungen an unserem Programm vor:
 ../code3/romeo-full.txt
 \end{trinketfiles}
 
-Ein Teil des Erlernens der „Kunst von Python“ ist die Erkenntnis, dass Python oft eingebaute Fähigkeiten für viele gängige Datenanalyseprobleme hat. Mit der Zeit werden Sie genug Beispielcode sehen und genug von der Dokumentation lesen, um zu wissen, wo Sie nachschauen müssen, ob jemand bereits etwas geschrieben hat, das Ihre Arbeit viel einfacher macht.
+Ein Teil des Erlernens der „Kunst von Python“ ist die Erkenntnis, dass Python oft eingebaute Fähigkeiten für viele gängige Datenanalyseprobleme hat. Mit der Zeit werden wir genug Beispielcode gesehen haben und genug von der Dokumentation gelesen haben, um zu wissen, wo man nachschauen muss. Vielleicht hat jemand bereits etwas geschrieben, dass unsere Arbeit viel einfacher macht.
 
-Im Folgenden finden Sie eine gekürzte Version der Ausgabe:
+Im Folgenden finden wir eine gekürzte Version der Ausgabe:
 
 ~~~~
 Enter the file name: romeo-full.txt
@@ -364,27 +364,27 @@ a': 24, 'orchard': 2, 'light': 5, 'lovers': 2, 'romeo': 40,
 'it': 22, 'leans': 1, 'canst': 1, 'having': 1, ...}
 ~~~~
 
-Das Durchsehen dieser Ausgabe ist immer noch unhandlich, aber wir können Python verwenden, um uns genau das ausgeben zu lassen, wonach wir suchen. Aber dazu müssen wir zunächst *Tupeln* kennenlernen. Wir werden dieses Beispiel aufgreifen, sobald wir etwas über Tupel gelernt haben.
+Das Durchsehen dieser Ausgabe ist immer noch unhandlich, aber wir können Python verwenden, um uns genau das ausgeben zu lassen, wonach wir suchen. Aber dazu müssen wir zunächst *Tupel* kennenlernen. Wir werden dieses Beispiel aufgreifen, sobald wir etwas über Tupel gelernt haben.
 
 Debugging
 ---------
 
 \index{Debugging}
 
-Wenn Sie mit größeren Datensätzen arbeiten, kann das Debuggen durch Ausgeben und Prüfen der Daten von Hand umständlich werden. Hier sind einige Vorschläge für die Fehlersuche in großen Datensätzen:
+Wenn wir mit größeren Datensätzen arbeiten, kann das Debuggen durch Ausgeben und Prüfen der Daten von Hand umständlich werden. Hier sind einige Vorschläge für die Fehlersuche in großen Datensätzen:
 
 Reduzieren der Datenmenge
-:   Reduzieren Sie, wenn möglich, die Größe des Datensatzes. Wenn das Programm z. B. eine Textdatei liest, beginnen Sie nur mit den ersten 10 Zeilen, oder mit dem kleinsten Beispiel, das Sie finden können. Sie können entweder die Dateien selbst bearbeiten, oder (besser) das Programm so modifizieren, dass es nur die ersten `n` Zeilen liest.
+:   Reduzieren wir, wenn möglich, die Größe des Datensatzes. Wenn das Programm z. B. eine Textdatei liest, beginnen wir nur mit den ersten 10 Zeilen, oder mit dem kleinsten Beispiel, das wir finden können. Wir können entweder die Dateien selbst bearbeiten, oder (besser) das Programm so modifizieren, dass es nur die ersten `n` Zeilen liest.
 
-    Wenn ein Fehler vorliegt, können Sie `n` auf den kleinsten Wert reduzieren, der den Fehler manifestiert, und ihn dann schrittweise erhöhen, während Sie Fehler finden und korrigieren.
+    Wenn ein Fehler vorliegt, können wir `n` auf den kleinsten Wert reduzieren, der den Fehler manifestiert, und ihn dann schrittweise erhöhen, während wir Fehler finden und korrigieren.
 
 Informationen extrahieren und Datentypen prüfen
-:   Anstatt den gesamten Datensatz auszugeben und zu prüfen, sollten Sie in Erwägung ziehen, nur bestimmte Informationen auszugeben: z. B. die Anzahl der Elemente in einem Wörterbuch oder die Gesamtsumme einer Liste von Zahlen.
+:   Anstatt den gesamten Datensatz auszugeben und zu prüfen, sollten wir in Erwägung ziehen, nur bestimmte Informationen auszugeben: z. B. die Anzahl der Elemente in einem Wörterbuch oder die Gesamtsumme einer Liste von Zahlen.
 
     Eine häufige Ursache für Laufzeitfehler ist ein Wert, der nicht den richtigen Typ hat. Zur Fehlersuche bei dieser Art von Fehlern reicht es oft aus, den Typ eines Wertes auszugeben.
 
 Plausibilitätsprüfungen
-:   Manchmal können Sie Code schreiben, um automatisch auf Fehler zu prüfen. Wenn Sie z. B. den Durchschnitt einer Liste von Zahlen berechnen, könnten Sie prüfen, dass das Ergebnis nicht größer als das größte Element in der Liste oder kleiner als das kleinste ist. Dies wird als „Plausibilitätsprüfungen“ bezeichnet, weil es Ergebnisse erkennt, die "völlig unlogisch" sind.
+:   Manchmal können wir Code schreiben, um automatisch auf Fehler zu prüfen. Wenn wir beispielsweise den Durchschnitt einer Liste von Zahlen berechnen, könnten wir prüfen, dass das Ergebnis nicht größer als das größte Element in der Liste oder kleiner als das kleinste ist. Dies wird als „Plausibilitätsprüfungen“ bezeichnet, weil es Ergebnisse erkennt, die "völlig unlogisch" sind.
 \index{Plausibilitätsprüfung}
 \index{Konsistenzprüfung}
 
@@ -393,7 +393,7 @@ Plausibilitätsprüfungen
 Formatierung der Debugging-Ausgabe
 :   Eine Formatierung der Debugging-Ausgabe kann es erleichtern, einen Fehler zu erkennen.
 
-Auch hier kann die Zeit, die Sie mit dem Aufbau eines stabilen „Gerüsts“ verbringen, die Zeit reduzieren, die Sie für die Fehlersuche aufwenden müssen.
+Auch hier kann die Zeit, die wir mit dem Aufbau eines stabilen „Gerüsts“ verbringen, die Zeit reduzieren, die wir für die Fehlersuche aufwenden müssen.
 
 Glossar
 -------
@@ -442,7 +442,7 @@ Wert
 Übungen
 -------
 
-**Übung 2: Schreiben Sie ein Programm, das jede E-Mail-Nachricht danach kategorisiert, an welchem Wochentag die Übergabe stattgefunden hat. Suchen Sie dazu nach Zeilen, die mit „From“ beginnen, suchen Sie dann nach dem dritten Wort und führen Sie eine laufende Zählung der einzelnen Wochentage durch. Am Ende des Programms geben Sie den Inhalt Ihres Wörterbuchs aus (die Reihenfolge spielt keine Rolle).**
+**Übung 2: Schreiben Sie ein Programm, dass jede E-Mail-Nachricht danach kategorisiert, an welchem Wochentag die Übergabe stattgefunden hat. Suchen Sie dazu nach Zeilen, die mit „From“ beginnen, suchen Sie dann nach dem dritten Wort und führen Sie eine laufende Zählung der einzelnen Wochentage durch. Am Ende des Programms geben Sie den Inhalt Ihres Wörterbuchs aus (die Reihenfolge spielt keine Rolle).**
 
 **Sample Line:**
 
@@ -470,7 +470,7 @@ Enter file name: mbox-short.txt
 'ray@media.berkeley.edu': 1}
 ~~~~
 
-**Übung 4: Fügen Sie dem obigen Programm Code hinzu, um herauszufinden, wer die meisten Nachrichten in der Datei erhalten hat. Nachdem alle Daten gelesen und das Wörterbuch erstellt wurde, durchsuchen Sie das Wörterbuch mithilfe einer Schleife nach dem Maximum (siehe Kapitel 5: Maximum und Minimum ermitteln), um herauszufinden, wer die meisten Nachrichten hat, und geben Sie aus, wie viele Nachrichten die Person bekommen hat.**
+**Übung 4: Fügen Sie folgendes dem obigen Programmcode hinzu, um herauszufinden, wer die meisten Nachrichten in der Datei erhalten hat. Nachdem alle Daten gelesen und das Wörterbuch erstellt wurde, durchsuchen Sie das Wörterbuch mithilfe einer Schleife nach dem Maximum (siehe Kapitel 5: Maximum und Minimum ermitteln), um herauszufinden, wer die meisten Nachrichten hat, und geben Sie aus, wie viele Nachrichten die Person bekommen hat.**
 
 ~~~~
 Enter a file name: mbox-short.txt
@@ -488,4 +488,4 @@ Enter a file name: mbox-short.txt
 {'media.berkeley.edu': 4, 'uct.ac.za': 6, 'umich.edu': 7,
 'gmail.com': 1, 'caret.cam.ac.uk': 1, 'iupui.edu': 8}
 ~~~~
-
+```
