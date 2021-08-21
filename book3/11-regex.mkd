@@ -2,21 +2,21 @@
 Reguläre Ausdrücke
 ==================
 
-Bisher haben wir uns durch Dateien gelesen, nach Mustern gesucht und verschiedene Teile von Zeilen extrahiert, die wir interessant finden. Wir haben String-Methoden wie `split` und `find` benutzt und Listen und String-Slicing verwendet, um Teile von Zeilen zu extrahieren.
+Bisher haben wir uns durch Dateien gelesen, nach Mustern gesucht und verschiedene Teile von Zeilen extrahiert, die wir interessant finden. Wir haben String-Methoden wie `split` und `find` benutzt sowie Listen- und String-Slicing verwendet, um Teile von Texten zu extrahieren.
 
 \index{regulärer Ausdruck}
 \index{Regex}
 \index{re (Modul)}
 
-Diese Aufgabe des Suchens und Extrahierens ist so häufig, dass Python eine sehr mächtige Bibliothek für *reguläre Ausdrücke* hat, die viele dieser Aufgaben recht elegant erledigt. Der Grund, warum wir reguläre Ausdrücke nicht früher im Buch eingeführt haben, ist, dass sie zwar sehr mächtig, aber auch etwas kompliziert sind und ihre Syntax etwas gewöhnungsbedürftig ist.
+Diese Aufgabe des Suchens und Extrahierens begegnet einem so häufig, dass Python eine sehr mächtige Bibliothek für *reguläre Ausdrücke* hat, die viele dieser Aufgaben recht elegant erledigt. Der Grund, warum wir reguläre Ausdrücke nicht früher im Buch eingeführt haben, ist, dass sie zwar sehr mächtig, aber auch etwas kompliziert sind und ihre Syntax etwas gewöhnungsbedürftig ist.
 
-Reguläre Ausdrücke (englisch *regular Expressions* oder kurz *regex*) sind fast eine eigene kleine Programmiersprache zum Suchen und Parsen von Zeichenketten. Tatsächlich sind ganze Bücher über das Thema reguläre Ausdrücke geschrieben worden. In diesem Kapitel werden wir nur die Grundlagen der regulären Ausdrücke behandeln. Weitere Details zu regulären Ausdrücken finden Sie unter:
+Reguläre Ausdrücke (englisch *regular Expressions* oder kurz *regex*) sind fast eine eigene kleine Programmiersprache zum Suchen und Parsen von Zeichenketten. Tatsächlich sind ganze Bücher über das Thema reguläre Ausdrücke geschrieben worden. In diesem Kapitel werden wir nur die Grundlagen der regulären Ausdrücke behandeln. Weitere Details zu regulären Ausdrücken finden sich unter:
 
 <https://en.wikipedia.org/wiki/Regular_expression>
 
 <https://docs.python.org/library/re.html>
 
-Die Bibliothek für reguläre Ausdrücke `re` muss in Ihr Programm importiert werden, bevor Sie sie verwenden können. Die einfachste Verwendung der Bibliothek für reguläre Ausdrücke ist die Funktion `search()`. Das folgende Programm demonstriert eine triviale Verwendung der Suchfunktion.
+Die Bibliothek für reguläre Ausdrücke `re` muss in das Programm importiert werden, bevor sie verwendet werden kann. Die einfachste Verwendung der Bibliothek für reguläre Ausdrücke ist die Funktion `search()`. Das folgende Programm demonstriert eine triviale Verwendung der Suchfunktion.
 
 \index{Regex!search}
 
@@ -50,7 +50,7 @@ Es gibt eine Reihe weiterer Sonderzeichen, mit denen sich noch mächtigere regul
 \index{Wildcard}
 \index{Regex!Wildcard}
 
-Im folgenden Beispiel würde der reguläre Ausdruck `F..m:` auf jede der Zeichenketten „From:“, „Fxxm:“, „F12m:“ oder „F!@m:b passen, da die Punkte im regulären Ausdruck auf jedes Zeichen passen. Daher spricht man von *Wildcards*, was mit *Platzhalter* übersetzen werden kann.
+Im folgenden Beispiel würde der reguläre Ausdruck `F..m:` auf jede der Zeichenketten „From:“, „Fxxm:“, „F12m:“ oder „F!@m:b passen, da die Punkte im regulären Ausdruck auf jedes Zeichen reagieren. Daher spricht man von *Wildcards*, was mit *Platzhalter* übersetzt werden kann.
 
 \VerbatimInput{../code3/re03.py} 
 \begin{trinketfiles}
@@ -72,7 +72,7 @@ Die Suchzeichenfolge `^From:.+@` passt auf Zeilen, die mit "From:" beginnen, gef
 From: stephen.marquard@uct.ac.za
 ~~~~
 
-Sie können sich den Platzhalter `.+` so vorstellen, dass er auf alle Zeichen zwischen dem Doppelpunkt und dem at-Zeichen passt.
+Wir können uns den Platzhalter `.+` so vorstellen, dass er auf alle Zeichen zwischen dem Doppelpunkt und dem at-Zeichen passt.
 
 Extrahieren von Daten mit regulären Ausdrücken
 ----------------------------------------------
@@ -107,7 +107,7 @@ Die Ausgabe des Programms würde lauten:
 
 Der reguläre Ausdrucks sucht nach Teilzeichenfolgen, die mindestens ein Nicht-Leerzeichen enthalten, gefolgt von einem at-Zeichen, gefolgt von mindestens einem weiteren Nicht-Leerzeichen. Das `\S+` passt auf so viele Nicht-Leerzeichen wie möglich.
 
-Der reguläre Ausdruck würde zweimal passen (`csev@umich.edu` und `cwen@iupui.edu`), aber er würde nicht auf die Zeichenkette „@2PM“ passen, weil es keine Nicht-Leerzeichen *vor* dem at-Zeichen gibt. Wir können diesen regulären Ausdruck in einem Programm verwenden, um alle Zeilen in einer Datei zu lesen und alles auszugeben, was wie eine E-Mail-Adresse aussieht, wie folgt:
+Der reguläre Ausdruck würde zweimal passen (`csev@umich.edu` und `cwen@iupui.edu`), aber er würde nicht auf die Zeichenkette „@2PM“ passen, weil es keine Nicht-Leerzeichen *vor* dem at-Zeichen gibt. Wir können diesen regulären Ausdruck in einem Programm verwenden, um alle Zeilen in einer Datei zu lesen und alles auszugeben, was wie eine E-Mail-Adresse aussieht:
 
 \VerbatimInput{../code3/re06.py} 
 \begin{trinketfiles}
@@ -130,7 +130,7 @@ Wenn wir das Programm auf `mbox.txt` anwenden, erhalten wir die folgende Ausgabe
 ['source@collab.sakaiproject.org;']
 ~~~~
 
-Einige unserer E-Mail-Adressen haben falsche Zeichen wie „<“ oder „;“ am Anfang oder Ende. Lassen Sie uns definieren, dass wir nur an dem Teil der Zeichenkette interessiert sind, der mit einem Buchstaben oder einer Zahl beginnt und endet.
+Einige unserer E-Mail-Adressen haben falsche Zeichen wie „<“ oder „;“ am Anfang oder Ende. Lassen wir uns definieren, dass wir nur an dem Teil der Zeichenkette interessiert sind, der mit einem Buchstaben oder einer Zahl beginnt und endet.
 
 Dazu verwenden wir eine weitere Funktion regulärer Ausdrücke. Eckige Klammern werden verwendet, um eine Menge von mehreren akzeptablen Zeichen anzugeben, die wir als übereinstimmend betrachten. In gewissem Sinne bittet das `\S` darum, auf die Menge der "Nicht-Leerzeichen" zu passen. Jetzt werden wir ein wenig expliziter in Bezug auf die Zeichen, die wir abgleichen werden.
 
@@ -140,7 +140,7 @@ Hier ist unser neuer regulärer Ausdruck:
 [a-zA-Z0-9]\S*@\S*[a-zA-Z]
 ~~~~
 
-Das wird jetzt etwas kompliziert und Sie sehen, warum reguläre Ausdrücke eine eigene kleine Sprache für sich sind. Dieser regulärer Ausdruck sucht nach Teilzeichenketten, die mit einem *einzigen* Kleinbuchstaben, Großbuchstaben oder einer Zahl `[a-zA-Z0-9]` beginnen, gefolgt von keinem oder mehr Nicht-Leerzeichen (`\S*`), gefolgt von einem at-Zeichen, gefolgt von keinem oder mehr Nicht-Leerzeichen (`\S*`), gefolgt von einem Groß- oder Kleinbuchstaben. Beachten Sie, dass wir von `+` zu `*` gewechselt haben, um kein oder mehr Nicht-Leerzeichen anzuzeigen, da `[a-zA-Z0-9]` bereits ein Nicht-Leerzeichen ist. Denken Sie daran, dass das `*` oder `+` auf das einzelne Zeichen unmittelbar links vom Plus oder Sternchen zutrifft.
+Das wird jetzt etwas kompliziert und wir sehen, warum reguläre Ausdrücke eine eigene kleine Sprache für sich sind. Dieser regulärer Ausdruck sucht nach Teilzeichenketten, die mit einem *einzigen* Kleinbuchstaben, Großbuchstaben oder einer Zahl `[a-zA-Z0-9]` beginnen, gefolgt von keinem oder mehr Nicht-Leerzeichen (`\S*`), von einem at-Zeichen, von keinem oder mehr Nicht-Leerzeichen (`\S*`) und schließlich von einem Groß- oder Kleinbuchstaben. Es ist zu beachten, dass wir von `+` zu `*` gewechselt haben, um kein oder mehr Nicht-Leerzeichen anzuzeigen, da `[a-zA-Z0-9]` bereits ein Nicht-Leerzeichen ist. Es sei zu beachten, dass das `*` oder `+` auf das einzelne Zeichen unmittelbar links vom Plus oder Sternchen zutrifft.
 
 \index{Regex!Zeichenklassen}
 
@@ -163,9 +163,9 @@ Wenn wir diesen Ausdruck in unserem Programm verwenden, sind unsere Daten viel s
 ['apache@localhost']
 ~~~~
 
-Beachten Sie, dass unser regulärer Ausdruck in den Zeilen `source@collab.sakaiproject.org` zwei Buchstaben am Ende der Zeichenfolge („>;“) entfernt hat. Das liegt daran, dass wir, wenn wir `[a-zA-Z]` an das Ende unseres regulären Ausdrucks anhängen, verlangen, dass jede Zeichenfolge, die der Parser des regulären Ausdrucks findet, mit einem Buchstaben enden muss. Wenn er also das „>“ am Ende von „sakaiproject.org>;“ sieht, bleibt er einfach bei dem letzten „passenden” Buchstaben stehen, den er gefunden hat (d. h. das „g“ war die letzte Übereinstimmung).
+Es sei zudem zu beachten, dass unser regulärer Ausdruck in den Zeilen `source@collab.sakaiproject.org` zwei Buchstaben am Ende der Zeichenfolge („>;“) entfernt hat. Das liegt daran, dass wir, wenn wir `[a-zA-Z]` an das Ende unseres regulären Ausdrucks anhängen, verlangen, dass jede Zeichenfolge, die der Parser des regulären Ausdrucks findet, mit einem Buchstaben enden muss. Wenn er also das „>“ am Ende von „sakaiproject.org>;“ sieht, bleibt er einfach bei dem letzten „passenden” Buchstaben stehen, den er gefunden hat (d. h. das „g“ war die letzte Übereinstimmung).
 
-Beachten Sie auch, dass die Ausgabe des Programms eine Python-Liste ist, die eine Zeichenkette als einziges Element in der Liste hat.
+Zuletzt muss beachtet werden, dass die Ausgabe des Programms eine Python-Liste ist, die eine Zeichenkette als einziges Element in der Liste hat.
 
 Kombinieren von Suchen und Extrahieren
 --------------------------------------
@@ -185,9 +185,9 @@ Wir können den folgenden regulären Ausdruck konstruieren, um die Zeilen auszuw
 ^X-.*: [0-9.]+
 ~~~~
 
-Übersetzt bedeutet dieser Ausdruck: Wir wollen Zeilen, die mit `X-` beginnen, gefolgt von keinem oder mehr beliebigen Zeichen (`.*`), gefolgt von einem Doppelpunkt (`:`) und dann einem Leerzeichen. Nach dem Leerzeichen suchen wir nach einem oder mehreren Zeichen, die entweder eine Ziffer (0-9) oder ein Punkt `[0-9.]+` sind. Beachten Sie, dass der Punkt innerhalb der eckigen Klammern mit einem tatsächlichen Punkt übereinstimmt (d. h. es handelt sich nicht um einen Platzhalter).
+Übersetzt bedeutet dieser Ausdruck: Wir wollen Zeilen, die mit `X-` beginnen, gefolgt von keinem oder mehr beliebigen Zeichen (`.*`),  von einem Doppelpunkt (`:`) und dann einem Leerzeichen. Nach dem Leerzeichen suchen wir nach einem oder mehreren Zeichen, die entweder eine Ziffer (0-9) oder ein Punkt `[0-9.]+` sind. Es sei zu beachten, dass der Punkt innerhalb der eckigen Klammern mit einem tatsächlichen Punkt übereinstimmt (d. h. es handelt sich nicht um einen Platzhalter).
 
-Dies ist ein sehr strenger Ausdruck, der so ziemlich nur die Zeilen trifft, an denen wir interessiert sind, wie folgt:
+Dies ist ein sehr strenger Ausdruck, der so ziemlich nur die Zeilen trifft, an denen wir interessiert sind:
 
 \VerbatimInput{../code3/re10.py} 
 \begin{trinketfiles}
@@ -207,7 +207,7 @@ Aber jetzt müssen wir das Problem des Extrahierens der Zahlen lösen. Während 
 
 \index{Zeichenkette!split}
 
-Klammern sind ein weiteres Sonderzeichen in regulären Ausdrücken. Wenn Sie einem regulären Ausdruck Klammern hinzufügen, werden diese beim Abgleich der Zeichenkette ignoriert. Wenn Sie jedoch `findall()` verwenden, zeigen die Klammern an, dass Sie zwar wollen, dass der gesamte Ausdruck übereinstimmt, dass Sie aber nur daran interessiert sind, einen Teil der Zeichenkette zu extrahieren, der mit dem regulären Ausdruck übereinstimmt.
+Klammern sind ein weiteres Sonderzeichen in regulären Ausdrücken. Wenn wir einem regulären Ausdruck Klammern hinzufügen, werden diese beim Abgleich der Zeichenkette ignoriert. Wenn wir jedoch `findall()` verwenden, zeigen die Klammern an, dass wir zwar wollen, dass der gesamte Ausdruck übereinstimmt, dass wir aber nur daran interessiert sind, einen Teil der Zeichenkette zu extrahieren, der mit dem regulären Ausdruck übereinstimmt.
 
 \index{Regex!runde Klammern}
 \index{runde Klammern!regulärer Ausdruck}
@@ -233,9 +233,9 @@ Die Ausgabe dieses Programms ist wie folgt:
 ..
 ~~~~
 
-Die Zahlen sind immer noch in einer Liste und müssen von Zeichenketten in Fließkommazahlen umgewandelt werden, aber wir haben die Macht der regulären Ausdrücke genutzt, um sowohl zu suchen als auch die Informationen zu extrahieren, die wir interessant fanden.
+Die Zahlen sind immer noch in einer Liste und müssen von Zeichenketten in Fließkommazahlen umgewandelt werden, aber wir haben die Macht der regulären Ausdrücke genutzt, um sowohl zu suchen als auch die Informationen zu extrahieren, die wir interessant finden.
 
-Als weiteres Beispiel für diese Technik, wenn Sie sich die Datei ansehen, gibt es eine Reihe von Zeilen der Form:
+Als weiteres Beispiel für diese Technik, gibt es eine Reihe von Zeilen der Form:
 
 ~~~~
 Details: http://source.sakaiproject.org/viewsvn/?view=rev&rev=39772
@@ -260,7 +260,7 @@ Wenn wir das Programm ausführen, erhalten wir die folgende Ausgabe:
 ...
 ~~~~
 
-Denken Sie daran, dass das `[0-9]+` „gierig“ ist und versucht, eine möglichst große Ziffernfolge zu bilden, bevor es diese Ziffern extrahiert. Dieses „gierige“ Verhalten ist der Grund, warum wir alle fünf Ziffern für jede Zahl erhalten. Der reguläre Ausdruck expandiert in beide Richtungen, bis sie auf eine Nicht-Ziffer oder den Anfang oder das Ende einer Zeile stößt.
+Es sei zu bedenken, dass das `[0-9]+` „gierig“ ist und versucht, eine möglichst große Ziffernfolge zu bilden, bevor es diese Ziffern extrahiert. Dieses „gierige“ Verhalten ist der Grund, warum wir alle fünf Ziffern für jede Zahl erhalten. Der reguläre Ausdruck expandiert in beide Richtungen, bis sie auf eine Nicht-Ziffer oder den Anfang oder das Ende einer Zeile stößt.
 
 Jetzt können wir reguläre Ausdrücke verwenden, um eine Übung von früher im Buch zu wiederholen, bei der wir uns für die Tageszeit jeder Mail-Nachricht interessierten. Wir suchten nach Zeilen der Form:
 
@@ -268,17 +268,17 @@ Jetzt können wir reguläre Ausdrücke verwenden, um eine Übung von früher im 
 From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
 ~~~~
 
-Ziel war es, aus jeder Zeile die volle Stunde der Uhrzeit zu extrahieren. Das haben wir mit zwei Aufrufen von `split` bewerkstelligt. Zunächst haben wir die Zeile in Worte zerlegt und dann das sechste Wort entnommen (hier `09:14:16`). Dieses haben wir an den Doppelpunkten erneut zerlegt, um dann so ersten beiden Ziffern zu erlangen.
+Ziel war es, aus jeder Zeile die volle Stunde der Uhrzeit zu extrahieren. Das haben wir mit zwei Aufrufen von `split` bewerkstelligt. Zunächst haben wir die Zeile in Worte zerlegt und dann das sechste Wort entnommen (hier `09:14:16`). Dieses haben wir an den Doppelpunkten erneut zerlegt, um dann so die ersten beiden Ziffern zu erlangen.
 
-Das hat zwar funktioniert, führt aber zu einem ziemlich unhandlichen Code, der davon ausgeht, dass die Zeilen schön formatiert sind. Wenn Sie genug Fehlerprüfung (oder einen großen try/except-Block) hinzufügen würden, um sicherzustellen, dass Ihr Programm niemals fehlschlägt, wenn es mit falsch formatierten Zeilen konfrontiert wird, würde der Code auf 10 bis 15 Zeilen Code anwachsen, der ziemlich schwer zu lesen ist.
+Das hat zwar funktioniert, führt aber zu einem ziemlich unhandlichen Code, der davon ausgeht, dass die Zeilen schön formatiert sind. Wenn wir genug Fehlerprüfung (oder einen großen try/except-Block) hinzufügen würden, um sicherzustellen, dass Ihr Programm niemals fehlschlägt, wenn es mit falsch formatierten Zeilen konfrontiert wird, würde der Code auf 10 bis 15 Zeilen Code anwachsen.
 
-Wir können dies auf eine viel einfachere Weise mit dem folgenden regulären Ausdruck tun:
+Wir können dies auf eine viel einfachere Weise mit dem folgenden regulären Ausdruck lösen:
 
 ~~~~
 ^From .* [0-9][0-9]:
 ~~~~
 
-Die Übersetzung dieses regulären Ausdrucks würde lauten: Wir suchen nach Zeilen, die mit `From ` beginnen (beachten Sie das Leerzeichen), gefolgt von einer beliebigen Anzahl von Zeichen (`.*`), gefolgt von einem Leerzeichen, gefolgt von zwei Ziffern `[0-9][0-9]`, gefolgt von einem Doppelpunkt. Dies ist die Definition der Arten von Zeilen, nach denen wir suchen.
+Die Übersetzung dieses regulären Ausdrucks würde lauten: Wir suchen nach Zeilen, die mit `From ` beginnen (das Leerzeichen beachten), gefolgt von einer beliebigen Anzahl von Zeichen (`.*`), von einem Leerzeichen, von zwei Ziffern `[0-9][0-9]` und schließlich von einem Doppelpunkt. Dies ist die Definition der Arten von Zeilen, nach denen wir suchen.
 
 Um mit `findall()` nur die Stunde herauszuholen, fügen wir Klammern um die beiden Ziffern wie folgt hinzu:
 
@@ -321,13 +321,13 @@ Da wir dem Dollarzeichen einen Rückstrich voranstellen, passt er tatsächlich a
 Zusammenfassung
 ---------------
 
-Obwohl dies nur an der Oberfläche der regulären Ausdrücke gekratzt hat, haben wir ein wenig über die Sprache der regulären Ausdrücke gelernt. Es handelt sich um Suchzeichenfolgen mit Sonderzeichen darin, die dem System für reguläre Ausdrücke Ihre Wünsche mitteilen, was als „übereinstimmend“ definiert und was aus den übereinstimmenden Zeichenfolgen extrahiert wird. Hier sind einige dieser Sonderzeichen und Zeichenfolgen:
+Obwohl dies nur an der Oberfläche der regulären Ausdrücke gekratzt hat, haben wir ein wenig über die Sprache der regulären Ausdrücke gelernt. Es handelt sich um Suchzeichenfolgen mit Sonderzeichen, die dem System mitteilen, was als „übereinstimmend“ definiert und was aus den übereinstimmenden Zeichenfolgen extrahiert wird. Hier sind einige dieser Sonderzeichen und Zeichenfolgen:
 
 `^` Zeilenanfang
 
 `$` Zeilenende
 
-`.` genau ein eliebiges Zeichen (Platzhalter/Wildcard)
+`.` genau ein beliebiges Zeichen (Platzhalter/Wildcard)
 
 `\s` genau ein Leerzeichen
 
@@ -349,11 +349,11 @@ Die Fragezeichen in `*?`, `+?` und `??` fordern, dass der Abgleich im sogenannte
 
 `[aeiou]` Stimmt mit einem einzelnen Zeichen überein, sofern dieses Zeichen in der angegebenen Menge enthalten ist. In diesem Beispiel würde es auf „a“, „e“, „i“, „o“ oder „u“ passen, aber nicht auf andere Zeichen.
 
-`[a-z0-9]` Sie können Zeichenbereiche mit dem Minuszeichen angeben. Dieses Beispiel ist ein einzelnes Zeichen, das ein Kleinbuchstabe oder eine Ziffer sein muss.
+`[a-z0-9]` Wir können Zeichenbereiche mit dem Minuszeichen angeben. Dieses Beispiel ist ein einzelnes Zeichen, das ein Kleinbuchstabe oder eine Ziffer sein muss.
 
 `[^A-Za-z]` Wenn das erste Zeichen in der Mengenschreibweise ein Zirkumflex ist, wird die Logik invertiert. Dieses Beispiel passt auf ein einzelnes Zeichen, das *etwas anderes als* ein Groß- oder Kleinbuchstabe ist.
 
-`( )` Wenn Klammern zu einem regulären Ausdruck hinzugefügt werden, werden sie während des Abgleichs ignoriert, ermöglichen es Ihnen aber, eine bestimmte Teilzeichenfolge zu extrahieren, anstatt die gesamte Zeichenfolge zu verwenden, wenn Sie `findall()` verwenden.
+`( )` Wenn Klammern zu einem regulären Ausdruck hinzugefügt werden, werden sie während des Abgleichs ignoriert, ermöglichen es aber, eine bestimmte Teilzeichenfolge zu extrahieren, wenn wir `findall()` verwenden.
 
 `\b` leere Zeichenkette (aber nur am Anfang oder Ende eines Wortes)
 
@@ -370,7 +370,7 @@ Die Unterstützung für das Durchsuchen von Dateien mit regulären Ausdrücken w
 
 \index{grep}
 
-Tatsächlich gibt es ein in Unix eingebautes Kommandozeilenprogramm namens *grep* (Generalized Regular Expression Parser), das so ziemlich dasselbe tut wie die `search()`-Beispiele in diesem Kapitel. Wenn Sie also ein Macintosh- oder Linux-System haben, können Sie die folgenden Befehle in Ihrem Kommandozeilenfenster ausprobieren.
+Tatsächlich gibt es ein in Unix eingebautes Kommandozeilenprogramm namens *grep* (Generalized Regular Expression Parser), das so ziemlich dasselbe tut wie die `search()`-Beispiele in diesem Kapitel. Wenn der Leser also ein Macintosh- oder Linux-System hat, kann er die folgenden Befehle im Kommandozeilenfenster ausprobieren.
 
 ~~~~ {.bash}
 $ grep '^From:' mbox-short.txt
@@ -380,14 +380,14 @@ From: zqian@umich.edu
 From: rjlowe@iupui.edu
 ~~~~
 
-Damit wird `grep` angewiesen, Ihnen Zeilen anzuzeigen, die mit der Zeichenkette „From:“ in der Datei `mbox-short.txt` beginnen. Wenn Sie ein wenig mit dem Befehl `grep` experimentieren und die Dokumentation zu `grep` lesen, werden Sie einige subtile Unterschiede zwischen der Unterstützung regulärer Ausdrücke in Python und der Unterstützung regulärer Ausdrücke in `grep` feststellen. Zum Beispiel unterstützt `grep` nicht das Nicht-Leerzeichen `\S`, sodass Sie die etwas komplexere Mengenschreibweise `[^ ]` verwenden müssen, was bedeutet, dass ein Zeichen, das kein Leerzeichen ist, übereinstimmen muss.
+Damit wird `grep` angewiesen, Zeilen anzuzeigen, die mit der Zeichenkette „From:“ in der Datei `mbox-short.txt` beginnen. Wenn wir ein wenig mit dem Befehl `grep` experimentieren und die Dokumentation zu `grep` lesen, werden wir einige subtile Unterschiede zwischen der Unterstützung regulärer Ausdrücke in Python und der Unterstützung regulärer Ausdrücke in `grep` feststellen. Zum Beispiel unterstützt `grep` nicht das Nicht-Leerzeichen `\S`, sodass die etwas komplexere Mengenschreibweise `[^ ]` verwendet werden muss. 
 
 Debugging
 ---------
 
-Python hat eine einfache und rudimentäre eingebaute Dokumentation, die sehr hilfreich sein kann, wenn Sie eine schnelle Auffrischung benötigen, um sich an den genauen Namen einer bestimmten Methode zu erinnern. Diese Dokumentation kann im Python-Interpreter im interaktiven Modus eingesehen werden.
+Python hat eine einfache und rudimentäre eingebaute Dokumentation, die sehr hilfreich sein kann, wenn wir eine schnelle Auffrischung benötigen, um sich an den genauen Namen einer bestimmten Methode zu erinnern. Diese Dokumentation kann im Python-Interpreter im interaktiven Modus eingesehen werden.
 
-Mit `help()` können Sie ein interaktives Hilfesystem aufrufen.
+Mit `help()` können wir ein interaktives Hilfesystem aufrufen.
 
 ~~~~ {.python}
 >>> help()
@@ -395,7 +395,7 @@ Mit `help()` können Sie ein interaktives Hilfesystem aufrufen.
 help> modules
 ~~~~
 
-Wenn Sie wissen, welches Modul Sie verwenden möchten, können Sie den Befehl `dir()` verwenden, um die Methoden im Modul wie folgt zu finden:
+Wenn wir wissen, welches Modul wir verwenden möchten, können wir den Befehl `dir()` verwenden, um die Methoden im Modul wie folgt zu finden:
 
 ~~~~ {.python .trinket}
 >>> import re
@@ -405,7 +405,7 @@ Wenn Sie wissen, welches Modul Sie verwenden möchten, können Sie den Befehl `d
 'sre_parse', 'sub', 'subn', 'sys', 'template']
 ~~~~
 
-Sie können auch mit dem `dir`-Befehl einen kleinen Teil der Dokumentation zu einer bestimmten Methode abrufen.
+Wir können auch mit dem `dir`-Befehl einen kleinen Teil der Dokumentation zu einer bestimmten Methode abrufen.
 
 ~~~~ {.python .trinket}
 >>> help (re.search)
@@ -417,7 +417,7 @@ search(pattern, string, flags=0)
 >>>
 ~~~~
 
-Die integrierte Dokumentation ist nicht sehr umfangreich, kann aber hilfreich sein, wenn Sie in Eile sind oder keinen Zugriff auf einen Webbrowser oder eine Suchmaschine haben.
+Die integrierte Dokumentation ist nicht sehr umfangreich, kann aber hilfreich sein, wenn wir in Eile sind oder keinen Zugriff auf einen Webbrowser oder eine Suchmaschine haben.
 
 Glossar
 -------
@@ -428,15 +428,11 @@ greedy Matching
 \index{greedy Matching}
 
 grep
-:   Ein in den meisten Unix-Systemen verfügbarer Befehl, der Textdateien nach Zeilen durchsucht, die regulären Ausdrücken entsprechen. Der Name des Befehls steht für „Generalized Regular Expression Parser“.
+:   Ein in den meisten Unix-Systemen verfügbarer Befehl, der Texte nach Zeilen durchsucht, die regulären Ausdrücken entsprechen. Der Name des Befehls steht für „Generalized Regular Expression Parser“.
 \index{grep}
 
 regulärer Ausdruck
 :   Eine Sprache zum Definieren komplexerer Suchzeichenfolgen.
-
-Steinlaus
-:   Die gemeine Steinlaus (lat. *Petrophaga lorioti*) ist längst auf dem Vormarsch. Bioinformatiker gehen davon aus, dass Software künftig nicht mehr debuggt, sondern entlaust wird.
-\index{Steinlaus}
 
 Wildcard
 :   Ein Platzhalter, der auf ein beliebiges Zeichen passt. In regulären Ausdrücken ist das Platzhalterzeichen der Punkt.
@@ -445,7 +441,7 @@ Wildcard
 Übungen
 -------
 
-**Übung 1: Schreiben Sie ein einfaches Programm, das die Funktionsweise des Befehls `grep` unter Unix simuliert. Fordern Sie den Benutzer auf, einen regulären Ausdruck einzugeben und die Anzahl der Zeilen zu zählen, die mit dem regulären Ausdruck übereinstimmen:**
+**Übung 1: Es soll ein einfaches Programm geschrieben werden, das die Funktionsweise des Befehls `grep` unter Unix simuliert. Der Benutzer soll aufgefordert werden, einen regulären Ausdruck einzugeben mit dem dann die Anzahl der Zeilen gezählt werden, die mit dem regulären Ausdruck übereinstimmen:**
 
 ~~~~
 $ python grep.py
@@ -461,13 +457,13 @@ Enter a regular expression: java$
 mbox.txt had 4175 lines that matched java$
 ~~~~
 
-**Übung 2: Schreiben Sie ein Programm, das nach Zeilen der folgenden Form sucht:**
+**Übung 2: Es soll ein Programm geschrieben werden, das nach Zeilen der folgenden Form sucht:**
 
 ~~~~
 New Revision: 39772
 ~~~~
 
-**Extrahieren Sie die Zahl aus jeder der Zeilen mit einem regulären Ausdruck und der Methode `findall()`. Berechnen Sie den Durchschnitt der Zahlen und geben Sie den Durchschnitt als Ganzzahl aus.**
+**Die Zahl soll aus jeder der Zeilen mit einem regulären Ausdruck und der Methode `findall()` extrahiert werden. Es soll dann der Durchschnitt der Zahlen berechnet und als Ganzzahl ausgegeben werden.**
 
 ~~~~
 Enter file:mbox.txt

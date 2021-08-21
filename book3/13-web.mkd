@@ -2,7 +2,7 @@
 Web-Services
 ============
 
-Nachdem wir gelernt hatten wie einfach es ist, Dokumente über HTTP mit Hilfe von Programmen abzurufen und zu parsen, dauerte es nicht lange, bis wir einen Ansatz entwickelten, bei dem wir anfingen, Dokumente zu produzieren, die speziell dafür ausgelegt waren, von anderen Programmen verarbeitet zu werden (d. h. nicht HTML, um in einem Browser angezeigt zu werden).
+Nachdem wir gelernt hatten wie einfach es ist, Dokumente über HTTP mit Hilfe von Programmen abzurufen und zu parsen, dauerte es nicht lange, bis wir einen Ansatz entwickelten, Dokumente zu produzieren, die speziell dafür ausgelegt waren, von anderen Programmen verarbeitet zu werden (d. h. nicht HTML, um in einem Browser angezeigt zu werden).
 
 Es gibt zwei gängige Formate, die wir beim Austausch von Daten über das Web verwenden. eXtensible Markup Language (XML) wird schon sehr lange verwendet und eignet sich am besten für den Austausch von dokumentenähnlichen Daten. Wenn Programme nur Wörterbücher, Listen oder andere interne Informationen miteinander austauschen wollen, verwenden sie dagegen JavaScript Object Notation (JSON) (siehe [www.json.org](http://www.json.org)). Wir werden uns beide Formate ansehen.
 
@@ -47,7 +47,7 @@ Name: Chuck
 Attr: yes
 ~~~~
 
-Die Verwendung eines XML-Parsers wie `ElementTree` hat den Vorteil, dass, obwohl das XML in diesem Beispiel recht einfach ist, sich herausstellt, dass es viele Regeln für gültiges XML gibt, und die Verwendung von `ElementTree` ermöglicht es uns, Daten aus XML zu extrahieren, ohne uns um die Regeln der XML-Syntax zu kümmern.
+Die Verwendung eines XML-Parsers wie `ElementTree` hat den Vorteil, dass, obwohl das XML in diesem Beispiel recht einfach ist, es viele Regeln für gültiges XML gibt. Die Verwendung von `ElementTree` ermöglicht es uns, Daten aus XML zu extrahieren, ohne uns um die Regeln der XML-Syntax zu kümmern.
 
 Iterieren durch Knoten
 ---------------------
@@ -59,7 +59,7 @@ Oft hat das XML mehrere Knoten und wir müssen eine Schleife schreiben, um alle 
 
 \VerbatimInput{../code3/xml2.py} 
 
-Die Methode `findall` ruft eine Python-Liste von Teilbäumen ab, die die `user`-Strukturen im XML-Baum darstellen. Dann können wir eine `for`-Schleife schreiben, die jeden der `user`-Knoten betrachtet und die Textelemente `name` und `id` sowie das Attribut `x` des `user`-Knotens ausgibt.
+Die Methode `findall` ruft eine Python-Liste von Teilbäumen ab, die die `user`-Strukturen im XML-Baum darstellen. Dann können wir eine `for`-Schleife schreiben, die jeden der `user`-Knoten betrachtet, die Textelemente `name` und `id` sowie das Attribut `x` des `user`-Knotens ausgibt.
 
 ~~~~
 User count: 2
@@ -99,7 +99,7 @@ lst2 = stuff.findall('user')
 print('User count:', len(lst2))
 ~~~~
 
-`lst` speichert alle `user`-Elemente, die in ihrem `users`-Elternteil verschachtelt sind. `lst2` sucht nach `user`-Elementen, die nicht innerhalb des übergeordneten `stuff`-Elements verschachtelt sind, wenn es keine gibt.
+`lst` speichert alle `user`-Elemente, die in ihrem `users`-Elternteil verschachtelt sind. `lst2` sucht nach `user`-Elementen, die nicht innerhalb des übergeordneten `stuff`-Elements verschachtelt sind. Von diesen gibt es allerdings keine.
 
 ~~~~
 User count: 2
@@ -112,7 +112,7 @@ JavaScript Object Notation - JSON
 \index{JSON}
 \index{JavaScript Object Notation}
 
-Das JSON-Format wurde durch das in der Sprache JavaScript verwendete Objekt- und Array-Format inspiriert. Da Python jedoch vor JavaScript erfunden wurde, hat die Syntax von Python für Wörterbücher und Listen die Syntax von JSON beeinflusst. Das Format von JSON ist also fast identisch mit einer Kombination aus Python-Listen und -Wörterbüchern.
+Das JSON-Format wurde durch das in der Sprache JavaScript verwendete Objekt- und Array-Format inspiriert. Da Python jedoch vor JavaScript erfunden wurde, hat die Syntax von Python für Wörterbücher und Listen die Syntax von JSON beeinflusst. Das Format von JSON ist also fast identisch mit einer Kombination aus Python-Listen und Wörterbüchern.
 
 Hier ist eine JSON-Kodierung, die in etwa dem einfachen XML von oben entspricht:
 
@@ -129,9 +129,9 @@ Hier ist eine JSON-Kodierung, die in etwa dem einfachen XML von oben entspricht:
 }
 ~~~~
 
-Sie werden einige Unterschiede feststellen. Erstens können wir in XML Attribute wie `intl` zum `phone`-Tag hinzufügen. In JSON haben wir einfach Schlüssel-Wert-Paare. Auch das XML-Tag `person` ist verschwunden und wurde durch eine Reihe von geschweiften Klammern ersetzt.
+Gleich wird man einige Unterschiede feststellen. Erstens können wir in XML Attribute wie `intl` zum `phone`-Tag hinzufügen. In JSON haben wir einfach Schlüssel-Wert-Paare. Auch das XML-Tag `person` ist verschwunden und wurde durch eine Reihe von geschweiften Klammern ersetzt.
 
-Im Allgemeinen sind JSON-Strukturen einfacher als XML, weil JSON weniger Möglichkeiten hat als XML. Aber JSON hat den Vorteil, dass es *direkt* auf eine Kombination von Dictionaries und Listen abgebildet wird. Und da fast alle Programmiersprachen etwas haben, das den Dictionaries und Listen von Python entspricht, ist JSON ein sehr natürliches Format, um zwei zusammenwirkende Programme Daten austauschen zu lassen.
+Im Allgemeinen sind JSON-Strukturen einfacher als XML, weil JSON weniger Möglichkeiten hat als XML. Aber JSON hat den Vorteil, dass es *direkt* auf eine Kombination von Dictionaries und Listen abgebildet wird. Da fast alle Programmiersprachen Elemente haben, die den Dictionaries und Listen von Python entsprechen, ist JSON ein sehr natürliches Format, um zwischen zwei zusammenwirkenden Programmen Daten austauschen zu lassen.
 
 JSON entwickelt sich aufgrund seiner relativen Einfachheit im Vergleich zu XML schnell zum Format der Wahl für fast jeden Datenaustausch zwischen Applikationen.
 
@@ -140,11 +140,11 @@ Parsen von JSON
 
 Wir konstruieren unser JSON, indem wir Wörterbücher und Listen nach Bedarf verschachteln. In diesem Beispiel stellen wir eine Liste von Benutzern dar, wobei jeder Benutzer ein Satz von Schlüssel-Wert-Paaren ist (d. h. ein Wörterbuch). Wir haben also eine Liste von Wörterbüchern.
 
-Im folgenden Programm verwenden wir die eingebaute `json`-Bibliothek, um das JSON zu parsen und die Daten einzulesen. Vergleichen Sie dies genau mit den entsprechenden XML-Daten und dem Code oben. Das JSON hat weniger Details, daher müssen wir im Voraus wissen, dass wir eine Liste erhalten und dass die Liste aus Benutzern besteht und jeder Benutzer ein Satz von Schlüssel-Wert-Paaren ist. Das JSON ist prägnanter (ein Vorteil), aber auch weniger selbstbeschreibend (ein Nachteil).
+Im folgenden Programm verwenden wir die eingebaute `json`-Bibliothek, um das JSON zu parsen und die Daten einzulesen. Vergleichen wir dies genau mit den entsprechenden XML-Daten und dem Code oben. Das JSON hat weniger Details, daher müssen wir im Voraus wissen, dass wir eine Liste erhalten und dass die Liste aus Benutzern besteht und jeder Benutzer ein Satz von Schlüssel-Wert-Paaren ist. Das JSON ist prägnanter (ein Vorteil), aber auch weniger selbstbeschreibend (ein Nachteil).
 
 \VerbatimInput{../code3/json2.py}
 
-Wenn Sie den Code zum Extrahieren von Daten aus dem geparsten JSON und XML vergleichen, werden Sie sehen, dass das, was wir von `json.loads()` erhalten, eine Python-Liste ist, die wir mit einer `for`-Schleife durchlaufen, und jedes Element innerhalb dieser Liste ist ein Python-Wörterbuch. Sobald das JSON geparst wurde, können wir den Python-Indexoperator verwenden, um die verschiedenen Daten für jeden Benutzer zu extrahieren. Wir müssen nicht die JSON-Bibliothek verwenden, um uns durch das geparste JSON zu wühlen, da die zurückgegebenen Daten einfach native Python-Strukturen sind.
+Wenn wir den Code zum Extrahieren von Daten aus dem geparsten JSON und XML vergleichen, sehen wir, dass das, was wir von `json.loads()` erhalten, eine Python-Liste ist, die wir mit einer `for`-Schleife durchlaufen. Jedes Element innerhalb dieser Liste ist ein Python-Wörterbuch. Sobald das JSON geparst wurde, können wir den Python-Indexoperator verwenden, um die verschiedenen Daten für jeden Benutzer zu extrahieren. Wir müssen nicht die JSON-Bibliothek verwenden, um uns durch das geparste JSON zu wühlen, da die zurückgegebenen Daten einfach native Python-Strukturen sind.
 
 Die Ausgabe dieses Programms ist genau die gleiche wie die obige XML-Version.
 
@@ -165,9 +165,9 @@ Application Programming Interfaces (API)
 
 Wir haben jetzt die Möglichkeit, Daten zwischen Anwendungen über das HyperText Transport Protocol (HTTP) auszutauschen und eine Möglichkeit, komplexe Daten, die wir zwischen diesen Anwendungen hin- und herschicken, mittels eXtensible Markup Language (XML) oder JavaScript Object Notation (JSON) darzustellen.
 
-Der nächste Schritt besteht darin, *Schnittstellen* zwischen Anwendungen zu definieren und zu dokumentieren. Der englische Name für Schnittstellen lautet *Application Program Interfaces* (APIs). Bei der Verwendung einer API stellt im Allgemeinen ein Programm eine Reihe von *Diensten* für die Nutzung durch andere Anwendungen zur Verfügung und veröffentlicht die APIs (d. h. die Regeln), die befolgt werden müssen, um auf die vom Programm bereitgestellten Dienste zuzugreifen.
+Der nächste Schritt besteht darin, *Schnittstellen* zwischen Anwendungen zu definieren und zu dokumentieren. Der allgemeine Name für Schnittstellen lautet *Application Program Interfaces* (APIs). Bei der Verwendung einer API stellt im Allgemeinen ein Programm eine Reihe von *Diensten* für die Nutzung durch andere Anwendungen zur Verfügung und veröffentlicht die APIs (d. h. die Regeln), die befolgt werden müssen, um auf die vom Programm bereitgestellten Dienste zuzugreifen.
 
-Wenn wir beginnen, unsere Programme so aufzubauen, dass die Funktionalität unseres Programms den Zugriff auf Dienste beinhaltet, die von anderen Programmen bereitgestellt werden, nennen wir den Ansatz eine *Service-Orientierte Architektur* (SOA). Ein SOA-Ansatz ist ein solcher, bei dem unsere Gesamtanwendung auf die Dienste anderer Anwendungen zurückgreift. Ein Nicht-SOA-Ansatz ist einer, bei dem die Anwendung eine einzelne, eigenständige Anwendung ist, die den gesamten für die Implementierung der Anwendung erforderlichen Code enthält.
+Wenn wir beginnen, unsere Programme so aufzubauen, dass die Funktionalität unseres Programms den Zugriff auf Dienste beinhaltet, die von anderen Programmen bereitgestellt werden, nennen wir den Ansatz eine *Service-oriented architecture* (SOA). Ein SOA-Ansatz ist ein solcher, bei dem unsere Gesamtanwendung auf die Dienste anderer Anwendungen zurückgreift. Ein Nicht-SOA-Ansatz ist einer, bei dem die Anwendung eine einzelne, eigenständige Anwendung ist, die den gesamten für die Implementierung der Anwendung erforderlichen Code enthält.
 
 Wir sehen viele Beispiele für SOA, wenn wir das Web nutzen. Wir können auf eine einzige Website gehen und Flugreisen, Hotels und Autos buchen - alles von einer einzigen Seite aus. Die Daten für Hotels werden nicht auf den Computern der Fluggesellschaft gespeichert. Stattdessen kontaktieren die Computer der Fluggesellschaften die Dienste auf den Hotelservern und rufen die Hoteldaten ab und präsentieren sie dem Benutzer. Wenn der Benutzer zustimmt, eine Hotelreservierung über die Website der Fluggesellschaft vorzunehmen, verwendet die Website der Fluggesellschaft einen anderen Webservice auf den Hotelsystemen, um die Reservierung tatsächlich vorzunehmen. Und wenn es an der Zeit ist, die Kreditkarte für die gesamte Transaktion zu belasten, werden noch weitere Computer in den Prozess einbezogen.
 
@@ -183,15 +183,15 @@ Sicherheit und API-Nutzung
 \index{OAuth}
 \index{API!Schlüssel}
 
-Es ist durchaus üblich, dass Sie einen API-Schlüssel benötigen, um die API eines Anbieters nutzen zu können. Die allgemeine Idee ist, dass der Anbieter wissen möchte, wer seine Dienste nutzt und wie viel jeder Benutzer nutzt. Vielleicht gibt es eine kostenlose und eine kostenpflichtige Version der Dienste oder es gibt eine Richtlinie, die die Anzahl der Anfragen begrenzt, die eine einzelne Person während eines bestimmten Zeitraums stellen kann.
+Es ist durchaus üblich, dass wir einen API-Schlüssel benötigen, um die API eines Anbieters nutzen zu können. Die allgemeine Idee ist, dass der Anbieter wissen möchte, wer seine Dienste und wie viel sie jeder Benutzer nutzt. Vielleicht gibt es eine kostenlose und eine kostenpflichtige Version der Dienste oder es gibt eine Richtlinie, die die Anzahl der Anfragen begrenzt, die eine einzelne Person während eines bestimmten Zeitraums stellen kann.
 
-Manchmal, sobald Sie Ihren API-Schlüssel erhalten haben, fügen Sie den Schlüssel einfach als Teil der POST-Daten oder vielleicht als Parameter in der URL beim Aufruf der API ein.
+Manchmal, sobald wir unseren API-Schlüssel erhalten haben, fügen wir den Schlüssel einfach als Teil der POST-Daten oder vielleicht als Parameter in der URL beim Aufruf der API ein.
 
-In anderen Fällen möchte der Anbieter eine erhöhte Sicherheit bezüglich der Quelle der Anfragen und erwartet daher, dass Sie kryptografisch signierte Nachrichten mit gemeinsamen Keys und Secrets senden. Eine sehr verbreitete Technologie, die zum Signieren von Anfragen über das Internet verwendet wird, heißt *OAuth*. Sie können mehr über das OAuth-Protokoll unter [www.oauth.net](http://www.oauth.net) erfahren.
+In anderen Fällen möchte der Anbieter eine erhöhte Sicherheit bezüglich der Quelle der Anfragen und erwartet daher, dass wir kryptografisch signierte Nachrichten mit gemeinsamen Keys und Secrets senden. Eine sehr verbreitete Technologie, die zum Signieren von Anfragen über das Internet verwendet wird, heißt *OAuth*. Mehr über das OAuth-Protokoll kann man unter [www.oauth.net](http://www.oauth.net) erfahren.
 
-Glücklicherweise gibt es eine Reihe von praktischen und kostenlosen OAuth-Bibliotheken, sodass Sie das Schreiben einer OAuth-Implementierung von Grund auf vermeiden können, indem Sie die Spezifikation lesen. Diese Bibliotheken sind von unterschiedlicher Komplexität und haben einen unterschiedlichen Funktionsumfang. Auf der OAuth-Website finden Sie Informationen über verschiedene OAuth-Bibliotheken.
+Glücklicherweise gibt es eine Reihe von praktischen und kostenlosen OAuth-Bibliotheken, sodass wir das Schreiben einer OAuth-Implementierung von Grund auf vermeiden können, indem wir die Spezifikation lesen. Diese Bibliotheken sind von unterschiedlicher Komplexität und haben einen unterschiedlichen Funktionsumfang. Auf der OAuth-Website finden sich Informationen über verschiedene OAuth-Bibliotheken.
 
-Glossa
+Glossar
 ------
 
 API
@@ -225,21 +225,21 @@ Anwendungsbeispiel 1: Google Geocoding Web Service
 
 Google hat einen ausgezeichneten Webdienst, der es uns ermöglicht, seine große Datenbank mit geografischen Informationen zu nutzen. Wir können einen geografischen Suchstring wie „Ann Arbor, MI“ an die Geokodierungs-API übermitteln und Google gibt eine Vermutung darüber zurück, wo auf einer Karte wir unseren Suchstring finden könnten, und informiert uns über die Sehenswürdigkeiten in der Nähe.
 
-Der Geokodierungsdienst ist zwar kostenlos, die Nutzungsfrequenz der API ist jedoch begrenzt, sodass Sie die API nicht uneingeschränkt in einer kommerziellen Anwendung nutzen können. Aber wenn Sie einige Umfragedaten haben, bei denen ein Endbenutzer einen Ort in ein frei formatiertes Eingabefeld eingegeben hat, können Sie diese API verwenden, um Ihre Daten recht gut zu bereinigen.
+Der Geokodierungsdienst ist zwar kostenlos, die Nutzungsfrequenz der API ist jedoch begrenzt, sodass wir die API nicht uneingeschränkt in einer kommerziellen Anwendung nutzen können. Aber wenn wir einige Umfragedaten haben, bei denen ein Endbenutzer einen Ort in ein frei formatiertes Eingabefeld eingegeben hat, können wir diese API verwenden, um die Daten recht gut zu bereinigen.
 
-*Wenn Sie eine kostenlose API wie die Geokodierungs-API von Google verwenden, müssen Sie bei der Nutzung dieser Ressourcen gewissenhaft vorgehen. Wenn zu viele Leute den Dienst missbrauchen, könnte Google seinen kostenlosen Dienst einstellen oder erheblich einschränken.*
+*Wenn wir eine kostenlose API wie die Geokodierungs-API von Google verwenden, müssen wir bei der Nutzung dieser Ressourcen gewissenhaft vorgehen. Wenn zu viele Leute den Dienst missbrauchen, könnte Google seinen kostenlosen Dienst einstellen oder erheblich einschränken.*
 
-Sie können die Online-Dokumentation für diesen Dienst lesen, aber es ist ganz einfach und Sie können es sogar mit einem Browser testen, indem Sie die folgende URL in Ihren Browser eingeben:
+Wir können die Online-Dokumentation für diesen Dienst lesen, aber es ist ganz einfach und wir können es sogar mit einem Browser testen, indem wir die folgende URL in einen Browser eingeben:
 
 [http://maps.googleapis.com/maps/api/geocode/json?address=Ann+Arbor%2C+MI](http://maps.googleapis.com/maps/api/geocode/json?address=Ann+Arbor%2C+MI)
 
-Im Folgenden sehen Sie eine einfache Anwendung, die den Benutzer zur Eingabe eines Suchstrings auffordert, die Google Geocoding-API aufruft und Informationen aus dem zurückgegebenen JSON extrahiert.
+Im Folgenden sehen wir eine einfache Anwendung, die den Benutzer zur Eingabe eines Suchstrings auffordert, die Google Geocoding-API aufruft und Informationen aus dem zurückgegebenen JSON extrahiert.
 
 \VerbatimInput{../code3/geojson.py} 
 
 Das Programm nimmt den Suchstring und konstruiert eine URL mit dem Suchstring als korrekt kodierten Parameter und verwendet dann `urllib`, um den Text von der Google Geokodierungs-API abzurufen. Im Gegensatz zu einer festen Webseite hängen die Daten, die wir erhalten, von den Parametern ab, die wir senden, und von den geografischen Daten, die auf den Servern von Google gespeichert sind.
 
-Sobald wir die JSON-Daten abgerufen haben, parsen wir sie mit der `json`-Bibliothek und führen ein paar Prüfungen durch, um sicherzustellen, dass wir gute Daten erhalten haben, und extrahieren dann die Informationen, nach denen wir suchen.
+Sobald wir die JSON-Daten abgerufen haben, parsen wir sie mit der `json`-Bibliothek und führen ein paar Prüfungen durch, um sicherzustellen, dass wir korrekte Daten erhalten haben. Dann extrahieren wir die Informationen, nach denen wir suchen.
 
 Die Ausgabe des Programms sieht wie folgt aus (ein Teil des zurückgegebenen JSON wurde entfernt):
 
@@ -333,21 +333,21 @@ Ann Arbor, MI, USA
 Enter location:
 ~~~~
 
-Sie können [www.py4e.com/code3/geoxml.py](http://www.py4e.com/code3/geoxml.py) herunterladen, um die XML-Variante der Google Geocoding API zu erkunden.
+Wir können [www.py4e.com/code3/geoxml.py](http://www.py4e.com/code3/geoxml.py) herunterladen, um die XML-Variante der Google Geocoding API zu erkunden.
 
-**Übung 1: Ändern Sie entweder**
+**Übung 1: Es soll entweder**
 [**geojson.py**](http://www.py4e.com/code3/geojson.py) **oder**
 [**geoxml.py**](http://www.py4e.com/code3/geoxml.py)
-**um den zweistelligen Ländercode aus den abgerufenen Daten auszugeben. Fügen Sie eine Fehlerprüfung hinzu, damit Ihr Programm keinen Traceback auslöst, wenn der Ländercode nicht vorhanden ist. Sobald Sie es zum Laufen gebracht haben, suchen Sie nach „Atlantic Ocean“ und stellen Sie sicher, dass es mit Orten umgehen kann, die in keinem Land liegen.**
+**geändert werden, um den zweistelligen Ländercode aus den abgerufenen Daten auszugeben. Es muss eine Fehlerprüfung hinzugefügt werden, damit das Programm keinen Traceback auslöst, wenn der Ländercode nicht vorhanden ist. Sobald es zum Laufen gebracht wurde, soll nach dem „Atlantic Ocean“ gesucht und sichergestellt werden, dass es mit Orten umgehen kann, die in keinem Land liegen.**
 
 Anwendungsbeispiel 2: Twitter
 -----------------------------
 
 Als die Twitter-API immer mehr an Bedeutung gewann, ging Twitter von einer offenen und öffentlichen API zu einer API über, die die Verwendung von OAuth-Signaturen bei jeder API-Anfrage erfordert.
 
-Für das nächste Beispielprogramm laden Sie die Dateien `twurl.py`, `hidden.py`, `oauth.py` und `twitter1.py` von [www.py4e.com/code](http://www.py4e.com/code3) herunter und legen sie alle in einem Ordner auf Ihrem Computer ab.
+Für das nächste Beispielprogramm laden wir die Dateien `twurl.py`, `hidden.py`, `oauth.py` und `twitter1.py` von [www.py4e.com/code](http://www.py4e.com/code3) herunter und legen alle in einem Ordner auf dem Computer ab.
 
-Um diese Programme nutzen zu können, müssen Sie ein Twitter-Konto haben und Ihren Python-Code als Anwendung autorisieren, einen Key, Secret, Token und Token Secret einrichten. Sie werden die Datei `hidden.py` bearbeiten und diese vier Zeichenfolgen in die entsprechenden Variablen in der Datei einfügen:
+Um diese Programme nutzen zu können, müssen wir ein Twitter-Konto haben und unseren Python-Code als Anwendung autorisieren. Es muss dabei ein Key, Secret, Token und Token Secret eingerichtet werden. Dann muss die Datei `hidden.py` bearbeitet und diese vier Zeichenfolgen in die entsprechenden Variablen in der Datei eingefügt werden:
 
 \VerbatimInput{../code3/hidden.py} 
 
@@ -365,11 +365,11 @@ https://api.twitter.com/1.1/statuses/user_timeline.json?count=2
 &oauth_signature_method=HMAC-SHA1
 ~~~~
 
-Sie können die OAuth-Spezifikation lesen, wenn Sie mehr über die Bedeutung der verschiedenen Parameter wissen möchten, die hinzugefügt werden, um die Sicherheitsanforderungen von OAuth zu erfüllen.
+Wir können die OAuth-Spezifikation lesen, wenn wir mehr über die Bedeutung der verschiedenen Parameter erfahren möchten, die hinzugefügt werden, um die Sicherheitsanforderungen von OAuth zu erfüllen.
 
 Für die Programme, die wir mit Twitter ausführen, verstecken wir die ganze Komplexität in den Dateien `oauth.py` und `twurl.py`. Wir setzen einfach die Secrets in `hidden.py` und senden dann die gewünschte URL an die Funktion `twurl.augment()` und der Bibliothekscode fügt alle notwendigen Parameter für uns an die URL an.
 
-Dieses Programm ruft die Timeline für einen bestimmten Twitter-Benutzer ab und gibt sie im JSON-Format in einer Zeichenkette an uns zurück. Wir geben einfach die ersten 250 Zeichen des Strings aus:
+Dieses Programm ruft die Timeline für einen bestimmten Twitter-Benutzer ab und gibt sie im JSON-Format in einer Zeichenkette an uns zurück. Wir geben dann einfach die ersten 250 Zeichen des Strings aus:
 
 \VerbatimInput{../code3/twitter1.py} 
 \begin{trinketfiles}
@@ -400,7 +400,7 @@ Remaining 177
 Enter Twitter Account:
 ~~~~
 
-Zusammen mit den zurückgegebenen Timeline-Daten gibt Twitter auch Metadaten über die Anfrage in den HTTP-Antwort-Headern zurück. Ein Header im Besonderen, `x-rate-limit-remaining`, informiert uns darüber, wie viele Anfragen wir noch stellen können, bevor wir für eine kurze Zeitspanne gesperrt werden. Sie können sehen, dass unsere verbleibenden Abrufe bei jeder Anfrage an die API um eins sinken.
+Zusammen mit den zurückgegebenen Timeline-Daten gibt Twitter auch Metadaten über die Anfrage in den HTTP-Antwort-Headern zurück. Ein Header im Besonderen, `x-rate-limit-remaining`, informiert uns darüber, wie viele Anfragen wir noch stellen können, bevor wir für eine kurze Zeitspanne gesperrt werden. Wir können sehen, dass unsere verbleibenden Abrufe bei jeder Anfrage an die API um eins sinken.
 
 Im folgenden Beispiel rufen wir die Twitter-Freunde eines Benutzers ab, parsen das zurückgegebene JSON und extrahieren einige der Informationen über die Freunde. Außerdem geben wir das JSON nach dem Parsen aus und drucken es mit einem Einzug von vier Zeichen aus, damit wir die Daten durchforsten können, wenn wir weitere Felder extrahieren möchten.
 
@@ -466,7 +466,7 @@ scweeker
 Enter Twitter Account:
 ~~~~
 
-Im letzten Teil der Ausgabe sehen wir, wie die `for`-Schleife die fünf neuesten Freunde des Twitter-Kontos *@drchuck* ausliest und den neuesten Status für jeden Freund ausgibt. In dem zurückgegebenen JSON sind noch viel mehr Daten vorhanden. Wenn Sie in die Ausgabe des Programms schauen, können Sie auch sehen, dass das Finden der Freunde eines bestimmten Kontos eine andere Zugriffsratenbeschränkung hat als die Anzahl der Timeline-Abfragen, die wir pro Zeitspanne ausführen dürfen.
+Im letzten Teil der Ausgabe sehen wir, wie die `for`-Schleife die fünf neuesten Freunde des Twitter-Kontos *@drchuck* ausliest und den neuesten Status für jeden Freund ausgibt. In dem zurückgegebenen JSON sind noch viel mehr Daten vorhanden. Wenn wir in die Ausgabe des Programms schauen, können wir auch sehen, dass das Finden der Freunde eines bestimmten Kontos eine andere Zugriffsratenbeschränkung hat als die Anzahl der Timeline-Abfragen, die wir pro Zeitspanne ausführen dürfen.
 
 Mit diesen sicheren API-Schlüsseln hat Twitter die Gewissheit, dass sie wissen, wer ihre API und ihre Daten nutzt und in welchem Umfang. Der ratenbeschränkende Ansatz erlaubt uns einfache, persönliche Datenabrufe, aber er erlaubt uns nicht, ein Produkt zu bauen, das Millionen von Daten pro Tag aus der API abruft.
 

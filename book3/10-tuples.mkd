@@ -29,7 +29,7 @@ Obwohl es nicht notwendig ist, ist es üblich, Tupel in Klammern einzuschließen
 >>> t = ('a', 'b', 'c', 'd', 'e')
 ~~~~
 
-Um ein Tupel mit einem einzelnen Element zu erstellen, müssen Sie das abschließende Komma einfügen:
+Um ein Tupel mit einem einzelnen Element zu erstellen, müssen wir das abschließende Komma einfügen:
 
 \index{Singleton}
 \index{Tupel!Singleton}
@@ -67,7 +67,7 @@ Wenn das Argument eine Sequenz (String, Liste oder Tupel) ist, ist das Ergebnis 
 ('l', 'u', 'p', 'i', 'n', 's')
 ~~~~
 
-Da `tuple` der Name eines *Konstruktors* ist, sollten Sie es vermeiden, ihn als Variablennamen zu verwenden.
+Da `tuple` der Name eines *Konstruktors* ist, sollten wir es vermeiden, ihn als Variablennamen zu verwenden.
 
 Die meisten Listenoperatoren funktionieren auch auf Tupeln. Der Indexoperator indiziert ein Element:
 
@@ -92,7 +92,7 @@ Und der Slice-Operator selektiert einen Bereich von Elementen.
 ('b', 'c')
 ~~~~
 
-Wenn Sie jedoch versuchen, eines der Elemente des Tupels zu ändern, erhalten Sie einen Fehler:
+Wenn wir jedoch versuchen, eines der Elemente des Tupels zu ändern, erhalten wir einen Fehler:
 
 \index{Ausnahme!TypeError}
 \index{TypeError}
@@ -104,7 +104,7 @@ Wenn Sie jedoch versuchen, eines der Elemente des Tupels zu ändern, erhalten Si
 TypeError: object doesn't support item assignment
 ~~~~
 
-Sie können die Elemente eines Tupels nicht ändern, aber Sie können ein Tupel durch ein anderes ersetzen:
+Wir können die Elemente eines Tupels nicht ändern, aber wir können ein Tupel durch ein anderes ersetzen:
 
 ~~~~ {.python .trinket}
 >>> t = ('A',) + t[1:]
@@ -120,9 +120,7 @@ Vergleichen von Tupeln
 \index{sort (Methode)}
 \index{Methode!sort}
 
-The comparison operators work with tuples and other sequences. Python starts by comparing the first element from each sequence. If they are equal, it goes on to the next element, and so on, until it finds elements that differ. Subsequent elements are not considered (even if they are really big).
-
-Die Vergleichsoperatoren arbeiten mit Tupeln und anderen Sequenzen. Python beginnt mit dem Vergleich des jeweils ersten Elements aus jeder Sequenz. Wenn beide gleich sind, geht es weiter zum nächsten Element und so weiter, bis zwei Elemente gefunden wurden, die sich unterscheiden. Diese werden entsprechend des verwendeten Operators verglichen. Damit endet der Vergleich der Tupeln. Alle danach kommenden Elemente werden also nicht mehr berücksichtigt.
+Die Vergleichsoperatoren funktionieren mit Tupeln und anderen Sequenzen. Python beginnt mit dem Vergleich des jeweils ersten Elements aus jeder Sequenz. Wenn beide gleich sind, geht es weiter zum nächsten Element und so weiter, bis zwei Elemente gefunden wurden, die sich unterscheiden. Diese werden entsprechend des verwendeten Operators verglichen. Damit endet der Vergleich der Tupeln. Alle danach kommenden Elemente werden also nicht mehr berücksichtigt.
 
 ~~~~ {.python .trinket}
 >>> (0, 1, 2) < (0, 3, 4)
@@ -131,9 +129,9 @@ True
 True
 ~~~~
 
-Die Funktion `sort` arbeitet auf die gleiche Weise. Sie sortiert primär nach ersten Element, aber im Falle eines Gleichstandes nach dem zweiten Element und und so weiter.
+Die Funktion `sort` arbeitet auf die gleiche Weise. Sie sortiert primär nach dem ersten Element, aber im Falle eines Gleichstandes nach dem zweiten Element und so weiter.
 
-Diese Funktion eignet sich für ein Muster namens *DSU* für
+Diese Funktion eignet sich für ein Muster namens *DSU*:
 
 Decorate
 :   „Dekorieren“ einer Sequenz, indem eine Liste von Tupeln mit einem oder mehreren Sortierschlüsseln den Elementen der Sequenz vorangestellt werden.
@@ -150,7 +148,7 @@ Undecorate
 \index{Muster!Decorate-Sort-Undecorate}
 \index{Romeo and Juliet}
 
-Angenommen, Sie haben eine Liste von Wörtern und möchten diese nach den Wortlängen absteigend sortieren:
+Angenommen, wir haben eine Liste von Wörtern und möchten diese nach den Wortlängen absteigend sortieren:
 
 \VerbatimInput{../code3/soft.py} 
 
@@ -181,7 +179,7 @@ Tupel-Zuweisung
 \index{Swap (Muster)}
 \index{Muster!Swap}
 
-Eine der einzigartigen syntaktischen Eigenschaften der Sprache Python ist die Fähigkeit, ein Tupel auf der linken Seite einer Zuweisung haben zu können. Dadurch können Sie mehr als eine Variable auf einmal zuweisen, wenn die linke Seite eine Sequenz ist.
+Eine der einzigartigen syntaktischen Eigenschaften der Sprache Python ist die Fähigkeit, ein Tupel auf der linken Seite einer Zuweisung haben zu können. Dadurch können wir mehr als eine Variable auf einmal zuweisen, wenn die linke Seite eine Sequenz ist.
 
 In diesem Beispiel haben wir eine zweielementige Liste (die eine Sequenz ist) und weisen das erste und zweite Element der Sequenz den Variablen `x` und `y` in einer einzigen Anweisung zu.
 
@@ -195,7 +193,7 @@ In diesem Beispiel haben wir eine zweielementige Liste (die eine Sequenz ist) un
 >>>
 ~~~~
 
-Es ist keine Magie, Python übersetzt die Tupel-Zuweisungssyntax in etwa so, dass sie wie folgt aussieht:^[Python übersetzt die Syntax nicht wörtlich. Wenn Sie dies zum Beispiel mit einem Wörterbuch versuchen, wird es nicht so funktionieren, wie Sie es vielleicht erwarten.]
+Es ist keine Magie, Python übersetzt die Tupel-Zuweisungssyntax in etwa so, dass sie wie folgt aussieht:^[Python übersetzt die Syntax nicht wörtlich. Wenn wir dies zum Beispiel mit einem Wörterbuch versuchen, wird es nicht so funktionieren, wie wir es vielleicht erwarten.]
 
 ~~~~ {.python .trinket}
 >>> m = [ 'have', 'fun' ]
@@ -238,7 +236,7 @@ Die Anzahl der Variablen auf der linken Seite und die Anzahl der Werte auf der r
 ValueError: too many values to unpack
 ~~~~
 
-Allgemeiner ausgedrückt, kann die rechte Seite eine beliebige Sequenz (String, Liste oder Tupel) sein. Um z. B. eine E-Mail-Adresse in einen Benutzernamen und eine Domäne aufzuteilen, könnten Sie schreiben:
+Allgemeiner ausgedrückt, kann die rechte Seite eine beliebige Sequenz (String, Liste oder Tupel) sein. Um z. B. eine E-Mail-Adresse in einen Benutzernamen und eine Domäne aufzuteilen, könnten wir schreiben:
 
 \index{split (Methode)
 \index{Methode!split}
@@ -275,7 +273,7 @@ Wörterbücher haben eine Methode namens `items`, die eine Liste von Tupeln zur�
 [('b', 1), ('a', 10), ('c', 22)]
 ~~~~
 
-Wie Sie es vermutlich von einem Wörterbuch erwarten, sind die Begriffe in keiner bestimmten Reihenfolge angeordnet.
+Wie wir es vermutlich von einem Wörterbuch erwarten, sind die Begriffe in keiner bestimmten Reihenfolge angeordnet.
 
 Da die Liste der Tupel jedoch eine Liste ist und Tupel vergleichbar sind, können wir nun die Liste der Tupel sortieren. Das Konvertieren eines Wörterbuchs in eine Liste von Tupeln ist eine Möglichkeit, den Inhalt eines Wörterbuchs nach Schlüssel sortiert auszugeben:
 
@@ -297,7 +295,7 @@ Mehrfachzuweisung mit Wörterbüchern
 \index{Traversieren!Wörterbuch}
 \index{Wörterbuch!Traversieren}
 
-Durch die Kombination von `items`, Tupel-Zuweisung und `for` können Sie ein schönes Code-Schema für das Durchlaufen der Schlüssel und Werte eines Wörterbuchs in einer einzigen Schleife sehen:
+Durch die Kombination von `items`, Tupel-Zuweisung und `for` können wir ein schönes Code-Schema für das Durchlaufen der Schlüssel und Werte eines Wörterbuchs in einer einzigen Schleife sehen:
 
 ~~~~ {.python}
 for key, val in list(d.items()):
@@ -320,7 +318,7 @@ Auch hier gilt wieder die Reihenfolge der Hash-Schlüssel (d. h. letztendlich ke
 
 Wenn wir diese beiden Techniken kombinieren, können wir den Inhalt eines Wörterbuchs sortiert nach dem *Wert*, der in jedem Schlüssel-Wert-Paar gespeichert ist, ausgeben.
 
-Um dies zu tun, erstellen wir zunächst eine Liste von Tupeln, wobei jedes Tupel `(value, key)` ist. Die Methode `items` würde uns eine Liste von `(key, value)`-Tupeln liefern, aber dieses Mal wollen wir nach Wert und nicht nach Schlüssel sortieren. Sobald wir die Liste mit den Wert-Schlüssel-Tupeln aufgebaut haben, ist es eine einfache Sache, die Liste in umgekehrter Reihenfolge zu sortieren und die neue, sortierte Liste auszudrucken.
+Um dies zu tun, erstellen wir zunächst eine Liste von Tupeln, wobei jedes Tupel `(value, key)` ist. Die Methode `items` würde uns eine Liste von `(key, value)`-Tupeln liefern, aber dieses Mal wollen wir nach Wert und nicht nach Schlüssel sortieren. Sobald wir die Liste mit den Wert-Schlüssel-Tupeln aufgebaut haben, ist es eine einfache Sache, die Liste in umgekehrter Reihenfolge zu sortieren und die neue, sortierte Liste auszugeben.
 
 ~~~~ {.python}
 >>> d = {'a':10, 'b':1, 'c':22}
@@ -343,7 +341,7 @@ Die häufigsten Wörter
 
 \index{Romeo and Juliet}
 
-Wenn wir zu unserem laufenden Beispiel des Textes aus *Romeo und Juliet* Akt 2, Szene 2 zurückkehren, können wir unser Programm erweitern, um diese Technik zu verwenden, um die zehn häufigsten Wörter im Text wie folgt auszugeben:
+Wenn wir zu unserem laufenden Beispiel des Textes aus *Romeo und Juliet* Akt 2, Szene 2 zurückkehren, können wir unser Programm erweitern, um diese Technik zu verwenden und die zehn häufigsten Wörter im Text wie folgt auszugeben:
 
 \VerbatimInput{../code3/count3.py} 
 \begin{trinketfiles}
@@ -403,9 +401,9 @@ Zeichenketten, Listen und Tupel
 
 \index{Folge}
 
-Ich habe mich auf Listen von Tupeln konzentriert, aber fast alle Beispiele in diesem Kapitel arbeiten auch mit Listen von Listen, Tupeln von Tupeln und Tupeln von Listen. Um die Aufzählung der möglichen Kombinationen zu vermeiden, ist es manchmal einfacher, von „Sequenzen von Sequenzen“ zu sprechen.
+Ich habe mich hierbei auf Listen von Tupeln konzentriert, aber fast alle Beispiele in diesem Kapitel arbeiten auch mit Listen von Listen, Tupeln von Tupeln und Tupeln von Listen. Um die Aufzählung der möglichen Kombinationen zu vermeiden, ist es manchmal einfacher, von „Sequenzen von Sequenzen“ zu sprechen.
 
-In vielen Kontexten können die verschiedenen Arten von Sequenzen (Strings, Listen und Tupel) austauschbar verwendet werden. Wie und warum wählen Sie also eine der beiden Arten aus?
+In vielen Kontexten können die verschiedenen Arten von Sequenzen (Strings, Listen und Tupel) austauschbar verwendet werden. Wie und warum wählen wir also eine der beiden Arten aus?
 
 \index{Zeichenkette}
 \index{Liste}
@@ -413,15 +411,15 @@ In vielen Kontexten können die verschiedenen Arten von Sequenzen (Strings, List
 \index{Veränderbarkeit}
 \index{Unveränderlichkeit}
 
-Um mit dem Offensichtlichen zu beginnen: Zeichenketten sind begrenzter als andere Sequenzen, da die Elemente Zeichen sein müssen. Außerdem sind sie unveränderlich. Wenn Sie die Möglichkeit benötigen, die Zeichen in einer Zeichenfolge zu ändern (im Gegensatz zur Erstellung einer neuen Zeichenfolge), sollten Sie stattdessen eine Liste von Zeichen verwenden.
+Um mit dem Offensichtlichen zu beginnen: Zeichenketten sind begrenzter als andere Sequenzen, da die Elemente Zeichen sein müssen. Außerdem sind sie unveränderlich. Wenn wir die Möglichkeit benötigen, die Zeichen in einer Zeichenfolge zu ändern (im Gegensatz zur Erstellung einer neuen Zeichenfolge), sollten wir stattdessen eine Liste von Zeichen verwenden.
 
-Listen sind üblicher als Tupel, hauptsächlich weil sie veränderbar sind. Aber es gibt ein paar Fälle, in denen Sie Tupel bevorzugen könnten:
+Listen sind üblicher als Tupel, hauptsächlich weil sie veränderbar sind. Aber es gibt ein paar Fälle, in denen wir Tupel bevorzugen könnten:
 
-1.  In manchen Kontexten, wie z. B. einer `return`-Anweisung, ist es syntaktisch einfacher, ein Tupel zu erstellen als eine Liste. In anderen Kontexten bevorzugen Sie vielleicht eine Liste.
+1.  In manchen Kontexten, wie z. B. einer `return`-Anweisung, ist es syntaktisch einfacher, ein Tupel zu erstellen als eine Liste. In anderen Kontexten bevorzugen wir vielleicht eine Liste.
 
-2.  Wenn Sie eine Sequenz als Wörterbuchschlüssel verwenden möchten, müssen Sie einen unveränderlichen Typ wie ein Tupel oder einen String verwenden.
+2.  Wenn wir eine Sequenz als Wörterbuchschlüssel verwenden möchten, müssen wir einen unveränderlichen Typ wie ein Tupel oder einen String verwenden.
 
-3.  Wenn Sie eine Sequenz als Argument an eine Funktion übergeben, verringert die Verwendung von Tupeln das Potenzial für unerwartetes Verhalten aufgrund von Aliasbildung.
+3.  Wenn wir eine Sequenz als Argument an eine Funktion übergeben, verringert die Verwendung von Tupeln das Potenzial für unerwartetes Verhalten aufgrund von Aliasbildung.
 
 Da Tupel unveränderlich sind, bieten sie keine Methoden wie `sort` und `reverse`, die bestehende Listen verändern. Python bietet jedoch die eingebauten Funktionen `sorted` und `reversed`, die eine beliebige Sequenz als Parameter nehmen und eine neue Sequenz mit denselben Elementen in einer anderen Reihenfolge zurückgeben.
 
@@ -436,7 +434,7 @@ Debugging
 \index{Debugging}
 \index{Datenstruktur}
 
-Listen, Wörterbücher und Tupel sind allgemein als *Datenstrukturen* bekannt; in diesem Kapitel beginnen wir, zusammengesetzte Datenstrukturen zu sehen, wie Listen von Tupeln und Wörterbücher, die Tupel als Schlüssel und Listen als Werte enthalten. Zusammengesetzte Datenstrukturen sind nützlich, aber sie sind anfällig für das, was man als *Formatfehler* bezeichnen könnte; das heißt, Fehler, die entstehen, wenn eine Datenstruktur den falschen Typ, die falsche Größe oder die falsche Zusammensetzung hat, oder wenn Sie vielleicht etwas Code schreiben und das Format Ihrer Daten vergessen und einen Fehler einführen. Wenn Sie zum Beispiel eine Liste mit einer Ganzzahl erwarten und ich Ihnen eine einfache Ganzzahl (nicht in einer Liste) gebe, wird es nicht funktionieren.
+Listen, Wörterbücher und Tupel sind allgemein als *Datenstrukturen* bekannt; in diesem Kapitel beginnen wir, zusammengesetzte Datenstrukturen zu nutzen, wie Listen von Tupeln und Wörterbücher, die Tupel als Schlüssel und Listen als Werte enthalten. Zusammengesetzte Datenstrukturen sind nützlich, aber sie sind anfällig für das, was man als *Formatfehler* bezeichnen könnte; das heißt, Fehler, die entstehen, wenn eine Datenstruktur den falschen Typ, die falsche Größe oder die falsche Zusammensetzung hat, oder wenn wir vielleicht etwas Code schreiben und das Format der Daten vergessen und einen Fehler einführen. Wenn wir zum Beispiel eine Liste mit einer Ganzzahl erwarten und ich dem Programm eine einfache Ganzzahl (nicht in einer Liste) gebe, wird es nicht funktionieren.
 
 Glossar
 -------
@@ -450,7 +448,7 @@ Datenstruktur
 \index{Datenstruktur}
 
 DSU
-:   Abkürzung für „Decorate-Ssort-Undecorate“, ein Muster, bei dem eine Liste von Tupeln erstellt, sortiert und ein Teil des Ergebnisses extrahiert wird.
+:   Abkürzung für „Decorate-Sort-Undecorate“, ein Muster, bei dem eine Liste von Tupeln erstellt, sortiert und ein Teil des Ergebnisses extrahiert wird.
 \index{DSU-Muster}
 
 hashbar
@@ -466,18 +464,18 @@ Tupel
 \index{Tupel}
 
 Tupelzuweisung
-:   An assignment with a sequence on the right side and a tuple of
-    variables on the left. The right side is evaluated and then its
-    elements are assigned to the variables on the left.
+:   Eine Zuweisung mit einer Sequenz auf der rechten Seite und einem Tupel von
+    Variablen auf der linken Seite. Die rechte Seite wird ausgewertet und dann werden ihre
+    Elemente den Variablen auf der linken Seite zugewiesen.
 \index{Tupelzuweisung}
 \index{Zuweisung!Tupel}
 
 Übungen
 -------
 
-**Übung 1: Überarbeiten Sie ein vorheriges Programm wie folgt: Lesen und parsen Sie die „From“-Zeilen und extrahieren Sie die Adressen aus der Zeile. Zählen Sie mit Hilfe eines Wörterbuchs die Anzahl der Nachrichten von jeder Person.**
+**Übung 1: Das vorherige Programm soll auf folgende Weise überarbeitet werden: Die „From“-Zeilen sollen gelesen und geparst werden, um im Folgenden die Adressen aus der Zeile zu extrahieren. Dabei soll mit Hilfe eines Wörterbuchs die Anzahl der Nachrichten von jeder Person gezählt werden.**
 
-**Nachdem alle Daten gelesen wurden, geben Sie die Person mit den meisten Nachrichten aus, indem Sie eine Liste von `(count, email)`-Tupeln aus dem Wörterbuch erstellen. Dann sortieren Sie die Liste in umgekehrter Reihenfolge und geben die Person aus, die die meisten Nachrichten hat.**
+**Nachdem alle Daten gelesen wurden, soll die Person mit den meisten Nachrichten ausgegeben werden, indem eine Liste von `(count, email)`-Tupeln aus dem Wörterbuch erstellt wird. Dann muss die Liste in umgekehrter Reihenfolge sortiert und schließlich die Person mit den meisten Nachrichten ausgegeben werden.**
 
 ~~~~
 Sample Line:
@@ -490,7 +488,7 @@ Enter a file name: mbox.txt
 zqian@umich.edu 195
 ~~~~
 
-**Übung 2: Schreiben Sie ein Programm, welches die Häufigkeit von Nachrichten pro Tageszeit (ganze Stunden) ermittel. Sie können die Stunde aus der „From“-Zeile extrahieren, indem Sie die Uhrzeit-Zeichenfolge finden und diese Zeichenfolge dann mit anhand des Doppelpunkts in Teile zergliedern. Sobald Sie die Nachrichtenhäufigkeit für jede Stunde gesammelt haben, geben Sie die Häufigkeiten aus, eine pro Zeile, sortiert nach Stunde, wie unten gezeigt.**
+**Übung 2: Es solle ein Programm geschrieben werden, welches die Häufigkeit von Nachrichten pro Tageszeit (ganze Stunden) ermittelt. Die Stunden sollen aus der „From“-Zeile extrahiert werden, indem die Uhrzeit-Zeichenfolge gefunden und diese Zeichenfolge dann anhand des Doppelpunkts in Teile zergliedert wird. Sobald die Nachrichtenhäufigkeit für jede Stunde gesammelt wurde, sollen diese wie weiter unten gezeigt ausgegeben werden (eine pro Zeile, sortiert nach Stunde).**
 
 ~~~~
 python timeofday.py
@@ -509,7 +507,7 @@ Enter a file name: mbox-short.txt
 19 1
 ~~~~
 
-**Übung 3: Schreiben Sie ein Programm, das eine Datei liest und die *Buchstaben* in absteigender Reihenfolge der Häufigkeit ausgibt. Ihr Programm sollte alle Eingaben in Kleinbuchstaben umwandeln und nur die Buchstaben a-z zählen. Ihr Programm sollte keine Leerzeichen, Ziffern, Interpunktionszeichen oder irgendetwas anderes als die Buchstaben a-z zählen. Suchen Sie Textbeispiele aus verschiedenen Sprachen und sehen Sie, wie die Buchstabenhäufigkeit zwischen den Sprachen variiert. Vergleichen Sie Ihre Ergebnisse mit den Tabellen auf <https://wikipedia.org/wiki/Letter_frequencies>.**
+**Übung 3: Es soll ein Programm geschrieben werden, das eine Datei liest und die *Buchstaben* in absteigender Reihenfolge der Häufigkeit ausgibt. Das Programm sollte alle Eingaben in Kleinbuchstaben umwandeln und nur die Buchstaben a-z zählen. Es soll keine Leerzeichen, Ziffern, Interpunktionszeichen oder irgendetwas anderes als die Buchstaben a-z zählen. Dann sollen Textbeispiele aus verschiedenen Sprachen als Eingabe dienen und analyisiert werden, wie die Buchstabenhäufigkeit zwischen den Sprachen variiert. Schließlich sollen die Ergebnisse mit den Tabellen auf <https://wikipedia.org/wiki/Letter_frequencies> verglichen werden.**
 
 \index{Buchstabenhäufigkeit}
 \index{Häufigkeit!Buchstaben}

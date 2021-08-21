@@ -35,9 +35,9 @@ Während sich dieses Kapitel auf die Verwendung von Python für die Arbeit mit D
 
 <http://sqlitebrowser.org/>
 
-Mit dem Browser können Sie ganz einfach Tabellen erstellen, Daten einfügen, Daten bearbeiten oder einfache SQL-Abfragen zu den Daten in der Datenbank ausführen.
+Mit dem Browser können wir ganz einfach Tabellen erstellen, Daten einfügen, Daten bearbeiten oder einfache SQL-Abfragen zu den Daten in der Datenbank ausführen.
 
-In gewisser Weise ähnelt der Datenbank-Browser einem Texteditor beim Arbeiten mit Textdateien. Wenn Sie eine oder sehr wenige Operationen an einer Textdatei durchführen möchten, können Sie sie einfach in einem Texteditor öffnen und die gewünschten Änderungen vornehmen. Wenn Sie viele Änderungen an einer Textdatei vornehmen müssen, werden Sie oft ein einfaches Python-Programm schreiben. Das gleiche Vorgehen werden Sie bei der Arbeit mit Datenbanken finden. Sie werden einfache Operationen im Datenbankmanager durchführen und komplexere Operationen werden am bequemsten in Python erledigt.
+In gewisser Weise ähnelt der Datenbank-Browser einem Texteditor beim Arbeiten mit Textdateien. Wenn wir eine oder sehr wenige Operationen an einer Textdatei durchführen möchten, können wir sie einfach in einem Texteditor öffnen und die gewünschten Änderungen vornehmen. Wenn wir viele Änderungen an einer Textdatei vornehmen müssen, werden wir oft ein einfaches Python-Programm schreiben. Das gleiche Vorgehen werden wir bei der Arbeit mit Datenbanken finden. Wir werden einfache Operationen im Datenbankmanager durchführen und komplexere Operationen werden am bequemsten in Python erledigt.
 
 Erstellen einer Datenbanktabelle
 --------------------------------
@@ -46,11 +46,11 @@ Datenbanken erfordern eine definiertere Struktur als Python-Listen oder -Wörter
 
 Wenn wir eine *Datenbanktabelle* erstellen, müssen wir der Datenbank im Voraus die Namen der einzelnen *Spalten* in der Tabelle und die Art der Daten mitteilen, die wir in jeder *Spalte* zu speichern beabsichtigen. Wenn die Datenbanksoftware den Typ der Daten in jeder Spalte kennt, kann sie den effizientesten Weg zum Speichern und Nachschlagen der Daten auf der Grundlage des Datentyps wählen.
 
-Die verschiedenen Datentypen, die von SQLite unterstützt werden, können Sie sich unter der folgenden URL ansehen:
+Die verschiedenen Datentypen, die von SQLite unterstützt werden, können wir unter der folgenden URL einsehen:
 
 <http://www.sqlite.org/datatypes.html>
 
-Das Definieren einer Struktur für Ihre Daten im Voraus mag anfangs umständlich erscheinen, aber der Lohn ist ein schneller Zugriff auf Ihre Daten, selbst wenn die Datenbank eine große Menge an Daten enthält.
+Das Definieren einer Struktur für unsere Daten im Voraus mag anfangs umständlich erscheinen, aber der Vorteil ist ein schneller Zugriff auf unsere Daten, selbst wenn die Datenbank eine große Menge an Daten enthält.
 
 Der Code zum Erstellen einer Datenbankdatei und einer Tabelle namens `Tracks` mit zwei Spalten in der Datenbank lautet wie folgt:
 
@@ -78,7 +78,7 @@ Datenbankbefehle werden in einer speziellen Sprache ausgedrückt, die über viel
 
 In unserem Beispiel führen wir zwei SQL-Befehle in unserer Datenbank aus. Als Konvention zeigen wir die SQL-Schlüsselwörter in Großbuchstaben und die Teile des Befehls, die wir hinzufügen (z. B. die Tabellen- und Spaltennamen), werden in Kleinbuchstaben dargestellt.
 
-Der erste SQL-Befehl entfernt die Tabelle `Tracks` aus der Datenbank, falls sie existiert. Dieses Muster dient lediglich dazu, dass wir das gleiche Programm zum Erstellen der Tabelle `Tracks` immer wieder ausführen können, ohne einen Fehler zu verursachen. Beachten Sie, dass der Befehl `DROP TABLE` die Tabelle und ihren gesamten Inhalt aus der Datenbank löscht (d. h. es gibt kein „Undo“).
+Der erste SQL-Befehl entfernt die Tabelle `Tracks` aus der Datenbank, falls sie existiert. Dieses Muster dient lediglich dazu, dass wir das gleiche Programm zum Erstellen der Tabelle `Tracks` immer wieder ausführen können, ohne einen Fehler zu verursachen. Es sei zu beachten, dass der Befehl `DROP TABLE` die Tabelle und ihren gesamten Inhalt aus der Datenbank löscht (d. h. es gibt kein „Undo“).
 
 ~~~~ {.python}
 cur.execute('DROP TABLE IF EXISTS Tracks ')
@@ -92,7 +92,7 @@ cur.execute('CREATE TABLE Tracks (title TEXT, plays INTEGER)')
 
 Nachdem wir nun eine Tabelle namens `Tracks` erstellt haben, können wir mit der SQL-Operation `INSERT` Daten in diese Tabelle einfügen. Wieder beginnen wir damit, eine Verbindung zur Datenbank herzustellen und einen „Cursor“ zu erhalten. Dann können wir SQL-Befehle mit dem Cursor ausführen.
 
-Der SQL-Befehl `INSERT` gibt an, welche Tabelle wir verwenden und definiert dann eine neue Zeile, indem er die Felder auflistet, die wir einschließen wollen `(title, plays)`, gefolgt von den `VALUES`, die wir in der neuen Zeile platzieren wollen. Wir geben die Werte als Fragezeichen `(?, ?)` an, um anzuzeigen, dass die tatsächlichen Werte als Tupel `( 'My Way', 15 ) ` als zweiter Parameter an den Aufruf von `execute()` übergeben werden.
+Der SQL-Befehl `INSERT` gibt an, welche Tabelle wir verwenden und definiert dann eine neue Zeile, indem er die Felder auflistet, die wir einschließen `(title, plays)`, gefolgt von den `VALUES`, die wir in der neuen Zeile platzieren wollen. Wir geben die Werte als Fragezeichen `(?, ?)` an, um anzuzeigen, dass die tatsächlichen Werte als Tupel `( 'My Way', 15 ) ` als zweiter Parameter an den Aufruf von `execute()` übergeben werden.
 
 \VerbatimInput{../code3/db2.py}
 
@@ -116,7 +116,7 @@ Unsere `for`-Schleife findet zwei Zeilen, und jede Zeile ist ein Python-Tupel mi
 
 *Hinweis: In anderen Büchern oder im Internet sehen Sie möglicherweise Zeichenketten, die mit `u'` beginnen. Dies war in Python 2 ein Hinweis darauf, dass es sich bei den Strings um *Unicode*-Strings handelt, die in der Lage sind, nicht-lateinische Zeichensätze zu speichern. In Python 3 sind alle Zeichenketten standardmäßig Unicode-Zeichenketten.*
 
-Ganz am Ende des Programms führen wir einen SQL-Befehl aus, um die gerade erstellten Zeilen mit `DELETE` zu löschen, damit wir das Programm immer wieder ausführen können. Der `DELETE`-Befehl zeigt die Verwendung einer `WHERE`-Klausel, mit der wir ein Auswahlkriterium ausdrücken können, so dass wir die Datenbank bitten können, den Befehl nur auf die Zeilen anzuwenden, die das Kriterium erfüllen. In diesem Beispiel trifft das Kriterium zufällig auf alle Zeilen zu, also leeren wir die Tabelle, damit wir das Programm wiederholt ausführen können. Nachdem das `DELETE` ausgeführt wurde, rufen wir auch `commit()` auf, um die Entfernung der Daten aus der Datenbank zu erzwingen.
+Ganz am Ende des Programms führen wir einen SQL-Befehl aus, um die gerade erstellten Zeilen mit `DELETE` zu löschen, damit wir das Programm immer wieder ausführen können. Der `DELETE`-Befehl zeigt die Verwendung einer `WHERE`-Klausel, mit der wir ein Auswahlkriterium angeben, so dass wir die Datenbank bitten können, den Befehl nur auf die Zeilen anzuwenden, die das Kriterium erfüllen. In diesem Beispiel trifft das Kriterium zufällig auf alle Zeilen zu, also leeren wir die Tabelle, damit wir das Programm wiederholt ausführen können. Nachdem das `DELETE` ausgeführt wurde, rufen wir auch `commit()` auf, um die Entfernung der Daten aus der Datenbank zu erzwingen.
 
 Zusammenfassung von SQL
 -----------------------
@@ -139,7 +139,7 @@ INSERT INTO Tracks (title, plays) VALUES ('My Way', 15)
 
 Die Anweisung `INSERT` gibt den Tabellennamen an, dann eine Liste der Spalten, in die Sie Werte schreiben möchten, und dann das Schlüsselwort `VALUES` und eine Liste der entsprechenden Werte für jedes der Felder.
 
-Der SQL-Befehl `SELECT` wird zum Abrufen von Zeilen und Spalten aus einer Datenbank verwendet. Mit der `SELECT`-Anweisung können Sie angeben, welche Spalten Sie abrufen möchten, sowie eine `WHERE`-Klausel, um die Zeilen auszuwählen, die Sie sehen möchten. Sie erlaubt auch eine optionale "ORDER BY"-Klausel, um die Sortierung der zurückgegebenen Zeilen zu steuern.
+Der SQL-Befehl `SELECT` wird zum Abrufen von Zeilen und Spalten aus einer Datenbank verwendet. Mit der `SELECT`-Anweisung können wir angeben, welche Spalten wir abrufen möchten, sowie eine `WHERE`-Klausel definieren, um die Zeilen auszuwählen, die wir sehen möchten. Sie erlaubt auch eine optionale "ORDER BY"-Klausel, um die Sortierung der zurückgegebenen Zeilen zu steuern.
 
 ~~~~ {.sql}
 SELECT * FROM Tracks WHERE title = 'My Way'
@@ -147,15 +147,15 @@ SELECT * FROM Tracks WHERE title = 'My Way'
 
 Die Verwendung von `*` zeigt an, dass die Datenbank alle Spalten für jede Zeile zurückgeben soll, die mit der `WHERE`-Klausel übereinstimmt.
 
-Beachten Sie, dass anders als in Python in einer SQL-`WHERE`-Klausel ein einzelnes Gleichheitszeichen verwendet wird, um einen Test auf Gleichheit anzuzeigen, und nicht ein doppeltes Gleichheitszeichen. Andere logische Operationen, die in einer `WHERE`-Klausel erlaubt sind, sind `<`, `>`, `<=`, `>=`, `!=`, sowie `AND` und `OR` und Klammern, um Ihre logischen Ausdrücke aufzubauen.
+Es sei zu beachten, dass anders als in Python in einer SQL-`WHERE`-Klausel ein einzelnes Gleichheitszeichen verwendet wird, um einen Test auf Gleichheit anzuzeigen, und nicht ein doppeltes Gleichheitszeichen. Andere logische Operationen, die in einer `WHERE`-Klausel erlaubt sind, sind `<`, `>`, `<=`, `>=`, `!=`, sowie `AND` und `OR` und Klammern, um unsere logischen Ausdrücke aufzubauen.
 
-Sie können anfordern, dass die zurückgegebenen Zeilen nach einem der Felder wie folgt sortiert werden:
+Wir können anfordern, dass die zurückgegebenen Zeilen nach einem der Felder wie folgt sortiert werden:
 
 ~~~~ {.sql}
 SELECT title,plays FROM Tracks ORDER BY title
 ~~~~
 
-Um eine Zeile zu entfernen, benötigen Sie eine `WHERE`-Klausel in einer SQL `DELETE`-Anweisung. Die `WHERE`-Klausel bestimmt, welche Zeilen gelöscht werden sollen:
+Um eine Zeile zu entfernen, benötigen wir eine `WHERE`-Klausel in einer SQL `DELETE`-Anweisung. Die `WHERE`-Klausel bestimmt, welche Zeilen gelöscht werden sollen:
 
 ~~~~ {.sql}
 DELETE FROM Tracks WHERE title = 'My Way'
@@ -167,22 +167,22 @@ Es ist möglich, eine oder mehrere Spalten in einer oder mehreren Zeilen einer T
 UPDATE Tracks SET plays = 16 WHERE title = 'My Way'
 ~~~~
 
-Die `UPDATE`-Anweisung spezifiziert eine Tabelle und dann eine Liste von Feldern und Werten, die nach dem `SET`-Schlüsselwort geändert werden sollen, und dann eine optionale `WHERE`-Klausel, um die Zeilen auszuwählen, die aktualisiert werden sollen. Eine einzelne `UPDATE`-Anweisung ändert alle Zeilen, die mit der `WHERE`-Klausel übereinstimmen. Wenn keine `WHERE`-Klausel angegeben ist, wird die `UPDATE`-Anweisung für alle Zeilen in der Tabelle ausgeführt.
+Die `UPDATE`-Anweisung spezifiziert eine Tabelle, eine Liste von Feldern und Werten, die nach dem `SET`-Schlüsselwort geändert werden sollen, und dann eine optionale `WHERE`-Klausel, um die Zeilen auszuwählen, die aktualisiert werden sollen. Eine einzelne `UPDATE`-Anweisung ändert alle Zeilen, die mit der `WHERE`-Klausel übereinstimmen. Wenn keine `WHERE`-Klausel angegeben ist, wird die `UPDATE`-Anweisung für alle Zeilen in der Tabelle ausgeführt.
 
 Diese vier grundlegenden SQL-Befehle (`INSERT`, `SELECT`, `UPDATE` und `DELETE`) ermöglichen die vier grundlegenden Operationen, die zum Erstellen und Verwalten von Daten erforderlich sind.
 
 Auslesen von Twitter-Daten mithilfe einer Datenbank 
 ---------------------------------------------------
 
-In diesem Abschnitt werden wir ein einfaches Spidering-Programm erstellen, das Twitter-Konten durchgeht und eine Datenbank von ihnen erstellt. *Hinweis: Seien Sie sehr vorsichtig, wenn Sie dieses Programm ausführen. Sie möchten nicht zu viele Daten abrufen oder das Programm zu lange laufen lassen, damit Ihren Zugang nicht sperrt.*
+In diesem Abschnitt werden wir ein einfaches Spidering-Programm erstellen, das Twitter-Konten durchgeht und eine Datenbank von ihnen erstellt. *Hinweis: Vorsicht, wenn das Programm ausgeführt wird. Wir möchten nicht zu viele Daten abrufen oder das Programm zu lange laufen lassen, damit der Zugang nicht gesperrt wird.*
 
-Eines der Probleme bei jeder Art von Spidering-Programm ist, dass es in der Lage sein muss, viele Male angehalten und neu gestartet zu werden, und Sie wollen nicht die Daten verlieren, die Sie bisher abgerufen haben. Sie wollen Ihre Datenabfrage nicht immer wieder von vorne beginnen, also wollen wir die Daten speichern, während wir sie abrufen, damit unser Programm wieder starten und dort weitermachen kann, wo es aufgehört hat.
+Eines der Probleme bei jeder Art von Spidering-Programm ist, dass es in der Lage sein muss, viele Male angehalten und neu gestartet zu werden, ohne das wir dabei die Daten verlieren, die wir bisher abgerufen haben. Wir wollen unsere Datenabfrage nicht immer wieder von vorne beginnen, also wollen wir die Daten speichern, während wir sie abrufen, damit unser Programm wieder starten und dort weitermachen kann, wo es aufgehört hat.
 
 Wir beginnen damit, dass wir die Twitter-Freunde einer Person und deren Status abrufen, die Liste der Freunde in einer Schleife durchlaufen und jeden der Freunde zu einer Datenbank hinzufügen, um sie in Zukunft abrufen zu können. Nachdem wir die Twitter-Freunde einer Person verarbeitet haben, schauen wir in unserer Datenbank nach und rufen einen der Freunde des Freundes ab. Wir machen das immer wieder, wählen eine „nicht besuchte“ Person aus, rufen ihre Freundesliste ab und fügen die Freunde, die wir nicht gesehen haben, unserer Liste für einen zukünftigen Besuch hinzu.
 
 Wir verfolgen auch, wie oft wir einen bestimmten Freund in der Datenbank gesehen haben, um ein Gefühl für seine Beliebtheit zu bekommen.
 
-Indem wir unsere Liste der bekannten Konten und ob wir das Konto bereits abgerufen haben oder nicht, und wie beliebt das Konto ist, in einer Datenbank auf der Festplatte des Computers speichern, können wir unser Programm beliebig oft anhalten und neu starten.
+Indem wir unsere Liste der bekannten Konten und ob wir das Konto bereits abgerufen haben oder nicht, sowie wie beliebt das Konto ist, in einer Datenbank auf der Festplatte des Computers speichern, können wir unser Programm beliebig oft anhalten und neu starten.
 
 Dieses Programm ist ein wenig komplex. Es basiert auf dem Code aus der Übung weiter oben im Buch, die die Twitter-API verwendet.
 
@@ -196,7 +196,7 @@ In der Hauptschleife des Programms wird der Benutzer aufgefordert, den Namen ein
 
 Wenn der Benutzer die Eingabetaste drückt, suchen wir in der Datenbank nach dem nächsten Twitter-Konto, das wir noch nicht abgerufen haben, rufen die Freunde und den Status dieses Kontos ab, fügen sie der Datenbank hinzu oder aktualisieren sie und erhöhen die Anzahl ihrer `friends`.
 
-Sobald wir die Liste der Freunde und Status abgerufen haben, gehen wir in einer Schleife durch alle `user`-Elemente im zurückgegebenen JSON und rufen den `screen_name` für jeden Benutzer ab. Dann verwenden wir die Anweisung `SELECT`, um zu sehen, ob wir diesen bestimmten `screen_name` bereits in der Datenbank gespeichert haben und rufen die Anzahl der Freunde (`friends`) ab, wenn der Datensatz existiert.
+Sobald wir die Liste der Freunde und Stati abgerufen haben, gehen wir in einer Schleife durch alle `user`-Elemente im zurückgegebenen JSON und rufen den `screen_name` für jeden Benutzer ab. Dann verwenden wir die Anweisung `SELECT`, um zu sehen, ob wir diesen bestimmten `screen_name` bereits in der Datenbank gespeichert haben und rufen die Anzahl der Freunde (`friends`) ab, wenn der Datensatz existiert.
 
 ~~~~ {.python}
 countnew = 0
@@ -221,7 +221,7 @@ conn.commit()
 
 Sobald der Cursor die `SELECT`-Anweisung ausführt, müssen wir die Zeilen abrufen. Wir könnten dies mit einer `for`-Schleife tun, aber da wir nur eine Zeile abrufen (`LIMIT 1`), können wir die Methode `fetchone()` verwenden, um die erste (und einzige) Zeile zu laden, die das Ergebnis der `SELECT`-Anweisung ist. Da `fetchone()` die Zeile als *Tupel* zurückgibt (auch wenn es nur ein Feld gibt), nehmen wir den ersten Wert aus dem Tupel, um die aktuelle Anzahl der Freunde in die Variable `count` zu bekommen.
 
-Wenn dieser Abruf erfolgreich ist, verwenden wir die SQL-Anweisung `UPDATE` mit einer `WHERE`-Klausel, um der Spalte `friends` für die Zeile, die dem Konto des Freundes entspricht, 1 hinzuzufügen. Beachten Sie, dass es zwei Platzhalter (d. h. Fragezeichen) in der SQL-Anweisung gibt und der zweite Parameter von `execute()` ein Tupel mit zwei Elementen ist, das die Werte enthält, die in der SQL-Anweisung anstelle der Fragezeichen eingesetzt werden sollen.
+Wenn dieser Abruf erfolgreich ist, verwenden wir die SQL-Anweisung `UPDATE` mit einer `WHERE`-Klausel, um der Spalte `friends` für die Zeile, die dem Konto des Freundes entspricht, um eins zu erhöhen. Es sei zu beachten, dass es zwei Platzhalter (d. h. Fragezeichen) in der SQL-Anweisung gibt und der zweite Parameter von `execute()` ein Tupel mit zwei Elementen ist, dass die Werte enthält, die in der SQL-Anweisung anstelle der Fragezeichen eingesetzt werden sollen.
 
 Wenn der Code im `try`-Block fehlschlägt, liegt es wahrscheinlich daran, dass kein Datensatz mit der `WHERE name = ?`-Klausel der `SELECT`-Anweisung übereinstimmt. Im `except`-Block verwenden wir also die SQL-Anweisung `INSERT`, um den `screen_name` des Freundes zur Tabelle hinzuzufügen, mit dem Hinweis, dass wir den `screen_name` noch nicht abgerufen haben, und setzen die Anzahl der Freunde auf eins.
 
@@ -254,7 +254,7 @@ Wenn wir dieses Programm nach der ersten Ausführung unseres obigen Twitter-Spid
 20 rows.
 ~~~~
 
-Wir sehen eine Zeile für jeden `screen_name` und dass wir die Daten für diesen `screen_name` noch nicht abgerufen haben und dass jeder in der Datenbank einen Freund hat.
+Wir sehen eine Zeile für jeden `screen_name`. Weiterhin sehen wir dass wir die Daten für diesen `screen_name` noch nicht abgerufen haben und dass jeder in der Datenbank einen Freund hat.
 
 Jetzt spiegelt unsere Datenbank den Abruf der Freunde unseres ersten Twitter-Accounts wider (*drchuck*). Wir können das Programm erneut starten und ihm sagen, dass es die Freunde des nächsten „unverarbeiteten“ Kontos abrufen soll, indem wir die Eingabetaste anstelle eines Twitter-Kontos drücken. Etwa wie folgt:
 
@@ -313,7 +313,7 @@ Wenn wir das friend-Programm ausführen und zweimal die Eingabetaste drücken, u
 55 rows.
 ~~~~
 
-Wir können sehen, dass wir richtig erfasst haben, dass wir `lhawthorn` und `opencontent` besucht haben. Auch die Konten `cnxorg` und `kthanos` haben bereits zwei Follower. Da wir nun die Freunde von drei Personen (`drchuck`, `opencontent` und `lhawthorn`) abgerufen haben, hat unsere Tabelle 55 Zeilen mit Freunden zum Abrufen.
+Wir können sehen, dass wir `lhawthorn` und `opencontent` besucht haben. Auch die Konten `cnxorg` und `kthanos` haben bereits zwei Follower. Da wir nun die Freunde von drei Personen (`drchuck`, `opencontent` und `lhawthorn`) abgerufen haben, hat unsere Tabelle 55 Zeilen mit Freunden zum Abrufen.
 
 Jedes Mal, wenn wir das Programm starten und die Eingabetaste drücken, wählt es das nächste nicht besuchte Konto aus (z. B. wird das nächste Konto `steve_coppin` sein), ruft dessen Freunde ab, markiert sie als abgerufen und fügt sie für jeden der Freunde von `steve_coppin` entweder am Ende der Datenbank hinzu oder aktualisiert ihre Freundesanzahl, wenn sie bereits in der Datenbank sind.
 
@@ -322,15 +322,15 @@ Da die Daten des Programms alle auf der Festplatte in einer Datenbank gespeicher
 Grundlegende Datenmodellierung
 ------------------------------
 
-Die eigentliche Leistung einer relationalen Datenbank besteht darin, dass wir mehrere Tabellen erstellen und zwischen diesen Tabellen Verknüpfungen herstellen. Die Entscheidung, wie Sie Ihre Anwendungsdaten in mehrere Tabellen aufteilen und die Beziehungen zwischen den Tabellen herstellen, wird *Datenmodellierung* genannt. Das Entwurfsdokument, das die Tabellen und ihre Beziehungen zeigt, wird als *Datenmodell* bezeichnet.
+Die eigentliche Leistung einer relationalen Datenbank besteht darin, dass wir mehrere Tabellen erstellen und zwischen diesen Tabellen Verknüpfungen herstellen. Die Entscheidung, wie wir unseren Anwendungsdaten in mehrere Tabellen aufteilen und die Beziehungen zwischen den Tabellen herstellen, wird *Datenmodellierung* genannt. Das Entwurfsdokument, das die Tabellen und ihre Beziehungen zeigt, wird als *Datenmodell* bezeichnet.
 
-Die Datenmodellierung ist eine relativ anspruchsvolle Aufgabe und wir werden in diesem Abschnitt nur die grundlegendsten Konzepte der relationalen Datenmodellierung vorstellen. Für weitere Details zur Datenmodellierung können Sie hier beginnen:
+Die Datenmodellierung ist eine relativ anspruchsvolle Aufgabe und wir werden in diesem Abschnitt nur die grundlegendsten Konzepte der relationalen Datenmodellierung vorstellen. Weitere Details zur Datenmodellierung können hier eingesehen werden:
 
 <http://en.wikipedia.org/wiki/Relational_model>
 
 Nehmen wir an, für unsere Twitter-Spider-Anwendung wollten wir nicht nur die Freunde einer Person zählen, sondern eine Liste aller eingehenden Beziehungen führen, damit wir eine Liste aller Personen finden, die einem bestimmten Konto folgen.
 
-Da jeder potenziell viele Konten hat, die ihm folgen, können wir nicht einfach eine einzelne Spalte zu unserer `Twitter`-Tabelle hinzufügen. Also erstellen wir eine neue Tabelle, die die Freundespaare aufzeichnet. Im Folgenden sehen Sie eine einfache Möglichkeit, eine solche Tabelle zu erstellen:
+Da jeder potenziell viele Konten hat, die ihm folgen, können wir nicht einfach eine einzelne Spalte zu unserer `Twitter`-Tabelle hinzufügen. Also erstellen wir eine neue Tabelle, die die Freundespaare aufzeichnet. Im Folgenden sehen wir eine einfache Möglichkeit, eine solche Tabelle zu erstellen:
 
 ~~~~ {.sql}
 CREATE TABLE Pals (from_friend TEXT, to_friend TEXT)
@@ -357,7 +357,7 @@ CREATE TABLE People
     (id INTEGER PRIMARY KEY, name TEXT UNIQUE, retrieved INTEGER)
 ~~~~
 
-Beachten Sie, dass wir nicht mehr in jeder Zeile der Tabelle `People` eine Freundesanzahl führen. Wenn wir `INTEGER PRIMARY KEY` als Typ unserer `id`-Spalte wählen, geben wir an, dass wir möchten, dass SQLite diese Spalte verwaltet und jeder Zeile, die wir einfügen, automatisch einen eindeutigen numerischen Schlüssel zuweist. Wir fügen auch das Schlüsselwort `UNIQUE` hinzu, um anzugeben, dass wir SQLite nicht erlauben, zwei Zeilen mit demselben Wert für `name` einzufügen.
+Es sei zu beachten, dass wir nicht mehr in jeder Zeile der Tabelle `People` eine Freundesanzahl führen. Wenn wir `INTEGER PRIMARY KEY` als Typ unserer `id`-Spalte wählen, geben wir an, dass SQLite diese Spalte verwaltet und jeder Zeile, die wir einfügen, automatisch einen eindeutigen numerischen Schlüssel zuweist. Wir fügen auch das Schlüsselwort `UNIQUE` hinzu, um anzugeben, dass wir SQLite nicht erlauben, zwei Zeilen mit demselben Wert für `name` einzufügen.
 
 Statt der obigen Tabelle `Pals` erstellen wir nun eine Tabelle namens `Follows` mit zwei Integer-Spalten `from_id` und `to_id` und einer Einschränkung (englisch Constraint) für die Tabelle, dass die *Kombination* von `from_id` und `to_id` in dieser Tabelle eindeutig sein muss (d. h. wir können keine doppelten Zeilen einfügen) in unserer Datenbank.
 
@@ -366,9 +366,9 @@ CREATE TABLE Follows
     (from_id INTEGER, to_id INTEGER, UNIQUE(from_id, to_id) )
 ~~~~
 
-Wenn wir `UNIQUE`-Klauseln zu unseren Tabellen hinzufügen, kommunizieren wir eine Reihe von Regeln, die wir von der Datenbank verlangen, wenn wir versuchen, Datensätze einzufügen. Wir erstellen diese Regeln aus Bequemlichkeit in unseren Programmen, wie wir gleich sehen werden. Die Regeln halten uns davon ab, Fehler zu machen, und machen es einfacher, einen Teil unseres Codes zu schreiben.
+Wenn wir `UNIQUE`-Klauseln zu unseren Tabellen hinzufügen, kommunizieren wir eine Reihe von Regeln, die wir von der Datenbank verlangen, wenn wir versuchen, Datensätze einzufügen. Wir erstellen diese Regeln aus Bequemlichkeit in unseren Programmen. Die Regeln halten uns davon ab, Fehler zu machen, und machen es einfacher, einen Teil unseres Codes zu schreiben.
 
-Im Wesentlichen modellieren wir bei der Erstellung dieser `Follows`-Tabelle eine *Beziehung* (Relation), bei der eine Person einer anderen „folgt“, und stellen sie mit einem Zahlenpaar dar, das anzeigt, dass (a) die Personen miteinander verbunden sind und (b) die Richtung der Beziehung.
+Im Wesentlichen modellieren wir bei der Erstellung dieser `Follows`-Tabelle eine *Beziehung* (Relation), bei der eine Person einer anderen „folgt“, und stellen sie mit einem Zahlenpaar dar, das anzeigt, dass (a) die Personen miteinander verbunden sind und (b) die Richtung der Beziehung verdeutlicht.
 
 ![Beziehungen zwischen Tabellen](height=3.5in@figs2/twitter)
 
@@ -379,19 +379,19 @@ Wir werden nun das Twitter-Spider-Programm mit zwei Tabellen, den Primärschlüs
 
 \VerbatimInput{../code3/twfriends.py}
 
-Dieses Programm fängt an, ein bisschen kompliziert zu werden, aber es veranschaulicht die Muster, die wir verwenden müssen, wenn wir Integer-Schlüssel zur Verknüpfung von Tabellen verwenden. Das grundlegende Vorgehen sind:
+Dieses Programm fängt an, ein bisschen kompliziert zu werden, aber es veranschaulicht die Muster, die wir verwenden müssen, wenn wir Integer-Schlüssel zur Verknüpfung von Tabellen verwenden. Das grundlegende Vorgehen ist:
 
-1.  Erstellen Sie Tabellen mit Primärschlüsseln und Constraints.
+1.  Erstellen der Tabellen mit Primärschlüsseln und Constraints.
 
 2.  Wenn wir einen logischen Schlüssel für eine Person haben (z. B. den Kontonamen) und den `id`-Wert für die Person benötigen, müssen wir je nachdem, ob die Person bereits in der Tabelle `People` enthalten ist oder nicht, entweder (1) die Person in der Tabelle `People` nachschlagen und den Wert `id` für die Person abrufen oder (2) die Person zur Tabelle `People` hinzufügen und den Wert `id` für die neu hinzugefügte Zeile abrufen.
 
-3.  Fügen Sie die Zeile ein, die die `Follows`-Beziehung erfasst.
+3.  Einfügen der Zeilen, die die `Follows`-Beziehung erfasst.
 
 Wir werden jeden dieser Punkte nacheinander behandeln.
 
 ### Constraints in Datenbanktabellen
 
-Wenn wir unsere Tabellenstrukturen entwerfen, können wir dem Datenbanksystem mitteilen, dass wir möchten, dass es uns ein paar Regeln auferlegt. Diese Regeln helfen uns, Fehler zu vermeiden und falsche Daten in unsere Tabellen einzufügen. Wenn wir unsere Tabellen erstellen
+Wenn wir unsere Tabellenstrukturen entwerfen, können wir dem Datenbanksystem mitteilen, dass wir möchten, dass es uns ein paar Regeln auferlegt. Diese Regeln helfen uns, Fehler zu vermeiden und falsche Daten in unsere Tabellen einzufügen. 
 
 ~~~~ {.python}
 cur.execute('''CREATE TABLE IF NOT EXISTS People
@@ -400,7 +400,7 @@ cur.execute('''CREATE TABLE IF NOT EXISTS Follows
     (from_id INTEGER, to_id INTEGER, UNIQUE(from_id, to_id))''')
 ~~~~
 
-Dann geben wir an, dass die Spalte `name` in der Tabelle `People` `UNIQUE` sein muss. Wir geben auch an, dass die Kombination der beiden Zahlen in jeder Zeile der Tabelle `Follows` eindeutig sein muss. Diese Einschränkungen verhindern, dass wir Fehler machen, z. B. dieselbe Beziehung mehr als einmal hinzufügen.
+Wenn wir unsere Tabellen erstellen, dann geben wir an, dass die Spalte `name` in der Tabelle `People` `UNIQUE` sein muss. Wir geben außerdem an, dass die Kombination der beiden Zahlen in jeder Zeile der Tabelle `Follows` eindeutig sein muss. Diese Einschränkungen verhindern, dass wir Fehler machen, z. B. dieselbe Beziehung mehr als einmal hinzufügen.
 
 Wir können diese Einschränkungen im folgenden Code ausnutzen:
 
@@ -409,7 +409,7 @@ cur.execute('''INSERT OR IGNORE INTO People (name, retrieved)
     VALUES ( ?, 0)''', ( friend, ) )
 ~~~~
 
-Wir fügen die Klausel `OR IGNORE` zu unserer `INSERT`-Anweisung hinzu, um anzugeben, dass das Datenbanksystem die `INSERT`-Anweisung ignorieren soll, wenn dieser bestimmte `INSERT` eine Verletzung der Regel, dass `name` eindeutig sein muss, verursachen würde. Wir verwenden die Datenbankbeschränkung als Sicherheitsnetz, um sicherzustellen, dass wir nicht versehentlich etwas Falsches tun.
+Wir fügen die Klausel `OR IGNORE` zu unserer `INSERT`-Anweisung hinzu, um anzugeben, dass das Datenbanksystem die `INSERT`-Anweisung ignorieren soll, wenn dieser eine Verletzung der Regel, dass `name` eindeutig sein muss, verursachen würde. Wir verwenden die Datenbankbeschränkung als Sicherheitsnetz, um zu gewährleisten, dass wir nicht versehentlich etwas Falsches tun.
 
 In ähnlicher Weise stellt der folgende Code sicher, dass wir nicht genau die gleiche `Follows`-Beziehung zweimal hinzufügen.
 
@@ -428,7 +428,7 @@ Dies ist ein sehr häufiges Schema und wird in dem obigen Programm zweimal ausge
 
 Da es im Laufe der Zeit immer wahrscheinlicher wird, dass das Konto bereits in der Datenbank vorhanden ist, prüfen wir zunächst mit einer `SELECT`-Anweisung, ob der Datensatz `People` existiert.
 
-Wenn alles gut geht^[Wenn ein Satz mit „wenn alles gut geht“ beginnt, werden Sie im Allgemeinen feststellen, dass der Code `try`/`except` verwenden sollte.] Innerhalb des `try`-Abschnitts rufen wir den Datensatz mit `fetchone()` ab und rufen dann das erste (und einzige) Element des zurückgegebenen Tupels ab und speichern es in `friend_id`.
+Wenn alles gut geht^[Wenn ein Satz mit „wenn alles gut geht“ beginnt, werden wir im Allgemeinen feststellen, dass der Code `try`/`except` verwenden sollte.] rufen wir den Datensatz mit `fetchone()` ab und erhalten dann das erste (und einzige) Element des zurückgegebenen Tupels und speichern es in `friend_id`.
 
 Wenn der `SELECT` fehlschlägt, schlägt der `fetchone()[0]` Code fehl und die Kontrolle wird in den `except` Abschnitt übertragen.
 
@@ -450,13 +450,13 @@ Wenn der `SELECT` fehlschlägt, schlägt der `fetchone()[0]` Code fehl und die K
         countnew = countnew + 1
 ~~~~
 
-Wenn wir im `except`-Code landen, bedeutet das schlichtweg, dass die Zeile nicht gefunden wurde, also müssen wir die Zeile einfügen. Wir verwenden `INSERT OR IGNORE` nur, um Fehler zu vermeiden und rufen dann `commit()` auf, um die Aktualisierung der Datenbank wirklich zu erzwingen. Nachdem der Schreibvorgang abgeschlossen ist, können wir die `cur.rowcount` überprüfen, um zu sehen, wie viele Zeilen betroffen waren. Da wir versuchen, eine einzelne Zeile einzufügen, ist es ein Fehler, wenn die Anzahl der betroffenen Zeilen etwas anderes als 1 ist.
+Wenn wir im `except`-Code landen, bedeutet das schlichtweg, dass die Zeile nicht gefunden wurde, also müssen wir die Zeile einfügen. Wir verwenden `INSERT OR IGNORE` nur, um Fehler zu vermeiden und rufen dann `commit()` auf, um die Aktualisierung der Datenbank zu erzwingen. Nachdem der Schreibvorgang abgeschlossen ist, können wir die `cur.rowcount` überprüfen, um zu sehen, wie viele Zeilen betroffen waren. Da wir versuchen, eine einzelne Zeile einzufügen, ist es ein Fehler, wenn die Anzahl der betroffenen Zeilen etwas anderes als 1 ist.
 
 Wenn das `INSERT` erfolgreich war, können wir uns `cur.lastrowid` ansehen, um herauszufinden, welchen Wert die Datenbank der Spalte `id` in unserer neu erstellten Zeile zugewiesen hat.
 
 ### Speichern der Freundschaftsbeziehung
 
-Sobald wir den Schlüsselwert sowohl für den Twitter-Benutzer als auch für den Freund im JSON kennen, ist es eine einfache Angelegenheit, die beiden Zahlen mit dem folgenden Code in die Tabelle `Follows` einzufügen:
+Sobald wir den Schlüsselwert sowohl für den Twitter-Benutzer als auch für den Freund im JSON kennen, ist es einfach, die beiden Zahlen mit dem folgenden Code in die Tabelle `Follows` einzufügen:
 
 ~~~~ {.python}
 cur.execute('INSERT OR IGNORE INTO Follows (from_id, to_id) VALUES (?, ?)',
@@ -465,7 +465,7 @@ cur.execute('INSERT OR IGNORE INTO Follows (from_id, to_id) VALUES (?, ?)',
 
 Beachten Sie, dass wir es der Datenbank überlassen, uns vor dem doppelten Einfügen einer Beziehung zu schützen, indem wir die Tabelle mit einer `UNIQUE`-Einschränkung erstellen und dann `OR IGNORE` zu unserer `INSERT`-Anweisung hinzufügen.
 
-Hier sehen Sie ein Beispiel für die Ausführung dieses Programms:
+Hier ist ein Beispiel für die Ausführung dieses Programms zu erkennen:
 
 ~~~~
 Enter a Twitter account, or quit:
@@ -503,14 +503,14 @@ Follows:
 60 rows.
 ~~~~
 
-Sie können die Felder `id`, `name` und `visited` in der Tabelle `People` sehen und Sie sehen die Nummern der beiden Enden der Beziehung in der Tabelle `Follows`. In der Tabelle `People` können wir sehen, dass die ersten drei Personen besucht wurden und ihre Daten abgerufen wurden. Die Daten in der Tabelle `Follows` zeigen, dass `drchuck` (Benutzer 1) ein Freund aller Personen ist, die in den ersten fünf Zeilen angezeigt werden. Das macht Sinn, denn die ersten Daten, die wir abgerufen und gespeichert haben, waren die Twitter-Freunde von `drchuck`. Wenn Sie weitere Zeilen aus der Tabelle `Follows` ausgeben würden, würden Sie auch die Freunde der Benutzer 2 und 3 sehen.
+Wir können die Felder `id`, `name` und `visited` in der Tabelle `People` sehen und sehen die Nummern der beiden Enden der Beziehung in der Tabelle `Follows`. In der Tabelle `People` können wir sehen, dass die ersten drei Personen besucht und ihre Daten abgerufen wurden. Die Daten in der Tabelle `Follows` zeigen, dass `drchuck` (Benutzer 1) ein Freund aller Personen ist, die in den ersten fünf Zeilen angezeigt werden. Dies ergibt Sinn, denn die ersten Daten, die wir abgerufen und gespeichert haben, waren die Twitter-Freunde von `drchuck`. Wenn Sie weitere Zeilen aus der Tabelle `Follows` ausgeben würden, würden Sie auch die Freunde der Benutzer 2 und 3 sehen.
 
 Drei Arten von Schlüsseln
 -------------------------
 
 Nachdem wir nun mit dem Aufbau eines Datenmodells begonnen haben, in dem wir unsere Daten in mehreren verknüpften Tabellen ablegen und die Zeilen in diesen Tabellen mit *Schlüsseln* verknüpfen, müssen wir uns mit der Terminologie rund um Schlüssel beschäftigen. Im Allgemeinen gibt es drei Arten von Schlüsseln, die in einem Datenbankmodell verwendet werden.
 
--   Ein *logischer Schlüssel* ist ein Schlüssel, den die „reale Welt“ zum Nachschlagen eines Datensatzes verwenden könnte. In unserem Beispiel-Datenmodell ist das Feld `name` ein logischer Schlüssel. Es ist der Benutzername des Benutzers, und wir schlagen die Zeile eines Benutzers in der Tat mehrmals im Programm über das Feld `name` nach. Sie werden oft feststellen, dass es sinnvoll ist, eine `UNIQUE'-Einschränkung zu einem logischen Schlüssel hinzuzufügen. Da der logische Schlüssel einen Datensatz zu identifizieren, macht es wenig Sinn, mehrere Zeilen mit demselben Wert in der Tabelle zuzulassen.
+-   Ein *logischer Schlüssel* ist ein Schlüssel, den die „reale Welt“ zum Nachschlagen eines Datensatzes verwenden könnte. In unserem Beispiel-Datenmodell ist das Feld `name` ein logischer Schlüssel. Es ist der Benutzername des Benutzers, und wir schlagen die Zeile eines Benutzers in der Tat mehrmals im Programm über das Feld `name` nach. Sie werden oft feststellen, dass es sinnvoll ist, eine `UNIQUE'-Einschränkung zu einem logischen Schlüssel hinzuzufügen. Da der logische Schlüssel einen Datensatz identifiziert, ergibt es wenig Sinn, mehrere Zeilen mit demselben Wert in der Tabelle zuzulassen.
 
 -   Ein *Primärschlüssel* (englisch Primary Key, kurz *PK*) ist normalerweise eine Nummer, die von der Datenbank automatisch vergeben wird. Er hat in der Regel keine Bedeutung außerhalb des Programms und wird nur verwendet, um Zeilen aus verschiedenen Tabellen miteinander zu verknüpfen. Wenn wir eine Zeile in einer Tabelle nachschlagen wollen, ist die Suche nach der Zeile über den Primärschlüssel normalerweise der schnellste Weg, die Zeile zu finden. Da es sich bei den Primärschlüsseln um ganze Zahlen handelt, nehmen sie sehr wenig Speicherplatz ein und können sehr schnell verglichen oder sortiert werden. In unserem Datenmodell ist das Feld `id` ein Beispiel für einen Primärschlüssel.
 
@@ -523,7 +523,7 @@ JOIN zum Abrufen von Daten
 
 Da wir nun die Regeln der Datenbanknormalisierung befolgt haben und die Daten in zwei Tabellen aufgeteilt sind, die über Primär- und Fremdschlüssel miteinander verknüpft sind, müssen wir in der Lage sein, einen `SELECT` zu erstellen, der die Daten in den Tabellen wieder zusammensetzt.
 
-SQL verwendet die `JOIN`-Klausel, um diese Tabellen wieder zu verbinden. In der `JOIN`-Klausel geben Sie die Felder an, die zum Wiederverbinden der Zeilen zwischen den Tabellen verwendet werden.
+SQL verwendet die `JOIN`-Klausel, um diese Tabellen wieder zu verbinden. In der `JOIN`-Klausel geben wir die Felder an, die zum Wiederverbinden der Zeilen zwischen den Tabellen verwendet werden.
 
 Im Folgenden sehen Sie ein Beispiel für einen `SELECT` mit einer `JOIN`-Klausel:
 
@@ -532,13 +532,13 @@ SELECT * FROM Follows JOIN People
     ON Follows.from_id = People.id WHERE People.id = 1
 ~~~~
 
-Die `JOIN`-Klausel gibt an, dass die ausgewählten Felder sowohl die `Follows`- als auch die `People`-Tabelle betreffen. Die `ON`-Klausel gibt an, wie die beiden Tabellen verbunden werden sollen: Nehmen Sie die Zeilen aus `Follows` und fügen Sie die Zeile aus `People` an, bei der das Feld `from_id` in `Follows` gleich dem Wert `id` in der Tabelle `People` ist.
+Die `JOIN`-Klausel gibt an, dass die ausgewählten Felder sowohl die `Follows`- als auch die `People`-Tabelle betreffen. Die `ON`-Klausel gibt an, wie die beiden Tabellen verbunden werden sollen: Es wird eine passende Zeile aus `Follows` entnommen und an die Zeile aus `People` angefügt, bei der das Feld `from_id` in `Follows` gleich dem Wert `id` in der Tabelle `People` ist.
 
 ![Verbinden von Tabellen mit JOIN](height=3.5in@figs2/join)
 
-Das Ergebnis des JOIN ist die Erstellung von Tabellenzeilen, die sowohl die Felder aus `People` als auch die passenden Felder aus `Followows` enthalten. Wenn es mehr als eine Übereinstimmung zwischen dem Feld `id` aus `People` und der `from_id` aus `People` gibt, dann erzeugt JOIN eine Zeile für *jedes* der übereinstimmenden Zeilenpaare und dupliziert Daten bei Bedarf.
+Das Ergebnis des JOIN ist die Erstellung von Tabellenzeilen, die sowohl die Felder aus `People` als auch die passenden Felder aus `Follows` enthalten. Wenn es mehr als eine Übereinstimmung zwischen dem Feld `id` aus `People` und der `from_id` aus `People` gibt, dann erzeugt JOIN eine Zeile für *jedes* der übereinstimmenden Zeilenpaare und dupliziert Daten bei Bedarf.
 
-Der folgende Code demonstriert die Daten, die wir in der Datenbank haben werden, nachdem das Multi-Table-Twitter-Spider-Programm (oben) mehrmals ausgeführt wurde.
+Der folgende Code demonstriert die Daten, die wir in der Datenbank erhalten, nachdem das Multi-Table-Twitter-Spider-Programm (oben) mehrmals ausgeführt wurde.
 
 \VerbatimInput{../code3/twjoin.py}
 
@@ -571,23 +571,23 @@ Connections for id=2:
 20 rows.
 ~~~~
 
-Sie sehen die Spalten aus den Tabellen `People` und `Follows`. Der letzte Satz von Zeilen ist das Ergebnis des `SELECT` mit der `JOIN` Klausel.
+Wir sehen die Spalten aus den Tabellen `People` und `Follows`. Der letzte Satz von Zeilen ist das Ergebnis des `SELECT` mit der `JOIN` Klausel.
 
 Im letzten Select suchen wir nach Konten, die mit `opencontent` befreundet sind (d. h., `People.id=2`).
 
-In jeder der Zeilen des letzten Selects stammen die ersten beiden Spalten aus der Tabelle `Follows`, gefolgt von den Spalten drei bis fünf aus der Tabelle `People`. Sie können auch sehen, dass die zweite Spalte (`Follows.to_id`) mit der dritten Spalte (`People.id`) in jeder der verknüpften Zeilen übereinstimmt.
+In jeder der Zeilen des letzten Selects stammen die ersten beiden Spalten aus der Tabelle `Follows`, gefolgt von den Spalten drei bis fünf aus der Tabelle `People`. Wir können auch sehen, dass die zweite Spalte (`Follows.to_id`) mit der dritten Spalte (`People.id`) in jeder der verknüpften Zeilen übereinstimmt.
 
 Zusammenfassung
 ---------------
 
-In diesem Kapitel wurde viel Stoff behandelt, um Ihnen einen Überblick über die Grundlagen der Verwendung einer Datenbank in Python zu geben. Es ist komplizierter, den Code zu schreiben, um eine Datenbank zum Speichern von Daten zu verwenden als Python-Wörterbücher oder flache Dateien, sodass es wenig Grund gibt, eine Datenbank zu verwenden, es sei denn, Ihre Anwendung benötigt wirklich die Fähigkeiten einer Datenbank. Die Situationen, in denen eine Datenbank sehr nützlich sein kann, sind: (1) wenn Ihre Anwendung viele kleine, zufällige Aktualisierungen innerhalb eines großen Datensatzes vornehmen muss, (2) wenn Ihre Daten so groß sind, dass sie nicht in ein Wörterbuch passen und Sie wiederholt Informationen nachschlagen müssen, oder (3) wenn Sie einen lang laufenden Prozess haben, den Sie stoppen und neu starten können und die Daten von einem Lauf zum nächsten beibehalten wollen.
+In diesem Kapitel wurde viel Stoff behandelt, um einen Überblick über die Grundlagen der Verwendung einer Datenbank in Python zu geben. Es ist komplizierter, den Code zu schreiben, um eine Datenbank zum Speichern von Daten zu verwenden als Python-Wörterbücher oder flache Dateien, sodass es wenig Grund gibt, eine Datenbank zu verwenden, es sei denn, die Anwendung benötigt wirklich die Fähigkeiten einer Datenbank. Die Situationen, in denen eine Datenbank sehr nützlich sein kann, sind: (1) wenn die Anwendung viele kleine, zufällige Aktualisierungen innerhalb eines großen Datensatzes vornehmen muss, (2) wenn die Daten so groß sind, dass sie nicht in ein Wörterbuch passen und Sie wiederholt Informationen nachschlagen müssen, oder (3) wenn wir einen lang laufenden Prozess haben, den wir stoppen und neu starten möchten, um die Daten von einem Lauf zum nächsten beibehalten zu wollen.
 
-Sie können eine einfache Datenbank mit einer einzigen Tabelle erstellen, um viele Anwendungsanforderungen zu erfüllen, aber die meisten Probleme werden mehrere Tabellen und Verknüpfungen/Beziehungen zwischen Zeilen in verschiedenen Tabellen erfordern. Wenn Sie damit beginnen, Verknüpfungen zwischen Tabellen herzustellen, ist es wichtig, ein durchdachtes Design zu entwerfen und die Regeln der Datenbanknormalisierung zu befolgen, um die Fähigkeiten der Datenbank optimal nutzen zu können. Da die Hauptmotivation für die Verwendung einer Datenbank darin besteht, dass Sie mit einer großen Menge an Daten umgehen müssen, ist es wichtig, Ihre Daten effizient zu modellieren, damit Ihre Programme so schnell wie möglich ausgeführt werden.
+Wir können eine einfache Datenbank mit einer einzigen Tabelle erstellen, um viele Anwendungsanforderungen zu erfüllen, aber die meisten Probleme werden mehrere Tabellen und Verknüpfungen/Beziehungen zwischen Zeilen in verschiedenen Tabellen erfordern. Wenn wir damit beginnen, Verknüpfungen zwischen Tabellen herzustellen, ist es wichtig, ein durchdachtes Design zu entwerfen und die Regeln der Datenbanknormalisierung zu befolgen, um die Fähigkeiten der Datenbank optimal nutzen zu können. Da die Hauptmotivation für die Verwendung einer Datenbank darin besteht, mit einer großen Menge von Daten zu arbeiten, ist es wichtig, Daten effizient zu modellieren, damit Programme so schnell wie möglich ausgeführt werden.
 
 Debugging
 ---------
 
-Ein häufiges Schema, wenn Sie ein Python-Programm zur Verbindung mit einer SQLite-Datenbank entwickeln, wird sein, dass Sie ein Python-Programm ausführen und die Ergebnisse mit dem Datenbank-Browser für SQLite überprüfen. Mit dem Browser können Sie schnell überprüfen, ob Ihr Programm richtig funktioniert.
+Ein häufiges Schema, wenn wir ein Python-Programm zur Verbindung mit einer SQLite-Datenbank entwickeln, wird sein, dass Sie ein Python-Programm ausführen und die Ergebnisse mit dem Datenbank-Browser für SQLite überprüfen. Mit dem Browser können Sie schnell überprüfen, ob Ihr Programm richtig funktioniert.
 
 Sie müssen vorsichtig sein, weil SQLite darauf achtet, dass nicht zwei Programme gleichzeitig dieselben Daten ändern. Wenn Sie z. B. eine Datenbank im Browser öffnen und eine Änderung an der Datenbank vornehmen und noch nicht die Schaltfläche „Speichern“ im Browser betätigt haben, sperrt der Browser die Datenbankdatei und verhindert, dass ein anderes Programm auf die Datei zugreift. Insbesondere Ihr Python-Programm kann nicht auf die Datei zugreifen, wenn sie gesperrt ist.
 
@@ -605,11 +605,11 @@ Constraint
 \index{Constraint}
 
 Cursor
-:   Mit einem Cursor können Sie SQL-Befehle in einer Datenbank ausführen und Daten aus der Datenbank abrufen. Ein Cursor ist vergleichbar mit einem Socket oder einem Dateihandler für Netzwerkverbindungen bzw. Dateien.
+:   Mit einem Cursor können wir SQL-Befehle in einer Datenbank ausführen und Daten aus der Datenbank abrufen. Ein Cursor ist vergleichbar mit einem Socket oder einem Dateihandler für Netzwerkverbindungen bzw. Dateien.
 \index{Cursor}
 
 Datenbankenbrowser
-:   Eine Software, die es Ihnen ermöglicht, eine direkte Verbindung zu einer Datenbank herzustellen und die Datenbank direkt zu manipulieren, ohne ein Programm zu schreiben.
+:   Eine Software, die es ermöglicht, eine direkte Verbindung zu einer Datenbank herzustellen und die Datenbank direkt zu manipulieren, ohne ein Programm zu schreiben.
 \index{Datenbankenbrowser}
 
 Fremdschlüssel
