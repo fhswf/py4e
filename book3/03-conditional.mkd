@@ -1,4 +1,4 @@
-```
+
 Bedingte Ausführung
 ===================
 
@@ -520,4 +520,4 @@ F
 ~~~~
 
 Führen Sie das Programm wiederholt wie oben gezeigt aus, um die verschiedenen Werte für die Eingabe zu testen.
-```
+

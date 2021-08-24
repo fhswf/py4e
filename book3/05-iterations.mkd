@@ -1,4 +1,4 @@
-```
+
 Iteration
 =========
 
@@ -371,4 +371,4 @@ Enter a number: done
 ~~~~
 
 **Übung 2: Schreiben Sie ein weiteres Programm, das eine Liste von Zahlen wie oben abfragt und am Ende sowohl das Maximum als auch das Minimum der Zahlen anstelle des Durchschnitts ausgibt.**
-```
+

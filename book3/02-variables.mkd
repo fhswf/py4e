@@ -1,6 +1,4 @@
 
-
-```
 Variablen, Ausdrücke und Anweisungen
 ====================================
 
@@ -678,5 +676,4 @@ Schreiben Sie für jeden der folgenden Ausdrücke den Wert des Ausdrucks und den
 Verwenden Sie den Python-Interpreter, um Ihre Antworten zu überprüfen.
 
 **Übung 5: Schreiben Sie ein Programm, das den Benutzer zur Eingabe einer Celsius-Temperatur auffordert, die Temperatur in Fahrenheit konvertiert und die konvertierte Temperatur ausgibt.**
-```
 

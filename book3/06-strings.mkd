@@ -1,4 +1,4 @@
-```
+
 Zeichenketten
 =============
 
@@ -635,4 +635,4 @@ Traversieren
 **Übung 6: Lesen Sie die Dokumentation der String-Methoden unter <https://docs.python.org/library/stdtypes.html#string-methods>. Vielleicht möchten Sie mit einigen von ihnen experimentieren, um sicherzustellen, dass Sie verstehen, wie sie funktionieren. `strip` und `replace` sind besonders nützlich.**
 
 **Die Dokumentation verwendet eine Syntax, die verwirrend sein kann. Zum Beispiel in `find(sub[, start[, end]])` zeigen die Klammern optionale Argumente an. Also ist `sub` erforderlich, aber `start` ist optional, und wenn Sie `start` verwenden, dann ist `end` wiederum optional.**
-```
+

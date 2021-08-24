@@ -1,4 +1,4 @@
-```
+
 % Python for Everybody 
 % Exploring Data Using Python 3
 % Dr. Charles R. Severance
@@ -767,4 +767,4 @@ Speicher, (4) Eingabegerät, und (5) Ausgabegerät.
 Zum Beispiel: "Was ist das menschliche Äquivalent zu einer Zentraleinheit"?**
 
 **Übung 9: Wie behebt man einen "Syntaxfehler"?**
-```
+
