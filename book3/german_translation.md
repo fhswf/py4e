@@ -8,7 +8,7 @@ Vorwort:
 
 Inhaltskapitel:
 
-- [ ] 01-intro.mkd (TODO: Indexeinträge)
+- [x] 01-intro.mkd
 - [x] 02-variables.mkd
 - [x] 03-conditional.mkd
 - [x] 04-functions.mkd
@@ -57,6 +57,38 @@ done
 ```
 
 Mit Bedacht verwenden und **nicht** für alleinstehende Wörter, also nur für mit Markdown/LaTeX ausgezeichnete Sequenzen wie Indexeinträge.
+
+### Kapitel 1
+
+```
+\index{hardware} : \index{Hardware}
+\index{hardware!architecture} : \index{Hardware!Architektur}
+\index{problem solving} : \index{Problemlösung}
+\index{programming language} : \index{Programmiersprache}
+\index{language!programming} : \index{Sprache!Programmieren}
+\index{script} : \index{Skript}
+\index{program} : \index{Programm}
+\index{typographical error} : \index{typographischer Fehler}
+\index{experimental debugging} : \index{experimentelles Debugging}
+\index{random walk programming} : \index{Random-Walk-Programmierung}
+\index{development plan!random walk programming} : \index{Vorgehensmodell!Random-Walk-Programmierung}
+\index{bug} : \index{Bug}
+\index{central processing unit} : \index{Central Processing Unit}\index{Prozessor}
+\index{CPU} : \index{CPU}
+\index{compile} : \index{Kompilieren}
+\index{high-level language} : \index{High-Level-Sprache}\index{Hochsprache}
+\index{interpret} : \index{Interpretieren}
+\index{low-level language} : \index{Low-Level-Sprache}\index{Maschinencode}
+\index{machine code} : \index{Maschinencode}
+\index{main memory} : \index{Hauptspeicher}
+\index{parse} : \index{Parsen}
+\index{portability} : \index{Portabilität}
+\index{print function} : \index{print (Funktion)}
+\index{function!print} : \index{Funktion!print}
+\index{semantics} : \index{Semantik}
+\index{source code} : \index{Quellcode}
+
+```
 
 ### Kapitel 2
 
