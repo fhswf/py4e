@@ -1,12 +1,6 @@
 
-% Python for Everybody 
-% Exploring Data Using Python 3
-% Dr. Charles R. Severance
-% Translation by Heiner Giefers, (...)
-
-
 Warum sollte man Programmieren lernen?
-=======================================
+======================================
 
 Das Schreiben von Programmen (oder Programmieren) ist eine sehr kreative und lohnende Tätigkeit.
 Wir können Programme aus vielen Gründen schreiben, angefangen vom Ziel, damit den Lebensunterhalt zu verdienen, ein schwieriges Datenanalyseproblem zu lösen, Spaß zu haben
@@ -38,7 +32,7 @@ Sobald man eine Programmiersprache gelernt hat, kann man viele alltägliche Aufg
 So bleibt einem mehr Zeit für die diejenigen Aufgaben, für die wir Menschen einzigartig geeignet sind, nämlich Kreativität, Intuition und Ideenreichtum.
 
 Kreativität und Motivation
--------------------------
+--------------------------
 
 Wenn wir gerade mit dem Programmieren beginnen, werden wir noch einige Erfahrungen sammeln müssen, um professionelle Programme (auch *Software* genannt) entwickeln zu können. 
 Professionelles Programmieren ist allerdings sowohl finanziell als auch persönlich eine sehr lohnende Aufgabe.
@@ -53,7 +47,7 @@ Bei unseren Programmieranfängen sind wir sowohl der Programmierer als auch der 
 Je mehr Erfahrung wir sammeln und je umfangreicher unsere Programme werden, desto mehr werden wir befähigt, auch Programme für andere zu entwickeln.
 
 Der Aufbau eines Computers
-------------------------------
+--------------------------
 
 \index{hardware}
 \index{hardware!architecture}
@@ -83,8 +77,8 @@ Als Programmierer ist es unsere Aufgabe, jede dieser Ressourcen zu nutzen und zu
 
 Wir müssen jeweils die Person sein, die der CPU die Frage "Was nun?" beantwortet. Aber es wäre sehr unangenehm, wenn man auf 5 mm schrumpfen müsste um uns in den Computer zu stecken, nur damit wir drei Milliarden Mal pro Sekunde einen Befehl geben können. Stattdessen müssen wir unsere Anweisungen im Voraus aufschreiben. Wir nennen diese gespeicherten Anweisungen ein *Programm* und den Akt des Aufschreibens dieser Anweisungen und die korrekte Ausführung der Anweisungen *Programmierung*.
 
-Understanding programming
--------------------------
+Programmierung verstehen
+------------------------
 
 Im weiteren Verlauf dieses Buches werden wir versuchen, aus uns Personen zu machen, die die Kunst des Programmierens beherrschen. Am Ende werden wir echte *Programmierer* sein - vielleicht keine professionellen Programmierer, aber zumindest werden wir die Fähigkeit besitzen, ein Daten-/Informationsanalyseproblem zu betrachten und ein Programm zur Lösung des Problems zu entwickeln.
 
@@ -104,7 +98,7 @@ Wir werden das "Vokabular" und die "Sätze" von Python ziemlich schnell lernen. 
 Wir beginnen mit dem Vokabular und der Struktur von Python-Programmen. Seid geduldig, denn die einfachen Beispiele erinnern uns daran, wie wir zum ersten Mal gelesen haben.
 
 Wörter und Sätze
--------------------
+----------------
 
 \index{programming language}
 \index{language!programming}
@@ -136,7 +130,7 @@ print('Hello world!')
 Und wir haben sogar unseren ersten syntaktisch korrekten Python-Satz geschrieben. Unser Satz beginnt mit der Funktion *print*, gefolgt von einer Zeichenfolge unserer Wahl, die in einfachen Anführungszeichen steht. Die Zeichenketten in den Druckanweisungen sind in Anführungszeichen eingeschlossen. Einfache Anführungszeichen und doppelte Anführungszeichen haben die gleiche Funktion; die meisten Leute verwenden einfache Anführungszeichen, außer in Fällen wie diesem, wo ein einfaches Anführungszeichen (das auch ein Apostroph ist) in der Zeichenkette erscheint.
 
 Konversation mit Python
-----------------------
+-----------------------
 
 Nachdem wir nun ein Wort und einen einfachen Satz in Python kennen, müssen wir wissen, wie wir eine Unterhaltung mit Python beginnen können, um unsere neuen Sprachkenntnisse zu testen.
 
@@ -215,7 +209,7 @@ Man kann feststellen, dass der Fehler bei den ersten beiden Fehlversuchen anders
 Der richtige Weg, sich von Python zu verabschieden, ist die Eingabe von *quit()* am interaktiven Chevron `>>>`-Prompt. Wir hätten wahrscheinlich eine ganze Weile gebraucht, um das zu erraten, also wird es sich als hilfreich erweisen, ein Buch zur Hand zu haben.
 
 Terminologie: Interpreter und Compiler
--------------------------------------
+--------------------------------------
 
 Python ist eine *Hochsprache*, die für Menschen relativ einfach zu lesen und zu schreiben und für Computer zu lesen und zu verarbeiten ist. Andere Hochsprachen sind Java, C++, PHP, Ruby, Basic, Perl, JavaScript und viele mehr. Die eigentliche
 Hardware in der Central Processing Unit (CPU) versteht keine dieser Hochsprachen.
@@ -325,7 +319,7 @@ C:\Python35\python.exe
 Das ist mehr, als man wissen muss, um ein Python-Programmierer zu werden, aber manchmal lohnt es sich, diese kleinen, nervigen Fragen gleich zu Beginn zu beantworten.
 
 Ein Programm schreiben
------------------
+----------------------
 
 Das Eingeben von Befehlen in den Python-Interpreter ist ein guter Weg, um
 mit den Funktionen von Python zu experimentieren, jedoch ist es nicht empfehlenswert für die Lösung
@@ -355,7 +349,7 @@ Man kann feststellen, dass es am Ende des Python-Programms keine Notwendigkeit f
 Quellcode aus einer Datei liest, weiß es, dass es aufhören muss, wenn das Ende der Datei erreicht wurde.
 
 Was ist ein Programm?
-------------------
+---------------------
 
 Die Definition eines *Programms* ist im Grunde genommen eine
 Abfolge von Python-Anweisungen, die so gestaltet sind, dass sie etwas tun.
@@ -402,7 +396,7 @@ Python bietet uns die Möglichkeit, nützliche Befehlssequenzen bzw. Programme i
 Python*, sondern wir kommunizieren miteinander *durch* Python.
 
 Die Bausteine von Programmen
--------------------------------
+----------------------------
 
 In den nächsten Kapiteln, werden wir mehr über das Vokabular, die Satzstruktur, Absatzstruktur und Erzählstruktur von Python lernen. Uns werden die mächtigen Fähigkeiten von Python näher gebracht werden und wir werden uns aneignen wie man diese Fähigkeiten zusammensetzen kann, um nützliche Programme zu erstellen.
 
@@ -440,7 +434,7 @@ Die "Kunst" ein Programm zu schreiben besteht darin diese Grundelemente immer wi
 Das obige Wortzählungsprogramm verwendet all diese Muster direkt bis auf eines.
 
 Was kann schon schief gehen?
------------------------------
+----------------------------
 
 Wie wir in unseren ersten Gesprächen mit Python gesehen haben, müssen wir sehr genau kommunizieren, wenn wir Python-Code schreiben. Die kleinste Abweichung oder der kleinste Fehler führen dazu, dass Python aufhört unser Programm zu betrachten.
 
@@ -581,7 +575,7 @@ Programmieranfänger zögern oft, sich zurückzuziehen, weil sie es nicht ertrag
 zerlegt. Dann kann man die Teile nach und nach wieder Stück für Stück einfügen.
 
 Der Lernprozess
---------------------
+---------------
 
 Im weiteren Verlauf des Buches sollte man keine Angst haben, wenn die
 Konzepte beim ersten Mal nicht gut zusammenzupassen scheinen. Als wir
@@ -613,8 +607,8 @@ die ganze Nacht aufzubleiben und es anzustarren. Eine Pause machen, ein Nickerch
 Snack zu sich nehmen, das Problem einem anderen erklären (oder vielleicht dem Hund) und dann mit neuen Augen wieder 
 darauf blicken. Auf jeden Fall werden wir zurückblicken und feststellen, dass alles ganz einfach und elegant war und man nur ein bisschen Zeit gebraucht hat, um es zu verinnerlichen.
 
-Glossary
---------
+Glossar
+-------
 
 Bug
 :   Ein Fehler im Programmcode.
@@ -704,7 +698,7 @@ Programmcode
 \index{source code}
 
 Übungen
----------
+-------
 
 **Übung 1: Welche Funktion hat der Sekundärspeicher in einem Computer?**
 

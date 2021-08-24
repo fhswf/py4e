@@ -8,7 +8,7 @@ Vorwort:
 
 Inhaltskapitel:
 
-- [ ] 01-intro.mkd
+- [ ] 01-intro.mkd (TODO: Indexeinträge)
 - [x] 02-variables.mkd
 - [x] 03-conditional.mkd
 - [x] 04-functions.mkd
