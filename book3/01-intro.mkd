@@ -2,13 +2,13 @@
 Warum sollte man Programmieren lernen?
 ======================================
 
-Das Schreiben von Programmen (oder Programmieren) ist eine sehr kreative und lohnende Tätigkeit. Wir können Programme aus vielen Gründen schreiben, angefangen vom Ziel, damit den Lebensunterhalt zu verdienen, ein schwieriges Datenanalyseproblem zu lösen, Spaß zu haben oder um jemand anderem bei der Lösung eines Problems zu helfen. Dieses Buch geht davon aus, dass *jeder* wissen sollte, wie man programmiert, und dass wir, sobald wir die Programmierung beherrschen, herausfinden werden, was wir mit unseren neugewonnenen Fähigkeiten machen können.
+Das Schreiben von Programmen (oder Programmieren) ist eine sehr kreative und lohnende Tätigkeit. Wir können Programme aus vielen Gründen schreiben, angefangen mit dem Ziel, damit den Lebensunterhalt zu verdienen, ein schwieriges Datenanalyseproblem zu lösen, Spaß zu haben oder um jemand anderem bei der Lösung eines Problems zu helfen. Dieses Buch geht davon aus, dass *jeder* wissen sollte, wie man programmiert, und dass wir, sobald wir die Programmierung beherrschen, herausfinden werden, was wir mit unseren neugewonnenen Fähigkeiten machen können.
 
 Wir sind in unserem täglichen Leben von Computern umgeben, von Laptops bis hin zu Handys. Wir nehmen diese Computer als unsere „persönlichen Assistenten“ war, die viele Dinge für uns erledigen können. Die Hardware in unseren heutigen Computern ist im Wesentlichen so gebaut, dass sie uns ständig die Frage stellt: „Was soll ich als nächstes tun?“
 
-Programmierer fügen der Hardware ein Betriebssystem und eine Reihe von Anwendungen hinzu, und schon haben wir einen persönlichen digitalen Assistenten, der uns bei vielen Problemen des Alltags nützlich sein kann. Unsere Computer sind schnell und haben riesige Mengen an Speicher und könnten uns sehr hilfreich sein hilfreich sein, wenn wir nur die Sprache beherrschen würden, um dem Computer zu erklären, was er als nächstes tun soll. Wenn wir diese Sprache kennen, könnten wir dem Computer sagen, dass er in unserem Namen Aufgaben erledigen soll, die sich wiederholen. Interessanterweise sind die Dinge, die Computer am besten können oft die Dinge, die wir Menschen langweilig und stumpfsinnig finden.
+Programmierer fügen der Hardware ein Betriebssystem und eine Reihe von Anwendungen hinzu, und schon haben wir einen persönlichen digitalen Assistenten, der uns bei vielen Problemen des Alltags nützlich sein kann. Unsere Computer sind schnell und haben riesige Mengen an Speicher und könnten uns sehr hilfreich sein, wenn wir nur die Sprache beherrschen würden, um dem Computer zu erklären, was er als nächstes tun soll. Wenn wir diese Sprache kennen, könnten wir dem Computer sagen, dass er in unserem Namen Aufgaben erledigen soll, die sich wiederholen. Interessanterweise sind die Dinge, die Computer am besten können oft die Dinge, die wir Menschen langweilig und stumpfsinnig finden.
 
-Schauen wir uns zum Beispiel die ersten drei Absätze dieses Kapitels an und finden heraus, welches Wort am häufigsten verwendet wird und wie oft es vorkommt. Während wir in der Lage waren, die Wörter in wenigen Sekunden zu lesen und zu verstehen, ist das Zählen der Wörter fast schmerzhaft, weil es nicht die Art von Problem ist die der menschliche Verstand einfach lösen kann. Für einen Computer ist das Gegenteil der Fall: Das Lesen und Verstehen von Text auf einem Blatt Papier ist für einen Computer schwer, aber die Wörter zu zählen und Ihnen zu sagen, wie oft das am häufigsten verwendete Wort verwendet wurde, ist für den Computer sehr einfach.
+Schauen wir uns zum Beispiel die ersten drei Absätze dieses Kapitels an und finden heraus, welches Wort am häufigsten verwendet wird und wie oft es vorkommt. Während wir in der Lage waren, die Wörter in wenigen Sekunden zu lesen und zu verstehen, ist das Zählen der Wörter fast schmerzhaft, weil es nicht die Art von Problem ist, die der menschliche Verstand einfach lösen kann. Für einen Computer ist das Gegenteil der Fall: Das Lesen und Verstehen von Text auf einem Blatt Papier ist für einen Computer schwer, aber die Wörter zu zählen und Ihnen zu sagen, wie oft das am häufigsten verwendete Wort verwendet wurde, ist für den Computer sehr einfach.
 
 ~~~~ {.python}
 python words.py
@@ -23,7 +23,7 @@ Kreativität und Motivation
 
 Wenn wir gerade mit dem Programmieren beginnen, werden wir noch einige Erfahrungen sammeln müssen, um professionelle Programme (auch *Software* genannt) entwickeln zu können. Professionelles Programmieren ist allerdings sowohl finanziell als auch persönlich eine sehr lohnende Aufgabe. Nützliche, elegante und clevere Programme zu erstellen, ist eine sehr kreative Aktivität, die durchaus Spaß machen kann. Lukrativ ist die Programmierung vor allem dann, wenn unseren Kunden, bzw. den Nutzern das Programm gefällt und uns einen Nutzen bringt. Dabei stehen wir in Konkurrenz zu anderen Enwicklern. Man sollte also versuchen, dass das eigene Programm besser funktioniert, einen höheren Funktionsumfang hat, sich besser bedienen lässt oder einfach schöner aussieht.
 
-Im Moment besteht unsere Hauptmotivation nicht darin, Geld zu verdienen oder den Endnutzern zu gefallen. Wir möchten unsere eigenen Arbeitsablaufe automatisieren und produktiver mit den Daten und Informationen umgehen, die uns in unserem Leben begegnen. Bei unseren Programmieranfängen sind wir sowohl der Programmierer als auch der Endnutzer unserer Programme. Je mehr Erfahrung wir sammeln und je umfangreicher unsere Programme werden, desto mehr werden wir befähigt, auch Programme für andere zu entwickeln.
+Im Moment besteht unsere Hauptmotivation nicht darin, Geld zu verdienen oder den Endnutzern zu gefallen. Wir möchten unsere eigenen Arbeitsabläufe automatisieren und produktiver mit den Daten und Informationen umgehen, die uns in unserem Leben begegnen. Bei unseren Programmieranfängen sind wir sowohl der Programmierer als auch der Endnutzer unserer Programme. Je mehr Erfahrung wir sammeln und je umfangreicher unsere Programme werden, desto mehr werden wir befähigt, auch Programme für andere zu entwickeln.
 
 Der Aufbau eines Computers
 --------------------------
@@ -37,13 +37,13 @@ Bevor wir anfangen, die Sprachen zu lernen, mit der wir Computer *programmieren*
 
 Die wichtigsten Definitionen dieser Teile lauten wie folgt:
 
-- Die *Central Processing Unit* (oder CPU) ist der Teil des Computers, der so gebaut ist, dass er von der Frage „Was kommt als nächstes?“ besessen ist. Wenn der Computer auf 3,0 Gigahertz eingestellt ist, bedeutet das, dass die CPU drei Milliarden Mal pro Sekunde fragt: „Was kommt als Nächstes?“. Wir werden lernen müssen, schnell zu sprechen, um mit der CPU Schritt zu halten.
+- Die *Central Processing Unit* (oder CPU) ist der Teil des Computers, der so gebaut ist, dass er von der Frage „Was kommt als Nächstes?“ besessen ist. Wenn der Computer auf 3,0 Gigahertz eingestellt ist, bedeutet das, dass die CPU drei Milliarden Mal pro Sekunde fragt: „Was kommt als Nächstes?“. Wir müssten lernen, schnell zu sprechen, um mit der CPU Schritt halten zu können.
 
 - Der *Hauptspeicher* wird zum Speichern von Informationen verwendet, die die CPU schnell benötigt. Der Hauptspeicher ist fast so schnell wie die CPU. Aber die im Hauptspeicher gespeicherten Informationen verschwinden, wenn der Computer ausgeschaltet wird.
 
 - Der *Sekundärspeicher* wird ebenfalls zum Speichern von Informationen verwendet, ist aber viel langsamer als der Hauptspeicher. Der Vorteil des Sekundärspeichers ist, dass er Informationen auch dann speichern kann, wenn der Computer nicht mit Strom versorgt wird. Beispiele für Sekundärspeicher sind Festplattenlaufwerke oder Flash-Speicher (typischerweise in USB-Sticks und tragbaren Musikplayern zu finden).
 
-- Die *Eingabe- und Ausgabegeräte* sind einfach unser Bildschirm, unsere Tastatur, Maus, Mikrofon, Lautsprecher, Touchpad usw. und sind alle Möglichkeiten, wie wir mit dem Computer interagieren können.
+- Die *Eingabe- und Ausgabegeräte* sind unser Bildschirm, unsere Tastatur, Maus, Mikrofon, Lautsprecher oder Touchpad und dienen der Interaktion mit dem Computer.
 
 - Heutzutage haben die meisten Computer auch eine *Netzwerkverbindung*, um Informationen über ein Netzwerk abzurufen. Wir können uns das Netzwerk als einen sehr langsamen Ort vorstellen, an dem Daten gespeichert und abgerufen werden, die nicht immer „verfügbar“ sind. In gewissem Sinne ist das Netzwerk also eine langsamere und manchmal unzuverlässige Form des *Sekundärspeichers*.
 
@@ -68,12 +68,11 @@ In gewissem Sinne braucht man zwei Fähigkeiten, um ein Programmierer zu sein:
 
 -   Zweitens müssen wir „eine Geschichte erzählen“ können. Beim Schreiben einer Geschichte kombinieren wir Wörter und Sätze, um dem Leser eine Idee zu vermitteln. Es ist eine Kunst, eine Geschichte zu konstruieren, und die Fähigkeit, eine Geschichte zu schreiben, wird verbessert, indem man etwas schreibt und Feedback erhält. Beim Programmieren ist unser Programm die „Geschichte“ und das Problem, das wir zu lösen versuchen, ist die „Idee“.
 
-Wenn man einmal eine Programmiersprache wie Python gelernt hat, wird es einem viel leichter fallen, eine zweite Programmiersprache wie JavaScript oder C++ zu lernen. Die neue Programmiersprache hat einen ganz anderen Wortschatz und eine andere Grammatik, aber die Problemlösungsfähigkeiten sind in allen
-Programmiersprachen gleich.
+Wenn man einmal eine Programmiersprache wie Python gelernt hat, wird es einem viel leichter fallen, eine zweite Programmiersprache wie JavaScript oder C++ zu lernen. Die neue Programmiersprache hat einen ganz anderen Wortschatz und eine andere Grammatik, aber die Problemlösungsfähigkeiten sind in allen Programmiersprachen gleich.
 
 Wir werden das „Vokabular“ und die „Sätze“ von Python ziemlich schnell lernen. Es wird länger dauern, bis man in der Lage ist, ein zusammenhängendes Programm zu schreiben, um ein brandneues Problem zu lösen. Wir lehren das Programmieren ähnlich wie das Schreiben. Wir beginnen damit, Programme zu lesen und zu erklären. Folgend schreiben wir einfache Programme und mit der Zeit immer komplexere Programme. Irgendwann hat man „die Muse“ und erkennt die Muster von selbst und kann ganz natürlich erkennen, wie man ein Problem aufgreift und ein Programm schreibt, dass dieses Problem löst. Und wenn man diesen Punkt erreicht hat, wird das Programmieren zu einem sehr angenehmen und kreativen Prozess.
 
-Wir beginnen mit dem Vokabular und der Struktur von Python-Programmen. Seid geduldig, denn die einfachen Beispiele erinnern uns daran, wie wir zum ersten Mal gelesen haben.
+Wir beginnen mit dem Vokabular und der Struktur der Python-Programmen. Wir müssen geduldig sein, denn die einfachen Beispiele erinnern uns daran, wie wir zum ersten Mal gelesen haben.
 
 Wörter und Sätze
 ----------------
@@ -103,7 +102,7 @@ Wir werden diese reservierten Wörter und ihre Verwendung zu gegebener Zeit lern
 print('Hello world!')
 ~~~~
 
-Und wir haben sogar unseren ersten syntaktisch korrekten Python-Satz geschrieben. Unser Satz beginnt mit der Funktion *print*, gefolgt von einer Zeichenfolge unserer Wahl, die in einfachen Anführungszeichen steht. Die Zeichenketten in den Druckanweisungen sind in Anführungszeichen eingeschlossen. Einfache Anführungszeichen und doppelte Anführungszeichen haben die gleiche Funktion; die meisten Leute verwenden einfache Anführungszeichen, außer in Fällen wie diesem, wo ein einfaches Anführungszeichen (das auch ein Apostroph ist) in der Zeichenkette erscheint.
+Und wir haben sogar unseren ersten syntaktisch korrekten Python-Satz geschrieben. Unser Satz beginnt mit der Funktion *print*, gefolgt von einer Zeichenfolge unserer Wahl, die in einfachen Anführungszeichen steht. Die Zeichenketten in den `print`-Anweisungen sind in Anführungszeichen eingeschlossen. Einfache Anführungszeichen und doppelte Anführungszeichen haben die gleiche Funktion; die meisten Leute verwenden einfache Anführungszeichen, außer in Fällen wie diesem, wo ein einfaches Anführungszeichen (ein Apostroph) in der Zeichenkette erscheint.
 
 Konversation mit Python
 -----------------------
@@ -163,7 +162,7 @@ SyntaxError: Missing parentheses in call to 'print'
 
 Das Gespräch lief eine Zeit lang sehr gut, und dann haben wir den kleinsten Fehler bei der Verwendung der Sprache Python gemacht, und Python hat die Speere wieder hervorgeholt.
 
-An diesem Punkt sollte man erkennen, dass Python zwar erstaunlich komplex und mächtig ist und sehr wählerisch ist, was die Syntax angeht, die wir zur Kommunikation mit ihm verwenden. Python selbst ist *nicht* intelligent. Wir führen eigentlich nur ein Gespräch mit uns selbst, aber mit der richtigen Syntax.
+An diesem Punkt sollte man erkennen, dass Python zwar erstaunlich komplex und mächtig ist und sehr wählerisch ist, was die Syntax angeht, die wir zur Kommunikation mit ihm verwenden, jedoch ist Python *nicht* intelligent. Wir führen eigentlich nur ein Gespräch mit uns selbst, aber mit der richtigen Syntax.
 
 Wenn wir ein Programm verwenden, dass von jemand anderem geschrieben wurde, findet die Konversation gewissermaßen zwischen uns und diesem anderen Programmierer statt, wobei Python als Vermittler fungiert. Python ist eine Möglichkeit für die Programmierer, auszudrücken, wie die Konversation ablaufen soll. Und in ein paar weiteren Kapiteln werden wir einer dieser Programmierer sein, die Python benutzen, um mit den Benutzern unseres Programms zu sprechen. Bevor wir unser erstes Gespräch mit dem Python-Interpreter beenden, sollten wir wissen, wie man sich von den Bewohnern des Planeten Python verabschiedet:
 
@@ -180,9 +179,9 @@ SyntaxError: invalid syntax
 >>> quit()
 ~~~~
 
-Man kann feststellen, dass der Fehler bei den ersten beiden Fehlversuchen anders ist. Der zweite Fehler ist anders, weil *if* ein reserviertes Wort ist und Python das reservierte Wort sah und dachte, wir wollten etwas sagen, aber die Syntax des Satzes war falsch.
+Man kann feststellen, dass der Fehler bei den ersten beiden Fehlversuchen anders ist. Der zweite Fehler ist anders, weil `if` ein reserviertes Wort ist und Python das reservierte Wort sah und dachte, wir wollten etwas sagen, aber die Syntax des Satzes war falsch.
 
-Der richtige Weg, sich von Python zu verabschieden, ist die Eingabe von *quit()* am interaktiven Chevron `>>>`-Prompt. Wir hätten wahrscheinlich eine ganze Weile gebraucht, um das zu erraten, also wird es sich als hilfreich erweisen, ein Buch zur Hand zu haben.
+Der richtige Weg, sich von Python zu verabschieden, ist die Eingabe von `quit()` am interaktiven `>>>`-Prompt. Wir hätten wahrscheinlich eine ganze Weile gebraucht, um das zu erraten, also wird es sich als hilfreich erweisen, ein Buch zur Hand zu haben.
 
 Terminologie: Interpreter und Compiler
 --------------------------------------
@@ -197,15 +196,15 @@ Die CPU versteht eine Sprache, die wir *Maschinensprache* nennen. Maschinensprac
 ...
 ~~~~
 
-Die Maschinensprache scheint auf den ersten Blick recht einfach zu sein, da es nur Nullen und Einsen gibt. nur Nullen und Einsen gibt, aber ihre Syntax ist noch komplexer und weitaus komplizierter als Python. Daher schreiben nur sehr wenige Programmierer jemals Maschinensprache Sprache. Stattdessen entwickeln wir verschiedene Übersetzer, die es Programmierern ermöglichen Hochsprachen wie Python oder JavaScript zu schreiben, und diese Übersetzer wandeln die Programme in Maschinensprache um, die dann von der Ausführung durch die CPU.
+Die Maschinensprache scheint auf den ersten Blick recht einfach zu sein, da es nur Nullen und Einsen gibt, aber ihre Syntax ist noch komplexer und weitaus komplizierter als Python. Daher schreiben nur sehr wenige Programmierer jemals Maschinensprache. Stattdessen entwickeln wir verschiedene Übersetzer, die es Programmierern ermöglichen, Hochsprachen wie Python oder JavaScript zu schreiben, und diese Übersetzer wandeln die Programme in Maschinensprache um, die dann von der CPU ausgeführt wird.
 
-Da die Maschinensprache an die Computerhardware gebunden ist, ist die Maschinensprache ist Maschinensprache nicht *portabel* über verschiedene Arten von Hardware. In Hochsprachen geschriebene Programme können zwischen verschiedenen Computern übertragen werden, indem ein anderer Interpreter auf dem neuen Computer verwendet wird oder den Code neu kompilieren, um eine Maschinensprachversion des Programms Programms für die neue Maschine.
+Da die Maschinensprache an die Computerhardware gebunden ist, ist die Maschinensprache nicht *portabel* über verschiedene Arten von Hardware. In Hochsprachen geschriebene Programme können zwischen verschiedenen Computern übertragen werden, indem ein anderer Interpreter auf dem neuen Computer verwendet wird oder der Code neu kompiliert wird, um eine Maschinensprachversion des Programms für die neue Maschine zu erhalten.
 
 Diese Programmiersprachenübersetzer lassen sich in zwei allgemeine Kategorien einteilen: (1) Interpreter und (2) Compiler.
 
-Ein *Interpreter* liest den Quellcode des Programms, wie er vom Programmierer geschrieben wurde, analysiert den Quellcode und interpretiert die Befehle im laufenden Betrieb. Python ist ein Interpreter, und wenn wir Wenn wir Python interaktiv ausführen, können wir eine Zeile (einen Satz) in Python eingeben und Python verarbeitet sie sofort und ist bereit für die Eingabe einer weiteren Python-Zeile einzugeben.
+Ein *Interpreter* liest den Quellcode des Programms, wie er vom Programmierer geschrieben wurde, analysiert den Quellcode und interpretiert die Befehle im laufenden Betrieb. Python ist ein Interpreter, und wenn wir Python interaktiv ausführen, können wir eine Zeile (einen Satz) in Python eingeben und Python verarbeitet sie sofort und ist bereit für die Eingabe einer weiteren Python-Zeile.
 
-Einige der Python-Zeilen sagen Python, dass es sich einen Wert für später merken soll. einen Wert für später merken soll. Wir müssen einen Namen für diesen zu speichernden Wert wählen Wir müssen einen Namen für den zu speichernden Wert wählen, und wir können diesen symbolischen Namen verwenden, um den Wert später abrufen. Wir verwenden den Begriff *Variable* für die Bezeichnungen, die wir die wir verwenden, um auf diese gespeicherten Daten zu verweisen.
+Einige der Python-Zeilen sagen Python, dass es sich einen Wert für später merken soll. Wir müssen einen Namen für diesen zu speichernden Wert wählen und wir können diesen symbolischen Namen verwenden, um den Wert später abzurufen. Wir verwenden den Begriff *Variable* für die Bezeichnungen, die wir verwenden, um auf diese gespeicherten Daten zu verweisen.
 
 ~~~~ {.python}
 >>> x = 6
@@ -217,13 +216,13 @@ Einige der Python-Zeilen sagen Python, dass es sich einen Wert für später merk
 >>>
 ~~~~
 
-In diesem Beispiel bitten wir Python, sich den Wert *6* zu merken und die Label *x* zu verwenden, damit wir den Wert später abrufen können. Wir überprüfen ob Python sich den Wert tatsächlich gemerkt hat, indem wir *print*. Dann bitten wir Python, den Wert *x* abzurufen, mit sieben zu multiplizieren und den neu berechneten Wert in *y*. Dann möchten wir uns den Wert anzeigen lassen, der sich gerade in *y* befindet.
+In diesem Beispiel bitten wir Python, sich den Wert `6` zu merken und die Label `x` zu verwenden, damit wir den Wert später abrufen können. Wir überprüfen, ob Python sich den Wert tatsächlich gemerkt hat, indem wir `print` verwenden. Dann bitten wir Python, den Wert `x` abzurufen, mit sieben zu multiplizieren und den neu berechneten Wert in `y` zu speichern. Dann möchten wir uns den Wert anzeigen lassen, der sich gerade in `y` befindet.
 
 Auch wenn wir diese Befehle Zeile für Zeile in Python eingeben, behandelt Python sie als eine geordnete Folge von Anweisungen, wobei spätere Anweisungen Daten abrufen können, die in früheren Anweisungen erstellt wurden. Wir schreiben unseren ersten einfachen Absatz mit vier Sätzen in einer logischen und sinnvollen Reihenfolge.
 
-Es liegt in der Natur eines *Interpreters*, dass er in der Lage ist ein interaktives Gespräch zu führen, wie oben gezeigt. Ein *Compiler* muss das gesamte Programm in einer Datei erhalten. Dann führt er einen Prozess aus, um den High-Level-Quellcode in Maschinensprache zu übersetzen. Danach stellt der Compiler die resultierende Maschinensprache in einer Datei zur späteren Ausführung zur Verfügung.
+Es liegt in der Natur eines *Interpreters*, dass er in der Lage ist ein interaktives Gespräch zu führen, wie oben gezeigt. Ein *Compiler* muss das *gesamte* Programm in einer Datei erhalten. Dann führt er einen Prozess aus, um den High-Level-Quellcode in Maschinensprache zu übersetzen. Danach stellt der Compiler die resultierende Maschinensprache in einer Datei zur späteren Ausführung zur Verfügung.
 
-Wenn wir ein Windows-System haben, haben diese ausführbaren Maschinensprache Programme die Endungen `.exe` oder `.dll`, welche für „ausführbar“ bzw. bzw. „dynamische Link-Bibliothek“ stehen. Unter Linux und Macintosh gibt es kein Suffix, das eine Datei eindeutig als ausführbar kennzeichnet.
+Wenn wir ein Windows-System haben, haben diese ausführbaren Maschinensprache-Programme die Endungen `.exe` oder `.dll`, welche für „ausführbar“ bzw. „dynamische Link-Bibliothek“ stehen. Unter Linux und Macintosh gibt es kein Suffix, das eine Datei eindeutig als ausführbar kennzeichnet.
 
 Wenn wir eine ausführbare Datei in einem Texteditor öffnen würden, sähe sie völlig verrückt aus und wäre unlesbar:
 
@@ -238,8 +237,7 @@ Wenn wir eine ausführbare Datei in einem Texteditor öffnen würden, sähe sie 
 
 Es ist nicht einfach, Maschinensprache zu lesen oder zu schreiben, daher ist es gut, dass wir *Interpreter* und *Compiler* haben, die es uns ermöglichen, in Hochsprachen wie Python oder C zu schreiben.
 
-An diesem Punkt in unserer Diskussion über Compiler und Interpreter, sollten man sich ein wenig über den Python-Interpreter selbst Gedanken machen. In welcher Sprache ist er geschrieben? Ist er in einer kompilierten Sprache geschrieben? Wenn wir
-`python` eintippen, was genau passiert dann?
+An diesem Punkt in unserer Diskussion über Compiler und Interpreter, sollte man sich ein wenig über den Python-Interpreter selbst Gedanken machen. In welcher Sprache ist er geschrieben? Ist er in einer kompilierten Sprache geschrieben? Wenn wir `python` eintippen, was genau passiert dann?
 
 Der Python-Interpreter ist in einer Hochsprache namens C geschrieben. Wir können uns den eigentlichen Quellcode des Python-Interpreters ansehen, indem wir [www.python.org](http://www.python.org) aufrufen und uns zum Quellcode durcharbeiten. Python ist also selbst ein Programm und wird in Maschinencode kompiliert. Als wir Python auf unserem Computer installiert haben, haben wir eine Maschinencode-Kopie des übersetzten Python-Programms auf unser System geladen. Unter Windows befindet sich der ausführbare Maschinencode für Python wahrscheinlich in einer Datei mit einem Namen wie:
 
@@ -271,7 +269,7 @@ Das `\$` ist die Eingabeaufforderung des Betriebssystems, und das `cat hello.py`
 
 Wir rufen den Python-Interpreter auf und sagen ihm, dass er den Quellcode aus der Datei `hello.py` lesen soll, anstatt uns interaktiv nach Python-Codezeilen zu fragen.
 
-Man kann feststellen, dass es am Ende des Python-Programms keine Notwendigkeit für *quit()* gibt. Wenn Python den Quellcode aus einer Datei liest, weiß es, dass es aufhören muss, wenn das Ende der Datei erreicht wurde.
+Man kann feststellen, dass es am Ende des Python-Programms keine Notwendigkeit für `quit()` gibt. Wenn Python den Quellcode aus einer Datei liest, weiß es, dass es aufhören muss, wenn das Ende der Datei erreicht wurde.
 
 Was ist ein Programm?
 ---------------------
@@ -280,7 +278,7 @@ Die Definition eines *Programms* ist im Grunde genommen eine Abfolge von Python-
 
 Es ist vielleicht am einfachsten zu verstehen, was ein Programm ist, wenn man an ein Problem denkt, für dessen Lösung ein Programm erstellt werden könnte, und dann ein Programm betrachtet, dass dieses Problem lösen würde.
 
-Nehmen wir an, wir forschen im Bereich Social Computing über Facebook-Posts und Wir interessieren uns für das am häufigsten verwendete Wort in einer Reihe von Beiträgen. Wir könnten den Datenstrom der Facebook-Posts ausgeben und den Text nach dem häufigsten Wort durchsuchen, aber das würde sehr viel Zeit in Anspruch nehmen und wäre sehr fehleranfällig. Es wäre klug, ein Python-Programm zu schreiben, dass diese Aufgabe schnell und genau erledigt, damit wir das Wochenende mit etwas schönerem verbringen können.
+Nehmen wir an, wir forschen im Bereich Social-Computing über Facebook-Posts und interessieren uns für das am häufigsten verwendete Wort in einer Reihe von Beiträgen. Wir könnten den Datenstrom der Facebook-Posts ausgeben und den Text nach dem häufigsten Wort durchsuchen, aber das würde sehr viel Zeit in Anspruch nehmen und wäre sehr fehleranfällig. Es wäre klug, ein Python-Programm zu schreiben, dass diese Aufgabe schnell und genau erledigt, damit wir das Wochenende mit etwas schönerem verbringen können.
 
 Betrachten wir zum Beispiel den folgenden Text über einen Clown und ein Auto. Sehen wir uns den Text an und finden heraus, welches Wort am häufigsten vorkommt und wie oft es vorkommt.
 
@@ -289,7 +287,7 @@ the clown ran after the car and the car ran into the tent
 and the tent fell down on the clown and the car
 ~~~~
 
-Dann stellen wir uns vor, dass wir diese Aufgabe erledigen, indem wir uns Millionen von Zeilen von Text anschauen. Offen gesagt wäre es schneller, Python zu lernen und ein Python-Programm zu schreiben, um die Wörter zu zählen, als sie manuell durch zu sehen.
+Dann stellen wir uns vor, dass wir diese Aufgabe erledigen, indem wir uns Millionen von Zeilen von Text anschauen. Offen gesagt wäre es schneller, Python zu lernen und ein Python-Programm zu schreiben, um die Wörter zu zählen, als sie manuell durchzusehen.
 
 Die gute Nachricht ist, dass bereits ein einfaches Programm entwickelt wurde, um das häufigste Wort in einer Textdatei zu finden. Es wurde schon geschrieben und getestet, damit wir etwas Zeit sparen können.
 
@@ -298,7 +296,7 @@ Die gute Nachricht ist, dass bereits ein einfaches Programm entwickelt wurde, um
 ../code3/words.txt
 \end{trinketfiles}
 
-Wir müssen nicht einmal Python beherrschen können, um dieses Programm zu nutzen. Wir müssen einfach Kapitel 10 dieses Buches lesen, um die genialen Python-Techniken zu verstehen, die zur Erstellung des Programms verwendet wurden. Wir als Endanwender benutzen das Programm einfach und staunen über seine Cleverness und darüber wieviel manuelle Arbeit wir gespart haben. Einfach den Code in eine Datei mit dem Namen *words.py* eingeben und ausführen oder den Quellcode von <http://www.py4e.com/code3/> herunterladen und ausführen.
+Wir müssen nicht einmal Python beherrschen können, um dieses Programm zu nutzen. Wir müssen einfach Kapitel 10 dieses Buches lesen, um die genialen Python-Techniken zu verstehen, die zur Erstellung des Programms verwendet wurden. Wir als Endanwender benutzen das Programm einfach und staunen über seine Cleverness und darüber wie viel manuelle Arbeit wir gespart haben. Einfach den Code in eine Datei mit dem Namen `words.py` eingeben und ausführen oder den Quellcode von <http://www.py4e.com/code3/> herunterladen und ausführen.
 
 \index{Programm}
 
@@ -307,15 +305,15 @@ Dies ist ein gutes Beispiel dafür, wie Python und die Python-Sprache als Vermit
 Die Bausteine von Programmen
 ----------------------------
 
-In den nächsten Kapiteln, werden wir mehr über das Vokabular, die Satzstruktur, Absatzstruktur und Erzählstruktur von Python lernen. Uns werden die mächtigen Fähigkeiten von Python näher gebracht werden und wir werden uns aneignen wie man diese Fähigkeiten zusammensetzen kann, um nützliche Programme zu erstellen.
+In den nächsten Kapiteln, werden wir mehr über das Vokabular, die Satzstruktur, Absatzstruktur und Erzählstruktur von Python lernen. Uns werden die mächtigen Fähigkeiten von Python näher gebracht werden und wir werden uns aneignen, wie man diese Fähigkeiten zusammensetzen kann, um nützliche Programme zu erstellen.
 
 Es gibt einige konzeptionelle Muster auf niedriger Ebene, die wir zum Erstellen von Programmen benutzen. Diese Konstrukte sind nicht nur für Python-Programme geeignet, sie sind Teil jeder Programmiersprache, von der Maschinensprache bis hin zu den Hochsprachen.
 
 Eingabe
-:   Abrufen von Daten aus der „Außenwelt“. Dies kann das Lesen von Daten aus einer Datei sein, oder sogar aus Sensoren wie einem Mikrofon oder GPS. In unseren ersten Programmen wird die Eingabe durch den Benutzer erfolgen, der Daten auf der der Tastatur eingibt.
+:   Abrufen von Daten aus der „Außenwelt“. Dies kann das Lesen von Daten aus einer Datei sein oder sogar aus Sensoren wie einem Mikrofon oder GPS. In unseren ersten Programmen wird die Eingabe durch den Benutzer erfolgen, der Daten über die Tastatur eingibt.
 
 Ausgabe
-:   Zeige die Ergebnisse des Programms auf einem Bildschirm an oder speichere sie in einer Datei oder vielleicht in Geräten wie einem Lautsprecher, um Musik abzuspielen oder Text zu sprechen.
+:   Anzeigen der Ergebnisse des Programms auf einem Bildschirm oder Speichern in einer Datei.
 
 Sequentielle Ausführung
 :   Die Ausführung von Anweisungen nacheinander in der Reihenfolge wie sie im Skript vorkommen.
@@ -326,19 +324,19 @@ Bedingte Ausführung
 Wiederholte Ausführung
 :   Wiederholtes Ausführen einer Reihe von Anweisungen, normalerweise mit einer gewissen Variation.
 
-wiederverwenden
+Wiederverwenden
 :   Reihe von Anweisungen einmal schreiben und ihnen einen Namen geben. Danach verwenden wir dann diese Anweisungen je nach Bedarf in unserem Programm wieder.
 
-Es klingt fast zu einfach, um wahr zu sein, und natürlich ist es nie so einfach. Es ist so, als würde man sagen, dass Gehen einfach „einen Fuß vor den anderen setzen“ bedeutet. Die „Kunst“ ein Programm zu schreiben besteht darin diese Grundelemente immer wieder neu zusammenzusetzen und zu verweben, um etwas Nützliches für seine Benutzer zu schaffen.
+Es klingt fast zu einfach, um wahr zu sein, und natürlich ist es nie so einfach. Es ist so, als würde man sagen, dass Gehen einfach „einen Fuß vor den anderen setzen“ bedeutet. Die „Kunst“ ein Programm zu schreiben besteht darin, diese Grundelemente immer wieder neu zusammenzusetzen und zu verweben, um etwas Nützliches für seine Benutzer zu schaffen.
 
-Das obige Wortzählungsprogramm verwendet all diese Muster direkt bis auf eines.
+Das obige Wortzählprogramm verwendet alle bis auf eines dieser Muster.
 
 Was kann schon schief gehen?
 ----------------------------
 
-Wie wir in unseren ersten Gesprächen mit Python gesehen haben, müssen wir sehr genau kommunizieren, wenn wir Python-Code schreiben. Die kleinste Abweichung oder der kleinste Fehler führen dazu, dass Python aufhört unser Programm zu betrachten.
+Wie wir in unseren ersten Gesprächen mit Python gesehen haben, müssen wir sehr genau kommunizieren, wenn wir Python-Code schreiben. Die kleinste Abweichung oder der kleinste Fehler führen dazu, dass Python aufhört, unser Programm zu betrachten.
 
-Die Tatsache, dass Python keinen Platz für Fehler lässt, wird von Programmieranfängern oft, als Beweis dafür angesehen, dass Python gemein, hasserfüllt und grausam ist. Während Python alle anderen zu mögen scheint, kennt Python sie persönlich und hegt einen Groll gegen sie. Aufgrund dieses Grolls nimmt es unsere perfekt geschriebenen Programme und lehnt sie als „untauglich“ ab, nur um uns zu quälen.
+Die Tatsache, dass Python keinen Platz für Fehler lässt, wird von Programmieranfängern oft als Beweis dafür angesehen, dass Python gemein, hasserfüllt und grausam ist. Während Python alle anderen zu mögen scheint, kennt Python Sie persönlich und hegt einen Groll gegen Sie. Aufgrund dieses Grolls nimmt es unsere perfekt geschriebenen Programme und lehnt sie als „untauglich“ ab, nur um uns zu quälen.
 
 ~~~~ {.python}
 >>> primt 'Hello world!'
@@ -364,21 +362,20 @@ SyntaxError: invalid syntax
 >>>
 ~~~~
 
-Es hat wenig Sinn, mit Python zu argumentieren. Es ist nur ein Werkzeug. Es hat keine Emotionen und es ist glücklich und bereit uns zu helfen, wann immer wir es brauchen. Seine Fehlermeldungen klingen hart, aber sie sind nur ein Hilferuf. Es hat sich angesehen was wir eingegeben haben und kann einfach nicht verstehen was genau wir damit sagen wollen.
+Es macht wenig Sinn, mit Python zu argumentieren. Es ist nur ein Werkzeug. Es hat keine Emotionen und es ist glücklich und bereit uns zu helfen, wann immer wir es brauchen. Seine Fehlermeldungen klingen hart, aber sie sind nur ein Hilferuf. Es hat sich angesehen, was wir eingegeben haben, und kann einfach nicht verstehen, was genau wir damit sagen wollen.
 
-Python ist viel mehr wie ein Hund, der einen bedingungslos liebt, ein paar Schlüsselwörter, die er versteht und einem, mit einem süßen Gesichtsausdruck anschaut (`>>>`) und darauf wartet, dass wir etwas sagen, das er versteht. Wenn Python `SyntaxError: invalid syntax` sagt, wedelt es einfach mit dem Schwanz sagt: „Du schienst etwas zu sagen, ich verstehe einfach nicht was du gemeint hast, aber bitte rede weiter mit mir (`>>>`).“
+Python ist viel mehr wie ein Hund, der einen bedingungslos liebt, ein paar Schlüsselwörter versteht und uns mit einem süßen Gesichtsausdruck anschaut (`>>>`) und darauf wartet, dass wir etwas sagen, das er versteht. Wenn Python `SyntaxError: invalid syntax` sagt, wedelt es einfach mit dem Schwanz sagt: „Du schienst etwas zu sagen, ich verstehe einfach nicht was du gemeint hast, aber bitte rede weiter mit mir (`>>>`).“
 
 Wenn die Programme immer anspruchsvoller werden, wird man auf drei allgemeine Arten von Fehlern stoßen:
 
 Syntaxfehler
-:   Dies sind die ersten Fehler, die man machen wird und die am einfachsten zu beheben sind. Ein Syntaxfehler bedeutet, dass wir die „Grammatikregeln“ von Python verletzt haben. Python tut sein Bestes, um genau auf die Zeile und das Zeichen zu zeigen wo es bemerkt hat, dass es verwirrt war. Das einzig tückische an Syntaxfehlern ist, dass der Fehler, der behoben werden muss, manchmal eigentlich früher im Programm liegt als an der Stelle, an der Python *verwirrt* war. Also die Zeile und das Zeichen die Python bei einem Syntaxfehler anzeigt, sind zunächst nur ein Ausgangspunkt für unsere Untersuchungen.
-
+:   Dies sind die ersten Fehler, die man machen wird, und die am einfachsten zu beheben sind. Ein Syntaxfehler bedeutet, dass wir die „Grammatikregeln“ von Python verletzt haben. Python tut sein Bestes, um genau auf die Zeile und das Zeichen zu zeigen wo es bemerkt hat, dass es verwirrt war. Das einzig tückische an Syntaxfehlern ist, dass der Fehler, der behoben werden muss, manchmal eigentlich früher im Programm liegt als an der Stelle, an der Python *verwirrt* war. Also die Zeile und das Zeichen die Python bei einem Syntaxfehler anzeigt, sind zunächst nur ein Ausgangspunkt für unsere Untersuchungen.
 
 Logikfehler
 :   Ein Logikfehler liegt vor, wenn unser Programm eine gute Syntax hat, aber ein Fehler in der Reihenfolge der Anweisungen oder dem Verhältnis der Anweisungen zueinander existiert. Ein gutes Beispiel für ein Logikfehler könnte sein: „Nimm einen Schluck aus deiner Wasserflasche, stecke sie in deinen Rucksack, laufe zur Bibliothek und schließe dann den Deckel der Flasche wieder.“
 
 Semantische Fehler
-:   Ein semantischer Fehler liegt vor, wenn die Beschreibung der zu unternehmenden Schritte syntaktisch perfekt und in der richtigen Reihenfolge ist, aber es gibt einfach einen Fehler im Programm gibt. Das Programm ist vollkommen korrekt, aber es tut nicht was wir *beabsichtigt* haben. Ein einfaches Beispiel wäre, wenn wir einer Person den Weg zu einem Restaurant beschreiben und sagen: „...wenn du die Kreuzung mit der Tankstelle erreichst, biege links ab und gehe einen Kilometer weiter. Das Restaurant ist ein rotes Gebäude auf der linken Seite.“ Der Freund ist sehr spät dran und ruft uns an, um um zu sagen, dass er auf einem Bauernhof ist, er hinter einer Scheune herumläuft, und kein Zeichen eines Restaurants zu sehen ist. Dann fragen Sie: „Bist du an der Tankstelle links oder rechts abgebogen?“, und er sagt: „Ich habe mich genau an deine Anweisungen gehalten. Ich habe sie aufgeschrieben, sie besagt, dass man an der Tankstelle links abbiegen und einen Kilometer gehen soll.“ Die Antwort: „Es tut mir sehr leid, denn meine Anweisungen waren zwar syntaktisch korrekt, aber sie enthielten leider einen kleinen, aber unentdeckten semantischen Fehler.“
+:   Ein semantischer Fehler liegt vor, wenn die Beschreibung der zu unternehmenden Schritte syntaktisch perfekt und in der richtigen Reihenfolge ist, aber es einfach einen Fehler im Programm gibt. Das Programm ist vollkommen korrekt, aber es tut nicht, was wir *beabsichtigt* haben. Ein einfaches Beispiel wäre, wenn wir einer Person den Weg zu einem Restaurant beschreiben und sagen: „...wenn du die Kreuzung mit der Tankstelle erreichst, biege links ab und gehe einen Kilometer weiter. Das Restaurant ist ein rotes Gebäude auf der linken Seite.“ Der Freund ist sehr spät dran und ruft uns an, um zu sagen, dass er auf einem Bauernhof ist, er hinter einer Scheune herumläuft, und kein Zeichen eines Restaurants zu sehen ist. Dann fragen Sie: „Bist du an der Tankstelle links oder rechts abgebogen?“, und er sagt: „Ich habe mich genau an deine Anweisungen gehalten. Ich habe sie aufgeschrieben, sie besagt, dass man an der Tankstelle links abbiegen und einen Kilometer gehen soll.“ Die Antwort: „Es tut mir sehr leid, denn meine Anweisungen waren zwar syntaktisch korrekt, aber sie enthielten leider einen kleinen unentdeckten semantischen Fehler.“
 
 Bei allen drei Arten von Fehlern versucht Python lediglich genau das zu tun, was wir verlangt haben.
 
@@ -390,18 +387,18 @@ Debugging
 Wenn Python einen Fehler ausspuckt oder sogar ein Ergebnis liefert, dass sich von dem unterscheidet, was wir beabsichtigt hatten, dann beginnt die Suche nach der Fehlerursache. Beim Debugging geht es darum, die Ursache des Fehlers in unserem Code zu finden. Bei der Fehlersuche in einem Programm, insbesondere wenn wir an einem schwerwiegenden Fehler arbeiten, gibt es vier Dinge, die wir versuchen sollten:
 
 Lesen
-:   Nochmal den Code durch erneutes Lesen prüfen. Haben wir alles so gesagt wie wir es sagen wollten?
+:   Nochmal den Code durch erneutes Lesen prüfen. Haben wir alles so gesagt, wie wir es sagen wollten?
 
 Ausführen
 :   Man sollte einfach nochmal experimentieren, indem man nachverfolgbare Änderungen vornimmt und verschiedene Versionen ausführt. Häufig wir das Problem offensichtlich, wenn wir es an der richtigen Stelle im Programm anzeigen lassen. Manchmal muss man etwas Zeit aufwenden, um ein gutes Gerüst zu bauen.
 
 Nachdenken
-:   Man sollte sich Zeit zum Nachdenken nehmen. Was für ein Fehler ist es? Handelt es sich um einen Syntaxfehler, einen Laufzeitfehler oder einen semantischen Fehler? Welche Informationen können wir aus den Fehlermeldungen bzw. der Ausgabe des Programms entnehmen? Welche Art von Fehler könnte die Ursache sein für das Problem, dass man sehen kann? Was haben wir zuletzt geändert, bevor das Problem auftrat?
+:   Man sollte sich Zeit zum Nachdenken nehmen. Was für ein Fehler ist es? Handelt es sich um einen Syntaxfehler, einen Laufzeitfehler oder einen semantischen Fehler? Welche Informationen können wir aus den Fehlermeldungen bzw. der Ausgabe des Programms entnehmen? Welche Art von Fehler könnte die Ursache sein für das Problem, das man sehen kann? Was haben wir zuletzt geändert, bevor das Problem auftrat?
     
 Rückzug
 :   Irgendwann ist es am besten sich zurückzuziehen und die letzten Änderungen rückgängig zu machen, bis man wieder ein Programm hat, das funktioniert und das man verstehen kann. Dann kann man mit dem Neuaufbau beginnen.
     
-Programmieranfänger bleiben manchmal bei einer dieser Aktivitäten stecken und und vergessen die anderen. Um einen Fehler zu finden, muss man lesen, experimentieren, grübeln und sich manchmal zurückziehen. Wenn man bei einer dieser Aktivitäten nicht weiter kommt, versuchen man die anderen. Jede Aktivität hat ihren eigenen Fehlermodus.
+Programmieranfänger bleiben manchmal bei einer dieser Aktivitäten stecken und vergessen die anderen. Um einen Fehler zu finden, muss man lesen, experimentieren, grübeln und sich manchmal zurückziehen. Wenn man bei einer dieser Aktivitäten nicht weiter kommt, versucht man die anderen. Jede Aktivität hat ihren eigenen Fehlermodus.
 
 \index{typographischer Fehler}
 
@@ -409,7 +406,7 @@ Das Lesen des Codes kann zum Beispiel helfen, wenn das Problem ein Tippfehler is
 
 \index{experimentelles Debugging}
 
-Experimentieren kann hilfreich sein vor allem wenn man kleine, einfache Tests durchführt. Wenn man jedoch Experimente durchführt, ohne nachzudenken oder den Code genau zu lesen, könnte man in ein Muster verfallen, dass man „Random-Walk-Programmierung“ nennt. Dabei handelt es sich um einen Prozess, bei dem zufällige Änderungen vorgenommen werden, bis das Programm das Richtige tut. Unnötig zu erwähnen, dass die Random-Walk-Programmierung sehr lange dauern kann.
+Experimentieren kann hilfreich sein, vor allem, wenn man kleine, einfache Tests durchführt. Wenn man jedoch Experimente durchführt, ohne nachzudenken oder den Code genau zu lesen, könnte man in ein Muster verfallen, dass man „Random-Walk-Programmierung“ nennt. Dabei handelt es sich um einen Prozess, bei dem zufällige Änderungen vorgenommen werden, bis das Programm das Richtige tut. Es ist unnötig, zu erwähnen, dass die Random-Walk-Programmierung sehr lange dauern kann.
 
 \index{Random-Walk-Programmierung}
 \index{Vorgehensmodell!Random-Walk-Programmierung}
@@ -420,18 +417,18 @@ Eine Pause hilft beim Nachdenken. Das gilt auch für das Reden. Wenn man das Pro
 
 Aber selbst die besten Debugging-Techniken versagen, wenn es zu viele Fehler gibt, oder wenn der Code, den wir zu beheben versuchen, zu groß und kompliziert ist. Manchmal ist es am besten, sich zurückzuziehen und das Programm zu vereinfachen, bis man zu einem Ergebnis gelangt, welches funktioniert und man versteht.
 
-Programmieranfänger zögern oft, sich zurückzuziehen, weil sie es nicht ertragen können eine Codezeile zu löschen (selbst wenn sie falsch ist). Wenn man sich dadurch besser fühlen sollte, einfach das Programm in eine andere Datei speichern, bevor man es zerlegt. Dann kann man die Teile nach und nach wieder Stück für Stück einfügen.
+Programmieranfänger zögern oft, sich zurückzuziehen, weil sie es nicht ertragen können eine Codezeile zu löschen (selbst wenn sie falsch ist). Wenn man sich dadurch besser fühlt, sollte man einfach das Programm in eine andere Datei sichern, bevor man es zerlegt. Dann kann man die Teile nach und nach wieder Stück für Stück einfügen.
 
 Der Lernprozess
 ---------------
 
-Im weiteren Verlauf des Buches sollte man keine Angst haben, wenn die Konzepte beim ersten Mal nicht gut zusammenzupassen scheinen. Als wir sprechen gelernt haben, war es in den ersten Jahren kein Problem, dass man nur niedliche Gluckgeräusche gemacht hat. Es war in Ordnung, wenn es sechs Monate dauerte, um von einfachen Vokabeln zu einfachen Sätzen zu kommen, und 5-6 Jahre brauchten, um von Sätzen zu Absätzen zu kommen, und noch ein paar Jahre, um in der Lage zu sein selbständig eine interessante, vollständige Kurzgeschichte zu schreiben.
+Im weiteren Verlauf des Buches sollte man keine Angst haben, wenn die Konzepte beim ersten Mal nicht gut zusammenzupassen scheinen. Als wir sprechen gelernt haben, war es in den ersten Jahren kein Problem, dass man nur niedliche Gluckgeräusche gemacht hat. Es war in Ordnung, wenn es sechs Monate dauerte, um von einfachen Vokabeln zu einfachen Sätzen zu kommen, und 5-6 Jahre brauchte, um von Sätzen zu Absätzen zu kommen, und noch ein paar Jahre, um in der Lage zu sein, selbständig eine interessante, vollständige Kurzgeschichte zu schreiben.
 
-Wir wollen, dass wir Python viel schneller lernen, deshalb lernen wir in den nächsten Kapiteln alles gleichzeitig. Aber es ist wie beim Erlernen einer neuen Sprache, die man sich erst aneignen und verstehen muss, bevor sie sich natürlich anfühlt. Das führt zu einiger Verwirrung, wenn wir Themen lernen und wieder aufgreifen, um das große Ganze zu sehen, während wir die winzigen Fragmente definieren, die dieses große Bild ausmachen. Das Buch ist zwar linear geschrieben und wenn man einen Kurs belegt, wird er auch linear verlaufen. Man sollte jedoch nicht zögern, sich dem Stoff sehr unlinear zu nähern. Egal ob vorwärts und rückwärts oder quer gelesen. Durch überfliegen von fortgeschrittenem Material, ohne die Details vollständig zu verstehen, erhält man ein besseres Verständnis für das „Warum?“ der Programmierung. Durch Wiederholung früherer Inhalte und sogar Wiederholung früherer Übungen werden wir feststellen, dass wir tatsächlich viel gelernt haben, auch wenn das Material welches wir gerade anstarren, ein wenig undurchdringlich erscheint.
+Wir wollen, dass wir Python viel schneller lernen, deshalb lernen wir in den nächsten Kapiteln alles gleichzeitig. Aber es ist wie beim Erlernen einer neuen Sprache, die man sich erst aneignen und verstehen muss, bevor sie sich natürlich anfühlt. Das führt zu einiger Verwirrung, wenn wir Themen lernen und wieder aufgreifen, um das große Ganze zu sehen, während wir die winzigen Fragmente definieren, die dieses große Bild ausmachen. Das Buch ist zwar linear geschrieben und wenn man einen Kurs belegt, wird er auch linear verlaufen. Man sollte jedoch nicht zögern, sich dem Stoff sehr unlinear zu nähern. Egal ob vorwärts und rückwärts oder quer gelesen. Durch überfliegen von fortgeschrittenem Material, ohne die Details vollständig zu verstehen, erhält man ein besseres Verständnis für das „Warum?“ der Programmierung. Durch Wiederholung früherer Inhalte und sogar Wiederholung früherer Übungen werden wir feststellen, dass wir tatsächlich viel gelernt haben, auch wenn das Material, welches wir gerade anstarren, ein wenig undurchdringlich erscheint.
 
 Wenn wir unsere erste Programmiersprache lernen, gibt es normalerweise ein paar wunderbare „Aha!“-Momente, in denen man vom Hämmern mit dem Hammer und Meißel aufschaut den Blick abwendet und sieht, dass man gerade tatsächlich eine schöne Skulptur baut.
 
-Wenn etwas besonders schwierig erscheint, lohnt es sich in der Regel nicht die ganze Nacht aufzubleiben und es anzustarren. Eine Pause machen, ein Nickerchen halten, einen Snack zu sich nehmen, das Problem einem anderen erklären (oder vielleicht dem Hund) und dann mit neuen Augen wieder darauf blicken. Auf jeden Fall werden wir zurückblicken und feststellen, dass alles ganz einfach und elegant war und man nur ein bisschen Zeit gebraucht hat, um es zu verinnerlichen.
+Wenn etwas besonders schwierig erscheint, lohnt es sich in der Regel nicht, die ganze Nacht aufzubleiben und es anzustarren. Eine Pause machen, ein Nickerchen halten, einen Snack zu sich nehmen, das Problem einem anderen erklären (oder vielleicht dem Hund) und dann mit neuen Augen wieder darauf blicken. Auf jeden Fall werden wir zurückblicken und feststellen, dass alles ganz einfach und elegant war und man nur ein bisschen Zeit gebraucht hat, um es zu verinnerlichen.
 
 Glossar
 -------
@@ -441,7 +438,7 @@ Bug
 \index{Bug}
 
 Central Processing Unit
-:   Das Herz eines jeden Computers. Auf ihm läuft die Software, die wir schreiben; Es wird auch *CPU* oder *Prozessor* genannt.
+:   Das Herz eines jeden Computers. Auf ihm läuft die Software, die wir schreiben; es wird auch *CPU* oder *Prozessor* genannt.
 \index{Central Processing Unit}\index{Prozessor}
 \index{CPU}
 
@@ -466,7 +463,7 @@ Low-Level-Sprache
 \index{Low-Level-Sprache}
 
 Maschinencode
-:   Die niedrigste Sprache für Software, also die Sprache, die direkt von der zentralen Verarbeitungseinheit (CPU) ausgeführt wird.
+:   Die niedrigste Sprache für Software, also die Sprache, die direkt von der zentralen Recheneinheit (CPU) ausgeführt wird.
 \index{Maschinencode}
 
 Hauptspeicher
@@ -478,7 +475,7 @@ Parsen
 \index{Parsen}
 
 Portabilität
-:   Eine Eigenschaft eines Programms, dass auf mehr als einer Art von Endgerät laufen kann.
+:   Eine Eigenschaft eines Programms, das auf mehr als einer Art von Endgerät laufen kann.
 \index{Portabilität}
 
 Print-Funktion
@@ -491,7 +488,7 @@ Problemlösungsprozess
 \index{Problemlösung}
 
 Programm
-:   Ein Satz von Anweisungen, der eine Berechnung spezifiziert.
+:   Ein Satz von Anweisungen, der eine Berechnung vorgibt.
 \index{Programm}
 
 Eingabeaufforderung
@@ -529,7 +526,7 @@ d) Eingaben des Benutzers entgegennehmen
 
 **Übung 3: Was ist der Unterschied zwischen einem Compiler und einem Interpreter?**
 
-**Aufgabe 4: Welcher der folgenden Texte enthält Maschinencode?**
+**Aufgabe 4: Was enthält Maschinencode?**
 
 a\) Der Python-Interpreter\
 b) Die Tastatur\
@@ -572,7 +569,7 @@ b) 44\
 c) x + 1\
 d) Fehler, denn x = x + 1 ist mathematisch nicht möglich
 
-**Übung 8: Erläutern Sie die folgenden Punkte anhand eines Beispiels für eine menschliche Fähigkeit: (1) Zentrale Recheneinheit, (2) Hauptspeicher, (3) Sekundärspeicher Speicher, (4) Eingabegerät, und (5) Ausgabegerät. Zum Beispiel: „Was ist das menschliche Äquivalent zu einer CPU“?**
+**Übung 8: Erläutern Sie die folgenden Punkte anhand eines Beispiels für eine menschliche Fähigkeit: (1) Zentrale Recheneinheit, (2) Hauptspeicher, (3) Sekundärspeicher, (4) Eingabegerät und (5) Ausgabegerät. Zum Beispiel: „Was ist das menschliche Äquivalent zu einer CPU“?**
 
 **Übung 9: Wie behebt man einen Syntaxfehler?**
 
