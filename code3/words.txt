@@ -1,24 +1,30 @@
-Writing programs or programming is a very creative
-and rewarding activity  You can write programs for
-many reasons ranging from making your living to solving
-a difficult data analysis problem to having fun to helping
-someone else solve a problem  This book assumes that
-{\em everyone} needs to know how to program and that once
-you know how to program, you will figure out what you want
-to do with your newfound skills
+    Das Schreiben von Programmen (oder Programmieren) ist eine
+sehr kreative und lohnende Tätigkeit. Wir können Programme
+aus vielen Gründen schreiben, angefangen mit dem Ziel,
+damit den Lebensunterhalt zu verdienen, ein schwieriges
+Datenanalyseproblem zu lösen, Spaß zu haben oder um jemand
+anderem bei der Lösung eines Problems zu helfen. Dieses Buch
+geht davon aus, dass {\em jeder} wissen sollte, wie man
+programmiert, und dass man, sobald man die Programmierung
+beherrscht, herausfindet, was man mit den neugewonnenen
+Fähigkeiten machen kann.
 
-We are surrounded in our daily lives with computers ranging
-from laptops to cell phones  We can think of these computers
-as our personal assistants who can take care of many things
-on our behalf  The hardware in our current-day computers
-is essentially built to continuously ask us the question
-What would you like me to do next
+Wir sind in unserem täglichen Leben von Computern umgeben,
+von Laptops bis hin zu Handys. Wir nehmen diese Computer als
+unsere persönlichen Assistenten war, die viele Dinge für
+uns erledigen können. Die Hardware in unseren heutigen
+Computern ist im Wesentlichen so gebaut, dass sie uns ständig
+die Frage stellt: Was soll ich als Nächstes tun?
 
-Our computers are fast and have vasts amounts of memory and 
-could be very helpful to us if we only knew the language to 
-speak to explain to the computer what we would like it to 
-do next If we knew this language we could tell the 
-computer to do tasks on our behalf that were reptitive  
-Interestingly, the kinds of things computers can do best
-are often the kinds of things that we humans find boring
-and mind-numbing
+Programmierer fügen der Hardware ein Betriebssystem und eine
+Reihe von Anwendungen hinzu, und schon haben wir einen
+persönlichen digitalen Assistenten, der uns bei vielen
+Problemen des Alltags nützlich sein kann. Unsere Computer
+sind schnell und haben riesige Mengen an Speicher und könnten
+uns sehr hilfreich sein, wenn wir nur die Sprache beherrschen
+würden, um dem Computer zu erklären, was er als Nächstes tun
+soll. Wenn wir diese Sprache kennen, könnten wir dem Computer
+sagen, dass er in unserem Namen Aufgaben erledigen soll, die
+sich wiederholen. Interessanterweise sind die Dinge, die Computer
+am besten können oft die Dinge, die wir Menschen langweilig
+und stumpfsinnig finden.

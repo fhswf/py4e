@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 # To render Chinese text, touch the file
 #    touch .chinese
