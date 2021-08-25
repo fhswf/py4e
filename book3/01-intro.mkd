@@ -2,26 +2,26 @@
 Warum sollte man Programmieren lernen?
 ======================================
 
-Das Schreiben von Programmen (oder Programmieren) ist eine sehr kreative und lohnende Tätigkeit. Wir können Programme aus vielen Gründen schreiben, angefangen mit dem Ziel, damit den Lebensunterhalt zu verdienen, ein schwieriges Datenanalyseproblem zu lösen, Spaß zu haben oder um jemand anderem bei der Lösung eines Problems zu helfen. Dieses Buch geht davon aus, dass *jeder* wissen sollte, wie man programmiert, und dass wir, sobald wir die Programmierung beherrschen, herausfinden werden, was wir mit unseren neugewonnenen Fähigkeiten machen können.
+Das Schreiben von Programmen (oder Programmieren) ist eine sehr kreative und lohnende Tätigkeit. Wir können Programme aus vielen Gründen schreiben, angefangen mit dem Ziel, damit den Lebensunterhalt zu verdienen, ein schwieriges Datenanalyseproblem zu lösen, Spaß zu haben oder um jemand anderem bei der Lösung eines Problems zu helfen. Dieses Buch geht davon aus, dass *jeder* wissen sollte, wie man programmiert, und dass man, sobald man die Programmierung beherrscht, herausfindet, was man mit den neugewonnenen Fähigkeiten machen kann.
 
-Wir sind in unserem täglichen Leben von Computern umgeben, von Laptops bis hin zu Handys. Wir nehmen diese Computer als unsere „persönlichen Assistenten“ war, die viele Dinge für uns erledigen können. Die Hardware in unseren heutigen Computern ist im Wesentlichen so gebaut, dass sie uns ständig die Frage stellt: „Was soll ich als nächstes tun?“
+Wir sind in unserem täglichen Leben von Computern umgeben, von Laptops bis hin zu Handys. Wir nehmen diese Computer als unsere „persönlichen Assistenten“ war, die viele Dinge für uns erledigen können. Die Hardware in unseren heutigen Computern ist im Wesentlichen so gebaut, dass sie uns ständig die Frage stellt: „Was soll ich als Nächstes tun?“
 
-Programmierer fügen der Hardware ein Betriebssystem und eine Reihe von Anwendungen hinzu, und schon haben wir einen persönlichen digitalen Assistenten, der uns bei vielen Problemen des Alltags nützlich sein kann. Unsere Computer sind schnell und haben riesige Mengen an Speicher und könnten uns sehr hilfreich sein, wenn wir nur die Sprache beherrschen würden, um dem Computer zu erklären, was er als nächstes tun soll. Wenn wir diese Sprache kennen, könnten wir dem Computer sagen, dass er in unserem Namen Aufgaben erledigen soll, die sich wiederholen. Interessanterweise sind die Dinge, die Computer am besten können oft die Dinge, die wir Menschen langweilig und stumpfsinnig finden.
+Programmierer fügen der Hardware ein Betriebssystem und eine Reihe von Anwendungen hinzu, und schon haben wir einen persönlichen digitalen Assistenten, der uns bei vielen Problemen des Alltags nützlich sein kann. Unsere Computer sind schnell und haben riesige Mengen an Speicher und könnten uns sehr hilfreich sein, wenn wir nur die Sprache beherrschen würden, um dem Computer zu erklären, was er als Nächstes tun soll. Wenn wir diese Sprache kennen, könnten wir dem Computer sagen, dass er in unserem Namen Aufgaben erledigen soll, die sich wiederholen. Interessanterweise sind die Dinge, die Computer am besten können oft die Dinge, die wir Menschen langweilig und stumpfsinnig finden.
 
 Schauen wir uns zum Beispiel die ersten drei Absätze dieses Kapitels an und finden heraus, welches Wort am häufigsten verwendet wird und wie oft es vorkommt. Während wir in der Lage waren, die Wörter in wenigen Sekunden zu lesen und zu verstehen, ist das Zählen der Wörter fast schmerzhaft, weil es nicht die Art von Problem ist, die der menschliche Verstand einfach lösen kann. Für einen Computer ist das Gegenteil der Fall: Das Lesen und Verstehen von Text auf einem Blatt Papier ist für einen Computer schwer, aber die Wörter zu zählen und Ihnen zu sagen, wie oft das am häufigsten verwendete Wort verwendet wurde, ist für den Computer sehr einfach.
 
 ~~~~ {.python}
 python words.py
 Enter file:words.txt
-zu 12
+Das Wort "die" kommt 9-mal vor
 ~~~~
 
-Unser Programm sagt uns schnell, dass das Wort „zu“ 12 mal im oberen Teil dieses Kapitels verwendet wurde. Genau diese Tatsache, dass Computer Dinge gut können, die Menschen eher nicht gut bzw. schnell können, ist ist der Grund, warum man die Programmiersprachen beherrschen sollten. Sobald man eine Programmiersprache gelernt hat, kann man viele alltägliche Aufgaben durch den Computer erledigen lassen. So bleibt einem mehr Zeit für die diejenigen Aufgaben, für die wir Menschen einzigartig geeignet sind, nämlich Kreativität, Intuition und Ideenreichtum.
+Unser Programm sagt uns schnell, dass das Wort „die“ 9 mal im oberen Teil dieses Kapitels verwendet wurde. Genau diese Tatsache, dass Computer Dinge gut können, die Menschen eher nicht gut bzw. schnell können, ist der Grund, warum man die Programmiersprachen beherrschen sollten. Sobald man eine Programmiersprache gelernt hat, kann man viele alltägliche Aufgaben durch den Computer erledigen lassen. So bleibt einem mehr Zeit für die diejenigen Aufgaben, für die wir Menschen einzigartig geeignet sind, nämlich Kreativität, Intuition und Ideenreichtum.
 
 Kreativität und Motivation
 --------------------------
 
-Wenn wir gerade mit dem Programmieren beginnen, werden wir noch einige Erfahrungen sammeln müssen, um professionelle Programme (auch *Software* genannt) entwickeln zu können. Professionelles Programmieren ist allerdings sowohl finanziell als auch persönlich eine sehr lohnende Aufgabe. Nützliche, elegante und clevere Programme zu erstellen, ist eine sehr kreative Aktivität, die durchaus Spaß machen kann. Lukrativ ist die Programmierung vor allem dann, wenn unseren Kunden, bzw. den Nutzern das Programm gefällt und uns einen Nutzen bringt. Dabei stehen wir in Konkurrenz zu anderen Enwicklern. Man sollte also versuchen, dass das eigene Programm besser funktioniert, einen höheren Funktionsumfang hat, sich besser bedienen lässt oder einfach schöner aussieht.
+Wenn wir gerade mit dem Programmieren beginnen, werden wir noch einige Erfahrungen sammeln müssen, um professionelle Programme (auch *Software* genannt) entwickeln zu können. Professionelles Programmieren ist allerdings sowohl finanziell als auch persönlich eine sehr lohnende Aufgabe. Nützliche, elegante und clevere Programme zu erstellen, ist eine sehr kreative Aktivität, die durchaus Spaß machen kann. Lukrativ ist die Programmierung vor allem dann, wenn unseren Kunden, bzw. den Nutzern das Programm gefällt und uns einen Nutzen bringt. Dabei stehen wir in Konkurrenz zu anderen Entwicklern. Man sollte also versuchen, dass das eigene Programm besser funktioniert, einen höheren Funktionsumfang hat, sich besser bedienen lässt oder einfach schöner aussieht.
 
 Im Moment besteht unsere Hauptmotivation nicht darin, Geld zu verdienen oder den Endnutzern zu gefallen. Wir möchten unsere eigenen Arbeitsabläufe automatisieren und produktiver mit den Daten und Informationen umgehen, die uns in unserem Leben begegnen. Bei unseren Programmieranfängen sind wir sowohl der Programmierer als auch der Endnutzer unserer Programme. Je mehr Erfahrung wir sammeln und je umfangreicher unsere Programme werden, desto mehr werden wir befähigt, auch Programme für andere zu entwickeln.
 
@@ -41,7 +41,7 @@ Die wichtigsten Definitionen dieser Teile lauten wie folgt:
 
 - Der *Hauptspeicher* wird zum Speichern von Informationen verwendet, die die CPU schnell benötigt. Der Hauptspeicher ist fast so schnell wie die CPU. Aber die im Hauptspeicher gespeicherten Informationen verschwinden, wenn der Computer ausgeschaltet wird.
 
-- Der *Sekundärspeicher* wird ebenfalls zum Speichern von Informationen verwendet, ist aber viel langsamer als der Hauptspeicher. Der Vorteil des Sekundärspeichers ist, dass er Informationen auch dann speichern kann, wenn der Computer nicht mit Strom versorgt wird. Beispiele für Sekundärspeicher sind Festplattenlaufwerke oder Flash-Speicher (typischerweise in USB-Sticks und tragbaren Musikplayern zu finden).
+- Der *Sekundärspeicher* (oder auch *Festspeicher*) wird ebenfalls zum Speichern von Informationen verwendet, ist aber viel langsamer als der Hauptspeicher. Der Vorteil des Sekundärspeichers ist, dass er Informationen auch dann speichern kann, wenn der Computer nicht mit Strom versorgt wird. Beispiele für Sekundärspeicher sind Festplattenlaufwerke oder Flash-Speicher (typischerweise in USB-Sticks und tragbaren Musikplayern zu finden).
 
 - Die *Eingabe- und Ausgabegeräte* sind unser Bildschirm, unsere Tastatur, Maus, Mikrofon, Lautsprecher oder Touchpad und dienen der Interaktion mit dem Computer.
 
@@ -49,11 +49,9 @@ Die wichtigsten Definitionen dieser Teile lauten wie folgt:
 
 Die meisten Details über die Funktionsweise dieser Komponenten überlässt man am besten den Computerbauern, aber es ist hilfreich, eine Terminologie zu haben, damit wir beim Schreiben unserer Programme über diese verschiedenen Teile sprechen können. 
 
-Als Programmierer ist es unsere Aufgabe, jede dieser Ressourcen zu nutzen und zu koordinieren, um das Problem zu lösen, das wir lösen müssen, und die Daten zu analysieren, die wir aus der Lösung erhalten. Als Programmierer werden wir hauptsächlich mit der CPU „reden“ und ihr sagen, was sie als nächstes tun soll. Manchmal werden wir der CPU sagen, dass sie den Hauptspeicher, den sekundären Speicher, das Netzwerk oder die Eingabe-/Ausgabegeräte verwenden soll.
+Als Programmierer ist es unsere Aufgabe, jede dieser Ressourcen zu nutzen und zu koordinieren, um das Problem zu lösen, das wir lösen müssen, und die Daten zu analysieren, die wir aus der Lösung erhalten. Als Programmierer werden wir hauptsächlich mit der CPU „reden“ und ihr sagen, was sie als Nächstes tun soll. Manchmal werden wir der CPU sagen, dass sie den Hauptspeicher, den sekundären Speicher, das Netzwerk oder die Eingabe-/Ausgabegeräte verwenden soll.
 
-![Wo bist du?](height=1.75in@../images/arch2)
-
-Wir müssen jeweils die Person sein, die der CPU die Frage „Was nun?“ beantwortet. Aber es wäre sehr unangenehm, wenn man auf 5 mm schrumpfen müsste um uns in den Computer zu stecken, nur damit wir drei Milliarden Mal pro Sekunde einen Befehl geben können. Stattdessen müssen wir unsere Anweisungen im Voraus aufschreiben. Wir nennen diese gespeicherten Anweisungen ein *Programm* und den Akt des Aufschreibens dieser Anweisungen und die korrekte Ausführung der Anweisungen *Programmierung*.
+Wir müssen jeweils die Person sein, die der CPU die Frage „Was nun?“ beantwortet. Allerdings wäre es sehr ineffizient, wenn wir den Dialog mit der CPU *Live* führen würden. Die CPU kann drei Milliarden Mal pro Sekunde einen Befehl ausführen, wir wären aber lange nicht in der Lage, mit diesem Tempo mitzuhalten. Stattdessen müssen wir unsere Anweisungen im Voraus aufschreiben. Wir nennen diese gespeicherten Anweisungen ein *Programm* und den Akt des Aufschreibens dieser Anweisungen und die korrekte Ausführung der Anweisungen *Programmierung*.
 
 Programmierung verstehen
 ------------------------
@@ -70,9 +68,9 @@ In gewissem Sinne braucht man zwei Fähigkeiten, um ein Programmierer zu sein:
 
 Wenn man einmal eine Programmiersprache wie Python gelernt hat, wird es einem viel leichter fallen, eine zweite Programmiersprache wie JavaScript oder C++ zu lernen. Die neue Programmiersprache hat einen ganz anderen Wortschatz und eine andere Grammatik, aber die Problemlösungsfähigkeiten sind in allen Programmiersprachen gleich.
 
-Wir werden das „Vokabular“ und die „Sätze“ von Python ziemlich schnell lernen. Es wird länger dauern, bis man in der Lage ist, ein zusammenhängendes Programm zu schreiben, um ein brandneues Problem zu lösen. Wir lehren das Programmieren ähnlich wie das Schreiben. Wir beginnen damit, Programme zu lesen und zu erklären. Folgend schreiben wir einfache Programme und mit der Zeit immer komplexere Programme. Irgendwann hat man „die Muse“ und erkennt die Muster von selbst und kann ganz natürlich erkennen, wie man ein Problem aufgreift und ein Programm schreibt, dass dieses Problem löst. Und wenn man diesen Punkt erreicht hat, wird das Programmieren zu einem sehr angenehmen und kreativen Prozess.
+Wir werden das „Vokabular“ und die „Sätze“ von Python ziemlich schnell lernen. Es wird länger dauern, bis man in der Lage ist, ein zusammenhängendes Programm zu schreiben, um ein brandneues Problem zu lösen. Wir lehren das Programmieren ähnlich wie das Schreiben. Wir beginnen damit, Programme zu lesen und zu erklären. Dann schreiben wir einfache Programme und mit der Zeit immer komplexere Programme. Durch das wiederholte Schreiben von Programmen schleift sich eine Routine ein und man beginnt bei neuen Problemstellungen geeignete Lösungsmuster von selbst zu erkennen. Wenn man diesen Punkt erreicht hat, wird das Programmieren zu einem sehr angenehmen und kreativen Prozess.
 
-Wir beginnen mit dem Vokabular und der Struktur der Python-Programmen. Wir müssen geduldig sein, denn die einfachen Beispiele erinnern uns daran, wie wir zum ersten Mal gelesen haben.
+Wenn Sie nun mit dem Erlernen des Vokabulars und der Struktur von (Python-) Programmen beginnen, seien Sie geduldig und bleiben Sie motiviert, auch einfache Beispiele nachzuvollziehen und zu variieren. Denken Sie vielleicht daran wie es war, Lesen und Schreiben zu lernen. Auch dies ist am Anfang mühsam gewesen hat Ihnen aber schlussendlich das Tor geöffnet, um Wissen zu erlangen und weiterzuentwickeln.
 
 Wörter und Sätze
 ----------------
@@ -80,37 +78,49 @@ Wörter und Sätze
 \index{Programmiersprache}
 \index{Sprache!Programmieren}
 
-Im Gegensatz zu menschlichen Sprachen ist der Wortschatz von Python ziemlich klein. Wir nennen diesen „Wortschatz“ die „reservierten Wörter“. Das sind Wörter, die für Python eine ganz besondere Bedeutung haben. Wenn Python diese Wörter in einem Python-Programm sieht, haben sie eine und nur eine Bedeutung für Python. Später, wenn wir Programme schreiben, werden wir unsere eigenen Wörter erfinden, die für uns eine Bedeutung haben und *Variablen* genannt werden. Bei der Wahl der Namen für unsere Variablen haben wir einen großen Spielraum, aber wir können keines der reservierten Wörter von Python als Namen für eine Variable verwenden.
+Im Gegensatz zu menschlichen Sprachen ist der Wortschatz von Python ziemlich klein. Wir nennen diesen „Wortschatz“ die „reservierten Wörter“. Das sind Wörter, die für Python eine ganz besondere Bedeutung haben. Wenn Python diese Wörter in einem Python-Programm sieht, haben sie eine (und nur eine) Bedeutung für Python. Später, wenn wir Programme schreiben, werden wir unsere eigenen Wörter erfinden, die für uns eine Bedeutung haben und *Bezeichner* genannt werden. Bei der Wahl der Namen für unsere Bezeichner haben wir einen großen Spielraum, aber wir können keines der reservierten Wörter von Python als Namen für eigene Zwecke verwenden.
 
-Wenn wir einen Hund trainieren, verwenden wir spezielle Wörter wie „Sitz“, „Bleib“ und „Apportieren“. Wenn man mit einem Hund spricht und keines der reservierten Wörter verwendet, schaut er einen nur mit einem fragenden Gesichtsausdruck an, bis man ein reserviertes Wort sagt. Wenn man z. B. sagt: „Ich wünschte, mehr Menschen würden spazieren gehen um ihre allgemeine Gesundheit zu verbessern“, hören die meisten Hunde wahrscheinlich: „blah blah blah *spazieren gehen* blah blah blah blah.“ Das liegt daran, dass „spazieren gehen“ in der Hundesprache ein reserviertes Wort ist. Man könnte meinen, dass es in der Sprache zwischen Menschen und Katzen keine reservierten Wörter gibt^[<http://xkcd.com/231/>].
+<!--- Wenn wir einen Hund trainieren, verwenden wir spezielle Wörter wie „Sitz“, „Bleib“ und „Hol“. Wenn man mit einem Hund spricht und keines der reservierten Wörter verwendet, schaut er einen nur mit einem fragenden Gesichtsausdruck an, bis man ein reserviertes Wort sagt. Wenn man z. B. sagt: „Ich wünschte, mehr Menschen würden spazieren gehen um ihre allgemeine Gesundheit zu verbessern“, hören die meisten Hunde wahrscheinlich: „blah blah blah *spazieren gehen* blah blah blah blah.“ Das liegt daran, dass „spazieren gehen“ in der Hundesprache ein reserviertes Wort ist. Man könnte meinen, dass es in der Sprache zwischen Menschen und Katzen keine reservierten Wörter gibt^[<http://xkcd.com/231/>]. -->
 
-Zu den reservierten Wörtern in der Sprache, in der Menschen mit Python sprechen, gehören die folgenden: 
+Zu den reservierten Wörtern in der Sprache Python gehören die folgenden:
 
-    and       del       global      not       with
-    as        elif      if          or        yield
-    assert    else      import      pass      
-    break     except    in          raise
-    class     finally   is          return
-    continue  for       lambda      try
-    def       from      nonlocal    while    
+    and		as	      assert  break   class   continue  def
+    del		elif      else    except  False   finally   for
+    from	global	  if      import  in      is        lambda
+    None	nonlocal  not     or      pass    raise     return
+    True	try       while   with    yield	
 
-Das war's, und im Gegensatz zu einem Hund ist Python bereits vollständig trainiert. Wenn wir „try“ sagen, wird Python es jedes Mal versuchen, wenn wir es sagen, ohne Widerworte.
 
-Wir werden diese reservierten Wörter und ihre Verwendung zu gegebener Zeit lernen, aber jetzt konzentrieren wir uns erst einmal auf das Python-Äquivalent von „sprechen“ (in der Mensch-Hund-Sprache). Das Schöne daran, Python zu sagen, dass es sprechen soll, ist, dass wir ihm sogar sagen können, was es sagen soll, indem wir ihm eine Nachricht in Anführungszeichen geben:
+Wir werden diese reservierten Wörter und ihre Verwendung zu gegebener Zeit lernen, aber jetzt konzentrieren wir uns erst einmal darauf, wie wir unser Python-Programm mit uns *sprechen* lassen können. Da Programme üblicherweise nicht in Form von gesprochener Sprache, sondern eher durch das Anzeigen von Texten und Bildern „reden", heißt das Kommando `print` also *Drucke*:
 
 ~~~~ {.python}
 print('Hello world!')
 ~~~~
 
-Und wir haben sogar unseren ersten syntaktisch korrekten Python-Satz geschrieben. Unser Satz beginnt mit der Funktion *print*, gefolgt von einer Zeichenfolge unserer Wahl, die in einfachen Anführungszeichen steht. Die Zeichenketten in den `print`-Anweisungen sind in Anführungszeichen eingeschlossen. Einfache Anführungszeichen und doppelte Anführungszeichen haben die gleiche Funktion; die meisten Leute verwenden einfache Anführungszeichen, außer in Fällen wie diesem, wo ein einfaches Anführungszeichen (ein Apostroph) in der Zeichenkette erscheint.
+Damit haben wir unseren ersten syntaktisch korrekten Python-Satz geschrieben. Der Satz beginnt mit der Funktion *print*, gefolgt von einer Zeichenfolge unserer Wahl, die in einfachen Anführungszeichen steht. Die Zeichenketten in den `print`-Anweisungen sind in Anführungszeichen eingeschlossen. Einfache Anführungszeichen und doppelte Anführungszeichen haben die gleiche Funktion; die meisten Leute verwenden einfache Anführungszeichen, außer in Fällen wie diesem, wo ein einfaches Anführungszeichen (ein Apostroph) in der Zeichenkette erscheint.
+
+Wie Sie der Tabelle oben entnehmen können, ist *print* kein reserviertes Wort, sondern ein *Bezeichner*.
+In diesem Fall haben aber nicht wir den Bezeichner (also den Namen) eingeführt, sondern es gibt ihn bereits *in Python*.
+Bezeichner, auf denen im Programm direkt eine öffnende Klammer folgt bezeichnen i.d.R. Funktionen, also soetwas wie Unterprogramme, die eine bestimmte Teilaufgabe erledigen. Python bietet eine Vielzahl von solchen Funktionen, die Ihnen das Leben als Programmierer sehr erleichtern. Wir werden im Verlauf des Buches noch viele dieser Funktionen kennen lernen.
 
 Konversation mit Python
 -----------------------
 
 Nachdem wir nun ein Wort und einen einfachen Satz in Python kennen, müssen wir wissen, wie wir eine Unterhaltung mit Python beginnen können, um unsere neuen Sprachkenntnisse zu testen.
 
-Bevor wir uns mit Python unterhalten können, müssen wir zunächst die Python-Software auf unserem Computer installieren und lernen, wie man Python auf diesem startet. Das ist zu ausführlich für dieses Kapitel, daher schlagen wir vor [www.py4e.com](http://www.py4e.com) zu konsultieren, wo detaillierte Anweisungen und Screencasts zur Einrichtung und zum Start von Python auf Macintosh- und Windows-Systemen bereitgestellt wurden. Irgendwann befinden wir uns in einem Terminal- oder Befehlsfenster und geben *python* ein, woraufhin der Python-Interpreter im interaktiven Modus ausgeführt wird und in etwa wie folgt aussieht:
+Bevor wir uns mit Python unterhalten können, müssen wir zunächst die Python-Software auf unserem Computer installieren und lernen, wie man Python auf diesem startet. Sie fragen sich nun vielleicht, warum Sie für das Ausführen Ihrer Python Programme ein anderes Programm auf Ihrem Computer installieren müssen. Das liegt daran, dass Ihre CPU die Sprache Python nicht direkt versteht. Ihr Python Programm muss also vor, oder besser gesagt *bei* der Ausführung von der Sprache Python in die Sprache der CPU *übersetzt* werden.
+Passiert dieses Übersetzten vor dem Starten des Programms (und damit in der Regel einmalig), nennt man den Vorgang *Kompilieren*. Werden Programme unmittelbar bei der Ausführung, und damit jedes Mal erneut übersetzt, so nennt man das *Interpretieren*.
 
+Letzteres ist bei Python der Fall und daher müssen wir einen *Python Interpreter* auf unserem PC oder Notebook installieren.
+Leider gibt es hierzu nicht „die eine Anleitung".
+Python ist eine *offene* Programmiersprache. Das bedeutet, dass die Regeln, wie Python Programme geschrieben werden müssen und wie die Anweisungen der Sprache funktionieren, auf einem gemeinschaftsbasiertes Entwicklungsmodell beruht und vollkommen offengelegt ist.
+Jeder kann also, nach den vorgegebenen Regeln, einen Python Interpreter entwickeln und anbieten.
+Es gibt allerdings eine Standardversion, die man über die [Homepage von Python](https://www.python.org/downloads) herunterladen kann.
+Hier gibt es auch verschiedene Versionen für Windows, MacOS und Linux.
+
+Im Gegensatz zu vielen anderen Programmiersprachen kann man in Python nicht nur ganze Programme starten, sondern man kann auch interaktiv arbeiten und dem Computer einem Befehl nach dem anderen geben.
+Um dies zu tun, müssen wir auf unserem Computer ein Kommandozeilenfenster öffnen und *python* eingeben. Ist Python korrekt installiert, wird durch diesen Aufruf der *Python-Interpreter* im *interaktiven Modus* gestartet.
+Das Fenster sollte dann in etwa so aussehen:
 \index{interaktiver Modus}
 
 ~~~~ {.python}
@@ -121,7 +131,7 @@ information.
 >>>
 ~~~~
 
-Die Eingabeaufforderung `>>>` ist die Art und Weise, wie der Python-Interpreter uns fragt: „Was soll ich als nächstes tun?“ Python ist bereit, ein Gespräch mit uns zu führen. Alles, was wir wissen müssen, ist, wie man die Sprache Python spricht.
+Die Eingabeaufforderung `>>>` ist die Art und Weise, wie der Python-Interpreter fragt: „Was soll ich als Nächstes tun?“ Python ist bereit, ein Gespräch mit uns zu führen. Alles, was wir wissen müssen, ist, wie man die Sprache Python spricht.
 
 Nehmen wir an, wir kennen nicht einmal die einfachsten Wörter oder Sätze in Python. Wir könnten den Standardsatz verwenden, den Astronauten verwenden, wenn sie auf einem fernen Planeten landen und versuchen, mit den Bewohnern des Planeten zu sprechen:
 
@@ -134,9 +144,8 @@ SyntaxError: invalid syntax
 >>>
 ~~~~
 
-Das läuft nicht so gut. Wenn uns nicht schnell etwas einfällt, werden die Bewohner des Planeten uns wahrscheinlich mit ihren Speeren erstechen, auf einen Spieß stecken, über einem Feuer rösten und zum Abendessen verspeisen.
-
-Zum Glück haben wir ein Exemplar dieses Buches mit auf unsere Reise genommen, wir blättern genau zu dieser Seite und versuchen es noch einmal:
+Das läuft nicht so gut. Wenn uns nicht schnell etwas einfällt, werden die Bewohner des Planeten uns wahrscheinlich nicht sonderlich ernst nehmen.
+Probieren wir doch lieber mal einen Python-Satz, von dem wir bereits wissen, dass er korrekt ist:
 
 ~~~~ {.python}
 >>> print('Hello world!')
@@ -160,11 +169,9 @@ SyntaxError: Missing parentheses in call to 'print'
 >>>
 ~~~~
 
-Das Gespräch lief eine Zeit lang sehr gut, und dann haben wir den kleinsten Fehler bei der Verwendung der Sprache Python gemacht, und Python hat die Speere wieder hervorgeholt.
+Das Gespräch lief eine Zeit lang sehr gut, und dann haben wir den kleinsten Fehler bei der Verwendung der Sprache Python gemacht, und Python hält uns diesen Fehler gnadenlos vor. An diesem Punkt kann man bereits erkennen, dass Python erstaunlich komplex und mächtig ist und dabei sehr wählerisch ist, was die Syntax angeht, die wir zur Programmierung verwenden. Gleichwohl ist Python aber *nicht* intelligent. Auch wenn es für uns klar ist, was die Anweisung tun soll, wird Python nicht arbeiten können, solange es einen Fehler bei der Syntax gibt.
 
-An diesem Punkt sollte man erkennen, dass Python zwar erstaunlich komplex und mächtig ist und sehr wählerisch ist, was die Syntax angeht, die wir zur Kommunikation mit ihm verwenden, jedoch ist Python *nicht* intelligent. Wir führen eigentlich nur ein Gespräch mit uns selbst, aber mit der richtigen Syntax.
-
-Wenn wir ein Programm verwenden, dass von jemand anderem geschrieben wurde, findet die Konversation gewissermaßen zwischen uns und diesem anderen Programmierer statt, wobei Python als Vermittler fungiert. Python ist eine Möglichkeit für die Programmierer, auszudrücken, wie die Konversation ablaufen soll. Und in ein paar weiteren Kapiteln werden wir einer dieser Programmierer sein, die Python benutzen, um mit den Benutzern unseres Programms zu sprechen. Bevor wir unser erstes Gespräch mit dem Python-Interpreter beenden, sollten wir wissen, wie man sich von den Bewohnern des Planeten Python verabschiedet:
+Bevor wir nun unser erstes Gespräch mit dem Python-Interpreter beenden, sollten wir noch wissen, wie man sich korrekt von Python „verabschiedet":
 
 ~~~~ {.python}
 >>> good-bye
@@ -200,11 +207,17 @@ Die Maschinensprache scheint auf den ersten Blick recht einfach zu sein, da es n
 
 Da die Maschinensprache an die Computerhardware gebunden ist, ist die Maschinensprache nicht *portabel* über verschiedene Arten von Hardware. In Hochsprachen geschriebene Programme können zwischen verschiedenen Computern übertragen werden, indem ein anderer Interpreter auf dem neuen Computer verwendet wird oder der Code neu kompiliert wird, um eine Maschinensprachversion des Programms für die neue Maschine zu erhalten.
 
-Diese Programmiersprachenübersetzer lassen sich in zwei allgemeine Kategorien einteilen: (1) Interpreter und (2) Compiler.
+Wie schon im oberen Teil dieses Kapitels angedeutet, lassen sich Programmiersprachenübersetzer sich in zwei allgemeine Kategorien einteilen: (1) Interpreter und (2) Compiler.
 
 Ein *Interpreter* liest den Quellcode des Programms, wie er vom Programmierer geschrieben wurde, analysiert den Quellcode und interpretiert die Befehle im laufenden Betrieb. Python ist ein Interpreter, und wenn wir Python interaktiv ausführen, können wir eine Zeile (einen Satz) in Python eingeben und Python verarbeitet sie sofort und ist bereit für die Eingabe einer weiteren Python-Zeile.
 
-Einige der Python-Zeilen sagen Python, dass es sich einen Wert für später merken soll. Wir müssen einen Namen für diesen zu speichernden Wert wählen und wir können diesen symbolischen Namen verwenden, um den Wert später abzurufen. Wir verwenden den Begriff *Variable* für die Bezeichnungen, die wir verwenden, um auf diese gespeicherten Daten zu verweisen.
+Bei den Anweisungen in Programmiersprachen kommt es häufig vor, dass wir uns einen Wert für eine spätere Aufgabe merken wollen.
+In Python können wir das ganz einfach erledigen, indem wir uns einen Namen ausdenken und den Wert mittels eines Gleichheitszeichens an den Namen *zuweisen*.
+
+Wir kennen das Prinzip aus der Mathematik, wo man spätestens in der 5. oder 6. Schulklasse das Rechnen mit *Variablen* erlernt. Höhere Mathematik ohne die Verwendung von Variablen ist praktisch nicht möglich, denn sie sind *das* zentrale Mittel, um Regeln oder Aussagen zu verallgemeinern.
+Auch in der Programmierung nennt man einen Platzhalter für Werte i.d.R. *Variable*.
+Dass Python eigentlich keine Variablen verwendet, sondern ausschließlich Namen ist ein technisches Detail.
+Weil der Begriff der *Variablen* aber so verbreitet ist - in den allermeisten Python Büchern wird von Variablen gesprochen - verwenden wir ihn auch in diesem Buch.
 
 ~~~~ {.python}
 >>> x = 6
@@ -216,13 +229,13 @@ Einige der Python-Zeilen sagen Python, dass es sich einen Wert für später merk
 >>>
 ~~~~
 
-In diesem Beispiel bitten wir Python, sich den Wert `6` zu merken und die Label `x` zu verwenden, damit wir den Wert später abrufen können. Wir überprüfen, ob Python sich den Wert tatsächlich gemerkt hat, indem wir `print` verwenden. Dann bitten wir Python, den Wert `x` abzurufen, mit sieben zu multiplizieren und den neu berechneten Wert in `y` zu speichern. Dann möchten wir uns den Wert anzeigen lassen, der sich gerade in `y` befindet.
+In diesem Beispiel bitten wir Python, sich den Wert `6` zu merken und dafür den Namen `x` zu verwenden. Wir überprüfen, ob Python sich den Wert tatsächlich gemerkt hat, indem wir `print` verwenden. Dann bitten wir Python, den Wert `x` abzurufen, mit sieben zu multiplizieren und den neu berechneten Wert unter dem Namen `y` zu speichern. Dann möchten wir uns den Wert anzeigen lassen, der sich gerade hinter dem Namen `y` befindet.
 
 Auch wenn wir diese Befehle Zeile für Zeile in Python eingeben, behandelt Python sie als eine geordnete Folge von Anweisungen, wobei spätere Anweisungen Daten abrufen können, die in früheren Anweisungen erstellt wurden. Wir schreiben unseren ersten einfachen Absatz mit vier Sätzen in einer logischen und sinnvollen Reihenfolge.
 
-Es liegt in der Natur eines *Interpreters*, dass er in der Lage ist ein interaktives Gespräch zu führen, wie oben gezeigt. Ein *Compiler* muss das *gesamte* Programm in einer Datei erhalten. Dann führt er einen Prozess aus, um den High-Level-Quellcode in Maschinensprache zu übersetzen. Danach stellt der Compiler die resultierende Maschinensprache in einer Datei zur späteren Ausführung zur Verfügung.
+Es liegt in der Natur eines *Interpreters*, dass er in der Lage ist ein interaktives Gespräch zu führen, wie oben gezeigt. Ein *Compiler* muss das *gesamte* Programm in einer oder mehreren Dateien erhalten. Dann führt er einen Prozess aus, um den High-Level-Quellcode in Maschinensprache zu übersetzen. Danach stellt der Compiler die resultierende Maschinensprache in einer Datei zur späteren Ausführung zur Verfügung.
 
-Wenn wir ein Windows-System haben, haben diese ausführbaren Maschinensprache-Programme die Endungen `.exe` oder `.dll`, welche für „ausführbar“ bzw. „dynamische Link-Bibliothek“ stehen. Unter Linux und Macintosh gibt es kein Suffix, das eine Datei eindeutig als ausführbar kennzeichnet.
+Wenn wir ein Windows-System haben, haben diese ausführbaren Maschinensprache-Programme die Endungen `.exe` oder `.dll`, welche für „ausführbar“ bzw. „dynamische gelinkte Bibliothek“ stehen. Unter Linux und Macintosh gibt es kein Suffix, das eine Datei eindeutig als ausführbar kennzeichnet.
 
 Wenn wir eine ausführbare Datei in einem Texteditor öffnen würden, sähe sie völlig verrückt aus und wäre unlesbar:
 
@@ -239,7 +252,7 @@ Es ist nicht einfach, Maschinensprache zu lesen oder zu schreiben, daher ist es 
 
 An diesem Punkt in unserer Diskussion über Compiler und Interpreter, sollte man sich ein wenig über den Python-Interpreter selbst Gedanken machen. In welcher Sprache ist er geschrieben? Ist er in einer kompilierten Sprache geschrieben? Wenn wir `python` eintippen, was genau passiert dann?
 
-Der Python-Interpreter ist in einer Hochsprache namens C geschrieben. Wir können uns den eigentlichen Quellcode des Python-Interpreters ansehen, indem wir [www.python.org](http://www.python.org) aufrufen und uns zum Quellcode durcharbeiten. Python ist also selbst ein Programm und wird in Maschinencode kompiliert. Als wir Python auf unserem Computer installiert haben, haben wir eine Maschinencode-Kopie des übersetzten Python-Programms auf unser System geladen. Unter Windows befindet sich der ausführbare Maschinencode für Python wahrscheinlich in einer Datei mit einem Namen wie:
+Der (Standard) Python-Interpreter ist in einer Hochsprache namens C geschrieben. Wir können uns den eigentlichen Quellcode des Python-Interpreters ansehen, indem wir [www.python.org](http://www.python.org) aufrufen und uns zum Quellcode durcharbeiten. Python ist also selbst ein Programm und wird in Maschinencode kompiliert. Als wir Python auf unserem Computer installiert haben, haben wir eine Maschinencode-Kopie des übersetzten Python-Programms auf unser System geladen. Unter Windows befindet sich der ausführbare Maschinencode für Python wahrscheinlich in einer Datei mit einem Namen wie:
 
 ~~~~
 C:\Python35\python.exe
@@ -296,7 +309,7 @@ Die gute Nachricht ist, dass bereits ein einfaches Programm entwickelt wurde, um
 ../code3/words.txt
 \end{trinketfiles}
 
-Wir müssen nicht einmal Python beherrschen können, um dieses Programm zu nutzen. Wir müssen einfach Kapitel 10 dieses Buches lesen, um die genialen Python-Techniken zu verstehen, die zur Erstellung des Programms verwendet wurden. Wir als Endanwender benutzen das Programm einfach und staunen über seine Cleverness und darüber wie viel manuelle Arbeit wir gespart haben. Einfach den Code in eine Datei mit dem Namen `words.py` eingeben und ausführen oder den Quellcode von <http://www.py4e.com/code3/> herunterladen und ausführen.
+Wir müssen nicht einmal Python beherrschen können, um dieses Programm zu nutzen. Als Endanwender benutzen wir einfach das Programm und freuen uns darüber, wie viel manuelle Arbeit wir gespart haben.
 
 \index{Programm}
 
@@ -327,7 +340,9 @@ Wiederholte Ausführung
 Wiederverwenden
 :   Reihe von Anweisungen einmal schreiben und ihnen einen Namen geben. Danach verwenden wir dann diese Anweisungen je nach Bedarf in unserem Programm wieder.
 
-Es klingt fast zu einfach, um wahr zu sein, und natürlich ist es nie so einfach. Es ist so, als würde man sagen, dass Gehen einfach „einen Fuß vor den anderen setzen“ bedeutet. Die „Kunst“ ein Programm zu schreiben besteht darin, diese Grundelemente immer wieder neu zusammenzusetzen und zu verweben, um etwas Nützliches für seine Benutzer zu schaffen.
+Dass alle Programme fast ausschließlich aus diesen Mustern bestehen, klingt fast zu einfach, um wahr zu sein. Und natürlich ist es nicht ganz so einfach, ein Programm zu schreiben. Um einen Vergleich anzustellen könnte man sagen, dass Gehen einfach „einen Fuß vor den anderen setzen“ bedeutet; und trotzdem braucht ein Kleinkind sehr viel Übung um richtig Laufen zu können.
+Beim Programmieren ist das erlernen der Grundmuster 
+Die „Kunst“ ein Programm zu schreiben besteht darin, diese Grundelemente immer wieder neu zusammenzusetzen und zu verweben, um etwas Nützliches für seine Benutzer zu schaffen.
 
 Das obige Wortzählprogramm verwendet alle bis auf eines dieser Muster.
 
