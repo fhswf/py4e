@@ -2,66 +2,54 @@
 Iteration
 =========
 
-\index{iteration}
+\index{Iteration}
 
-Updating variables
-------------------
+Aktualisieren von Variablen
+---------------------------
 
-\index{update}
-\index{variable!updating}
+\index{Aktualisierung}
+\index{Variable!aktualisieren}
 
-A common pattern in assignment statements is an assignment statement
-that updates a variable, where the new value of the variable depends on
-the old.
+Häufig sind Zuweisungen anzutreffen, die eine Variable aktualisieren, wobei der neue Wert der Variable vom alten abhängt.
 
 ~~~~ {.python}
 x = x + 1
 ~~~~
 
-This means "get the current value of `x`, add 1, and then
-update `x` with the new value."
+Das bedeutet: „Ermittle den aktuellen Wert von `x`, addiere 1 und aktualisiere dann `x` mit diesem neuen Wert.“
 
-If you try to update a variable that doesn't exist, you get an error,
-because Python evaluates the right side before it assigns a value to
-`x`:
+Wenn man versucht, eine Variable zu aktualisieren, die nicht existiert, erhält man einen Fehler, da Python versucht, die rechte Seite des Ausdrucks auszuwerten *bevor* `x` überhaupt einen Wert hat:
 
 ~~~~ {.python}
 >>> x = x + 1
 NameError: name 'x' is not defined
 ~~~~
 
-Before you can update a variable, you have to
-*initialize* it, usually with a simple assignment:
+Bevor man eine Variable aktualisieren kann, muss man sie *initialisieren*, normalerweise mit einer einfachen Zuweisung:
 
-\index{initialization (before update)}
+\index{Initialisierung}
 
 ~~~~ {.python}
 >>> x = 0
 >>> x = x + 1
 ~~~~
 
-Updating a variable by adding 1 is called an *increment*;
-subtracting 1 is called a *decrement*.
+Das Aktualisieren einer Variablen durch Addieren von 1 wird als *Inkrementieren* bezeichnet; das Subtrahieren von 1 wird als *Dekrementieren* bezeichnet.
 
-\index{increment}
-\index{decrement}
+\index{Inkrementieren}
+\index{Dekrementieren}
 
-The `while` statement
---------------------------------
+Die `while`-Schleife
+--------------------
 
-\index{statement!while}
-\index{while loop}
-\index{loop!while}
-\index{iteration}
+\index{Anweisung!while}
+\index{while-Schleife}
+\index{Schleife!while}
+\index{Iteration}
 
-Computers are often used to automate repetitive tasks. Repeating
-identical or similar tasks without making errors is something that
-computers do well and people do poorly. Because iteration is so common,
-Python provides several language features to make it easier.
+Computer werden oft eingesetzt, um sich wiederholende Aufgaben zu automatisieren. Gleiche oder ähnliche Aufgaben fehlerfrei zu wiederholen, ist etwas, das Computer gut und Menschen schlecht können. Weil Iteration so häufig vorkommt, bietet Python mehrere Sprachfunktionen, um sie zu erleichtern.
 
-One form of iteration in Python is the `while` statement.
-Here is a simple program that counts down from five and then says
-"Blastoff!".
+Eine Form der Iteration in Python ist die `while`-Schleife. Hier ist ein einfaches Programm, das von fünf herunterzählt und dann `'Blastoff!'` sagt.
 
 ~~~~ {.python}
 n = 5
@@ -71,70 +59,41 @@ while n > 0:
 print('Blastoff!')
 ~~~~
 
-You can almost read the `while` statement as if it were
-English. It means, "While `n` is greater than 0, display the
-value of `n` and then reduce the value of `n` by
-1. When you get to 0, exit the `while` statement and display
-the word `Blastoff!`"
+Wir können die `while`-Schleife fast wörtlich lesen. Sie bedeutet: „Solange `n` größer als 0 ist, zeige den Wert von `n` an und dekrementiere dann den Wert von `n` um 1. Wenn du zu 0 kommst, verlasse die `while`-Schleife und gebe `'Blastoff!'` aus.“
 
-\index{flow of execution}
+\index{Programmablauf}
 
-More formally, here is the flow of execution for a `while`
-statement:
+Formaler ausgedrückt, ist das hier der Ablauf der Ausführung einer "while"-Schleife:
 
-1.  Evaluate the condition, yielding `True` or
-    `False`.
+1.  Werte die Bedingung aus und liefere `True` oder `False`.
 
-2.  If the condition is false, exit the `while` statement and
-    continue execution at the next statement.
+2.  Wenn die Bedingung falsch ist, wird die `while`-Schleife verlassen und die Ausführung bei der nächsten Anweisung fortgesetzt.
 
-3.  If the condition is true, execute the body and then go back to
-    step 1.
+3.  Wenn die Bedingung wahr ist, führe den Schleifenrumpf aus und gehen dann zurück zu Schritt 1.
 
-This type of flow is called a *loop* because the third
-step loops back around to the top. We call each time we execute the body
-of the loop an *iteration*. For the above loop, we would
-say, "It had five iterations", which means that the body of the loop was
-executed five times.
+Diese Art von Ablauf wird als *Schleife* bezeichnet, weil der dritte Schritt eine Schleife zurück zum Anfang bildet. Jedes Mal, wenn der Schleifenrumpf ausgeführt wird, nennen wir das eine *Iteration*. Für die obige Schleife würden wir sagen: „Sie hatte fünf Iterationen“, was bedeutet, dass der Rumpf der Schleife fünfmal ausgeführt wurde.
 
-\index{condition}
-\index{loop}
-\index{body}
+\index{Bedingung}
+\index{Schleife}
 
-The body of the loop should change the value of one or more variables so
-that eventually the condition becomes false and the loop terminates. We
-call the variable that changes each time the loop executes and controls
-when the loop finishes the *iteration variable*. If there
-is no iteration variable, the loop will repeat forever, resulting in an
-*infinite loop*.
+Der Schleifenrumpf soll den Wert einer oder mehrerer Variablen so verändern, dass die Bedingung schließlich falsch wird und die Schleife beendet wird. Wir nennen die Variable, die sich bei jeder Ausführung der Schleife ändert und steuert, wann die Schleife beendet ist, die *Iterationsvariable* beziehungsweise den *Schleifenzähler*. Wenn es keinen Schleifenzähler gibt, wird die Schleife ewig wiederholt, was zu einer *Endlosschleife* führt.
 
-Infinite loops
---------------
+Endlosschleifen
+---------------
 
-An endless source of amusement for programmers is the observation that
-the directions on shampoo, "Lather, rinse, repeat," are an infinite loop
-because there is no *iteration variable* telling you how
-many times to execute the loop.
+Eine Quelle der Belustigung für Programmierer ist die Beobachtung, dass die Anleitung für ein Shampoo, „Einschäumen, ausspülen, wiederholen“, eine Endlosschleife ist, weil es keinen *Schleifenzähler* gibt, der Ihnen sagt, wie oft die Schleife ausgeführt werden soll.
 
-\index{infinite loop}
-\index{loop!infinite}
+\index{Endlosschleife}
+\index{Schleife!endlos}
 
-In the case of `countdown`, we can prove that the loop
-terminates because we know that the value of `n` is finite,
-and we can see that the value of `n` gets smaller each time
-through the loop, so eventually we have to get to 0. Other times a loop
-is obviously infinite because it has no iteration variable at all.
+Im Fall von `n` können wir beweisen, dass die Schleife endet, weil wir wissen, dass der Wert von `n` endlich ist, und wir können sehen, dass der Wert von `n` jedes Mal, wenn wir die Schleife durchlaufen, kleiner wird, so dass wir schließlich bei 0 ankommen müssen. In vielen anderen Fällen ist eine Schleife häufig unendlich, zum Beispiel weil sie überhaupt keinem Schleifenzähler hat.
 
-\index{break statement}
-\index{statement!break}
+\index{break (Anweisung)}
+\index{Anweisung!break}
 
-Sometimes you don't know it's time to end a loop until you get half way
-through the body. In that case you can write an infinite loop on purpose
-and then use the `break` statement to jump out of the loop.
+Manchmal möchte man erreichen, dass eine Schleife mitten im Schleifenrumpf abgebrochen wird. In diesem Fall können wir absichtlich eine Endlosschleife schreiben (zum Beispiel mittels `True` als einziger Schleifenbedingung) und dann die Anweisung `break` verwenden, um *sofort* aus der Schleife herauszuspringen.
 
-This loop is obviously an *infinite loop* because the
-logical expression on the `while` statement is simply the
-logical constant `True`:
+Diese Schleife ist offensichtlich eine *Endlosschleife*, weil der logische Ausdruck der `while`-Schleife die Konstante `True` ist:
 
 ~~~~ {.python}
 n = 10
@@ -144,30 +103,17 @@ while True:
 print('Done!')
 ~~~~
 
-If you make the mistake and run this code, you will learn quickly how to
-stop a runaway Python process on your system or find where the power-off
-button is on your computer. This program will run forever or until your
-battery runs out because the logical expression at the top of the loop
-is always true by virtue of the fact that the expression is the constant
-value `True`.
+Wenn wir den Fehler machen und diesen Code ausführen, werden wir schnell lernen, wie wir einen durchgebrannten Python-Prozess auf unserem System stoppen oder herausfinden können, wo der Ausschaltknopf unseres Computers ist. Dieses Programm wird ewig laufen oder bis die Batterie leer ist, weil der logische Ausdruck am Anfang der Schleife immer wahr ist, weil der Ausdruck der konstante Wert `True` ist.
 
-While this is a dysfunctional infinite loop, we can still use this
-pattern to build useful loops as long as we carefully add code to the
-body of the loop to explicitly exit the loop using `break`
-when we have reached the exit condition.
+Obwohl es sich hierbei um eine dysfunktionale Endlosschleife handelt, können wir dieses Muster dennoch verwenden, um nützliche Schleifen zu konstruieren, solange wir sorgfältig Code in den Körper der Schleife einfügen, um die Schleife explizit mit `break` zu verlassen, wenn wir die Abbruchbedingung erreicht haben.
 
-For example, suppose you want to take input from the user until they
-type `done`. You could write:
+Nehmen wir zum Beispiel an, dass wir Eingaben des Benutzers entgegennehmen wollen, bis man `done` eingibt. Wir könnten schreiben:
 
 \VerbatimInput{../code3/copytildone1.py}
 
-The loop condition is `True`, which is always true, so the
-loop runs repeatedly until it hits the break statement.
+Die Schleifenbedingung ist `True`, was immer wahr ist, sodass die Schleife wiederholt durchlaufen wird, bis sie auf die `break`-Anweisung trifft.
 
-Each time through, it prompts the user with an angle bracket. If the
-user types `done`, the `break` statement exits the
-loop. Otherwise the program echoes whatever the user types and goes back
-to the top of the loop. Here's a sample run:
+Bei jedem Durchlauf fordert das Programm den Benutzer mit einer spitzen Klammer zur Eingabe auf. Wenn der Benutzer `done` eingibt, wird die Schleife mit der Anweisung `break` verlassen. Andernfalls gibt das Programm aus, was auch immer der Benutzer zuvor eingegeben hat, und kehrt an den Anfang der Schleife zurück:
 
 ~~~~
 > hello there
@@ -178,31 +124,21 @@ finished
 Done!
 ~~~~
 
-This way of writing `while` loops is common because you can
-check the condition anywhere in the loop (not just at the top) and you
-can express the stop condition affirmatively ("stop when this happens")
-rather than negatively ("keep going until that happens.").
+Diese Art, `while`-Schleifen zu schreiben, ist üblich, weil wir die Bedingung an jeder Stelle der Schleife überprüfen können (nicht nur am Anfang) und weil wir die Abbruchbedingung aktiv („stoppe, wenn dies passiert“) statt passiv („mache weiter, bis jenes passiert.“) ausdrücken können.
 
-Finishing iterations with `continue`
------------------------------------------------
+Abbrechen einer Iteration mit `continue`
+----------------------------------------
 
-\index{continue statement}
-\index{statement!continue}
+\index{continue (Anweisung)}
+\index{Anweisung!continue}
 
-Sometimes you are in an iteration of a loop and want to finish the
-current iteration and immediately jump to the next iteration. In that
-case you can use the `continue` statement to skip to the next
-iteration without finishing the body of the loop for the current
-iteration.
+Manchmal befinden wir uns in einer Iteration einer Schleife und möchten die aktuelle Iteration beenden und sofort zur nächsten Iteration springen. In diesem Fall können wir die Anweisung `continue` verwenden, um zur nächsten Iteration zu springen, ohne den Rest des Schleifenrumpfes in der aktuellen Iteration durchlaufen zu müssen.
 
-Here is an example of a loop that copies its input until the user types
-"done", but treats lines that start with the hash character as lines not
-to be printed (kind of like Python comments).
+Hier ist ein Beispiel für eine Schleife, die eine Benutzereingabe sofort wieder ausgibt, bis der Benutzer `done` eingibt. Zeilen, die mit einer Raute beginnen, werden jedoch ignoriert.
 
 \VerbatimInput{../code3/copytildone2.py}
 
-Here is a sample run of this new program with `continue`
-added.
+Hier ist ein Beispiellauf dieses neuen Programms mit hinzugefügtem `continue`.
 
 ~~~~ 
 > hello there
@@ -214,29 +150,17 @@ print this!
 Done!
 ~~~~
 
-All the lines are printed except the one that starts with the hash sign
-because when the `continue` is executed, it ends the current
-iteration and jumps back to the `while` statement to start
-the next iteration, thus skipping the `print` statement.
+Alle Zeilen werden ausgegeben, außer diejenigen, die mit dem Rautezeichen beginnt, denn wenn die Anweisung `continue` ausgeführt wird, bricht die aktuelle Iteration ab und die Programmausführung springt zurück zur Anweisung `while`, um die nächste Iteration zu starten, und überspringt damit die Anweisung `print`.
 
-Definite loops using `for` 
---------------------------------------
+`for`-Schleifen
+---------------
 
-\index{for statement}
-\index{statement!for}
+\index{for-Schleife}
+\index{Schleife!for}
 
-Sometimes we want to loop through a *set* of things such
-as a list of words, the lines in a file, or a list of numbers. When we
-have a list of things to loop through, we can construct a *definite*
-loop using a `for` statement. We call the `while`
-statement an *indefinite* loop because it simply loops until some
-condition becomes `False`, whereas the `for` loop
-is looping through a known set of items so it runs through as many
-iterations as there are items in the set.
+Manchmal wollen wir eine *Menge* von Dingen in einer Schleife durchlaufen, z. B. eine Liste von Wörtern, die Zeilen in einer Datei oder eine Liste von Zahlen. Wenn wir eine Liste von Dingen haben, die in einer Schleife durchlaufen werden sollen, können wir eine *bereichsbasierte* Schleife nutzen. Die `for`-Schleife durchläuft eine bekannte Menge von Elementen mit so vielen Iterationen, wie es Elemente in der Menge gibt.
 
-The syntax of a `for` loop is similar to the
-`while` loop in that there is a `for` statement
-and a loop body:
+Die Syntax einer `for`-Schleife ähnelt der `while`-Schleife insofern, als es eine `for`-Anweisung und einen Schleifenrumpf gibt:
 
 ~~~~ {.python}
 friends = ['Joseph', 'Glenn', 'Sally']
@@ -245,11 +169,7 @@ for friend in friends:
 print('Done!')
 ~~~~
 
-In Python terms, the variable `friends` is a list^[We will examine lists 
-in more detail in a later chapter.] of
-three strings and the `for` loop goes through the list and
-executes the body once for each of the three strings in the list
-resulting in this output:
+In Python ausgedrückt, ist die Variable `friends` eine Liste^[Wir werden Listen in einem späteren Kapitel genauer untersuchen.] von drei Zeichenketten und die `for`-Schleife durchläuft die Liste und führt den Rumpf einmal für jede der drei Zeichenketten in der Liste aus, was zu dieser Ausgabe führt:
 
 ~~~~ {.python}
 Happy New Year: Joseph
@@ -258,51 +178,35 @@ Happy New Year: Sally
 Done!
 ~~~~
 
-Translating this `for` loop to English is not as direct as
-the `while`, but if you think of friends as a
-*set*, it goes like this: "Run the statements in the body
-of the for loop once for each friend *in* the set named friends."
+Die Übersetzung dieser `for`-Schleife in unsere Sprache ist nicht so direkt wie die der `while`-Schleife, aber wenn man sich `friends` als eine *Menge* vorstellt, könnte es etwa so lauten: „Führe die Anweisungen im Rumpf der Schleife einmal für jeden Freund aus der Menge aller Freunde aus."
 
-Looking at the `for` loop, *for* and
-*in* are reserved Python keywords, and
-`friend` and `friends` are variables.
+Wenn man sich die `for`-Schleife ansieht, sind *for* und *in* reservierte Python-Schlüsselwörter, und `friend` und `friends` sind Variablen.
 
 ~~~~ {.python}
 for friend in friends:
     print('Happy New Year:', friend)
 ~~~~
 
-In particular, `friend` is the *iteration
-variable* for the for loop. The variable `friend`
-changes for each iteration of the loop and controls when the
-`for` loop completes. The *iteration variable*
-steps successively through the three strings stored in the
-`friends` variable.
+Insbesondere ist `friend` die *Iterationsvariable* für die `for`-Schleife. Die Variable `friend` ändert sich bei jeder Iteration der Schleife und steuert, wann die `for`-Schleife beendet ist. Die *Iterationsvariable* geht nacheinander durch die drei Zeichenketten, die in der Variablen `friends` gespeichert sind.
 
-Loop patterns
--------------
+Typische Anwendungen von Schleifen
+----------------------------------
 
-Often we use a `for` or `while` loop to go through
-a list of items or the contents of a file and we are looking for
-something such as the largest or smallest value of the data we scan
-through.
+Oft verwenden wir eine "for"- oder "while"-Schleife, um eine Liste von Elementen oder den Inhalt einer Datei zu durchlaufen, und wir suchen nach etwas wie dem größten oder kleinsten Wert einer Liste, die wir durchlaufen.
 
-These loops are generally constructed by:
+Diese Schleifen werden in der Regel so konstruiert:
 
--   Initializing one or more variables before the loop starts
+-   Initialisierung einer oder mehrerer Variablen vor Beginn der Schleife
 
--   Performing some computation on each item in the loop body, possibly
-    changing the variables in the body of the loop
+-   Durchführen von Berechnungen an jedem Element, wobei möglicherweise die Variablen im Schleifenkörper geändert werden
 
--   Looking at the resulting variables when the loop completes
+-   Betrachten der resultierenden Variablen, wenn die Schleife beendet ist
 
-We will use a list of numbers to demonstrate the concepts and
-construction of these loop patterns.
+Wir werden eine Liste von Zahlen verwenden, um die typischen Anwendungen von Schleifen zu demonstrieren.
 
-### Counting and summing loops
+### Zählen und Summieren mit Schleifen
 
-For example, to count the number of items in a list, we would write the
-following `for` loop:
+Um zum Beispiel die Anzahl der Elemente in einer Liste zu zählen, würden wir die folgende `for`-Schleife schreiben:
 
 ~~~~ {.python}
 count = 0
@@ -311,25 +215,13 @@ for itervar in [3, 41, 12, 9, 74, 15]:
 print('Count: ', count)
 ~~~~
 
-We set the variable `count` to zero before the loop starts,
-then we write a `for` loop to run through the list of
-numbers. Our *iteration* variable is named
-`itervar` and while we do not use `itervar` in the
-loop, it does control the loop and cause the loop body to be executed
-once for each of the values in the list.
+Wir setzen die Variable `count` auf Null, bevor die Schleife beginnt, dann schreiben wir eine `for`-Schleife, die die Liste der Zahlen durchläuft. Unsere *Iterations*-Variable heißt `itervar` und obwohl wir `itervar` nicht in der Schleife verwenden, steuert sie die Schleife und bewirkt, dass der Schleifenkörper für jeden der Werte in der Liste einmal ausgeführt wird.
 
-In the body of the loop, we add 1 to the current value of
-`count` for each of the values in the list. While the loop is
-executing, the value of `count` is the number of values we
-have seen "so far".
+Im Schleifenkörper addieren wir für jeden der Werte in der Liste 1 zum aktuellen Wert von `count`. Während die Schleife ausgeführt wird, entspricht der Wert von `count` der Anzahl der Werte, die wir bisher gesehen haben.
 
-Once the loop completes, the value of `count` is the total
-number of items. The total number "falls in our lap" at the end of the
-loop. We construct the loop so that we have what we want when the loop
-finishes.
+Sobald die Schleife abgeschlossen ist, ist der Wert von `count` die Gesamtzahl der Elemente. Die Gesamtzahl fällt uns am Ende der Schleife „in den Schoß“. Wir konstruieren die Schleife so, dass wir das haben, was wir wollen, wenn die Schleife beendet ist.
 
-Another similar loop that computes the total of a set of numbers is as
-follows:
+Eine weitere ähnliche Schleife, die die Summe einer Menge von Zahlen berechnet, sieht wie folgt aus:
 
 ~~~~ {.python}
 total = 0
@@ -338,36 +230,22 @@ for itervar in [3, 41, 12, 9, 74, 15]:
 print('Total: ', total)
 ~~~~
 
-In this loop we *do* use the *iteration variable*.
-Instead of simply adding one to the `count` as in the
-previous loop, we add the actual number (3, 41, 12, etc.) to the running
-total during each loop iteration. If you think about the variable
-`total`, it contains the "running total of the values so
-far". So before the loop starts `total` is zero because we
-have not yet seen any values, during the loop `total` is the
-running total, and at the end of the loop `total` is the
-overall total of all the values in the list.
+In dieser Schleife benutzen wir die *Iterationsvariable* tatsächlich. Anstatt wie in der vorherigen Schleife einfach eine 1 zu `count` zu addieren, fügen wir bei jeder Schleifeniteration die aktuelle Zahl (3, 41, 12, usw.) zur laufenden Summe hinzu. Wenn wir uns die Variable `total` vorstellen, enthält sie die laufende Summe der bisherigen Werte. Bevor die Schleife beginnt, ist `total` also 0, weil wir noch keine Werte gesehen haben, während der Schleife ist `total` die laufende Summe, und am Ende der Schleife ist `total` die Gesamtsumme aller Werte in der Liste.
 
-As the loop executes, `total` accumulates the sum of the
-elements; a variable used this way is sometimes called an
-*accumulator*.
+Während die Schleife ausgeführt wird, akkumuliert `total` die Summe der Elemente; eine Variable, die auf diese Weise verwendet wird, nennt man manchmal einen *Akkumulator*.
 
-\index{accumulator!sum}
+\index{Akkumulator!Summe}
 
-Neither the counting loop nor the summing loop are particularly useful
-in practice because there are built-in functions `len()` and
-`sum()` that compute the number of items in a list and the
-total of the items in the list respectively.
+Weder die Zählschleife noch die Summierschleife sind in der Praxis besonders nützlich, da es eingebaute Funktionen `len()` und `sum()` gibt, die die Anzahl der Elemente in einer Liste bzw. die Summe der Elemente in der Liste berechnen.
 
-### Maximum and minimum loops
+### Maximum und Minimum ermitteln
 
-\index{loop!maximum}
-\index{loop!minimum}
-\index{None special value}
-\index{special value!None}
+\index{Schleife!Maximum}
+\index{Schleife!Minimum}
+\index{None (Wert)}
+\index{Wert!None}
 
-To find the largest value in a list or sequence, we
-construct the following loop:
+Um den größten Wert in einer Liste oder Folge zu finden, konstruieren wir die folgende Schleife:
 
 ~~~~ {.python}
 largest = None
@@ -379,7 +257,7 @@ for itervar in [3, 41, 12, 9, 74, 15]:
 print('Largest:', largest)
 ~~~~
 
-When the program executes, the output is as follows:
+Wenn das Programm ausgeführt wird, sieht die Ausgabe wie folgt aus:
 
 ~~~~
 Before: None
@@ -392,34 +270,15 @@ Loop: 15 74
 Largest: 74
 ~~~~
 
-The variable `largest` is best thought of as the "largest
-value we have seen so far". Before the loop, we set `largest`
-to the constant `None`. `None` is a special
-constant value which we can store in a variable to mark the variable as
-"empty".
+Die Variable `largest` kann man sich am besten als den „größten Wert, den wir bisher gesehen haben“ vorstellen. Vor der Schleife setzen wir `largest` auf die Konstante `None`. Die Konstante `None` ist ein spezieller konstanter Wert, den wir in einer Variablen speichern können, um die Variable als „leer“ zu markieren.
 
-Before the loop starts, the largest value we have seen so far is
-`None` since we have not yet seen any values. While the loop
-is executing, if `largest` is `None` then we take
-the first value we see as the largest so far. You can see in the first
-iteration when the value of `itervar` is 3, since
-`largest` is `None`, we immediately set
-`largest` to be 3.
+Bevor die Schleife beginnt, ist der größte Wert, den wir bisher gesehen haben, `None`, da wir noch keine Werte gesehen haben. Wenn während der Ausführung der Schleife `largest` `None` ist, nehmen wir den ersten Wert, den wir sehen, als den bisher größten. Man kann sehen, dass in der ersten Iteration, wenn der Wert von `itervar` 3 ist, wir sofort `largest` auf 3 setzen (weil `largest` `None` ist).
 
-After the first iteration, `largest` is no longer
-`None`, so the second part of the compound logical expression
-that checks `itervar > largest` triggers only when we see a
-value that is larger than the "largest so far". When we see a new "even
-larger" value we take that new value for `largest`. You can
-see in the program output that `largest` progresses from 3 to
-41 to 74.
+Nach der ersten Iteration ist `largest` nicht mehr `None`, sodass der zweite Teil des zusammengesetzten logischen Ausdrucks, der `itervar > largest` prüft, nur ausgelöst wird, wenn wir einen Wert sehen, der größer als der „bisher größte“ ist. Wenn wir einen neuen „noch größeren“ Wert sehen, weisen wir diesen neuen Wert `largest` zu. Man kann in der Programmausgabe sehen, dass `largest` von 3 über 41 bis 74 fortschreitet.
 
-At the end of the loop, we have scanned all of the values and the
-variable `largest` now does contain the largest value in the
-list.
+Am Ende der Schleife haben wir alle Werte überprüft und die Variable `largest` enthält nun den größten Wert in der Liste.
 
-To compute the smallest number, the code is very similar with one small
-change:
+Um die kleinste Zahl zu berechnen, ist der Code sehr ähnlich, mit einer kleinen Änderung:
 
 ~~~~ {.python}
 smallest = None
@@ -431,16 +290,11 @@ for itervar in [3, 41, 12, 9, 74, 15]:
 print('Smallest:', smallest)
 ~~~~
 
-Again, `smallest` is the "smallest so far" before, during,
-and after the loop executes. When the loop has completed,
-`smallest` contains the minimum value in the list.
+Auch hier ist `smallest` der „bisher kleinste“ Wert vor, während und nach der Ausführung der Schleife. Wenn die Schleife beendet ist, enthält `smallest` den kleinsten Wert in der Liste.
 
-Again as in counting and summing, the built-in functions
-`max()` and `min()` make writing these exact loops
-unnecessary.
+Wiederum wie beim Zählen und Summieren machen die eingebauten Funktionen `max()` und `min()` das Schreiben dieser exakten Schleifen überflüssig.
 
-The following is a simple version of the Python built-in
-`min()` function:
+Das Folgende Codefragment ist eine einfache Version der in Python eingebauten Funktion `min()`:
 
 ~~~~ {.python}
 def min(values):
@@ -451,88 +305,60 @@ def min(values):
     return smallest
 ~~~~
 
-In the function version of the smallest code, we removed all of the
-`print` statements so as to be equivalent to the
-`min` function which is already built in to Python.
+In dieser Funktion haben wir alle `print`-Anweisungen entfernt, damit sie äquivalent zur Funktion `min` ist, die bereits in Python eingebaut ist.
 
 Debugging
 ---------
 
-As you start writing bigger programs, you might find yourself spending
-more time debugging. More code means more chances to make an error and
-more places for bugs to hide.
+Wenn wir anfangen, größere Programme zu schreiben, werden wir möglicherweise mehr Zeit mit der Fehlersuche verbringen. Mehr Code bedeutet mehr Möglichkeiten, einen Fehler zu machen und mehr Stellen, an denen sich Bugs verstecken können.
 
-\index{debugging!by bisection}
-\index{bisection, debugging by}
+\index{Debugging!mittels Bisektion}
+\index{Bisektion, Debugging mittels}
 
-One way to cut your debugging time is "debugging by bisection." For
-example, if there are 100 lines in your program and you check them one
-at a time, it would take 100 steps.
+Eine Möglichkeit, die Debugging-Zeit zu verkürzen, ist das „Debugging durch Bisektion“ (*Halbierung*). Wenn das Programm z. B. 100 Zeilen enthält und man diese nacheinander überprüft, würde dies 100 Schritte erfordern.
 
-Instead, try to break the problem in half. Look at the middle of the
-program, or near it, for an intermediate value you can check. Add a
-`print` statement (or something else that has a verifiable
-effect) and run the program.
+Versuchen wir stattdessen, das Problem in zwei Hälften zu teilen. Suchen wir in der Mitte des Programms oder in dessen Nähe nach einem Zwischenwert, den Sie überprüfen können. Wir fügen eine `print`-Anweisung (oder etwas anderes, das eine überprüfbare Wirkung hat) hinzu und führen das Programm aus.
 
-If the mid-point check is incorrect, the problem must be in the first
-half of the program. If it is correct, the problem is in the second
-half.
+Wenn die Überprüfung an dieser Stelle falsch ist, muss das Problem in der ersten Hälfte des Programms liegen. Wenn sie korrekt ist, liegt das Problem in der zweiten Hälfte.
 
-Every time you perform a check like this, you halve the number of lines
-you have to search. After six steps (which is much less than 100), you
-would be down to one or two lines of code, at least in theory.
+Jedes Mal, wenn wir eine solche Prüfung durchführen, halbieren wir die Anzahl der Zeilen, die wir durchsuchen müssen. Nach sechs Schritten (was viel weniger als 100 ist), wären wir auf eine oder zwei Codezeilen runter, zumindest theoretisch.
 
-In practice it is not always clear what the "middle of the program" is
-and not always possible to check it. It doesn't make sense to count
-lines and find the exact midpoint. Instead, think about places in the
-program where there might be errors and places where it is easy to put a
-check. Then choose a spot where you think the chances are about the same
-that the bug is before or after the check.
+In der Praxis ist es nicht immer klar, was die „Mitte des Programms“ ist und nicht immer möglich, dies zu überprüfen. Es macht keinen Sinn, Zeilen zu zählen und die genaue Mitte zu finden. Überlegen wir stattdessen, an welchen Stellen im Programm es Fehler geben könnte und an welchen Stellen es einfach ist, eine Prüfung durchzuführen. Wir wählen dann eine Stelle, bei der wir denken, dass die Chancen etwa gleich groß sind, dass der Fehler vor oder nach der Prüfung liegt.
 
-Glossary
---------
+Glossar
+-------
 
-accumulator
-:   A variable used in a loop to add up or accumulate a result.
-\index{accumulator}
+Akkumulator
+:   Eine Variable, die in einer Schleife zum Aufaddieren oder Akkumulieren eines Ergebnisses verwendet wird.
+\index{Akkumulator}
 
-counter
-:   A variable used in a loop to count the number of times something
-    happened. We initialize a counter to zero and then increment the
-    counter each time we want to "count" something.
-\index{counter}
+Schleifenzähler
+:   Eine Variable, die in einer Schleife verwendet wird, um die Anzahl der Male zu zählen, die etwas passiert ist. Wir initialisieren einen Zähler auf Null und inkrementieren den Zähler dann jedes Mal, wenn wir etwas „zählen“ wollen.
+\index{Schleifenzähler}
 
-decrement
-:   An update that decreases the value of a variable.
-\index{decrement}
+Dekrementieren
+:   Eine Aktualisierung, die den Wert einer Variablen verringert.
+\index{Dekrementieren}
 
-initialize
-:   An assignment that gives an initial value to a variable that will be
-    updated.
+Initialisierung
+:   Eine Zuweisung, die einer Variablen einen Anfangswert zuweist (Anfangswertzuweisung).
 
-increment
-:   An update that increases the value of a variable (often by one).
-\index{increment}
+Inkrementieren
+:   Eine Aktualisierung, die den Wert einer Variablen erhöht (häufig um eins).
+\index{Inkrementieren}
 
-infinite loop
-:   A loop in which the terminating condition is never satisfied or for
-    which there is no terminating condition.
-\index{infinite loop}
+Endlosschleife
+:   Eine Schleife, in der die Abbruchbedingung nie erfüllt ist oder für die es keine Abbruchbedingung gibt.
+\index{Endlosschleife}
 
-iteration
-:   Repeated execution of a set of statements using either a function
-    that calls itself or a loop.
-\index{iteration}
+Iteration
+:   Wiederholte Ausführung einer Reihe von Anweisungen unter Verwendung einer Funktion, die sich selbst aufruft, oder einer Schleife.
+\index{Iteration}
 
-Exercises
----------
+Übungen
+-------
 
-**Exercise 1: Write a program which repeatedly reads numbers until the
-user enters "done". Once "done" is entered, print out the total, count,
-and average of the numbers. If the user enters anything other than a
-number, detect their mistake using `try` and
-`except` and print an error message and skip to the next
-number.**
+**Übung 1: Schreiben Sie ein Programm, das wiederholt Zahlen einliest, bis der Benutzer den Befehl `done` eingibt. Sobald `done` eingegeben wurde, geben Sie die Summe, die Anzahl und den Durchschnitt der Zahlen aus. Wenn der Benutzer etwas anderes als eine Zahl eingibt, erkennen Sie seinen Fehler mit `try` und `except` und geben eine Fehlermeldung aus und springen zur nächsten Zahl.**
 
 ~~~~
 Enter a number: 4
@@ -544,7 +370,5 @@ Enter a number: done
 16 3 5.333333333333333
 ~~~~
 
-**Exercise 2: Write another program that prompts for a list of numbers as
-above and at the end prints out both the maximum and minimum of the
-numbers instead of the average.**
+**Übung 2: Schreiben Sie ein weiteres Programm, das eine Liste von Zahlen wie oben abfragt und am Ende sowohl das Maximum als auch das Minimum der Zahlen anstelle des Durchschnitts ausgibt.**
 

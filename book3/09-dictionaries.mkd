@@ -1,33 +1,25 @@
-Dictionaries
+
+Wörterbücher
 ============
 
-\index{dictionary}
-\index{dictionary}
+\index{Wörterbuch}
 
-\index{type!dict}
-\index{key}
-\index{key-value pair}
-\index{index}
+\index{Datentyp!dict}
+\index{Schlüssel}\index{Key}
+\index{Key-Value-Paar}\index{Schlüssel-Wert-Paar}
+\index{Index}
 \index{}
 
-A *dictionary* is like a list, but more general. In a
-list, the index positions have to be integers; in a dictionary, the
-indices can be (almost) any type.
+Ein *Wörterbuch* (englisch *Dictionary*) ist wie eine Liste, aber allgemeiner. In einer Liste müssen die Indexpositionen ganze Zahlen sein; in einem Wörterbuch können die Indizes (fast) jeden Typs sein.
 
-You can think of a dictionary as a mapping between a set of indices
-(which are called *keys*) and a set of values. Each key
-maps to a value. The association of a key and a value is called a
-*key-value pair* or sometimes an *item*.
+Man kann sich ein Wörterbuch als eine Abbildung zwischen einem Satz von Indizes, die *Schlüssel* (englisch *Key*) genannt werden, und einem Satz von Werten (englisch *Value*) vorstellen. Jeder Schlüssel wird auf einen Wert abgebildet. Die Verbindung zwischen einem Schlüssel und einem Wert wird als *Schlüssel-Wert-Paar* (englisch *Key-Value-Paar*) bezeichnet.
 
-As an example, we'll build a dictionary that maps from English to
-Spanish words, so the keys and the values are all strings.
+Als Beispiel erstellen wir ein Wörterbuch, das englische und spanische Wörter abbildet, so dass die Schlüssel und die Werte allesamt Zeichenketten sind.
 
-The function `dict` creates a new dictionary with no items.
-Because `dict` is the name of a built-in function, you should
-avoid using it as a variable name.
+Die Funktion `dict` erzeugt ein neues Wörterbuch ohne Elemente. Da `dict` der Name einer eingebauten Funktion ist, sollte man es vermeiden, ihn als Variablennamen zu verwenden.
 
-\index{dict function}
-\index{function!dict}
+\index{dict (Funktion)}
+\index{Funktion!dict}
 
 ~~~~ {.python .trinket}
 >>> eng2sp = dict()
@@ -35,27 +27,23 @@ avoid using it as a variable name.
 {}
 ~~~~
 
-The curly brackets, `{}`, represent an empty dictionary. To add items to
-the dictionary, you can use square brackets:
+Die geschweiften Klammern `{}` stehen für ein leeres Wörterbuch. Um Elemente zum Wörterbuch hinzuzufügen, können wir eckige Klammern verwenden:
 
-\index{squiggly bracket}
-\index{bracket!squiggly}
+\index{geschweifte Klammern}
+\index{Klammern!geschweift}
 
 ~~~~ {.python}
 >>> eng2sp['one'] = 'uno'
 ~~~~
 
-This line creates an item that maps from the key `'one'` to
-the value "uno". If we print the dictionary again, we see a key-value
-pair with a colon between the key and value:
+Diese Zeile erzeugt ein Element, das vom Schlüssel `'one'` auf den Wert `'uno'` abbildet. Wenn wir das Wörterbuch erneut ausgeben, sehen wir ein Schlüssel-Wert-Paar mit einem Doppelpunkt zwischen dem Schlüssel und dem Wert:
 
 ~~~~ {.python}
 >>> print(eng2sp)
 {'one': 'uno'}
 ~~~~
 
-This output format is also an input format. For example, you can create
-a new dictionary with three items.  But if you print `eng2sp`, you might be surprised:
+Dieses Ausgabeformat ist auch ein Eingabeformat. Wir können zum Beispiel ein neues Wörterbuch mit drei Einträgen erstellen.  Aber wenn man `eng2sp` ausgeben möchte, wird man vielleicht überrascht sein:
 
 ~~~~ {.python}
 >>> eng2sp = {'one': 'uno', 'two': 'dos', 'three': 'tres'}
@@ -63,25 +51,20 @@ a new dictionary with three items.  But if you print `eng2sp`, you might be surp
 {'one': 'uno', 'three': 'tres', 'two': 'dos'}
 ~~~~
 
-The order of the key-value pairs is not the same. In fact, if you type
-the same example on your computer, you might get a different result. In
-general, the order of items in a dictionary is unpredictable.
+Die Reihenfolge der Schlüsselwert-Paare ist nicht die gleiche. Wenn wir das gleiche Beispiel auf unserem Computer eingeben, erhalten wir möglicherweise ein anderes Ergebnis. Im Allgemeinen ist die Reihenfolge der Elemente in einem Wörterbuch unvorhersehbar.
 
-But that's not a problem because the elements of a dictionary are never
-indexed with integer indices. Instead, you use the keys to look up the
-corresponding values:
+Das ist aber kein Problem, weil die Elemente eines Wörterbuchs nie mit ganzzahligen Indizes indiziert sind. Stattdessen verwenden wir die Schlüssel, um die entsprechenden Werte nachzuschlagen:
 
 ~~~~ {.python}
 >>> print(eng2sp['two'])
 'dos'
 ~~~~
 
-The key `'two'` always maps to the value "dos" so the order
-of the items doesn't matter.
+Der Schlüssel `'two'` bildet immer auf den Wert `'dos'` ab, sodass die Reihenfolge der Elemente keine Rolle spielt.
 
-If the key isn't in the dictionary, you get an exception:
+Wenn der Schlüssel nicht im Wörterbuch enthalten ist, erhalten wir eine Ausnahme:
 
-\index{exception!KeyError}
+\index{Ausnahme!KeyError}
 \index{KeyError}
 
 ~~~~ {.python}
@@ -89,24 +72,21 @@ If the key isn't in the dictionary, you get an exception:
 KeyError: 'four'
 ~~~~
 
-The `len` function works on dictionaries; it returns the
-number of key-value pairs:
+Die Funktion `len` arbeitet mit Wörterbüchern; sie gibt die Anzahl der Schlüssel-Wert-Paare zurück:
 
-\index{len function}
-\index{function!len}
+\index{len (Funktion)}
+\index{Funktion!len}
 
 ~~~~ {.python}
 >>> len(eng2sp)
 3
 ~~~~
 
-The `in` operator works on dictionaries; it tells you whether
-something appears as a *key* in the dictionary (appearing as a value is
-not good enough).
+Der `in`-Operator arbeitet mit Wörterbüchern; er sagt Ihnen, ob etwas als *Schlüssel* im Wörterbuch vorkommt (als Wert zu erscheinen ist nicht gut genug).
 
-\index{membership!dictionary}
-\index{in operator}
-\index{operator!in}
+\index{Zugehörigkeit!Wörterbuch}
+\index{in (Operator)}
+\index{Operator!in}
 
 ~~~~ {.python}
 >>> 'one' in eng2sp
@@ -115,12 +95,10 @@ True
 False
 ~~~~
 
-To see whether something appears as a value in a dictionary, you can use
-the method `values`, which returns the values as a type that can be converted 
-to a list, and then use the `in` operator:
+Um zu sehen, ob etwas als Wert in einem Wörterbuch vorkommt, können wir die Methode `values` verwenden, die die Werte als einen Typ zurückgibt, der in eine Liste konvertiert werden kann. Dann verwenden wir den Operator `in`:
 
-\index{values method}
-\index{method!values}
+\index{values (Methode)}
+\index{Methode!values}
 
 ~~~~ {.python}
 >>> vals = list(eng2sp.values())
@@ -128,63 +106,35 @@ to a list, and then use the `in` operator:
 True
 ~~~~
 
-The `in` operator uses different algorithms for lists and
-dictionaries. For lists, it uses a linear search algorithm. As the list
-gets longer, the search time gets longer in direct proportion to the
-length of the list. For dictionaries, Python uses an algorithm called a
-*hash table* that has a remarkable property: the
-`in` operator takes about the same amount of time no matter
-how many items there are in a dictionary. I won't explain why hash
-functions are so magical, but you can read more about it at
-[wikipedia.org/wiki/Hash\_table](https://wikipedia.org/wiki/Hash_table).
+Der Operator `in` verwendet unterschiedliche Algorithmen für Listen und Wörterbücher. Für Listen verwendet er einen linearen Suchalgorithmus. Je länger die Liste wird, desto länger wird die Suchzeit im direkten Verhältnis zur Länge der Liste. Für Wörterbücher verwendet Python einen Algorithmus, der eine *Hashtabelle* verwendet und eine bemerkenswerte Eigenschaft hat: Der `in`-Operator benötigt jedes Mal ungefähr die gleiche konstante Zeit, egal wie viele Elemente in einem Wörterbuch vorhanden sind. Ich werde nicht erklären, warum Hash-Funktionen so schnell sind, aber man kann mehr darüber unter [wikipedia.org/wiki/Hash\_table](https://wikipedia.org/wiki/Hash_table) lesen.
 
-\index{hash table}
-\index{set membership}
-\index{membership!set}
+\index{Hashtabelle}
+\index{Menge, Zugehörigkeit}\index{Set, Zugehörigkeit}
+\index{Zugehörigkeit!Menge (Set)}
 
-**Exercise 1: Download a copy of the file**
+**Übung 1: Laden Sie diese Datei herunter:**
 [www.py4e.com/code3/words.txt](http://www.py4e.com/code3/words.txt)
 
-**Write a program that reads the words in *words.txt* and
-stores them as keys in a dictionary. It doesn't matter what the values
-are. Then you can use the `in` operator as a fast way to
-check whether a string is in the dictionary.**
+**Schreiben Sie ein Programm, das die Wörter in `words.txt` liest und sie als Schlüssel in einem Wörterbuch speichert. Es spielt keine Rolle, wie die Werte lauten. Dann können Sie den `in`-Operator als schnelle Möglichkeit verwenden, um zu prüfen, ob eine Zeichenfolge im Wörterbuch enthalten ist.**
 
-Dictionary as a set of counters
--------------------------------
+Ein Wörterbuch zum Zählen verwenden
+-----------------------------------
 
-\index{counter}
+Angenommen, wir verfügen über eine Zeichenkette und möchten zählen, wie oft jeder Buchstabe vorkommt. Es gibt mehrere Möglichkeiten, wie wir das tun können:
 
-Suppose you are given a string and you want to count how many times each
-letter appears. There are several ways you could do it:
+1.  Wir könnten 26 Variablen erstellen, eine für jeden Buchstaben des Alphabets. Dann könnten wir die Zeichenfolge durchlaufen und für jedes Zeichen den entsprechenden Zähler inkrementieren, wahrscheinlich unter Verwendung einer verketteten Bedingung.
 
-1.  You could create 26 variables, one for each letter of the alphabet.
-    Then you could traverse the string and, for each character,
-    increment the corresponding counter, probably using a chained
-    conditional.
+2.  Wir könnten eine Liste mit 26 Elementen erstellen. Dann könnten wir jedes Zeichen in eine Zahl umwandeln (mit der eingebauten Funktion `ord`), die Zahl als Index in der Liste verwenden und den entsprechenden Zähler inkrementieren.
 
-2.  You could create a list with 26 elements. Then you could convert
-    each character to a number (using the built-in function
-    `ord`), use the number as an index into the list, and
-    increment the appropriate counter.
+3.  Wir könnten ein Wörterbuch mit Zeichen als Schlüssel und Zählern als den entsprechenden Werten erstellen. Das erste Mal, wenn wir ein Zeichen sehen, würden wir dem Wörterbuch ein Element hinzufügen. Danach würden wir den Wert eines vorhandenen Elements inkrementieren.
 
-3.  You could create a dictionary with characters as keys and counters
-    as the corresponding values. The first time you see a character, you
-    would add an item to the dictionary. After that you would increment
-    the value of an existing item.
+Jede dieser Optionen führt dieselbe Berechnung durch, aber jede von ihnen implementiert diese Berechnung auf eine andere Weise.
 
-Each of these options performs the same computation, but each of them
-implements that computation in a different way.
+\index{Implementation}\index{Implementierung}
 
-\index{implementation}
+Eine *Implementierung* ist eine Art und Weise, eine Berechnung durchzuführen; einige Implementierungen sind besser als andere. Ein Vorteil der Wörterbuchimplementierung ist zum Beispiel, dass wir nicht im Voraus wissen müssen, welche Buchstaben in der Zeichenkette vorkommen, und wir müssen nur Platz für die Buchstaben schaffen, die tatsächlich vorkommen.
 
-An *implementation* is a way of performing a computation;
-some implementations are better than others. For example, an advantage
-of the dictionary implementation is that we don't have to know ahead of
-time which letters appear in the string and we only have to make room
-for the letters that do appear.
-
-Here is what the code might look like:
+So könnte der Code aussehen:
 
 ~~~~ {.python .trinket}
 word = 'brontosaurus'
@@ -197,37 +147,28 @@ for c in word:
 print(d)
 ~~~~
 
-We are effectively computing a *histogram*, which is a
-statistical term for a set of counters (or frequencies).
+Wir berechnen effektiv ein *Histogramm*, was ein statistischer Begriff für einen Satz von Zählern (oder Häufigkeiten) ist.
 
-\index{histogram}
-\index{frequency}
-\index{traversal}
+\index{Histogramm}
+\index{Häufigkeit}
+\index{Traversieren}
 
-The `for` loop traverses the string. Each time through the
-loop, if the character `c` is not in the dictionary, we
-create a new item with key `c` and the initial value 1 (since
-we have seen this letter once). If `c` is already in the
-dictionary we increment `d[c]`.
+Die `for`-Schleife durchläuft die Zeichenkette. Jedes Mal, wenn die Schleife durchlaufen wird und das Zeichen, das an `c` zugewiesen wird, nicht im Wörterbuch enthalten ist, wird ein neues Element mit dem Schlüssel `c` und dem Anfangswert 1 angelegt (da wir diesen Buchstaben schon einmal gesehen haben). Wenn `c` bereits im Wörterbuch ist, inkrementieren wir `d[c]`.
 
-\index{histogram}
+\index{Histogramm}
 
-Here's the output of the program:
+Hier ist die Ausgabe des Programms:
 
 ~~~~
 {'a': 1, 'b': 1, 'o': 2, 'n': 1, 's': 2, 'r': 2, 'u': 2, 't': 1}
 ~~~~
 
-The histogram indicates that the letters "a" and "b"
-appear once; "o" appears twice, and so on.
+Das Histogramm zeigt an, dass die Buchstaben „a“ und „b“ einmal vorkommen; „o“ erscheint zweimal, und so weiter.
 
-\index{get method}
-\index{method!get}
+\index{get (Methode)}
+\index{Methode!get}
 
-Dictionaries have a method called `get` that takes a key and
-a default value. If the key appears in the dictionary, `get`
-returns the corresponding value; otherwise it returns the default value.
-For example:
+Wörterbücher haben eine Methode namens `get`, die einen Schlüssel und einen Standardwert annimmt. Wenn der Schlüssel im Wörterbuch vorkommt, gibt `get` den entsprechenden Wert zurück; andernfalls wird der Standardwert zurückgegeben. Zum Beispiel:
 
 ~~~~ {.python .trinket}
 >>> counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
@@ -237,10 +178,7 @@ For example:
 0
 ~~~~
 
-We can use `get` to write our histogram loop more concisely.
-Because the `get` method automatically handles the case where
-a key is not in a dictionary, we can reduce four lines down to one and
-eliminate the `if` statement.
+Wir können `get` verwenden, um unsere Histogramm-Schleife übersichtlicher zu schreiben. Da die Methode `get` automatisch den Fall behandelt, dass ein Schlüssel nicht in einem Wörterbuch enthalten ist, können wir vier Zeilen auf eine reduzieren und die `if`-Anweisung eliminieren.
 
 ~~~~ {.python}
 word = 'brontosaurus'
@@ -250,62 +188,43 @@ for c in word:
 print(d)
 ~~~~
 
-The use of the `get` method to simplify this counting loop
-ends up being a very commonly used "idiom" in Python and we will use it
-many times in the rest of the book. So you should take a moment and
-compare the loop using the `if` statement and `in`
-operator with the loop using the `get` method. They do
-exactly the same thing, but one is more succinct.
+Die Verwendung der `get`-Methode zur Vereinfachung dieser Zählschleife ist schließlich ein sehr häufig verwendetes Idiom in Python und wir werden es im weiteren Verlauf des Buches noch oft verwenden. Wir sollten uns also einen Moment Zeit nehmen und die Schleife mit der `if`-Anweisung und dem `in`-Operator mit der Schleife mit der `get`-Methode vergleichen. Wir tun genau das Gleiche, aber die eine ist wesentlich übersichtlicher.
 
-\index{idiom}
+\index{Idiom}
 
-Dictionaries and files
-----------------------
+Wörterbücher und Dateien
+------------------------
 
-One of the common uses of a dictionary is to count the occurrence of
-words in a file with some written text. Let's start with a very simple
-file of words taken from the text of *Romeo and Juliet*.
+Eine der häufigsten Verwendungen eines Wörterbuchs ist das Zählen des Vorkommens von Wörtern in einer Datei mit einem geschriebenen Text. Beginnen wir mit einer sehr einfachen Datei mit Wörtern aus dem Text von *Romeo and Juliet*.
 
-For the first set of examples, we will use a shortened and simplified
-version of the text with no punctuation. Later we will work with the
-text of the scene with punctuation included.
+Für die erste Reihe von Beispielen werden wir eine verkürzte und vereinfachte Version des Textes ohne Interpunktion verwenden. Später werden wir mit dem Text der Szene mit enthaltener Zeichensetzung arbeiten.
 
     But soft what light through yonder window breaks
     It is the east and Juliet is the sun
     Arise fair sun and kill the envious moon
     Who is already sick and pale with grief
 
-We will write a Python program to read through the lines of the file,
-break each line into a list of words, and then loop through each of the
-words in the line and count each word using a dictionary.
+Wir werden ein Python-Programm schreiben, das die Zeilen der Datei liest, jede Zeile in eine Liste von Wörtern zerlegt und dann in einer Schleife jedes der Wörter in der Zeile durchläuft und jedes Wort mithilfe eines Wörterbuchs zählt.
 
-\index{nested loops}
-\index{loop!nested}
+\index{verschachtelte Schleifen}
+\index{Schleife!verschachtelt}
 
-You will see that we have two `for` loops. The outer loop is
-reading the lines of the file and the inner loop is iterating through
-each of the words on that particular line. This is an example of a
-pattern called *nested loops* because one of the loops is
-the *outer* loop and the other loop is the *inner* loop.
+Wir werden erkennen, dass wir zwei `for`-Schleifen haben. Die äußere Schleife liest die Zeilen der Datei und die innere Schleife iteriert durch jedes der Wörter in dieser bestimmten Zeile. Dies ist ein Beispiel für ein Muster, das *geschachtelte Schleifen* genannt wird, weil eine der Schleifen die *äußere* Schleife und die andere Schleife die *innere* Schleife ist.
 
-Because the inner loop executes all of its iterations each time the
-outer loop makes a single iteration, we think of the inner loop as
-iterating "more quickly" and the outer loop as iterating more slowly.
+Da die innere Schleife alle ihre Iterationen jedes Mal ausführt, wenn die äußere Schleife eine einzelne Iteration macht, können wir uns die innere Schleife als „schneller“ und die äußere Schleife als „langsamer“ iterierend vorstellen.
 
 \index{Romeo and Juliet}
 
-The combination of the two nested loops ensures that we will count every
-word on every line of the input file.
+Die Kombination der beiden verschachtelten Schleifen stellt sicher, dass wir jedes Wort in jeder Zeile der Eingabedatei zählen.
 
 \VerbatimInput{../code3/count1.py}
 \begin{trinketfiles}
 ../code3/romeo.txt
 \end{trinketfiles}
 
-In our `else` statement, we use the more compact alternative for incrementing a variable. `counts[word] += 1` is equivalent to `counts[word] = counts[word] + 1`. Either method can be used to change the value of a variable by any desired amount. Similar alternatives exist for `-=`, `*=`, and `/=`.
+In unserer `else`-Anweisung verwenden wir die kompaktere Alternative zur Inkrementierung einer Variablen. `counts[word] += 1` ist äquivalent zu `counts[word] = counts[word] + 1`. Beide Methoden können verwendet werden, um den Wert einer Variablen um einen beliebigen Betrag zu ändern. Ähnliche Alternativen gibt es für `-=`, `*=` und `/=`.
 
-When we run the program, we see a raw dump of all of the counts in
-unsorted hash order. (the *romeo.txt* file is available at
+Wenn wir das Programm ausführen, sehen wir einen *Dump* mit allen Zählungen in unsortierter Hash-Reihenfolge. (die Datei *romeo.txt* ist verfügbar unter
 [www.py4e.com/code3/romeo.txt](http://www.py4e.com/code3/romeo.txt))
 
 ~~~~
@@ -319,20 +238,16 @@ Enter the file name: romeo.txt
 'kill': 1, 'the': 3, 'soft': 1, 'Juliet': 1}
 ~~~~
 
-It is a bit inconvenient to look through the dictionary to find the most
-common words and their counts, so we need to add some more Python code
-to get us the output that will be more helpful.
+Es ist etwas umständlich, das Wörterbuch zu durchforsten, um die häufigsten Wörter und ihre Anzahl zu finden, also müssen wir noch etwas Python-Code hinzufügen, um die Ausgabe zu erhalten, die nützlicher für uns sein wird.
 
-Looping and dictionaries
-------------------------
+Schleifen und Wörterbücher
+--------------------------
 
-\index{dictionary!looping with}
-\index{looping!with dictionaries}
-\index{traversal}
+\index{Wörterbuch!Iteration durch}
+\index{Schleife!über Wörterbuch}\index{Iteration!durch Wörterbuch}
+\index{Traversieren}
 
-If you use a dictionary as the sequence in a `for` statement,
-it traverses the keys of the dictionary. This loop prints each key and
-the corresponding value:
+Wenn man ein Wörterbuch als Sequenz in einer `for`-Anweisung verwendet, durchläuft diese die Schlüssel des Wörterbuchs. Diese Schleife gibt jeden Schlüssel und den entsprechenden Wert aus:
 
 ~~~~ {.python}
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
@@ -340,7 +255,7 @@ for key in counts:
     print(key, counts[key])
 ~~~~
 
-Here's what the output looks like:
+So sieht die Ausgabe aus:
 
 ~~~~
 jan 100
@@ -348,14 +263,11 @@ chuck 1
 annie 42
 ~~~~
 
-Again, the keys are in no particular order.
+Auch hier sind die Schlüssel in keiner bestimmten Reihenfolge.
 
-\index{idiom}
+\index{Idiom}
 
-We can use this pattern to implement the various loop idioms that we
-have described earlier. For example if we wanted to find all the entries
-in a dictionary with a value above ten, we could write the following
-code:
+Wir können dieses Muster verwenden, um die verschiedenen Schleifen-Idiome zu implementieren, die wir zuvor beschrieben haben. Wenn wir zum Beispiel alle Einträge in einem Wörterbuch mit einem Wert über zehn finden wollen, könnten wir folgenden Code schreiben:
 
 ~~~~ {.python}
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
@@ -364,26 +276,19 @@ for key in counts:
         print(key, counts[key])
 ~~~~
 
-The `for` loop iterates through the *keys* of
-the dictionary, so we must use the index operator to retrieve the
-corresponding *value* for each key. Here's what the output
-looks like:
+Die `for`-Schleife iteriert über die *Schlüssel* des Wörterbuchs, also müssen wir den Indexoperator verwenden, um den entsprechenden *Wert* für jeden Schlüssel abzurufen. So sieht die Ausgabe aus:
 
 ~~~~
 jan 100
 annie 42
 ~~~~
 
-We see only the entries with a value above 10.
+Wir sehen nur die Einträge mit einem Wert über 10.
 
-\index{keys method}
-\index{method!keys}
+\index{keys (Methode)}
+\index{Methode!keys}
 
-If you want to print the keys in alphabetical order, you first make a
-list of the keys in the dictionary using the `keys` method
-available in dictionary objects, and then sort that list and loop
-through the sorted list, looking up each key and printing out key-value
-pairs in sorted order as follows:
+Wenn wir die Schlüssel in alphabetischer Reihenfolge ausgeben möchten, erstellen wir zunächst eine Liste der Schlüssel des Wörterbuchs mit der in Wörterbuchobjekten verfügbaren Methode `keys`. Dann sortieren diese Liste und iterieren anschließend durch sie, wobei wir jeden Schlüssel nachschlagen und die Schlüsselwert-Paare wie folgt ausgeben:
 
 ~~~~ {.python}
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
@@ -394,7 +299,7 @@ for key in lst:
     print(key, counts[key])
 ~~~~
 
-Here's what the output looks like:
+So sieht die Ausgabe aus:
 
 ~~~~
 ['jan', 'chuck', 'annie']
@@ -403,18 +308,14 @@ chuck 1
 jan 100
 ~~~~
 
-First you see the list of keys in unsorted order that we get from the
-`keys` method. Then we see the key-value pairs in order from
-the `for` loop.
+Zuerst sehen wir die Liste der Schlüssel in unsortierter Reihenfolge, die wir von der Methode `keys` erhalten. Dann sehen wir die Schlüsselwert-Paare in der Reihenfolge aus der `for`-Schleife.
 
-Advanced text parsing
----------------------
+Fortgeschrittene Textanalyse
+----------------------------
 
 \index{Romeo and Juliet}
 
-In the above example using the file *romeo.txt*, we made the
-file as simple as possible by removing all punctuation by hand. The
-actual text has lots of punctuation, as shown below.
+Im obigen Beispiel mit der Datei `romeo.txt` haben wir die Datei so einfach wie möglich gemacht, indem wir alle Satzzeichen von Hand entfernt haben. Der ursprüngliche Text enthält viele Satzzeichen, wie unten gezeigt.
 
 ~~~~
 But, soft! what light through yonder window breaks?
@@ -423,30 +324,17 @@ Arise, fair sun, and kill the envious moon,
 Who is already sick and pale with grief,
 ~~~~
 
-Since the Python `split` function looks for spaces and treats
-words as tokens separated by spaces, we would treat the words "soft!"
-and "soft" as *different* words and create a separate dictionary entry
-for each word.
+Da die Python-Funktion `split` nach Leerzeichen sucht und Wörter als durch Leerzeichen getrennte Token behandelt, würden wir die Wörter „soft!“ und „soft“ als *unterschiedliche* Wörter behandeln und für jedes Wort einen eigenen Wörterbucheintrag erstellen.
 
-Also since the file has capitalization, we would treat "who" and "Who"
-as different words with different counts.
+Da die Datei außerdem Groß- und Kleinschreibung schreibung aufweist, würden wir „who“ und „Who“ als unterschiedliche Wörter mit unterschiedlicher Zählung behandeln.
 
-We can solve both these problems by using the string methods
-`lower`, `punctuation`, and
-`translate`. The `translate` is the most subtle of
-the methods. Here is the documentation for `translate`:
+Wir können diese beiden Probleme mit den String-Methoden `lower`, `punctuation` und `translate` lösen. Die Methode `translate` ist die anspruchsvollste der Methoden. Hier ist die Dokumentation für `translate`:
 
 `line.translate(str.maketrans(fromstr, tostr, deletestr))`
 
-*Replace the characters in `fromstr` with the character in the same position in `tostr`
-and delete all characters that are in `deletestr`.
-The `fromstr` and `tostr` can be empty strings and the `deletestr`
-parameter can be omitted.*
+*Replace the characters in `fromstr` with the character in the same position in `tostr` and delete all characters that are in `deletestr`. The `fromstr` and `tostr` can be empty strings and the `deletestr` parameter can be omitted.*
 
-We will not specify the `tostr` but we will use the
-`deletestr` parameter to delete all of the punctuation. We
-will even let Python tell us the list of characters that it considers
-"punctuation":
+Wir werden den Parameter `tostr` nicht angeben, aber wir werden den Parameter `deletestr` verwenden, um alle Satzzeichen zu löschen. Wir lassen uns sogar von Python die Liste der Zeichen mitteilen, die es als „Interpunktion“ betrachtet:
 
 ~~~~ {.python}
 >>> import string
@@ -454,22 +342,18 @@ will even let Python tell us the list of characters that it considers
 '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
 ~~~~
 
-The parameters used by `translate` were different in Python 2.0.
+Die von `translate` verwendeten Parameter waren in Python 2.0 anders.
 
-We make the following modifications to our program:
+Wir nehmen die folgenden Änderungen an unserem Programm vor:
 
 \VerbatimInput{../code3/count2.py}
 \begin{trinketfiles}
 ../code3/romeo-full.txt
 \end{trinketfiles}
 
-Part of learning the "Art of Python" or "Thinking Pythonically" is
-realizing that Python often has built-in capabilities for many common
-data analysis problems. Over time, you will see enough example code and
-read enough of the documentation to know where to look to see if someone
-has already written something that makes your job much easier.
+Ein Teil des Erlernens der „Kunst von Python“ ist die Erkenntnis, dass Python oft eingebaute Fähigkeiten für viele gängige Datenanalyseprobleme hat. Mit der Zeit werden wir genug Beispielcode gesehen haben und genug von der Dokumentation gelesen haben, um zu wissen, wo man nachschauen muss. Vielleicht hat jemand bereits etwas geschrieben, dass unsere Arbeit viel einfacher macht.
 
-The following is an abbreviated version of the output:
+Im Folgenden finden wir eine gekürzte Version der Ausgabe:
 
 ~~~~
 Enter the file name: romeo-full.txt
@@ -480,121 +364,85 @@ a': 24, 'orchard': 2, 'light': 5, 'lovers': 2, 'romeo': 40,
 'it': 22, 'leans': 1, 'canst': 1, 'having': 1, ...}
 ~~~~
 
-Looking through this output is still unwieldy and we can use Python to
-give us exactly what we are looking for, but to do so, we need to learn
-about Python *tuples*. We will pick up this example once
-we learn about tuples.
+Das Durchsehen dieser Ausgabe ist immer noch unhandlich, aber wir können Python verwenden, um uns genau das ausgeben zu lassen, wonach wir suchen. Aber dazu müssen wir zunächst *Tupel* kennenlernen. Wir werden dieses Beispiel aufgreifen, sobald wir etwas über Tupel gelernt haben.
 
 Debugging
 ---------
 
-\index{debugging}
+\index{Debugging}
 
-As you work with bigger datasets it can become unwieldy to debug by
-printing and checking data by hand. Here are some suggestions for
-debugging large datasets:
+Wenn wir mit größeren Datensätzen arbeiten, kann das Debuggen durch Ausgeben und Prüfen der Daten von Hand umständlich werden. Hier sind einige Vorschläge für die Fehlersuche in großen Datensätzen:
 
-Scale down the input
-:   If possible, reduce the size of the dataset. For example if the
-    program reads a text file, start with just the first 10 lines, or
-    with the smallest example you can find. You can either edit the
-    files themselves, or (better) modify the program so it reads only
-    the first `n` lines.
+Reduzieren der Datenmenge
+:   Reduzieren wir, wenn möglich, die Größe des Datensatzes. Wenn das Programm z. B. eine Textdatei liest, beginnen wir nur mit den ersten 10 Zeilen, oder mit dem kleinsten Beispiel, das wir finden können. Wir können entweder die Dateien selbst bearbeiten, oder (besser) das Programm so modifizieren, dass es nur die ersten `n` Zeilen liest.
 
-    If there is an error, you can reduce `n` to the smallest
-    value that manifests the error, and then increase it gradually as
-    you find and correct errors.
+    Wenn ein Fehler vorliegt, können wir `n` auf den kleinsten Wert reduzieren, der den Fehler manifestiert, und ihn dann schrittweise erhöhen, während wir Fehler finden und korrigieren.
 
-Check summaries and types
-:   Instead of printing and checking the entire dataset, consider
-    printing summaries of the data: for example, the number of items in
-    a dictionary or the total of a list of numbers.
+Informationen extrahieren und Datentypen prüfen
+:   Anstatt den gesamten Datensatz auszugeben und zu prüfen, sollten wir in Erwägung ziehen, nur bestimmte Informationen auszugeben: z. B. die Anzahl der Elemente in einem Wörterbuch oder die Gesamtsumme einer Liste von Zahlen.
 
-    A common cause of runtime errors is a value that is not the right
-    type. For debugging this kind of error, it is often enough to print
-    the type of a value.
+    Eine häufige Ursache für Laufzeitfehler ist ein Wert, der nicht den richtigen Typ hat. Zur Fehlersuche bei dieser Art von Fehlern reicht es oft aus, den Typ eines Wertes auszugeben.
 
-Write self-checks
-:   Sometimes you can write code to check for errors automatically. For
-    example, if you are computing the average of a list of numbers, you
-    could check that the result is not greater than the largest element
-    in the list or less than the smallest. This is called a "sanity
-    check" because it detects results that are "completely illogical".
-\index{sanity check}
-\index{consistency check}
+Plausibilitätsprüfungen
+:   Manchmal können wir Code schreiben, um automatisch auf Fehler zu prüfen. Wenn wir beispielsweise den Durchschnitt einer Liste von Zahlen berechnen, könnten wir prüfen, dass das Ergebnis nicht größer als das größte Element in der Liste oder kleiner als das kleinste ist. Dies wird als „Plausibilitätsprüfungen“ bezeichnet, weil es Ergebnisse erkennt, die "völlig unlogisch" sind.
+\index{Plausibilitätsprüfung}
+\index{Konsistenzprüfung}
 
-    Another kind of check compares the results of two different
-    computations to see if they are consistent. This is called a
-    "consistency check".
+    Eine andere Art der Prüfung vergleicht die Ergebnisse von zwei verschiedenen Berechnungen, um zu sehen, ob sie konsistent sind. Dies wird als „Konsistenzprüfung“ bezeichnet.
 
-Pretty print the output
-:   Formatting debugging output can make it easier to spot an error.
+Formatierung der Debugging-Ausgabe
+:   Eine Formatierung der Debugging-Ausgabe kann es erleichtern, einen Fehler zu erkennen.
 
-Again, time you spend building scaffolding can reduce the time you spend
-debugging.
-\index{scaffolding}
+Auch hier kann die Zeit, die wir mit dem Aufbau eines stabilen „Gerüsts“ verbringen, die Zeit reduzieren, die wir für die Fehlersuche aufwenden müssen.
 
-Glossary
---------
+Glossar
+-------
 
-dictionary
-:   A mapping from a set of keys to their corresponding values.
-\index{dictionary}
+Wörterbuch
+:   Eine Abbildung von einer Menge von Schlüsseln auf ihre entsprechenden Werte.
+\index{Wörterbuch}
 
-hashtable
-:   The algorithm used to implement Python dictionaries.
-\index{hashtable}
+Hash-Tabelle
+:   Der Algorithmus, der zur Implementierung von Python-Wörterbüchern verwendet wird.
+\index{Hashtabelle}
 
-hash function
-:   A function used by a hashtable to compute the location for a key.
-\index{hash function}
+Hashfunktion
+:   Eine Funktion, die von einer Hashtabelle verwendet wird, um den Speicherort für einen Schlüssel zu berechnen.
+\index{Hashfunktion}
 
-histogram
-:   A set of counters.
-\index{histogram}
+Histogramm
+:   Ein Menge von Zählern.
+\index{Histogramm}
 
-implementation
-:   A way of performing a computation.
-\index{implementation}
+Implementierung
+:   Eine Art, eine Berechnung durchzuführen.
+\index{Implementation}\index{Implementierung}
 
-item
-:   Another name for a key-value pair.
-\index{item!dictionary}
+Schlüssel
+:   Ein Objekt, das in einem Wörterbuch als erster Teil eines Schlüssel-Wert-Paares erscheint.
+\index{Schlüssel}\index{Key}
 
-key
-:   An object that appears in a dictionary as the first part of a
-    key-value pair.
-\index{key}
+Schlüssel-Wert-Paar
+:   Die Darstellung des Mappings von einem Schlüssel auf einen Wert.
+\index{Key-Value-Paar}\index{Schlüssel-Wert-Paar}
 
-key-value pair
-:   The representation of the mapping from a key to a value.
-\index{key-value pair}
+Lookup
+:   Eine Wörterbuchoperation, die einen Schlüssel nimmt und den entsprechenden Wert findet (Lookup = Nachschlagen im Wörterbuch).
+\index{Lookup}
 
-lookup
-:   A dictionary operation that takes a key and finds the corresponding
-    value.
-\index{lookup}
+verschachtelte Schleifen
+:   Wenn es eine oder mehrere Schleifen innerhalb einer anderen Schleife gibt. Die innere Schleife läuft jedes Mal zu Ende, wenn die äußere Schleife einmal läuft.
+\index{verschachtelte Schleifen}
+\index{Schleife!verschachtelt}
 
-nested loops
-:   When there are one or more loops "inside" of another loop. The inner
-    loop runs to completion each time the outer loop runs once.
-\index{nested loops}
-\index{loop!nested}
+Wert
+:   Ein Objekt, das in einem Wörterbuch als zweiter Teil eines Schlüssel-Wert-Paares erscheint. Dies ist spezifischer als unsere bisherige Verwendung des Begriffs *Wert*.
+\index{Wert}
 
-value
-:   An object that appears in a dictionary as the second part of a
-    key-value pair. This is more specific than our previous use of the
-    word "value".
-\index{value}
+Übungen
+-------
 
-Exercises
----------
-
-**Exercise 2: Write a program that categorizes each mail message by which
-day of the week the commit was done. To do this look for lines that
-start with "From", then look for the third word and keep a running count
-of each of the days of the week. At the end of the program print out the
-contents of your dictionary (order does not matter).**
+**Übung 2: Schreiben Sie ein Programm, dass jede E-Mail-Nachricht danach kategorisiert, an welchem Wochentag die Übergabe stattgefunden hat. Suchen Sie dazu nach Zeilen, die mit „From“ beginnen, suchen Sie dann nach dem dritten Wort und führen Sie eine laufende Zählung der einzelnen Wochentage durch. Am Ende des Programms geben Sie den Inhalt Ihres Wörterbuchs aus (die Reihenfolge spielt keine Rolle).**
 
 **Sample Line:**
 
@@ -602,7 +450,7 @@ contents of your dictionary (order does not matter).**
 From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
 ~~~~
 
-**Sample Execution:**
+**Beispielzeile:**
 
 ~~~~
 python dow.py
@@ -610,9 +458,7 @@ Enter a file name: mbox-short.txt
 {'Fri': 20, 'Thu': 6, 'Sat': 1}
 ~~~~
 
-**Exercise 3: Write a program to read through a mail log, build a
-histogram using a dictionary to count how many messages have come from
-each email address, and print the dictionary.**
+**Übung 3: Schreiben Sie ein Programm, um ein E-Mail-Protokoll zu lesen. Erzeugen Sie ein Histogramm mithilfe eines Wörterbuchs, um zu zählen, wie viele Nachrichten von den einzelnen E-Mail-Adressen gekommen sind. Geen Sie das Wörterbuch dann aus.**
 
 ~~~~
 Enter file name: mbox-short.txt
@@ -624,7 +470,7 @@ Enter file name: mbox-short.txt
 'ray@media.berkeley.edu': 1}
 ~~~~
 
-**Exercise 4: Add code to the above program to figure out who has the most messages in the file. After all the data has been read and the dictionary has been created, look through the dictionary using a maximum loop (see Chapter 5: Maximum and minimum loops) to find who has the most messages and print how many messages the person has.**
+**Übung 4: Fügen Sie folgendes dem obigen Programmcode hinzu, um herauszufinden, wer die meisten Nachrichten in der Datei erhalten hat. Nachdem alle Daten gelesen und das Wörterbuch erstellt wurde, durchsuchen Sie das Wörterbuch mithilfe einer Schleife nach dem Maximum (siehe Kapitel 5: Maximum und Minimum ermitteln), um herauszufinden, wer die meisten Nachrichten hat, und geben Sie aus, wie viele Nachrichten die Person bekommen hat.**
 
 ~~~~
 Enter a file name: mbox-short.txt
@@ -634,10 +480,7 @@ Enter a file name: mbox.txt
 zqian@umich.edu 195
 ~~~~
 
-**Exercise 5: This program records the domain name (instead of the
-address) where the message was sent from instead of who the mail came
-from (i.e., the whole email address). At the end of the program, print
-out the contents of your dictionary.**
+**Übung 5: Dieses Programm zeichnet nur den Domänennamen (anstelle der Adresse) auf, von dem die Nachricht gesendet wurde, also nicht, von welchem konkreten Absender die E-Mail kam (das wäre die gesamte E-Mail-Adresse). Geben Sie am Ende des Programms den Inhalt Ihres Wörterbuchs aus.**
 
 ~~~~
 python schoolcount.py
@@ -645,3 +488,4 @@ Enter a file name: mbox-short.txt
 {'media.berkeley.edu': 4, 'uct.ac.za': 6, 'umich.edu': 7,
 'gmail.com': 1, 'caret.cam.ac.uk': 1, 'iupui.edu': 8}
 ~~~~
+
