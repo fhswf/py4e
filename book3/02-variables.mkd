@@ -1,5 +1,5 @@
 
-Variablen, Ausdrücke und Anweisungen
+Bezeichner, Ausdrücke und Anweisungen
 ====================================
 
 Werte und Datentypen
@@ -9,9 +9,9 @@ Werte und Datentypen
 \index{Datentyp}
 \index{Zeichenkette}
 
-Ein *Wert* ist eines der grundlegenden Elemente, mit denen ein Programm arbeitet, wie ein Buchstabe oder eine Zahl. Die Werte, die wir bis jetzt gesehen haben, sind `1`, `2` und `'Hallo, Welt!'`.
+Ein *Wert* ist eines der grundlegenden Elemente, mit denen ein Programm arbeitet, wie ein Buchstabe oder eine Zahl. Die Werte, die wir bis jetzt gesehen haben, sind `1`, `2` und `'Hallo Welt!'`.
 
-Diese Werte gehören zu unterschiedlichen *Datentypen*: `2` ist eine Ganzzahl, und `'Hello, World!'` ist eine Zeichenkette (englisch *String*), so genannt, weil sie eine „Kette“ von Buchstaben enthält. Wir (und der Python-Interpreter) können Zeichenketten erkennen, weil sie in Anführungszeichen eingeschlossen sind.
+Diese Werte gehören zu unterschiedlichen *Datentypen*: `2` ist eine Ganzzahl, und `'Hallo Welt!'` ist eine Zeichenkette (englisch *String*), so genannt, weil sie eine „Kette“ von Buchstaben enthält. Wir (und der Python-Interpreter) können Zeichenketten erkennen, weil sie in Anführungszeichen eingeschlossen sind.
 
 \index{Anführungszeichen}
 
@@ -33,6 +33,9 @@ Wenn man nicht sicher sind, welchen Typ ein Wert hat, kann der Interpreter es ei
 ~~~~
 
 Es überrascht nicht, dass Zeichenketten zum Typ `str` und Ganzzahlen zum Typ `int` gehören. Weniger offensichtlich gehören Zahlen mit einem Dezimalpunkt zu einem Typ namens `float`, da diese Zahlen in einem Format namens *Fließkomma* (oder *Gleitkommazahl*, englisch floating point number) dargestellt werden.
+
+Beim *Fließkomma* müssen Sie beachten, einen *Dezimalpunkt* zu verwenden.
+Python orientiert sich hier, wie die meisten Programmiersprachen an dem Dezimaltrennzeichen, dass in den meisten englischsprachigen Ländern verwendet wird; und das ist eben der Punkt und nicht das Komma, so wie wir es in Deutschland verwenden.
 
 \index{Datentyp}
 \index{Zeichenkette}
@@ -60,7 +63,7 @@ Was ist mit Werten wie `17` und `3.2`? Sie sehen aus wie Zahlen, stehen aber in 
 
 Es sind Zeichenketten.
 
-Wenn man eine große Ganzzahl eingeben, könnte man versucht sein, Kommata zwischen Gruppen von drei Ziffern zu verwenden, wie in `1,000,000`. Dies ist in Python keine gültige Ganzzahl, die Anweisung selbst ist jedoch zulässig:
+Wenn man eine große Ganzzahl eingeben, könnte man versucht sein, Tausender-Trennzeichen zu verwenden. In Ländern, die den Dezimalpunkt verwenden werden zum abgrenzen der Tausenderstellen Kommata benutzt. Wenn wir dies in Python tun, also etwa einem Millionen als `1,000,000` schreiben ist das keine gültige Ganzzahl mehr. Allerdings ist `1,000,000` ein gültiger Python-Ausdruck, wie wir in fogelden Beispiel sehen:
 
 ~~~~ {.python .trinket height="120"}
 >>> print(1,000,000)
@@ -73,18 +76,28 @@ Nun, das ist überhaupt nicht das, was wir erwartet haben! Python interpretiert 
 \index{Fehler!semantischer}
 \index{Fehlermeldung}
 
-Dies ist das erste Beispiel eines *semantischen Fehlers*, den wir gesehen haben: Der Code wird ohne eine Fehlermeldung zu erzeugen ausgeführt, aber er tut nicht das „Richtige“.
+Dies ist ein Beispiel für einen *semantischen Fehler*: Der Code wird ohne eine Fehlermeldung zu erzeugen ausgeführt, aber er tut nicht das „Richtige“. Wenn wir die `1,000,000` als *eine* Zahl verwenden würden, würde der Interpreter auch einen Fehler erzeugen, da wir hier keine einzelne, sondern eine Folge von Zahlen haben.
 
-Variablen
+Leider, oder glücklicherweise -- das liegt ganz im Auge des Betrachters -- ist Python sehr „großzügig“ bei der Interpretation Ihres Codes.
+Wenn Sie `1,000,000` hinschreiben, wird Python annehmen, dass Sie genau eine solche Folge meinen.
+Wenn Sie `a = 1,000,000` hinschreiben, wird Python dieser Folge den Namen `a` geben.
+Dass das möglicherweise nicht das ist, was Sie meinten, kann Python nicht ahnen.
+Ein weiteres Beispiel dafür, dass Sie beim Programmieren *genau* sein müssen.
+
+Werte benennen
 ---------
 
 \index{Variable}
 \index{Zuweisung}
 \index{Anweisung!Zuweisung}
 
-Eine der mächtigsten Eigenschaften einer Programmiersprache ist die Fähigkeit, *Variablen* zu manipulieren. Eine Variable ist ein Bezeichner, der sich auf einen Wert bezieht.
+Die zentrale Eigenschaft einer Programmiersprache ist die Fähigkeit, *Daten* zu manipulieren. In Python sind alle Daten als sogenannte *Objekte* abgespeichert. Übrigens sind auch die einzelnen Funktionen *Objekte* und Objekte selbs sind *Objekte*, weswegen der Leitsatz gilt: *Alles in Python ist ein Objekt*. Zu verwirrend? Ich kann Sie gut verstehen, wir werden uns dieses Thema später noch einmal vornehmen, dann wird sicher klarer, was hier mit *Objekt* gemeint ist.
 
-Eine *Zuweisung* erzeugt neue Variablen und gibt ihnen Werte:
+Unsere Objekte, also z.B. Ganzzahlen oder Zeichenketten sind im Hauptspeicher abgelegt. Um Sie sinnvoll verwenden zu können, geben wir Ihnen Namen. Ein solches Paar, also einen Wert (bzw. ein Objekt) und einen dazugehörigen Namen nennt man auch *Variable*.
+Wir werden im Folgenden den Begriff *Variable* synonym für den Namen verwenden. Lassen Sie sich davon nicht verwirren, wenn wir von „Variable“ sprechen, ist immer der Name eines Wert-Objekts gemeint.
+
+Die Bindung eines Namens an einen Wert erfolgt durch eine *Zuweisung*.
+Existiert der Name vorher noch nicht, wird er im Zuge der Zuweisung neu erzeugt:
 
 ~~~~ {.python}
 >>> message = 'And now for something completely different'
@@ -114,7 +127,7 @@ Der Typ einer Variablen ist der Typ des Wertes, auf den sie sich bezieht.
 <class 'float'>
 ~~~~
 
-Variablennamen und Schlüsselwörter
+Bezeichner und Schlüsselwörter
 ----------------------------------
 
 \index{Schlüsselwort}
@@ -123,7 +136,7 @@ Programmierer wählen für ihre Variablen in der Regel Namen, die aussagekräfti
 
 Variablennamen können beliebig lang sein. Sie können sowohl Buchstaben als auch Zahlen enthalten, aber sie dürfen nicht mit einer Zahl beginnen. Es ist erlaubt, Großbuchstaben zu verwenden, aber es ist eine gute Idee, Variablennamen mit einem Kleinbuchstaben zu beginnen (Wir werden später sehen, warum).
 
-Das Unterstrich (`\_`) kann in einem Variablennamen vorkommen. Es wird häufig in Variablen mit mehreren Wörtern verwendet, z. B. `my_name` oder `airspeed_of_light`. Variablennamen können mit einem Unterstrich beginnen, aber wir vermeiden dies im Allgemeinen, es sei denn, wir schreiben Bibliothekscode, den andere verwenden sollen.
+Das Unterstrich (`\_`) kann in einem Variablennamen vorkommen. Es wird häufig in Variablen mit mehreren Wörtern verwendet, z. B. `my_name` oder `airspeed_of_light`. Variablennamen können mit einem Unterstrich beginnen, aber wir vermeiden dies im Allgemeinen. Variablen die mit einem oder mit zwei Unterstrichen beginnen, haben eine spezielle Bedeutung. Wenn wir also „normale“ Variablen mit einem Unterstrich beginnen lassen, würde dies Personen verwirren, die unseren Code lesen und nachvollziehen wollen.
 
 \index{Unterstrich}
 
@@ -147,15 +160,11 @@ Es stellt sich heraus, dass `class` eines von Pythons *Schlüsselwörtern* (engl
 Python reserviert 35 Schlüsselwörter:
 
 ~~~~
-and       del       from      None      True
-as        elif      global    nonlocal  try
-assert    else      if        not       while
-break     except    import    or        with
-class     False     in        pass      yield
-continue  finally   is        raise     async
-def       for       lambda    return    await
+and     as          assert      async       await       break       class       continue    def
+del     elif        else        except      False       finally     for         from        global
+if      import      in          is          lambda      None        nonlocal    not         or
+pass    raise       return      True        try         while       with        yield
 ~~~~
-
 Man sollte diese Liste griffbereit halten. Wenn sich der Interpreter über einen der Variablennamen beschwert und wir nicht wissen, warum, sehen wir nach, ob er auf dieser Liste steht.
 
 Anweisungen
@@ -209,7 +218,15 @@ minute/60
 (5+9)*(15-7)
 ~~~~
 
-Zwischen Python 2.x und Python 3.x hat sich der Divisionsoperator geändert. In Python 3.x ist das Ergebnis dieser Division eine Fließkommazahl:
+Später werden wir sehen, dass diese Operatoren noch zu ganz anderen Zwecken verwendet werden können. Solange man die *mathematischen Operatoren* allerdings auf Ganz- oder Fließkommazahlen (bzw. Variablen, die auf solche Werte verweisen) anwendet, werden auch die normalen mathematischen Operationen berechnet.
+
+Im Normalfall kommt bei einer mathematischen Operation auf Ganz- oder Fließkommazahlen wieder der gleiche Typ heraus.
+Die Summe zweier Ganzzahlen ist wieder eine ganze Zahl, die Multiplikation zweier Fließkommazahlen ist wieder eine Fließkommazahal, usw.
+Eine Außnahme bildet hier die Division. Teilt man eine ganze Zahl durch eine weitere ganze Zahl, kann natürlich ein Bruch herauskommen, den wir im Comuter als Fließkommazahl speichern.
+Es ändert sich also der Typ des Ergebnisses.
+
+Wir können die Division aber auch als *ganzzahlig* betrachten, also nur den ganzzahligen Teil des Ergebnisses übernehmen. Auch diese Operation braucht man beim Schreiben von Programme recht häufig.
+Wenn es aber zwei verschiedenen Arten zu Dividieren gibt, stellt sich die Frage, wofür nun der Divisionsoperator `/` genutzt wird:
 
 ~~~~ {.python .trinket height="160"}
 >>> minute = 59
@@ -217,6 +234,13 @@ Zwischen Python 2.x und Python 3.x hat sich der Divisionsoperator geändert. In 
 0.9833333333333333
 ~~~~
 
+Sie können sich einfach merken, dass der normale Divisionsoperator `/` eine Fließkommazahl, also das genaue Ergebnis liefert.
+Allerdings ist dies nur die „halbe Wahrheit“ und an dieser Stelle wird es etwas hakelig: Python gibt es nämlich in verschiedenen Versionen. Momentan ist die Version 3.9 aktuell und wenn Sie heute mit dem Python-Programmieren beginnen, werden Sie sicher mit *Python 3* (also einer Version 3.x) arbeiten.
+In der vorherigen Version *Python 2* (also mit einer Versionsnummer 2.x) war der Großteil der Sprache identisch.
+Mit dem Sprung von 2 auf 3 hat man aber einige Eigenschaften und Regeln geändert, hauptsächlich um die Sprache klarer zu machen und Ungereimtheiten zu beseitigen.
+Eine dieser Änderungen betrifft den Divisionsoperator.
+
+Die obige Aussage, dass die Division mit `/` eine Fließkommazahl liefert, ist also erst seit Python 3.0 korrekt.
 Der Divisionsoperator in Python 2.0 würde zwei Ganzzahlen dividieren und als Ergebnis den Anteil vor dem Komma verwenden:
 
 ~~~~ {.python}
@@ -240,10 +264,16 @@ In Python 3.0 funktioniert die ganzzahlige Division also eher so, wie wir es erw
 \index{Fließkommadivision}
 \index{Division!Fließkomma}
 
+
+Es gibt noch einige weitere Unterschiede zwischen Python 2.0 und 3.0.
+Wenn man mit dem Programmieren beginnt, ist es allerdings müßig, sich gleich zu Beginn diese Unterschieden im Detail anzusehen. Nehmen Sie also aus den vorherigen Beispielen mit, dass sich eine Programmiersprache von Version zu Version weiterentwickeln kann und sich dabei auch die Bedeutung von bestimmten Anweisungen oder Ausdrücken ändern kann.
+Alles, was Sie in diesem Buch lernen, bezieht sich auf die Version 3 von Python. Nachdem Sie Python 3 gelernt haben, werden Sie aber auch Programme, die in Python 2 geschrieben wurden ohne weiteres verstehen können. Die Unterschiede sind wirklich marginal.
+
+
 Ausdrücke
 ---------
 
-Ein *Ausdruck* ist eine Kombination aus Werten, Variablen und Operatoren. Ein Wert allein wird als Ausdruck betrachtet, ebenso wie eine Variable, so dass die folgenden Ausdrücke alle zulässig sind (unter der Annahme, dass der Variablen `x` ein Wert zugewiesen wurde):
+Ein *Ausdruck* ist eine Kombination aus Werten, Variablen und Operatoren, die wiederum zu einem Wert ableiten lässt. Ein Wert allein wird als Ausdruck betrachtet, ebenso wie eine Variable, sodass die folgenden Ausdrücke alle zulässig sind (unter der Annahme, dass der Variablen `x` ein Wert zugewiesen wurde):
 
 \index{Ausdruck}
 \index{Auswertung}
@@ -276,27 +306,31 @@ Reihenfolge der Auswertung
 
 \index{Auswertungsreihenfolge}
 \index{Vorrangregeln}
-\index{PEMDAS}
 
-Wenn mehr als ein Operator in einem Ausdruck vorkommt, hängt die Reihenfolge der Auswertung von den *Vorrangregeln* ab. Für mathematische Operatoren folgt Python der mathematischen Konvention. Das Akronym *PEMDAS* ist eine nützliche Methode, um sich die Regeln zu merken:
+Wenn mehr als ein Operator in einem Ausdruck vorkommt, hängt die Reihenfolge der Auswertung von den *Vorrangregeln* ab. Für mathematische Operatoren folgt Python der mathematischen Konvention:
 
 \index{Klammern!Vorrangregeln überschreiben}
 
--   *P*arentheses (Klammern) haben den höchsten Vorrang und können verwendet werden, um die Auswertung eines Ausdrucks in der gewünschten Reihenfolge zu erzwingen. Da Ausdrücke in Klammern zuerst ausgewertet werden, ist `2 * (3-1)` gleich 4 und `(1+1)**(5-2)` gleich 8. Wir können Klammern auch verwenden, um einen Ausdruck leichter lesbar zu machen, wie in `(Minute * 100) / 60`, auch wenn dies das Ergebnis nicht ändert.
+-   **Klammern** haben den höchsten Vorrang und können verwendet werden, um die Auswertung eines Ausdrucks in der gewünschten Reihenfolge zu erzwingen. Da Ausdrücke in Klammern zuerst ausgewertet werden, ist `2 * (3-1)` gleich 4 und `(1+1)**(5-2)` gleich 8. Wir können Klammern auch verwenden, um einen Ausdruck leichter lesbar zu machen, wie in `(Minute * 100) / 60`, auch wenn dies das Ergebnis nicht ändert.
 
--   *E*xponentiation (Potenzierung) hat die nächsthöhere Priorität, also ist `2**1+1` gleich 3, nicht 4, und `3*1**3` ist 3, nicht 27.
+-   **Potenzrechnung** hat die nächsthöhere Priorität, also ist `2**1+1` gleich 3, nicht 4, und `3*1**3` ist 3, nicht 27.
 
--   *M*ultiplikation und *D*ivision haben den gleichen Vorrang, der höher ist als der von *A*ddition und *S*ubtraktion, die ebenfalls den gleichen Vorrang haben. Also ist `2*3-1` 5, nicht 4, und `6+4/2` ist 8, nicht 5.
+-   **Multiplikation** und **Division** haben den gleichen Vorrang, der höher ist als der von **Addition** und **Subtraktion**, die ebenfalls den gleichen Vorrang haben. Also ist `2*3-1` 5, nicht 4, und `6+4/2` ist 8, nicht 5.
 
--   Operatoren mit der gleichen Rangfolge werden von links nach rechts ausgewertet. Der Ausdruck `5-3-1` ist also 1, nicht 3, weil zuerst `5-3` ausgeführt wird und dann `1` von 2 subtrahiert wird.
+-   Operatoren mit der gleichen Rangfolge werden normalerweise **von links nach rechts** ausgewertet. Der Ausdruck `5-3-1` ist also 1, nicht 3, weil zuerst `5-3` ausgeführt wird und dann `1` von 2 subtrahiert wird. Eine Ausnahme ist die Potenzrechnung. Der Ausdruck $4^{3^2}$ ist in Python übersetzt `4**3**2` und ergibt 262144 (und nicht 4096). Der Potenz-Operator `**` wird also **von rechts nach links** ausgewertet.
 
-Wir müssen im Zweifelsfall immer Klammern in unsere Ausdrücke setzen, um sicherzustellen, dass die Berechnungen in der von uns beabsichtigten Reihenfolge durchgeführt werden.
+Wenn man sich nicht sicher ist, in welcher Reihenfolge Klammern ausgewertet werden, ist es sehr empfehlenswert Klammern zu setzen. Überflüssige Klammern verfälschen den Wert des Ausdrucks nicht, Sie helfen Ihnen aber genau die Berechnungsreihenfolge festzulegen, die Sie anwenden möchten.
+
 
 Division mit Rest
 -----------------
 
 \index{Modulo (Operator)}
 \index{Operator!Modulo}
+
+Wir haben oben gesehen, dass man in Python eine ganzzahlige Division mit dem Operator `//` durchführen kann.
+Häufig ist man aber bei einer ganzzahligen Division gar nicht an dem eigentlichen Wert interessiert, sondern eher an dem *Rest*, der sich bei einer solchen Division ergibt.
+Auch hierfür gibt es einen Operator in Python.
 
 Der *Modulo-Operator* arbeitet mit ganzen Zahlen und liefert den Rest, wenn der erste Operand durch den zweiten geteilt wird. In Python ist der Modulo-Operator ein Prozentzeichen (`%`). Die Syntax ist die gleiche wie bei den anderen Operatoren:
 
@@ -315,7 +349,21 @@ Der Modulo-Operator erweist sich als erstaunlich nützlich. Man kann zum Beispie
 
 \index{Teilbarkeit}
 
-Man kann auch die äußerste rechte Stelle einer Zahl extrahieren. Zum Beispiel ergibt `x % 10` die äußerste rechte Ziffer von `x` (zur Basis 10). In gleicher Weise ergibt `x % 100` die letzten beiden Ziffern.
+Man kann die Modulo-Operation auch verwenden, um auf die einzelnen Ziffern einer Zahl zuzugreifen.
+Nehmen wir an, in unserem Programm gibt es eine (größere) Zahl `x`.
+Die Berechnung `x % 10` liefert uns die äußerste rechte Ziffer von `x`.
+In gleicher Weise ergibt `x % 100` die letzten beiden Ziffern.
+
+~~~~ {.python .trinket height="240"}
+>>> 4**3**2
+262144
+>>> x = 1234
+>>> x % 10
+4
+>>> x = x // 10
+>>> x % 10
+3
+~~~~
 
 Operationen mit Zeichenketten
 -----------------------------
@@ -323,7 +371,9 @@ Operationen mit Zeichenketten
 \index{Zeichenkette!Operation}
 \index{Operator!Zeichenkette}
 
-Der Operator `+` arbeitet mit Zeichenketten, aber es ist keine Addition im mathematischen Sinne. Stattdessen führt er eine *Konkatenation* (Verkettung) durch, d. h. er verbindet die Zeichenketten, indem er sie Ende an Ende verknüpft. Zum Beispiel:
+Bisher haben wir alle Operatoren lediglich auf Zahlen angewendet, oder auf Variablen unter denen wir Zahlen abgelegt haben.
+Erstaunlicherweise lassen sich viele dieser Operatoren aber auch auf Objekte anderer Datentypen anwenden.
+Der Operator `+`, zum Beispiel, hat auch eine Bedeutung für Zeichenketten, aber natürlich es ist dann keine Addition im mathematischen Sinne mehr. Stattdessen führt er eine *Konkatenation* (Verkettung) durch, d. h. er verbindet die Zeichenketten, indem er sie Ende an Ende verknüpft. Zum Beispiel:
 
 \index{Konkatenation}
 
@@ -336,9 +386,11 @@ Der Operator `+` arbeitet mit Zeichenketten, aber es ist keine Addition im mathe
 >>> second = '150'
 >>> print(first + second)
 100150
+>>> print('Hallo' + 'Welt')
+HalloWelt
 ~~~~
 
-Der Operator `*` arbeitet auch mit Zeichenketten, indem er den Inhalt einer Zeichenkette mithilfe einer ganzen Zahl vervielfältigt. Zum Beispiel:
+Sogar der Operator `*` arbeitet mit Zeichenketten. Mit ihm kann der Inhalt einer Zeichenkette mithilfe einer ganzen Zahl vervielfältigt werden. Zum Beispiel:
 
 ~~~~ {.python}
 >>> first = 'Test '
@@ -347,20 +399,62 @@ Der Operator `*` arbeitet auch mit Zeichenketten, indem er den Inhalt einer Zeic
 Test Test Test
 ~~~~
 
+Zuweisungen
+-----------------
+\index{Zuweisung}
+\index{Konstante}
+\index{Anweisung!Zuweisung}
+
+*Zuweisungen* an Namen haben wir ja bereits oben kennengelernt. Dabei haben wir aber meist nur einen konkreten Wert (eine sogenannte *Konstante*) an den Namen gebunden.
+Häufig verwendet man aber auf der rechten Seite des Gleichheitszeichens (auf der linken steht ja der Name, den wir verwenden möchten) ein zusammengesetzter Ausdruck.
+Man kann sich einfach merken, dass dieser Ausdruck auf der rechten Seite *vor* der Zuweisung an der Namen komplett ausgewertet wird. Warum ist das wichtig, das zu wissen? Schauen wir uns folgendes Beispiel an:
+
+~~~~ {.python .trinket  height="160"}
+>>> x = 42
+>>> x = x + 1
+>>> x
+43
+~~~~
+
+Wir sehen, dass auf der rechten und linken Seite des Gleichheitszeichens hier ein `x` steht.
+Da Python zuerst die rechte Seite betrachtet, wird aus dem `x + 1` ein `42 + 1`, was im Folgenden zu `43` ausgewertet wird. Dieser Wert wird dann an den Namen `x` gebunden. Nach dieser Zuweisung bezeichnet `x` also den Wert 43.
+
+Typen
+----------------
+
+Wir haben bis hierher schon mehrfach erwähnt, dass Werte, bzw. allgemeiner gesehen *Objekte* verschiedene Datentypen besitzen können.
+Eine `42` ist eine Ganzzahl (Typ `int` für *Integer*), `3.1415` ist eine Fließkommazahl (Typ `float`) und `Hallo` ist eine Zeichenkette (Typ `str` für *String*).
+
+Bisher haben wir Werte dieser Datentypen verwendet, ohne jemals genau festzulegen, dass unsere Werte diese Typen besitzen sollen.
+Python hat die Typen der Werte immer selbst erkannt; dieses Prinzip nennt man auch *Typinferenz* (englisch *Type Inference*).
+Nicht alle Programmiersprachen machen das so. In C oder Java (vor Version 10) muss der Datentyp einer neuen Variablen immer explizit angegeben werden.
+
+Wenn man in Python einen Namen an einen Wert bindet, analysiert der Python Interpreter den Wert des Ausdrucks.
+Im folgenden Beispiel addieren wir eine ganze Zahl und eine Fließkommazahl.
+Python muss nun einen Typ für das Ergebnis festlegen und entscheidet sich in diesem Fall für `float`.
+Das ist auch sicher eine gute Wahl, denn damit wird das Ergebnis *genau* erfasst.
+
+~~~~ {.python .trinket  height="160"}
+>>> a = 42
+>>> b = 3.1415
+>>> c = a + b
+>>> type(c)
+<class 'float'>
+~~~~
+
+
 Benutzereingaben
 ----------------
 
 \index{Benutzereingaben}
 
-Manchmal möchten wir den Wert für eine Variable über eine Tastatureingabe einlesen. Python bietet eine eingebaute Funktion namens `input`, die Eingaben von der Tastatur entgegennimmt^[In Python 2.0 hieß diese Funktion `raw_input`.] Wenn diese Funktion aufgerufen wird, hält das Programm an und wartet darauf, dass der Benutzer etwas eingibt. Wenn der Benutzer die Enter-Taste drückt, wird das Programm fortgesetzt und `input` gibt zurück, was der Benutzer als Zeichenkette getippt hat.
-
-\index{Python 2.0}
+Manchmal möchten wir den Wert für eine Variable über eine Tastatureingabe einlesen. Python bietet eine eingebaute Funktion namens `input`, die Eingaben von der Tastatur entgegennimmt. Wenn diese Funktion aufgerufen wird, hält das Programm an und wartet darauf, dass der Benutzer etwas eingibt. Wenn der Benutzer die Enter-Taste drückt, wird das Programm fortgesetzt und `input` gibt zurück, was der Benutzer als Zeichenkette getippt hat.
 
 ~~~~ {.python}
 >>> inp = input()
-Some silly stuff
+Was willst du von mir?
 >>> print(inp)
-Some silly stuff
+Was willst du von mir?
 ~~~~
 
 Bevor man eine Eingabe vom Benutzer erhält, ist es eine gute Idee, eine Eingabeaufforderung (Prompt) auszugeben, die dem Benutzer mitteilt, was er eingeben soll. Man kann eine Zeichenkette an `input` übergeben, die dem Benutzer angezeigt wird, bevor er zur Eingabe aufgefordert wird:
@@ -368,79 +462,90 @@ Bevor man eine Eingabe vom Benutzer erhält, ist es eine gute Idee, eine Eingabe
 \index{Prompt}
 
 ~~~~ {.python}
->>> name = input('What is your name?\n')
-What is your name?
-Chuck
+>>> name = input('Wie heisst du?\n')
+Wie heisst du?
+Heiner
 >>> print(name)
-Chuck
+Heiner
 ~~~~
 
 Die Sequenz `\n` am Ende des Prompt stellt ein *Newline* dar, ein Sonderzeichen, das einen Zeilenumbruch bewirkt. Deshalb erscheint die Eingabe des Benutzers unterhalb des Prompts.
-
+Ohne dieses Sonderzeichen würd die Benutzereingabe direkt nach dem `?` beginnen.
 \index{Newline}
 
-Wenn man erwartet, dass der Benutzer eine Ganzzahl eingibt, können wir versuchen, den Rückgabewert mit der Funktion `int()` in `int` umzuwandeln:
+Wir sehen, dass `input(...)` ein Ausdruck ist, der ausgewertet wird und demnach auch einen Wert zurückliefert.
+Da die Eingabe von der Tastatur des Benutzers kommt, wird sie immer als Zeichenkette aufgefasst.
+Nun stellt sich die Frage was passiert, wenn wir eine Zahl eingeben.
+Wie im ersten Kapitel erwähnt, wird Python niemals *raten*, was wir bei der Eingabe meinen.
+Die Zeichenfolge `123` bleibt eine Zeichenfolge, auch wenn man sie als Zahl interpretieren könnte.
+
+Als Programmierer wissen wir aber meistens, welche Art von Eingabe wir erwarten.
+Wenn wir also den Benutzer bitten, eine Zahl einzugeben, können wir die resultierende Zeichenkette als ganze Zahl interpretieren. Das geht mit einer Typumwandlungsfunktion `int()` in `int` umzuwandeln:
 
 ~~~~ {.python}
->>> prompt = 'What...is the airspeed velocity of an unladen swallow?\n'
+>>> prompt = 'Wie hoch ist die Fluggeschwindigkeit einer unbeladenen Schwalbe??\n'
 >>> speed = input(prompt)
-What...is the airspeed velocity of an unladen swallow?
+Wie hoch ist die Fluggeschwindigkeit einer unbeladenen Schwalbe?
 17
 >>> int(speed)
 17
->>> int(speed) + 5
-22
 ~~~~
 
 Wenn der Benutzer jedoch etwas anderes als eine Ziffernfolge eingibt, erhalten wir einen Fehler:
 
 ~~~~ {.python}
 >>> speed = input(prompt)
-What...is the airspeed velocity of an unladen swallow?
-What do you mean, an African or a European swallow?
+Wie hoch ist die Fluggeschwindigkeit einer unbeladenen Schwalbe?
+Meinst du eine europäische oder eine afrikanische Schwalbe?
 >>> int(speed)
 ValueError: invalid literal for int() with base 10:
 ~~~~
 
-Wir werden später sehen, wie diese Art von Fehler zu behandeln ist.
+Auch wenn das Beispiel hier ein wenig schräg erscheint, sind fehlerhafte Benutzereingabe keine Seltenheit.
+Eingaben, von der Tastatur, aus Dateien oder auch aus dem Internet sind häufig nicht genau so, wie Ihr Programm es vielleicht erwartet. Und in solchen Fällen bricht Python, ohne dass Sie den Fehler vorhersehen und in irgend einer Form *behandeln*, die Abarbeitung des Programms ab.
+Wir werden später sehen, wie diese Art von *Fehlerbehandlung* zu machen ist.
 
 \index{ValueError}
 \index{Ausnahme!ValueError}
+
+Ein Wort noch zu dem obigen und weiteren Code-Beispielen, die manchmal etwas seltsam wirken.
+Übrigens: Einige der im Buch verwendeten Beispiele, so wie das mit der Schwalbe oben, sind an Dialoge oder Szenen aus Filmen und Sketchen der Komikergruppe *Monty Python* angelehnt.
+Der Erfinder von Python, Guido Van Rossum, ist ein Fan dieser Gruppe und hat sich bei der Namensfindung für seine Programmiersprache von ihnen inspirieren lassen.
+Python hat also nichts mit Schlangen zu tun.
 
 Kommentare
 ----------
 
 \index{Kommentar}
 
-Je größer und komplizierter Programme werden, desto schwieriger werden sie zu lesen. Formale Sprachen sind komplex, und es ist oft schwierig, einen Teil des Codes zu betrachten und herauszufinden, was er tut oder warum.
+Je größer und komplizierter Programme werden, desto schwieriger werden sie zu lesen. Formale Sprachen sind komplex, und es ist oft schwierig, einen Teil des Codes zu betrachten und herauszufinden, was er tut oder warum. Selbst bei den kleinen Programmbeispielen in diesem Kapitel, wäre es praktisch gewesen, wenn wir Erklärungen für einzelne Zeilen des Quellcodes direkt, an Ort-und-Stelle dazu hätten schreiben können.
+Ohne weiteres hätte das aber nicht funktioniert, denn Erklärungen, also „normaler Text“ sind kein gültiger Python Code. Der Interpreter hätte sich also über unseren Text beschwert. 
 
-Aus diesem Grund ist es eine gute Idee, Notizen zu unseren Programmen hinzuzufügen, um in natürlicher Sprache zu erklären, was das Programm tut. Diese Notizen werden *Kommentare* genannt, und in Python beginnen sie mit dem Symbol `#`:
+Um dennoch die Möglichkeit zu haben, Notizen zu unseren Programmen hinzuzufügen, um in natürlicher Sprache zu erklären, was das Programm tut, verwenden wir *Kommentare*. In Python werden Kommentare mit dem Symbol `#` eingeleitet. Alles, was nach dem `#`-Zeichen (und bis zum Zeilenende) steht, wird vom Python Interpreter einfach ignoriert und kann folglich auch nicht zu einem Fehler führen.
 
 ~~~~ {.python}
-# compute the percentage of the hour that has elapsed
+# Berechne die in dieser Stunde abgelaufene Zeit in Prozent
 percentage = (minute * 100) / 60
 ~~~~
 
 In diesem Fall erscheint der Kommentar in einer eigenen Zeile. Wir können Kommentare auch als Zeilenendkommentar an das Ende einer Zeile setzen:
 
 ~~~~ {.python}
-percentage = (minute * 100) / 60     # percentage of an hour
+percentage = (minute * 100) / 60     # Abgelaufene Minuten in Prozent
 ~~~~
-
-Alles vom `#` bis zum Ende der Zeile wird ignoriert; es hat keine Auswirkung auf das Programm.
 
 Kommentare sind am nützlichsten, wenn sie nicht offensichtliche Merkmale des Codes dokumentieren. Es ist vernünftig anzunehmen, dass der Leser herausfinden kann, *was* der Code tut; es ist viel nützlicher, zu erklären *warum*.
 
 Dieser Kommentar ist im Zusammenhang mit dem Code redundant und nutzlos:
 
 ~~~~ {.python}
-v = 5     # assign 5 to v
+v = 5     # Weise v den Wert 5 zu
 ~~~~
 
 Dieser Kommentar dagegen enthält nützliche Informationen, die nicht im Code enthalten sind:
 
 ~~~~ {.python}
-v = 5     # velocity in meters/second.
+v = 5     # Geschwindigkeit in m/s.
 ~~~~
 
 Gute Variablennamen können die Notwendigkeit von Kommentaren reduzieren, aber zu lange Namen können komplexe Ausdrücke schwer lesbar machen. Daher sollten geeignete Variablennamen gewählt werden.
@@ -448,7 +553,7 @@ Gute Variablennamen können die Notwendigkeit von Kommentaren reduzieren, aber z
 Wählen sprechender Variablennamen
 ---------------------------------
 
-Solange wir die einfachen Regeln für die Benennung von Variablen befolgen und reservierte Wörter vermeiden, haben wir bei der Benennung unserer Variablen einen großen Spielraum. Am Anfang kann diese Auswahl verwirrend sein, sowohl wenn wir ein Programm lesen als auch wenn wir unsere eigenen Programme schreiben. Die folgenden drei Programme sind zum Beispiel identisch in Bezug auf das, was wir leisten, aber sehr unterschiedlich, wenn wir sie lesen und versuchen, sie zu verstehen.
+Solange wir die einfachen Regeln für die Benennung von Variablen befolgen und reservierte Wörter vermeiden, haben wir bei der Benennung unserer Variablen einen großen Spielraum. Am Anfang kann diese Auswahl verwirrend sein, sowohl wenn wir ein Programm lesen, als auch wenn wir unsere eigenen Programme schreiben. Die folgenden drei Programme sind zum Beispiel identisch in Bezug auf das, was wir leisten, aber sehr unterschiedlich, wenn wir sie lesen und versuchen, sie zu verstehen.
 
 ~~~~ {.python}
 a = 35.0
@@ -458,10 +563,10 @@ print(c)
 ~~~~
 
 ~~~~ {.python}
-hours = 35.0
+stunden = 35.0
 rate = 12.50
-pay = hours * rate
-print(pay)
+kosten = stunden * rate
+print(kosten)
 ~~~~
 
 ~~~~ {.python}
@@ -472,10 +577,9 @@ print(x1q3p9afd)
 ~~~~
 
 Der Python-Interpreter interpretiert alle drei Programme als *gleichwertig*, aber Menschen sehen und verstehen diese Programme ganz anders. Menschen werden die *Intention* des zweiten Programms am schnellsten verstehen, weil der Programmierer Variablennamen gewählt hat, die seine Absicht bezüglich der Daten, die in jeder Variablen gespeichert werden, widerspiegeln.
-
 Wir nennen diese sinnvoll gewählten Variablennamen „sprechende“ Variablennamen.
 
-Obwohl das alles toll klingt und es eine sehr gute Idee ist, sprechende Variablennamen zu verwenden, können sprechende Variablennamen den Programmieranfänger bei der Analyse von Code verwirren. Das liegt daran, dass sich Programmieranfänger die reservierten Schlüsselwörter noch nicht eingeprägt haben (es gibt nur 33 davon). So kann es vorkommen, das ein Anfänger einen sprechenden Variablennamen fälschlicherweise als Teil der Programmiersprache auffasst.
+Obwohl das alles toll klingt und es eine sehr gute Idee ist, sprechende Variablennamen zu verwenden, können sprechende Variablennamen den Programmieranfänger bei der Analyse von Code verwirren. Das liegt daran, dass sich Programmieranfänger die reservierten Schlüsselwörter noch nicht eingeprägt haben (es gibt nur 35 davon). So kann es vorkommen, das ein Anfänger einen sprechenden Variablennamen fälschlicherweise als Teil der Programmiersprache auffasst.
 
 Werfen wir einen kurzen Blick auf den folgenden Python-Beispielcode, der mithilfe einer Schleife durch einen Datensatz iteriert. Wir werden Schleifen bald behandeln, aber versuchen wir jetzt erst einmal, uns vorzustellen, was hier passiert:
 
@@ -533,18 +637,24 @@ SyntaxError: invalid token
 
 Bei Syntaxfehlern sind die Fehlermeldungen nicht sehr hilfreich. Die häufigsten Meldungen sind `SyntaxError: invalid syntax` und `SyntaxError: invalid token`, die beide nicht sehr informativ sind.
 
+Im Beispiel oben besteht übrigens das Problem, dass Zahlen nicht mit führenden Nullen beginnen dürfen.
+`09` ist also kein gültiges *Wort* in Python.
+Wenn Sie das Buch bisher sorgfältig gelesen haben, sollten Sie nun stutzig werden.
+Wir hatten ja ein Beispiel, in dem der Code `1,000,000` als Folge der Zahlen `1`, `0`und `0` gedeutet wurde.
+Dabei gibt es doch auch führende Nullen, oder? Nicht ganz! Folgen von beliebig vielen Nullen interpretiert Python als `0`. Dies ist eines von vielen kleinen Details, die manchmals sonderbar erscheinen und die man nicht unbedingt verstehen muss.
+
 \index{Fehlermeldung}
 \index{use before def}
 \index{Ausnahme}
 \index{Laufzeitfehler}
 \index{Fehler!Laufzeit}
 
-Der Laufzeitfehler, den wir am ehesten machen, ist ein „use before definition“, d. h. der Versuch, eine Variable zu verwenden, bevor man einen Wert zugewiesen hat. Dies kann passieren, wenn man einen Variablennamen falsch schreiben:
+Ein Laufzeitfehler, den man am Anfang gelegentlich verursacht, ist ein „use before definition“, d. h. der Versuch, eine Variable zu verwenden, bevor man einen Wert zugewiesen hat. Dies kann z.B. passieren, wenn man einen Variablennamen falsch schreibt:
 
 ~~~~ {.python}
->>> principal = 327.68
->>> interest = principle * rate
-NameError: name 'principle' is not defined
+>>> kapital = 327.68
+>>> zinsen = kapitel * zinssatz
+NameError: name 'kapitel' is not defined
 ~~~~
 
 Bei Variablennamen wird zwischen Groß- und Kleinschreibung unterschieden (englisch *case-sensitivity*), daher ist `LaTeX` nicht dasselbe wie `latex`.
@@ -553,7 +663,7 @@ Bei Variablennamen wird zwischen Groß- und Kleinschreibung unterschieden (engli
 \index{semantischer Fehler}
 \index{Fehler!semantischer}
 
-An diesem Punkt ist die wahrscheinlichste Ursache für einen semantischen Fehler die Reihenfolge der Operationen. Um z. B. $1/2\pi$ auszuwerten, könnte man versucht sein, zu schreiben
+An diesem Punkt ist die wahrscheinlichste Ursache für einen logischen Fehler die Reihenfolge der Operationen. Um z. B. $\frac{1}{2\pi}$ auszuwerten, könnte man versucht sein, zu schreiben
 
 ~~~~ {.python}
 >>> 1.0 / 2.0 * pi
