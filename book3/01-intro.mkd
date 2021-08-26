@@ -13,7 +13,7 @@ Schauen wir uns zum Beispiel die ersten drei Absätze dieses Kapitels an und fin
 ~~~~ {.python}
 python words.py
 Enter file:words.txt
-Das Wort "die" kommt 9-mal vor
+Das Wort “die“ kommt 9-mal vor
 ~~~~
 
 Unser Programm sagt uns schnell, dass das Wort „die“ 9 mal im oberen Teil dieses Kapitels verwendet wurde. Genau diese Tatsache, dass Computer Dinge gut können, die Menschen eher nicht gut bzw. schnell können, ist der Grund, warum man die Programmiersprachen beherrschen sollten. Sobald man eine Programmiersprache gelernt hat, kann man viele alltägliche Aufgaben durch den Computer erledigen lassen. So bleibt einem mehr Zeit für die diejenigen Aufgaben, für die wir Menschen einzigartig geeignet sind, nämlich Kreativität, Intuition und Ideenreichtum.
@@ -91,7 +91,7 @@ Zu den reservierten Wörtern in der Sprache Python gehören die folgenden:
     True	try       while   with    yield	
 
 
-Wir werden diese reservierten Wörter und ihre Verwendung zu gegebener Zeit lernen, aber jetzt konzentrieren wir uns erst einmal darauf, wie wir unser Python-Programm mit uns *sprechen* lassen können. Da Programme üblicherweise nicht in Form von gesprochener Sprache, sondern eher durch das Anzeigen von Texten und Bildern „reden", heißt das Kommando `print` also *Drucke*:
+Wir werden diese reservierten Wörter und ihre Verwendung zu gegebener Zeit lernen, aber jetzt konzentrieren wir uns erst einmal darauf, wie wir unser Python-Programm mit uns *sprechen* lassen können. Da Programme üblicherweise nicht in Form von gesprochener Sprache, sondern eher durch das Anzeigen von Texten und Bildern „reden“, heißt das Kommando `print` also *Drucke*:
 
 ~~~~ {.python}
 print('Hello world!')
@@ -112,7 +112,7 @@ Bevor wir uns mit Python unterhalten können, müssen wir zunächst die Python-S
 Passiert dieses Übersetzten vor dem Starten des Programms (und damit in der Regel einmalig), nennt man den Vorgang *Kompilieren*. Werden Programme unmittelbar bei der Ausführung, und damit jedes Mal erneut übersetzt, so nennt man das *Interpretieren*.
 
 Letzteres ist bei Python der Fall und daher müssen wir einen *Python Interpreter* auf unserem PC oder Notebook installieren.
-Leider gibt es hierzu nicht „die eine Anleitung".
+Leider gibt es hierzu nicht „die eine Anleitung“.
 Python ist eine *offene* Programmiersprache. Das bedeutet, dass die Regeln, wie Python Programme geschrieben werden müssen und wie die Anweisungen der Sprache funktionieren, auf einem gemeinschaftsbasiertes Entwicklungsmodell beruht und vollkommen offengelegt ist.
 Jeder kann also, nach den vorgegebenen Regeln, einen Python Interpreter entwickeln und anbieten.
 Es gibt allerdings eine Standardversion, die man über die [Homepage von Python](https://www.python.org/downloads) herunterladen kann.
@@ -126,7 +126,7 @@ Das Fenster sollte dann in etwa so aussehen:
 ~~~~ {.python}
 Python 3.5.1 (v3.5.1:37a07cee5969, Dec  6 2015, 01:54:25)
 [MSC v.1900 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license" for more
+Type “help“, “copyright“, “credits“ or “license“ for more
 information.
 >>>
 ~~~~
@@ -137,7 +137,7 @@ Nehmen wir an, wir kennen nicht einmal die einfachsten Wörter oder Sätze in Py
 
 ~~~~ {.python}
 >>> I come in peace, please take me to your leader
-File "<stdin>", line 1
+File “<stdin>“, line 1
   I come in peace, please take me to your leader
        ^
 SyntaxError: invalid syntax
@@ -162,7 +162,7 @@ We have been waiting for you for a long time
 >>> print('Our legend says you will be very tasty with mustard')
 Our legend says you will be very tasty with mustard
 >>> print 'We will have a feast tonight unless you say
-File "<stdin>", line 1
+File “<stdin>“, line 1
   print 'We will have a feast tonight unless you say
                                                    ^
 SyntaxError: Missing parentheses in call to 'print'
@@ -171,15 +171,15 @@ SyntaxError: Missing parentheses in call to 'print'
 
 Das Gespräch lief eine Zeit lang sehr gut, und dann haben wir den kleinsten Fehler bei der Verwendung der Sprache Python gemacht, und Python hält uns diesen Fehler gnadenlos vor. An diesem Punkt kann man bereits erkennen, dass Python erstaunlich komplex und mächtig ist und dabei sehr wählerisch ist, was die Syntax angeht, die wir zur Programmierung verwenden. Gleichwohl ist Python aber *nicht* intelligent. Auch wenn es für uns klar ist, was die Anweisung tun soll, wird Python nicht arbeiten können, solange es einen Fehler bei der Syntax gibt.
 
-Bevor wir nun unser erstes Gespräch mit dem Python-Interpreter beenden, sollten wir noch wissen, wie man sich korrekt von Python „verabschiedet":
+Bevor wir nun unser erstes Gespräch mit dem Python-Interpreter beenden, sollten wir noch wissen, wie man sich korrekt von Python „verabschiedet“:
 
 ~~~~ {.python}
 >>> good-bye
 Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
+File “<stdin>“, line 1, in <module>
 NameError: name 'good' is not defined
 >>> if you don't mind, I need to leave
-File "<stdin>", line 1
+File “<stdin>“, line 1
   if you don't mind, I need to leave
            ^
 SyntaxError: invalid syntax
@@ -320,7 +320,7 @@ Die Bausteine von Programmen
 
 In den nächsten Kapiteln, werden wir mehr über das Vokabular, die Satzstruktur, Absatzstruktur und Erzählstruktur von Python lernen. Uns werden die mächtigen Fähigkeiten von Python näher gebracht werden und wir werden uns aneignen, wie man diese Fähigkeiten zusammensetzen kann, um nützliche Programme zu erstellen.
 
-Es gibt einige konzeptionelle Muster auf niedriger Ebene, die wir zum Erstellen von Programmen benutzen. Diese Konstrukte sind nicht nur für Python-Programme geeignet, sie sind Teil jeder Programmiersprache, von der Maschinensprache bis hin zu den Hochsprachen.
+Es gibt einige konzeptionelle Muster auf niedriger Ebene, die wir zum Erstellen von Programmen benutzen. Diese Konstrukte sind nicht nur für Python-Programme geeignet, sie sind Teil jeder Programmiersprache, von der Maschinensprache bis hin zu den Hochsprachen. Das obige Wortzählprogramm verwendet alle bis auf eines dieser Muster.
 
 Eingabe
 :   Abrufen von Daten aus der „Außenwelt“. Dies kann das Lesen von Daten aus einer Datei sein oder sogar aus Sensoren wie einem Mikrofon oder GPS. In unseren ersten Programmen wird die Eingabe durch den Benutzer erfolgen, der Daten über die Tastatur eingibt.
@@ -340,59 +340,50 @@ Wiederholte Ausführung
 Wiederverwenden
 :   Reihe von Anweisungen einmal schreiben und ihnen einen Namen geben. Danach verwenden wir dann diese Anweisungen je nach Bedarf in unserem Programm wieder.
 
-Dass alle Programme fast ausschließlich aus diesen Mustern bestehen, klingt fast zu einfach, um wahr zu sein. Und natürlich ist es nicht ganz so einfach, ein Programm zu schreiben. Um einen Vergleich anzustellen könnte man sagen, dass Gehen einfach „einen Fuß vor den anderen setzen“ bedeutet; und trotzdem braucht ein Kleinkind sehr viel Übung um richtig Laufen zu können.
-Beim Programmieren ist das erlernen der Grundmuster 
-Die „Kunst“ ein Programm zu schreiben besteht darin, diese Grundelemente immer wieder neu zusammenzusetzen und zu verweben, um etwas Nützliches für seine Benutzer zu schaffen.
+Dass alle Programme fast ausschließlich aus diesen Mustern bestehen, klingt fast zu einfach, um wahr zu sein. Und natürlich ist es nicht ganz so einfach, ein neues Programm zu schreiben. Um einen Vergleich anzustellen, könnte man sagen, dass Gehen einfach „einen Fuß vor den anderen setzen“ bedeutet; und trotzdem braucht ein Kleinkind sehr viel Übung um richtig Laufen zu können.
+Beim Programmieren ist das Erlernen der Grundmuster recht einfach. Die „Kunst“ ein Programm zu schreiben besteht aber darin, diese Grundelemente immer wieder neu zusammenzusetzen und zu verweben, um eine nützliche Lösung für ein gegebenes Problem zu schaffen.
 
-Das obige Wortzählprogramm verwendet alle bis auf eines dieser Muster.
 
 Was kann schon schief gehen?
 ----------------------------
 
-Wie wir in unseren ersten Gesprächen mit Python gesehen haben, müssen wir sehr genau kommunizieren, wenn wir Python-Code schreiben. Die kleinste Abweichung oder der kleinste Fehler führen dazu, dass Python aufhört, unser Programm zu betrachten.
-
-Die Tatsache, dass Python keinen Platz für Fehler lässt, wird von Programmieranfängern oft als Beweis dafür angesehen, dass Python gemein, hasserfüllt und grausam ist. Während Python alle anderen zu mögen scheint, kennt Python Sie persönlich und hegt einen Groll gegen Sie. Aufgrund dieses Grolls nimmt es unsere perfekt geschriebenen Programme und lehnt sie als „untauglich“ ab, nur um uns zu quälen.
+Wie wir in unseren ersten „Gesprächen“ mit Python gesehen haben, müssen wir sehr genau sein, wenn wir Python-Code schreiben. Die kleinste Abweichung oder der kleinste Fehler führen dazu, dass Python aufhört, unser Programm zu betrachten.
 
 ~~~~ {.python}
->>> primt 'Hello world!'
-File "<stdin>", line 1
-  primt 'Hello world!'
-                     ^
+C:\Python> python.exe
+Python 3.8.5 (default, Sep  3 2020, 21:29:08) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type “help“, “copyright“, “credits“ or “license“ for more information.
+>>> primt 'Hello World'
+  File “<stdin>“, line 1
+    primt 'Hello World'
+          ^
 SyntaxError: invalid syntax
->>> primt ('Hello world')
+>>> primt('Hello World')
 Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
+  File “<stdin>“, line 1, in <module>
 NameError: name 'primt' is not defined
-
->>> I hate you Python!
-File "<stdin>", line 1
-  I hate you Python!
-       ^
-SyntaxError: invalid syntax
->>> if you come out of there, I would teach you a lesson
-File "<stdin>", line 1
-  if you come out of there, I would teach you a lesson
-            ^
+>>> Come on, Python
+  File “<stdin>“, line 1
+    Come on, Python
+         ^
 SyntaxError: invalid syntax
 >>>
 ~~~~
 
-Es macht wenig Sinn, mit Python zu argumentieren. Es ist nur ein Werkzeug. Es hat keine Emotionen und es ist glücklich und bereit uns zu helfen, wann immer wir es brauchen. Seine Fehlermeldungen klingen hart, aber sie sind nur ein Hilferuf. Es hat sich angesehen, was wir eingegeben haben, und kann einfach nicht verstehen, was genau wir damit sagen wollen.
-
-Python ist viel mehr wie ein Hund, der einen bedingungslos liebt, ein paar Schlüsselwörter versteht und uns mit einem süßen Gesichtsausdruck anschaut (`>>>`) und darauf wartet, dass wir etwas sagen, das er versteht. Wenn Python `SyntaxError: invalid syntax` sagt, wedelt es einfach mit dem Schwanz sagt: „Du schienst etwas zu sagen, ich verstehe einfach nicht was du gemeint hast, aber bitte rede weiter mit mir (`>>>`).“
+Es hat wenig Sinn, mit Python zu verhandeln, doch bitte den Code zu verstehen. Der Interpreter kann nur gültige Python Anweisungen ausführen. Beim kleinsten Fehler wird er abbrechen und ausgeben, an welcher Stelle er beim „Verstehen“ nicht weiter gekommen ist. Wenn Python `SyntaxError: invalid syntax` sagt, bedeutet das: „ich verstehe einfach nicht was du gemeint hast, aber bitte rede weiter mit mir (`>>>`).“ Ein `NameError` bedeutet, „du scheinst etwas verwenden zu möchten, was ich nicht kenne.“
 
 Wenn die Programme immer anspruchsvoller werden, wird man auf drei allgemeine Arten von Fehlern stoßen:
 
 Syntaxfehler
 :   Dies sind die ersten Fehler, die man machen wird, und die am einfachsten zu beheben sind. Ein Syntaxfehler bedeutet, dass wir die „Grammatikregeln“ von Python verletzt haben. Python tut sein Bestes, um genau auf die Zeile und das Zeichen zu zeigen wo es bemerkt hat, dass es verwirrt war. Das einzig tückische an Syntaxfehlern ist, dass der Fehler, der behoben werden muss, manchmal eigentlich früher im Programm liegt als an der Stelle, an der Python *verwirrt* war. Also die Zeile und das Zeichen die Python bei einem Syntaxfehler anzeigt, sind zunächst nur ein Ausgangspunkt für unsere Untersuchungen.
 
-Logikfehler
-:   Ein Logikfehler liegt vor, wenn unser Programm eine gute Syntax hat, aber ein Fehler in der Reihenfolge der Anweisungen oder dem Verhältnis der Anweisungen zueinander existiert. Ein gutes Beispiel für ein Logikfehler könnte sein: „Nimm einen Schluck aus deiner Wasserflasche, stecke sie in deinen Rucksack, laufe zur Bibliothek und schließe dann den Deckel der Flasche wieder.“
-
 Semantische Fehler
-:   Ein semantischer Fehler liegt vor, wenn die Beschreibung der zu unternehmenden Schritte syntaktisch perfekt und in der richtigen Reihenfolge ist, aber es einfach einen Fehler im Programm gibt. Das Programm ist vollkommen korrekt, aber es tut nicht, was wir *beabsichtigt* haben. Ein einfaches Beispiel wäre, wenn wir einer Person den Weg zu einem Restaurant beschreiben und sagen: „...wenn du die Kreuzung mit der Tankstelle erreichst, biege links ab und gehe einen Kilometer weiter. Das Restaurant ist ein rotes Gebäude auf der linken Seite.“ Der Freund ist sehr spät dran und ruft uns an, um zu sagen, dass er auf einem Bauernhof ist, er hinter einer Scheune herumläuft, und kein Zeichen eines Restaurants zu sehen ist. Dann fragen Sie: „Bist du an der Tankstelle links oder rechts abgebogen?“, und er sagt: „Ich habe mich genau an deine Anweisungen gehalten. Ich habe sie aufgeschrieben, sie besagt, dass man an der Tankstelle links abbiegen und einen Kilometer gehen soll.“ Die Antwort: „Es tut mir sehr leid, denn meine Anweisungen waren zwar syntaktisch korrekt, aber sie enthielten leider einen kleinen unentdeckten semantischen Fehler.“
+:   Ein semantischer Fehler liegt vor, wenn die Syntax, also die Grammatik des Quellcodes eigentlich korrekt ist, das Programm *so* aber nicht funktioniert. Der `NameError` oben ist ein Beispiel dafür: Es *könnte* eine Funktion namens „primt“ existieren und wenn es sie gäbe, wäre das Programm vermutlich korrekt. Es gibt diese Funktion aber im vorliegenden Programm nicht und daher tritt hier bei der Ausführung der Anweisung ein Fehler auf.
 
-Bei allen drei Arten von Fehlern versucht Python lediglich genau das zu tun, was wir verlangt haben.
+Logikfehler
+:   Logikfehler sind besonders tückisch, denn sie können von Python so gut wie gar nicht erkannt werden. Es handelt sich um Fehler in der Logik des Programms. Das Programm ist vollkommen korrekt, aber es tut nicht, was wir *beabsichtigt* haben. Ein einfaches Beispiel wäre, wenn wir einer Person den Weg zu einem Restaurant erklären und bei der Wegbeschreibung einmal Links und Rechts verwechseln. Die Person kann daraufhin die Beschreibung nachvollziehen, biegt aber an einer Kreuzung in die völlig falsche Richtung ab und kommt höchstwahrscheinlich niemals an dem Restaurant an.
+
+Bei allen drei Arten von Fehlern versucht Python lediglich genau das zu tun, was wir verlangt haben. Dass Python die Ausführung abbricht, sobald es einen Fehler erkennt, und nicht einfach versucht zu verstehen, was wir mit der fehlerhaften Anweisung *gemeint* haben, wird sich noch als sehr nützlich herausstellen. Sie werden mit jedem Fehler lernen, wie man korrekten Quellcode schreibt. Gleichzeitig können Sie immer davon ausgehen, dass Python genau das tut, was Sie programmiert haben. Es gibt keinen Interpretationsspielraum beim Abarbeiten der Anweisungen; wenn das Programm nicht funktioniert liegt das immer am Programm selbst und nicht daran, dass Python etwas falsch verstanden hat.
 
 Debugging
 ---------
@@ -434,16 +425,16 @@ Aber selbst die besten Debugging-Techniken versagen, wenn es zu viele Fehler gib
 
 Programmieranfänger zögern oft, sich zurückzuziehen, weil sie es nicht ertragen können eine Codezeile zu löschen (selbst wenn sie falsch ist). Wenn man sich dadurch besser fühlt, sollte man einfach das Programm in eine andere Datei sichern, bevor man es zerlegt. Dann kann man die Teile nach und nach wieder Stück für Stück einfügen.
 
+Dass Sie größere Teile Ihres Programms weglöschen müssen, können Sie meist auch ganz gut verhindern, indem Sie Ihren Lösungsweg für die gesamte Aufgabe in kleinere Teilaufgaben einteilen. Überlegen Sie sich bevor Sie mit dem Schreiben des Codes anfangen, welche logischen Teilfunktionen in Ihrer Aufgabe stecken. Und dann beginnen Sie, die erste Teilaufgabe zu lösen und -- ganz wichtig -- zu testen. Wenn Sie sich einigermaßen sicher sind, dass die erste Teilaufgabe gelöst ist, nehmen Sie sich die zweite vor, usw. Diese Vorgehensweise hilft sehr, mögliche Fehlerursachen einzukreisen. Wenn Sie stattdessen zu viel „auf einen Schlag“ programmieren, können mehr Fehler auftreten und die Fehlersuche swie die Beseitigung dauern viel länger.
+
 Der Lernprozess
 ---------------
 
 Im weiteren Verlauf des Buches sollte man keine Angst haben, wenn die Konzepte beim ersten Mal nicht gut zusammenzupassen scheinen. Als wir sprechen gelernt haben, war es in den ersten Jahren kein Problem, dass man nur niedliche Gluckgeräusche gemacht hat. Es war in Ordnung, wenn es sechs Monate dauerte, um von einfachen Vokabeln zu einfachen Sätzen zu kommen, und 5-6 Jahre brauchte, um von Sätzen zu Absätzen zu kommen, und noch ein paar Jahre, um in der Lage zu sein, selbständig eine interessante, vollständige Kurzgeschichte zu schreiben.
 
-Wir wollen, dass wir Python viel schneller lernen, deshalb lernen wir in den nächsten Kapiteln alles gleichzeitig. Aber es ist wie beim Erlernen einer neuen Sprache, die man sich erst aneignen und verstehen muss, bevor sie sich natürlich anfühlt. Das führt zu einiger Verwirrung, wenn wir Themen lernen und wieder aufgreifen, um das große Ganze zu sehen, während wir die winzigen Fragmente definieren, die dieses große Bild ausmachen. Das Buch ist zwar linear geschrieben und wenn man einen Kurs belegt, wird er auch linear verlaufen. Man sollte jedoch nicht zögern, sich dem Stoff sehr unlinear zu nähern. Egal ob vorwärts und rückwärts oder quer gelesen. Durch überfliegen von fortgeschrittenem Material, ohne die Details vollständig zu verstehen, erhält man ein besseres Verständnis für das „Warum?“ der Programmierung. Durch Wiederholung früherer Inhalte und sogar Wiederholung früherer Übungen werden wir feststellen, dass wir tatsächlich viel gelernt haben, auch wenn das Material, welches wir gerade anstarren, ein wenig undurchdringlich erscheint.
+Wir wollen, dass wir Python viel schneller lernen, deshalb lernen wir in den nächsten Kapiteln alles gleichzeitig. Aber es ist wie beim Erlernen einer neuen Sprache, die man sich erst aneignen und verstehen muss, bevor sie sich natürlich anfühlt. Das führt zu einiger Verwirrung, wenn wir Themen lernen und wieder aufgreifen, um das große Ganze zu sehen, während wir die winzigen Fragmente definieren, die dieses große Bild ausmachen. Das Buch ist zwar linear geschrieben und wenn man einen Kurs belegt, wird er auch linear verlaufen. Man sollte jedoch nicht zögern, sich dem Stoff sehr unlinear zu nähern. Egal ob vorwärts und rückwärts oder quer gelesen. Durch Überfliegen von fortgeschrittenem Material, ohne die Details vollständig zu verstehen, erhält man ein besseres Verständnis für das „Warum?“ der Programmierung. Durch Wiederholung früherer Inhalte und sogar Wiederholung früherer Übungen werden wir feststellen, dass wir tatsächlich viel gelernt haben, auch wenn das Material, welches wir gerade anstarren, ein wenig undurchdringlich erscheint.
 
-Wenn wir unsere erste Programmiersprache lernen, gibt es normalerweise ein paar wunderbare „Aha!“-Momente, in denen man vom Hämmern mit dem Hammer und Meißel aufschaut den Blick abwendet und sieht, dass man gerade tatsächlich eine schöne Skulptur baut.
-
-Wenn etwas besonders schwierig erscheint, lohnt es sich in der Regel nicht, die ganze Nacht aufzubleiben und es anzustarren. Eine Pause machen, ein Nickerchen halten, einen Snack zu sich nehmen, das Problem einem anderen erklären (oder vielleicht dem Hund) und dann mit neuen Augen wieder darauf blicken. Auf jeden Fall werden wir zurückblicken und feststellen, dass alles ganz einfach und elegant war und man nur ein bisschen Zeit gebraucht hat, um es zu verinnerlichen.
+Wenn wir unsere erste Programmiersprache lernen, gibt es normalerweise ein paar wunderbare „Aha!“-Momente. Dinge, für die Sie vorher Stunden oder Tage benötigt hätten, können automatisiert in Bruchteilen von Sekunden ausgeführt werden. Dazu gehört aber auch, dass man manchmal beim Lernen der Programmiersprache Aufgaben zu lösen hat, die nicht wirklich ein Problem für einen selbst darstellen. Nehmen Sie solche Aufgaben als „Fingerübungen“ hin, die Ihnen helfen, Routine beim Programmieren zu entwickeln.
 
 Glossar
 -------
@@ -552,7 +543,7 @@ d) Ein Textverarbeitungsdokument
 
 ~~~~ {.python}
 >>> primt 'Hello world!'
-File "<stdin>", line 1
+File “<stdin>“, line 1
   primt 'Hello world!'
                      ^
 SyntaxError: invalid syntax
@@ -565,7 +556,7 @@ SyntaxError: invalid syntax
 x = 123
 ~~~~
 
-a\) Zentrale Recheneinheit\
+a\) CPU\
 b) Hauptspeicher\
 c) Sekundärspeicher\
 d) Eingabegeräte\
@@ -584,7 +575,7 @@ b) 44\
 c) x + 1\
 d) Fehler, denn x = x + 1 ist mathematisch nicht möglich
 
-**Übung 8: Erläutern Sie die folgenden Punkte anhand eines Beispiels für eine menschliche Fähigkeit: (1) Zentrale Recheneinheit, (2) Hauptspeicher, (3) Sekundärspeicher, (4) Eingabegerät und (5) Ausgabegerät. Zum Beispiel: „Was ist das menschliche Äquivalent zu einer CPU“?**
+**Übung 8: Erläutern Sie die folgenden Punkte anhand eines Beispiels für eine menschliche Fähigkeit: (1) CPU, (2) Hauptspeicher, (3) Sekundärspeicher, (4) Eingabegerät und (5) Ausgabegerät. Zum Beispiel: „Was ist das menschliche Äquivalent zu einer CPU“?**
 
 **Übung 9: Wie behebt man einen Syntaxfehler?**
 
