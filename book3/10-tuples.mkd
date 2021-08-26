@@ -1,49 +1,38 @@
 
-Tuples
+Tupeln
 ======
 
-Tuples are immutable
---------------------
+Tupel sind unveränderbar
+------------------------
 
-\index{tuple}
-\index{type!tuple}
-\index{sequence}
+\index{Tupel}
+\index{Datentyp!Tupel}
+\index{Folge}
 
-A tuple^[Fun fact: The word "tuple" comes from the names given to sequences
-of numbers of varying lengths: single, double, triple, quadruple,
-quintuple, sextuple, septuple, etc.] is a sequence of values much like a list. The values stored
-in a tuple can be any type, and they are indexed by integers. The
-important difference is that tuples are *immutable*.
-Tuples are also *comparable* and
-*hashable* so we can sort lists of them and use tuples as
-key values in Python dictionaries.
+Ein Tupel^[Das Wort „Tupel“ kommt von den Namen, die man Zahlenfolgen unterschiedlicher Länge gibt: einfach, doppelt, dreifach, vierfach, fünffach, sechsfach, siebenfach usw.] ist eine Folge von Werten, ähnlich wie eine Liste. Die in einem Tupel gespeicherten Werte können von beliebigem Typ sein, und sie werden durch Ganzzahlen indiziert. Der wichtige Unterschied ist, dass Tupel *unveränderlich* sind. Tupel sind außerdem *vergleichbar* und können *gehasht* werden, sodass wir Listen von ihnen sortieren und Tupel als Schlüsselwerte in Python-Wörterbüchern verwenden können.
 
-\index{mutability}
-\index{hashable}
-\index{comparable}
-\index{immutability}
+\index{Veränderbarkeit}
+\index{vergleichbar}
+\index{Unveränderlichkeit}
 
-Syntactically, a tuple is a comma-separated list of values:
+Syntaktisch ist ein Tupel eine durch Kommata getrennte Liste von Werten:
 
 ~~~~ {.python}
 >>> t = 'a', 'b', 'c', 'd', 'e'
 ~~~~
 
-Although it is not necessary, it is common to enclose tuples in
-parentheses to help us quickly identify tuples when we look at Python
-code:
+Obwohl es nicht notwendig ist, ist es üblich, Tupel in Klammern einzuschließen, damit wir Tupel schnell identifizieren können, wenn wir uns Python-Code ansehen:
 
-\index{parentheses!tuples in}
+\index{Klammern!Tupeln innerhalb}
 
 ~~~~ {.python}
 >>> t = ('a', 'b', 'c', 'd', 'e')
 ~~~~
 
-To create a tuple with a single element, you have to include the final
-comma:
+Um ein Tupel mit einem einzelnen Element zu erstellen, müssen wir das abschließende Komma einfügen:
 
-\index{singleton}
-\index{tuple!singleton}
+\index{Singleton}
+\index{Tupel!Singleton}
 
 ~~~~ {.python .trinket}
 >>> t1 = ('a',)
@@ -51,8 +40,7 @@ comma:
 <type 'tuple'>
 ~~~~
 
-Without the comma Python treats `('a')` as an expression with a string
-in parentheses that evaluates to a string:
+Ohne das Komma behandelt Python `('a')` als einen Ausdruck mit einer Zeichenkette in Klammern, der zu einer Zeichenkette ausgewertet wird:
 
 ~~~~ {.python}
 >>> t2 = ('a')
@@ -60,11 +48,10 @@ in parentheses that evaluates to a string:
 <type 'str'>
 ~~~~
 
-Another way to construct a tuple is the built-in function
-`tuple`. With no argument, it creates an empty tuple:
+Eine weitere Möglichkeit, ein Tupel zu konstruieren, ist die eingebaute Funktion `tuple`. Ohne Argument erzeugt sie ein leeres Tupel:
 
-\index{tuple function}
-\index{function!tuple}
+\index{tuple (Funktion)}
+\index{Funktion!tuple}
 
 ~~~~ {.python .trinket}
 >>> t = tuple()
@@ -72,9 +59,7 @@ Another way to construct a tuple is the built-in function
 ()
 ~~~~
 
-If the argument is a sequence (string, list, or tuple), the result of
-the call to `tuple` is a tuple with the elements of the
-sequence:
+Wenn das Argument eine Sequenz (String, Liste oder Tupel) ist, ist das Ergebnis des Aufrufs von `tuple` ein Tupel mit den Elementen der Sequenz:
 
 ~~~~ {.python .trinket}
 >>> t = tuple('lupins')
@@ -82,14 +67,12 @@ sequence:
 ('l', 'u', 'p', 'i', 'n', 's')
 ~~~~
 
-Because `tuple` is the name of a constructor, you should
-avoid using it as a variable name.
+Da `tuple` der Name eines *Konstruktors* ist, sollten wir es vermeiden, ihn als Variablennamen zu verwenden.
 
-Most list operators also work on tuples. The bracket operator indexes an
-element:
+Die meisten Listenoperatoren funktionieren auch auf Tupeln. Der Indexoperator indiziert ein Element:
 
-\index{bracket operator}
-\index{operator!bracket}
+\index{Indexoperator}\index{Zugriff, indexbasiert}
+\index{Operator!indexbasierter Zugriff}
 
 ~~~~ {.python .trinket}
 >>> t = ('a', 'b', 'c', 'd', 'e')
@@ -97,33 +80,31 @@ element:
 'a'
 ~~~~
 
-And the slice operator selects a range of elements.
+Und der Slice-Operator selektiert einen Bereich von Elementen.
 
-\index{slice operator}
-\index{operator!slice}
-\index{tuple!slice}
-\index{slice!tuple}
+\index{slice-Operator}
+\index{Operator!slice}
+\index{Tupel!slice}
+\index{slice!Tupel}
 
 ~~~~ {.python}
 >>> print(t[1:3])
 ('b', 'c')
 ~~~~
 
-But if you try to modify one of the elements of the tuple, you get an
-error:
+Wenn wir jedoch versuchen, eines der Elemente des Tupels zu ändern, erhalten wir einen Fehler:
 
-\index{exception!TypeError}
+\index{Ausnahme!TypeError}
 \index{TypeError}
-\index{item assignment}
-\index{assignment!item}
+\index{Elementzuweisung}
+\index{Zuweisung!Element}
 
 ~~~~ {.python}
 >>> t[0] = 'A'
 TypeError: object doesn't support item assignment
 ~~~~
 
-You can't modify the elements of a tuple, but you can replace one tuple
-with another:
+Wir können die Elemente eines Tupels nicht ändern, aber wir können ein Tupel durch ein anderes ersetzen:
 
 ~~~~ {.python .trinket}
 >>> t = ('A',) + t[1:]
@@ -131,19 +112,15 @@ with another:
 ('A', 'b', 'c', 'd', 'e')
 ~~~~
 
-Comparing tuples
-----------------
+Vergleichen von Tupeln
+----------------------
 
-\index{comparison!tuple}
-\index{tuple!comparison}
-\index{sort method}
-\index{method!sort}
+\index{Vergleich!Tupel}
+\index{Tupel!Vergleich}
+\index{sort (Methode)}
+\index{Methode!sort}
 
-The comparison operators work with tuples and other sequences. Python
-starts by comparing the first element from each sequence. If they are
-equal, it goes on to the next element, and so on, until it finds
-elements that differ. Subsequent elements are not considered (even if
-they are really big).
+Die Vergleichsoperatoren funktionieren mit Tupeln und anderen Sequenzen. Python beginnt mit dem Vergleich des jeweils ersten Elements aus jeder Sequenz. Wenn beide gleich sind, geht es weiter zum nächsten Element und so weiter, bis zwei Elemente gefunden wurden, die sich unterscheiden. Diese werden entsprechend des verwendeten Operators verglichen. Damit endet der Vergleich der Tupeln. Alle danach kommenden Elemente werden also nicht mehr berücksichtigt.
 
 ~~~~ {.python .trinket}
 >>> (0, 1, 2) < (0, 3, 4)
@@ -152,76 +129,59 @@ True
 True
 ~~~~
 
-The `sort` function works the same way. It sorts primarily by
-first element, but in the case of a tie, it sorts by second element, and
-so on.
+Die Funktion `sort` arbeitet auf die gleiche Weise. Sie sortiert primär nach dem ersten Element, aber im Falle eines Gleichstandes nach dem zweiten Element und so weiter.
 
-This feature lends itself to a pattern called *DSU* for
+Diese Funktion eignet sich für ein Muster namens *DSU*:
 
 Decorate
-:   a sequence by building a list of tuples with one or more sort keys
-    preceding the elements from the sequence,
+:   „Dekorieren“ einer Sequenz, indem eine Liste von Tupeln mit einem oder mehreren Sortierschlüsseln den Elementen der Sequenz vorangestellt werden.
 
 Sort
-:   the list of tuples using the Python built-in `sort`, and
+:   Sortieren der Liste der Tupel mit dem in Python eingebauten `sort`.
 
 Undecorate
-:   by extracting the sorted elements of the sequence.
+:   Extrahieren der sortierten Elemente der Sequenz.
 
-\index{DSU pattern}
-\index{pattern!DSU}
-\index{decorate-sort-undecorate pattern}
-\index{pattern!decorate-sort-undecorate}
+\index{DSU-Muster}
+\index{Muster!DSU}
+\index{Decorate-Sort-Undecorate-Muster}
+\index{Muster!Decorate-Sort-Undecorate}
 \index{Romeo and Juliet}
 
-For example, suppose you have a list of words and you want to sort them
-from longest to shortest:
+Angenommen, wir haben eine Liste von Wörtern und möchten diese nach den Wortlängen absteigend sortieren:
 
 \VerbatimInput{../code3/soft.py} 
 
-The first loop builds a list of tuples, where each tuple is a word
-preceded by its length.
+Die erste Schleife baut eine Liste von Tupeln auf, wobei jedes Tupel ein Wort ist, dem seine Länge vorangestellt ist.
 
-`sort` compares the first element, length, first, and only
-considers the second element to break ties. The keyword argument
-`reverse=True` tells `sort` to go in decreasing
-order.
+`sort` vergleicht das erste Element (die Länge) zuerst und berücksichtigt nur das zweite Element, um Gleichstände aufzulösen. Das Schlüsselwortargument `reverse=True` sagt `sort`, dass es in absteigender Reihenfolge vorgehen soll.
 
-\index{keyword argument}
-\index{argument!keyword}
-\index{traversal}
+\index{Schlüsselwortargument}
+\index{Argument!Schlüsselwort}
+\index{Traversieren}
 
-The second loop traverses the list of tuples and builds a list of words
-in descending order of length. The four-character words are sorted in
-*reverse* alphabetical order, so "what" appears before
-"soft" in the following list.
+Die zweite Schleife durchläuft die Liste aller Tupel und baut eine Liste der Wörter nach absteigender Wortlänge auf. Die vier Zeichen langen Wörter werden in *umgekehrter* alphabetischer Reihenfolge sortiert, sodass „what“ in der folgenden Liste vor „soft“ erscheint.
 
-The output of the program is as follows:
+Die Ausgabe des Programms ist wie folgt:
 
 ~~~~
 ['yonder', 'window', 'breaks', 'light', 'what',
 'soft', 'but', 'in']
 ~~~~
 
-Of course the line loses much of its poetic impact when turned into a
-Python list and sorted in descending word length order.
+Natürlich verliert die Zeile viel von ihrer poetischen Wirkung, wenn man sie in eine Python-Liste verwandelt und in absteigender Reihenfolge der Wortlänge sortiert.
 
-Tuple assignment
-----------------
+Tupel-Zuweisung
+---------------
 
-\index{tuple!assignment}
-\index{assignment!tuple}
-\index{swap pattern}
-\index{pattern!swap}
+\index{Tupel!Zuweisung}
+\index{Zuweisung!Tupel}
+\index{Swap (Muster)}
+\index{Muster!Swap}
 
-One of the unique syntactic features of the Python language is the
-ability to have a tuple on the left side of an assignment statement.
-This allows you to assign more than one variable at a time when the left
-side is a sequence.
+Eine der einzigartigen syntaktischen Eigenschaften der Sprache Python ist die Fähigkeit, ein Tupel auf der linken Seite einer Zuweisung haben zu können. Dadurch können wir mehr als eine Variable auf einmal zuweisen, wenn die linke Seite eine Sequenz ist.
 
-In this example we have a two-element list (which is a sequence) and
-assign the first and second elements of the sequence to the variables
-`x` and `y` in a single statement.
+In diesem Beispiel haben wir eine zweielementige Liste (die eine Sequenz ist) und weisen das erste und zweite Element der Sequenz den Variablen `x` und `y` in einer einzigen Anweisung zu.
 
 ~~~~ {.python .trinket}
 >>> m = [ 'have', 'fun' ]
@@ -233,9 +193,7 @@ assign the first and second elements of the sequence to the variables
 >>>
 ~~~~
 
-It is not magic, Python *roughly* translates the tuple assignment syntax
-to be the following:^[Python does not translate the syntax literally. For example, if
-you try this with a dictionary, it will not work as you might expect.]
+Es ist keine Magie, Python übersetzt die Tupel-Zuweisungssyntax in etwa so, dass sie wie folgt aussieht:^[Python übersetzt die Syntax nicht wörtlich. Wenn wir dies zum Beispiel mit einem Wörterbuch versuchen, wird es nicht so funktionieren, wie wir es vielleicht erwarten.]
 
 ~~~~ {.python .trinket}
 >>> m = [ 'have', 'fun' ]
@@ -248,9 +206,7 @@ you try this with a dictionary, it will not work as you might expect.]
 >>>
 ~~~~
 
-Stylistically when we use a tuple on the left side of the assignment
-statement, we omit the parentheses, but the following is an equally
-valid syntax:
+Stilistisch gesehen lassen wir die Klammern weg, wenn wir ein Tupel auf der linken Seite der Zuweisungsanweisung verwenden, aber das Folgende ist eine ebenso gültige Schreibweise:
 
 ~~~~ {.python}
 >>> m = [ 'have', 'fun' ]
@@ -262,23 +218,17 @@ valid syntax:
 >>>
 ~~~~
 
-A particularly clever application of tuple assignment allows us to
-*swap* the values of two variables in a single statement:
+Eine besonders clevere Anwendung der Tupel-Zuweisung erlaubt es uns, die Werte zweier Variablen in einer einzigen Anweisung zu *tauschen*:
 
 ~~~~ {.python}
 >>> a, b = b, a
 ~~~~
 
-Both sides of this statement are tuples, but the left side is a tuple of
-variables; the right side is a tuple of expressions. Each value on the
-right side is assigned to its respective variable on the left side. All
-the expressions on the right side are evaluated before any of the
-assignments.
+Beide Seiten dieser Anweisung sind Tupel, aber die linke Seite ist ein Tupel von Variablen; die rechte Seite ist ein Tupel von Ausdrücken. Jeder Wert auf der rechten Seite wird der entsprechenden Variablen auf der linken Seite zugewiesen. Alle Ausdrücke auf der rechten Seite werden vor ihrer Zuweisungen ausgewertet.
 
-The number of variables on the left and the number of values on the
-right must be the same:
+Die Anzahl der Variablen auf der linken Seite und die Anzahl der Werte auf der rechten Seite müssen gleich sein:
 
-\index{exception!ValueError}
+\index{Ausnahme!ValueError}
 \index{ValueError}
 
 ~~~~ {.python}
@@ -286,22 +236,18 @@ right must be the same:
 ValueError: too many values to unpack
 ~~~~
 
-More generally, the right side can be any kind of sequence (string,
-list, or tuple). For example, to split an email address into a user name
-and a domain, you could write:
+Allgemeiner ausgedrückt, kann die rechte Seite eine beliebige Sequenz (String, Liste oder Tupel) sein. Um z. B. eine E-Mail-Adresse in einen Benutzernamen und eine Domäne aufzuteilen, könnten wir schreiben:
 
-\index{split method}
-\index{method!split}
-\index{email address}
+\index{split (Methode)
+\index{Methode!split}
+\index{E-Mail-Adresse}
 
 ~~~~ {.python}
 >>> addr = 'monty@python.org'
 >>> uname, domain = addr.split('@')
 ~~~~
 
-The return value from `split` is a list with two elements;
-the first element is assigned to `uname`, the second to
-`domain`.
+Der Rückgabewert von `split` ist eine Liste mit zwei Elementen; das erste Element wird `uname` zugewiesen, das zweite `domain`.
 
 ~~~~ {.python}
 >>> print(uname)
@@ -310,16 +256,15 @@ monty
 python.org
 ~~~~
 
-Dictionaries and tuples
+Wörterbüchern und Tupel
 -----------------------
 
-\index{dictionary}
-\index{items method}
-\index{method!items}
-\index{key-value pair}
+\index{Wörterbuch}
+\index{items (Methode)}
+\index{Methode!items}
+\index{Key-Value-Paar}\index{Schlüssel-Wert-Paar}
 
-Dictionaries have a method called `items` that returns a list
-of tuples, where each tuple is a key-value pair:
+Wörterbücher haben eine Methode namens `items`, die eine Liste von Tupeln zurückgibt, wobei jedes Tupel ein Schlüssel-Wert-Paar ist:
 
 ~~~~ {.python .trinket}
 >>> d = {'a':10, 'b':1, 'c':22}
@@ -328,13 +273,9 @@ of tuples, where each tuple is a key-value pair:
 [('b', 1), ('a', 10), ('c', 22)]
 ~~~~
 
-As you should expect from a dictionary, the items are in no particular
-order.
+Wie wir es vermutlich von einem Wörterbuch erwarten, sind die Begriffe in keiner bestimmten Reihenfolge angeordnet.
 
-However, since the list of tuples is a list, and tuples are comparable,
-we can now sort the list of tuples. Converting a dictionary to a list of
-tuples is a way for us to output the contents of a dictionary sorted by
-key:
+Da die Liste der Tupel jedoch eine Liste ist und Tupel vergleichbar sind, können wir nun die Liste der Tupel sortieren. Das Konvertieren eines Wörterbuchs in eine Liste von Tupeln ist eine Möglichkeit, den Inhalt eines Wörterbuchs nach Schlüssel sortiert auszugeben:
 
 ~~~~ {.python}
 >>> d = {'a':10, 'b':1, 'c':22}
@@ -346,33 +287,26 @@ key:
 [('a', 10), ('b', 1), ('c', 22)]
 ~~~~
 
-The new list is sorted in ascending alphabetical order by the key value.
+Die neue Liste wird in aufsteigender alphabetischer Reihenfolge nach dem Schlüsselwert sortiert.
 
-Multiple assignment with dictionaries
--------------------------------------
+Mehrfachzuweisung mit Wörterbüchern
+-----------------------------------
 
-\index{traverse!dictionary}
-\index{dictionary!traversal}
+\index{Traversieren!Wörterbuch}
+\index{Wörterbuch!Traversieren}
 
-Combining `items`, tuple assignment, and `for`,
-you can see a nice code pattern for traversing the keys and values of a
-dictionary in a single loop:
+Durch die Kombination von `items`, Tupel-Zuweisung und `for` können wir ein schönes Code-Schema für das Durchlaufen der Schlüssel und Werte eines Wörterbuchs in einer einzigen Schleife sehen:
 
 ~~~~ {.python}
 for key, val in list(d.items()):
     print(val, key)
 ~~~~
 
-This loop has two *iteration variables* because
-`items` returns a list of tuples and `key, val` is
-a tuple assignment that successively iterates through each of the
-key-value pairs in the dictionary.
+Diese Schleife hat zwei *Iterationsvariablen*, weil `items` eine Liste von Tupeln zurückgibt und `key, val` eine Tupel-Zuweisung ist, die nacheinander durch jedes der Schlüssel-Wert-Paare im Wörterbuch iteriert.
 
-For each iteration through the loop, both `key` and
-`value` are advanced to the next key-value pair in the
-dictionary (still in hash order).
+Bei jeder Iteration durch die Schleife werden sowohl `key` als auch `val` zum nächsten Schlüssel-Wert-Paar im Wörterbuch vorgerückt (immer noch in Hash-Reihenfolge).
 
-The output of this loop is:
+Der Ausgang dieser Schleife ist:
 
 ~~~~
 10 a
@@ -380,17 +314,11 @@ The output of this loop is:
 1 b
 ~~~~
 
-Again, it is in hash key order (i.e., no particular order).
+Auch hier gilt wieder die Reihenfolge der Hash-Schlüssel (d. h. letztendlich keine bestimmte Reihenfolge).
 
-If we combine these two techniques, we can print out the contents of a
-dictionary sorted by the *value* stored in each key-value pair.
+Wenn wir diese beiden Techniken kombinieren, können wir den Inhalt eines Wörterbuchs sortiert nach dem *Wert*, der in jedem Schlüssel-Wert-Paar gespeichert ist, ausgeben.
 
-To do this, we first make a list of tuples where each tuple is
-`(value, key)`. The `items` method would give us a
-list of `(key, value)` tuples, but this time we want to sort
-by value, not key. Once we have constructed the list with the value-key
-tuples, it is a simple matter to sort the list in reverse order and
-print out the new, sorted list.
+Um dies zu tun, erstellen wir zunächst eine Liste von Tupeln, wobei jedes Tupel `(value, key)` ist. Die Methode `items` würde uns eine Liste von `(key, value)`-Tupeln liefern, aber dieses Mal wollen wir nach Wert und nicht nach Schlüssel sortieren. Sobald wir die Liste mit den Wert-Schlüssel-Tupeln aufgebaut haben, ist es eine einfache Sache, die Liste in umgekehrter Reihenfolge zu sortieren und die neue, sortierte Liste auszugeben.
 
 ~~~~ {.python}
 >>> d = {'a':10, 'b':1, 'c':22}
@@ -406,41 +334,27 @@ print out the new, sorted list.
 >>>
 ~~~~
 
-By carefully constructing the list of tuples to have the value as the
-first element of each tuple, we can sort the list of tuples and get our
-dictionary contents sorted by value.
+Indem wir die Liste der Tupel sorgfältig so konstruieren, dass der Wert das erste Element jedes Tupels ist, können wir die Liste der Tupel sortieren und erhalten unseren Wörterbuchinhalt nach dem Wert sortiert.
 
-The most common words
+Die häufigsten Wörter
 ---------------------
 
 \index{Romeo and Juliet}
 
-Coming back to our running example of the text from *Romeo and Juliet*
-Act 2, Scene 2, we can augment our program to use this technique to
-print the ten most common words in the text as follows:
+Wenn wir zu unserem laufenden Beispiel des Textes aus *Romeo und Juliet* Akt 2, Szene 2 zurückkehren, können wir unser Programm erweitern, um diese Technik zu verwenden und die zehn häufigsten Wörter im Text wie folgt auszugeben:
 
 \VerbatimInput{../code3/count3.py} 
 \begin{trinketfiles}
 ../code3/romeo-full.txt
 \end{trinketfiles}
 
-The first part of the program which reads the file and computes the
-dictionary that maps each word to the count of words in the document is
-unchanged. But instead of simply printing out `counts` and
-ending the program, we construct a list of `(val, key)`
-tuples and then sort the list in reverse order.
+Der erste Teil des Programms, der die Datei liest und das Wörterbuch erstellt, welches jedes Wort auf die Anzahl der Wörter im Dokument abbildet, bleibt unverändert. Aber anstatt einfach `counts` auszugeben und das Programm zu beenden, konstruieren wir eine Liste von `(val, key)`-Tupeln und sortieren die Liste dann in umgekehrter Reihenfolge.
 
-Since the value is first, it will be used for the comparisons. If there
-is more than one tuple with the same value, it will look at the second
-element (the key), so tuples where the value is the same will be further
-sorted by the alphabetical order of the key.
+Da der Wert an erster Stelle steht, wird er für die Vergleiche verwendet. Wenn es mehr als ein Tupel mit demselben Wert gibt, wird das zweite Element (der Schlüssel) betrachtet, sodass Tupel, bei denen der Wert gleich ist, weiter nach der alphabetischen Reihenfolge des Schlüssels sortiert werden.
 
-At the end we write a nice `for` loop which does a multiple
-assignment iteration and prints out the ten most common words by
-iterating through a slice of the list (`lst[:10]`).
+Am Ende schreiben wir eine `for`-Schleife, die in jeder Iteration eine Mehrfachzuweisung durchführt und die zehn häufigsten Wörter ausgibt, indem sie durch einen Ausschnitt der Liste (`lst[:10]`) iteriert.
 
-So now the output finally looks like what we want for our word frequency
-analysis.
+Jetzt sieht die Ausgabe endlich so aus, wie wir es uns für unsere Worthäufigkeitsanalyse wünschen.
 
 ~~~~
 61 i
@@ -455,177 +369,113 @@ analysis.
 24 thee
 ~~~~
 
-The fact that this complex data parsing and analysis can be done with an
-easy-to-understand 19-line Python program is one reason why Python is a
-good choice as a language for exploring information.
+Die Tatsache, dass dieses komplexe Parsen und Analysieren von Daten mit einem leicht verständlichen 19-zeiligen Python-Programm durchgeführt werden kann, ist ein Grund, warum Python eine gute Wahl als Sprache für die Erforschung von Informationen ist.
 
-Using tuples as keys in dictionaries
-------------------------------------
+Verwendung von Tupeln als Schlüssel in Wörterbüchern
+----------------------------------------------------
 
-\index{tuple!as key in dictionary}
-\index{hashable}
+\index{Tupel!als Schlüssel in Wörterbüchern}
+\index{hashbar}
 
-Because tuples are *hashable* and lists are not, if we
-want to create a *composite* key to use in a dictionary
-we must use a tuple as the key.
+Da Tupel *gehasht* werden können und Listen nicht, müssen wir ein Tupel als Schlüssel verwenden, wenn wir einen *zusammengesetzten* Schlüssel zur Verwendung in einem Wörterbuch erstellen wollen.
 
-We would encounter a composite key if we wanted to create a telephone
-directory that maps from last-name, first-name pairs to telephone
-numbers. Assuming that we have defined the variables `last`,
-`first`, and `number`, we could write a dictionary
-assignment statement as follows:
+Wir würden auf einen zusammengesetzten Schlüssel stoßen, wenn wir ein Telefonverzeichnis erstellen wollten, das von Nachnamen-Vornamen-Paaren auf Telefonnummern abbildet. Unter der Annahme, dass wir die Variablen `last`, `first` und `number` definiert haben, könnten wir eine Wörterbuchzuweisung wie folgt schreiben:
 
 ~~~~ {.python}
 directory[last,first] = number
 ~~~~
 
-The expression in brackets is a tuple. We could use tuple assignment in
-a `for` loop to traverse this dictionary.
+Der Ausdruck in Klammern ist ein Tupel. Wir könnten die Tupel-Zuweisung in einer `for`-Schleife verwenden, um dieses Wörterbuch zu durchlaufen.
 
-\index{tuple!in brackets}
+\index{Tupel!geklammert}
 
 ~~~~ {.python}
 for last, first in directory:
     print(first, last, directory[last,first])
 ~~~~
 
-This loop traverses the keys in `directory`, which are
-tuples. It assigns the elements of each tuple to `last` and
-`first`, then prints the name and corresponding telephone
-number.
+Diese Schleife durchläuft die Schlüssel in `directory`, bei denen es sich um Tupel handelt. Sie ordnet die Elemente jedes Tupels `last` und `first` zu und gibt dann den Namen und die entsprechende Telefonnummer aus.
 
-Sequences: strings, lists, and tuples - Oh My!
---------------------------------------------
+Zeichenketten, Listen und Tupel
+-------------------------------
 
-\index{sequence}
+\index{Folge}
 
-I have focused on lists of tuples, but almost all of the examples in
-this chapter also work with lists of lists, tuples of tuples, and tuples
-of lists. To avoid enumerating the possible combinations, it is
-sometimes easier to talk about sequences of sequences.
+Ich habe mich hierbei auf Listen von Tupeln konzentriert, aber fast alle Beispiele in diesem Kapitel arbeiten auch mit Listen von Listen, Tupeln von Tupeln und Tupeln von Listen. Um die Aufzählung der möglichen Kombinationen zu vermeiden, ist es manchmal einfacher, von „Sequenzen von Sequenzen“ zu sprechen.
 
-In many contexts, the different kinds of sequences (strings, lists, and
-tuples) can be used interchangeably. So how and why do you choose one
-over the others?
+In vielen Kontexten können die verschiedenen Arten von Sequenzen (Strings, Listen und Tupel) austauschbar verwendet werden. Wie und warum wählen wir also eine der beiden Arten aus?
 
-\index{string}
-\index{list}
-\index{tuple}
-\index{mutability}
-\index{immutability}
+\index{Zeichenkette}
+\index{Liste}
+\index{Tupel}
+\index{Veränderbarkeit}
+\index{Unveränderlichkeit}
 
-To start with the obvious, strings are more limited than other sequences
-because the elements have to be characters. They are also immutable. If
-you need the ability to change the characters in a string (as opposed to
-creating a new string), you might want to use a list of characters
-instead.
+Um mit dem Offensichtlichen zu beginnen: Zeichenketten sind begrenzter als andere Sequenzen, da die Elemente Zeichen sein müssen. Außerdem sind sie unveränderlich. Wenn wir die Möglichkeit benötigen, die Zeichen in einer Zeichenfolge zu ändern (im Gegensatz zur Erstellung einer neuen Zeichenfolge), sollten wir stattdessen eine Liste von Zeichen verwenden.
 
-Lists are more common than tuples, mostly because they are mutable. But
-there are a few cases where you might prefer tuples:
+Listen sind üblicher als Tupel, hauptsächlich weil sie veränderbar sind. Aber es gibt ein paar Fälle, in denen wir Tupel bevorzugen könnten:
 
-1.  In some contexts, like a `return` statement, it is
-    syntactically simpler to create a tuple than a list. In other
-    contexts, you might prefer a list.
+1.  In manchen Kontexten, wie z. B. einer `return`-Anweisung, ist es syntaktisch einfacher, ein Tupel zu erstellen als eine Liste. In anderen Kontexten bevorzugen wir vielleicht eine Liste.
 
-2.  If you want to use a sequence as a dictionary key, you have to use
-    an immutable type like a tuple or string.
+2.  Wenn wir eine Sequenz als Wörterbuchschlüssel verwenden möchten, müssen wir einen unveränderlichen Typ wie ein Tupel oder einen String verwenden.
 
-3.  If you are passing a sequence as an argument to a function, using
-    tuples reduces the potential for unexpected behavior due to
-    aliasing.
+3.  Wenn wir eine Sequenz als Argument an eine Funktion übergeben, verringert die Verwendung von Tupeln das Potenzial für unerwartetes Verhalten aufgrund von Aliasbildung.
 
-Because tuples are immutable, they don't provide methods like
-`sort` and `reverse`, which modify existing lists.
-However Python provides the built-in functions `sorted` and
-`reversed`, which take any sequence as a parameter and return
-a new sequence with the same elements in a different order.
+Da Tupel unveränderlich sind, bieten sie keine Methoden wie `sort` und `reverse`, die bestehende Listen verändern. Python bietet jedoch die eingebauten Funktionen `sorted` und `reversed`, die eine beliebige Sequenz als Parameter nehmen und eine neue Sequenz mit denselben Elementen in einer anderen Reihenfolge zurückgeben.
 
-\index{sorted function}
-\index{function!sorted}
-\index{reversed function}
-\index{function!reversed}
+\index{sorted (Funktion)}
+\index{Funktion!sorted}
+\index{reversed (Funktion)}
+\index{Funktion!reversed}
 
 Debugging
 ---------
 
-\index{debugging}
-\index{data structure}
-\index{shape error}
-\index{error!shape}
+\index{Debugging}
+\index{Datenstruktur}
 
-Lists, dictionaries and tuples are known generically as *data
-structures*; in this chapter we are starting to see compound
-data structures, like lists of tuples, and dictionaries that contain
-tuples as keys and lists as values. Compound data structures are useful,
-but they are prone to what I call *shape errors*; that
-is, errors caused when a data structure has the wrong type, size, or
-composition, or perhaps you write some code and forget the shape of your
-data and introduce an error. For example, if you are expecting a list with one integer and I give you a plain old integer (not in a list), it won't work.
+Listen, Wörterbücher und Tupel sind allgemein als *Datenstrukturen* bekannt; in diesem Kapitel beginnen wir, zusammengesetzte Datenstrukturen zu nutzen, wie Listen von Tupeln und Wörterbücher, die Tupel als Schlüssel und Listen als Werte enthalten. Zusammengesetzte Datenstrukturen sind nützlich, aber sie sind anfällig für das, was man als *Formatfehler* bezeichnen könnte; das heißt, Fehler, die entstehen, wenn eine Datenstruktur den falschen Typ, die falsche Größe oder die falsche Zusammensetzung hat, oder wenn wir vielleicht etwas Code schreiben und das Format der Daten vergessen und einen Fehler einführen. Wenn wir zum Beispiel eine Liste mit einer Ganzzahl erwarten und ich dem Programm eine einfache Ganzzahl (nicht in einer Liste) gebe, wird es nicht funktionieren.
 
-Glossary
---------
+Glossar
+-------
 
-comparable
-:   A type where one value can be checked to see if it is greater than,
-    less than, or equal to another value of the same type. Types which
-    are comparable can be put in a list and sorted.
-\index{comparable}
+vergleichbar
+:   Ein Datentyp, bei dem ein Wert daraufhin überprüft werden kann, ob er größer, kleiner oder gleich einem anderen Wert desselben Typs ist. Typen, die vergleichbar sind, können in eine Liste eingefügt und sortiert werden.
+\index{vergleichbar}
 
-data structure
-:   A collection of related values, often organized in lists,
-    dictionaries, tuples, etc.
-\index{data structure}
+Datenstruktur
+:   Eine Sammlung zusammengehöriger Werte, oft organisiert in Listen, Wörterbüchern, Tupeln usw.
+\index{Datenstruktur}
 
 DSU
-:   Abbreviation of "decorate-sort-undecorate", a pattern that involves
-    building a list of tuples, sorting, and extracting part of the
-    result.
-\index{DSU pattern}
+:   Abkürzung für „Decorate-Sort-Undecorate“, ein Muster, bei dem eine Liste von Tupeln erstellt, sortiert und ein Teil des Ergebnisses extrahiert wird.
+\index{DSU-Muster}
 
-gather
-:   The operation of assembling a variable-length argument tuple.
-\index{gather}
+hashbar
+:   Ein Datentyp, der eine Hash-Funktion hat. Unveränderliche Typen wie Ganzzahlen, Fließkommazahlen und Zeichenketten sind hashfähig; veränderliche Typen wie Listen und Wörterbücher können nicht gehasht werden.
+\index{hashbar}
 
-hashable
-:   A type that has a hash function. Immutable types like integers,
-    floats, and strings are hashable; mutable types like lists and
-    dictionaries are not.
-\index{hashable}
+Singleton
+:   Eine Liste (oder andere Sequenz) mit einem einzelnen Element.
+\index{Singleton}
 
-scatter
-:   The operation of treating a sequence as a list of arguments.
-\index{scatter}
+Tupel
+:   Eine unveränderliche Folge von Elementen.
+\index{Tupel}
 
-shape (of a data structure)
-:   A summary of the type, size, and composition of a data structure.
-\index{shape}
+Tupelzuweisung
+:   Eine Zuweisung mit einer Sequenz auf der rechten Seite und einem Tupel von
+    Variablen auf der linken Seite. Die rechte Seite wird ausgewertet und dann werden ihre
+    Elemente den Variablen auf der linken Seite zugewiesen.
+\index{Tupelzuweisung}
+\index{Zuweisung!Tupel}
 
-singleton
-:   A list (or other sequence) with a single element.
-\index{singleton}
+Übungen
+-------
 
-tuple
-:   An immutable sequence of elements.
-\index{tuple}
+**Übung 1: Das vorherige Programm soll auf folgende Weise überarbeitet werden: Die „From“-Zeilen sollen gelesen und geparst werden, um im Folgenden die Adressen aus der Zeile zu extrahieren. Dabei soll mit Hilfe eines Wörterbuchs die Anzahl der Nachrichten von jeder Person gezählt werden.**
 
-tuple assignment
-:   An assignment with a sequence on the right side and a tuple of
-    variables on the left. The right side is evaluated and then its
-    elements are assigned to the variables on the left.
-\index{tuple assignment}
-\index{assignment!tuple}
-
-Exercises
----------
-
-**Exercise 1: Revise a previous program as follows: Read and parse the
-"From " lines and pull out the addresses from the line. Count the number
-of messages from each person using a dictionary.**
-
-**After all the data has been read, print the person with the most commits
-by creating a list of (count, email) tuples from the dictionary. Then
-sort the list in reverse order and print out the person who has the most
-commits.**
+**Nachdem alle Daten gelesen wurden, soll die Person mit den meisten Nachrichten ausgegeben werden, indem eine Liste von `(count, email)`-Tupeln aus dem Wörterbuch erstellt wird. Dann muss die Liste in umgekehrter Reihenfolge sortiert und schließlich die Person mit den meisten Nachrichten ausgegeben werden.**
 
 ~~~~
 Sample Line:
@@ -638,11 +488,7 @@ Enter a file name: mbox.txt
 zqian@umich.edu 195
 ~~~~
 
-**Exercise 2: This program counts the distribution of the hour of the day
-for each of the messages. You can pull the hour from the "From " line by
-finding the time string and then splitting that string into parts using
-the colon character. Once you have accumulated the counts for each hour,
-print out the counts, one per line, sorted by hour as shown below.**
+**Übung 2: Es solle ein Programm geschrieben werden, welches die Häufigkeit von Nachrichten pro Tageszeit (ganze Stunden) ermittelt. Die Stunden sollen aus der „From“-Zeile extrahiert werden, indem die Uhrzeit-Zeichenfolge gefunden und diese Zeichenfolge dann anhand des Doppelpunkts in Teile zergliedert wird. Sobald die Nachrichtenhäufigkeit für jede Stunde gesammelt wurde, sollen diese wie weiter unten gezeigt ausgegeben werden (eine pro Zeile, sortiert nach Stunde).**
 
 ~~~~
 python timeofday.py
@@ -661,15 +507,8 @@ Enter a file name: mbox-short.txt
 19 1
 ~~~~
 
-**Exercise 3: Write a program that reads a file and prints the
-*letters* in decreasing order of frequency. Your program
-should convert all the input to lower case and only count the letters
-a-z. Your program should not count spaces, digits, punctuation, or
-anything other than the letters a-z. Find text samples from several
-different languages and see how letter frequency varies between
-languages. Compare your results with the tables at
-<https://wikipedia.org/wiki/Letter_frequencies>.**
+**Übung 3: Es soll ein Programm geschrieben werden, das eine Datei liest und die *Buchstaben* in absteigender Reihenfolge der Häufigkeit ausgibt. Das Programm sollte alle Eingaben in Kleinbuchstaben umwandeln und nur die Buchstaben a-z zählen. Es soll keine Leerzeichen, Ziffern, Interpunktionszeichen oder irgendetwas anderes als die Buchstaben a-z zählen. Dann sollen Textbeispiele aus verschiedenen Sprachen als Eingabe dienen und analyisiert werden, wie die Buchstabenhäufigkeit zwischen den Sprachen variiert. Schließlich sollen die Ergebnisse mit den Tabellen auf <https://wikipedia.org/wiki/Letter_frequencies> verglichen werden.**
 
-\index{letter frequency}
-\index{frequency!letter}
+\index{Buchstabenhäufigkeit}
+\index{Häufigkeit!Buchstaben}
 

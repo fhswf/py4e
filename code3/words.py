@@ -1,4 +1,4 @@
-name = input('Enter file:')
+name = input('Welche Datei?:')
 handle = open(name, 'r')
 counts = dict()
 
@@ -14,4 +14,4 @@ for word, count in list(counts.items()):
         bigword = word
         bigcount = count
 
-print(bigword, bigcount)
+print(f'Das Wort "{bigword}" kommt {bigcount}-mal vor')
