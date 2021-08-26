@@ -160,10 +160,12 @@ Es stellt sich heraus, dass `class` eines von Pythons *Schlüsselwörtern* (engl
 Python reserviert 35 Schlüsselwörter:
 
 ~~~~
-and     as          assert      async       await       break       class       continue    def
-del     elif        else        except      False       finally     for         from        global
-if      import      in          is          lambda      None        nonlocal    not         or
-pass    raise       return      True        try         while       with        yield
+and         as          assert      async       await       break
+class       continue    def         del         elif        else
+except      False       finally     for         from        global
+if          import      in          is          lambda      None
+nonlocal    not         or          pass        raise       return
+True        try         while       with        yield
 ~~~~
 Man sollte diese Liste griffbereit halten. Wenn sich der Interpreter über einen der Variablennamen beschwert und wir nicht wissen, warum, sehen wir nach, ob er auf dieser Liste steht.
 
