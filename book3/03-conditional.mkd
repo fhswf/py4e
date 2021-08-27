@@ -124,16 +124,25 @@ if x > 0 :
 
 Der boolesche Ausdruck nach der `if`-Anweisung wird als *Bedingung* bezeichnet. Wir beenden die `if`-Anweisung mit einem Doppelpunkt (:) und die Zeile(n) nach der if-Anweisung werden eingerückt.
 
-![If Logic](height=1.5in@../images/de/if)
+![Ablaufdiagramm einer If-Anweisung](height=1.5in@../images/de/if)
 
 
 Wenn die logische Bedingung wahr ist, dann wird die eingerückte Anweisung ausgeführt. Wenn die logische Bedingung falsch ist, wird die eingerückte Anweisung übersprungen.
+Die *Einrückung* erfüllt hier **zwei** wesentliche Aufgaben im Programm.
+Erstens: Sie macht das Programm besser lesbar. Man erkennt sofort, dass die Anweisung `print...` „unterhalb“ der Überprüfung mit `if` steht. Sie stehet also nicht auf gleicher *Ebene* wie das `if` selbst, sondern gehört sichtbar nur zu dem „Wahr-Teil“ der Überprüfung.
+Zweitens: Statt der einen `print`-Anweisung könnten an der gleichen Stelle mehrere Anweisungen, und sogar wieder neue `if`-Anweisungen stehen. Alle Anweisungen mit der gleichen Einrückungstiefe gehören zur gleichen *Ebene* des Programms.
 
+Die Verwendung von Einrückungen führt schnell zu Syntaxfehlern. Wenn Sie einmal nicht genau aufpassen und ein Leerzeichen zu viel oder zu wenig, oder auch ein Tab-Zeichen, statt mehrerer Leerzeichen verwenden, wird Python sich beschweren. Allerdings lassen sich diese Fehler sehr schnell finden. Außerdem helfen Ihnen die Editoren und Werkzeuge, die Sie zum Programmieren verwenden, die Einrückungstiefe beizubehalten.
+
+Viele andere Programmiersprachen verwenden Klammern, um Blöcke von Anweisungen zusammenzufassen. Dies erscheint auf den ersten Blick logischer, als mit Leerzeichen und Zeilen zu arbeiten. Klammern haben aber zwei große Nachteile. Zum einen benötigt man zusätzliche Zeichen die den Programmcode verlängern und unübersichtlicher machen. Zum anderen ist man, wenn man Klammern verwendet, nicht dazu gezwungen, eine gute Optische Aufteilung des Codes in Ebenen einzuhlten. Gerade Programmieranfänger halten sich oft nicht an Formatierungsregeln und leider führt das oft zu logischen Fehlern, die nur sehr schwierig aufzuspüren sind.
+
+\index{Einrückung}
+\index{Block!Einrückung}
 \index{Bedingung}
 \index{zusammengesetzte Anweisung}
 \index{Anweisung!zusammengesetzte}
 
-`if`-Anweisungen haben den gleichen Aufbau wie Funktionsdefinitionen oder `for`-Schleifen^[Funktionen werden wir in Kapitel 4 und Schleifen in Kapitel 5 kennenlernen.] Die Anweisung besteht aus einer Kopfzeile, die mit einem Doppelpunkt (`:`) endet, gefolgt von einem eingerückten Block. Anweisungen wie diese werden *zusammengesetzte Anweisungen* genannt, weil sie sich über mehr als eine Zeile erstrecken.
+Der Aufbau von `if`-Anweisungen ähnelt dem von Funktionsdefinitionen oder `for`-Schleifen^[Funktionen werden wir in Kapitel 4 und Schleifen in Kapitel 5 kennenlernen.] Die Anweisung besteht aus einer Kopfzeile, die mit einem Doppelpunkt (`:`) endet, gefolgt von einem eingerückten Block. Anweisungen wie diese werden *zusammengesetzte Anweisungen* genannt, weil sie sich über mehr als eine Zeile erstrecken.
 
 Es gibt keine Begrenzung für die Anzahl der Anweisungen, die im Rumpf erscheinen können, aber es muss mindestens eine geben. Gelegentlich ist es nützlich, einen Block ohne Anweisungen zu haben (normalerweise als Platzhalter für Code, den wir noch nicht geschrieben haben). In diesem Fall können wir die Anweisung `pass` verwenden, die nichts tut.
 
@@ -145,14 +154,14 @@ if x < 0 :
     pass          # need to handle negative values!
 ~~~~
 
-Wenn wir im Python-Interpreter eine `if`-Anweisung eingeben, ändert sich die Eingabeaufforderung von drei Chevrons zu drei Punkten, um anzuzeigen, dass wir uns in der Mitte eines Anweisungsblocks befinden, wie unten gezeigt:
+Wenn wir im Python-Interpreter eine `if`-Anweisung eingeben, ändert sich die Eingabeaufforderung von drei Größer-Zeichen zu drei Punkten, um anzuzeigen, dass wir uns in der Mitte eines Anweisungsblocks befinden, wie unten gezeigt:
 
 ~~~~ {.python}
 >>> x = 3
 >>> if x < 10:
-...    print('Small')
+...    print('x ist klein')
 ...
-Small
+x ist klein
 >>>
 ~~~~
 
@@ -161,10 +170,10 @@ Wenn wir den Python-Interpreter verwenden, müssen wir am Ende eines Blocks eine
 ~~~~ {.python}
 >>> x = 3
 >>> if x < 10:
-...    print('Small')
-... print('Done')
+...    print('x ist klein')
+... print('Fertig')
   File "<stdin>", line 3
-    print('Done')
+    print('Fertig')
         ^
 SyntaxError: invalid syntax
 ~~~~
@@ -182,14 +191,14 @@ Eine zweite Form der `if`-Anweisung ist die *alternative Ausführung*, bei der e
 
 ~~~~ {.python}
 if x%2 == 0 :
-    print('x is even')
+    print('x ist gerade')
 else :
-    print('x is odd')
+    print('x ist ungerade')
 ~~~~
 
 Wenn der Rest bei der Division von `x` durch 2 gleich 0 ist, dann wissen wir, dass `x` gerade ist, und das Programm gibt eine entsprechende Meldung aus. Wenn die Bedingung falsch ist, wird der zweite Block von Anweisungen ausgeführt.
 
-![If-Then-Else Logic](height=1.5in@../images/if-else)
+![Ablaufdiagramm einer If-Else-Anweisung](height=1.5in@../images/de/if-else)
 
 Da die Bedingung entweder wahr oder falsch sein muss, wird genau eine der Alternativen ausgeführt. Die Alternativen werden *Verzweigungen* genannt, weil sie Verzweigungen im Ablauf der Ausführung sind.
 
@@ -205,11 +214,11 @@ Manchmal gibt es mehr als zwei Möglichkeiten und wir brauchen mehr als zwei Ver
 
 ~~~~ {.python}
 if x < y:
-    print('x is less than y')
+    print('x ist kleiner als y')
 elif x > y:
-    print('x is greater than y')
+    print('x ist groesser als y')
 else:
-    print('x and y are equal')
+    print('x und y sind gleich')
 ~~~~
 
 `elif` ist eine Abkürzung für „else if“. Auch hier wird genau eine Verzweigung ausgeführt.
@@ -223,11 +232,11 @@ Es gibt keine Begrenzung für die Anzahl der `elif`-Anweisungen. Wenn es eine `e
 
 ~~~~ {.python}
 if choice == 'a':
-    print('Bad guess')
+    print('Nicht richtig!')
 elif choice == 'b':
-    print('Good guess')
+    print('Richtig!')
 elif choice == 'c':
-    print('Close, but not correct')
+    print('Fast, aber nicht richtig!')
 ~~~~
 
 Jede Bedingung wird der Reihe nach geprüft. Wenn die erste falsch ist, wird die nächste geprüft, und so weiter. Wenn eine von ihnen wahr ist, wird der entsprechende Zweig ausgeführt und die Anweisung endet. Auch wenn mehr als eine Bedingung wahr ist, wird nur der erste wahre Zweig ausgeführt.
@@ -242,12 +251,12 @@ Eine Bedingung kann auch in eine andere verschachtelt werden. Wir hätten das Be
 
 ~~~~ {.python}
 if x == y:
-    print('x and y are equal')
+    print('x und y sind gleich')
 else:
     if x < y:
-        print('x is less than y')
+        print('x it kleiner als y')
     else:
-        print('x is greater than y')
+        print('x ist groesser als y')
 ~~~~
 
 Die äußere Bedingung enthält zwei Verzweigungen. Der erste Zweig enthält eine einfache Anweisung. Der zweite Zweig enthält eine weitere `if`-Anweisung, die ihrerseits zwei Zweige hat. Diese beiden Zweige sind beide einfache Anweisungen, obwohl sie auch bedingte Anweisungen hätten sein können.
@@ -264,7 +273,7 @@ if 0 < x:
         print('x is a positive single-digit number.')
 ~~~~
 
-Die `print`-Anweisung wird nur ausgeführt, wenn wir es an beiden Bedingungen vorbei schaffen, also können wir den gleichen Effekt mit dem `and`-Operator erzielen:
+Die `print`-Anweisung wird nur ausgeführt, wenn wir es an beiden Bedingungen vorbeischaffen, also können wir den gleichen Effekt mit dem `and`-Operator erzielen:
 
 ~~~~ {.python}
 if 0 < x and x < 10:
@@ -274,21 +283,20 @@ if 0 < x and x < 10:
 Abfangen von Ausnahmen mittels try und except
 ---------------------------------------------
 
-Vorhin haben wir ein Codesegment gesehen, in dem wir die Funktionen `input` und `int` verwendet haben, um eine vom Benutzer eingegebene Ganzzahl zu lesen und zu analysieren. Wir haben auch gesehen, wie tückisch dies sein kann:
+Im vorherigen Kapitel haben wir ein Codesegment gesehen, in dem wir die Funktionen `input` und `int` verwendet haben, um eine vom Benutzer eingegebene Ganzzahl zu lesen und zu analysieren. Wir haben auch gesehen, wie tückisch dies sein kann:
+
 
 ~~~~ {.python}
->>> prompt = "What is the air velocity of an unladen swallow?\n"
 >>> speed = input(prompt)
-What is the air velocity of an unladen swallow?
-What do you mean, an African or a European swallow?
+Was ist die Fluggeschwindigkeit einer unbeladenen Schwalbe?
+Meinst du eine europäische oder eine afrikanische Schwalbe?
 >>> int(speed)
 ValueError: invalid literal for int() with base 10:
->>>
 ~~~~
 
 Wenn wir diese Anweisungen im Python-Interpreter ausführen, erhalten wir eine neue Eingabeaufforderung vom Interpreter, denken „ups“ und machen mit der nächsten Anweisung weiter.
 
-Wenn wir diesen Code jedoch in ein Python-Skript einfügen und dieser Fehler auftritt, bleibt unser Skript sofort mit einem Traceback stehen. Es führt die folgende Anweisung nicht aus.
+Wenn wir diesen Code jedoch in ein Python-Skript einfügen und dieser Fehler auftritt, bleibt unser Skript sofort mit einem *Traceback* stehen. Es führt die folgende Anweisung nicht aus.
 
 \index{Traceback}
 
@@ -296,13 +304,16 @@ Hier ist ein Beispielprogramm zur Umrechnung einer Fahrenheit-Temperatur in eine
 
 \VerbatimInput{../code3/fahren.py}
 
-Wenn wir diesen Code ausführen und ihm eine ungültige Eingabe geben, bricht er einfach mit einer unfreundlichen Fehlermeldung ab:
+Probieren wir diesen Code einmal mit einer korrekten Eingabe, z.B. mit 99 °F:
 
 ~~~~
 python fahren.py
-Enter Fahrenheit Temperature:72
-22.22222222222222
+Gib die Temperatur in Fahrenheit ein: 99
+37.22222222222222
 ~~~~
+
+Das sieht korrekt aus.
+Wenn wir aber nun diesen Code erneut ausführen und ihm eine ungültige Eingabe geben, bricht er einfach mit einer unfreundlichen Fehlermeldung ab:
 
 ~~~~
 python fahren.py
@@ -313,7 +324,7 @@ Traceback (most recent call last):
 ValueError: could not convert string to float: 'fred'
 ~~~~
 
-Es gibt eine in Python eingebaute Struktur für die bedingte Ausführung, um diese Arten von erwarteten und unerwarteten Fehlern zu behandeln, die „try/except“ genannt wird. Die Idee von `try` und `except` ist, dass wir wissen, dass eine Folge von Anweisungen ein Problem haben könnte und wir einige Anweisungen hinzufügen möchten, die ausgeführt werden, wenn ein Fehler auftritt. Diese zusätzlichen Anweisungen (der except-Block) werden ignoriert, wenn kein Fehler auftritt.
+Es gibt eine in Python eingebaute Struktur für die bedingte Ausführung, um diese Arten von erwarteten und unerwarteten Fehlern zu behandeln, die „try/except“ genannt wird. Die Idee von `try` und `except` ist, dass wir wissen, dass eine Folge von Anweisungen ein Problem haben könnte und wir einige Anweisungen hinzufügen möchten, die ausgeführt werden, wenn ein Fehler auftritt. Diese zusätzlichen Anweisungen (der *except-Block*) werden ignoriert, wenn kein Fehler auftritt.
 
 Man kann sich die `try`- und `except`-Funktion in Python als eine „Versicherungspolice“ für eine Folge von Anweisungen vorstellen.
 
@@ -325,14 +336,14 @@ Python beginnt mit der Ausführung der Anweisungsfolge im `try`-Block. Wenn alle
 
 ~~~~
 python fahren2.py
-Enter Fahrenheit Temperature:72
-22.22222222222222
+Gib die Temperatur in Fahrenheit ein: 99
+37.22222222222222
 ~~~~
 
 ~~~~
 python fahren2.py
-Enter Fahrenheit Temperature:fred
-Please enter a number
+Gib die Temperatur in Fahrenheit ein: fred
+Bitte gib eine Zahl ein!
 ~~~~
 
 \index{Ausnahme}
@@ -344,9 +355,9 @@ Abgekürzte Auswertung logischer Ausdrücke
 
 \index{verkürzte Auswertung}\index{short circuit}
 
-Wenn Python einen logischen Ausdruck wie `x >= 2 and (x/y) > 2` verarbeitet, wertet es den Ausdruck von links nach rechts aus. Aufgrund der Definition von `and` ist, wenn `x` kleiner als 2 ist, der Ausdruck `x >= 2` `False` und somit ist der gesamte Ausdruck `False`, unabhängig davon, ob `(x/y) > 2` als `True` oder `False` ausgewertet wird.
+Wenn Python einen logischen Ausdruck wie `x >= 2 and (x/y) > 2` verarbeitet, wertet es den Ausdruck von links nach rechts aus. Aufgrund der Definition von `and` ist, wenn `x` kleiner als 2 ist, der Ausdruck `x >= 2` logisch Falsch (also gleich `False`) und somit ist der gesamte Ausdruck `False`, unabhängig davon, ob `(x/y) > 2` als `True` oder `False` ausgewertet wird.
 
-Wenn Python feststellt, dass durch die Auswertung des restlichen Teils eines logischen Ausdrucks nichts mehr zu gewinnen ist, bricht es die Auswertung ab und führt die Berechnungen im restlichen Teil des logischen Ausdrucks nicht aus. Wenn die Auswertung eines logischen Ausdrucks stoppt, weil der Gesamtwert bereits bekannt ist, bezeichnet man dies als *abgekürzte Auswertung* (englisch *short-circuit evaluation* oder *short-circuiting*).
+Wenn Python feststellt, dass durch die Auswertung des restlichen Teils eines logischen Ausdrucks sich am Endergebnis nichts mehr ändern wird, bricht es die Auswertung ab und führt die Berechnungen im restlichen Teil des logischen Ausdrucks nicht aus. Wenn die Auswertung eines logischen Ausdrucks stoppt, weil der Gesamtwert bereits bekannt ist, bezeichnet man dies als *abgekürzte Auswertung* (englisch *short-circuit evaluation* oder *short-circuiting*).
 
 \index{Wächter-Muster}
 \index{Muster!Wächter}
@@ -371,7 +382,8 @@ ZeroDivisionError: division by zero
 >>>
 ~~~~
 
-Die dritte Berechnung schlug fehl, weil Python `(x/y)` auswertete und `y` Null war, was einen Laufzeitfehler (`division by zero`) verursacht. Aber das erste und das zweite Beispiel schlugen *nicht* fehl, weil der erste Teil dieser Ausdrücke `x >= 2` zu `False` ausgewertet wurde, sodass `(x/y)` aufgrund der *abgekürzten Auswertung* nie ausgeführt wurde und es keinen Fehler gab.
+Die dritte Berechnung schlug fehl, weil Python `(x/y)` auswertete und `y` null war, was einen Laufzeitfehler (`division by zero`) verursacht. Eine Division durch null ist mathematisch nicht definiert, Python *kann* die Berechnung also nicht durchführen (und Sie wissen ja, dass Python nicht „rät“).
+Allerdings schlug das zweite Beispiel *nicht* fehl, obwohl hier auch `(x/y) > 2` stand und `y` zu dem Zeitpunkt den Wert `0` hatte. Dass es zu keinem Fehler kam, liegt daran, dass der erste Teil dieses Ausdrucks `x >= 2` zu `False` ausgewertet wurde, sodass `(x/y)` aufgrund der *abgekürzten Auswertung* nie ausgeführt wurde und es damit keinen Fehler gab.
 
 Wir können den logischen Ausdruck so konstruieren, dass wir strategisch eine *Schutz*-Auswertung direkt vor der Auswertung platzieren, die einen Fehler verursachen könnte, wie folgt:
 
@@ -384,6 +396,18 @@ False
 >>> y = 0
 >>> x >= 2 and y != 0 and (x/y) > 2
 False
+>>>
+~~~~
+
+Im ersten logischen Ausdruck ist `x >= 2` `False`, also stoppt die Auswertung am ersten `and`. Im zweiten logischen Ausdruck ist `x >= 2` `True`, aber `y != 0` ist `False`, also erreichen wir nie `(x/y)`.
+Die Bedingung `y != 0` dient hier also als *Schutz*, um sicherzustellen, dass wir `(x/y)` nur ausführen, wenn `y` ungleich Null ist.
+
+Unbedingt beachten müssen wir allerdings die Auswertung von links nach rechts.
+Im folgenden Beispiel folgt der Schutz-Klausel `y != 0` *nach* der `(x/y)` Berechnung, sodass der Ausdruck mit einem Fehler fehlschlägt.
+
+~~~~ {.python}
+>>> x = 6
+>>> y = 0
 >>> x >= 2 and (x/y) > 2 and y != 0
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -391,11 +415,6 @@ ZeroDivisionError: division by zero
 >>>
 ~~~~
 
-Im ersten logischen Ausdruck ist `x >= 2` `False`, also stoppt die Auswertung am `and`. Im zweiten logischen Ausdruck ist `x >= 2` `True`, aber `y != 0` ist `False`, also erreichen wir nie `(x/y)`.
-
-Im dritten logischen Ausdruck folgt `y != 0` *nach* der `(x/y)` Berechnung, sodass der Ausdruck mit einem Fehler fehlschlägt.
-
-Im zweiten Ausdruck sagen wir, dass `y != 0` als *Schutz* dient, um sicherzustellen, dass wir `(x/y)` nur ausführen, wenn `y` ungleich Null ist.
 
 Debugging
 ---------
@@ -485,58 +504,58 @@ abgekürzte Auswertung
 **Übung 1: Schreiben Sie Ihr Programm zur Lohnberechnung so um, dass ein Mitarbeiter das 1,5-fache des Stundensatzes für Arbeitsstunden über 40 Stunden erhält.**
 
 ~~~~
-Enter Hours: 45
-Enter Rate: 10
-Pay: 475.0
+Anzahl Arbeitsstunden: 45
+Stundenlohn: 10
+Monatsgehalt: 475.0
 ~~~~
 
 **Übung 2: Schreiben Sie Ihr Programm zur Lohnberechnung unter Verwendung von `try` und `except` so um, dass Ihr es nichtnumerische Eingaben elegant behandelt, indem es eine Meldung ausgibt und das Programm beendet. Im Folgenden sehen Sie zwei beispielhafte Ausführungen des Programms:**
 
 ~~~~
-Enter Hours: 20
-Enter Rate: nine
-Error, please enter numeric input
+Anzahl Arbeitsstunden: 20
+Stundenlohn: neun
+Fehler, bitte gib eine Zahl ein
 ~~~~
 
 ~~~~
-Enter Hours: forty
-Error, please enter numeric input
+Anzahl Arbeitsstunden: vierzig
+Fehler, bitte gib eine Zahl ein
 ~~~~
 
 **Übung 3: Schreiben Sie ein Programm, das nach einem Wert zwischen 0,0 und 1,0 fragt. Wenn die Punktzahl außerhalb des Bereichs liegt, geben Sie eine Fehlermeldung aus. Wenn die Punktzahl zwischen 0,0 und 1,0 liegt, geben Sie eine Note anhand der folgenden Tabelle aus:**
 
 ~~~~
- Score   Grade
->= 0.9     A
->= 0.8     B
->= 0.7     C
->= 0.6     D
- < 0.6     F
+ Punkte   Note
+>= 0.9     1
+>= 0.8     2
+>= 0.7     3
+>= 0.6     4
+ < 0.6     5
 ~~~~
 
 ~~~~
 Enter score: 0.95
-A
+1
 ~~~~
 
 ~~~~
 Enter score: perfect
-Bad score
+Falsche Punkanzahl
 ~~~~
 
 ~~~~
 Enter score: 10.0
-Bad score
+Falsche Punkanzahl
 ~~~~
 
 ~~~~
 Enter score: 0.75
-C
+3
 ~~~~
 
 ~~~~
 Enter score: 0.5
-F
+5
 ~~~~
 
 Führen Sie das Programm wiederholt wie oben gezeigt aus, um die verschiedenen Werte für die Eingabe zu testen.
