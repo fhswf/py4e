@@ -1,0 +1,31 @@
+
+digraph G {
+  node [fontname = "Arial"];
+  edge [fontname = "Arial"];
+  plines = lines;
+  
+
+  nodestart [style=invisible];
+  nodeendif [style=invisible];
+  nodeend [style=invisible];
+  
+  nodeif [
+    label = "x > 0";
+    shape = diamond;
+  ];
+  
+  nodetrue [
+    label = "x ist positiv";
+    shape = rect;
+  ];
+
+  nodestart -> nodeif;
+  nodeif -> nodetrue [ label = "True" ];
+  nodetrue -> nodeendif
+  nodeif -> nodeendif
+  nodeendif -> nodeend
+  {
+    rank=same;
+    nodeif; nodetrue;
+  }
+}

@@ -33,7 +33,7 @@ Der Aufbau eines Computers
 
 Bevor wir anfangen, die Sprachen zu lernen, mit der wir Computer *programmieren* können, sollten wir uns ein wenig damit beschäftigen, wie Computer aufgebaut sind. Wenn wir unseren Computer oder unser Handy auseinandernehmen und tief ins Innere schauen würden, würden wir die folgenden Teile finden:
 
-![Aufbau eines Computers](height=1.75in@../images/_arch)
+![Aufbau eines Computers](height=1.75in@../images/de/arch)
 
 Die wichtigsten Definitionen dieser Teile lauten wie folgt:
 

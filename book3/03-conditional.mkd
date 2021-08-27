@@ -2,6 +2,16 @@
 Bedingte Ausführung
 ===================
 
+In den vorherigen Kapiteln haben wir den Python Interpreter eher wie einen Taschenrechner benutzt. Wir haben Werte definiert oder eingegeben, den Werten Namen gegeben und Berechnungen mit diesen Werten angestellt.
+Vieles, was Computerprogramme ausmacht, kann man damit nicht erreichen.
+
+Ein wichtiges Konzept, das uns fehlt, ist der sogenannte *Kontrollfluss*.
+Dabei handelt es sich, grob gesagt, um das Steuern von Abläufen im Programm.
+Nehmen wir an, wir fragen den Benutzer nach der Eingabe eines Zeichens und nur wenn das Zeichen kein `q` (für *quit*) ist, soll das Programm weiter laufen.
+
+Wie wir die Eingabe erledigen, kennen wir bereits, nicht aber wie wir feststellen können, ob das gelesene Zeichen ein `q`ist. Außerdem wissen wir noch nicht, wie man die Ausführung bestimmter Anweisungen von dem Ergebnis einer solchen Überprüfung abhängig macht.
+Glücklicherweise brauchen wir dazu nicht viel Neues und nach dem Lesen der folgenden Seiten wird ihnen klar sein, wie man solche Aufgaben mit Python erledigt.    
+
 Boolesche Ausdrücke
 -------------------
 
@@ -10,7 +20,10 @@ Boolesche Ausdrücke
 \index{logischer Operator}
 \index{Operator!logischer}
 
-Ein *boolescher Ausdruck* ist ein Ausdruck, der entweder wahr oder falsch ist. Die folgenden Beispiele verwenden den Operator `==`, der zwei Operanden vergleicht und `True` erzeugt, wenn sie gleich sind, und sonst `False`:
+Um eine bedingte Ausführung programmieren zu können, müssen wir zunächst Bedingungen überprüfen.
+Dazu benötigen wir eine spezielle Form von Ausdrücken, die sich nicht wie bisher gesehen, zu einem allgemeinen Wert (Zahl, Zeichenkette, etc.) ableiten lassen, sondern zu einem *Wahrheitswert*.
+
+Einen solchen Ausdruck, der im Ergebnis entweder wahr oder falsch ist, nennt man *booleschen Ausdruck*. Die folgenden Beispiele verwenden den Operator `==`, der zwei Werte (die sogenannten *Operanden*) vergleicht und `True` erzeugt, wenn sie gleich sind, und sonst `False`:
 
 ~~~~ {.python .trinket}
 >>> 5 == 5
@@ -19,7 +32,7 @@ True
 False
 ~~~~
 
-`True` und `False` sind spezielle Werte, die zur Klasse `bool` gehören; sie sind keine Zeichenketten:
+`True` und `False` sind spezielle Werte, die zur Klasse `bool` gehören; sie sind keine Zeichenketten, sondern die beiden logischen Werte *wahr* und *falsch*:
 
 \index{True (Wahrheitswert)}
 \index{False (Wahrheitswert)}
@@ -35,21 +48,28 @@ False
 <class 'bool'>
 ~~~~
 
-Der Operator `==` ist einer der *Vergleichsoperatoren*; die anderen sind:
+Der Operator `==` ist ein *Vergleichsoperator*. Wenn man einen solchen Operator zwei Operanden vergleicht, erhält man einen Wahrheitswert zurück. Neben dem Vergleich auf *Gleichheit* gibt es noch einige weitere *Vergleichsoperatoren*. Diese sind:
 
 ~~~~ {.python}
-x != y               # x is not equal to y
-x > y                # x is greater than y
-x < y                # x is less than y
-x >= y               # x is greater than or equal to y
-x <= y               # x is less than or equal to y
-x is y               # x is the same as y
-x is not y           # x is not the same as y
+x != y               # x ist ungleich y
+x > y                # x ist groesser als y
+x < y                # x ist kleiner als y
+x >= y               # x ist groesser oder gleich y
+x <= y               # x ist kleiner oder gleich y
+x is y               # x bezeichnet das selbe Objekt wie y
+x is not y           # x bezeichnet nicht das selbe Objekt wie y
 ~~~~
 
 Obwohl Ihnen diese Operationen wahrscheinlich bekannt sind, unterscheiden sich die Python-Symbole von den mathematischen Symbolen für dieselben Operationen. Ein häufiger Fehler ist die Verwendung eines einfachen Gleichheitszeichens (`=`) anstelle eines doppelten Gleichheitszeichens (`==`). Wir müssen daran denken, dass `=` ein Zuweisungsoperator und `==` ein Vergleichsoperator ist. So etwas wie `=<` oder `=>` gibt es nicht.
 
-Übersetzt mit www.DeepL.com/Translator (kostenlose Version)
+Etwas unklar mag Ihnen zum jetzigen Zeitpunkt der Unterschied zwischen `==` und `is` erscheinen.
+Um das zu erklären, muss man etwas mehr über die Funktionsweise der Programmiersprache selbst verstehen.
+Kurz gesagt, vergleicht `==` Werte und `is` Objekte.
+Was bedeutet das? Nun, unterschiedliche Objekte, also z.B. Daten im Speicher können gleiche Werte haben.
+Ganzzahl Objekte mit einem bestimmten Wert, sagen wir `1234`, kann es beispielsweise mehrfach, unter verschiedenen Namen im Programm geben.
+Wenn einer dieser Werte als `a`, der andere als `b` benannt ist, wäre `a is b` falsch, denn wir haben es mit unterschiedlichen Objekten zu tun. `a == b` ist hingegen wahr, schließlich tragen `a` und `b` den gleichen Wert.
+
+Zu Beginn, werden wir häufiger `==`, aber fast nie `is` verwenden. Der Vergleich auf Objektidentität ist eher nur für einige  „Spezialfälle“ wichtig. In den meisten Fällen wollen wir Werte vergleichen.
 
 \index{Vergleichsoperator}
 \index{Operator!Vergleich}
@@ -104,7 +124,7 @@ if x > 0 :
 
 Der boolesche Ausdruck nach der `if`-Anweisung wird als *Bedingung* bezeichnet. Wir beenden die `if`-Anweisung mit einem Doppelpunkt (:) und die Zeile(n) nach der if-Anweisung werden eingerückt.
 
-![If Logic](height=1.5in@../images/if)
+![If Logic](height=1.5in@../images/de/if)
 
 
 Wenn die logische Bedingung wahr ist, dann wird die eingerückte Anweisung ausgeführt. Wenn die logische Bedingung falsch ist, wird die eingerückte Anweisung übersprungen.

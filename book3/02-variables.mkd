@@ -485,9 +485,9 @@ Als Programmierer wissen wir aber meistens, welche Art von Eingabe wir erwarten.
 Wenn wir also den Benutzer bitten, eine Zahl einzugeben, können wir die resultierende Zeichenkette als ganze Zahl interpretieren. Das geht mit einer Typumwandlungsfunktion `int()` in `int` umzuwandeln:
 
 ~~~~ {.python}
->>> prompt = 'Wie hoch ist die Fluggeschwindigkeit einer unbeladenen Schwalbe??\n'
+>>> prompt = 'Was ist die Fluggeschwindigkeit einer unbeladenen Schwalbe??\n'
 >>> speed = input(prompt)
-Wie hoch ist die Fluggeschwindigkeit einer unbeladenen Schwalbe?
+Was ist die Fluggeschwindigkeit einer unbeladenen Schwalbe?
 17
 >>> int(speed)
 17
@@ -497,7 +497,7 @@ Wenn der Benutzer jedoch etwas anderes als eine Ziffernfolge eingibt, erhalten w
 
 ~~~~ {.python}
 >>> speed = input(prompt)
-Wie hoch ist die Fluggeschwindigkeit einer unbeladenen Schwalbe?
+Was ist die Fluggeschwindigkeit einer unbeladenen Schwalbe?
 Meinst du eine europäische oder eine afrikanische Schwalbe?
 >>> int(speed)
 ValueError: invalid literal for int() with base 10:
