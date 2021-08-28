@@ -2,6 +2,12 @@
 Bezeichner, Ausdrücke und Anweisungen
 ====================================
 
+In diesem Kapitel schauen wir uns an, wie man *Werte* im Programm verwenden kann.
+Wir werden sehen, dass alles, was wir in Python zu einem Wert *auswerten* können ein Ausdruck ist.
+Dazu zählen fest im Programm angegebene Werte, die sogenannten *Konstanten*, aber auch komplexere Ausdrücke, bei denen mehrere Teile durch *Operatoren* verknüpft sind.
+Wir werden sehen, dass wir mit einer *Zuweisung* einzelnen Werten einen Namen geben können und diese Werte im Programm dann über Ihren *Bezeichner* verwenden können.
+
+
 Werte und Datentypen
 --------------------
 
@@ -63,7 +69,7 @@ Was ist mit Werten wie `17` und `3.2`? Sie sehen aus wie Zahlen, stehen aber in 
 
 Es sind Zeichenketten.
 
-Wenn man eine große Ganzzahl eingeben, könnte man versucht sein, Tausender-Trennzeichen zu verwenden. In Ländern, die den Dezimalpunkt verwenden werden zum abgrenzen der Tausenderstellen Kommata benutzt. Wenn wir dies in Python tun, also etwa einem Millionen als `1,000,000` schreiben ist das keine gültige Ganzzahl mehr. Allerdings ist `1,000,000` ein gültiger Python-Ausdruck, wie wir in fogelden Beispiel sehen:
+Wenn man eine große Ganzzahl eingeben, könnte man versucht sein, Tausender-Trennzeichen zu verwenden. In Ländern, die den Dezimalpunkt verwenden werden zum Abgrenzen der Tausenderstellen Kommata benutzt. Wenn wir dies in Python tun, also etwa eine Millionen als `1,000,000` schreiben ist das keine gültige Ganzzahl mehr. Allerdings ist `1,000,000` ein gültiger Python-Ausdruck, wie wir in folgenden Beispiel sehen:
 
 ~~~~ {.python .trinket height="120"}
 >>> print(1,000,000)
@@ -91,7 +97,7 @@ Werte benennen
 \index{Zuweisung}
 \index{Anweisung!Zuweisung}
 
-Die zentrale Eigenschaft einer Programmiersprache ist die Fähigkeit, *Daten* zu manipulieren. In Python sind alle Daten als sogenannte *Objekte* abgespeichert. Übrigens sind auch die einzelnen Funktionen *Objekte* und Objekte selbs sind *Objekte*, weswegen der Leitsatz gilt: *Alles in Python ist ein Objekt*. Zu verwirrend? Ich kann Sie gut verstehen, wir werden uns dieses Thema später noch einmal vornehmen, dann wird sicher klarer, was hier mit *Objekt* gemeint ist.
+Die zentrale Eigenschaft einer Programmiersprache ist die Fähigkeit, *Daten* zu manipulieren. In Python sind alle Daten als sogenannte *Objekte* abgespeichert. Übrigens sind auch die einzelnen Funktionen *Objekte* und Objekte selbst sind *Objekte*, weswegen der Leitsatz gilt: *Alles in Python ist ein Objekt*. Zu verwirrend? Ich kann Sie gut verstehen, wir werden uns dieses Thema später noch einmal vornehmen, dann wird sicher klarer, was hier mit *Objekt* gemeint ist.
 
 Unsere Objekte, also z.B. Ganzzahlen oder Zeichenketten sind im Hauptspeicher abgelegt. Um Sie sinnvoll verwenden zu können, geben wir Ihnen Namen. Ein solches Paar, also einen Wert (bzw. ein Objekt) und einen dazugehörigen Namen nennt man auch *Variable*.
 Wir werden im Folgenden den Begriff *Variable* synonym für den Namen verwenden. Lassen Sie sich davon nicht verwirren, wenn wir von „Variable“ sprechen, ist immer der Name eines Wert-Objekts gemeint.
@@ -223,12 +229,12 @@ minute/60
 Später werden wir sehen, dass diese Operatoren noch zu ganz anderen Zwecken verwendet werden können. Solange man die *mathematischen Operatoren* allerdings auf Ganz- oder Fließkommazahlen (bzw. Variablen, die auf solche Werte verweisen) anwendet, werden auch die normalen mathematischen Operationen berechnet.
 
 Im Normalfall kommt bei einer mathematischen Operation auf Ganz- oder Fließkommazahlen wieder der gleiche Typ heraus.
-Die Summe zweier Ganzzahlen ist wieder eine ganze Zahl, die Multiplikation zweier Fließkommazahlen ist wieder eine Fließkommazahal, usw.
-Eine Außnahme bildet hier die Division. Teilt man eine ganze Zahl durch eine weitere ganze Zahl, kann natürlich ein Bruch herauskommen, den wir im Comuter als Fließkommazahl speichern.
+Die Summe zweier Ganzzahlen ist wieder eine ganze Zahl, die Multiplikation zweier Fließkommazahlen ist wieder eine Fließkommazahl, usw.
+Eine Ausnahme bildet hier die Division. Teilt man eine ganze Zahl durch eine weitere ganze Zahl, kann natürlich ein Bruch herauskommen, den wir im Computer als Fließkommazahl speichern.
 Es ändert sich also der Typ des Ergebnisses.
 
 Wir können die Division aber auch als *ganzzahlig* betrachten, also nur den ganzzahligen Teil des Ergebnisses übernehmen. Auch diese Operation braucht man beim Schreiben von Programme recht häufig.
-Wenn es aber zwei verschiedenen Arten zu Dividieren gibt, stellt sich die Frage, wofür nun der Divisionsoperator `/` genutzt wird:
+Wenn es aber zwei verschiedenen Arten zu dividieren gibt, stellt sich die Frage, wofür nun der Divisionsoperator `/` genutzt wird:
 
 ~~~~ {.python .trinket height="160"}
 >>> minute = 59
@@ -268,7 +274,7 @@ In Python 3.0 funktioniert die ganzzahlige Division also eher so, wie wir es erw
 
 
 Es gibt noch einige weitere Unterschiede zwischen Python 2.0 und 3.0.
-Wenn man mit dem Programmieren beginnt, ist es allerdings müßig, sich gleich zu Beginn diese Unterschieden im Detail anzusehen. Nehmen Sie also aus den vorherigen Beispielen mit, dass sich eine Programmiersprache von Version zu Version weiterentwickeln kann und sich dabei auch die Bedeutung von bestimmten Anweisungen oder Ausdrücken ändern kann.
+Wenn man mit dem Programmieren beginnt, ist es allerdings müßig, sich gleich zu Beginn diese Unterschiede im Detail anzusehen. Nehmen Sie also aus den vorherigen Beispielen mit, dass sich eine Programmiersprache von Version zu Version weiterentwickeln kann und sich dabei auch die Bedeutung von bestimmten Anweisungen oder Ausdrücken ändern kann.
 Alles, was Sie in diesem Buch lernen, bezieht sich auf die Version 3 von Python. Nachdem Sie Python 3 gelernt haben, werden Sie aber auch Programme, die in Python 2 geschrieben wurden ohne weiteres verstehen können. Die Unterschiede sind wirklich marginal.
 
 

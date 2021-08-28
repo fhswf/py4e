@@ -2,6 +2,13 @@
 Funktionen
 ==========
 
+Eine Kernidee der Programmierung ist es, die unterschiedlichen Teilaufgaben, die in einem Programm verwendet werden, in einzelne logische Einheiten aufzuteilen.
+Der große Vorteil durch dieses Vorgehen ist, dass unsere Programme besser strukturiert sind und die einzelnen Teile im gleichen oder auch in anderen Programmen wiederverwendet werden können.
+Jedes Python Programm verwendet, selbst wenn Sie das nicht einmal sehen, Funktionen und auch wir haben schon einige *eingebaute Funktionen* von Python kennengelernt, darunter `print` und `input`. 
+Funktionen kann man aber nicth nur verwenden, sondern auch selbst definieren.
+Dies, und vieles weitere zu Funktionen, lernen Sie in diesem Kapitel kennen.
+
+
 Funktionsaufrufe
 ----------------
 
@@ -26,9 +33,29 @@ Es ist üblich zu sagen, dass eine Funktion ein Argument „nimmt“ oder „akz
 Built-in-Funktionen
 -------------------
 
-Python bietet eine Reihe von wichtigen eingebauten Funktionen (Built-in-Funktionen), die wir verwenden können, ohne die Funktionsdefinition angeben zu müssen. Die Schöpfer von Python haben eine Reihe von Funktionen geschrieben, um häufige Probleme zu lösen, und sie in Python integriert, damit wir sie verwenden können.
+Python bietet eine Reihe von wichtigen eingebauten Funktionen [*Built-in-Funktionen*](https://docs.python.org/3/library/functions.html#built-in-functions), die wir verwenden können, ohne die Funktionsdefinition angeben zu müssen. Die Schöpfer von Python haben eine Reihe von Funktionen geschrieben, um häufige Probleme zu lösen, und sie in Python integriert, damit wir sie verwenden können.
 
-Die Funktionen `max` und `min` geben uns den größten bzw. kleinsten Wert in einer Liste:
+~~~~ {.python}
+>>> abs(-42)
+42
+>>> float(21)
+21.0
+>>>
+~~~~
+
+Funktionen können dabei nicht nur ein Argument haben, sondern auch mehrere.
+Die Built-in-Funktionen `max` und `min`, beispielsweise, geben uns den größten bzw. kleinsten Wert aus einer Folge von Attributen:
+
+~~~~ {.python}
+>>> max(2,-1.2,5.7,4)
+5.7
+>>> min(2.2,-1,5.7,4)
+-1
+>>>
+~~~~
+
+Die Funktion `max` sagt uns den „größten Wert“ der Argumente, die Funktion `min` zeigt uns den kleinsten Wert.
+Viele Funktionen sind dabei sehr flexibel programmiert, d.h. man kann Sie mit unterschiedlichen Argumenten aufrufen.
 
 ~~~~ {.python}
 >>> max('Hello world')
@@ -38,7 +65,7 @@ Die Funktionen `max` und `min` geben uns den größten bzw. kleinsten Wert in ei
 >>>
 ~~~~
 
-Die Funktion `max` sagt uns das "größte Zeichen" in der Zeichenkette (was sich als der Buchstabe `'w'` herausstellt) und die Funktion `min` zeigt uns das kleinste Zeichen (was sich als ein Leerzeichen herausstellt).
+Im obigen Beispiel sehen wir die Funktionen `max` und `min` erneut, aber diesmal aufgerufen mit der Zeichenkette `'Hello world'`. Nun gibt uns die Funktion `max` das "größte Zeichen" in der Zeichenkette (was sich als der Buchstabe `'w'` herausstellt) zurück und die Funktion `min` liefert uns das kleinste Zeichen (was sich als ein Leerzeichen herausstellt).
 
 Eine weitere sehr gebräuchliche eingebaute Funktion ist die Funktion `len`, die uns sagt, wie viele Elemente in unserem Argument enthalten sind. Wenn das Argument von `len` eine Zeichenkette ist, gibt sie die Anzahl der Zeichen in der Zeichenkette zurück.
 
@@ -48,9 +75,7 @@ Eine weitere sehr gebräuchliche eingebaute Funktion ist die Funktion `len`, die
 >>>
 ~~~~
 
-Diese Funktionen sind nicht auf die Verarbeitung von Zeichenketten beschränkt. Wir können mit jeder Menge von Werten arbeiten, wie wir in späteren Kapiteln sehen werden.
-
-Man sollte die Namen der eingebauten Funktionen wie reservierte Wörter behandeln (d. h. man sollte die Verwendung von „max“ als Variablenname vermeiden).
+Wie viele weitere Funktionen, die uns Python bereitstellt, ist auch `len` nicht auf die Verarbeitung genau eines Datentyps (wie z.B. hier von Zeichenketten) beschränkt. Wir können mit jeder Menge von Werten arbeiten, wie wir in späteren Kapiteln sehen werden.
 
 Funktionen zur Typumwandlung
 ----------------------------
@@ -103,6 +128,48 @@ Schließlich wandelt `str` das Argument in eine Zeichenkette um:
 '3.14159'
 ~~~~
 
+Übrigens sollten Sie die Namen der eingebauten Funktionen wie reservierte Wörter behandeln.
+Anders als bei den *Schlüsselwörtern* sind die Namen von eingebauten Funktionen, bzw. Funktionen ganz allgemein nicht vom Interpreter geschützt.
+Python verhindert es also nicht, wenn wir `max` als Namen für eine eigene Variable oder Funktion verwenden.
+Wenn man dies tut, führt das manchmal zu kuriosen, meist aber zu ärgerlichen und schwer zu findenden Fehlern.
+
+
+Die Standardbibliothek
+----------------------------
+
+\index{Standardbibliothek}
+\index{Programmbibliothek}
+
+Neben den Built-in-Funktionen, werden wir noch viele weitere verwenden, die uns Python bereitstellt.
+Python verfolgt eine *Batteries Included* Philosophie, was bedeutet, dass viele Funktionen (und Datenstrukturen), die zum produktiven Programmieren nützlich sind, bereits in der Sprache enthalten sind.
+Dieser Aspekt, hat wesentlich zur Verbreitung von Python beigetragen, denn es erlaubt ein Programmieren auf „höherer Ebene“.
+
+Sehr viele Funktionen stellt Python über die sogenannte *Standardbibliothek* bereit, einige Teile der Standardbibliothek werden wir uns in den kommenden Abschnitten genauer ansehen. In der Programmierung bezeichnet der Begriff „Bibliothek“ eine Sammlung von wiederverwendbaren Funktionen und Datenstrukturen. Es gibt Bibliotheken für den Zugriff auf Internetseiten, zum Verarbeiten von großen Datenmengen, für spezielle mathematische Aufgaben, für Audio oder Bildverarbeitung und für viele weitere Anwendungsgebiete.
+
+Wenn wir für unsere Problemstellung eine geeignete Bibliothek zur Verfügung haben, müssen nicht „das Rad neu erfinden“, sondern können die bestehenden Funktionen nutzen, um unsere konkrete Aufgabenstellung damit zu lösen.
+Wie bei einem gut gefüllten Werkzeugkasten geht es dann auch bei der Programmierung darum, das „passende“ Werkzeug zu finden und es richtig anzuwenden.
+Gelingt ihnen das, können Sie Ihr Projekt in deutlich kürzerer Zeit und meist auch mit besserem Ergebnis abschließen.
+
+Wenn Sie selbst Programme schreiben, werden Sie bei Ihren Recherchen in der Python Dokumentation, in anderen Lehrbüchern oder im Internet immer wieder auf Module oder komplette Bibliotheken stoßen, die Ihnen für die Lösung Ihres Problems nützlich sein können.
+Als erfolgreicher Entwickler sollten Sie lernen, bestehende Lösungen (die Sie lizenzrechtlich verwenden dürfen) einzusetzen.
+Beim Lernen der Sprache werden wir zwar -- zu Trainingszwecken -- Aufgaben „per Hand“ lösen, für die es auch vorgefertigte Lösungen.
+Im Berufsalltag kommt es aber in aller Regel auf Produktivität an und dabei helfen Ihnen die Standardbibliothek oder auch Programmpakete, die andere bereits vor Ihnen entwickelt und frei zur Verfügung gestellt haben.
+
+Da eine Bibliothek sehr umfangreich sein kann, ist es ratsam, die einzelnen Funktionalitäten noch weiter aufzuteilen.
+Wir werden in diesem Zusammenhang noch öfter von *Paket* oder auch *Modul* sprechen.
+Bei diesen Begriffen kann man folgende Unterscheidung vornehmen:
+
+-   Ein **Modul** ist eine Datei mit der Endung *.py*, die ausführbaren Python Code enthält, darunter in der Regel verschiedene Funktionen und Variablen.
+
+-   Ein **Paket** ist eine Sammlung von Modulen, die unter einem gemeinsamen Namensraum zusammengefasst sind und die für einen speziellen Anwendungsbereich entwickelt wurden. Unter den Modulen muss eine Datei namens `__init__.py` sein, damit der Python-Interpreter es als Paket erkennt. Die `__init__.py` kann eine leere Datei sein, es ist nur wichtig, dass sie im Ordner mit den Modulen existiert.
+
+-   **Bibliothek** ist eher ein Oberbegriff, der in der Programmierung ganz allgemein eine Sammlung von Programmfunktionen beschreibt. Eine Bibliothek kann hunderte von Modulen oder auch Paketen enthalten, so wie die Python Standardbibliothek. Im Unterschied zu einem Paket können in einer Bibliothek Funktionalitäten für ganz unterschiedliche Problembereiche zusammengefasst sein. Auch dies ist bei der Standardbibliothek von Python der Fall.
+
+\index{Paket}
+\index{Modul}
+
+
+
 Mathematische Funktionen
 ------------------------
 
@@ -110,7 +177,7 @@ Mathematische Funktionen
 \index{Modul}
 \index{Modulobjekt}
 
-Python hat ein `math`-Modul, das die meisten der bekannten mathematischen Funktionen bereitstellt. Bevor wir das Modul verwenden können, müssen wir es importieren:
+Ein häufig verwendetes Modul aus der Standardbibliothek ist `math`. Darin werden am häufigsten verwendeten mathematischen Funktionen bereitstellt. Bevor wir das Modul verwenden können, müssen wir es importieren:
 
 ~~~~ {.python}
 >>> import math
@@ -128,26 +195,26 @@ Das Modulobjekt enthält die im Modul definierten Funktionen und Variablen. Um a
 \index{Punktnotation}
 
 ~~~~ {.python}
->>> ratio = signal_power / noise_power
->>> decibels = 10 * math.log10(ratio)
+>>> snr = signal / rauschen
+>>> dezibel = 10 * math.log10(snr)
 
->>> radians = 0.7
->>> height = math.sin(radians)
+>>> rad = 0.7
+>>> hoehe = math.sin(rad)
 ~~~~
 
-Im ersten Beispiel wird der Logarithmus zur Basis 10 des Signal-Rausch-Verhältnisses berechnet. Das Mathematikmodul bietet auch eine Funktion namens `log`, die Logarithmen zur Basis e berechnet.
+Im ersten Beispiel wird der Logarithmus zur Basis 10 des Signal-Rausch-Verhältnisses (englisch *Signal to Noise Ratio*, SNR) berechnet. Das Mathematikmodul bietet auch eine Funktion namens `log`, die Logarithmen zur Basis *e* berechnet.
 
 \index{log (Funktion)}
 \index{Funktion!log}
 \index{sine (Funktion)}
 \index{trigonometrische Funktion}
 
-Das zweite Beispiel ermittelt den Sinus von `radian`. Der Name der Variablen ist ein Hinweis darauf, dass `sin` und die anderen trigonometrischen Funktionen (`cos`, `tan`, etc.) Argumente im Bogenmaß annehmen. Um von Grad in Bogenmaß umzurechnen, dividieren wir durch 360 und multiplizieren mit $2 \pi$:
+Das zweite Beispiel ermittelt den Sinus von `rad`. Der Name der Variablen ist ein Hinweis darauf, dass `sin` und die anderen trigonometrischen Funktionen (`cos`, `tan`, etc.) Argumente im Bogenmaß (englisch *radian* ) annehmen. Um von Grad in Bogenmaß umzurechnen, dividieren wir durch 360 und multiplizieren mit $2 \pi$:
 
 ~~~~ {.python}
->>> degrees = 45
->>> radians = degrees / 360.0 * 2 * math.pi
->>> math.sin(radians)
+>>> alpha = 45
+>>> rad = alpha / 360.0 * 2 * math.pi
+>>> math.sin(rad)
 0.7071067811865476
 ~~~~
 
@@ -164,6 +231,11 @@ Wenn man sich in Trigonometrie auskennt, kann man das vorherige Ergebnis überpr
 >>> math.sqrt(2) / 2.0
 0.7071067811865476
 ~~~~
+
+Bevor wir mit anderen Modulen der Standardbibliothek weiter machen, sollten wir nochmal einen kurzen Blick au die `import` Anweisung richten, die wir zum Einbinden eines Moduls benötigen.
+Wenn Sie gerade mit der Programmierung beginnen, werden Sie sich vielleicht wundern, warum man, nachdem ein Modul importiert wurde, die Funktionen nicht „einfach so“ aufrufen kann, sondern immer den Modulnamen (bzw. das Modul-Objekt) voranstellen muss? Was hier umständlich aussieht, hat einen guten Grund: Es kann gut sein, dass Sie in Ihrem Programm viele unterschiedliche Pakete und Module verwenden. Da diese Module normalerweise unabhängig voneinander entwickelt wurden, können verschiedene Module die gleichen Bezeichner verwenden. In diesem Fall würde es Namenskonflikte geben, bei einem Aufruf könnte es schlicht dazu kommen, dass Python nicht erkennen kann, welche Funktion Sie meinen.
+Daher Arbeiten Module mit *Namensräumen*. Beim Importieren definieren Sie das Modul-Objekt, über dessen Namen Sie das Modul eindeutig erreichen.
+Wenn wir später *objektorientiert* programmieren, fällt das explizite Angeben des Modul-Objekts meistens weg. Wir können dann Funktionen *auf Objekten* aufrufen und, da Objekte „ihre“ Funktionen kennen, wird Python dir passenden Funktion auswählen. Aber dazu später mehr.
 
 Zufallszahlen
 -------------
