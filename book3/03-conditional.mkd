@@ -539,7 +539,7 @@ Punkte eingeben: 0.95
 ~~~~
 
 ~~~~
-Punkte eingeben: perfect
+Punkte eingeben: perfekt
 Falsche Punkanzahl
 ~~~~
 

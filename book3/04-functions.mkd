@@ -5,7 +5,7 @@ Funktionen
 Eine Kernidee der Programmierung ist es, die unterschiedlichen Teilaufgaben, die in einem Programm verwendet werden, in einzelne logische Einheiten aufzuteilen.
 Der große Vorteil durch dieses Vorgehen ist, dass unsere Programme besser strukturiert sind und die einzelnen Teile im gleichen oder auch in anderen Programmen wiederverwendet werden können.
 Jedes Python Programm verwendet, selbst wenn Sie das nicht einmal sehen, Funktionen und auch wir haben schon einige *eingebaute Funktionen* von Python kennengelernt, darunter `print` und `input`. 
-Funktionen kann man aber nicth nur verwenden, sondern auch selbst definieren.
+Funktionen kann man aber nicht nur verwenden, sondern auch selbst definieren.
 Dies, und vieles weitere zu Funktionen, lernen Sie in diesem Kapitel kennen.
 
 
@@ -313,13 +313,11 @@ Das Modul `random` bietet auch Funktionen zur Erzeugung von Zufallswerten aus ko
 Definition neuer Funktionen
 ---------------------------
 
-Bisher haben wir nur die Funktionen verwendet, die mit Python geliefert werden, aber es ist auch möglich, neue Funktionen hinzuzufügen. Eine *Funktionsdefinition* gibt den Namen einer neuen Funktion und die Reihenfolge der Anweisungen an, die ausgeführt werden, wenn die Funktion aufgerufen wird. Sobald wir eine Funktion definiert haben, können wir die Funktion immer wieder in unserem Programm verwenden.
+Bisher haben wir nur die Funktionen verwendet, die mit Python geliefert werden, aber es ist auch möglich, neue Funktionen hinzuzufügen. Eine *Funktionsdefinition* gibt den Namen einer neuen Funktion und die Reihenfolge der Anweisungen an, die ausgeführt werden, wenn die Funktion aufgerufen wird. Sobald wir eine Funktion definiert haben, können wir die Funktion immer wieder in unserem Programm verwenden. Hier ein einfaches Beispiel:
 
 \index{Funktion}
 \index{Funktionsdefinition}
 \index{Definition!Funktion}
-
-Here is an example:
 
 ~~~~ {.python}
 def print_lyrics():
@@ -327,7 +325,7 @@ def print_lyrics():
     print('I sleep all night and I work all day.')
 ~~~~
 
-`def` ist ein Schlüsselwort, das anzeigt, dass es sich um eine Funktionsdefinition handelt. Der Name der Funktion ist `print_lyrics`. Die Regeln für Funktionsnamen sind die gleichen wie für Variablennamen: Buchstaben, Zahlen und einige Satzzeichen sind zulässig, aber das erste Zeichen darf keine Zahl sein. Wir können kein Schlüsselwort als Funktionsnamen verwenden, und wir sollten vermeiden, dass eine Variable und eine Funktion denselben Namen haben.
+`def` ist ein Schlüsselwort, das anzeigt, dass es sich um eine Funktionsdefinition handelt. Der Name der Funktion ist `print_lyrics`. Die Regeln für Funktionsnamen sind die gleichen wie für Variablennamen: Buchstaben, Zahlen und der Unterstrich sind zulässig, aber das erste Zeichen darf keine Zahl sein. Wir können kein Schlüsselwort als Funktionsnamen verwenden, und wir sollten vermeiden, dass eine Variable und eine Funktion denselben Namen haben.
 
 \index{def (Schlüsselwort)}
 \index{Schlüsselwort!def}
@@ -355,9 +353,10 @@ Wenn wir eine Funktionsdefinition im interaktiven Modus eingeben, gibt der Inter
 ...
 ~~~~
 
-Um die Funktion zu beenden, müssen wir eine Leerzeile eingeben (dies ist in einem Skript nicht notwendig).
+Um die Funktion zu beenden, müssen wir im interaktiven Modus eine Leerzeile eingeben. Wenn Sie ein Python Skript (also Programmcode in eine *.py*-Datei) schreiben, ist die Leerzeile zwar nicht notwendig, führt aber zu übersichtlicherem Code und sollte daher auch gesetzt werden.
 
-Das Definieren einer Funktion erzeugt eine Variable mit dem gleichen Namen.
+Wie bei einer Variablen ist in Python auch der Bezeichner einer Funktion einfach nur ein Name.
+Nur, dass über diesen Namen kein Wert-Objekt (wie bei einer Variablen) erreicht wird, sondern ein *Funktionsobjekt*.
 
 ~~~~ {.python}
 >>> print(print_lyrics)
@@ -366,12 +365,13 @@ Das Definieren einer Funktion erzeugt eine Variable mit dem gleichen Namen.
 <class 'function'>
 ~~~~
 
-Der Wert von `print_lyrics` ist ein *Funktionsobjekt*, das den Typ `function` hat.
+Der **Wert** von `print_lyrics` ist ein *Funktionsobjekt*, das den Typ `function` hat.
+Sie könnten der Funktion im Nachhinein auch andere Namen geben. Solange Sie dasselbe Funktionsobjekt benennen, kann die Funktion mit allen diesen Namen verwendet werden.
 
 \index{Funktionsobjekt}
 \index{Objekt!Funktion}
 
-Die Syntax für den Aufruf der neuen Funktion ist die gleiche wie für integrierte Funktionen:
+Die Syntax für den Aufruf der neuen Funktion ist die gleiche wie für die von Python bereitgestellten Funktionen, die wir bereits verwendet haben:
 
 ~~~~ {.python}
 >>> print_lyrics()
@@ -408,11 +408,11 @@ Wenn wir die Codefragmente aus dem vorherigen Abschnitt zusammenfassen, sieht da
 
 \VerbatimInput{../code3/lyrics.py}
 
-Dieses Programm enthält zwei Funktionsdefinitionen: `print_lyrics` und `repeat_lyrics`. Funktionsdefinitionen werden genau wie andere Anweisungen ausgeführt, aber der Effekt ist, dass Funktionsobjekte erstellt werden. Die Anweisungen innerhalb der Funktion werden erst ausgeführt, wenn die Funktion aufgerufen wird, und die Funktionsdefinition erzeugt keine Ausgabe.
+Dieses Programm enthält zwei Funktionsdefinitionen: `print_lyrics` und `repeat_lyrics`. Funktionsdefinitionen werden genau wie andere Anweisungen ausgeführt, aber der Effekt ist, dass Funktionsobjekte erstellt werden. Die Anweisungen innerhalb der Funktion werden erst ausgeführt, wenn die Funktion aufgerufen wird. Die Funktionsdefinition selbst erzeugt also keine Ausgabe.
 
 \index{use before def}
 
-Wie man vielleicht erwartet, muss man eine Funktion erstellen, bevor man sie ausführen kann. Mit anderen Worten: Die Funktionsdefinition muss vor dem ersten Aufruf ausgeführt werden.
+Wie man vielleicht erwartet, muss man eine Funktion erstellen, bevor man sie ausführen kann. Mit anderen Worten: Die Funktionsdefinition muss vor dem ersten Aufruf erfolgen.
 
 **Übung 2: Versetzen Sie die letzte Zeile dieses Programms an den Anfang, sodass der Funktionsaufruf vor den Definitionen erscheint. Führen Sie das Programm aus und beobachten Sie, welche Fehlermeldung Sie erhalten.**
 
@@ -424,17 +424,15 @@ Programmablauf
 \index{Programmablauf}
 
 Um sicherzustellen, dass eine Funktion vor ihrer ersten Verwendung definiert ist, müssen wir die Reihenfolge kennen, in der Anweisungen ausgeführt werden, was als *Programmablauf* bezeichnet wird.
-
 Die Ausführung beginnt immer mit der ersten Anweisung des Programms. Die Anweisungen werden nacheinander in der Reihenfolge von oben nach unten ausgeführt.
-
 Funktionsdefinitionen verändern den Ablauf des Programms nicht, aber behalten wir im Kopf, dass Anweisungen innerhalb der Funktion erst ausgeführt werden, wenn die Funktion aufgerufen wird.
 
 Ein Funktionsaufruf ist wie ein Umweg im Programmablauf. Anstatt zur nächsten Anweisung zu gehen, springt die Ausführung zum Rumpf der Funktion, führt alle Anweisungen dort aus und kommt dann zurück, um dort weiterzumachen, wo sie aufgehört hat.
-
 Das erscheint solange simpel, bis man sich daran erinnert, dass eine Funktion eine andere aufrufen kann. Während sich das Programm mitten in einer Funktion befindet, muss es möglicherweise die Anweisungen einer anderen Funktion ausführen. Aber während diese neue Funktion ausgeführt wird, muss das Programm möglicherweise noch eine andere Funktion ausführen!
 
-Glücklicherweise ist Python gut darin, den Überblick zu behalten, wo es sich befindet. Jedes Mal, wenn eine Funktion abgeschlossen ist, macht das Programm dort weiter, wo es in der Funktion, die es aufgerufen hat, aufgehört hat. Wenn es am Ende des Programms ankommt, *terminiert* es.
+Glücklicherweise ist Python gut darin, den Überblick zu behalten, wo es sich befindet. Jedes Mal, wenn eine Funktion abgeschlossen ist, macht das Programm dort weiter, wo es in der Funktion, die es aufgerufen hat, aufgehört hat.
 
+So springt der Programmablauf von Funktion zu Funktion und erst, wenn bei diesem Ablauf die letzte Anweisung im (Haupt-) Programm beendet ist, sind wir schließlich am Ende angekommen und das Programm *terminiert*.
 Was ist die Moral der Geschichte? Wenn wir ein Programm lesen, sollten wir nicht immer von oben nach unten lesen. Manchmal macht es mehr Sinn, wenn man dem Programmablauf folgt.
 
 Parameter und Argumente
@@ -459,7 +457,7 @@ def print_twice(bruce):
 
 Diese Funktion weist das Argument einem Parameter namens `bruce` zu. Wenn die Funktion aufgerufen wird, gibt sie den Wert des Parameters (welcher auch immer das ist) zweimal aus.
 
-Diese Funktion funktioniert mit jedem Wert, der ausgegeben werden kann.
+Diese Funktion funktioniert mit jedem Wert, der mit der `print`-Funktion ausgegeben werden kann.
 
 ~~~~ {.python}
 >>> print_twice('Spam')
@@ -508,13 +506,13 @@ Funktionen mit und ohne Rückgabewert
 \index{Funktion mit Rückgabewert}
 \index{Funktion ohne Rückgabewert, void}
 
-Einige der Funktionen, die wir verwenden, wie z. B. die mathematischen Funktionen, liefern Ergebnisse; in Ermangelung eines besseren Namens nennen wir sie *Funktionen mit Rückgabewert*. Andere Funktionen, wie `print_twice`, führen eine Aktion aus, geben aber keinen Wert zurück. Sie werden *void-Funktionen* genannt.
+Einige der Funktionen, die wir verwenden, wie z. B. die mathematischen Funktionen, liefern Ergebnisse; daher nennen wir sie *Funktionen mit Rückgabewert*. Andere Funktionen, wie `print_twice`, führen eine Aktion aus, geben aber keinen Wert zurück. Sie werden auch *void-Funktionen* genannt.
 
 Wenn wir eine Funktion mit Rückgabewert aufrufen, wollen wir fast immer etwas mit dem Ergebnis machen; zum Beispiel können wir es einer Variablen zuweisen oder als Teil eines Ausdrucks verwenden:
 
 ~~~~ {.python}
-x = math.cos(radians)
-golden = (math.sqrt(5) + 1) / 2
+x = math.cos(rad)
+phi = (math.sqrt(5) + 1) / 2
 ~~~~
 
 Wenn wir eine Funktion im interaktiven Modus aufrufen, zeigt Python das Ergebnis an:
@@ -555,11 +553,13 @@ Der Wert `None` ist nicht dasselbe wie die Zeichenkette `'None'`. Er ist ein spe
 <class 'NoneType'>
 ~~~~
 
-Um ein Ergebnis aus einer Funktion zurückzugeben, verwenden wir die Anweisung `return` in unserer Funktion. Wir könnten zum Beispiel eine sehr einfache Funktion namens `addtwo` erstellen, die zwei Zahlen addiert und ein Ergebnis zurückgibt.
+Es mag Ihnen seltsam erscheinen, dass Python einen eignen Typ besitzt, der nur einen Wert `None`, also nur *das Nichts* kennt. Tatsächlich ist das aber sehr praktisch und wird von vielen Programmiersprachen so oder in ähnlicher Form verwendet. Wir können damit nämlich an verschiedensten Stellen ausdrücken, dass etwas *nicht oder noch nicht* existiert. Z.B. können wir einen Variablennamen anlegen, der aber noch keinen Wert hat. Und wir können in einem booleschen Ausdruck überprüfen, ob ein Wert existiert oder nicht. 
+
+Um ein Ergebnis aus einer Funktion heraus zurückzugeben, verwenden wir die Anweisung `return`. Wir könnten zum Beispiel eine sehr einfache Funktion namens `addtwo` erstellen, die zwei Zahlen addiert und ein Ergebnis zurückgibt.
 
 \VerbatimInput{../code3/addtwo.py}
 
-Wenn dieses Skript ausgeführt wird, wird `print` `'8'` ausgeben, weil die Funktion `addtwo` mit 3 und 5 als Argumente aufgerufen wurde. Innerhalb der Funktion waren die Parameter `a` und `b` jeweils 3 und 5. Die Funktion berechnete die Summe der beiden Zahlen und legte sie in der lokalen Funktionsvariablen namens `added` ab. Dann gab sie den berechneten Wert mit der Anweisung `return` als Funktionsergebnis an die aufrufende Umgebung zurück, die der Variablen `x` zugewiesen und ausgegeben wurde.
+Wenn dieses Skript ausgeführt wird, wird `8` ausgeben, weil die Funktion `addtwo` mit 3 und 5 als Argumente aufgerufen wurde. Innerhalb der Funktion waren die Parameter `a` und `b` jeweils 3 und 5. Die Funktion berechnete die Summe der beiden Zahlen und legte sie in der lokalen Funktionsvariablen namens `added` ab. Dann gab sie den berechneten Wert mit der Anweisung `return` als Funktionsergebnis an die aufrufende Umgebung zurück, die der Variablen `x` zugewiesen und ausgegeben wurde.
 
 Wozu Funktionen?
 ----------------
@@ -576,7 +576,7 @@ Es ist vielleicht nicht sofort klar, warum es die Mühe wert ist, ein Programm i
 
 -   Gut durchdachte Funktionen sind oft für viele Programme nützlich. Wenn wir einmal eine geschrieben und debuggt haben, können wir sie wiederverwenden.
 
-Im weiteren Verlauf des Buchs werden wir oft eine Funktionsdefinition verwenden, um ein Konzept zu erklären. Ein Teil der Fertigkeit beim Erstellen und Verwenden von Funktionen besteht darin, dass eine Funktion eine Idee wie „finde den kleinsten Wert in einer Liste von Werten“ richtig erfasst. Später werden wir Ihnen Code zeigen, der den kleinsten Wert in einer Liste findet, und wir werden Ihnen diesen Code als eine Funktion namens `min` vorstellen, die eine Liste von Werten als Argument entgegennimmt und den kleinsten Wert dieser Liste zurückgibt.
+Im weiteren Verlauf des Buchs werden wir oft eine Funktionsdefinition verwenden, um ein Konzept zu erklären. Ein Teil der Fertigkeit beim Erstellen und Verwenden von Funktionen besteht darin, dass eine Funktion eine Idee wie „finde den kleinsten Wert in einer Liste von Werten“ richtig erfasst. Wir werden uns überlegen, welche Daten wir der Funktion übergeben müssen, wie das Problem von der Funktion gelöst werden kann und in welcher Form sie mögliche Ergebnisse zurückgeben soll.
 
 Debugging
 ---------
@@ -694,23 +694,23 @@ c) ABC Zap jane\
 d) ABC Zap ABC\
 e) Zap Zap Zap
 
-**Übung 6: Schreiben Sie ihr Programm zur Lohnberechnung (mit 1,4-fachem Stundenlohn bei Überstunden) um. Ergänzen Sie eine Funktion `computepay`, welche die beiden Parameter `hours` und `rate` entgegennimmt**
+**Übung 6: Schreiben Sie ihr Programm zur Lohnberechnung (mit 1,4-fachem Stundenlohn bei Überstunden) um. Ergänzen Sie eine Funktion `lohnberechnung`, welche die beiden Parameter `arbeitsstunden` und `stundenlohn` entgegennimmt**
 
 ~~~~
-Enter Hours: 45
-Enter Rate: 10
-Pay: 475.0
+Anzahl Arbeitsstunden: 45
+Stundenlohn: 10
+Monatsgehalt: 475.0
 ~~~~
 
-**Übung 7: Schreiben Sie das Benotungsprogramm aus dem vorigen Kapitel neu, indem Sie eine Funktion namens `computegrade` verwenden, die eine Punktzahl als Parameter annimmt und eine Note als Zeichenkette zurückgibt.**
+**Übung 7: Schreiben Sie das Benotungsprogramm aus dem vorigen Kapitel neu, indem Sie eine Funktion namens `notenberechnung` verwenden, die eine Punktzahl als Parameter annimmt und eine Note zurückgibt.**
 
 ~~~~
- Score   Grade
->= 0.9     A
->= 0.8     B
->= 0.7     C
->= 0.6     D
- < 0.6     F
+ Punkte   Note
+>= 0.9     1
+>= 0.8     2
+>= 0.7     3
+>= 0.6     4
+ < 0.6     5
 ~~~~
 
 ~~~~
