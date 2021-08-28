@@ -3,7 +3,7 @@ Bezeichner, Ausdrücke und Anweisungen
 ====================================
 
 In diesem Kapitel schauen wir uns an, wie man *Werte* im Programm verwenden kann.
-Wir werden sehen, dass alles, was wir in Python zu einem Wert *auswerten* können ein Ausdruck ist.
+Wir werden sehen, dass alles, was wir in Python zu einem Wert *auswerten* können, ein Ausdruck ist.
 Dazu zählen fest im Programm angegebene Werte, die sogenannten *Konstanten*, aber auch komplexere Ausdrücke, bei denen mehrere Teile durch *Operatoren* verknüpft sind.
 Wir werden sehen, dass wir mit einer *Zuweisung* einzelnen Werten einen Namen geben können und diese Werte im Programm dann über Ihren *Bezeichner* verwenden können.
 
@@ -69,7 +69,7 @@ Was ist mit Werten wie `17` und `3.2`? Sie sehen aus wie Zahlen, stehen aber in 
 
 Es sind Zeichenketten.
 
-Wenn man eine große Ganzzahl eingeben, könnte man versucht sein, Tausender-Trennzeichen zu verwenden. In Ländern, die den Dezimalpunkt verwenden werden zum Abgrenzen der Tausenderstellen Kommata benutzt. Wenn wir dies in Python tun, also etwa eine Millionen als `1,000,000` schreiben ist das keine gültige Ganzzahl mehr. Allerdings ist `1,000,000` ein gültiger Python-Ausdruck, wie wir in folgenden Beispiel sehen:
+Wenn man eine große Ganzzahl eingeben, könnte man versucht sein, Tausender-Trennzeichen zu verwenden. In Ländern, die den Dezimalpunkt verwenden werden zum Abgrenzen der Tausenderstellen Kommata benutzt. Wenn wir dies in Python tun, also etwa eine Million als `1,000,000` schreiben ist das keine gültige Ganzzahl mehr. Allerdings ist `1,000,000` ein gültiger Python-Ausdruck, wie wir in folgenden Beispiel sehen:
 
 ~~~~ {.python .trinket height="120"}
 >>> print(1,000,000)
@@ -102,8 +102,7 @@ Die zentrale Eigenschaft einer Programmiersprache ist die Fähigkeit, *Daten* zu
 Unsere Objekte, also z.B. Ganzzahlen oder Zeichenketten sind im Hauptspeicher abgelegt. Um Sie sinnvoll verwenden zu können, geben wir Ihnen Namen. Ein solches Paar, also einen Wert (bzw. ein Objekt) und einen dazugehörigen Namen nennt man auch *Variable*.
 Wir werden im Folgenden den Begriff *Variable* synonym für den Namen verwenden. Lassen Sie sich davon nicht verwirren, wenn wir von „Variable“ sprechen, ist immer der Name eines Wert-Objekts gemeint.
 
-Die Bindung eines Namens an einen Wert erfolgt durch eine *Zuweisung*.
-Existiert der Name vorher noch nicht, wird er im Zuge der Zuweisung neu erzeugt:
+Die Bindung eines Namens an einen Wert erfolgt durch eine *Zuweisung*. Existiert der Name vorher noch nicht, wird er im Zuge der Zuweisung neu erzeugt:
 
 ~~~~ {.python}
 >>> message = 'And now for something completely different'
@@ -379,9 +378,7 @@ Operationen mit Zeichenketten
 \index{Zeichenkette!Operation}
 \index{Operator!Zeichenkette}
 
-Bisher haben wir alle Operatoren lediglich auf Zahlen angewendet, oder auf Variablen unter denen wir Zahlen abgelegt haben.
-Erstaunlicherweise lassen sich viele dieser Operatoren aber auch auf Objekte anderer Datentypen anwenden.
-Der Operator `+`, zum Beispiel, hat auch eine Bedeutung für Zeichenketten, aber natürlich es ist dann keine Addition im mathematischen Sinne mehr. Stattdessen führt er eine *Konkatenation* (Verkettung) durch, d. h. er verbindet die Zeichenketten, indem er sie Ende an Ende verknüpft. Zum Beispiel:
+Bisher haben wir alle Operatoren lediglich auf Zahlen angewendet, oder auf Variablen unter denen wir Zahlen abgelegt haben. Erstaunlicherweise lassen sich viele dieser Operatoren aber auch auf Objekte anderer Datentypen anwenden. Der Operator `+`, zum Beispiel, hat auch eine Bedeutung für Zeichenketten, aber natürlich es ist dann keine Addition im mathematischen Sinne mehr. Stattdessen führt er eine *Konkatenation* (Verkettung) durch, d. h. er verbindet die Zeichenketten, indem er sie Ende an Ende verknüpft. Zum Beispiel:
 
 \index{Konkatenation}
 
@@ -774,7 +771,7 @@ Pay: 96.25
 
 Wir werden uns erst einmal nicht darum kümmern, dass unsere Auszahlung genau zwei Stellen nach dem Komma hat. Wenn Sie möchten, können Sie mit der eingebauten Python-Funktion `round` experimentieren, um den resultierenden Lohn auf zwei Dezimalstellen zu runden.
 
-**Übung 4: Angenommen, wir führen die folgenden Zuweisung aus:**
+**Übung 4: Angenommen, wir führen die folgenden Zuweisungen aus:**
 
 ~~~~
 width = 17

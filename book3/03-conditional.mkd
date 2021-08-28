@@ -134,7 +134,7 @@ Zweitens: Statt der einen `print`-Anweisung könnten an der gleichen Stelle mehr
 
 Die Verwendung von Einrückungen führt schnell zu Syntaxfehlern. Wenn Sie einmal nicht genau aufpassen und ein Leerzeichen zu viel oder zu wenig, oder auch ein Tab-Zeichen, statt mehrerer Leerzeichen verwenden, wird Python sich beschweren. Allerdings lassen sich diese Fehler sehr schnell finden. Außerdem helfen Ihnen die Editoren und Werkzeuge, die Sie zum Programmieren verwenden, die Einrückungstiefe beizubehalten.
 
-Viele andere Programmiersprachen verwenden Klammern, um Blöcke von Anweisungen zusammenzufassen. Dies erscheint auf den ersten Blick logischer, als mit Leerzeichen und Zeilen zu arbeiten. Klammern haben aber zwei große Nachteile. Zum einen benötigt man zusätzliche Zeichen die den Programmcode verlängern und unübersichtlicher machen. Zum anderen ist man, wenn man Klammern verwendet, nicht dazu gezwungen, eine gute Optische Aufteilung des Codes in Ebenen einzuhlten. Gerade Programmieranfänger halten sich oft nicht an Formatierungsregeln und leider führt das oft zu logischen Fehlern, die nur sehr schwierig aufzuspüren sind.
+Viele andere Programmiersprachen verwenden Klammern, um Blöcke von Anweisungen zusammenzufassen. Dies erscheint auf den ersten Blick logischer, als mit Leerzeichen und Zeilen zu arbeiten. Klammern haben aber zwei große Nachteile. Zum einen benötigt man zusätzliche Zeichen, die den Programmcode verlängern und unübersichtlicher machen. Zum anderen ist man, wenn man Klammern verwendet, nicht dazu gezwungen, eine gute optische Aufteilung des Codes in Ebenen einzuhalten. Gerade Programmieranfänger halten sich oft nicht an Formatierungsregeln und leider führt das oft zu logischen Fehlern, die nur sehr schwierig aufzuspüren sind.
 
 \index{Einrückung}
 \index{Block!Einrückung}
@@ -355,7 +355,7 @@ Abgekürzte Auswertung logischer Ausdrücke
 
 \index{verkürzte Auswertung}\index{short circuit}
 
-Wenn Python einen logischen Ausdruck wie `x >= 2 and (x/y) > 2` verarbeitet, wertet es den Ausdruck von links nach rechts aus. Aufgrund der Definition von `and` ist, wenn `x` kleiner als 2 ist, der Ausdruck `x >= 2` logisch Falsch (also gleich `False`) und somit ist der gesamte Ausdruck `False`, unabhängig davon, ob `(x/y) > 2` als `True` oder `False` ausgewertet wird.
+Wenn Python einen logischen Ausdruck wie `x >= 2 and (x/y) > 2` verarbeitet, wertet es den Ausdruck von links nach rechts aus. Aufgrund der Definition von `and` ist, wenn `x` kleiner als 2 ist, der Ausdruck `x >= 2` logisch falsch (also gleich `False`) und somit ist der gesamte Ausdruck `False`, unabhängig davon, ob `(x/y) > 2` als `True` oder `False` ausgewertet wird.
 
 Wenn Python feststellt, dass durch die Auswertung des restlichen Teils eines logischen Ausdrucks sich am Endergebnis nichts mehr ändern wird, bricht es die Auswertung ab und führt die Berechnungen im restlichen Teil des logischen Ausdrucks nicht aus. Wenn die Auswertung eines logischen Ausdrucks stoppt, weil der Gesamtwert bereits bekannt ist, bezeichnet man dies als *abgekürzte Auswertung* (englisch *short-circuit evaluation* oder *short-circuiting*).
 

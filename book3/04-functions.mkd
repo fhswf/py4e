@@ -4,7 +4,7 @@ Funktionen
 
 Eine Kernidee der Programmierung ist es, die unterschiedlichen Teilaufgaben, die in einem Programm verwendet werden, in einzelne logische Einheiten aufzuteilen.
 Der große Vorteil durch dieses Vorgehen ist, dass unsere Programme besser strukturiert sind und die einzelnen Teile im gleichen oder auch in anderen Programmen wiederverwendet werden können.
-Jedes Python Programm verwendet, selbst wenn Sie das nicht einmal sehen, Funktionen und auch wir haben schon einige *eingebaute Funktionen* von Python kennengelernt, darunter `print` und `input`. 
+Jedes Python-Programm verwendet, selbst wenn Sie das nicht einmal sehen, Funktionen und auch wir haben schon einige *eingebaute Funktionen* von Python kennengelernt, darunter `print` und `input`. 
 Funktionen kann man aber nicht nur verwenden, sondern auch selbst definieren.
 Dies, und vieles weitere zu Funktionen, lernen Sie in diesem Kapitel kennen.
 
@@ -183,14 +183,14 @@ Ein häufig verwendetes Modul aus der Standardbibliothek ist `math`. Darin werde
 >>> import math
 ~~~~
 
-Diese Anweisung erzeugt ein *Modul-Objekt* namens `math`. Wenn wir das Modulobjekt ausgeben, erhalten wir einige Informationen über das Objekt:
+Diese Anweisung erzeugt ein *Modulobjekt* namens `math`. Wenn wir das Modulobjekt ausgeben, erhalten wir einige Informationen über das Objekt:
 
 ~~~~ {.python}
 >>> print(math)
 <module 'math' (built-in)>
 ~~~~
 
-Das Modulobjekt enthält die im Modul definierten Funktionen und Variablen. Um auf eine der Funktionen zuzugreifen, müssen wir den Namen des Moduls und den Namen der Funktion angeben, getrennt durch einen Punkt. Dieses Format wird als *Punkt-Notation* (englisch *dot notation*) bezeichnet.
+Das Modulobjekt enthält die im Modul definierten Funktionen und Variablen. Um auf eine der Funktionen zuzugreifen, müssen wir den Namen des Moduls und den Namen der Funktion angeben, getrennt durch einen Punkt. Dieses Format wird als *Punktnotation* (englisch *dot notation*) bezeichnet.
 
 \index{Punktnotation}
 
@@ -232,10 +232,10 @@ Wenn man sich in Trigonometrie auskennt, kann man das vorherige Ergebnis überpr
 0.7071067811865476
 ~~~~
 
-Bevor wir mit anderen Modulen der Standardbibliothek weiter machen, sollten wir nochmal einen kurzen Blick au die `import` Anweisung richten, die wir zum Einbinden eines Moduls benötigen.
-Wenn Sie gerade mit der Programmierung beginnen, werden Sie sich vielleicht wundern, warum man, nachdem ein Modul importiert wurde, die Funktionen nicht „einfach so“ aufrufen kann, sondern immer den Modulnamen (bzw. das Modul-Objekt) voranstellen muss? Was hier umständlich aussieht, hat einen guten Grund: Es kann gut sein, dass Sie in Ihrem Programm viele unterschiedliche Pakete und Module verwenden. Da diese Module normalerweise unabhängig voneinander entwickelt wurden, können verschiedene Module die gleichen Bezeichner verwenden. In diesem Fall würde es Namenskonflikte geben, bei einem Aufruf könnte es schlicht dazu kommen, dass Python nicht erkennen kann, welche Funktion Sie meinen.
-Daher Arbeiten Module mit *Namensräumen*. Beim Importieren definieren Sie das Modul-Objekt, über dessen Namen Sie das Modul eindeutig erreichen.
-Wenn wir später *objektorientiert* programmieren, fällt das explizite Angeben des Modul-Objekts meistens weg. Wir können dann Funktionen *auf Objekten* aufrufen und, da Objekte „ihre“ Funktionen kennen, wird Python dir passenden Funktion auswählen. Aber dazu später mehr.
+Bevor wir mit anderen Modulen der Standardbibliothek weiter machen, sollten wir nochmal einen kurzen Blick auf die `import` Anweisung richten, die wir zum Einbinden eines Moduls benötigen.
+Wenn Sie gerade mit der Programmierung beginnen, werden Sie sich vielleicht wundern, warum man, nachdem ein Modul importiert wurde, die Funktionen nicht „einfach so“ aufrufen kann, sondern immer den Modulnamen (bzw. das Modulobjekt) voranstellen muss? Was hier umständlich aussieht, hat einen guten Grund: Es kann gut sein, dass Sie in Ihrem Programm viele unterschiedliche Pakete und Module verwenden. Da diese Module normalerweise unabhängig voneinander entwickelt wurden, können verschiedene Module die gleichen Bezeichner verwenden. In diesem Fall würde es Namenskonflikte geben, bei einem Aufruf könnte es schlicht dazu kommen, dass Python nicht erkennen kann, welche Funktion Sie meinen.
+Daher Arbeiten Module mit *Namensräumen*. Beim Importieren definieren Sie das Modulobjekt, über dessen Namen Sie das Modul eindeutig erreichen.
+Wenn wir später *objektorientiert* programmieren, fällt das explizite Angeben des Modulobjekts meistens weg. Wir können dann Funktionen *auf Objekten* aufrufen und, da Objekte „ihre“ Funktionen kennen, wird Python dir passenden Funktion auswählen. Aber dazu später mehr.
 
 Zufallszahlen
 -------------
@@ -610,7 +610,7 @@ deterministisch
 :   Bezieht sich auf ein Programm, das bei jedem Durchlauf das Gleiche tut, wenn es die gleichen Eingaben hat.
 \index{deterministisch}
 
-Punkt-Notation
+Punktnotation
 :   Die Syntax für den Aufruf einer Funktion in einem anderen Modul durch Angabe des Modulnamens, gefolgt von einem Punkt und dem Funktionsnamen.
 \index{Punktnotation}
 
@@ -643,7 +643,7 @@ Importanweisung
 \index{Importanweisung}
 \index{Anweisung!Import}
 
-Modul-Objekt
+Modulobjekt
 :   Ein durch eine `import`-Anweisung erzeugter Wert, der den Zugriff auf die in einem Modul definierten Daten und den Code ermöglicht.
 \index{Modulobjekt}
 
