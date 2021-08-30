@@ -75,7 +75,8 @@ while True:
         if fn.startswith('../') :
             # Add a blank unless there is one at end of file
             if blank : print 
-            fu = fn.replace('../','http://www.py4e.com/')
+            #fu = fn.replace('../','http://www.py4e.com/')
+            fu = fn.replace('../','https://tiny.one/py4de/')
             print '# Code:', fu
             if trinket:
                 print "# Or select Download from this trinket's left-hand menu"
