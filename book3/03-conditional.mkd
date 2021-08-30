@@ -142,7 +142,7 @@ Viele andere Programmiersprachen verwenden Klammern, um Blöcke von Anweisungen 
 \index{zusammengesetzte Anweisung}
 \index{Anweisung!zusammengesetzte}
 
-Der Aufbau von `if`-Anweisungen ähnelt dem von Funktionsdefinitionen oder `for`-Schleifen^[Funktionen werden wir in Kapitel 4 und Schleifen in Kapitel 5 kennenlernen.] Die Anweisung besteht aus einer Kopfzeile, die mit einem Doppelpunkt (`:`) endet, gefolgt von einem eingerückten Block. Anweisungen wie diese werden *zusammengesetzte Anweisungen* genannt, weil sie sich über mehr als eine Zeile erstrecken.
+Der Aufbau von `if`-Anweisungen ähnelt dem von Funktionsdefinitionen oder `for`-Schleifen^[Funktionen werden wir in Kapitel 4 und Schleifen in Kapitel 5 kennenlernen.]. Die Anweisung besteht aus einer Kopfzeile, die mit einem Doppelpunkt (`:`) endet, gefolgt von einem eingerückten Block. Anweisungen wie diese werden *zusammengesetzte Anweisungen* genannt, weil sie sich über mehr als eine Zeile erstrecken.
 
 Es gibt keine Begrenzung für die Anzahl der Anweisungen, die im Rumpf erscheinen können, aber es muss mindestens eine geben. Gelegentlich ist es nützlich, einen Block ohne Anweisungen zu haben (normalerweise als Platzhalter für Code, den wir noch nicht geschrieben haben). In diesem Fall können wir die Anweisung `pass` verwenden, die nichts tut.
 

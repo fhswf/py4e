@@ -5,19 +5,16 @@ Dateien
 \index{Datei}
 \index{Datentyp!Datei}
 
-Persistenz
-----------
-
 \index{Persistenz}
 \index{Sekundärspeicher}
 
 Bisher haben wir gelernt, wie man Programme schreibt und der *CPU* unsere Absichten mit Hilfe von bedingter Ausführung, Funktionen und Iterationen mitteilt. Wir haben gelernt, wie wir Datenstrukturen im *Hauptspeicher* erstellen und verwenden. Die CPU und der Speicher sind der Ort, an dem unsere Software arbeitet und läuft. Hier findet das gesamte „Denken“ statt.
 
-Aber wenn man sich an unsere Diskussionen über die Hardware-Architektur erinnert stellt man fest, alles wird, was entweder in der CPU oder im Hauptspeicher gespeichert ist, gelöscht, sobald der Strom abgeschaltet wird. Bis jetzt waren unsere Programme also nur flüchtige Spaßübungen, um Python zu lernen.
+Aber wenn man sich an unsere Diskussionen über die Hardware-Architektur erinnert stellt man fest, alles wird, was entweder in der CPU oder im Hauptspeicher gespeichert ist, gelöscht ist, sobald der Strom abgeschaltet wird. Bis jetzt waren unsere Programme also nur flüchtige Spaßübungen, um Python zu lernen.
 
-![Sekundärspeicher](height=2.5in@../images/arch)
+![Sekundärspeicher](height=1.75in@../images/de/arch)
 
-In diesem Kapitel beginnen wir mit dem *Sekundärspeicher* (oder Dateien) zu arbeiten. Der Sekundärspeicher wird nicht gelöscht, wenn der Strom abgeschaltet wird. Oder im Fall eines USB-Sticks können die Daten, die wir von unseren Programmen schreiben, aus dem System entfernt und zu einem anderen System transportiert werden.
+In diesem Kapitel beginnen wir mit dem *Sekundär-* oder auch *Festspeicher* (also den Dateien) zu arbeiten. Der Sekundärspeicher wird nicht gelöscht, wenn der Strom abgeschaltet wird. Oder im Fall eines USB-Sticks können die Daten, die wir von unseren Programmen schreiben, aus dem System entfernt und zu einem anderen System transportiert werden.
 
 Wir werden uns in erster Linie auf das Lesen und Schreiben von Textdateien konzentrieren, wie wir sie in einem Texteditor erstellen. Später werden wir sehen, wie man mit Datenbankdateien arbeitet, bei denen es sich um Binärdateien handelt, die speziell für das Lesen und Schreiben durch Datenbanksoftware entwickelt wurden.
 
@@ -28,7 +25,8 @@ Wir werden uns in erster Linie auf das Lesen und Schreiben von Textdateien konze
 \index{open (Funktion)}
 \index{Funktion!open}
 
-Wenn wir eine Datei (z. B. auf unserer Festplatte) lesen oder schreiben wollen, müssen wir die Datei zuerst *öffnen*. Die `open`-Funktion kommuniziert mit unserem Betriebssystem, das weiß, wo die Daten für jede Datei gespeichert sind. Wenn wir eine Datei öffnen, bitten wir das Betriebssystem, die Datei anhand ihres Namens zu suchen und sicherzustellen, dass sie existiert. In diesem Beispiel öffnen wir die Datei `mbox.txt`, die in demselben Verzeichnis gespeichert sein sollte, in dem wir uns befinden, wenn wir Python starten. Man kann diese Datei von [www.py4e.com/code3/mbox.txt](http://www.py4e.com/code3/mbox.txt) herunterladen.
+Wenn wir eine Datei (z. B. auf unserer Festplatte) lesen oder schreiben wollen, müssen wir die Datei zuerst *öffnen*. Die `open`-Funktion kommuniziert mit unserem Betriebssystem, das weiß, wo die Daten für jede Datei gespeichert sind. Wenn wir eine Datei öffnen, bitten wir das Betriebssystem, die Datei anhand ihres Namens zu suchen und sicherzustellen, dass sie existiert. In diesem Beispiel öffnen wir die Datei `mbox.txt`, die in demselben Verzeichnis gespeichert sein sollte, in dem wir uns befinden, wenn wir Python starten. Man kann diese Datei von [tiny.one/py4de/code3/mbox.txt](https://tiny.one/py4de/code3/mbox.txt) herunterladen.
+
 
 ~~~~ {.python}
 >>> fhand = open('mbox.txt')
@@ -36,13 +34,13 @@ Wenn wir eine Datei (z. B. auf unserer Festplatte) lesen oder schreiben wollen, 
 <_io.TextIOWrapper name='mbox.txt' mode='r' encoding='cp1252'>
 ~~~~
 
-\index{Dateihandler}
+\index{Dateihandle}
 
-Wenn das `open` erfolgreich ist, gibt uns das Betriebssystem ein *Dateihandler* zurück. Der Dateihandler beinhaltet nicht die eigentlichen Daten in der Datei, sondern ist ein *Handler*, mit dem wir die Daten lesen können. Wir erhalten einen Handler, wenn die angeforderte Datei existiert und wir die richtigen Berechtigungen zum Lesen der Datei haben.
+Wenn das `open` erfolgreich ist, gibt uns das Betriebssystem ein *Dateihandle* zurück. Dieses Handle beeinhaltet nicht eigentlichen Daten der Datei, sondern er sagt dem Python-Programm, *wo* das Betriebssystem die Datei abgelegt hat. Über dieses Handle können dann aller weiteren Operation für die Datei (mithilfe des Betriebssystems) ausgeführt werden. 
 
-![Ein Dateihandler](height=2.0in@../images/handle)
+![Ein Dateihandler](height=1.75in@../images/de/handle)
 
-Wenn die Datei nicht existiert, schlägt `open` mit einem Traceback fehl und wir erhalten keinen Handler, um auf den Inhalt der Datei zuzugreifen:
+Wir erhalten ein Handle nur, wenn die angeforderte Datei existiert und wir die richtigen Berechtigungen zum Lesen oder schreiben der Datei haben. Wenn die Datei nicht existiert, schlägt `open` mit einem Traceback fehl und wir erhalten keinen Handle, um auf den Inhalt der Datei zuzugreifen:
 
 ~~~~ {.python}
 >>> fhand = open('stuff.txt')
@@ -71,11 +69,11 @@ Details: http://source.sakaiproject.org/viewsvn/?view=rev&rev=39772
 
 Die gesamte Datei der Mail-Interaktionen ist verfügbar unter:
 
-[www.py4e.com/code3/mbox.txt](http://www.py4e.com/code3/mbox.txt)
+[tiny.one/py4de/code3/mbox.txt](tiny.one/py4de/code3/mbox.txt)
 
 Eine gekürzte Version der Datei ist verfügbar unter:
 
-[www.py4e.com/code3/mbox-short.txt](http://www.py4e.com/code3/mbox-short.txt)
+[tiny.one/py4de/code3/mbox-short.txt](tiny.one/py4de/code3/mbox-short.txt)
 
 Diese Dateien haben ein Standardformat für eine Datei, die mehrere E-Mail-Nachrichten enthält. Die Zeilen, die mit „From“ beginnen, trennen die einzelnen Nachrichten voneinander. Die Zeilen, die mit "From:" beginnen, sind dagegen Teil der Nachrichten. Weitere Informationen über das mbox-Format findet man unter <https://en.wikipedia.org/wiki/Mbox>.
 
@@ -103,7 +101,6 @@ Y
 Man kann zusätzlich sehen, dass die Länge der Zeichenkette `X\nY` *drei* Zeichen beträgt, da das Zeilenumbruchzeichen ein einzelnes Zeichen ist.
 
 Wenn wir also die Zeilen in einer Datei betrachten, müssen wir uns *vorstellen*, dass es ein spezielles unsichtbares Zeichen namens Newline am Ende jeder Zeile gibt, das das Ende der Zeile markiert.
-
 Das Newline-Zeichen trennt also die Zeichen in der Datei in Zeilen.
 
 Lesen von Dateien
@@ -234,7 +231,7 @@ Author: david.horwitz@uct.ac.za
 ...
 ~~~~
 
-Auch hier verwenden wir verkürzte Form der `if`-Anweisung, bei der wir das `continue` in die selbe Zeile wie das `if` setzen. Diese verkürzte Form der `if`-Anweisung funktioniert genauso, als ob das `continue` in der nächsten Zeile und eingerückt wäre.
+Auch hier verwenden wir verkürzte Form der `if`-Anweisung, bei der wir das `continue` in dieselbe Zeile wie das `if` setzen. Diese verkürzte Form der `if`-Anweisung funktioniert genauso, als ob das `continue` in der nächsten Zeile und eingerückt wäre.
 
 Wahl des Dateinamens durch den User
 -----------------------------------
@@ -252,12 +249,12 @@ Wir lesen den Dateinamen vom Benutzer und legen ihn in eine Variable namens `fna
 
 ~~~~
 python search6.py
-Enter the file name: mbox.txt
-There were 1797 subject lines in mbox.txt
+Gib eine Datei an: mbox.txt
+Es gibt 1797 Betreffzeilen in mbox.txt
 
 python search6.py
-Enter the file name: mbox-short.txt
-There were 27 subject lines in mbox-short.txt
+Gib eine Datei an: mbox-short.txt
+Es gibt 27 Betreffzeilen in mbox-short.txt
 ~~~~
 
 Bevor wir uns den nächsten Abschnitt ansehen, werfen wir einen Blick auf das obige Programm und fragen uns: „Was könnte hier möglicherweise schiefgehen?“ oder „Was könnte unser freundlicher Benutzer tun, das dazu führen würde, dass unser nettes kleines Programm unschön mit einem Traceback beendet wird und uns in den Augen unserer Benutzer nicht so cool aussehen lässt?“.
@@ -269,18 +266,18 @@ Aber was passiert, wenn unser Benutzer etwas eingibt, das kein Dateiname ist?
 
 ~~~~
 python search6.py
-Enter the file name: missing.txt
+Gib eine Datei an: nichtda.txt
 Traceback (most recent call last):
   File "search6.py", line 2, in <module>
     fhand = open(fname)
-FileNotFoundError: [Errno 2] No such file or directory: 'missing.txt'
+FileNotFoundError: [Errno 2] No such file or directory: 'nichtda.txt'
 
 python search6.py
-Enter the file name: na na boo boo
+Gib eine Datei an: ha ha ha 
 Traceback (most recent call last):
   File "search6.py", line 2, in <module>
     fhand = open(fname)
-FileNotFoundError: [Errno 2] No such file or directory: 'na na boo boo'
+FileNotFoundError: [Errno 2] No such file or directory: 'ha ha ha'
 ~~~~
 
 Benutzer werden letztendlich alles Mögliche tun, um unsere Programme zum Absturz zu bringen, entweder aus Spaß oder sogar mit dem Ziel, Sicherheitslücken auszunutzen. Tatsächlich ist ein wichtiger Teil jedes Software-Entwicklungsteams eine Person oder Gruppe, die *Qualitätssicherung* (kurz QS) genannt wird, deren einzige Aufgabe es ist, die „verrücktesten“ Dinge zu tun, um Fehler in einer Software aufzudecken
@@ -308,12 +305,12 @@ Die Funktion `exit` terminiert das Programm. Es ist eine Funktion, die wir aufru
 
 ~~~~
 python search7.py
-Enter the file name: mbox.txt
-There were 1797 subject lines in mbox.txt
+Gib eine Datei an: nichtda.txt
+Datei nichtda.txt konnte nicht geoeffnet werden
 
 python search7.py
-Enter the file name: na na boo boo
-File cannot be opened: na na boo boo
+Gib eine Datei an: ha ha ha       
+Datei ha ha ha konnte nicht geoeffnet werden
 ~~~~
 
 Der Schutz des `open`-Aufrufs ist ein gutes Beispiel für die richtige Verwendung von `try` und `except` in einem Python-Programm.
@@ -325,7 +322,7 @@ Schreiben von Dateien
 
 \index{Datei!schreiben}
 
-Um eine Datei zu schreiben, müssen wir sie im Modus `w` als zweitem Parameter öffnen:
+Um eine Datei zu schreiben, müssen wir sie im Modus `w` (für *write*, schreiben) als zweitem Parameter öffnen:
 
 ~~~~ {.python}
 >>> fout = open('output.txt', 'w')
@@ -435,7 +432,7 @@ RECEIVED: FROM MURDER (MAIL.UMICH.EDU [141.211.14.90])
      SAT, 05 JAN 2008 09:14:16 -0500
 ~~~~
 
-**Sie können die Datei herunterladen von** [www.py4e.com/code3/mbox-short.txt](http://www.py4e.com/code3/mbox-short.txt)
+**Sie können die Datei herunterladen von** [tiny.one/py4de/code3/mbox-short.txt](tiny.one/py4de/code3/mbox-short.txt)
 
 **Übung 2: Schreiben Sie ein Programm, das nach einem Dateinamen fragt, und iterieren Sie dann
 durch die Datei und sucht nach Zeilen der Form:**
@@ -447,11 +444,11 @@ X-DSPAM-Confidence: 0.8475
 **Wenn Sie auf eine Zeile stoßen, die mit „X-DSPAM-Confidence:“ beginnt, trennen Sie die Zeile auf, um die Fließkommazahl in der Zeile zu extrahieren. Zählen Sie diese Zeilen und berechnen Sie dann die Summe der Werte aus diesen Zeilen. Wenn Sie das Ende der Datei erreichen, geben Sie den Durchschnittswert aus.**
 
 ~~~~
-Enter the file name: mbox.txt
-Average spam confidence: 0.894128046745
+Gib eine Datei an: mbox.txt
+Wahrscheinlichkeit fuer Kein-Spam : 0.894128046745
 
-Enter the file name: mbox-short.txt
-Average spam confidence: 0.750718518519
+Gib eine Datei an: mbox-short.txt
+Wahrscheinlichkeit fuer Kein-Spam: 0.750718518519
 ~~~~
 
 **Testen Sie Ihre Datei an den Dateien `mbox.txt` und `mbox-short.txt`.**
@@ -460,16 +457,16 @@ Average spam confidence: 0.750718518519
 
 ~~~~
 python egg.py
-Enter the file name: mbox.txt
-There were 1797 subject lines in mbox.txt
+Gib eine Datei an: mbox.txt
+Es gibt 1797 Betreffzeilen mbox.txt
 
 python egg.py
-Enter the file name: missing.tyxt
-File cannot be opened: missing.tyxt
+Gib eine Datei an: missing.tyxt
+Datei missing.tyxt konnte nicht geoeffnet werden 
 
 python egg.py
-Enter the file name: na na boo boo
-NA NA BOO BOO TO YOU - You have been punk'd!
+Gib eine Datei an: blafabel
+Du laberst mich an?
 ~~~~
 
 **Wir möchten Sie natürlich nicht dazu verführen, ständig Easter-Eggs in Ihre Programme einzubauen; dies ist nur eine Übung!**

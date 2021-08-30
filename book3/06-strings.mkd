@@ -2,46 +2,67 @@
 Zeichenketten
 =============
 
+Bei typischen Informatik-Begriffen wie „Datenverarbeitung“ oder auch „Rechner“ denkt man womöglich als Erstes an das Rechnen mit Zahlen. Tatsächlich machen aber, quantitativ gesehen, numerische Daten nur einen kleinen Teil der Daten aus, die wir mit Computern verarbeiten können. Viele Informationen liegen in Form von geschrieben Texten vor, die von unseren Programmen ausgewertet werden. In diesem Kapitel geht es um Text-Daten, die sogenannten Zeichenketten. Wir werden sehen, wie man in Python Zeichenketten anlegt und vor allem, wie man mit ihnen umgehen kann.
+
+Noch einen kleinen Tipp vorab: vieles von dem, was man mit Zeichenketten machen kann, funktioniert genau so mit Folgen von völlig andren Elementen. Wenn Sie in diesem Kapitel genau hinsehen, kommt Ihnen das also in den folgenden umsomehr zugute.
+
 Eine Zeichenkette ist eine Folge von Einzelzeichen
 --------------------------------------------------
 
 \index{Folge}
 \index{Einzelzeichen}\index{Character}
+
+
+
+Eine Zeichenkette (englisch *String*) ist eine Folge einzelner Zeichen (englisch *Character*). Wir können die Folge von Zeichen einfach „wie Text“ im Programm angeben. Wichtig ist nur, dass sie in Anführungszeichen gesetzt wird, denn sonst würde Python die Zeichen als Bezeichner (also z.B. als Variable) deuten.
+
+Python lässt übrigens sowohl einfache (`'...'`), als auch die im Deutschen verwendeten doppelten (`"..."`) Anführungszeichen zu. Es macht also keinen Unterschied, ob Sie die Zeichenkette als `'Hallo Welt'` oder als `"Hallo Welt"` angeben.
+
+Auf den ersten Blick erscheint es überflüssig zu sein, zwei Schreibweisen für den gleichen Zweck zu haben. Es gibt aber mindestens ein gutes Gegenargument: Stellen Sie sich vor, sie möchten ein Anführungszeichen (egal ob doppelt oder einfach) in einer Zeichenkette verwenden. Python erlaubt es nun, dass Sie dasjenige Anführungszeichen zum Einfassen der Zeichen verwenden, dass Sie *in* der Zeichenkette nicht benötigen.
+
+~~~~ {.python}
+>>> text1 = 'Sie rief ihnen "Hallo" zu.'
+>>> text2 = "Hello it's me"
+>>> text3 = 'What\'s up?'
+~~~~
+
+`text1` verwendet einfache Anführungszeichen, um im Satz die wörtliche Rede „Hallo“ in doppelten Anführungszeichen darstellen zu können. In `text2` verwenden wir doppelten Anführungszeichen, da wir im Text ein Apostroph setzen wollen. `text3` verwendet nur einfach Anführungszeichen, obwohl im Text ein Apostroph vorkommt. Wir müssen dieses Apostrophzeichen mit einem sogenannten *Maskierungszeichen* versehen. Python verwendet hier, wie die meisten Programmiersprachen den Backslash `\`. Dieses Soderzeichen verhindert, dass das nachfolgende Zeichen vom ausführenden Programm als Funktionszeichen gesehen wird. Der Apostroph soll hier also nicht den String schließen, sondern als wirklicher Apostroph in der Zeichenkette erscheinen.
+
+Es steht Ihnen also frei, einfache oder doppelten Anführungszeichen zu verwenden. Die Konvention, die sich bei vielen Python-Programmierern eingebürgert hat, ist einfache Anführungszeichen für einzelne Worte oder Begriffe zu verwenden und doppelte Anführungszeichen für ganze Sätze.
+
+Da eine Zeichenkette eine Folge (einzelner) Zeichen ist, können wir auch auf die einzelnen Elemente dieser Folge zugreifen. Dies funktioniert mit dem indexbasierten Zugriffsoperator (auch *Klammeroperator* genannt):
+
 \index{Indexoperator}\index{Zugriff, indexbasiert}
 \index{Operator!indexbasierter Zugriff}
 
-Eine Zeichenkette (englisch *String*) ist eine Folge einzelner Zeichen (englisch *Character*). Wor können mit dem indexbasierten Zugriffsoperator (auch Klammeroperator genannt) auf einzelne Zeichen zugreifen:
-
 ~~~~ {.python}
->>> fruit = 'banana'
->>> letter = fruit[1]
+>>> frucht = 'Banane'
+>>> zeichen = frucht[1]
 ~~~~
 
 \index{Index}
 \index{}
 
-Die zweite Anweisung extrahiert das Zeichen an Indexposition 1 aus der Variablen `fruit` und weist es der Variablen `letter` zu.
+Die zweite Anweisung extrahiert das Zeichen an Indexposition 1 aus der Variablen `frucht` und weist es der Variablen `zeichen` zu.
 
-Der Ausdruck in eckigen Klammern wird als *Index* bezeichnet. Der Index gibt an, auf welches Zeichen in der Sequenz zugegriffen werden soll.
-
-Aber wir bekommen vielleicht nicht das, was wir erwarten:
+Der Ausdruck in eckigen Klammern wird als *Index* bezeichnet. Der Index gibt an, auf welches Zeichen in der Sequenz zugegriffen werden soll. Aber wir bekommen vielleicht nicht das, was wir erwarten:
 
 ~~~~ {.python}
->>> print(letter)
+>>> print(zeichen)
 a
 ~~~~
 
-Für die meisten Menschen ist der erste Buchstabe von „Banane“ eigentlich ein „b“, aber nicht „a“. Aber in Python ist der Index ein Offset vom Anfang der Zeichenkette, und der Offset des ersten Buchstabens ist Null.
+Für die meisten Menschen ist der erste Buchstabe von „Banane“ eigentlich ein „B“, aber nicht „a“. Aber in Python ist der Index ein Offset vom Anfang der Zeichenkette, und der Offset des ersten Buchstabens ist 0.
 
 ~~~~ {.python}
->>> letter = fruit[0]
->>> print(letter)
-b
+>>> zeichen = frucht[0]
+>>> print(zeichen)
+B
 ~~~~
 
-So ist „b“ der nullte Buchstabe von „Banane“, „a“ der erste und „n“ der zweite Buchstabe.
+So ist „B“ der nullte Buchstabe von „Banane“, „a“ der erste und „n“ der zweite Buchstabe.
 
-![String Indexes](height=0.75in@../images/string)
+![Indizes im String](height=0.75in@../images/de/string)
 
 \index{Index!beginnt mit Null}
 \index{Null, Index beginnt mit}
@@ -54,7 +75,7 @@ Man kann einen beliebigen Ausdruck, einschließlich Variablen und Operatoren, al
 \index{TypeError}
 
 ~~~~ {.python}
->>> letter = fruit[1.5]
+>>> zeichen = frucht[1.5]
 TypeError: string indices must be integers
 ~~~~
 
@@ -67,8 +88,8 @@ Länge einer Zeichenkette
 `len` ist eine eingebaute Funktion, die die Anzahl der Zeichen in einer Zeichenkette zurückgibt:
 
 ~~~~ {.python}
->>> fruit = 'banana'
->>> len(fruit)
+>>> frucht = 'Banane'
+>>> len(frucht)
 6
 ~~~~
 
@@ -78,20 +99,20 @@ Um den letzten Buchstaben einer Zeichenkette zu erhalten, könnte man versucht s
 \index{IndexError}
 
 ~~~~ {.python}
->>> length = len(fruit)
->>> last = fruit[length]
+>>> length = len(frucht)
+>>> last = frucht[length]
 IndexError: string index out of range
 ~~~~
 
-Der Grund für den `IndexError` ist, dass es keinen Buchstaben in „banana“ mit dem Index 6 gibt. Da wir bei Null angefangen haben zu zählen, sind die sechs Buchstaben von 0 bis 5 nummeriert. Um das letzte Zeichen zu erhalten, müssen wir 1 von `length` subtrahieren:
+Der Grund für den `IndexError` ist, dass es keinen Buchstaben in „Banane“ mit dem Index 6 gibt. Da wir bei null angefangen haben zu zählen, sind die sechs Buchstaben von 0 bis 5 nummeriert. Um das letzte Zeichen zu erhalten, müssen wir 1 von `length` subtrahieren:
 
 ~~~~ {.python}
->>> last = fruit[length-1]
+>>> last = frucht[length-1]
 >>> print(last)
-a
+e
 ~~~~
 
-Alternativ können wir auch negative Indizes verwenden, die vom Ende der Zeichenkette rückwärts zählen. Der Ausdruck `fruit[-1]` ergibt den letzten Buchstaben, `fruit[-2]` den vorletzten und so weiter.
+Alternativ können wir auch negative Indizes verwenden, die vom Ende der Zeichenkette rückwärts zählen. Der Ausdruck `frucht[-1]` ergibt den letzten Buchstaben, `frucht[-2]` den vorletzten und so weiter.
 
 \index{Index!negativ}
 \index{negativer Index}
@@ -109,20 +130,20 @@ Bei vielen Berechnungen wird eine Zeichenkette Zeichen für Zeichen verarbeitet.
 
 ~~~~ {.python}
 index = 0
-while index < len(fruit):
-    letter = fruit[index]
-    print(letter)
+while index < len(frucht):
+    zeichen = frucht[index]
+    print(zeichen)
     index = index + 1
 ~~~~
 
-Diese Schleife durchläuft die Zeichenkette und zeigt jeden Buchstaben einzeln in einer Zeile an. Die Schleifenbedingung ist `index < len(fruit)`, wenn also `index` gleich der Länge der Zeichenkette ist, ist die Bedingung falsch und der Schleifenrumpf wird nicht mehr ausgeführt. Das letzte Zeichen, auf das zugegriffen wird, ist dasjenige mit dem Index `len(fruit)-1`, also das letzte Zeichen in der Zeichenkette.
+Diese Schleife durchläuft die Zeichenkette und zeigt jeden Buchstaben einzeln in einer Zeile an. Die Schleifenbedingung ist `index < len(frucht)`, wenn also `index` gleich der Länge der Zeichenkette ist, ist die Bedingung falsch und der Schleifenrumpf wird nicht mehr ausgeführt. Das letzte Zeichen, auf das zugegriffen wird, ist dasjenige mit dem Index `len(frucht)-1`, also das letzte Zeichen in der Zeichenkette.
 
 **Übung 1: Schreiben Sie eine `while`-Schleife, die beim letzten Zeichen in der Zeichenkette beginnt und sich rückwärts bis zum ersten Zeichen in der Zeichenkette vorarbeitet, wobei jeder Buchstabe in einer eigenen Zeile ausgegeben wird, natürlich rückwärts.**
 
 Eine andere Möglichkeit, einen Traversierung zu schreiben, ist mit einer `for`-Schleife:
 
 ~~~~ {.python}
-for char in fruit:
+for char in frucht:
     print(char)
 ~~~~
 
@@ -148,15 +169,16 @@ Python
 ~~~~
 
 Der Operator gibt den Teil der Zeichenkette vom n-ten Zeichen bis zum m-ten Zeichen zurück, einschließlich des ersten, aber *ausschließlich* des letzten Zeichens.
+Die erste `print`-Anweisung im obigen Beispiel druckt also die Zeichen 0 bis 4 des Strings, das zweite `print` druckt die Zeichen 6 bis 11.
 
 Wenn man den ersten Index (vor dem Doppelpunkt) weglässt, beginnt die Teilzeichenkette am Anfang der Zeichenkette. Wenn man den zweiten Index ebenfalls weglässt, geht die Teilzeichenkette bis zum Ende der Zeichenkette:
 
 ~~~~ {.python}
->>> fruit = 'banana'
->>> fruit[:3]
-'ban'
->>> fruit[3:]
-'ana'
+>>> frucht = 'Banane'
+>>> frucht[:3]
+'Ban'
+>>> frucht[3:]
+'ane'
 ~~~~
 
 Wenn der erste Index größer oder gleich dem zweiten ist, ist das Ergebnis eine *leere Zeichenkette*, dargestellt durch zwei Anführungszeichen:
@@ -164,14 +186,14 @@ Wenn der erste Index größer oder gleich dem zweiten ist, ist das Ergebnis eine
 \index{Anführungszeichen}
 
 ~~~~ {.python}
->>> fruit = 'banana'
->>> fruit[3:3]
+>>> frucht = 'Banane'
+>>> frucht[3:3]
 ''
 ~~~~
 
 Eine leere Zeichenkette enthält keine Zeichen und hat die Länge 0, aber ansonsten verhält sie sich genauso wie jede andere Zeichenkette.
 
-**Übung 2: Wenn `fruit` eine Zeichenkette ist, was bewirkt dann `fruit[:]`?**
+**Übung 2: Wenn `frucht` eine Zeichenkette ist, was bewirkt dann `frucht[:]`?**
 
 \index{Kopieren!slice}
 \index{slice!Kopieren}
@@ -204,7 +226,7 @@ Das „Objekt“ ist in diesem Fall die Zeichenkette und das „Element“ ist d
 Der Grund für den Fehler ist, dass Zeichenketten *unveränderlich* sind. Dies bedeutet, dass wir eine vorhandene Zeichenkette nicht ändern können. Das Beste, was wir tun können, ist, eine neue Zeichenfolge zu erstellen, die eine Variation der ursprünglichen Zeichenfolge ist:
 
 ~~~~ {.python}
->>> greeting = 'Hello, world!'
+>>> greeting = "Hello, world!"
 >>> new_greeting = 'J' + greeting[1:]
 >>> print(new_greeting)
 Jello, world!
@@ -225,10 +247,10 @@ Zählen mit Schleifen
 Das folgende Programm zählt, wie oft der Buchstabe „a“ in einer Zeichenkette vorkommt:
 
 ~~~~ {.python}
-word = 'banana'
+word = 'Banane'
 count = 0
-for letter in word:
-    if letter == 'a':
+for zeichen in word:
+    if zeichen == 'a':
         count = count + 1
 print(count)
 ~~~~
@@ -250,9 +272,9 @@ Der `in`-Operator
 Das Schlüsselwort `in` ist ein boolescher Operator, der zwei Zeichenketten annimmt und `True` zurückgibt, wenn die erste Zeichenkette als Teilzeichenkette in der zweiten erscheint:
 
 ~~~~ {.python}
->>> 'a' in 'banana'
+>>> 'an' in 'Banane'
 True
->>> 'seed' in 'banana'
+>>> 'anna' in 'Banane'
 False
 ~~~~
 
@@ -265,25 +287,25 @@ Vergleich von Zeichenketten
 Die Vergleichsoperatoren arbeiten mit Zeichenketten. Um zu sehen, ob zwei Zeichenketten gleich sind:
 
 ~~~~ {.python}
-if word == 'banana':
-    print('All right, bananas.')
+if word == 'Banane':
+    print('Genau, Banane!')
 ~~~~ 
 
 Andere Vergleichsoperationen sind nützlich, um Wörter in alphabetische Reihenfolge zu bringen:
 
 ~~~~ {.python}
-if word < 'banana':
-    print('Your word,' + word + ', comes before banana.')
-elif word > 'banana':
-    print('Your word,' + word + ', comes after banana.')
+if word < 'banane':
+    print('Dein Wort,' + word + ', kommt vor banane.')
+elif word > 'Banane':
+    print('Dein Wort,' + word + ', kommt nach banane.')
 else:
-    print('All right, bananas.')
+    prrint('Genau, banane!')
 ~~~~
 
 Python geht mit Groß- und Kleinbuchstaben nicht so um, wie es Menschen tun. Alle Großbuchstaben kommen vor allen Kleinbuchstaben, also:
 
 ~~~~
-Your word, Pineapple, comes before banana.
+Dein Wort,Traube, kommt vor banane.
 ~~~~
 
 Eine gängige Methode, dieses Problem zu beheben, besteht darin, Zeichenketten in ein Standardformat zu konvertieren, z. B. in Kleinbuchstaben, bevor der Vergleich durchgeführt wird.
@@ -309,6 +331,11 @@ Python hat eine Funktion namens `dir`, die die verfügbaren Methoden für ein Ob
 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip',
 'split', 'splitlines', 'startswith', 'strip', 'swapcase',
 'title', 'translate', 'upper', 'zfill']
+~~~~
+
+Im Gegensatz zur Funktion `dir`, die lediglich eine grobe Auflistung der Methoden anzeigt, liefert die Funktion `help` eine vollständige Hilfe. Besonders im interaktiven Modus ist `help` eine schnelle und gute Möglichkeit, um Informationen zu einer bestimmten Funktion zu erhalten. Noch übersichtlicher als `help` ist die Dokumentation der Standardbibliothek im Internet, unter [docs.python.org](https://docs.python.org/library/stdtypes.html#string-methods) (hier für die String-Methoden)
+
+~~~~ {.python}
 >>> help(str.capitalize)
 Help on method_descriptor:
 
@@ -319,8 +346,6 @@ capitalize(...)
     have upper case and the rest lower case.
 >>>
 ~~~~
-
-Während die Funktion `dir` die Methoden auflistet und man `help` verwenden kann, um eine einfache Dokumentation zu einer Methode zu erhalten, wäre eine bessere Quelle für die Dokumentation von String-Methoden <https://docs.python.org/library/stdtypes.html#string-methods>.
 
 Der Aufruf einer *Methode* ist ähnlich wie der Aufruf einer Funktion (sie nimmt Argumente entgegen und gibt einen Wert zurück), aber die Syntax ist anders. Wir rufen eine Methode auf, indem wir den Methodennamen an den Variablennamen anhängen und den Punkt als Begrenzer verwenden.
 
@@ -334,24 +359,24 @@ Anstelle der Funktionssyntax `upper(word)` wird die Methodensyntax `word.upper()
 \index{Punktnotation}
 
 ~~~~ {.python}
->>> word = 'banana'
+>>> word = 'Banane'
 >>> new_word = word.upper()
 >>> print(new_word)
-BANANA
+BANANE
 ~~~~
 
 Diese Form der Punktschreibweise gibt den Namen der Methode (`upper`) und den Namen der Zeichenkette (`word`), auf die die Methode angewendet werden soll an. Die leeren Klammern zeigen an, dass diese Methode kein Argument benötigt.
 
 \index{Klammern!leer}
 
-Ein Methodenaufruf wird als *Aufruf* bezeichnet; in diesem Fall würden wir sagen, dass wir `upper` auf `word` aufrufen.
+Ein Methodenaufruf wird als *Aufruf* bezeichnet; in diesem Fall würden wir sagen, dass wir `upper` auf `word` aufrufen. Die Aufrufkonvention mit der Punkt-Notation ist typisch für die *objektorientierte Programmierung*. Die Zeichenkette `word` ist in diesem Fall unser Objekt, und der Aufruf der Methode `upper` *auf* dem Objekt bewirkt, dass etwas mit dem Objekt passiert. 
 
 \index{Aufruf einer Methode}
 
-Es gibt beispielsweise eine Zeichenketten-Methode namens `find`, die nach der Position einer Zeichenkette innerhalb einer anderen sucht:
+Es gibt weitere Zeichenketten-Methoden, beispielsweise die Methode `find`, die nach der Position einer Zeichenkette innerhalb einer anderen sucht:
 
 ~~~~ {.python}
->>> word = 'banana'
+>>> word = 'Banane'
 >>> index = word.find('a')
 >>> print(index)
 1
@@ -372,8 +397,8 @@ Sie kann als zweites Argument den Index annehmen, bei dem sie beginnen soll:
 \index{Argument!optional}
 
 ~~~~ {.python}
->>> word.find('na', 3)
-4
+>>> word.find('a', 2)
+3
 ~~~~
 
 Eine häufige Aufgabe ist das Entfernen von Whitespaces (Leerzeichen, Tabulatoren oder Zeilenumbrüche) am Anfang und Ende einer Zeichenkette mit der Methode `strip`:
@@ -415,30 +440,30 @@ Im letzten Beispiel wird die Methode `lower` aufgerufen und dann wird mit `start
 
 <https://docs.python.org/library/stdtypes.html#string-methods> 
 
-**Schreiben Sie ein Programm, das die Anzahl der Vorkommen des Buchstabens „a“ in „banana“ mithilfe der count-Methode zählt.**
+**Schreiben Sie ein Programm, das die Anzahl der Vorkommen des Buchstabens „a“ in „Banane“ mithilfe der count-Methode zählt.**
 
 Parsen von Zeichenketten
 ------------------------
 
 Oft wollen wir in eine Zeichenkette schauen und eine Teilzeichenkette finden. Wenn wir zum Beispiel eine Liste von Zeilen erhalten, die wie folgt formatiert sind:
 
-`From stephen.marquard@`*` uct.ac.za`*` Sat Jan  5 09:14:16 2008`
+`From giefers.heiner@`*`fh-swf.de`*` Mon, 30 Aug 2021 16:20:09 +0200`
 
-Wollten wir nur die zweite Hälfte der Adresse (d.h. `uct.ac.za`) aus jeder Zeile extrahieren, können wir dies mit der Methode `find` und String-Slicing erreichen.
+Wollten wir nur die *Domäne* der e-Mail Adresse (d.h. `fh-swf.de`) aus jeder Zeile extrahieren, können wir dies mit der Methode `find` und String-Slicing erreichen.
 
 Zuerst wird die Position des at-Zeichens in der Zeichenkette ermittelt. Dann werden wir die Position des ersten Leerzeichens *nach* dem at-Zeichen finden. Und dann verwenden wir String-Slicing, um den Teil der Zeichenkette zu extrahieren, den wir suchen.
 
 ~~~~ {.python}
->>> data = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
+>>> data = 'From giefers.heiner@fh-swf.de Mon, 30 Aug 2021 16:20:09 +0200'
 >>> atpos = data.find('@')
 >>> print(atpos)
-21
+19
 >>> sppos = data.find(' ',atpos)
 >>> print(sppos)
-31
+29
 >>> host = data[atpos+1:sppos]
 >>> print(host)
-uct.ac.za
+fh-swf.de
 >>>
 ~~~~
 
@@ -448,64 +473,58 @@ Die Dokumentation für die Methode `find` ist verfügbar unter
 
 <https://docs.python.org/library/stdtypes.html#string-methods>.
 
-Formatierungsoperator
+Formatierte Strings
 ---------------------
 
-\index{Formatierungsoperator}
-\index{Operator!Formatierung}
-
-Mit dem *Formatierungsoperator* `%` können wir Zeichenketten konstruieren, wobei Teile der Zeichenketten durch die in Variablen gespeicherten Daten ersetzt werden. Wenn er auf Ganzzahlen angewendet wird, ist `%` der Modulo-Operator. Aber wenn der erste Operand eine Zeichenkette ist, ist `%` der Formatierungsoperator.
-
 \index{Format-String}
-
-Der erste Operand ist der *Format-String*, der ein oder mehrere *Formatierungszeichen* enthält, die angeben, wie der zweite Operand formatiert wird. Das Ergebnis ist eine Zeichenkette.
-
 \index{Formatierungszeichen}
 
-Zum Beispiel bedeutet das Formatierungszeichen `%d`, dass der zweite Operand als Ganzzahl formatiert werden soll (`d` steht für „decimal“):
+
+Wir haben nun schon mehrfach `print`-Anweisungen verwendet, bei denen wir sowohl Zeichenketten als auch die Werte bestimmter Variablen ausgegeben haben. Also z.B. so:
 
 ~~~~ {.python}
->>> camels = 42
->>> '%d' % camels
-'42'
+>>> count = 2
+>>> zeichen = 'a'
+>>> print('Buchstabe:', zeichen, 'Anzahl:', count)
+Buchstabe: a Anzahl: 2
 ~~~~
 
-Das Ergebnis ist die Zeichenkette `'42'`, die nicht zu verwechseln ist mit dem Ganzzahlwert 42.
+Das funktioniert, weil die `print`-Funktion eine Liste von Argumenten akzeptiert. Die Schreibweise mit den Kommas ist aber nicht gerade praktisch und auch nicht sehr übersichtlich.
 
-Ein Formatierungszeichen kann an beliebiger Stelle im Format-String erscheinen, sodass wir zum Beispiel einen Wert in einen Satz einfügen können:
+Eine Abhilfe schaffen hier formatierte Zeichenketten, in Python auch *Format Strings* (oder *f-Strings*) genannt. Eine „normale“ Zeichenkette wird zu einem f-String, indem wir Ihr ein `f` direkt vor dem öffnenden Anführungszeichen voranstellen. In einem f-String können wir dann Werte einbetten, indem wir die Variablennamen in geschweifte Klammern direkt in den String schreiben.
 
 ~~~~ {.python}
->>> camels = 42
->>> 'I have spotted %d camels.' % camels
-'I have spotted 42 camels.'
+>>> count = 2
+>>> zeichen = 'a'
+>>> print(f'Buchstabe: {zeichen} Anzahl: {count}')
+Buchstabe: a Anzahl: 2
 ~~~~
 
-Wenn der Format-String mehr als ein Formatierungszeichen enthält, muss das zweite Argument ein Tupel sein^[Ein Tupel ist eine Folge von durch Kommata getrennten Werten innerhalb eines Paares runder Klammern. Wir werden Tupel in Kapitel 10 behandeln]. Jedes Formatierungszeichen wird der Reihe nach mit einem Element des Tupels abgeglichen.
+In Format Strings erkennt man die eingebetteten Variablen sehr schnell durch die geschweiften Klammern. Gleichzeitig benötigt man keine zusätzlichen Kommas oder schließenden und öffnenden Anführungszeichen.
 
-Das folgende Beispiel verwendet `%d` zur Formatierung einer Ganzzahl, `%g` zur Formatierung einer Fließkommazahl und `%s` zur Formatierung einer Zeichenkette:
+Ein weiterer Vorteil von Format Strings ist, dass man die Darstellungsweise der Variablen beeinflussen kann. Das ist z.B. nützlich, wenn man Fließkommazahlen ausgeben möchte. Im folgenden Beispiel berechnen wir `10/3` was in einen Wert mit unendlich vielen Nachkommastellen resultiert^[Natürlich kann kein Computer dieser Welt reelle Zahlen *genau* abspeichern. Intern werden reelle Werte mit einer bestimmten Genauigkeit gespeichert, die auch in Berechnungen immer wieder zu *Rundungsfehlern* führen. Mit diesen Fragestellungen beschäftigt sich die *Computer-Arithmetik*, wir werden das Thema hier nicht genauer beleuchten. Allerdings sieht man die Auswirkungen auch im täglichen Umgang mit Python. Achten Sie mal auf die letzte Ziffer bei der Darstellung von 10/3 als Kommazahl.].
 
 ~~~~ {.python}
->>> 'In %d years I have spotted %g %s.' % (3, 0.1, 'camels')
-'In 3 years I have spotted 0.1 camels.'
+>>> anteil = 10/3
+>>> print("Ihr Anteil ist", anteil)
+Ihr Anteil ist 3.3333333333333335
+>>> print(f"Ihr Anteil ist {anteil:.2f}")
+Ihr Anteil ist 3.33
 ~~~~
 
-Die Anzahl der Elemente im Tupel muss mit der Anzahl der Formatierungszeichen im Format-String übereinstimmen. Auch die Typen der Elemente müssen mit den Formatierungszeichen übereinstimmen:
+Bei der Ausgabe wirkt die Darstellung so vieler Nachkommastellen häufig störend. Daher verwenden wir in der zweiten `print`-Anweisung des Beispiels einen f-String. Wir betten die Variable `anteil` ein, fügen aber direkt hinter dem Variablennamen noch ein Doppelpunkt ein. Danach steht ein Formatierungscode, in diesem Fall `.2f`. Das bedeutet, „stelle den Wert als Fließkommazahl mit zwei Nachkommastellen dar“.
 
-\index{Ausnahme!TypeError}
-\index{TypeError}
+Es gibt noch weitere Codes, mit denen die Ausgabe von Werten beeinflusst werden kann.Mit dem Formatierungszeichen `d` gibt man an, dass ein wert als Dezimalzahl (also „ganz normal“) formatiert werden soll. Ein `o` (`o` steht für „octal“) bewirkt eine Formatierung im Okatalsystem (also zur Basis 8), ein `x` (`x` steht für „hexadecimal“) stellte einen Wert im Hexadedezimalsystem (also zur Basis 16) dar.
 
 ~~~~ {.python}
->>> '%d %d %d' % (1, 2)
-TypeError: not enough arguments for format string
->>> '%d' % 'dollars'
-TypeError: %d format: a number is required, not str
-~~~~
+>>> wert = 42
+>>> print(f"Der Wert {wert:d} zur Basis 8: {wert:o} und zur Basis 16: {wert:x}")
+Der Wert 42 zur Basis 8: 52 und zur Basis 16: 2a
 
-Im ersten Beispiel sind nicht genügend Argumente im Tupel vorhanden, im zweiten Beispiel ist das Argument vom falschen Typ.
+Der Möglichkeiten, darstellungsweisen mit Formatierungcodes zu verändern, sind sehr vielfältig und etwas kompliziert. Es ist also ratsam, sich eine Hilfe-Seite zur Hand zu nehmen, wenn man eine bestimmte Ausgabe erreichen möchte. Weiters zu dem Thema finden sie unter
 
-Der Format-Operator ist mächtig, aber er kann schwierig zu bedienen sein. Mehr darüber kann man unter
+<https://docs.python.org/3/reference/lexical_analysis.html#f-strings>
 
-<https://docs.python.org/library/stdtypes.html#printf-style-string-formatting> lesen.
 
 Debugging
 ---------
