@@ -69,11 +69,11 @@ Details: http://source.sakaiproject.org/viewsvn/?view=rev&rev=39772
 
 Die gesamte Datei der Mail-Interaktionen ist verfügbar unter:
 
-[tiny.one/py4de/code3/mbox.txt](tiny.one/py4de/code3/mbox.txt)
+[tiny.one/py4de/code3/mbox.txt](https://tiny.one/py4de/code3/mbox.txt)
 
 Eine gekürzte Version der Datei ist verfügbar unter:
 
-[tiny.one/py4de/code3/mbox-short.txt](tiny.one/py4de/code3/mbox-short.txt)
+[tiny.one/py4de/code3/mbox-short.txt](https://tiny.one/py4de/code3/mbox-short.txt)
 
 Diese Dateien haben ein Standardformat für eine Datei, die mehrere E-Mail-Nachrichten enthält. Die Zeilen, die mit „From“ beginnen, trennen die einzelnen Nachrichten voneinander. Die Zeilen, die mit "From:" beginnen, sind dagegen Teil der Nachrichten. Weitere Informationen über das mbox-Format findet man unter <https://en.wikipedia.org/wiki/Mbox>.
 
@@ -432,7 +432,7 @@ RECEIVED: FROM MURDER (MAIL.UMICH.EDU [141.211.14.90])
      SAT, 05 JAN 2008 09:14:16 -0500
 ~~~~
 
-**Sie können die Datei herunterladen von** [tiny.one/py4de/code3/mbox-short.txt](tiny.one/py4de/code3/mbox-short.txt)
+**Sie können die Datei herunterladen von** [tiny.one/py4de/code3/mbox-short.txt](https://tiny.one/py4de/code3/mbox-short.txt)
 
 **Übung 2: Schreiben Sie ein Programm, das nach einem Dateinamen fragt, und iterieren Sie dann
 durch die Datei und sucht nach Zeilen der Form:**

@@ -952,7 +952,7 @@ Referenz
 
 **Um loszulegen, laden Sie eine Kopie der Datei herunter:**
 
-[**tiny.one/py4de/code3/romeo.txt**](tiny.one/py4de/code3/romeo.txt)
+[**tiny.one/py4de/code3/romeo.txt**](https://tiny.one/py4de/code3/romeo.txt)
 
 **Erstellen Sie eine Liste mit eindeutigen Wörtern, die das Endergebnis enthalten wird. Schreiben Sie ein Programm, um die Datei `romeo.txt` zu öffnen und Zeile für Zeile zu lesen. Teilen jede Zeile mit der Funktion `split` in eine Liste von Wörtern auf. Prüfen Sie für jedes Wort, ob das Wort bereits in der Liste der eindeutigen Wörter enthalten ist. Wenn das Wort nicht in der Liste der eindeutigen Wörter enthalten ist, fügen Sie es der Liste hinzu. Wenn das Programm beendet ist, sortieren Sie die Liste der eindeutigen Wörter in alphabetischer Reihenfolge und geben Sie sie aus.**
 

@@ -1,8 +1,8 @@
 
-Wörterbücher
+Dictionaries
 ============
 
-\index{Wörterbuch}
+\index{Dictionary}
 
 \index{Datentyp!dict}
 \index{Schlüssel}\index{Key}
@@ -10,114 +10,121 @@ Wörterbücher
 \index{Index}
 \index{}
 
-Ein *Wörterbuch* (englisch *Dictionary*) ist wie eine Liste, aber allgemeiner. In einer Liste müssen die Indexpositionen ganze Zahlen sein; in einem Wörterbuch können die Indizes (fast) jeden Typs sein.
+Listen sind sehr gut geeignet, um alles Mögliche zu speichern, was eine Reihenfolge hat. Sie können bei einer Liste über den *Index* das entsprechende Element finden, also z.B. das erste, das fünfte oder auch das letzte Element. Oftmals ist beim Abspeichern der Daten die Reihenfolge allerdings unerheblich, es kommt eher darauf an, Datensätze schnell „wiederzufinden“.
 
-Man kann sich ein Wörterbuch als eine Abbildung zwischen einem Satz von Indizes, die *Schlüssel* (englisch *Key*) genannt werden, und einem Satz von Werten (englisch *Value*) vorstellen. Jeder Schlüssel wird auf einen Wert abgebildet. Die Verbindung zwischen einem Schlüssel und einem Wert wird als *Schlüssel-Wert-Paar* (englisch *Key-Value-Paar*) bezeichnet.
+Stellen Sie sich die Mitarbeiterkartei einer Personalabteilung vor. Als Liste abgelegt würde es bedeuten, dass wir alle Akten übereinander stapeln. Wir könnten zwar schnell eine beliebige Akte herausziehen, um eine bestimmte Akte zu finden, müssten wir aber im Stapel suchen und im Zweifelsfall jede öffnen, um herauszufinden, zu welcher Person sie gehört. Daher legt man Akten unter einem geeigneten Stichwort ab, in diesem Fall z.B. den Namen der Person. In diesem Kapitel geht es um *Dictionaries*, einem zusammengesetzten Datentyp in Python, mit dem genau solche Ablage- und Zugriffsmöglichkeiten für beliebige Daten möglich sind.
 
-Als Beispiel erstellen wir ein Wörterbuch, das englische und spanische Wörter abbildet, so dass die Schlüssel und die Werte allesamt Zeichenketten sind.
+Was ist ein Dictionary
+============
 
-Die Funktion `dict` erzeugt ein neues Wörterbuch ohne Elemente. Da `dict` der Name einer eingebauten Funktion ist, sollte man es vermeiden, ihn als Variablennamen zu verwenden.
+Ein *Dictionary* (zu Deutsch *Wörterbuch*) ist wie eine Liste, aber allgemeiner. In einer Liste müssen die Indexpositionen ganze Zahlen sein; in einem Dictionary können die Indizes (fast) jeden Typs sein.
+
+Man kann sich ein Dictionary als eine Abbildung zwischen einem Satz von Indizes, die *Schlüssel* (englisch *Key*) genannt werden, und einem Satz von Werten (englisch *Value*) vorstellen. Jeder Schlüssel wird auf einen Wert abgebildet. Die Verbindung zwischen einem Schlüssel und einem Wert wird als *Schlüssel-Wert-Paar* (englisch *Key-Value-Paar*) bezeichnet.
+
+Als Beispiel erstellen wir ein Dictionary, das englische und deutsche Wörter abbildet, sodass die Schlüssel und die Werte allesamt Zeichenketten sind.
+
+Die Funktion `dict` erzeugt ein neues Dictionary ohne Elemente. Da `dict` der Name einer eingebauten Funktion ist, sollte man es vermeiden, ihn als Variablennamen zu verwenden.
 
 \index{dict (Funktion)}
 \index{Funktion!dict}
 
 ~~~~ {.python .trinket}
->>> eng2sp = dict()
->>> print(eng2sp)
+>>> eng2de = dict()
+>>> print(eng2de)
 {}
 ~~~~
 
-Die geschweiften Klammern `{}` stehen für ein leeres Wörterbuch. Um Elemente zum Wörterbuch hinzuzufügen, können wir eckige Klammern verwenden:
+Die geschweiften Klammern `{}` stehen für ein leeres Dictionary. Um Elemente zum Dictionary hinzuzufügen, können wir eckige Klammern verwenden:
 
 \index{geschweifte Klammern}
 \index{Klammern!geschweift}
 
 ~~~~ {.python}
->>> eng2sp['one'] = 'uno'
+>>> eng2de['one'] = 'eins'
 ~~~~
 
-Diese Zeile erzeugt ein Element, das vom Schlüssel `'one'` auf den Wert `'uno'` abbildet. Wenn wir das Wörterbuch erneut ausgeben, sehen wir ein Schlüssel-Wert-Paar mit einem Doppelpunkt zwischen dem Schlüssel und dem Wert:
+Diese Zeile erzeugt ein Element, das vom Schlüssel `'one'` auf den Wert `'eins'` abbildet. Wenn wir das Dictionary erneut ausgeben, sehen wir ein Schlüssel-Wert-Paar mit einem Doppelpunkt zwischen dem Schlüssel und dem Wert:
 
 ~~~~ {.python}
->>> print(eng2sp)
-{'one': 'uno'}
+>>> print(eng2de)
+{'one': 'eins'}
 ~~~~
 
-Dieses Ausgabeformat ist auch ein Eingabeformat. Wir können zum Beispiel ein neues Wörterbuch mit drei Einträgen erstellen.  Aber wenn man `eng2sp` ausgeben möchte, wird man vielleicht überrascht sein:
+Dieses Ausgabeformat ist auch ein Eingabeformat. Wir können zum Beispiel ein neues Dictionary mit drei Einträgen erstellen.  Aber wenn man `eng2de` ausgeben möchte, wird man vielleicht überrascht sein:
 
 ~~~~ {.python}
->>> eng2sp = {'one': 'uno', 'two': 'dos', 'three': 'tres'}
->>> print(eng2sp)
-{'one': 'uno', 'three': 'tres', 'two': 'dos'}
+>>> eng2de = {'one': 'eins', 'two': 'zwei', 'three': 'drei'}
+>>> print(eng2de)
+{'one': 'eins', 'three': 'drei', 'two': 'zwei'}
 ~~~~
 
-Die Reihenfolge der Schlüsselwert-Paare ist nicht die gleiche. Wenn wir das gleiche Beispiel auf unserem Computer eingeben, erhalten wir möglicherweise ein anderes Ergebnis. Im Allgemeinen ist die Reihenfolge der Elemente in einem Wörterbuch unvorhersehbar.
+Die Reihenfolge der Schlüsselwert-Paare ist nicht die gleiche. Wenn wir das gleiche Beispiel auf unserem Computer eingeben, erhalten wir möglicherweise ein anderes Ergebnis. Im Allgemeinen ist die Reihenfolge der Elemente in einem Dictionary unvorhersehbar.
 
-Das ist aber kein Problem, weil die Elemente eines Wörterbuchs nie mit ganzzahligen Indizes indiziert sind. Stattdessen verwenden wir die Schlüssel, um die entsprechenden Werte nachzuschlagen:
+Das ist aber kein Problem, weil die Elemente eines Dictionarys nie mit ganzzahligen Indizes indiziert sind. Stattdessen verwenden wir die Schlüssel, um die entsprechenden Werte nachzuschlagen:
 
 ~~~~ {.python}
->>> print(eng2sp['two'])
-'dos'
+>>> print(eng2de['two'])
+'zwei'
 ~~~~
 
-Der Schlüssel `'two'` bildet immer auf den Wert `'dos'` ab, sodass die Reihenfolge der Elemente keine Rolle spielt.
+Der Schlüssel `'two'` bildet immer auf den Wert `'zwei'` ab, sodass die Reihenfolge der Elemente keine Rolle spielt.
 
-Wenn der Schlüssel nicht im Wörterbuch enthalten ist, erhalten wir eine Ausnahme:
+Wenn der Schlüssel nicht im Dictionary enthalten ist, erhalten wir eine Ausnahme:
 
 \index{Ausnahme!KeyError}
 \index{KeyError}
 
 ~~~~ {.python}
->>> print(eng2sp['four'])
+>>> print(eng2de['four'])
 KeyError: 'four'
 ~~~~
 
-Die Funktion `len` arbeitet mit Wörterbüchern; sie gibt die Anzahl der Schlüssel-Wert-Paare zurück:
+Die Funktion `len` arbeitet mit Dictionaries; sie gibt die Anzahl der Schlüssel-Wert-Paare zurück:
 
 \index{len (Funktion)}
 \index{Funktion!len}
 
 ~~~~ {.python}
->>> len(eng2sp)
+>>> len(eng2de)
 3
 ~~~~
 
-Der `in`-Operator arbeitet mit Wörterbüchern; er sagt Ihnen, ob etwas als *Schlüssel* im Wörterbuch vorkommt (als Wert zu erscheinen ist nicht gut genug).
+Der `in`-Operator arbeitet mit Dictionaries; er sagt Ihnen, ob etwas als *Schlüssel* im Dictionary vorkommt (als Wert zu erscheinen ist nicht gut genug).
 
-\index{Zugehörigkeit!Wörterbuch}
+\index{Zugehörigkeit!Dictionary}
 \index{in (Operator)}
 \index{Operator!in}
 
 ~~~~ {.python}
->>> 'one' in eng2sp
+>>> 'one' in eng2de
 True
->>> 'uno' in eng2sp
+>>> 'eins' in eng2de
 False
 ~~~~
 
-Um zu sehen, ob etwas als Wert in einem Wörterbuch vorkommt, können wir die Methode `values` verwenden, die die Werte als einen Typ zurückgibt, der in eine Liste konvertiert werden kann. Dann verwenden wir den Operator `in`:
+Um zu sehen, ob etwas als Wert in einem Dictionary vorkommt, können wir die Methode `values` verwenden, die die Werte als einen Typ zurückgibt, der in eine Liste konvertiert werden kann. Dann verwenden wir den Operator `in`:
 
 \index{values (Methode)}
 \index{Methode!values}
 
 ~~~~ {.python}
->>> vals = list(eng2sp.values())
->>> 'uno' in vals
+>>> vals = list(eng2de.values())
+>>> 'eins' in vals
 True
 ~~~~
 
-Der Operator `in` verwendet unterschiedliche Algorithmen für Listen und Wörterbücher. Für Listen verwendet er einen linearen Suchalgorithmus. Je länger die Liste wird, desto länger wird die Suchzeit im direkten Verhältnis zur Länge der Liste. Für Wörterbücher verwendet Python einen Algorithmus, der eine *Hashtabelle* verwendet und eine bemerkenswerte Eigenschaft hat: Der `in`-Operator benötigt jedes Mal ungefähr die gleiche konstante Zeit, egal wie viele Elemente in einem Wörterbuch vorhanden sind. Ich werde nicht erklären, warum Hash-Funktionen so schnell sind, aber man kann mehr darüber unter [wikipedia.org/wiki/Hash\_table](https://wikipedia.org/wiki/Hash_table) lesen.
+Der Operator `in` verwendet unterschiedliche Algorithmen für Listen und Dictionaries. Für Listen verwendet er einen linearen Suchalgorithmus. Je länger die Liste wird, desto länger wird die Suchzeit im direkten Verhältnis zur Länge der Liste. Für Dictionaries verwendet Python einen Algorithmus, der eine *Hashtabelle* verwendet und eine bemerkenswerte Eigenschaft hat: Der `in`-Operator benötigt jedes Mal ungefähr die gleiche konstante Zeit, egal wie viele Elemente in einem Dictionary vorhanden sind. Ich werde nicht erklären, warum Hash-Funktionen so schnell sind, aber man kann mehr darüber unter [https://de.wikipedia.org/wiki/Hashtabelle](https://de.wikipedia.org/wiki/Hashtabelle) lesen.
 
 \index{Hashtabelle}
 \index{Menge, Zugehörigkeit}\index{Set, Zugehörigkeit}
 \index{Zugehörigkeit!Menge (Set)}
 
 **Übung 1: Laden Sie diese Datei herunter:**
-[www.py4e.com/code3/words.txt](http://www.py4e.com/code3/words.txt)
+[tiny.one/py4de/code3/words.txt](https://tiny.one/py4de/code3/words.txt)
 
-**Schreiben Sie ein Programm, das die Wörter in `words.txt` liest und sie als Schlüssel in einem Wörterbuch speichert. Es spielt keine Rolle, wie die Werte lauten. Dann können Sie den `in`-Operator als schnelle Möglichkeit verwenden, um zu prüfen, ob eine Zeichenfolge im Wörterbuch enthalten ist.**
+**Schreiben Sie ein Programm, das die Wörter in `words.txt` liest und sie als Schlüssel in einem Dictionary speichert. Es spielt keine Rolle, wie die Werte lauten. Dann können Sie den `in`-Operator als schnelle Möglichkeit verwenden, um zu prüfen, ob eine Zeichenfolge im Dictionary enthalten ist.**
 
-Ein Wörterbuch zum Zählen verwenden
+Ein Dictionary zum Zählen verwenden
 -----------------------------------
 
 Angenommen, wir verfügen über eine Zeichenkette und möchten zählen, wie oft jeder Buchstabe vorkommt. Es gibt mehrere Möglichkeiten, wie wir das tun können:
@@ -126,13 +133,13 @@ Angenommen, wir verfügen über eine Zeichenkette und möchten zählen, wie oft 
 
 2.  Wir könnten eine Liste mit 26 Elementen erstellen. Dann könnten wir jedes Zeichen in eine Zahl umwandeln (mit der eingebauten Funktion `ord`), die Zahl als Index in der Liste verwenden und den entsprechenden Zähler inkrementieren.
 
-3.  Wir könnten ein Wörterbuch mit Zeichen als Schlüssel und Zählern als den entsprechenden Werten erstellen. Das erste Mal, wenn wir ein Zeichen sehen, würden wir dem Wörterbuch ein Element hinzufügen. Danach würden wir den Wert eines vorhandenen Elements inkrementieren.
+3.  Wir könnten ein Dictionary mit Zeichen als Schlüssel und Zählern als den entsprechenden Werten erstellen. Das erste Mal, wenn wir ein Zeichen sehen, würden wir dem Dictionary ein Element hinzufügen. Danach würden wir den Wert eines vorhandenen Elements inkrementieren.
 
 Jede dieser Optionen führt dieselbe Berechnung durch, aber jede von ihnen implementiert diese Berechnung auf eine andere Weise.
 
 \index{Implementation}\index{Implementierung}
 
-Eine *Implementierung* ist eine Art und Weise, eine Berechnung durchzuführen; einige Implementierungen sind besser als andere. Ein Vorteil der Wörterbuchimplementierung ist zum Beispiel, dass wir nicht im Voraus wissen müssen, welche Buchstaben in der Zeichenkette vorkommen, und wir müssen nur Platz für die Buchstaben schaffen, die tatsächlich vorkommen.
+Eine *Implementierung* ist eine Art und Weise, eine Berechnung durchzuführen; einige Implementierungen sind besser als andere. Ein Vorteil der Dictionaryimplementierung ist zum Beispiel, dass wir nicht im Voraus wissen müssen, welche Buchstaben in der Zeichenkette vorkommen, und wir müssen nur Platz für die Buchstaben schaffen, die tatsächlich vorkommen.
 
 So könnte der Code aussehen:
 
@@ -153,7 +160,7 @@ Wir berechnen effektiv ein *Histogramm*, was ein statistischer Begriff für eine
 \index{Häufigkeit}
 \index{Traversieren}
 
-Die `for`-Schleife durchläuft die Zeichenkette. Jedes Mal, wenn die Schleife durchlaufen wird und das Zeichen, das an `c` zugewiesen wird, nicht im Wörterbuch enthalten ist, wird ein neues Element mit dem Schlüssel `c` und dem Anfangswert 1 angelegt (da wir diesen Buchstaben schon einmal gesehen haben). Wenn `c` bereits im Wörterbuch ist, inkrementieren wir `d[c]`.
+Die `for`-Schleife durchläuft die Zeichenkette. Jedes Mal, wenn die Schleife durchlaufen wird und das Zeichen, das an `c` zugewiesen wird, nicht im Dictionary enthalten ist, wird ein neues Element mit dem Schlüssel `c` und dem Anfangswert 1 angelegt (da wir diesen Buchstaben schon einmal gesehen haben). Wenn `c` bereits im Dictionary ist, inkrementieren wir `d[c]`.
 
 \index{Histogramm}
 
@@ -168,7 +175,7 @@ Das Histogramm zeigt an, dass die Buchstaben „a“ und „b“ einmal vorkomme
 \index{get (Methode)}
 \index{Methode!get}
 
-Wörterbücher haben eine Methode namens `get`, die einen Schlüssel und einen Standardwert annimmt. Wenn der Schlüssel im Wörterbuch vorkommt, gibt `get` den entsprechenden Wert zurück; andernfalls wird der Standardwert zurückgegeben. Zum Beispiel:
+Dictionaries haben eine Methode namens `get`, die einen Schlüssel und einen Standardwert annimmt. Wenn der Schlüssel im Dictionary vorkommt, gibt `get` den entsprechenden Wert zurück; andernfalls wird der Standardwert zurückgegeben. Zum Beispiel:
 
 ~~~~ {.python .trinket}
 >>> counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
@@ -178,7 +185,7 @@ Wörterbücher haben eine Methode namens `get`, die einen Schlüssel und einen S
 0
 ~~~~
 
-Wir können `get` verwenden, um unsere Histogramm-Schleife übersichtlicher zu schreiben. Da die Methode `get` automatisch den Fall behandelt, dass ein Schlüssel nicht in einem Wörterbuch enthalten ist, können wir vier Zeilen auf eine reduzieren und die `if`-Anweisung eliminieren.
+Wir können `get` verwenden, um unsere Histogramm-Schleife übersichtlicher zu schreiben. Da die Methode `get` automatisch den Fall behandelt, dass ein Schlüssel nicht in einem Dictionary enthalten ist, können wir vier Zeilen auf eine reduzieren und die `if`-Anweisung eliminieren.
 
 ~~~~ {.python}
 word = 'brontosaurus'
@@ -192,10 +199,10 @@ Die Verwendung der `get`-Methode zur Vereinfachung dieser Zählschleife ist schl
 
 \index{Idiom}
 
-Wörterbücher und Dateien
+Dictionaries und Dateien
 ------------------------
 
-Eine der häufigsten Verwendungen eines Wörterbuchs ist das Zählen des Vorkommens von Wörtern in einer Datei mit einem geschriebenen Text. Beginnen wir mit einer sehr einfachen Datei mit Wörtern aus dem Text von *Romeo and Juliet*.
+Eine der häufigsten Verwendungen eines Dictionarys ist das Zählen des Vorkommens von Wörtern in einer Datei mit einem geschriebenen Text. Beginnen wir mit einer sehr einfachen Datei mit Wörtern aus dem Text von *Romeo and Juliet*.
 
 Für die erste Reihe von Beispielen werden wir eine verkürzte und vereinfachte Version des Textes ohne Interpunktion verwenden. Später werden wir mit dem Text der Szene mit enthaltener Zeichensetzung arbeiten.
 
@@ -204,7 +211,7 @@ Für die erste Reihe von Beispielen werden wir eine verkürzte und vereinfachte 
     Arise fair sun and kill the envious moon
     Who is already sick and pale with grief
 
-Wir werden ein Python-Programm schreiben, das die Zeilen der Datei liest, jede Zeile in eine Liste von Wörtern zerlegt und dann in einer Schleife jedes der Wörter in der Zeile durchläuft und jedes Wort mithilfe eines Wörterbuchs zählt.
+Wir werden ein Python-Programm schreiben, das die Zeilen der Datei liest, jede Zeile in eine Liste von Wörtern zerlegt und dann in einer Schleife jedes der Wörter in der Zeile durchläuft und jedes Wort mithilfe eines Dictionarys zählt.
 
 \index{verschachtelte Schleifen}
 \index{Schleife!verschachtelt}
@@ -222,10 +229,14 @@ Die Kombination der beiden verschachtelten Schleifen stellt sicher, dass wir jed
 ../code3/romeo.txt
 \end{trinketfiles}
 
-In unserer `else`-Anweisung verwenden wir die kompaktere Alternative zur Inkrementierung einer Variablen. `counts[word] += 1` ist äquivalent zu `counts[word] = counts[word] + 1`. Beide Methoden können verwendet werden, um den Wert einer Variablen um einen beliebigen Betrag zu ändern. Ähnliche Alternativen gibt es für `-=`, `*=` und `/=`.
+In unserer `else`-Anweisung verwenden wir die kompaktere Alternative zur Inkrementierung einer Variablen. `counts[word] += 1` ist äquivalent zu `counts[word] = counts[word] + 1`. Beide Methoden können verwendet werden, um den Wert einer Variablen um einen beliebigen Betrag zu ändern. Ähnliche Kurzschreibweisen gibt es auch für andere Operatoren:
+
+-   `a -= b` für `a = a - b`
+-   `a *= b` für `a = a * b`
+-   `a /= b` für `a = a / b`
 
 Wenn wir das Programm ausführen, sehen wir einen *Dump* mit allen Zählungen in unsortierter Hash-Reihenfolge. (die Datei *romeo.txt* ist verfügbar unter
-[www.py4e.com/code3/romeo.txt](http://www.py4e.com/code3/romeo.txt))
+[tiny.one/py4de/code3/romeo.txt](https://tiny.one/py4de/code3/romeo.txt))
 
 ~~~~
 python count1.py
@@ -238,16 +249,16 @@ Enter the file name: romeo.txt
 'kill': 1, 'the': 3, 'soft': 1, 'Juliet': 1}
 ~~~~
 
-Es ist etwas umständlich, das Wörterbuch zu durchforsten, um die häufigsten Wörter und ihre Anzahl zu finden, also müssen wir noch etwas Python-Code hinzufügen, um die Ausgabe zu erhalten, die nützlicher für uns sein wird.
+Es ist etwas umständlich, das Dictionary zu durchforsten, um die häufigsten Wörter und ihre Anzahl zu finden, also müssen wir noch etwas Python-Code hinzufügen, um die Ausgabe zu erhalten, die nützlicher für uns sein wird.
 
-Schleifen und Wörterbücher
+Schleifen und Dictionaries
 --------------------------
 
-\index{Wörterbuch!Iteration durch}
-\index{Schleife!über Wörterbuch}\index{Iteration!durch Wörterbuch}
+\index{Dictionary!Iteration durch}
+\index{Schleife!über Dictionary}\index{Iteration!durch Dictionary}
 \index{Traversieren}
 
-Wenn man ein Wörterbuch als Sequenz in einer `for`-Anweisung verwendet, durchläuft diese die Schlüssel des Wörterbuchs. Diese Schleife gibt jeden Schlüssel und den entsprechenden Wert aus:
+Wenn man ein Dictionary als Sequenz in einer `for`-Anweisung verwendet, durchläuft diese die Schlüssel des Dictionarys. Diese Schleife gibt jeden Schlüssel und den entsprechenden Wert aus:
 
 ~~~~ {.python}
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
@@ -267,7 +278,7 @@ Auch hier sind die Schlüssel in keiner bestimmten Reihenfolge.
 
 \index{Idiom}
 
-Wir können dieses Muster verwenden, um die verschiedenen Schleifen-Idiome zu implementieren, die wir zuvor beschrieben haben. Wenn wir zum Beispiel alle Einträge in einem Wörterbuch mit einem Wert über zehn finden wollen, könnten wir folgenden Code schreiben:
+Wir können dieses Muster verwenden, um die verschiedenen Schleifen-Idiome zu implementieren, die wir zuvor beschrieben haben. Wenn wir zum Beispiel alle Einträge in einem Dictionary mit einem Wert über zehn finden wollen, könnten wir folgenden Code schreiben:
 
 ~~~~ {.python}
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
@@ -276,7 +287,7 @@ for key in counts:
         print(key, counts[key])
 ~~~~
 
-Die `for`-Schleife iteriert über die *Schlüssel* des Wörterbuchs, also müssen wir den Indexoperator verwenden, um den entsprechenden *Wert* für jeden Schlüssel abzurufen. So sieht die Ausgabe aus:
+Die `for`-Schleife iteriert über die *Schlüssel* des Dictionarys, also müssen wir den Indexoperator verwenden, um den entsprechenden *Wert* für jeden Schlüssel abzurufen. So sieht die Ausgabe aus:
 
 ~~~~
 jan 100
@@ -288,7 +299,7 @@ Wir sehen nur die Einträge mit einem Wert über 10.
 \index{keys (Methode)}
 \index{Methode!keys}
 
-Wenn wir die Schlüssel in alphabetischer Reihenfolge ausgeben möchten, erstellen wir zunächst eine Liste der Schlüssel des Wörterbuchs mit der in Wörterbuchobjekten verfügbaren Methode `keys`. Dann sortieren diese Liste und iterieren anschließend durch sie, wobei wir jeden Schlüssel nachschlagen und die Schlüsselwert-Paare wie folgt ausgeben:
+Wenn wir die Schlüssel in alphabetischer Reihenfolge ausgeben möchten, erstellen wir zunächst eine Liste der Schlüssel des Dictionarys mit der in Dictionaryobjekten verfügbaren Methode `keys`. Dann sortieren diese Liste und iterieren anschließend durch sie, wobei wir jeden Schlüssel nachschlagen und die Schlüsselwert-Paare wie folgt ausgeben:
 
 ~~~~ {.python}
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
@@ -324,17 +335,22 @@ Arise, fair sun, and kill the envious moon,
 Who is already sick and pale with grief,
 ~~~~
 
-Da die Python-Funktion `split` nach Leerzeichen sucht und Wörter als durch Leerzeichen getrennte Token behandelt, würden wir die Wörter „soft!“ und „soft“ als *unterschiedliche* Wörter behandeln und für jedes Wort einen eigenen Wörterbucheintrag erstellen.
+Da die Python-Funktion `split` nach Leerzeichen sucht und Wörter als durch Leerzeichen getrennte Token behandelt, würden wir die Wörter „soft!“ und „soft“ als *unterschiedliche* Wörter behandeln und für jedes Wort einen eigenen Dictionary-Eintrag erstellen.
 
-Da die Datei außerdem Groß- und Kleinschreibung schreibung aufweist, würden wir „who“ und „Who“ als unterschiedliche Wörter mit unterschiedlicher Zählung behandeln.
+Da die Datei außerdem Groß- und Kleinschreibung aufweist, würden wir „who“ und „Who“ als unterschiedliche Wörter mit unterschiedlicher Zählung behandeln.
 
-Wir können diese beiden Probleme mit den String-Methoden `lower`, `punctuation` und `translate` lösen. Die Methode `translate` ist die anspruchsvollste der Methoden. Hier ist die Dokumentation für `translate`:
+Wir können diese beiden Probleme mit den String-Methoden `lower`, `punctuation`, `translate` und `maketrans` lösen.
 
-`line.translate(str.maketrans(fromstr, tostr, deletestr))`
 
-*Replace the characters in `fromstr` with the character in the same position in `tostr` and delete all characters that are in `deletestr`. The `fromstr` and `tostr` can be empty strings and the `deletestr` parameter can be omitted.*
+Die Funktion `maketrans()` wird verwendet, um eine Ersetzungstabelle zu erstellen. Darin werden die Zeichen angegeben, die in der gesamten Zeichenfolge ersetzt, bzw. gelöscht werden sollen. Der folgende Aufruf erzeugt eine Ersetzungstabelle `ttable`, bei der die Zeichen in `fromstr` durch die, jeweils an der gleichen Position stehenden Zeichen in `tostr` ersetzt werden. Die in der Liste `deletestr` stehen Zeichen werden gelöscht. Die `fromstr` und `tostr` können leere Strings sein und der Parameter `deletestr` kann weggelassen werden.
 
-Wir werden den Parameter `tostr` nicht angeben, aber wir werden den Parameter `deletestr` verwenden, um alle Satzzeichen zu löschen. Wir lassen uns sogar von Python die Liste der Zeichen mitteilen, die es als „Interpunktion“ betrachtet:
+`ttable = str.maketrans(fromstr, tostr, deletestr)`
+
+Mit der Methode `translate` kann die Ersetzungstabelle dann auf eine Zeichenkette angewndet werden:
+
+`line.translate(ttable)`
+
+Für unseren Zweck werden den Parameter `tostr` nicht angeben, aber wir werden den Parameter `deletestr` verwenden, um alle Satzzeichen zu löschen. Wir lassen uns sogar von Python die Liste der Zeichen mitteilen, die es als „Interpunktion“ betrachtet:
 
 ~~~~ {.python}
 >>> import string
@@ -342,7 +358,6 @@ Wir werden den Parameter `tostr` nicht angeben, aber wir werden den Parameter `d
 '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
 ~~~~
 
-Die von `translate` verwendeten Parameter waren in Python 2.0 anders.
 
 Wir nehmen die folgenden Änderungen an unserem Programm vor:
 
@@ -356,7 +371,7 @@ Ein Teil des Erlernens der „Kunst von Python“ ist die Erkenntnis, dass Pytho
 Im Folgenden finden wir eine gekürzte Version der Ausgabe:
 
 ~~~~
-Enter the file name: romeo-full.txt
+Gib einen Dateinamen ein: romeo-full.txt
 {'swearst': 1, 'all': 6, 'afeard': 1, 'leave': 2, 'these': 2,
 'kinsmen': 2, 'what': 11, 'thinkst': 1, 'love': 24, 'cloak': 1,
 a': 24, 'orchard': 2, 'light': 5, 'lovers': 2, 'romeo': 40,
@@ -379,7 +394,7 @@ Reduzieren der Datenmenge
     Wenn ein Fehler vorliegt, können wir `n` auf den kleinsten Wert reduzieren, der den Fehler manifestiert, und ihn dann schrittweise erhöhen, während wir Fehler finden und korrigieren.
 
 Informationen extrahieren und Datentypen prüfen
-:   Anstatt den gesamten Datensatz auszugeben und zu prüfen, sollten wir in Erwägung ziehen, nur bestimmte Informationen auszugeben: z. B. die Anzahl der Elemente in einem Wörterbuch oder die Gesamtsumme einer Liste von Zahlen.
+:   Anstatt den gesamten Datensatz auszugeben und zu prüfen, sollten wir in Erwägung ziehen, nur bestimmte Informationen auszugeben: z. B. die Anzahl der Elemente in einem Dictionary oder die Gesamtsumme einer Liste von Zahlen.
 
     Eine häufige Ursache für Laufzeitfehler ist ein Wert, der nicht den richtigen Typ hat. Zur Fehlersuche bei dieser Art von Fehlern reicht es oft aus, den Typ eines Wertes auszugeben.
 
@@ -398,12 +413,12 @@ Auch hier kann die Zeit, die wir mit dem Aufbau eines stabilen „Gerüsts“ ve
 Glossar
 -------
 
-Wörterbuch
+Dictionary
 :   Eine Abbildung von einer Menge von Schlüsseln auf ihre entsprechenden Werte.
-\index{Wörterbuch}
+\index{Dictionary}
 
 Hash-Tabelle
-:   Der Algorithmus, der zur Implementierung von Python-Wörterbüchern verwendet wird.
+:   Der Algorithmus, der zur Implementierung von Python-Dictionaries verwendet wird.
 \index{Hashtabelle}
 
 Hashfunktion
@@ -419,7 +434,7 @@ Implementierung
 \index{Implementation}\index{Implementierung}
 
 Schlüssel
-:   Ein Objekt, das in einem Wörterbuch als erster Teil eines Schlüssel-Wert-Paares erscheint.
+:   Ein Objekt, das in einem Dictionary als erster Teil eines Schlüssel-Wert-Paares erscheint.
 \index{Schlüssel}\index{Key}
 
 Schlüssel-Wert-Paar
@@ -427,7 +442,7 @@ Schlüssel-Wert-Paar
 \index{Key-Value-Paar}\index{Schlüssel-Wert-Paar}
 
 Lookup
-:   Eine Wörterbuchoperation, die einen Schlüssel nimmt und den entsprechenden Wert findet (Lookup = Nachschlagen im Wörterbuch).
+:   Eine Dictionaryoperation, die einen Schlüssel nimmt und den entsprechenden Wert findet (Lookup = Nachschlagen im Dictionary).
 \index{Lookup}
 
 verschachtelte Schleifen
@@ -436,13 +451,13 @@ verschachtelte Schleifen
 \index{Schleife!verschachtelt}
 
 Wert
-:   Ein Objekt, das in einem Wörterbuch als zweiter Teil eines Schlüssel-Wert-Paares erscheint. Dies ist spezifischer als unsere bisherige Verwendung des Begriffs *Wert*.
+:   Ein Objekt, das in einem Dictionary als zweiter Teil eines Schlüssel-Wert-Paares erscheint. Dies ist spezifischer als unsere bisherige Verwendung des Begriffs *Wert*.
 \index{Wert}
 
 Übungen
 -------
 
-**Übung 2: Schreiben Sie ein Programm, dass jede E-Mail-Nachricht danach kategorisiert, an welchem Wochentag die Übergabe stattgefunden hat. Suchen Sie dazu nach Zeilen, die mit „From“ beginnen, suchen Sie dann nach dem dritten Wort und führen Sie eine laufende Zählung der einzelnen Wochentage durch. Am Ende des Programms geben Sie den Inhalt Ihres Wörterbuchs aus (die Reihenfolge spielt keine Rolle).**
+**Übung 2: Schreiben Sie ein Programm, dass jede E-Mail-Nachricht danach kategorisiert, an welchem Wochentag sie versendet wurde. Suchen Sie dazu nach Zeilen, die mit „From“ beginnen, suchen Sie dann nach dem dritten Wort und führen Sie eine laufende Zählung der einzelnen Wochentage durch. Am Ende des Programms geben Sie den Inhalt Ihres Dictionarys aus (die Reihenfolge spielt keine Rolle).**
 
 **Sample Line:**
 
@@ -454,14 +469,14 @@ From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
 
 ~~~~
 python dow.py
-Enter a file name: mbox-short.txt
+Gib eine Datei an: mbox-short.txt
 {'Fri': 20, 'Thu': 6, 'Sat': 1}
 ~~~~
 
-**Übung 3: Schreiben Sie ein Programm, um ein E-Mail-Protokoll zu lesen. Erzeugen Sie ein Histogramm mithilfe eines Wörterbuchs, um zu zählen, wie viele Nachrichten von den einzelnen E-Mail-Adressen gekommen sind. Geen Sie das Wörterbuch dann aus.**
+**Übung 3: Schreiben Sie ein Programm, um ein E-Mail-Protokoll zu lesen. Erzeugen Sie ein Histogramm mithilfe eines Dictionarys, um zu zählen, wie viele Nachrichten von den einzelnen E-Mail-Adressen gekommen sind. Geben Sie das Dictionary dann aus.**
 
 ~~~~
-Enter file name: mbox-short.txt
+Gib eine Datei an: mbox-short.txt
 {'gopal.ramasammycook@gmail.com': 1, 'louis@media.berkeley.edu': 3,
 'cwen@iupui.edu': 5, 'antranig@caret.cam.ac.uk': 1,
 'rjlowe@iupui.edu': 2, 'gsilver@umich.edu': 3,
@@ -470,21 +485,21 @@ Enter file name: mbox-short.txt
 'ray@media.berkeley.edu': 1}
 ~~~~
 
-**Übung 4: Fügen Sie folgendes dem obigen Programmcode hinzu, um herauszufinden, wer die meisten Nachrichten in der Datei erhalten hat. Nachdem alle Daten gelesen und das Wörterbuch erstellt wurde, durchsuchen Sie das Wörterbuch mithilfe einer Schleife nach dem Maximum (siehe Kapitel 5: Maximum und Minimum ermitteln), um herauszufinden, wer die meisten Nachrichten hat, und geben Sie aus, wie viele Nachrichten die Person bekommen hat.**
+**Übung 4: Fügen Sie folgendes dem obigen Programmcode hinzu, um herauszufinden, wer die meisten Nachrichten in der Datei erhalten hat. Nachdem alle Daten gelesen und das Dictionary erstellt wurde, durchsuchen Sie das Dictionary mithilfe einer Schleife nach dem Maximum (siehe Kapitel 5: Maximum und Minimum ermitteln), um herauszufinden, wer die meisten Nachrichten hat, und geben Sie aus, wie viele Nachrichten die Person bekommen hat.**
 
 ~~~~
-Enter a file name: mbox-short.txt
+Gib eine Datei an: mbox-short.txt
 cwen@iupui.edu 5
 
-Enter a file name: mbox.txt
+Gib eine Datei an: mbox.txt
 zqian@umich.edu 195
 ~~~~
 
-**Übung 5: Dieses Programm zeichnet nur den Domänennamen (anstelle der Adresse) auf, von dem die Nachricht gesendet wurde, also nicht, von welchem konkreten Absender die E-Mail kam (das wäre die gesamte E-Mail-Adresse). Geben Sie am Ende des Programms den Inhalt Ihres Wörterbuchs aus.**
+**Übung 5: Dieses Programm zeichnet nur den Domänennamen (anstelle der Adresse) auf, von dem die Nachricht gesendet wurde, also nicht, von welchem konkreten Absender die E-Mail kam (das wäre die gesamte E-Mail-Adresse). Geben Sie am Ende des Programms den Inhalt Ihres Dictionarys aus.**
 
 ~~~~
 python schoolcount.py
-Enter a file name: mbox-short.txt
+Gib eine Datei an: mbox-short.txt
 {'media.berkeley.edu': 4, 'uct.ac.za': 6, 'umich.edu': 7,
 'gmail.com': 1, 'caret.cam.ac.uk': 1, 'iupui.edu': 8}
 ~~~~
