@@ -2,8 +2,15 @@
 Listen
 ======
 
+Python ist eine ideale Sprache um Daten zu verarbeiten und Daten stehen meist nicht allein, als einzelner Wert, sondern sie liegen als „Ansammlung“ vor. Entweder ungeordnet, geordnet (d.h. mit einer Reihenfolge) oder, wie in einer Kartei, unter einem Suchbegriff abgelegt. All diese Arten von „Datensammlungen“ gibt es in Python und dazu noch eine große Menge von Funktionen, um die Daten zu verarbeiten.
+
+In den nächsten drei Kapiteln werden wir die wichtigsten *zusammengesetzten Datentypen* (englisch *Composite Data Types*) in Python behandel. Den Anfang macht der Typ *List*, den man sehr vielfältig verwenden kann.
+
+
+
 \index{Liste}
 \index{Datentyp!Liste}
+\index{Zusammengesetzte Datentypen}
 
 Listen sind Folgen von Werten
 -----------------------------
@@ -18,7 +25,7 @@ Es gibt mehrere Möglichkeiten, eine neue Liste zu erstellen; die einfachste ist
 
 ~~~~ {.python}
 [10, 20, 30, 40]
-['crunchy frog', 'ram bladder', 'lark vomit']
+['Banane', 'Apfel', 'Kiwi']
 ~~~~
 
 Das erste Beispiel ist eine Liste mit vier Ganzzahlen. Das zweite ist eine Liste mit drei Zeichenketten. Die Elemente einer Liste müssen nicht vom gleichen Typ sein. Die folgende Liste enthält eine Zeichenkette, eine Gleitkommazahl, eine Ganzzahl und selbst eine weitere (!) Liste:
@@ -43,8 +50,9 @@ Man kann auch Variablen Listenwerte zuweisen:
 >>> cheeses = ['Cheddar', 'Edam', 'Gouda']
 >>> numbers = [17, 123]
 >>> empty = []
->>> print(cheeses, numbers, empty)
-['Cheddar', 'Edam', 'Gouda'] [17, 123] []
+>>> listoflists = [cheeses, numbers, empty]
+>>> print(listoflists)
+[['Cheddar', 'Edam', 'Gouda'], [17, 123], []]
 ~~~~
 
 \index{Zuweisung}
@@ -139,10 +147,25 @@ for i in range(len(numbers)):
 
 Diese Schleife durchläuft die Liste und aktualisiert jedes Element. `len` gibt die Anzahl der Elemente in der Liste zurück. `range` gibt eine Liste von Indizes von 0 bis $n-1$ zurück, wobei $n$ die Länge der Liste ist. Jedes Mal, wenn die Schleife durchlaufen wird, erhält `i` den Index des nächsten Elements. Die Zuweisungsanweisung im Rumpf verwendet `i`, um den alten Wert des Elements zu lesen und den neuen Wert zuzuweisen.
 
+Die Built-in Funktion `range` ist sehr nützlich und kann immer dann verwendet werden, wenn wir Sequenzen von ganzen Zahlen benötigen. Wenn man `range` nicht nur eines, sondern mehrere Argumente mitgibt, kann man die Sequenz von Werten weiter beeinflussen. Im folgenden Beispiel erzeugen wir eine Sequenz von -10 bis 20 (ausschließlich), bei der wir in Dreierschritten vorgehen:
+
+~~~~ {.python}
+>>> x=list(range(-10,20,3))
+>>> print(x)
+[-10, -7, -4, -1, 2, 5, 8, 11, 14, 17]
+~~~~
+
+Um eine Liste zu durchlaufen und gleichzeitig die Indizes der Listenelemente zu erhalten, gibt es noch eine (im Vergleich zu `range`) etwas schönere Lösung. Die Funktion `enumerate` liefert uns zwei Werte^[Eigentlich liefert die Funktion ein 2-Tupel zurück, also *ein* Element, das aus zwei Werten besteht. Da wir bei der Zuweisung zwei Variablennamen hinschreiben, wird das Tupel „ausgepackt“, d.h. die Werte werden aus dem Tupel entnommen und den einzelnen Variablen. Dies nennt man auch *unpacking*. Um Tupel und ihre verwendung geht es in Kapitel 10.] zurück: Als ersten den Index des Elements und als zweiten den Wert des Elements. Das folgende Beispiel tut also genau dasselbe, wie die `for`-Schleife mit dem `range(len(...))` oben.
+
+~~~~ {.python}
+for i, wert in enumerate(numbers):
+    numbers[i] = wert * 2
+~~~~
+
 \index{Elementaktualisierung}
 \index{Aktualisierung!Element}
 
-Eine `for`-Schleife über eine leere Liste führt den Rumpf nie aus:
+Eine `for`-Schleife über eine leere Liste ist übrigens kein Fehler, sie führt nur einfach den Rumpf nie aus:
 
 ~~~~ {.python}
 for x in empty:
@@ -163,7 +186,7 @@ Listen-Operationen
 
 \index{Liste!Operation}
 
-Der Operator `+` verkettet Listen:
+Der Operator `+` verkettet Listen. Das bedeutet, die beiden listen links und rechts des `+`-Operators werden, in dieser Reihenfolge, hintereinander gehängt:
 
 \index{Konkatenation!Liste}
 \index{Liste!Konkatenation}
@@ -199,7 +222,7 @@ Listen-Slicing
 \index{Liste!slice}
 \index{slice!Liste}
 
-Der Slice-Operator funktioniert auch bei Listen:
+Der Slice-Operator, den wir bereits von den Zeichenketten kennen, funktioniert auch bei Listen:
 
 ~~~~ {.python .trinket}
 >>> t = ['a', 'b', 'c', 'd', 'e', 'f']
@@ -269,9 +292,9 @@ Python bietet Methoden, die auf Listen operieren. Zum Beispiel fügt `append` ei
 ['a', 'b', 'c', 'd', 'e']
 ~~~~
 
-In diesem Beispiel wird `t2` nicht verändert.
+In diesem Beispiel wird `t2` nicht verändert, wohl aber t1.
 
-`sort` ordnet die Elemente der Liste aufsteigend an:
+`sort` ordnet die Elemente der Liste aufsteigend an. Beachten Sie bei der `sort`-Funktion *In-Place* arbeitet, d.h. sie verändert die Reihenfolge der Elemente **in** der Liste.
 
 \index{sort (Methode)}
 \index{Methode!sort}
@@ -283,7 +306,19 @@ In diesem Beispiel wird `t2` nicht verändert.
 ['a', 'b', 'c', 'd', 'e']
 ~~~~
 
-Die meisten Listenmethoden sind „void“, haben also *keinen* Rückgabewert; sie verändern die Liste und geben `None` zurück. Wenn wir versehentlich `t = t.sort()` schreiben, werden wir von dem Ergebnis enttäuscht sein.
+Um eine sortierte *Kopie* der Liste zu erhalten, können Sie die Built-in Funktion `sorted` verwenden. Diese lässt sich auf alle Python Datenstrukturen anwenden, die *iterierbar*, also „zu durchlaufen“ sind.
+
+~~~~ {.python .trinket}
+>>> t = ['d', 'c', 'e', 'b', 'a']
+>>> l = sorted(l)
+>>> print(t)
+['a', 'b', 'c', 'd', 'e']
+>>> print(l)
+>>> sorted("Hallo Welt!")
+[' ', '!', 'H', 'W', 'a', 'e', 'l', 'l', 'l', 'o', 't']
+~~~~
+
+Die meisten Listenmethoden (also solche die Sie mit der Punkt-Notation auf einer Liste aufrufen können) arbeiten *In-Place*, haben also *keinen* Rückgabewert; sie verändern die Liste und geben `None` zurück. Wenn wir versehentlich `t = t.sort()` schreiben, werden wir von dem Ergebnis enttäuscht sein.
 
 \index{void-Methode}
 \index{Methode!void}
@@ -324,16 +359,16 @@ Wenn wir den entfernten Wert nicht benötigen, können wir den Operator `del` ve
 ['a', 'c']
 ~~~~
 
-Wenn man das Element kennt, das man entfernen möchten (aber nicht den Index), kann man `remove` verwenden:
+Wenn man das Element kennt, das man entfernen möchten (aber nicht den Index), kann man `remove` verwenden. `remove` entfern dabei nur das erste Vorkommen des Wertes in der Liste. Ist der gesuchte Wert mehrfach enthalten, bleiben die weiteren Vorkommen bestehen.
 
 \index{remove (Methode)}
 \index{Methode!remove}
 
 ~~~~ {.python .trinket}
->>> t = ['a', 'b', 'c']
->>> t.remove('b')
+>>> t = ['a', 'b', 'c', 'a']
+>>> t.remove('a')
 >>> print(t)
-['a', 'c']
+['b', 'c', 'a']
 ~~~~
 
 Der Rückgabewert von `remove` ist `None`.
@@ -341,7 +376,7 @@ Der Rückgabewert von `remove` ist `None`.
 \index{None (Wert)}
 \index{Wert!None}
 
-Um mehr als ein Element zu entfernen, können wir `del` mit einem Slice-Index verwenden:
+Um einen Bereich aus mehreren benachbarten Elementen zu entfernen, können wir `del` mit einem Slice-Index verwenden:
 
 ~~~~ {.python .trinket}
 >>> t = ['a', 'b', 'c', 'd', 'e', 'f']
@@ -406,7 +441,24 @@ Eine Zeichenkette ist eine Folge von Zeichen und eine Liste ist eine Folge von W
 ['s', 'p', 'a', 'm']
 ~~~~
 
-Da `list` der Name einer eingebauten Funktion ist, sollte man es vermeiden, ihn als Variablennamen zu verwenden. Auch der  Buchstabe "l" sollte vermieden werden, weil er zu sehr wie die Zahl "1" aussieht. Deshalb kann man beispielsweise "t" verwenden.
+Da `list` der Name einer eingebauten Funktion ist, sollte man es vermeiden, ihn als Variablennamen zu verwenden. Auch der  Buchstabe `l` sollte vermieden werden, weil er zu sehr wie die Zahl `1` aussieht. Deshalb kann man beispielsweise `t` verwenden.
+
+Was passiert, wenn wir zufällig einen Namen einer eingebauten Funktion für eigene Zwecke wiederverwenden, zeigt folgendes Beispiel:
+
+~~~~ {.python .trinket}
+>>> def list(*args):
+...     return ['Ha', 'ha', 'ha']
+...
+>>> buchstaben = list("Hallo")
+>>> print(buchstaben)
+['Ha', 'ha', 'ha']
+>>> del list
+>>> buchstaben = list("Hallo")
+>>> print(buchstaben)
+['H', 'a', 'l', 'l', 'o']
+~~~~
+
+Hier definieren wir eine eigene Funktion `list`; Python lässt das ohne weiteres zu. Wenn wir die Funktion `list` später verwenden, ohne uns daran zu erinnern, dass wir sie „umdefiniert“ haben, können wir ein schwer zu erklärendes Fehlverhalten haben. Um die Sache Rückgängig zu machen, löchen wir mit `del` die aktuelle Bedeutung des Names `list`. So kommt die ursprüngliche Bedeutung wieder zum Vorschein und wir können die Funktion wie gewünscht verwenden.
 
 Die Funktion `list` zerlegt eine Zeichenkette in einzelne Buchstaben. Wenn wir eine Zeichenkette in Wörter zerlegen wollen, können wir die Methode `split` verwenden:
 
@@ -431,13 +483,13 @@ Man kann `split` mit einem optionalen Argument (*Delimiter* genannt) aufrufen, d
 \index{Delimiter}
 
 ~~~~ {.python .trinket}
->>> s = 'spam-spam-spam'
+>>> s = 'rama-lama-ding-dong'
 >>> delimiter = '-'
 >>> s.split(delimiter)
-['spam', 'spam', 'spam']
+['rama', 'lama', 'ding', 'dong']
 ~~~~
 
-`join` ist die Umkehrung von `split`. Es nimmt eine Liste von Strings und verkettet die Elemente. Da `join` eine String-Methode ist, müssen wir sie auf den Delimiter aufrufen und die Liste als Parameter übergeben:
+`join` ist die Umkehrung von `split`. Es nimmt eine Liste von Strings und verkettet die Elemente. Da `join` eine String-Methode ist, müssen wir sie auf dem Delimiter aufrufen und die Liste als Parameter übergeben:
 
 \index{join (Methode)}
 \index{Methode!join}
@@ -490,8 +542,8 @@ Objekte und Werte
 Wenn wir diese Zuweisungsanweisungen ausführen:
 
 ~~~~ {.python}
-a = 'banana'
-b = 'banana'
+a = 'Banane'
+b = 'Banane'
 ~~~~
 
 wissen wir, dass `a` und `b` sich beide auf eine Zeichenkette beziehen, aber die Frage ist, ob sie sich auf die *selbe* Zeichenkette beziehen. Es gibt zwei denkbare Szenarien:
@@ -508,15 +560,24 @@ In einem Fall beziehen sich `a` und `b` auf zwei verschiedene Objekte, die den g
 Um zu prüfen, ob zwei Variablen auf das selbe Objekt verweisen, können wir den Operator `is` verwenden.
 
 ~~~~ {.python .trinket}
->>> a = 'banana'
->>> b = 'banana'
+>>> a = 'Banane'
+>>> b = 'Banane'
 >>> a is b
 True
 ~~~~
 
-In diesem Beispiel hat Python nur ein String-Objekt erzeugt, und sowohl `a` als auch `b` beziehen sich darauf.
+In diesem Beispiel war Python „schlau genug“, nur ein String-Objekt zu erzeugen; sowohl `a` als auch `b` beziehen sich darauf. Es kann aber durchaus sein, dass ein gleichlautender String mehrfach als Objekt angelegt wird. Dann kann es dazu kommen, das die Werte von `a` und `b` gleich sind, es sich aber um unterschiedliche Objekte handelt:
 
-Aber wenn wir zwei Listen erstellen, erhalten wir zwei Objekte:
+~~~~ {.python .trinket}
+>>> a = 'Banane'
+>>> b = 'B' + a[1:]
+>>> print(a,b)
+Banane Banane
+>>> a is b
+False
+~~~~
+
+Auch, wenn wir zwei Listen mit gleichem Inhalt erstellen, erhalten wir zwei Objekte:
 
 ~~~~ {.python .trinket}
 >>> a = [1, 2, 3]
@@ -570,11 +631,11 @@ Dieses Verhalten kann zwar nützlich sein, ist aber fehleranfällig. Im Allgemei
 
 \index{Unveränderlichkeit}
 
-Bei unveränderlichen Objekten wie Zeichenketten ist das Aliasing nicht so problematisch. In dem folgenden Beispiel macht es fast nie einen Unterschied, ob sich `a` und `b` auf die selbe Zeichenkette beziehen oder nicht.
+Bei unveränderlichen Objekten wie Zeichenketten ist das Aliasing nicht so problematisch. In dem folgenden Beispiel macht es fast nie einen Unterschied, ob sich `a` und `b` auf dieselbe Zeichenkette beziehen oder nicht.
 
 ~~~~ {.python}
-a = 'banana'
-b = 'banana'
+a = 'Banane'
+b = 'Banane'
 ~~~~
 
 
@@ -605,6 +666,9 @@ Die Funktion wird folgendermaßen verwendet:
 
 Der Parameter `t` und die Variable `letters` sind Aliasnamen für das selbe Objekt.
 
+
+**Übung 1: Schreiben Sie eine Funktion namens `remove_all`, die eine Liste und einen Wert entgegennimmt und alle Vorkommen des Wertes aus der Liste entfernt. Die Funktion soll die Liste *In-Place* verändern und als Ergebnis `None` zurückgeben.**
+
 Es ist wichtig, zwischen Operationen zu unterscheiden, die Listen verändern, und Operationen, die neue Listen erzeugen. Zum Beispiel verändert die Methode `append` eine Liste, aber der Operator `+` erzeugt eine neue Liste:
 
 \index{append (Methode)}
@@ -631,7 +695,7 @@ Dieser Unterschied ist wichtig, wenn wir Funktionen schreiben, die Listen verän
 
 ~~~~ {.python}
 def bad_delete_head(t):
-    t = t[1:]              # WRONG!
+    t = t[1:]              # FALSCH!
 ~~~~
 
 Der Slice-Operator erzeugt eine neue Liste und die Zuweisung macht `t` zu einem Verweis auf diese Liste, aber nichts davon hat irgendeinen Effekt auf die Liste, die als Argument übergeben wurde.
@@ -655,7 +719,7 @@ Diese Funktion lässt die ursprüngliche Liste unangetastet. So wird sie verwend
 ['b', 'c']
 ~~~~
 
-**Übung 1: Schreiben Sie eine Funktion namens `chop`, die eine Liste entgegennimmt und sie modifiziert, indem sie das erste und letzte Element entfernt und `None` zurückgibt. Schreiben Sie dann eine Funktion namens `middle`, die eine Liste annimmt und eine neue Liste zurückgibt, die alle Elemente außer dem ersten und letzten enthält.**
+**Übung 2: Schreiben Sie eine Funktion namens `chop`, die eine Liste entgegennimmt und sie modifiziert, indem sie das erste und letzte Element entfernt und `None` zurückgibt. Schreiben Sie dann eine Funktion namens `middle`, die eine Liste annimmt und eine neue Liste zurückgibt, die alle Elemente außer dem ersten und letzten enthält.**
 
 Debugging
 ---------
@@ -675,7 +739,7 @@ Der unvorsichtige Umgang mit Listen (und anderen veränderbaren Objekten) kann z
     dann ist es vermutlich verlockend, auch Listencode wie diesen zu schreiben:
 
     ~~~~ {.python}
-    t = t.sort()           # WRONG!
+    t = t.sort()           # FALSCH!
     ~~~~
 
     \index{sort (Methode)}
@@ -691,9 +755,7 @@ Der unvorsichtige Umgang mit Listen (und anderen veränderbaren Objekten) kann z
 
     [docs.python.org/library/stdtypes.html#mutable-sequence-types](https://docs.python.org/library/stdtypes.html#mutable-sequence-types)
 
-2.  Man sollte ein Idiom wählen und auch dabei bleiben.
-
-    \index{Idiom}
+2.  Gewöhnen Sie sich einen Stil an.
 
     Ein Teil des Problems mit Listen ist, dass es zu viele Möglichkeiten gibt, Dinge zu tun. Um zum Beispiel ein Element aus einer Liste zu entfernen, können Sie `pop`, `remove`, `del` oder sogar eine Slice-Zuweisung verwenden.
 
@@ -702,18 +764,25 @@ Der unvorsichtige Umgang mit Listen (und anderen veränderbaren Objekten) kann z
     ~~~~ {.python}
     t.append(x)
     t = t + [x]
+    t += [x]
     ~~~~
 
-    Folgendes dagegen falsch:
+    Alle drei Anweisungen hängen das Element an die Liste `t` an. Die erste Anweisung verändert das bestehende Listenobjekt `t`. Die zweite Anweiung erzeugt mit `t + [x]` eine neue Liste, die sich durch die Verkettung von `t` und einer Liste mit nur einem Elemnt `x` entsteht. Dieser neuen Liste wird der Namen `t` zugewiesen.  und damit das „alte“ `t` verworfen.
+
+    Die dritte Anweisung ist eine Kurzschreibweise des `+`-Operators. Im Allgemeinen (also vor allem bei Zahlen) entspricht `a += b` der Schreibweise `a = a + b`. Auf Listen angewendet, hat dies den Effekt, dass die Liste selbst, also wie bei `append` verändert wird. Wir behalten damit also das alte Listenobjekt.
+
+    Oft ist es unerheblich, ob man mit einem neuen Objekt oder dem bestehenden weiterarbeitet. Wenn es aber zu einem unerwarteten Programmverhalten kommt, können darin die Ursachen bestehen. Wenn Sie genau wissen wollen, ob sich ein Objekt geändert hat, können Sie die eingebaute Funktion `id()` verwenden. `id` zeigt Ihnen zu jedem Objekt die zugehörige, eindeutige ID an. Wenn Sie diese vor und nach einer Zuweisung aufrufen, wissen Sie, ob ein neus Objekt angelegt wurde.
+
+    Neben den richtigen Anweisungen, um eine Liste zu erweitern, gibt es noch viele, die recht ähnlich aussehen, aber leider nicht das gewünschte Ergebnis liefer. Hier einige Beispiele:
 
     ~~~~ {.python}
-    t.append([x])          # WRONG!
-    t = t.append(x)        # WRONG!
-    t + [x]                # WRONG!
-    t = t + x              # WRONG!
+    t.append([x])          # FALSCH!
+    t = t.append(x)        # FALSCH!
+    t + [x]                # FALSCH!
+    t = t + x              # FALSCH!
     ~~~~
 
-    Probieren wir einmal jedes dieser Beispiele im interaktiven Modus aus, um sicherzustellen, dass Sie verstehen, was wir tun. Man sollte beachten , dass nur das letzte Beispiel einen Laufzeitfehler verursacht; die anderen drei sind legal, aber sie tun das Falsche.
+    Probieren Sie einmal jedes dieser Beispiele im interaktiven Modus aus, um nachzuvollziehen, was die Anweisungen tun. Man sollte beachten, dass nur das letzte Beispiel einen Laufzeitfehler verursacht; die anderen drei sind legal, aber sie tun das Falsche.
 
 3.  Kopien erstellen, um die Nutzung von Aliasen zu vermeiden.
 
@@ -818,9 +887,9 @@ Der unvorsichtige Umgang mit Listen (und anderen veränderbaren Objekten) kann z
 
     Das Programm in der geänderten Form läuft erfolgreich, also ist es vielleicht richtig. Unsere Wächter-Anweisung stellt zwar sicher, dass die `Worte[0]` niemals fehlschlagen werden, aber vielleicht ist das nicht genug. Wenn wir programmieren, müssen wir immer daran denken: „Was könnte schiefgehen?“.
 
-**Übung 2: Finden Sie heraus, welche Zeile des obigen Programms noch nicht richtig geschützt ist. Versuchen Sie, eine Textdatei zu konstruieren, die das Programm zum Scheitern bringt. Ändern Sie dann das Programm so, dass die Zeile richtig geschützt ist, und testen Sie, ob es Ihre neue Textdatei verarbeitet.**
+**Übung 3: Finden Sie heraus, welche Zeile des obigen Programms noch nicht richtig geschützt ist. Versuchen Sie, eine Textdatei zu konstruieren, die das Programm zum Scheitern bringt. Ändern Sie dann das Programm so, dass die Zeile richtig geschützt ist, und testen Sie, ob es Ihre neue Textdatei verarbeitet.**
 
-**Übung 3: Schreiben Sie den Wächter-Code im obigen Beispiel ohne zwei `if`-Anweisungen um. Verwenden Sie stattdessen einen zusammengesetzten logischen Ausdruck mit dem logischen Operator `or` und einer einzigen `if`-Anweisung.**
+**Übung 4: Schreiben Sie den Wächter-Code im obigen Beispiel ohne zwei `if`-Anweisungen um. Verwenden Sie stattdessen einen zusammengesetzten logischen Ausdruck mit dem logischen Operator `or` und einer einzigen `if`-Anweisung.**
 
 Glossar
 -------
@@ -873,9 +942,9 @@ Referenz
 Übungen
 -------
 
-\index{Romeo and Juliet}
+\index{Romeo und Julia}
 
-**Übung 4: Alle einzigartigen Wörter in einer Datei finden**
+**Übung 5: Alle einzigartigen Wörter in einer Datei finden**
 
 **Shakespeare verwendete über 20,000 verschiedene Wörter in seinen Werken. Aber wie würden Sie das feststellen? Wie würden Sie die Liste aller Wörter erstellen, die Shakespeare verwendet hat? Würden Sie sein gesamtes Werk herunterladen, es lesen und alle einzigartigen Wörter von Hand nachverfolgen?**
 
@@ -883,7 +952,7 @@ Referenz
 
 **Um loszulegen, laden Sie eine Kopie der Datei herunter:**
 
-[**www.py4e.com/code3/romeo.txt**](http://www.py4e.com/code3/romeo.txt)
+[**tiny.one/py4de/code3/romeo.txt**](tiny.one/py4de/code3/romeo.txt)
 
 **Erstellen Sie eine Liste mit eindeutigen Wörtern, die das Endergebnis enthalten wird. Schreiben Sie ein Programm, um die Datei `romeo.txt` zu öffnen und Zeile für Zeile zu lesen. Teilen jede Zeile mit der Funktion `split` in eine Liste von Wörtern auf. Prüfen Sie für jedes Wort, ob das Wort bereits in der Liste der eindeutigen Wörter enthalten ist. Wenn das Wort nicht in der Liste der eindeutigen Wörter enthalten ist, fügen Sie es der Liste hinzu. Wenn das Programm beendet ist, sortieren Sie die Liste der eindeutigen Wörter in alphabetischer Reihenfolge und geben Sie sie aus.**
 
@@ -896,7 +965,7 @@ Enter file: romeo.txt
 'with', 'yonder']
 ~~~~
 
-**Übung 5: Ein minimalistischer E-Mail-Client.**
+**Übung 6: Ein minimalistischer E-Mail-Client.**
 
 **MBOX (Mailbox) ist ein beliebtes Dateiformat zum Speichern und Freigeben einer Sammlung von E-Mails. Dies wurde von frühen E-Mail-Servern und Desktop-Apps verwendet. Ohne zu sehr ins Detail zu gehen, ist MBOX eine Textdatei, die E-Mails fortlaufend speichert. E-Mails werden durch eine spezielle Zeile getrennt, die mit `From ` beginnt (beachten Sie das Leerzeichen). Wichtig ist, dass Zeilen, die mit `From:` beginnen (beachten Sie den Doppelpunkt), die E-Mail selbst beschreiben und nicht als Trennzeichen fungieren. Stellen Sie sich vor, Sie schreiben eine minimalistische E-Mail-App, die die E-Mails der Absender im Posteingang des Benutzers auflistet und die Anzahl der E-Mails zählt.**
 
@@ -910,7 +979,7 @@ From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008
 
 ~~~~
 python fromcount.py
-Enter a file name: mbox-short.txt
+Gib eine Datei an: mbox-short.txt
 stephen.marquard@uct.ac.za
 louis@media.berkeley.edu
 zqian@umich.edu
@@ -921,18 +990,18 @@ ray@media.berkeley.edu
 cwen@iupui.edu
 cwen@iupui.edu
 cwen@iupui.edu
-There were 27 lines in the file with From as the first word
+Es gibt 27 Zeilen mit 'From' als erstem Wort.
 ~~~~
 
-**Übung 6: Schreiben Sie das Programm um, das den Benutzer zur Eingabe einer Liste von Zahlen auffordert und am Ende das Maximum und Minimum der Zahlen ausgibt, wenn der Benutzer „done“ eingibt. Schreiben Sie das Programm so, dass es die Zahlen, die der Benutzer eingibt, in einer Liste speichert und die Funktionen `max()` und `min()` verwendet, um die größte und kleinste Zahl nach Abschluss der Schleife zu ermitteln.**
+**Übung 7: Schreiben Sie das Programm um, das den Benutzer zur Eingabe einer Liste von Zahlen auffordert und am Ende das Maximum und Minimum der Zahlen ausgibt, wenn der Benutzer „done“ eingibt. Schreiben Sie das Programm so, dass es die Zahlen, die der Benutzer eingibt, in einer Liste speichert und die Funktionen `max()` und `min()` verwendet, um die größte und kleinste Zahl nach Abschluss der Schleife zu ermitteln.**
 
 ~~~~
-Enter a number: 6
-Enter a number: 2
-Enter a number: 9
-Enter a number: 3
-Enter a number: 5
-Enter a number: done
+Bitte eine Zahl eingeben: 6
+Bitte eine Zahl eingeben: 2
+Bitte eine Zahl eingeben: 9
+Bitte eine Zahl eingeben: 3
+Bitte eine Zahl eingeben: 5
+Bitte eine Zahl eingeben: done
 Maximum: 9.0
 Minimum: 2.0
 ~~~~
