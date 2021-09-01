@@ -1,6 +1,5 @@
-# Search for lines that have an at sign between characters
-# The characters must be a letter or number
-# The results will be slightly more accurate than re07.py for email addresses
+# Wie in re07.py aber etwas praeziser für E-Mail Adressen,
+# da Sonderzeichen in Mailadressen erlaubt sind
 import re
 hand = open('mbox-short.txt')
 for line in hand:

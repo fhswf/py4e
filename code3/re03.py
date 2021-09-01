@@ -1,5 +1,5 @@
-# Search for lines that start with 'F', followed by
-# 2 characters, followed by 'm:'
+# Finde Zeilen die mit einem 'F' beginnen, gefolgt
+# von 2 beliebigen Zeichen, gefolgt von einem 'm:'
 import re
 hand = open('mbox-short.txt')
 for line in hand:

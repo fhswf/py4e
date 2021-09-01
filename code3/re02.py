@@ -1,4 +1,4 @@
-# Search for lines that start with 'From'
+# Finde Zeilen, die mit 'From' beginnen
 import re
 hand = open('mbox-short.txt')
 for line in hand:

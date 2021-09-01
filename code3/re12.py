@@ -1,6 +1,5 @@
-# Search for lines that start with 'Details: rev='
-# followed by numbers and '.'
-# Then print the number if it is greater than zero
+# Finde Zeilen, die mit 'Details: rev=' beginnen, gefolgt von einer Zahl
+# mit einer oder mehr Ziffern und Dezimalpunkten. Diese Zahl ist der Match
 import re
 hand = open('mbox-short.txt')
 for line in hand:
