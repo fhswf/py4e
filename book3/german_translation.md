@@ -4,7 +4,7 @@
 
 Vorwort:
 
-- [ ] A0-preface.mkd
+- [x] A0-preface.mkd
 
 Inhaltskapitel:
 
