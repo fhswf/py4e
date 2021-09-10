@@ -1,8 +1,8 @@
 
-Contributions
+Mitwirkende
 =============
 
-Contributor List for Python for Everybody 
+Mitwirkende an „Python for Everybody“
 -------------------------------------------
 
 Andrzej Wójtowicz,
@@ -29,7 +29,7 @@ You can see contribution details at:
 
 https://github.com/csev/py4e/graphs/contributors
 
-Contributor List for Python for Informatics 
+Mitwirkende an „Python for Informatics“ 
 -------------------------------------------
 
 Bruce Shields for copy editing early drafts, Sarah Hegge, Steven Cherry,
@@ -42,10 +42,10 @@ Thomas Strassel, Ryan Clement, Alissa Talley, Caitlin Holman, Yong-Mi
 Kim, Karen Stover, Cherie Edmonds, Maria Seiferle, Romer Kristi D.
 Aranas (RK), Grant Boyer, Hedemarrie Dussan,
 
-Preface for "Think Python"
+Vorwort von „Think Python“
 --------------------------
 
-### The strange history of "Think Python"
+### The strange history of „Think Python“
 
 (Allen B. Downey)
 
@@ -117,7 +117,7 @@ who was interested in publishing the next edition. Good timing!
 I hope you enjoy working with this book, and that it helps you learn to
 program and think, at least a little bit, like a computer scientist.
 
-### Acknowledgements for "Think Python"
+### Danksagungen für „Think Python“ 
 
 (Allen B. Downey)
 
@@ -151,7 +151,7 @@ Needham MA\
 Allen Downey is an Associate Professor of Computer Science at the
 Franklin W. Olin College of Engineering.
 
-Contributor List for "Think Python"
+Mitwirkende an „Think Python“ 
 -----------------------------------
 
 \index{contributors}
