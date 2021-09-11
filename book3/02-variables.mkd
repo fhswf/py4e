@@ -757,16 +757,16 @@ Variable
 **Übung 2: Schreiben Sie ein Programm, das mit `input` einen Benutzer zur Eingabe seines Namens auffordert und ihn dann begrüßt.**
 
 ~~~~
-Enter your name: Chuck
-Hello Chuck
+Gib deinen Namen ein: Heiner
+Hallo Heiner
 ~~~~
 
 **Übung 3: Schreiben Sie ein Programm, das den Benutzer nach Arbeitsstunden und Stundensatz fragt, um den Bruttolohn zu berechnen.**
 
 ~~~~
-Enter Hours: 35
-Enter Rate: 2.75
-Pay: 96.25
+Gib die Arbeitsstunden an: 35
+Gib den Stundensatz an: 2.75
+Zahlung: 96.25
 ~~~~
 
 Wir werden uns erst einmal nicht darum kümmern, dass unsere Auszahlung genau zwei Stellen nach dem Komma hat. Wenn Sie möchten, können Sie mit der eingebauten Python-Funktion `round` experimentieren, um den resultierenden Lohn auf zwei Dezimalstellen zu runden.
@@ -774,17 +774,17 @@ Wir werden uns erst einmal nicht darum kümmern, dass unsere Auszahlung genau zw
 **Übung 4: Angenommen, wir führen die folgenden Zuweisungen aus:**
 
 ~~~~
-width = 17
-height = 12.0
+breite = 17
+hoehe = 12.0
 ~~~~
 
 Schreiben Sie für jeden der folgenden Ausdrücke den Wert des Ausdrucks und den Datentyp (des Wertes des Ausdrucks).
 
-1.  `width//2`
+1.  `breite//2`
 
-2.  `width/2.0`
+2.  `breite/2.0`
 
-3.  `height/3`
+3.  `hoehe/3`
 
 4.  `1 + 2 * 5`
 
@@ -792,3 +792,9 @@ Verwenden Sie den Python-Interpreter, um Ihre Antworten zu überprüfen.
 
 **Übung 5: Schreiben Sie ein Programm, das den Benutzer zur Eingabe einer Celsius-Temperatur auffordert, die Temperatur in Fahrenheit konvertiert und die konvertierte Temperatur ausgibt.**
 
+**Die Umrechnung von Celsius zu Fahrenheit lautet: °F = °C * 1,8 + 32**
+
+~~~~
+Gib die Temperatur in Celsius ein: 37
+Fahrenheit in 98.6
+~~~~
