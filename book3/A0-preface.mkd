@@ -1,32 +1,30 @@
 \thispagestyle{empty}
 
-Credits
--------
+Mitwirkende
+-----------
 
     Redaktionelle Unterstüzung: Elliott Hauser, Sue Blumenberg
     Covergestaltung: Aimee Andrion
     Deutsche Übersetzung: Fabian Eberts, Heiner Giefers, Sebastian Schmidt,
     Julia Warnke
 
-Printing History
-----------------
+Historie
+--------
 
-* 2021-Oct-10 Erste Version der deutschen Übersetzung
-* 2016-Jul-05 First Complete Python 3.0 version
-* 2015-Dec-20 Initial Python 3.0 rough conversion
+* 2021-Okt-10 Erste Version der deutschen Übersetzung
+* 2016-Jul-05 Erste vollständige Python 3.0 Version
+* 2015-Dez-20 Initiale Übertragung zu Python 3.0
 
-Copyright
------------------
+Hinweise zum Urheberrecht
+-------------------------
 
 Copyright 2009- Dr. Charles R. Severance.
 
-This work is licensed under a Creative Commons
-Attribution-NonCommercial-ShareAlike 3.0 Unported License.
-This license is available at
+Dieses Werk ist lizenziert unter einer Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. Diese Lizenz ist verfügbar unter
 
 http://creativecommons.org/licenses/by-nc-sa/3.0/
 
-Weitere Details zur kommerziellen und nicht-kommerziellen Nutzung dieses Materials sowie zu den Lizenzausnahmen finden Sie im Anhang unter dem Titel „Copyright Details“.
+Weitere Details zur kommerziellen und nicht-kommerziellen Nutzung dieses Materials sowie zu den Lizenzausnahmen finden Sie im Anhang unter dem Titel „Hinweise zum Urheberrecht“.
 
 \cleardoublepage
 

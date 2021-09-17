@@ -27,8 +27,8 @@ Inhaltskapitel:
 
 Appendix:
 
-- [ ] AA-contrib.mkd
-- [ ] AB-copyright.mkd
+- [x] AA-contrib.mkd
+- [x] AB-copyright.mkd
 
 ## Allgemeines
 
@@ -660,4 +660,10 @@ lookup : Lookup
 \index{Google!page rank} : \index{Google!Page-Ranking}
 \index{Visualization!networks} : \index{Visualisierung!Netzwerke}
 \index{Visualization!page rank} : \index{Visualisierung!Page-Ranking}
+```
+
+### AB-copyright.mkd
+
+```
+\index{contributors} : \index{Beiträge}\index{Mitwirkende}
 ```
