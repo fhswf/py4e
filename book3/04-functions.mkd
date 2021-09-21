@@ -704,39 +704,39 @@ Monatsgehalt: 475.0
 
 **Übung 7: Schreiben Sie das Benotungsprogramm aus dem vorigen Kapitel neu, indem Sie eine Funktion namens `notenberechnung` verwenden, die eine Punktzahl als Parameter annimmt und eine Note zurückgibt.**
 
-~~~~
- Punkte   Note
->= 0.9     1
->= 0.8     2
->= 0.7     3
->= 0.6     4
- < 0.6     5
-~~~~
+    ~~~~
+    Punkte   Note
+    >= 0.9     1
+    >= 0.8     2
+    >= 0.7     3
+    >= 0.6     4
+    < 0.6     5
+    ~~~~
 
-~~~~
-Enter score: 0.95
-1
-~~~~
+    ~~~~
+    Punkte eingeben: 0.95
+    1
+    ~~~~
 
-~~~~
-Enter score: perfect
-Bad score
-~~~~
+    ~~~~
+    Punkte eingeben: perfekt
+    Falsche Punkanzahl
+    ~~~~
 
-~~~~
-Enter score: 10.0
-Bad score
-~~~~
+    ~~~~
+    Punkte eingeben: 10.0
+    Falsche Punkanzahl
+    ~~~~
 
-~~~~
-Enter score: 0.75
-3
-~~~~
+    ~~~~
+    Punkte eingeben: 0.75
+    3
+    ~~~~
 
-~~~~
-Enter score: 0.5
-5
-~~~~
+    ~~~~
+    Punkte eingeben: 0.5
+    5   
+    ~~~~
 
 Führen Sie das Programm wiederholt aus, um die verschiedenen Werte für die Eingabe zu testen.
 

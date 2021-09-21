@@ -445,7 +445,7 @@ X-DSPAM-Confidence: 0.8475
 
 ~~~~
 Gib eine Datei an: mbox.txt
-Wahrscheinlichkeit fuer Kein-Spam : 0.894128046745
+Wahrscheinlichkeit fuer Kein-Spam: 0.894128046745
 
 Gib eine Datei an: mbox-short.txt
 Wahrscheinlichkeit fuer Kein-Spam: 0.750718518519

@@ -118,13 +118,13 @@ Hier ist eine JSON-Kodierung, die in etwa dem einfachen XML von oben entspricht:
 
 ~~~~ {.json}
 {
-  "name" : "Chuck",
-  "phone" : {
-    "type" : "intl",
-    "number" : "+1 734 303 4456"
+  "name": "Chuck",
+  "phone": {
+    "type": "intl",
+    "number": "+1 734 303 4456"
    },
-   "email" : {
-     "hide" : "yes"
+   "email": {
+     "hide": "yes"
    }
 }
 ~~~~

@@ -263,7 +263,7 @@ Um den größten Wert in einer Liste oder Folge zu finden, konstruieren wir die 
 largest = None
 print('Maximum zu Beginn:', largest)
 for itervar in [3, 41, 12, 9, 74, 15]:
-    if largest is None or itervar > largest :
+    if largest is None or itervar > largest:
         largest = itervar
     print('Betrachte Wert:', itervar, 'Aktuelles Maximum:', largest)
 print('Das Maximum ist:', largest)

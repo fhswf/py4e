@@ -814,7 +814,7 @@ Der unvorsichtige Umgang mit Listen (und anderen veränderbaren Objekten) kann z
     fhand = open('mbox-short.txt')
     for line in fhand:
         words = line.split()
-        if words[0] != 'From' : continue
+        if words[0] != 'From': continue
         print(words[2])
     ~~~~
 
@@ -825,7 +825,7 @@ Der unvorsichtige Umgang mit Listen (und anderen veränderbaren Objekten) kann z
     Sat
     Traceback (most recent call last):
       File "search8.py", line 5, in <module>
-        if words[0] != 'From' : continue
+        if words[0] != 'From': continue
     IndexError: list index out of range
     ~~~~
 
@@ -839,7 +839,7 @@ Der unvorsichtige Umgang mit Listen (und anderen veränderbaren Objekten) kann z
     for line in fhand:
         words = line.split()
         print('Debug:', words)
-        if words[0] != 'From' : continue
+        if words[0] != 'From': continue
         print(words[2])
     ~~~~
 
@@ -851,7 +851,7 @@ Der unvorsichtige Umgang mit Listen (und anderen veränderbaren Objekten) kann z
     Debug: []
     Traceback (most recent call last):
       File "search9.py", line 6, in <module>
-        if words[0] != 'From' : continue
+        if words[0] != 'From': continue
     IndexError: list index out of range
     ~~~~
 
@@ -876,8 +876,8 @@ Der unvorsichtige Umgang mit Listen (und anderen veränderbaren Objekten) kann z
     for line in fhand:
         words = line.split()
         # print('Debug:', words)
-        if len(words) == 0 : continue
-        if words[0] != 'From' : continue
+        if len(words) == 0: continue
+        if words[0] != 'From': continue
         print(words[2])
     ~~~~ 
 

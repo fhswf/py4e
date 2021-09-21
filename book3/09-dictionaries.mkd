@@ -178,7 +178,7 @@ Das Histogramm zeigt an, dass die Buchstaben „a“ und „b“ einmal vorkomme
 Dictionaries haben eine Methode namens `get`, die einen Schlüssel und einen Standardwert annimmt. Wenn der Schlüssel im Dictionary vorkommt, gibt `get` den entsprechenden Wert zurück; andernfalls wird der Standardwert zurückgegeben. Zum Beispiel:
 
 ~~~~ {.python .trinket}
->>> counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
+>>> counts = { 'chuck': 1 , 'annie': 42, 'jan': 100}
 >>> print(counts.get('jan', 0))
 100
 >>> print(counts.get('tim', 0))
@@ -261,7 +261,7 @@ Schleifen und Dictionaries
 Wenn man ein Dictionary als Sequenz in einer `for`-Anweisung verwendet, durchläuft diese die Schlüssel des Dictionarys. Diese Schleife gibt jeden Schlüssel und den entsprechenden Wert aus:
 
 ~~~~ {.python}
-counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
+counts = { 'chuck': 1 , 'annie': 42, 'jan': 100}
 for key in counts:
     print(key, counts[key])
 ~~~~
@@ -281,9 +281,9 @@ Auch hier sind die Schlüssel in keiner bestimmten Reihenfolge.
 Wir können dieses Muster verwenden, um die verschiedenen Schleifen-Idiome zu implementieren, die wir zuvor beschrieben haben. Wenn wir zum Beispiel alle Einträge in einem Dictionary mit einem Wert über zehn finden wollen, könnten wir folgenden Code schreiben:
 
 ~~~~ {.python}
-counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
+counts = { 'chuck': 1 , 'annie': 42, 'jan': 100}
 for key in counts:
-    if counts[key] > 10 :
+    if counts[key] > 10:
         print(key, counts[key])
 ~~~~
 
@@ -302,7 +302,7 @@ Wir sehen nur die Einträge mit einem Wert über 10.
 Wenn wir die Schlüssel in alphabetischer Reihenfolge ausgeben möchten, erstellen wir zunächst eine Liste der Schlüssel des Dictionarys mit der in Dictionaryobjekten verfügbaren Methode `keys`. Dann sortieren diese Liste und iterieren anschließend durch sie, wobei wir jeden Schlüssel nachschlagen und die Schlüsselwert-Paare wie folgt ausgeben:
 
 ~~~~ {.python}
-counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
+counts = { 'chuck': 1 , 'annie': 42, 'jan': 100}
 lst = list(counts.keys())
 print(lst)
 lst.sort()
