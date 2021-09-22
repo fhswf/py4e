@@ -24,7 +24,7 @@ if [ -f .chinese ] ; then
     cat [0-9]*.mkd | python verbatim.py | tee tmp.verbatim | pandoc -s -N -f markdown+definition_lists -t latex --toc --default-image-extension=eps -V fontsize:10pt -V documentclass:book -V mainfont='Noto Serif CJK SC' --template=template.latex -o tmp.tex
     pandoc -V mainfont='Noto Serif CJK SC' [A-Z][A-Z]*.mkd -o tmp.app.tex
 else
-    cat [0-9]*.mkd | python verbatim.py | tee tmp.verbatim | pandoc -s -N -f markdown+definition_lists -t latex --toc --default-image-extension=eps -V fontsize:10pt -V documentclass:book --template=template.latex -o tmp.tex
+    cat [0-9]*.mkd | python verbatim.py | tee tmp.verbatim | pandoc -s -N -f markdown+definition_lists -t latex --toc --default-image-extension=eps -V lang:ngerman  -V fontsize:10pt -V documentclass:book --template=template.latex -o tmp.tex
     pandoc [A-Z][A-Z]*.mkd -o tmp.app.tex
 fi
 
@@ -35,6 +35,7 @@ diff tmp.sed tmp.tex
 python texpatch.py < tmp.sed > tmp.patch
 
 mv tmp.patch tmp.tex
+sed -i -e 's/?``/?{``}/g' tmp.tex # german closing quotation mark after a question mark
 if [ -f .chinese ] ; then
     xelatex tmp
     makeindex tmp
@@ -55,4 +56,4 @@ else
   echo "Output on x.pdf"
 fi
 
-rm tmp.*
+#rm tmp.*

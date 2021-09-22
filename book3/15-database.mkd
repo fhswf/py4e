@@ -201,7 +201,7 @@ Sobald wir die Liste der Freunde und Stati abgerufen haben, gehen wir in einer S
 ~~~~ {.python}
 countnew = 0
 countold = 0
-for u in js['users'] :
+for u in js['users']:
     friend = u['screen_name']
     print(friend)
     cur.execute('SELECT friends FROM Twitter WHERE name = ? LIMIT 1',
@@ -271,7 +271,7 @@ Enter a Twitter account, or quit: quit
 Da wir die Eingabetaste gedrückt haben (d. h. wir haben kein Twitter-Konto angegeben), wird der folgende Code ausgeführt:
 
 ~~~~ {.python}
-if ( len(acct) < 1 ) :
+if ( len(acct) < 1 ):
     cur.execute('SELECT name FROM Twitter WHERE retrieved = 0 LIMIT 1')
     try:
         acct = cur.fetchone()[0]
@@ -443,7 +443,7 @@ Wenn der `SELECT` fehlschlägt, schlägt der `fetchone()[0]` Code fehl und die K
         cur.execute('''INSERT OR IGNORE INTO People (name, retrieved)
             VALUES ( ?, 0)''', ( friend, ) )
         conn.commit()
-        if cur.rowcount != 1 :
+        if cur.rowcount != 1:
             print('Error inserting account:',friend)
             continue
         friend_id = cur.lastrowid

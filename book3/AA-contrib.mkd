@@ -1,9 +1,9 @@
 
-Contributions
-=============
+Mitwirkende
+===========
 
-Contributor List for Python for Everybody 
--------------------------------------------
+Mitwirkende an „Python for Everybody“
+-------------------------------------
 
 Andrzej Wójtowicz,
 Elliott Hauser,
@@ -25,12 +25,12 @@ Louis Luangkesorn,
 and
 Michael Fudge
 
-You can see contribution details at:
+Einzelheiten zu den Beiträgen finden Sie unter:
 
 https://github.com/csev/py4e/graphs/contributors
 
-Contributor List for Python for Informatics 
--------------------------------------------
+Mitwirkende an „Python for Informatics“ 
+---------------------------------------
 
 Bruce Shields for copy editing early drafts, Sarah Hegge, Steven Cherry,
 Sarah Kathleen Barbarow, Andrea Parker, Radaphat Chongthammakun, Megan
@@ -42,128 +42,80 @@ Thomas Strassel, Ryan Clement, Alissa Talley, Caitlin Holman, Yong-Mi
 Kim, Karen Stover, Cherie Edmonds, Maria Seiferle, Romer Kristi D.
 Aranas (RK), Grant Boyer, Hedemarrie Dussan,
 
-Preface for "Think Python"
+Vorwort von „Think Python“
 --------------------------
 
-### The strange history of "Think Python"
+### Die seltsame Geschichte von „Think Python“
 
 (Allen B. Downey)
 
-In January 1999 I was preparing to teach an introductory programming
-class in Java. I had taught it three times and I was getting frustrated.
-The failure rate in the class was too high and, even for students who
-succeeded, the overall level of achievement was too low.
+Im Januar 1999 bereitete ich mich darauf vor, einen Einführungskurs in die Programmierung mit Java zu geben. Ich hatte ihn bereits dreimal unterrichtet und war frustriert. Die Durchfallquote in der Klasse war zu hoch, und selbst bei den Schülern, die erfolgreich waren, war das Leistungsniveau insgesamt zu niedrig.
 
-One of the problems I saw was the books. They were too big, with too
-much unnecessary detail about Java, and not enough high-level guidance
-about how to program. And they all suffered from the trap door effect:
-they would start out easy, proceed gradually, and then somewhere around
-Chapter 5 the bottom would fall out. The students would get too much new
-material, too fast, and I would spend the rest of the semester picking
-up the pieces.
+Eines der Probleme, die ich sah, waren die Bücher. Sie waren zu umfangreich, enthielten zu viele unnötige Details über Java und nicht genug Anleitungen von guter Qualität, wie man programmiert. Außerdem litten sie alle unter dem Falltür-Effekt: Sie fingen einfach an, gingen allmählich voran, und dann, etwa ab Kapitel 5, fiel der Boden heraus. Die Studenten lernten zu schnell zu viel neues Material, und ich musste den Rest des Semesters damit verbringen, die Scherben aufzusammeln.
 
-Two weeks before the first day of classes, I decided to write my own
-book. My goals were:
+Zwei Wochen vor dem ersten Unterrichtstag beschloss ich, mein eigenes Buch zu schreiben. Meine Ziele waren:
 
--   Keep it short. It is better for students to read 10 pages than not
-    read 50 pages.
+-   Machen Sie es kurz. Es ist besser für die Schüler, 10 Seiten zu lesen, als 50 Seiten nicht zu lesen.
 
--   Be careful with vocabulary. I tried to minimize the jargon and
-    define each term at first use.
+-   Vorsichtig mit dem Vokabular sein. Ich habe versucht, den Jargon zu minimieren und jeden Begriff bei der ersten Verwendung zu definieren.
 
--   Build gradually. To avoid trap doors, I took the most difficult
-    topics and split them into a series of small steps.
+-   Schrittweises Vorgehen. Um Falltüren zu vermeiden, habe ich die schwierigsten Themen in eine Reihe kleiner Schritte aufgeteilt.
 
--   Focus on programming, not the programming language. I included the
-    minimum useful subset of Java and left out the rest.
+-   Konzentrieren auf die Programmierung, nicht auf die Programmiersprache. Ich habe die kleinste nützliche Teilmenge von Java einbezogen und den Rest weggelassen.
 
-I needed a title, so on a whim I chose *How to Think Like a Computer
-Scientist*.
+Ich brauchte einen Titel und entschied mich aus einer Laune heraus für *How to Think Like a Computer Scientist*.
 
-My first version was rough, but it worked. Students did the reading, and
-they understood enough that I could spend class time on the hard topics,
-the interesting topics and (most important) letting the students
-practice.
+Meine erste Version war holprig, aber sie funktionierte. Die Schüler haben die Lektüre gelesen und genug verstanden, so dass ich die Unterrichtszeit auf die schwierigen und interessanten Themen verwenden und (was am wichtigsten ist) die Schüler üben lassen konnte.
 
-I released the book under the GNU Free Documentation License, which
-allows users to copy, modify, and distribute the book.
+Ich habe das Buch unter der GNU Free Documentation License veröffentlicht, die es den Benutzern erlaubt, das Buch zu kopieren, zu verändern und zu verbreiten.
 
 \index{GNU Free Documentation License}
 \index{Free Documentation License, GNU}
 
-What happened next is the cool part. Jeff Elkner, a high school teacher
-in Virginia, adopted my book and translated it into Python. He sent me a
-copy of his translation, and I had the unusual experience of learning
-Python by reading my own book.
+Was dann geschah, ist der coole Teil. Jeff Elkner, ein Highschool-Lehrer in Virginia, nahm sich meines Buches an und übersetzte es in Python. Er schickte mir eine Kopie seiner Übersetzung, und ich machte die ungewöhnliche Erfahrung, Python zu lernen, indem ich mein eigenes Buch las.
 
-Jeff and I revised the book, incorporated a case study by Chris Meyers,
-and in 2001 we released *How to Think Like a Computer Scientist:
-Learning with Python*, also under the GNU Free Documentation License. As
-Green Tea Press, I published the book and started selling hard copies
-through Amazon.com and college book stores. Other books from Green Tea
-Press are available at [greenteapress.com](greenteapress.com).
+Jeff und ich überarbeiteten das Buch, fügten eine Fallstudie von Chris Meyers ein und veröffentlichten im Jahr 2001 *How to Think Like a Computer Scientist: Learning with Python*, ebenfalls unter der GNU Free Documentation License. Als Green Tea Press veröffentlichte ich das Buch und begann mit dem Verkauf von gedruckten Exemplaren über Amazon.com und College-Buchläden. Andere Bücher von Green Tea Press sind unter [greenteapress.com](greenteapress.com) erhältlich.
 
-In 2003 I started teaching at Olin College and I got to teach Python for
-the first time. The contrast with Java was striking. Students struggled
-less, learned more, worked on more interesting projects, and generally
-had a lot more fun.
+Im Jahr 2003 begann ich am Olin College zu unterrichten, und ich durfte zum ersten Mal Python unterrichten. Der Unterschied zu Java war frappierend. Die Studenten hatten weniger Mühe, lernten mehr, arbeiteten an interessanteren Projekten und hatten allgemein viel mehr Spaß.
 
-Over the last five years I have continued to develop the book,
-correcting errors, improving some of the examples and adding material,
-especially exercises. In 2008 I started work on a major revision—at the
-same time, I was contacted by an editor at Cambridge University Press
-who was interested in publishing the next edition. Good timing!
+In den letzten fünf Jahren habe ich das Buch weiterentwickelt, Fehler korrigiert, einige der Beispiele verbessert und Material hinzugefügt, insbesondere Übungen. Im Jahr 2008 begann ich mit der Arbeit an einer umfassenden Überarbeitung - zur gleichen Zeit wurde ich von einem Redakteur der Cambridge University Press kontaktiert, der an der Veröffentlichung der nächsten Ausgabe interessiert war. Gutes Timing!
 
-I hope you enjoy working with this book, and that it helps you learn to
-program and think, at least a little bit, like a computer scientist.
+Ich wünsche Ihnen viel Spaß bei der Arbeit mit diesem Buch und hoffe, dass es Ihnen hilft, zu programmieren und zumindest ein bisschen wie ein Informatiker zu denken.
 
-### Acknowledgements for "Think Python"
+### Danksagungen für „Think Python“ 
 
 (Allen B. Downey)
 
-First and most importantly, I thank Jeff Elkner, who translated my Java
-book into Python, which got this project started and introduced me to
-what has turned out to be my favorite language.
+Zunächst und vor allem danke ich Jeff Elkner, der mein Java-Buch in Python übersetzt hat, was dieses Projekt ins Rollen brachte und mich in die Sprache einführte, die sich als meine Lieblingssprache herausgestellt hat.
 
-I also thank Chris Meyers, who contributed several sections to *How to
-Think Like a Computer Scientist*.
+Ich danke auch Chris Meyers, der mehrere Abschnitte zu *How to Think Like a Computer Scientist* beigetragen hat.
 
-And I thank the Free Software Foundation for developing the GNU Free
-Documentation License, which helped make my collaboration with Jeff and
-Chris possible.
+Und ich danke der Free Software Foundation für die Entwicklung der GNU Free Documentation License, die meine Zusammenarbeit mit Jeff und Chris erst möglich gemacht hat.
 
 \index{GNU Free Documentation License}
 \index{Free Documentation License, GNU}
 
-I also thank the editors at Lulu who worked on *How to Think Like a
-Computer Scientist*.
+Ich danke auch den Redakteuren bei Lulu, die an *How to Think Like a Computer Scientist* gearbeitet haben.
 
-I thank all the students who worked with earlier versions of this book
-and all the contributors (listed in an Appendix) who sent in corrections
-and suggestions.
+Ich danke allen Studierenden, die an früheren Fassungen dieses Buches mitgearbeitet haben, und allen Autoren (die in einem Anhang aufgeführt sind), die mir Korrekturen und Vorschläge zugesandt haben.
 
-And I thank my wife, Lisa, for her work on this book, and Green Tea
-Press, and everything else, too.
+Und ich danke meiner Frau Lisa für ihre Arbeit an diesem Buch, an Green Tea Press und an allem anderen auch.
 
 Allen B. Downey\
 Needham MA\
 
-Allen Downey is an Associate Professor of Computer Science at the
-Franklin W. Olin College of Engineering.
+Allen Downey ist außerordentlicher Professor für Computerwissenschaften am Franklin W. Olin College of Engineering.
 
-Contributor List for "Think Python"
------------------------------------
+Mitwirkende an „Think Python“ 
+-----------------------------
 
-\index{contributors}
+\index{Beiträge}\index{Mitwirkende}
 
 (Allen B. Downey)
 
-More than 100 sharp-eyed and thoughtful readers have sent in suggestions
-and corrections over the past few years. Their contributions, and
-enthusiasm for this project, have been a huge help.
+Mehr als 100 aufmerksame Leser haben in den letzten Jahren Vorschläge und Korrekturen eingesandt. Ihre Beiträge und ihre Begeisterung für dieses Projekt waren eine große Hilfe.
 
-For the detail on the nature of each of the contributions from these
-individuals, see the "Think Python" text.
+Einzelheiten über die Art der Beiträge dieser Personen finden Sie im Text „Think Python“.
 
 Lloyd Hugh Allen, Yvon Boulianne, Fred Bremmer, Jonah Cohen, Michael
 Conlon, Benoit Girard, Courtney Gleason and Katherine Smith, Lee Harr,

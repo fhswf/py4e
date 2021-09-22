@@ -1,4 +1,4 @@
-# Search for lines that have an at sign between characters
+# Finde Zeilen, die ein at-Zeichen zwischen zwei Zeichen
 import re
 hand = open('mbox-short.txt')
 for line in hand:

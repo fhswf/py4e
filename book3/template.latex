@@ -168,6 +168,7 @@ $endfor$
 
 \begin{document}
 \frontmatter
+\include{title}
 $if(title)$
 \maketitle
 $endif$

@@ -1,4 +1,4 @@
-txt = 'but soft what light in yonder window breaks'
+txt = 'Es war die Nachtigall und nicht die Lerche'
 words = txt.split()
 t = list()
 for word in words:

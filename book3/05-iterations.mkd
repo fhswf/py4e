@@ -2,6 +2,17 @@
 Iteration
 =========
 
+Immer und immer wieder die gleichen Arbeitsschritte zu tun, ist für uns Menschen eine missliebige Vorstellung.
+Computer hingegen sind wahre Meister der Wiederholung.
+Ein Großteil Ihrer Laufzeit verbringen Programme damit, bestimmte Aufgabenschritte zu wiederholen.
+In diesem Kapitel geht es genau um solche *Programmschleifen*, mit denen man Python anweist, bestimmte Anweisungen zu wiederholen.
+Wir werden zwei unterschiedliche Arten solche Schleifen kennenlernen.
+Die eine Wiederholt einen Anweisungsblock, solange eine vom Programmierer angegebene Bedingung erfüllt ist.
+Das ist ein wenig wie beim Zähneputzen; solange die drei Minuten noch nicht um sind, putzen Sie weiter.
+Die andere Art von Schleifen ist dazu da, Folgen von Elementen abzuarbeiten.
+Ein möglicher Vergleich hier ist eine Einkaufsliste, die Sie von oben nach unten Abarbeiten; wenn Sie den letzten Artikel auf der Liste in den Einkaufswagen gelegt haben, sind Sie fertig.
+
+
 \index{Iteration}
 
 Aktualisieren von Variablen
@@ -10,13 +21,15 @@ Aktualisieren von Variablen
 \index{Aktualisierung}
 \index{Variable!aktualisieren}
 
-Häufig sind Zuweisungen anzutreffen, die eine Variable aktualisieren, wobei der neue Wert der Variable vom alten abhängt.
+Wenn wir bestimmte Dinge wiederholen wollen, müssen wir meist mitzählen.
+Auch in Programmen wird häufig gezählt, und zwar mithilfe von Variablen.
+Wenn wir mit einer Variable zählen wollen, müssen wir ihren Wert aktualisieren, wobei der neue Wert vom alten abhängt.
 
 ~~~~ {.python}
 x = x + 1
 ~~~~
 
-Das bedeutet: „Ermittle den aktuellen Wert von `x`, addiere 1 und aktualisiere dann `x` mit diesem neuen Wert.“
+Das bedeutet: „Ermittle den aktuellen Wert von `x`, addiere 1 und aktualisiere dann `x` mit diesem neuen Wert.“ Bereits in Kapitel 2 haben wir gesehen, dass es kein Problem ist, wenn hier `x` auf beiden Seiten des Gleichheitszeichens auftritt. Wir werten zuerst die rechte Seite aus, erhalten so einen Wert und weisen diesen dann auf den Namen `x` zu.
 
 Wenn man versucht, eine Variable zu aktualisieren, die nicht existiert, erhält man einen Fehler, da Python versucht, die rechte Seite des Ausdrucks auszuwerten *bevor* `x` überhaupt einen Wert hat:
 
@@ -25,7 +38,7 @@ Wenn man versucht, eine Variable zu aktualisieren, die nicht existiert, erhält 
 NameError: name 'x' is not defined
 ~~~~
 
-Bevor man eine Variable aktualisieren kann, muss man sie *initialisieren*, normalerweise mit einer einfachen Zuweisung:
+Bevor man eine Variable aktualisieren kann, muss man sie also *initialisieren*, normalerweise mit einer einfachen Zuweisung:
 
 \index{Initialisierung}
 
@@ -76,12 +89,9 @@ Diese Art von Ablauf wird als *Schleife* bezeichnet, weil der dritte Schritt ein
 \index{Bedingung}
 \index{Schleife}
 
-Der Schleifenrumpf soll den Wert einer oder mehrerer Variablen so verändern, dass die Bedingung schließlich falsch wird und die Schleife beendet wird. Wir nennen die Variable, die sich bei jeder Ausführung der Schleife ändert und steuert, wann die Schleife beendet ist, die *Iterationsvariable* beziehungsweise den *Schleifenzähler*. Wenn es keinen Schleifenzähler gibt, wird die Schleife ewig wiederholt, was zu einer *Endlosschleife* führt.
+Der Schleifenrumpf soll den Wert einer oder mehrerer Variablen so verändern, dass die Bedingung schließlich falsch wird und die Schleife beendet wird. Wir nennen die Variable, die sich bei jeder Ausführung der Schleife ändert und steuert, wann die Schleife beendet ist, die *Iterationsvariable* beziehungsweise den *Schleifenzähler*. Wenn es keinen Schleifenzähler gibt, wird die Schleife gegebenenfalls ewig wiederholt, was zu einer *Endlosschleife* führt.
 
-Endlosschleifen
----------------
-
-Eine Quelle der Belustigung für Programmierer ist die Beobachtung, dass die Anleitung für ein Shampoo, „Einschäumen, ausspülen, wiederholen“, eine Endlosschleife ist, weil es keinen *Schleifenzähler* gibt, der Ihnen sagt, wie oft die Schleife ausgeführt werden soll.
+<!-- [In Ausnahmefällen kann die Bedingung einer `while`-Schleife auch von Werten abhängen, die sich außerhalb des Programms ändern. Solche Schleifen-Varianten kommen ohne Schleifenzähler aus, sind aber eher selten.] -->
 
 \index{Endlosschleife}
 \index{Schleife!endlos}
@@ -158,12 +168,12 @@ Alle Zeilen werden ausgegeben, außer diejenigen, die mit dem Rautezeichen begin
 \index{for-Schleife}
 \index{Schleife!for}
 
-Manchmal wollen wir eine *Menge* von Dingen in einer Schleife durchlaufen, z. B. eine Liste von Wörtern, die Zeilen in einer Datei oder eine Liste von Zahlen. Wenn wir eine Liste von Dingen haben, die in einer Schleife durchlaufen werden sollen, können wir eine *bereichsbasierte* Schleife nutzen. Die `for`-Schleife durchläuft eine bekannte Menge von Elementen mit so vielen Iterationen, wie es Elemente in der Menge gibt.
+Manchmal wollen wir eine *Folge* von Dingen in einer Schleife durchlaufen, z. B. eine Liste von Wörtern, die Zeilen in einer Datei oder eine Liste von Zahlen. Wenn wir eine Liste von Dingen haben, die in einer Schleife durchlaufen werden sollen, können wir eine *bereichsbasierte* Schleife nutzen. Die `for`-Schleife durchläuft eine bekannte Folge von Elementen mit so vielen Iterationen, wie es Elemente in der Folge gibt.
 
 Die Syntax einer `for`-Schleife ähnelt der `while`-Schleife insofern, als es eine `for`-Anweisung und einen Schleifenrumpf gibt:
 
 ~~~~ {.python}
-friends = ['Joseph', 'Glenn', 'Sally']
+friends = ['Anna', 'Ben', 'Carla']
 for friend in friends:
     print('Happy New Year:', friend)
 print('Done!')
@@ -172,13 +182,13 @@ print('Done!')
 In Python ausgedrückt, ist die Variable `friends` eine Liste^[Wir werden Listen in einem späteren Kapitel genauer untersuchen.] von drei Zeichenketten und die `for`-Schleife durchläuft die Liste und führt den Rumpf einmal für jede der drei Zeichenketten in der Liste aus, was zu dieser Ausgabe führt:
 
 ~~~~ {.python}
-Happy New Year: Joseph
-Happy New Year: Glenn
-Happy New Year: Sally
+Happy New Year: Anna
+Happy New Year: Ben
+Happy New Year: Carla
 Done!
 ~~~~
 
-Die Übersetzung dieser `for`-Schleife in unsere Sprache ist nicht so direkt wie die der `while`-Schleife, aber wenn man sich `friends` als eine *Menge* vorstellt, könnte es etwa so lauten: „Führe die Anweisungen im Rumpf der Schleife einmal für jeden Freund aus der Menge aller Freunde aus."
+Die Übersetzung dieser `for`-Schleife in unsere Sprache ist nicht so direkt wie die der `while`-Schleife, aber wenn man sich `friends` als eine *Folge* oder als eine *Menge* vorstellt, könnte es etwa so lauten: „Führe die Anweisungen im Rumpf der Schleife einmal für jeden Freund aus der Folge aller Freunde aus."
 
 Wenn man sich die `for`-Schleife ansieht, sind *for* und *in* reservierte Python-Schlüsselwörter, und `friend` und `friends` sind Variablen.
 
@@ -188,6 +198,8 @@ for friend in friends:
 ~~~~
 
 Insbesondere ist `friend` die *Iterationsvariable* für die `for`-Schleife. Die Variable `friend` ändert sich bei jeder Iteration der Schleife und steuert, wann die `for`-Schleife beendet ist. Die *Iterationsvariable* geht nacheinander durch die drei Zeichenketten, die in der Variablen `friends` gespeichert sind.
+
+ Die Unterscheidung, ob es sich um eine *Folge* oder um eine *Menge* handelt, macht beim Durchlaufen der Daten einen Unterschied. Bei einer Folge sind die einzelnen Elemente geordnet und die Reihenfolge der Elemente in der Folge wird beim Durchlaufen beibehalten. In einer Menge sind die Elemente nicht geordnet. Die `for`-Schleife betrachtet also jedes Element der Menge genau einmal, in welcher Reihenfolge die Elemente ausgewählt werden, ist dabei nicht genau festgelegt.
 
 Typische Anwendungen von Schleifen
 ----------------------------------
@@ -215,7 +227,7 @@ for itervar in [3, 41, 12, 9, 74, 15]:
 print('Count: ', count)
 ~~~~
 
-Wir setzen die Variable `count` auf Null, bevor die Schleife beginnt, dann schreiben wir eine `for`-Schleife, die die Liste der Zahlen durchläuft. Unsere *Iterations*-Variable heißt `itervar` und obwohl wir `itervar` nicht in der Schleife verwenden, steuert sie die Schleife und bewirkt, dass der Schleifenkörper für jeden der Werte in der Liste einmal ausgeführt wird.
+Wir setzen die Variable `count` auf 0, bevor die Schleife beginnt, dann schreiben wir eine `for`-Schleife, die die Liste der Zahlen durchläuft. Unsere *Iterations*-Variable heißt `itervar` und obwohl wir `itervar` nicht in der Schleife verwenden, steuert sie die Schleife und bewirkt, dass der Schleifenkörper für jeden der Werte in der Liste einmal ausgeführt wird.
 
 Im Schleifenkörper addieren wir für jeden der Werte in der Liste 1 zum aktuellen Wert von `count`. Während die Schleife ausgeführt wird, entspricht der Wert von `count` der Anzahl der Werte, die wir bisher gesehen haben.
 
@@ -227,7 +239,7 @@ Eine weitere ähnliche Schleife, die die Summe einer Menge von Zahlen berechnet,
 total = 0
 for itervar in [3, 41, 12, 9, 74, 15]:
     total = total + itervar
-print('Total: ', total)
+print('Summe: ', total)
 ~~~~
 
 In dieser Schleife benutzen wir die *Iterationsvariable* tatsächlich. Anstatt wie in der vorherigen Schleife einfach eine 1 zu `count` zu addieren, fügen wir bei jeder Schleifeniteration die aktuelle Zahl (3, 41, 12, usw.) zur laufenden Summe hinzu. Wenn wir uns die Variable `total` vorstellen, enthält sie die laufende Summe der bisherigen Werte. Bevor die Schleife beginnt, ist `total` also 0, weil wir noch keine Werte gesehen haben, während der Schleife ist `total` die laufende Summe, und am Ende der Schleife ist `total` die Gesamtsumme aller Werte in der Liste.
@@ -249,25 +261,25 @@ Um den größten Wert in einer Liste oder Folge zu finden, konstruieren wir die 
 
 ~~~~ {.python}
 largest = None
-print('Before:', largest)
+print('Maximum zu Beginn:', largest)
 for itervar in [3, 41, 12, 9, 74, 15]:
-    if largest is None or itervar > largest :
+    if largest is None or itervar > largest:
         largest = itervar
-    print('Loop:', itervar, largest)
-print('Largest:', largest)
+    print('Betrachte Wert:', itervar, 'Aktuelles Maximum:', largest)
+print('Das Maximum ist:', largest)
 ~~~~
 
 Wenn das Programm ausgeführt wird, sieht die Ausgabe wie folgt aus:
 
 ~~~~
-Before: None
-Loop: 3 3
-Loop: 41 41
-Loop: 12 41
-Loop: 9 41
-Loop: 74 74
-Loop: 15 74
-Largest: 74
+Maximum zu Beginn: None
+Betrachte Wert: 3 Aktuelles Maximum: 3
+Betrachte Wert: 41 Aktuelles Maximum: 41
+Betrachte Wert: 12 Aktuelles Maximum: 41
+Betrachte Wert: 9 Aktuelles Maximum: 41
+Betrachte Wert: 74 Aktuelles Maximum: 74
+Betrachte Wert: 15 Aktuelles Maximum: 74
+Das Maximum ist: 74
 ~~~~
 
 Die Variable `largest` kann man sich am besten als den „größten Wert, den wir bisher gesehen haben“ vorstellen. Vor der Schleife setzen wir `largest` auf die Konstante `None`. Die Konstante `None` ist ein spezieller konstanter Wert, den wir in einer Variablen speichern können, um die Variable als „leer“ zu markieren.
@@ -361,12 +373,12 @@ Iteration
 **Übung 1: Schreiben Sie ein Programm, das wiederholt Zahlen einliest, bis der Benutzer den Befehl `done` eingibt. Sobald `done` eingegeben wurde, geben Sie die Summe, die Anzahl und den Durchschnitt der Zahlen aus. Wenn der Benutzer etwas anderes als eine Zahl eingibt, erkennen Sie seinen Fehler mit `try` und `except` und geben eine Fehlermeldung aus und springen zur nächsten Zahl.**
 
 ~~~~
-Enter a number: 4
-Enter a number: 5
-Enter a number: bad data
-Invalid input
-Enter a number: 7
-Enter a number: done
+Bitte eine Zahl eingeben: 4
+Bitte eine Zahl eingeben: 5
+Bitte eine Zahl eingeben: sechs
+Ungueltige Eingabe
+Bitte eine Zahl eingeben: 7
+Bitte eine Zahl eingeben: done
 16 3 5.333333333333333
 ~~~~
 

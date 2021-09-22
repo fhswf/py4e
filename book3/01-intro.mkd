@@ -33,7 +33,7 @@ Der Aufbau eines Computers
 
 Bevor wir anfangen, die Sprachen zu lernen, mit der wir Computer *programmieren* können, sollten wir uns ein wenig damit beschäftigen, wie Computer aufgebaut sind. Wenn wir unseren Computer oder unser Handy auseinandernehmen und tief ins Innere schauen würden, würden wir die folgenden Teile finden:
 
-![Aufbau eines Computers](height=1.75in@../images/_arch)
+![Aufbau eines Computers](height=1.75in@../images/de/arch)
 
 Die wichtigsten Definitionen dieser Teile lauten wie folgt:
 
@@ -351,7 +351,7 @@ Wie wir in unseren ersten „Gesprächen“ mit Python gesehen haben, müssen wi
 
 ~~~~ {.python}
 C:\Python> python.exe
-Python 3.8.5 (default, Sep  3 2020, 21:29:08) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Python 3.8.5 (default, Sep  3 2020, 21:29:08) [MSC v.1916 64 bit (AMD64)]
 Type “help“, “copyright“, “credits“ or “license“ for more information.
 >>> primt 'Hello World'
   File “<stdin>“, line 1

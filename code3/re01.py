@@ -1,4 +1,4 @@
-# Search for lines that contain 'From'
+# Finde Zeilen, die ein 'From' beinhalten
 import re
 hand = open('mbox-short.txt')
 for line in hand:

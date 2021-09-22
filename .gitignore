@@ -29,3 +29,5 @@ index.sqlite
 gline.js
 gword.js
 *.sublime*
+.vscode/ltex.dictionary.de-DE.txt
+code3/tmp.py

@@ -1,0 +1,9 @@
+[('drei', 9), ('Freunde', 21), ('Nacht', 3)], 
+[('Wort', 19), ('Hund', 11), ('Jäger', 7)],
+[('Badezimmer', 4), ('Grün', 10), ('Haus', 1)],
+[('Klausur', 2), ('Professor', 8), ('Student', 5)],
+[('Polen', 6), ('Deutschland', 14), ('Dänemark', 12)],
+[('Zug', 13), ('Türangel', 22), ('Hauswart', 17)],
+[('Dringlichkeit', 4), ('Feder', 10), ('Karte', 12)],
+[('Döner', 7), ('Falafel', 11), ('Salat', 7)],
+[('Betriebssystem', 24), ('CPU', 7), ('Computer', 5)]

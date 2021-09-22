@@ -1,6 +1,6 @@
-# Search for lines that start with From and a character
-# followed by a two digit number between 00 and 99 followed by ':'
-# Then print the number if it is greater than zero
+# Finde Zeilen, die mit 'From ' beginnen und dann irgendwann eine Zahl
+# genau mit genau zwei Ziffern steht. Vor der zweistellingen Zahl muss ein
+# Leerzeichen stehen, danach ein ':'
 import re
 hand = open('mbox-short.txt')
 for line in hand:

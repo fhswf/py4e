@@ -10,7 +10,9 @@ Bisher haben wir uns durch Dateien gelesen, nach Mustern gesucht und verschieden
 
 Diese Aufgabe des Suchens und Extrahierens begegnet einem so häufig, dass Python eine sehr mächtige Bibliothek für *reguläre Ausdrücke* hat, die viele dieser Aufgaben recht elegant erledigt. Der Grund, warum wir reguläre Ausdrücke nicht früher im Buch eingeführt haben, ist, dass sie zwar sehr mächtig, aber auch etwas kompliziert sind und ihre Syntax etwas gewöhnungsbedürftig ist.
 
-Reguläre Ausdrücke (englisch *regular Expressions* oder kurz *regex*) sind fast eine eigene kleine Programmiersprache zum Suchen und Parsen von Zeichenketten. Tatsächlich sind ganze Bücher über das Thema reguläre Ausdrücke geschrieben worden. In diesem Kapitel werden wir nur die Grundlagen der regulären Ausdrücke behandeln. Weitere Details zu regulären Ausdrücken finden sich unter:
+Reguläre Ausdrücke (englisch *regular Expressions* oder kurz *regex*) sind fast eine eigene kleine Programmiersprache zum Suchen und Parsen von Zeichenketten. Tatsächlich sind ganze Bücher über das Thema reguläre Ausdrücke geschrieben worden und auch der Python-Interpreter verwendet, immer wenn er unsere Programme „verstehen“ möchte, reguläre Ausdrücke an.
+
+ In diesem Kapitel werden wir nur die Grundlagen der regulären Ausdrücke behandeln. Weitere Details zu regulären Ausdrücken finden sich unter:
 
 <https://en.wikipedia.org/wiki/Regular_expression>
 
@@ -66,7 +68,7 @@ Wir können die übereinstimmenden Zeilen weiter eingrenzen, indem wir im folgen
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Die Suchzeichenfolge `^From:.+@` passt auf Zeilen, die mit "From:" beginnen, gefolgt von einem oder mehreren beliebigen Zeichen (`.+`), gefolgt von einem at-Zeichen. Dies wird also auf die folgende Zeile passen:
+Die Suchzeichenfolge `^From:.+@` passt auf Zeilen, die mit "From:" beginnen, gefolgt von einem oder mehreren    beliebigen Zeichen (`.+`), gefolgt von einem at-Zeichen. Dies wird also auf die folgende Zeile passen:
 
 ~~~~
 From: stephen.marquard@uct.ac.za
@@ -441,20 +443,20 @@ Wildcard
 Übungen
 -------
 
-**Übung 1: Es soll ein einfaches Programm geschrieben werden, das die Funktionsweise des Befehls `grep` unter Unix simuliert. Der Benutzer soll aufgefordert werden, einen regulären Ausdruck einzugeben mit dem dann die Anzahl der Zeilen gezählt werden, die mit dem regulären Ausdruck übereinstimmen:**
+**Übung 1: Es soll ein einfaches Programm geschrieben werden, das die Funktionsweise des Befehls `grep` unter Unix simuliert. Der Benutzer soll aufgefordert werden, einen regulären Ausdruck einzugeben, mit dem dann die Anzahl der Zeilen gezählt werden, die mit dem regulären Ausdruck übereinstimmen:**
 
 ~~~~
 $ python grep.py
-Enter a regular expression: ^Author
-mbox.txt had 1798 lines that matched ^Author
+Gib eine RegEx an: ^Author
+mbox.txt hat 1798 Zeilen die auf den Ausdruck "^Author" passen
 
 $ python grep.py
-Enter a regular expression: ^X-
-mbox.txt had 14368 lines that matched ^X-
+Gib eine RegEx an: ^X-
+mbox.txt hat 14368 Zeilen die auf den Ausdruck "^X-" passen
 
 $ python grep.py
-Enter a regular expression: java$
-mbox.txt had 4175 lines that matched java$
+Gib eine RegEx an: java$
+mbox.txt hat 4175 Zeilen die auf den Ausdruck "java" passen
 ~~~~
 
 **Übung 2: Es soll ein Programm geschrieben werden, das nach Zeilen der folgenden Form sucht:**
@@ -466,10 +468,10 @@ New Revision: 39772
 **Die Zahl soll aus jeder der Zeilen mit einem regulären Ausdruck und der Methode `findall()` extrahiert werden. Es soll dann der Durchschnitt der Zahlen berechnet und als Ganzzahl ausgegeben werden.**
 
 ~~~~
-Enter file:mbox.txt
+Gib eine Datei an: mbox.txt
 38549
 
-Enter file:mbox-short.txt
+Gib eine Datei an: mbox-short.txt
 39756
 ~~~~
 

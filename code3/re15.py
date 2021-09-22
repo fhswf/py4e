@@ -1,6 +1,6 @@
-# Search for lines that contain 'New Revision: ' followed by a number
-# Then turn the number into a float and append it to nums
-# Finally print the length and the average of nums
+# Finde Zeilen die das Wort 'New Revision: ' enthalten, gefolg von einer
+# Zahl. Überführe diese Zahl in eine Fliesskommazahl und haenge sie an
+# die Liste nums an. Gib die Laenge und den Mittelwert von nums aus.
 import re
 fname = input('Enter file:')
 hand = open(fname)

@@ -1,11 +1,11 @@
-fname = input('Enter the file name: ')
+fname = input('Gib eine Datei an: ')
 try:
     fhand = open(fname)
 except:
-    print('File cannot be opened:', fname)
+    print(f'Datei {fname} konnte nicht geoeffnet werden')
     exit()
 count = 0
 for line in fhand:
     if line.startswith('Subject:'):
         count = count + 1
-print('There were', count, 'subject lines in', fname)
+print(f'Es gibt {count} Betreffzeilen in {fname}')
